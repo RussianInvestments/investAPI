@@ -51,19 +51,19 @@ API реализован на быстром, удобном и функцион
 
 Для поддержки web-клиентов, например браузерных JS скриптов, внедрена поддержка [gRPC-web](https://grpc.io/docs/platforms/web/basics/).
 
-А для клиентов, привыкших работать с REST API, реализован прокси [Swagger](https://tinkoff.github.io/investAPI/swagger-ui/)
+А для клиентов, привыкших работать с REST API, реализован прокси [Swagger](https://tinkoff.github.io/RussianInvestments/swagger-ui/)
 
 
-[Документация для разработчиков](https://tinkoff.github.io/investAPI/)
+[Документация для разработчиков](https://RussianInvestments.github.io/investAPI/)
 
 # SDK
-Вы можете как самостоятельно создать обертку по [proto-контрактам](https://github.com/Tinkoff/investAPI/tree/main/src/docs/contracts) так воспользоваться одним из SDK:
+Вы можете как самостоятельно создать обертку по [proto-контрактам](https://github.com/Tinkoff/RussianInvestments/tree/main/src/docs/contracts) так воспользоваться одним из SDK:
 
 ## Официальные
-* [go](https://github.com/Tinkoff/invest-api-go-sdk)
-* [python](https://github.com/Tinkoff/invest-python)
-* [java](https://github.com/Tinkoff/invest-api-java-sdk)
-* [csharp](https://github.com/Tinkoff/invest-api-csharp-sdk)
+* [go](https://github.com/RussianInvestments/invest-api-go-sdk)
+* [python](https://github.com/RussianInvestments/invest-python)
+* [java](https://github.com/RussianInvestments/invest-api-java-sdk)
+* [csharp](https://github.com/RussianInvestments/invest-api-csharp-sdk)
 
 ## Неофициальные
 * [golang](https://github.com/ssummers02/invest-api-go-sdk)
@@ -83,7 +83,7 @@ SDK на других языках в процессе разработки.
 
 # Как работать с этим репозитарием
 
-В [Issues](https://github.com/Tinkoff/investAPI/issues) вы можете задать вопрос или найти ответ, если вопрос уже был задан другими пользователями.
+В [Issues](https://github.com/Tinkoff/RussianInvestments/issues) вы можете задать вопрос или найти ответ, если вопрос уже был задан другими пользователями.
 
 Если вы встретили неточность или хотели бы что-то дополнить, то мы будем рады принять от вас pull request.
 
@@ -95,4 +95,4 @@ SDK на других языках в процессе разработки.
 
 # Разработчикам ПО для широкого круга пользователей
 
-Если Вы разрабатываете публичное ПО, использующее Tinkoff Invest API, то необходимо написать на al.a.volkov@tinkoff.ru краткую информацию о проекте для регистрации выделенного appname и получения дополнительной техподдержки.
+Если Вы разрабатываете публичное ПО, использующее Tinkoff Invest API, то необходимо написать в поддержку Тинькофф Инвестиций по адресу invest-public-api@tinkoff.ru краткую информацию о проекте для регистрации выделенного appname и получения дополнительной техподдержки.
