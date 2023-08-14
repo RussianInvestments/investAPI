@@ -1,0 +1,93 @@
+site_name: 'TINKOFF INVEST API'
+docs_dir: docs
+repo_url: https://github.com/Tinkoff/investAPI
+theme:
+  name: material
+  custom_dir: overrides
+  language: 'ru'
+  palette:
+    primary: black
+    accent: yellow
+  # custom_dir: swagger-iu/
+plugins:
+  - search:
+      indexing: 'full'
+      lang:
+        - en
+        - ru
+      min_search_length: 3
+      prebuild_index: false
+      separator: "[\\s\\-]+"
+
+nav:
+- Начало работы: 
+  - "Начало работы": index.md
+  - Глоссарий: glossary.md
+  - "Лимитная политика": limits.md
+  - "Токен доступа": token.md
+  - "Идентификация торговых инструментов": faq_identification.md
+  - "Нестандартные типы данных": faq_custom_types.md
+  - "Торговые статусы инструментов и расписание торгов": faq_trading_status.md
+  - "Порядок работы с историческими данными": load_history.md
+  - "Работа с торговыми поручениями": orders_details.md
+  - "Дедлайны запросов": deadlines.md
+  - "Таблица конкурсных работ": robot_contest.md
+  - "Таблица параметров, возвращающих валюту или пункты": table_order_currency.md
+  - "Описание наиболее популярных кейсов": cases.md
+
+- Протоколы:
+  - "Доступные протoколы": api_protocols.md
+  - "GRPC": grpc.md 
+  - "WebSocket": ws\README.md
+  - "Как пользоваться Swagger?": swagger.md
+ 
+- Полезная информация:
+  - "Алгоритмический трейдинг": algorithmic_trading.md
+  - "Индикаторы технического анализа": tech_indicators.md
+  - "Торговые площадки и режимы торгов": markets.md
+  - "Квалифицированный инвестор": accredited_investor.md
+  - "Правила обработки корпоративных действий": faq_corp_action.md
+  - "Как ускорить работу с биржей": speedup.md
+  - "SLA": sla.md
+  - Примеры запросов: example.md
+  - "EOL v1": eol_v1.md
+- Ответы на частые вопросы: faq.md
+- Языки программирования:
+  - Python: faq_python.md
+  - Java: faq_java.md
+  - С#: faq_csharp.md
+  - Golang: faq_golang.md
+- Сервис счетов:
+  - Описание: head-users.md
+  - Методы: users.md
+  - FAQ: faq_users.md
+- Сервис инструментов: 
+  - Описание: head-instruments.md
+  - Методы: instruments.md
+  - FAQ: faq_instruments.md
+  - Больше информации о сервисе инструментов: more-instrument.md
+- Сервис ордеров:
+  - Описание: head-orders.md
+  - Методы: orders.md
+  - FAQ: faq_orders.md
+  - Таблица параметров возвращающих валюту или пункты: table_order_currency.md
+- Сервис операций:
+  - Описание: head-operations.md
+  - Методы: operations.md
+  - FAQ: faq_operations.md
+  - Особенности взаимодействия: operations_problems.md
+- Сервис котировок:
+  - Описание: head-marketdata.md
+  - Методы: marketdata.md
+  - FAQ: faq_marketdata.md
+  - Получение исторических рыночных данных: get_history.md
+- Сервис стоп-ордеров:
+  - Описание: head-stoporders.md
+  - Методы: stoporders.md
+  - FAQ: faq_stoporders.md
+- Песочница:
+  - Описание: head-sandbox.md
+  - Методы: sandbox.md
+  - FAQ: faq_sandbox.md
+  - Отличия контура песочницы: url_difference.md
+- Коды ошибок: errors.md
