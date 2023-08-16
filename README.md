@@ -2,7 +2,7 @@
 
 Tinkoff Invest API — это интерфейс для взаимодействия с торговой платформой [Тинькофф Инвестиции](https://www.tinkoff.ru/invest/).
 
-[Документация для разработчиков](https://tinkoff.github.io/investAPI/)
+[Документация для разработчиков](https://russianInvestments.github.io/investAPI/)
 
 # Акции
 
@@ -14,7 +14,7 @@ Tinkoff Invest API — это интерфейс для взаимодейств
 
 Через API можно загрузить как исторические котировки, так и котировки в режиме реального времени по всем бумагам
 
-Для загрузки всех исторических котировок (по всем годам и бумагам) рекомендуем использовать [скрипт](https://github.com/Tinkoff/investAPI/blob/main/src/marketdata/download_md.sh) 
+Для загрузки всех исторических котировок (по всем годам и бумагам) рекомендуем использовать [скрипт](https://github.com/russianInvestments/investAPI/blob/main/src/marketdata/download_md.sh) 
 
 ### Сигналы на покупку или продажу
 
@@ -51,13 +51,13 @@ API реализован на быстром, удобном и функцион
 
 Для поддержки web-клиентов, например браузерных JS скриптов, внедрена поддержка [gRPC-web](https://grpc.io/docs/platforms/web/basics/).
 
-А для клиентов, привыкших работать с REST API, реализован прокси [Swagger](https://tinkoff.github.io/RussianInvestments/swagger-ui/)
+А для клиентов, привыкших работать с REST API, реализован прокси [Swagger](https://russianInvestments.github.io/investAPI/swagger-ui/)
 
 
 [Документация для разработчиков](https://RussianInvestments.github.io/investAPI/)
 
 # SDK
-Вы можете как самостоятельно создать обертку по [proto-контрактам](https://github.com/Tinkoff/RussianInvestments/tree/main/src/docs/contracts) так воспользоваться одним из SDK:
+Вы можете как самостоятельно создать обертку по [proto-контрактам](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts) так воспользоваться одним из SDK:
 
 ## Официальные
 * [go](https://github.com/RussianInvestments/invest-api-go-sdk)
@@ -83,7 +83,7 @@ SDK на других языках в процессе разработки.
 
 # Как работать с этим репозитарием
 
-В [Issues](https://github.com/Tinkoff/RussianInvestments/issues) вы можете задать вопрос или найти ответ, если вопрос уже был задан другими пользователями.
+В [Issues](https://github.com/RussianInvestments/investAPI/issues) вы можете задать вопрос или найти ответ, если вопрос уже был задан другими пользователями.
 
 Если вы встретили неточность или хотели бы что-то дополнить, то мы будем рады принять от вас pull request.
 
