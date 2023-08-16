@@ -1,7 +1,7 @@
 ##SDK для Java
 
 ####Официальные SDK:
-* [invest-api-java-sdk](https://github.com/Tinkoff/invest-api-java-sdk)
+* [invest-api-java-sdk](https://github.com/RussianInvestments/invest-api-java-sdk)
 
 ####Неофициальные SDK:
 
@@ -9,7 +9,7 @@
 ##Примеры взаимодействия: 
 
 Примеры подключения и получения данных доступны в репозитории официальной SDK:
-[/tinkoff/piapi/example/Example.java](https://github.com/Tinkoff/invest-api-java-sdk/blob/main/example/src/main/java/ru/tinkoff/piapi/example/Example.java)
+[/tinkoff/piapi/example/Example.java](https://github.com/RussianInvestments/invest-api-java-sdk/blob/main/example/src/main/java/ru/tinkoff/piapi/example/Example.java)
 
 ### Основные классы для работы
 `ManagedChannel` - абстракция канала до сервера. Следует переиспользовать один и тот же канал во всем приложении.

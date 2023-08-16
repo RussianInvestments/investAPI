@@ -17,14 +17,14 @@
 
 ## Ссылки
 
-Репозитарий новой версии: [https://github.com/Tinkoff/investAPI](https://github.com/Tinkoff/investAPI)
+Репозитарий новой версии: [https://github.com/RussianInvestments/investAPI](https://github.com/RussianInvestments/investAPI)
 
-Документация новой версии: [https://tinkoff.github.io/investAPI/](https://tinkoff.github.io/investAPI/)
+Документация новой версии: [https://RussianInvestments.github.io/investAPI/](https://russianinvestments.github.io/investAPI/)
 
 Поддерживаются протоколы:
 
-* gRPC – [https://tinkoff.github.io/investAPI/grpc/](https://tinkoff.github.io/investAPI/grpc/)
-* REST – [https://tinkoff.github.io/investAPI/swagger-ui/](https://tinkoff.github.io/investAPI/swagger-ui/)
+* gRPC – [https://RussianInvestments.github.io/investAPI/grpc/](https://RussianInvestments.github.io/investAPI/grpc/)
+* REST – [https://RussianInvestments.github.io/investAPI/swagger-ui/](https://RussianInvestments.github.io/investAPI/swagger-ui/)
 
 ## Вопросы
 
