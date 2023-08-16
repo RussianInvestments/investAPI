@@ -59,13 +59,13 @@ API реализован на быстром, удобном и функцион
 # SDK
 Вы можете как самостоятельно создать обертку по [proto-контрактам](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts) так воспользоваться одним из SDK:
 
-## Официальные
+## SDK от RussianInvestments
 * [go](https://github.com/RussianInvestments/invest-api-go-sdk)
 * [python](https://github.com/RussianInvestments/invest-python)
 * [java](https://github.com/RussianInvestments/invest-api-java-sdk)
 * [csharp](https://github.com/RussianInvestments/invest-api-csharp-sdk)
 
-## Неофициальные
+## Неофициальные SDK
 * [golang](https://github.com/ssummers02/invest-api-go-sdk)
 * nodejs
   - [betslus1/unofficial-tinkoff-invest-api_v2-lazy-sdk-NODEJS](https://github.com/betslus1/unofficial-tinkoff-invest-api_v2-lazy-sdk-NODEJS)
