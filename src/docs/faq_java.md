@@ -32,7 +32,7 @@
 ### Метаданные
 Метаданные - аналог заголовков в HTTP.
 #### Передача метаданных запроса
-Для использования API необходимо передавать метаданные с ключом `"Authorization"` и значением `"bearer {token}"`. [Подробнее здесь](https://tinkoff.github.io/investAPI/token/).
+Для использования API необходимо передавать метаданные с ключом `"Authorization"` и значением `"bearer {token}"`. [Подробнее здесь](https://russianinvestments.github.io/investAPI/token/).
 Можно добавить перехватчик в канал с помощью метода `io.grpc.ManagedChannelBuilder#intercept(io.grpc.ClientInterceptor...)`. Пример авторизационного перехватичка:
 ```java
 public class AuthInterceptor implements ClientInterceptor {
@@ -61,7 +61,7 @@ public class AuthInterceptor implements ClientInterceptor {
 ```
 
 #### Получение метаданных ответа
-В метаданных ответа для unary-методов передаются [идентификатор отслеживания](https://tinkoff.github.io/investAPI/grpc/#tracking-id) и описание ошибки.
+В метаданных ответа для unary-методов передаются [идентификатор отслеживания](https://russianinvestments.github.io/investAPI/grpc/#tracking-id) и описание ошибки.
 Для получения метаданных ответа можно использовать перехватчик `io.grpc.stub.MetadataUtils#newCaptureMetadataInterceptor`, например:
 ```java
 var headersCapture = new AtomicReference<Metadata>();
@@ -70,4 +70,4 @@ instruments.withInterceptors(MetadataUtils.newCaptureMetadataInterceptor(headers
 ```
 После выполнения метода переменная `headersCapture` будет содержать метаданные ответа.
 
-При работе с методами клиентов исключения следует конвертировать в статус с помощью `io.grpc.Status#fromThrowable`. В поле `description` статуса будет содержаться [код ошибки](https://tinkoff.github.io/investAPI/errors/).
+При работе с методами клиентов исключения следует конвертировать в статус с помощью `io.grpc.Status#fromThrowable`. В поле `description` статуса будет содержаться [код ошибки](https://russianinvestments.github.io/investAPI/errors/).

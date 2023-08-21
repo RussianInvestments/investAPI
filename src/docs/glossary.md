@@ -2,7 +2,7 @@
 
 ##Список глоссариев по сервисам
 
-* [Голоссарий списков инструментов](https://tinkoff.github.io/investAPI/glossary-instrument/)
+* [Голоссарий списков инструментов](https://russianinvestments.github.io/investAPI/glossary-instrument/)
 
 
 ##Термины биржевой торговли
