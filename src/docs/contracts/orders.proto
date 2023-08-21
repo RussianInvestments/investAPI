@@ -80,7 +80,7 @@ message PostOrderRequest {
   string instrument_id = 8; //Идентификатор инструмента, принимает значения Figi или Instrument_uid.
 }
 
-//Прочитайте  про ключ идемпотентности [здесь](https://tinkoff.github.io/investAPI/head-orders/)
+//Прочитайте  про ключ идемпотентности [здесь](https://russianinvestments.github.io/investAPI/head-orders/)
 
 //Информация о выставлении поручения.
 message PostOrderResponse {
@@ -94,7 +94,7 @@ message PostOrderResponse {
   MoneyValue total_order_amount = 7; //Итоговая стоимость заявки, включающая все комиссии.
   MoneyValue initial_commission = 8; //Начальная комиссия. Комиссия рассчитанная при выставлении заявки.
   MoneyValue executed_commission = 9; //Фактическая комиссия по итогам исполнения заявки.
-  MoneyValue aci_value = 10; //Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](https://tinkoff.github.io/investAPI/head-orders#coupon)
+  MoneyValue aci_value = 10; //Значение НКД (накопленного купонного дохода) на дату. Подробнее: [НКД при выставлении торговых поручений](https://russianinvestments.github.io/investAPI/head-orders#coupon)
 
   string figi = 11; // Figi-идентификатор инструмента.
   OrderDirection direction = 12; //Направление сделки.
