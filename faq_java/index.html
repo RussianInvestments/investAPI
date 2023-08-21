@@ -1488,7 +1488,7 @@
 <h3 id="_4">Метаданные</h3>
 <p>Метаданные - аналог заголовков в HTTP.</p>
 <h4 id="_5">Передача метаданных запроса</h4>
-<p>Для использования API необходимо передавать метаданные с ключом <code>"Authorization"</code> и значением <code>"bearer {token}"</code>. <a href="https://tinkoff.github.io/investAPI/token/">Подробнее здесь</a>.
+<p>Для использования API необходимо передавать метаданные с ключом <code>"Authorization"</code> и значением <code>"bearer {token}"</code>. <a href="https://russianinvestments.github.io/investAPI/token/">Подробнее здесь</a>.
 Можно добавить перехватчик в канал с помощью метода <code>io.grpc.ManagedChannelBuilder#intercept(io.grpc.ClientInterceptor...)</code>. Пример авторизационного перехватичка:</p>
 <pre><code class="language-java">public class AuthInterceptor implements ClientInterceptor {
 
@@ -1515,14 +1515,14 @@
 }
 </code></pre>
 <h4 id="_6">Получение метаданных ответа</h4>
-<p>В метаданных ответа для unary-методов передаются <a href="https://tinkoff.github.io/investAPI/grpc/#tracking-id">идентификатор отслеживания</a> и описание ошибки.
+<p>В метаданных ответа для unary-методов передаются <a href="https://russianinvestments.github.io/investAPI/grpc/#tracking-id">идентификатор отслеживания</a> и описание ошибки.
 Для получения метаданных ответа можно использовать перехватчик <code>io.grpc.stub.MetadataUtils#newCaptureMetadataInterceptor</code>, например:</p>
 <pre><code class="language-java">var headersCapture = new AtomicReference&lt;Metadata&gt;();
 var trailersCapture = new AtomicReference&lt;Metadata&gt;();
 instruments.withInterceptors(MetadataUtils.newCaptureMetadataInterceptor(headersCapture, trailersCapture)).getInstrumentBy(...);
 </code></pre>
 <p>После выполнения метода переменная <code>headersCapture</code> будет содержать метаданные ответа.</p>
-<p>При работе с методами клиентов исключения следует конвертировать в статус с помощью <code>io.grpc.Status#fromThrowable</code>. В поле <code>description</code> статуса будет содержаться <a href="https://tinkoff.github.io/investAPI/errors/">код ошибки</a>.</p>
+<p>При работе с методами клиентов исключения следует конвертировать в статус с помощью <code>io.grpc.Status#fromThrowable</code>. В поле <code>description</code> статуса будет содержаться <a href="https://russianinvestments.github.io/investAPI/errors/">код ошибки</a>.</p>
                 
               
               

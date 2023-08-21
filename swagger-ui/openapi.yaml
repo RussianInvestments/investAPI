@@ -17,7 +17,7 @@ security:
   - Bearer: []
 externalDocs:
   description: Документация Tinkoff Invest API
-  url: https://tinkoff.github.io/investAPI/
+  url: https://russianinvestments.github.io/investAPI/
 tags:
   - name: InstrumentsService
   - name: MarketDataService
@@ -6802,7 +6802,7 @@ components:
       title: >-
         Тип идентификатора инструмента. Подробнее об идентификации инструментов:
         [Идентификация
-        инструментов](https://tinkoff.github.io/investAPI/faq_identification/)
+        инструментов](https://russianinvestments.github.io/investAPI/faq_identification/)
       type: string
     v1InstrumentLink:
       description: Связь с другим инструментом.
