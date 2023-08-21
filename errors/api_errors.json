@@ -32,7 +32,7 @@
   "30005": {
     "message": "'id_type' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *id_type* имеет некорректное значение.</br>Список доступных значений: [*id_type*](https://tinkoff.github.io/investAPI/instruments#instrumentidtype)."
+    "description": "Входной параметр *id_type* имеет некорректное значение.</br>Список доступных значений: [*id_type*](https://russianinvestments.github.io/investAPI/instruments#instrumentidtype)."
   },
   "30006": {
     "message": "missing parameter: 'id_type'",
@@ -62,7 +62,7 @@
   "30011": {
     "message": "interval is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *interval* имеет некорректное значение.</br>Список доступных значений: [*interval*](https://tinkoff.github.io/investAPI/marketdata#subscriptioninterval)."
+    "description": "Входной параметр *interval* имеет некорректное значение.</br>Список доступных значений: [*interval*](https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval)."
   },
   "30012": {
     "message": "'to' can't be less than 'from'",
@@ -72,12 +72,12 @@
   "30013": {
     "message": "'class_code' require for 'id_type' = 'ticker'",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *class_code* не может быть пустым при поиске по тикеру.</br>Укажите корректный параметр *class_code*.</br>Подробнее: [Идентификация инструментов](https://tinkoff.github.io/investAPI/faq_identification/)."
+    "description": "Входной параметр *class_code* не может быть пустым при поиске по тикеру.</br>Укажите корректный параметр *class_code*.</br>Подробнее: [Идентификация инструментов](https://russianinvestments.github.io/investAPI/faq_identification/)."
   },
   "30014": {
     "message": "the maximum request period for the given candle interval has been exceeded",
     "type": "INVALID_ARGUMENT",
-    "description": "Превышен максимальный период запроса для данного интервала свечи.</br>Укажите корректный интервал.</br>Подробнее: [Интервалы свечей и доступные периоды](https://tinkoff.github.io/investAPI/load_history/)."
+    "description": "Превышен максимальный период запроса для данного интервала свечи.</br>Укажите корректный интервал.</br>Подробнее: [Интервалы свечей и доступные периоды](https://russianinvestments.github.io/investAPI/load_history/)."
   },
   "30015": {
     "message": "parameter 'quantity' is missing or equal to 0",
@@ -117,17 +117,17 @@
   "30022": {
     "message": "missing parameter: 'state'",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *state* является обязательным.</br>Укажите корректный параметр *state*.</br>Список доступных значений: [*direction*](https://tinkoff.github.io/investAPI/operations/#operationstate)."
+    "description": "Входной параметр *state* является обязательным.</br>Укажите корректный параметр *state*.</br>Список доступных значений: [*direction*](https://russianinvestments.github.io/investAPI/operations/#operationstate)."
   },
   "30023": {
     "message": "invalid parameter: 'state'",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *state* имеет некорректное значение.</br>Укажите корректный параметр *state*.</br>Список доступных значений: [*direction*](https://tinkoff.github.io/investAPI/operations/#operationstate)."
+    "description": "Входной параметр *state* имеет некорректное значение.</br>Укажите корректный параметр *state*.</br>Список доступных значений: [*direction*](https://russianinvestments.github.io/investAPI/operations/#operationstate)."
   },
   "30025": {
     "message": "missing parameter: 'order_type'",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *order_type* является обязательным.</br>Укажите корректный параметр *order_type*. Список доступных значений: [*order_type*](https://tinkoff.github.io/investAPI/orders/#ordertype)."
+    "description": "Входной параметр *order_type* является обязательным.</br>Укажите корректный параметр *order_type*. Список доступных значений: [*order_type*](https://russianinvestments.github.io/investAPI/orders/#ordertype)."
   },
   "30026": {
     "message": "invalid parameter: 'order_type'",
@@ -172,7 +172,7 @@
   "30034": {
     "message": "not enough balance",
     "type": "INVALID_ARGUMENT",
-    "description": "Недостаточно средств для совершения сделки (ошибка песочницы).</br>Пополните баланс нужной валюты c помощью метода [*SandboxPayIn*](https://tinkoff.github.io/investAPI/sandbox#sandboxpayin)."
+    "description": "Недостаточно средств для совершения сделки (ошибка песочницы).</br>Пополните баланс нужной валюты c помощью метода [*SandboxPayIn*](https://russianinvestments.github.io/investAPI/sandbox#sandboxpayin)."
   },
   "30036": {
     "message": "missing parameter: 'stop_price'",
@@ -187,7 +187,7 @@
   "30038": {
     "message": "'stop_order_type' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *stop_order_type* имеет некорректное значение.</br>Список доступных значений: [*stop_order_type*](https://tinkoff.github.io/investAPI/stoporders/#stopordertype)."
+    "description": "Входной параметр *stop_order_type* имеет некорректное значение.</br>Список доступных значений: [*stop_order_type*](https://russianinvestments.github.io/investAPI/stoporders/#stopordertype)."
   },
   "30040": {
     "message": "'expire_date' is invalid",
@@ -202,7 +202,7 @@
   "30042": {
     "message": "not enough assets for a margin trade",
     "type": "INVALID_ARGUMENT",
-    "description": "Недостаточно активов для маржинальной сделки.</br>Проверьте маржинальные показатели счёта. Вы можете сделать это с помощью метода [*GetMarginAttributes*](https://tinkoff.github.io/investAPI/users#getmarginattributes)."
+    "description": "Недостаточно активов для маржинальной сделки.</br>Проверьте маржинальные показатели счёта. Вы можете сделать это с помощью метода [*GetMarginAttributes*](https://russianinvestments.github.io/investAPI/users#getmarginattributes)."
   },
   "30043": {
     "message": "missing parameter: 'expiration_type'",
@@ -212,7 +212,7 @@
   "30044": {
     "message": "'expiration_type' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *expiration_type* имеет некорректное значение.</br>Список доступных значений: [*expiration_type*](https://tinkoff.github.io/investAPI/stoporders/#stoporderexpirationtype)."
+    "description": "Входной параметр *expiration_type* имеет некорректное значение.</br>Список доступных значений: [*expiration_type*](https://russianinvestments.github.io/investAPI/stoporders/#stoporderexpirationtype)."
   },
   "30045": {
     "message": "missing parameter: 'ticker'",
@@ -222,7 +222,7 @@
   "30047": {
     "message": "price currency does not match the settlement currency",
     "type": "INVALID_ARGUMENT",
-    "description": "Валюта цены не совпадает с валютой расчётов по инструменту.</br>Укажите корректную валюту цены. Узнать валюту расчета конкретного инструмента вы можете с помощью метода [*GetInstrumentBy*](https://tinkoff.github.io/investAPI/instruments#getinstrumentby). "
+    "description": "Валюта цены не совпадает с валютой расчётов по инструменту.</br>Укажите корректную валюту цены. Узнать валюту расчета конкретного инструмента вы можете с помощью метода [*GetInstrumentBy*](https://russianinvestments.github.io/investAPI/instruments#getinstrumentby). "
   },
   "30048": {
     "message": "instrument type is not bond",
@@ -237,7 +237,7 @@
   "30050": {
     "message": "'instrument_status' is invalid",
     "type": "INVALID_ARGUMENT",
-    "description": "Входной параметр *instrument_status* имеет некорректное значение.</br>Список доступных значений: [*instrument_status*](https://tinkoff.github.io/investAPI/instruments#instrumentstatus)."
+    "description": "Входной параметр *instrument_status* имеет некорректное значение.</br>Список доступных значений: [*instrument_status*](https://russianinvestments.github.io/investAPI/instruments#instrumentstatus)."
   },
   "30051": {
     "message": "account margin status is disabled",
@@ -247,7 +247,7 @@
   "30052": {
     "message": "instrument forbidden for trading by API",
     "type": "INVALID_ARGUMENT",
-    "description": "Для данного инструмента недоступна торговля через API.</br>Вы можете проверить значение параметра api_trade_available_flag данного инструмента c помощью метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus)."
+    "description": "Для данного инструмента недоступна торговля через API.</br>Вы можете проверить значение параметра api_trade_available_flag данного инструмента c помощью метода [*GetTradingStatus*](https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus)."
   },
   "30053": {
     "message": "post stop_order error: %s",
@@ -327,7 +327,7 @@
   "30068": {
     "message": "Only limit order is allowed",
     "type": "INVALID_ARGUMENT",
-    "description": "В настоящий момент возможно выставление только лимитного торгового поручения. Подробнее про [выставление торговых поручений](https://tinkoff.github.io/investAPI/orders_details)."
+    "description": "В настоящий момент возможно выставление только лимитного торгового поручения. Подробнее про [выставление торговых поручений](https://russianinvestments.github.io/investAPI/orders_details)."
   },
   "30069": {
     "message": "Invalid parameter: 'limit'",
@@ -342,7 +342,7 @@
   "30077": {
     "message": "not available for OTC instruments",
     "type": "INVALID_ARGUMENT",
-    "description": "Метод недоступен для внебиржевых инструментов.</br>У таких инструментов параметр api_trade_available_flag метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus) будет иметь значение false."
+    "description": "Метод недоступен для внебиржевых инструментов.</br>У таких инструментов параметр api_trade_available_flag метода [*GetTradingStatus*](https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus) будет иметь значение false."
   },
   "30078": {
     "message": "Incorrect minimum price increment",
@@ -352,7 +352,7 @@
   "30079": {
     "message": "instrument is not available for trading",
     "type": "INVALID_ARGUMENT",
-    "description": "Инструмент недоступен для торгов. Подробнее о [торговых статусах](https://tinkoff.github.io/investAPI/faq_trading_status)."
+    "description": "Инструмент недоступен для торгов. Подробнее о [торговых статусах](https://russianinvestments.github.io/investAPI/faq_trading_status)."
   },
   "30080": {
     "message": "quantity must be positive",
@@ -417,7 +417,7 @@
   "30092": {
     "message": "trading unavailable on weekends",
     "type": "INVALID_ARGUMENT",
-    "description": "Торги недоступны по нерабочим дням. Больше о [торговых сессиях](https://tinkoff.github.io/investAPI/markets)."
+    "description": "Торги недоступны по нерабочим дням. Больше о [торговых сессиях](https://russianinvestments.github.io/investAPI/markets)."
   },
   "30093": {
     "message": "missing parameter: 'figi' or 'instrument_id'",
@@ -442,17 +442,17 @@
   "30097": {
     "message": "inappropriate trading session",
     "type": "INVALID_ARGUMENT",
-    "description": "Сейчас эта сессия не идёт. Больше о [торговых сессиях](https://tinkoff.github.io/investAPI/markets)."
+    "description": "Сейчас эта сессия не идёт. Больше о [торговых сессиях](https://russianinvestments.github.io/investAPI/markets)."
   },
   "30098": {
     "message": "currently, there is no trading on this financial instrument",
     "type": "INVALID_ARGUMENT",
-    "description": "Торги по этому финансовому инструменту сейчас не проводятся.</br>Вы можете проверить актуальный торговый статус инструмента с помощью метода [*GetTradingStatus*](https://tinkoff.github.io/investAPI/marketdata#gettradingstatus)."
+    "description": "Торги по этому финансовому инструменту сейчас не проводятся.</br>Вы можете проверить актуальный торговый статус инструмента с помощью метода [*GetTradingStatus*](https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus)."
   },
   "30099": {
     "message": "the price is outside the limits for this instrument",
     "type": "INVALID_ARGUMENT",
-    "description": "Цена вне лимитов по инструменту или цена сделки вне лимита. Подробнее про [выставление торговых поручений](https://tinkoff.github.io/investAPI/orders_details)."
+    "description": "Цена вне лимитов по инструменту или цена сделки вне лимита. Подробнее про [выставление торговых поручений](https://russianinvestments.github.io/investAPI/orders_details)."
   },
   "30100": {
     "message": "the price must be positive",
@@ -502,7 +502,7 @@
   "40002": {
     "message": "insufficient privileges",
     "type": "PERMISSION_DENIED",
-    "description": "Недостаточно прав для совершения операции.</br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://tinkoff.github.io/investAPI/index#_2)"
+    "description": "Недостаточно прав для совершения операции.</br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://russianinvestments.github.io/investAPI/index#_2)"
   },
   "40003": {
     "message": "authentication token is missing or invalid",
@@ -578,12 +578,12 @@
   "80001": {
     "message": "limit of open streams exceeded",
     "type": "RESOURCE_EXHAUSTED",
-    "description": "Превышен лимит одновременных открытых stream-соединений. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)"
+    "description": "Превышен лимит одновременных открытых stream-соединений. Подробнее: [Лимитная политика](https://russianinvestments.github.io/investAPI/limits/)"
   },
   "80002": {
     "message": "request limit exceeded",
     "type": "RESOURCE_EXHAUSTED",
-    "description": "Превышен лимит запросов в минуту. Подробнее: [Лимитная политика](https://tinkoff.github.io/investAPI/limits/)"
+    "description": "Превышен лимит запросов в минуту. Подробнее: [Лимитная политика](https://russianinvestments.github.io/investAPI/limits/)"
   },
   "80003": {
     "message": "The limit on SMS sending has been exceeded, try again in a minute",
@@ -603,6 +603,6 @@
   "90003": {
     "message": "The price is too high",
     "type": "FAILED_PRECONDITION",
-    "description": "Цена заявки слишком высокая. Разбейте заявку на заявки меньшего размера. Подробнее: [Ограничения на стоимость заявки](https://tinkoff.github.io/investAPI/faq_orders/)."
+    "description": "Цена заявки слишком высокая. Разбейте заявку на заявки меньшего размера. Подробнее: [Ограничения на стоимость заявки](https://russianinvestments.github.io/investAPI/faq_orders/)."
   }
 }
