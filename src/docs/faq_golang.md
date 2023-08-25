@@ -1,7 +1,7 @@
 
 ####Официальный SDK:
 
-* [invest-api-go-sdk](https://github.comRussianInvestments/invest-api-go-sdk)
+* [invest-api-go-sdk](https://github.com/RussianInvestments/invest-api-go-sdk)
 * [примеры](https://github.com/RussianInvestments/invest-api-go-sdk/tree/main/examples)
 * [загрузчик стаканов из стриминга](https://github.com/RussianInvestments/invest-api-go-sdk/blob/main/examples/order_book_download/order_book.go)
 
