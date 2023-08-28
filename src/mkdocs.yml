@@ -90,4 +90,6 @@ nav:
   - Методы: sandbox.md
   - FAQ: faq_sandbox.md
   - Отличия контура песочницы: url_difference.md
-- Коды ошибок: errors.md
+- Коды ошибок: 
+  - "GRPC": errors.md 
+  - "WebSocket": ws\errors.md
