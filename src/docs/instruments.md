@@ -1625,13 +1625,9 @@ Deprecated Метод получения списка опционов.
  <!-- range HasServices -->
  <!-- range .Files -->
 
-#### SecurityTradingStatus
-
+#### InstrumentType
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| SECURITY_TRADING_STATUS_UNSPECIFIED | 0 | Торговый статус не определён |
-| SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING | 1 | Недоступен для торгов |
-| SECURITY_TRADING_STATUS_OPENING_PERIOD | 2 | Период открытия торгов |
 | INSTRUMENT_TYPE_UNSPECIFIED | 0 | Тип инструмента не определён |
 | INSTRUMENT_TYPE_BOND | 1 | Облигация |
 | INSTRUMENT_TYPE_SHARE | 2 | Акция |
