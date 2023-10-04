@@ -156,7 +156,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Изменение статуса подписки. |
 | instruments | Массив объектов [CandleInstrument](#candleinstrument) | Массив инструментов для подписки на свечи. |
-| waiting_close |  [bool](#bool) | Флаг ожидания закрытия временного интервала для отправки свечи, применяется только для минутных свечей. |
+| waiting_close |  [bool](#bool) | Флаг ожидания закрытия временного интервала для отправки свечи. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -196,6 +196,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | interval |  [SubscriptionInterval](#subscriptioninterval) | Интервал свечей. |
 | subscription_status |  [SubscriptionStatus](#subscriptionstatus) | Статус подписки. |
 | instrument_uid |  [string](#string) | Uid инструмента |
+| waiting_close |  [bool](#bool) | Флаг ожидания закрытия временного интервала для отправки свечи |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -719,6 +720,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | figi |  [string](#string) | Figi инструмента. |
 | instrument_uid |  [string](#string) | Uid инструмента. |
 | price |  [Quotation](#quotation) | Цена закрытия торговой сессии. |
+| evening_session_price |  [Quotation](#quotation) | Цена последней сделки с вечерней сессии |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата совершения торгов. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -747,6 +749,17 @@ subscribeCandles | Изменения статуса подписки на св�
 | SUBSCRIPTION_INTERVAL_UNSPECIFIED | 0 | Интервал свечи не определён. |
 | SUBSCRIPTION_INTERVAL_ONE_MINUTE | 1 | Минутные свечи. |
 | SUBSCRIPTION_INTERVAL_FIVE_MINUTES | 2 | Пятиминутные свечи. |
+| SUBSCRIPTION_INTERVAL_FIFTEEN_MINUTES | 3 | Пятнадцатиминутные свечи |
+| SUBSCRIPTION_INTERVAL_ONE_HOUR | 4 | Часовые свечи |
+| SUBSCRIPTION_INTERVAL_ONE_DAY | 5 | Дневные свечи |
+| SUBSCRIPTION_INTERVAL_2_MIN | 6 | Двухминутные свечи |
+| SUBSCRIPTION_INTERVAL_3_MIN | 7 | Трехминутные свечи |
+| SUBSCRIPTION_INTERVAL_10_MIN | 8 | Десятиминутные свечи |
+| SUBSCRIPTION_INTERVAL_30_MIN | 9 | Тридцатиминутные свечи |
+| SUBSCRIPTION_INTERVAL_2_HOUR | 10 | Двухчасовые свечи |
+| SUBSCRIPTION_INTERVAL_4_HOUR | 11 | Четырехчасовые свечи |
+| SUBSCRIPTION_INTERVAL_WEEK | 12 | Недельные свечи |
+| SUBSCRIPTION_INTERVAL_MONTH | 13 | Месячные свечи |
 
 
 
@@ -828,6 +841,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING | 14 |Доступна торговля в режиме внутренней ликвидности брокера |
 | SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING | 15 |Перерыв торговли в режиме внутренней ликвидности брокера |
 | SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING | 16 |Недоступна торговля в режиме внутренней ликвидности брокера |
+
 
 ### Нестандартные типы данных
 

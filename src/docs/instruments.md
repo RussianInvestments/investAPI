@@ -227,6 +227,14 @@ Deprecated Метод получения списка опционов.
 
 - Тело ответа — [Brand](#brand)
 
+
+#### GetAssetFundamentals
+Метод получения фундаментальных показателей по активу
+
+- Тело запроса — [GetAssetFundamentalsRequest](#getassetfundamentalsrequest)
+
+- Тело ответа — [GetAssetFundamentalsResponse](#getassetfundamentalsresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -901,7 +909,7 @@ Deprecated Метод получения списка опционов.
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
 | kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| dlong |  [Quotation](#quotation) | ССтавка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
 | dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
 | dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
 | dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
@@ -1444,6 +1452,94 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | brands | Массив объектов [Brand](#brand) | Массив брендов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetAssetFundamentalsRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| assets | Массив объектов [string](#string) | Массив идентификаторов активов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetAssetFundamentalsResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| fundamentals | Массив объектов [GetAssetFundamentalsResponse.StatisticResponse](#getassetfundamentalsresponsestatisticresponse) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetAssetFundamentalsResponse.StatisticResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| asset_uid |  [string](#string) |  |
+| currency |  [string](#string) | Валюта |
+| market_capitalization |  [double](#double) | Рыночная капитализация |
+| high_price_last_52_weeks |  [double](#double) | Максимум за год |
+| low_price_last_52_weeks |  [double](#double) | Минимум за год |
+| average_daily_volume_last_10_days |  [double](#double) | Средний объем торгов за 10 дней |
+| average_daily_volume_last_4_weeks |  [double](#double) | Средний объем торгов за месяц |
+| beta |  [double](#double) |  |
+| free_float |  [double](#double) | Доля акций в свободном обращении |
+| forward_annual_dividend_yield |  [double](#double) | Процент форвардной дивидендной доходности по отношению к цене акций. |
+| shares_outstanding |  [double](#double) | Количество акций в обращении |
+| revenue_ttm |  [double](#double) | Выручка |
+| ebitda_ttm |  [double](#double) | EBITDA Прибыль до вычета процентов, налогов, износа и амортизации |
+| net_income_ttm |  [double](#double) | Чистая прибыль |
+| eps_ttm |  [double](#double) | EPS Величина чистой прибыли компании, приходящуюся на каждую обыкновенную акцию |
+| diluted_eps_ttm |  [double](#double) | EPS компании с допущением, что все конвертируемые ценные бумаги компании были сконвертированы в обыкновенные акции |
+| free_cash_flow_ttm |  [double](#double) | Свободный денежный поток |
+| five_year_annual_revenue_growth_rate |  [double](#double) | Среднегодовой  рocт выручки (за 5 лет) |
+| three_year_annual_revenue_growth_rate |  [double](#double) | Среднегодовой  рocт выручки (за 3 года) |
+| pe_ratio_ttm |  [double](#double) | Показывает соотношение рыночной капитализации компании к ее чистой прибыли |
+| price_to_sales_ttm |  [double](#double) | Показывает соотношение рыночной капитализации компании к ее выручке |
+| price_to_book_ttm |  [double](#double) | Показывает соотношение рыночной капитализации компании к ее балансовой стоимости |
+| price_to_free_cash_flow_ttm |  [double](#double) | Показывает соотношение рыночной капитализации компании к ее свободному денежному потоку |
+| total_enterprise_value_mrq |  [double](#double) | Рыночная стоимость компании |
+| ev_to_ebitda_mrq |  [double](#double) | Соотношение EV и EBITDA |
+| net_margin_mrq |  [double](#double) | Маржа чистой прибыли |
+| net_interest_margin_mrq |  [double](#double) | Рентабельность чистой прибыли |
+| roe |  [double](#double) | Рентабельность собственного капитала |
+| roa |  [double](#double) | Рентабельность активов |
+| roic |  [double](#double) | Рентабельность активов |
+| total_debt_mrq |  [double](#double) | Сумма краткосрочных и долгосрочных обязательств компании |
+| total_debt_to_equity_mrq |  [double](#double) | Соотношение долга к собственному капиталу |
+| total_debt_to_ebitda_mrq |  [double](#double) | Total Debt/EBITDA |
+| free_cash_flow_to_price |  [double](#double) | Отношение свободглго кэша к стоимости |
+| net_debt_to_ebitda |  [double](#double) | Отношение чистого долга к ebitda |
+| current_ratio_mrq |  [double](#double) | Коэффициент текущей ликвидности |
+| fixed_charge_coverage_ratio_fy |  [double](#double) | Коэффициент покрытия фиксированных платежей (FCCR) |
+| dividend_yield_daily_ttm |  [double](#double) | Дивидендная доходность за 12 мес |
+| dividend_rate_ttm |  [double](#double) | Выплаченные дивиденды за 12 мес. |
+| dividends_per_share |  [double](#double) | Значение дивидендов на акцию |
+| five_years_average_dividend_yield |  [double](#double) | Средняя дивидендная доходность за 5 лет |
+| five_year_annual_dividend_growth_rate |  [double](#double) | Среднегодовой рост дивидендов за 5 лет |
+| dividend_payout_ratio_fy |  [double](#double) | Процент чистой прибыли, уходящий на выплату дивидендов |
+| buy_back_ttm |  [double](#double) | Деньги, потраченные на обратный выкуп акций |
+| one_year_annual_revenue_growth_rate |  [double](#double) | Рост выручки за 1 год |
+| domicile_indicator_code |  [string](#string) | Код страны |
+| adr_to_common_share_ratio |  [double](#double) | Соотношение депозитарной расписки к акциям |
+| number_of_employees |  [double](#double) | Количество сотрудников |
+| ex_dividend_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) |  |
+| fiscal_period_start_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало фискального периода |
+| fiscal_period_end_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Конец фискального периода |
+| revenue_change_five_years |  [double](#double) | Изменение общего дохода за 5 лет |
+| eps_change_five_years |  [double](#double) | Изменение eps за 5 лет |
+| ebitda_change_five_years |  [double](#double) | Изменение ebitda за 5 лет |
+| total_debt_change_five_years |  [double](#double) | Изменение общей задолжности за 5 лет |
+| ev_to_sales |  [double](#double) | Отношение EV к выручке |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

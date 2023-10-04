@@ -67,6 +67,14 @@ Stream сделок пользователя
 
 - Тело ответа — [PostOrderResponse](#postorderresponse)
 
+
+#### GetMaxLots
+расчет количества доступных для покупки/продажи лотов
+
+- Тело запроса — [GetMaxLotsRequest](#getmaxlotsrequest)
+
+- Тело ответа — [GetMaxLotsResponse](#getmaxlotsresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -142,6 +150,7 @@ Stream сделок пользователя
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов. |
 | instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
+| time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -169,6 +178,7 @@ Stream сделок пользователя
 | message |  [string](#string) | Дополнительные данные об исполнении заявки. |
 | initial_order_price_pt |  [Quotation](#quotation) | Начальная цена заявки в пунктах (для фьючерсов). |
 | instrument_uid |  [string](#string) | UID идентификатор инструмента. |
+| order_request_id |  [string](#string) | Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -287,6 +297,58 @@ Stream сделок пользователя
 | price_type |  [PriceType](#pricetype) | Тип цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
+
+
+#### GetMaxLotsRequest
+Запрос на расчет количества доступных для покупки/продажи лотов
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| account_id |  [string](#string) | Номер счета |
+| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или instrument_uid |
+| price |  [Quotation](#quotation) | Цена инструмента |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetMaxLotsResponse
+Результат количество доступных для покупки/продажи лотов
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| currency |  [string](#string) | Валюта инструмента |
+| buy_limits |  [GetMaxLotsResponse.BuyLimitsView](#getmaxlotsresponsebuylimitsview) | Лимиты для покупок на собственные деньги |
+| buy_margin_limits |  [GetMaxLotsResponse.BuyLimitsView](#getmaxlotsresponsebuylimitsview) | Лимиты для покупок с учетом маржинального кредитования |
+| sell_limits |  [GetMaxLotsResponse.SellLimitsView](#getmaxlotsresponseselllimitsview) | Лимиты для продаж по собственной позиции |
+| sell_margin_limits |  [GetMaxLotsResponse.SellLimitsView](#getmaxlotsresponseselllimitsview) | Лимиты для продаж с учетом маржинального кредитования |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetMaxLotsResponse.BuyLimitsView
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| buy_money_amount |  [Quotation](#quotation) | Количество доступной валюты для покупки |
+| buy_max_lots |  [int64](#int64) | Максимальное доступное количество лотов для покупки |
+| buy_max_market_lots |  [int64](#int64) | Максимальное доступное количество лотов для покупки для заявки по рыночной цене на текущий момент |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetMaxLotsResponse.SellLimitsView
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| sell_max_lots |  [int64](#int64) | Максимальное доступное количество лотов для продажи |
+ <!-- end Fields -->
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ### Enums
@@ -332,19 +394,29 @@ Stream сделок пользователя
 
 
 
-#### PriceType
-Тип цены.
+#### TimeInForceType
+
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| PRICE_TYPE_UNSPECIFIED | 0 | Значение не определено. |
-| PRICE_TYPE_POINT | 1 | Цена в пунктах (только для фьючерсов и облигаций). |
-| PRICE_TYPE_CURRENCY | 2 | Цена в валюте расчётов по инструменту. |
+| TIME_IN_FORCE_UNSPECIFIED | 0 | Значение не определено см. TIME_IN_FORCE_DAY |
+| TIME_IN_FORCE_DAY | 1 | заявка действует до конца торгового дня. значение по умолчанию |
+| TIME_IN_FORCE_FILL_AND_KILL | 2 | заявка исполнена(возможно частично) и уничтожена. |
+| TIME_IN_FORCE_FILL_OR_KILL | 3 | заявка исполнения полностью или уничтожена |
 
 
  <!-- range .Enums -->
  <!-- range HasServices -->
  <!-- range .Files -->
+
+#### PriceType
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PRICE_TYPE_UNSPECIFIED | 0 | Значение не определено |
+| PRICE_TYPE_POINT | 1 | Цена в пунктах (только для фьючерсов и облигаций) |
+| PRICE_TYPE_CURRENCY | 2 | Цена в валюте расчётов по инструменту |
+
 
 ### Нестандартные типы данных
 
@@ -366,3 +438,21 @@ Stream сделок пользователя
 | units |  [int64](#int64) | Целая часть суммы, может быть отрицательным числом |
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
 
+
+
+####Числа с плавающей точкой(запятой)
+
+В программировании часто используют типы данных с плавающей точкой, например float или double. Такие типы данных - компромисc между скоростью, диапазоном значений и точностью. 
+Число с плавающей точкой имеет фиксированную относительную точность и изменяющуюся абсолютную. Поэтому мы используем тыпы данных MoneyValue и  Quotation.
+
+Для всех заявок и котировок на бирже устанавливается [шаг цены](https://russianinvestments.github.io/investAPI/faq_marketdata/#2.1). В случае использовании чисел с плавающей точкой необходимо проверять, что переданное в запросе значение соответствует шагу цены инструмента.
+
+#####Пример
+
+Шаг цены для инструмента = `0.1`. Хотим выставить заявку по цене `256.8`, что соответствует шагу цены. Если представить число `256.8` в формате типа данных float, то значение будет [`256.79998779296875`](https://baseconvert.com/ieee-754-floating-point).
+
+При выставлении заявки по этой цене на стороне брокера будет выполнено округление таким образом, чтобы не ухудшить поручение клиента:
+
+-`256.7` в случае покупки
+
+-`256.8` в случае продажи
