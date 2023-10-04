@@ -100,6 +100,17 @@ enum SubscriptionInterval {
   SUBSCRIPTION_INTERVAL_UNSPECIFIED = 0; //Интервал свечи не определён.
   SUBSCRIPTION_INTERVAL_ONE_MINUTE = 1; //Минутные свечи.
   SUBSCRIPTION_INTERVAL_FIVE_MINUTES = 2; //Пятиминутные свечи.
+  SUBSCRIPTION_INTERVAL_FIFTEEN_MINUTES = 3; //Пятнадцатиминутные свечи
+  SUBSCRIPTION_INTERVAL_ONE_HOUR = 4; //Часовые свечи
+  SUBSCRIPTION_INTERVAL_ONE_DAY = 5; //Дневные свечи
+  SUBSCRIPTION_INTERVAL_2_MIN = 6; //Двухминутные свечи
+  SUBSCRIPTION_INTERVAL_3_MIN = 7; //Трехминутные свечи
+  SUBSCRIPTION_INTERVAL_10_MIN = 8; //Десятиминутные свечи
+  SUBSCRIPTION_INTERVAL_30_MIN = 9; //Тридцатиминутные свечи
+  SUBSCRIPTION_INTERVAL_2_HOUR = 10; //Двухчасовые свечи
+  SUBSCRIPTION_INTERVAL_4_HOUR = 11; //Четырехчасовые свечи
+  SUBSCRIPTION_INTERVAL_WEEK = 12; //Недельные свечи
+  SUBSCRIPTION_INTERVAL_MONTH = 13; //Месячные свечи
 }
 
 //Запрос изменения статус подписки на свечи.
@@ -121,6 +132,7 @@ message CandleSubscription {
   SubscriptionInterval interval = 2; //Интервал свечей.
   SubscriptionStatus subscription_status = 3; //Статус подписки.
   string instrument_uid = 4; //Uid инструмента
+  bool waiting_close = 5; //Флаг ожидания закрытия временного интервала для отправки свечи
 }
 
 //Результат подписки.
@@ -446,5 +458,6 @@ message InstrumentClosePriceResponse {
   string figi = 1; //Figi инструмента.
   string instrument_uid = 2; //Uid инструмента.
   Quotation price = 11; //Цена закрытия торговой сессии.
+  Quotation evening_session_price = 12; //Цена последней сделки с вечерней сессии
   google.protobuf.Timestamp time = 21; //Дата совершения торгов.
 }

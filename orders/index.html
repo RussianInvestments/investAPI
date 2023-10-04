@@ -991,6 +991,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getmaxlots" class="md-nav__link">
+    GetMaxLots
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1102,6 +1109,34 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getmaxlotsrequest" class="md-nav__link">
+    GetMaxLotsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxlotsresponse" class="md-nav__link">
+    GetMaxLotsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxlotsresponsebuylimitsview" class="md-nav__link">
+    GetMaxLotsResponse.BuyLimitsView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxlotsresponseselllimitsview" class="md-nav__link">
+    GetMaxLotsResponse.SellLimitsView
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1137,6 +1172,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#timeinforcetype" class="md-nav__link">
+    TimeInForceType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pricetype" class="md-nav__link">
     PriceType
   </a>
@@ -1167,6 +1209,26 @@
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Числа с плавающей точкой(запятой)
+  </a>
+  
+    <nav class="md-nav" aria-label="Числа с плавающей точкой(запятой)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Пример
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1679,6 +1741,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getmaxlots" class="md-nav__link">
+    GetMaxLots
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1790,6 +1859,34 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getmaxlotsrequest" class="md-nav__link">
+    GetMaxLotsRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxlotsresponse" class="md-nav__link">
+    GetMaxLotsResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxlotsresponsebuylimitsview" class="md-nav__link">
+    GetMaxLotsResponse.BuyLimitsView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getmaxlotsresponseselllimitsview" class="md-nav__link">
+    GetMaxLotsResponse.SellLimitsView
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1825,6 +1922,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#timeinforcetype" class="md-nav__link">
+    TimeInForceType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pricetype" class="md-nav__link">
     PriceType
   </a>
@@ -1855,6 +1959,26 @@
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Числа с плавающей точкой(запятой)
+  </a>
+  
+    <nav class="md-nav" aria-label="Числа с плавающей точкой(запятой)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Пример
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1954,6 +2078,16 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#postorderresponse">PostOrderResponse</a></p>
+</li>
+</ul>
+<h4 id="getmaxlots">GetMaxLots</h4>
+<p>расчет количества доступных для покупки/продажи лотов</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getmaxlotsrequest">GetMaxLotsRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getmaxlotsresponse">GetMaxLotsResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -2162,6 +2296,11 @@
 <td>Идентификатор инструмента, принимает значения Figi или Instrument_uid.</td>
 </tr>
 <tr>
+<td>time_in_force</td>
+<td><a href="#timeinforcetype">TimeInForceType</a></td>
+<td>Алгоритм исполнения поручения</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -2265,6 +2404,11 @@
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
 <td>UID идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>order_request_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2614,6 +2758,144 @@
 </tbody>
 </table>
 <!-- end HasFields -->
+
+<h4 id="getmaxlotsrequest">GetMaxLotsRequest</h4>
+<p>Запрос на расчет количества доступных для покупки/продажи лотов</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер счета</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значения Figi или instrument_uid</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена инструмента</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getmaxlotsresponse">GetMaxLotsResponse</h4>
+<p>Результат количество доступных для покупки/продажи лотов</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта инструмента</td>
+</tr>
+<tr>
+<td>buy_limits</td>
+<td><a href="#getmaxlotsresponsebuylimitsview">GetMaxLotsResponse.BuyLimitsView</a></td>
+<td>Лимиты для покупок на собственные деньги</td>
+</tr>
+<tr>
+<td>buy_margin_limits</td>
+<td><a href="#getmaxlotsresponsebuylimitsview">GetMaxLotsResponse.BuyLimitsView</a></td>
+<td>Лимиты для покупок с учетом маржинального кредитования</td>
+</tr>
+<tr>
+<td>sell_limits</td>
+<td><a href="#getmaxlotsresponseselllimitsview">GetMaxLotsResponse.SellLimitsView</a></td>
+<td>Лимиты для продаж по собственной позиции</td>
+</tr>
+<tr>
+<td>sell_margin_limits</td>
+<td><a href="#getmaxlotsresponseselllimitsview">GetMaxLotsResponse.SellLimitsView</a></td>
+<td>Лимиты для продаж с учетом маржинального кредитования</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getmaxlotsresponsebuylimitsview">GetMaxLotsResponse.BuyLimitsView</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buy_money_amount</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Количество доступной валюты для покупки</td>
+</tr>
+<tr>
+<td>buy_max_lots</td>
+<td><a href="#int64">int64</a></td>
+<td>Максимальное доступное количество лотов для покупки</td>
+</tr>
+<tr>
+<td>buy_max_market_lots</td>
+<td><a href="#int64">int64</a></td>
+<td>Максимальное доступное количество лотов для покупки для заявки по рыночной цене на текущий момент</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getmaxlotsresponseselllimitsview">GetMaxLotsResponse.SellLimitsView</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sell_max_lots</td>
+<td><a href="#int64">int64</a></td>
+<td>Максимальное доступное количество лотов для продажи</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
 <!-- end messages -->
 
 <h3 id="enums">Enums</h3>
@@ -2721,8 +3003,43 @@
 </tr>
 </tbody>
 </table>
+<h4 id="timeinforcetype">TimeInForceType</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TIME_IN_FORCE_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не определено см. TIME_IN_FORCE_DAY</td>
+</tr>
+<tr>
+<td>TIME_IN_FORCE_DAY</td>
+<td>1</td>
+<td>заявка действует до конца торгового дня. значение по умолчанию</td>
+</tr>
+<tr>
+<td>TIME_IN_FORCE_FILL_AND_KILL</td>
+<td>2</td>
+<td>заявка исполнена(возможно частично) и уничтожена.</td>
+</tr>
+<tr>
+<td>TIME_IN_FORCE_FILL_OR_KILL</td>
+<td>3</td>
+<td>заявка исполнения полностью или уничтожена</td>
+</tr>
+</tbody>
+</table>
+<!-- range .Enums -->
+<!-- range HasServices -->
+<!-- range .Files -->
+
 <h4 id="pricetype">PriceType</h4>
-<p>Тип цены.</p>
 <table>
 <thead>
 <tr>
@@ -2735,24 +3052,20 @@
 <tr>
 <td>PRICE_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не определено.</td>
+<td>Значение не определено</td>
 </tr>
 <tr>
 <td>PRICE_TYPE_POINT</td>
 <td>1</td>
-<td>Цена в пунктах (только для фьючерсов и облигаций).</td>
+<td>Цена в пунктах (только для фьючерсов и облигаций)</td>
 </tr>
 <tr>
 <td>PRICE_TYPE_CURRENCY</td>
 <td>2</td>
-<td>Цена в валюте расчётов по инструменту.</td>
+<td>Цена в валюте расчётов по инструменту</td>
 </tr>
 </tbody>
 </table>
-<!-- range .Enums -->
-<!-- range HasServices -->
-<!-- range .Files -->
-
 <h3 id="_4">Нестандартные типы данных</h3>
 <h4 id="moneyvalue">MoneyValue</h4>
 <p>Денежная сумма в определенной валюте</p>
@@ -2805,6 +3118,15 @@
 </tr>
 </tbody>
 </table>
+<h4 id="_5">Числа с плавающей точкой(запятой)</h4>
+<p>В программировании часто используют типы данных с плавающей точкой, например float или double. Такие типы данных - компромисc между скоростью, диапазоном значений и точностью. 
+Число с плавающей точкой имеет фиксированную относительную точность и изменяющуюся абсолютную. Поэтому мы используем тыпы данных MoneyValue и  Quotation.</p>
+<p>Для всех заявок и котировок на бирже устанавливается <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#2.1">шаг цены</a>. В случае использовании чисел с плавающей точкой необходимо проверять, что переданное в запросе значение соответствует шагу цены инструмента.</p>
+<h5 id="_6">Пример</h5>
+<p>Шаг цены для инструмента = <code>0.1</code>. Хотим выставить заявку по цене <code>256.8</code>, что соответствует шагу цены. Если представить число <code>256.8</code> в формате типа данных float, то значение будет <a href="https://baseconvert.com/ieee-754-floating-point"><code>256.79998779296875</code></a>.</p>
+<p>При выставлении заявки по этой цене на стороне брокера будет выполнено округление таким образом, чтобы не ухудшить поручение клиента:</p>
+<p>-<code>256.7</code> в случае покупки</p>
+<p>-<code>256.8</code> в случае продажи</p>
                 
               
               

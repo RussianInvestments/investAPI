@@ -2821,6 +2821,11 @@
 <td>Uid инструмента</td>
 </tr>
 <tr>
+<td>waiting_close</td>
+<td><a href="#bool">bool</a></td>
+<td>Флаг ожидания закрытия временного интервала для отправки свечи</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -4240,6 +4245,11 @@
 <td>Цена закрытия торговой сессии.</td>
 </tr>
 <tr>
+<td>evening_session_price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена последней сделки с вечерней сессии</td>
+</tr>
+<tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Дата совершения торгов.</td>
@@ -4308,6 +4318,61 @@
 <td>SUBSCRIPTION_INTERVAL_FIVE_MINUTES</td>
 <td>2</td>
 <td>Пятиминутные свечи.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_FIFTEEN_MINUTES</td>
+<td>3</td>
+<td>Пятнадцатиминутные свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_ONE_HOUR</td>
+<td>4</td>
+<td>Часовые свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_ONE_DAY</td>
+<td>5</td>
+<td>Дневные свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_2_MIN</td>
+<td>6</td>
+<td>Двухминутные свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_3_MIN</td>
+<td>7</td>
+<td>Трехминутные свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_10_MIN</td>
+<td>8</td>
+<td>Десятиминутные свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_30_MIN</td>
+<td>9</td>
+<td>Тридцатиминутные свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_2_HOUR</td>
+<td>10</td>
+<td>Двухчасовые свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_4_HOUR</td>
+<td>11</td>
+<td>Четырехчасовые свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_WEEK</td>
+<td>12</td>
+<td>Недельные свечи</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_INTERVAL_MONTH</td>
+<td>13</td>
+<td>Месячные свечи</td>
 </tr>
 </tbody>
 </table>
