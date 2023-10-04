@@ -74,3 +74,10 @@ message Ping {
   //Время проверки.
   google.protobuf.Timestamp time = 1;
 }
+
+//Тип цены.
+enum PriceType {
+  PRICE_TYPE_UNSPECIFIED = 0; //Значение не определено.
+  PRICE_TYPE_POINT = 1; //Цена в пунктах (только для фьючерсов и облигаций).
+  PRICE_TYPE_CURRENCY = 2; //Цена в валюте расчётов по инструменту.
+}
