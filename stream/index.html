@@ -14,7 +14,7 @@
     
     
       
-        <title>Получение исторических рыночных данных - TINKOFF INVEST API</title>
+        <title>Stream-соединения - TINKOFF INVEST API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#stream-" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Получение исторических рыночных данных
+              Stream-соединения
             
           </span>
         </div>
@@ -467,12 +467,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Полезная информация
@@ -596,11 +598,84 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../stream/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Stream-соединения
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Stream-соединения
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ping" class="md-nav__link">
+    Ping
+  </a>
+  
+    <nav class="md-nav" aria-label="Ping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping-responce" class="md-nav__link">
+    Значения Ping-responce сообщений для стримов
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-ratelimits" class="md-nav__link">
+    Websocket ratelimits
+  </a>
+  
+    <nav class="md-nav" aria-label="Websocket ratelimits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Для сервиса определена отдельная лимитная политика
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1010,14 +1085,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
       
       <label class="md-nav__link" for="__nav_10">
         Сервис котировок
@@ -1069,114 +1142,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Получение исторических рыночных данных
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../get_history/" class="md-nav__link">
         Получение исторических рыночных данных
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Загрузка исторических рыночных данных в виде архива
-  </a>
-  
-    <nav class="md-nav" aria-label="Загрузка исторических рыночных данных в виде архива">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Метод загрузки исторических рыночных данных по инструменту в виде годового архива
-  </a>
-  
-    <nav class="md-nav" aria-label="Метод загрузки исторических рыночных данных по инструменту в виде годового архива">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gethistoryrequest" class="md-nav__link">
-    GetHistoryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gethistoryresponse" class="md-nav__link">
-    GetHistoryResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Пример запроса
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Скрипт получения исторических рыночных данных по инструментам в виде годового архива
-  </a>
-  
-    <nav class="md-nav" aria-label="Скрипт получения исторических рыночных данных по инструментам в виде годового архива">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download_mdsh" class="md-nav__link">
-    Параметры настройки скрипта download_md.sh
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Результат работы скрипта
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1401,6 +1371,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1409,71 +1381,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ping" class="md-nav__link">
+    Ping
+  </a>
+  
+    <nav class="md-nav" aria-label="Ping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping-responce" class="md-nav__link">
+    Значения Ping-responce сообщений для стримов
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-ratelimits" class="md-nav__link">
+    Websocket ratelimits
+  </a>
+  
+    <nav class="md-nav" aria-label="Websocket ratelimits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    Загрузка исторических рыночных данных в виде архива
+    Для сервиса определена отдельная лимитная политика
   </a>
-  
-    <nav class="md-nav" aria-label="Загрузка исторических рыночных данных в виде архива">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Метод загрузки исторических рыночных данных по инструменту в виде годового архива
-  </a>
-  
-    <nav class="md-nav" aria-label="Метод загрузки исторических рыночных данных по инструменту в виде годового архива">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gethistoryrequest" class="md-nav__link">
-    GetHistoryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gethistoryresponse" class="md-nav__link">
-    GetHistoryResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Пример запроса
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Скрипт получения исторических рыночных данных по инструментам в виде годового архива
-  </a>
-  
-    <nav class="md-nav" aria-label="Скрипт получения исторических рыночных данных по инструментам в виде годового архива">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download_mdsh" class="md-nav__link">
-    Параметры настройки скрипта download_md.sh
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Результат работы скрипта
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1494,102 +1432,52 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/get_history.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/stream.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Получение исторических рыночных данных</h1>
-                
-                <h2 id="_1">Загрузка исторических рыночных данных в виде архива</h2>
-<p>TINKOFF INVEST API предоставляет своим пользователям возможность получения исторических рыночных данных по
-инструментам за год в виде архива. Для загрузки истории котировок можно воспользоваться специальным методом или подготовленными <a href="https://github.com/RussianInvestments/investAPI/tree/main/src/marketdata">скриптом и справочником figi</a>.</p>
-<h3 id="_2">Метод загрузки исторических рыночных данных по инструменту в виде годового архива</h3>
-<p>Для загрузки исторических рыночных данных в виде архива по определенному инструменту необходимо передать <strong>GET</strong> запрос на url: <code>https://invest-public-api.tinkoff.ru/history-data</code> с указанными ниже параметрами, а также Bearer token'ом.</p>
-<h4 id="gethistoryrequest">GetHistoryRequest</h4>
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">figi</td>
-<td align="left">String</td>
-<td align="left">[deprecated]Figi-идентификатор инструмента по которому запрашивается история рыночных данных</td>
-</tr>
-<tr>
-<td align="left">instrument_id</td>
-<td align="left">String</td>
-<td align="left">Идентификатор инструмента, принимает значения Figi или instrument_uid</td>
-</tr>
-<tr>
-<td align="left">year</td>
-<td align="left">Integer</td>
-<td align="left">Год запроса истории</td>
-</tr>
-</tbody>
-</table>
-<h4 id="gethistoryresponse">GetHistoryResponse</h4>
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">data</td>
-<td align="left">Byte</td>
-<td align="left">Zip-архив исторических минутных свечей за год</td>
-</tr>
-</tbody>
-</table>
-<h4 id="_3">Пример запроса</h4>
-<pre><code>curl -X GET --location "https://invest-public-api.tinkoff.ru/history-data?figi=BBG00QKJSX05&amp;year=2022" \
--H "Authorization: Bearer token"
-</code></pre>
-<h3 id="_4">Скрипт получения исторических рыночных данных по инструментам в виде годового архива</h3>
-<p>Для загрузки истории котировок за весь доступный период можно воспользоваться специальным подготовленным <a href="https://github.com/RussianInvestments/investAPI/blob/main/src/marketdata/download_md.sh">скриптом</a>, а так же <a href="https://github.com/RussianInvestments/investAPI/blob/main/src/marketdata/figi.txt">справочником figi</a>.
-Вы можете создать свой справочник необходимых Вам figi по аналогии с представленным, назвать его figi.txt и сохранить в той же директории, где сохраните скрипт.</p>
-<p>Перед запуском скрипта <code>download_md.sh</code> необходимо добавить <a href="https://russianinvestments.github.io/investAPI/token">токен доступа</a> в специальный параметр.</p>
-<h4 id="download_mdsh">Параметры настройки скрипта download_md.sh</h4>
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">figi</td>
-<td align="left">Имя файла *.txt в котором хранятся figi по которым необходимо получить годовые архивы исторических данных</td>
-</tr>
-<tr>
-<td align="left">token</td>
-<td align="left"><a href="https://russianinvestments.github.io/investAPI/token">Токен доступа</a></td>
-</tr>
-</tbody>
-</table>
-<h4 id="_5">Результат работы скрипта</h4>
-<p>В результате успешного выполнения скрипта в директории, откуда запущен скрипт, будут сохранены zip-архивы, разбитые по инструментам и годам исторических рыночных данных.
-Порядок следования полей в выходном файле:</p>
+                <h1 id="stream-">Stream-соединения</h1>
+<p>В TINKOFF INVEST API реализовано несколько Stream-соединений:</p>
 <ul>
-<li>Идентификатор инструмента (FIGI)</li>
-<li>Дата и время начала свечи (UTC)</li>
-<li>Цена открытия (open)</li>
-<li>Цена закрытия (close)</li>
-<li>Максимальная цена за интервал (high)</li>
-<li>Минимальная цена за интервал (low)</li>
-<li>Объем в лотах (volume)</li>
+<li>
+<p><a href="/investAPI/head-orders/#stream">Stream исполнения поручений пользователя</a> — для получения всех совершенных сделок</p>
+</li>
+<li>
+<p><a href="/investAPI/head-marketdata/#bidirectional-stream">Bidirectional-stream получения биржевой информации</a> — биржевая информация о стаканах, свечах и другие данные</p>
+</li>
+<li>
+<p><a href="/investAPI/marketdata/#marketdatastreamservice">Server-side-stream</a> — соединение для трансляции биржевой информации клиентам, которые не поддерживают bidirection стримы</p>
+</li>
 </ul>
-<p><strong>Важно!!!</strong> Просим обратить внимание на то, что данные в архиве обновляются раз в сутки, как правило ночью, соответственно текущего дня в архиве не будет.</p>
+<h2 id="ping">Ping</h2>
+<p>Во всех Stream-соединениях реализована проверка активности стрима. Рекомендуем при использовании сервисов TINKOFF INVEST API добавлять проверки на получение пинга.</p>
+<h3 id="ping-responce">Значения Ping-responce сообщений для стримов</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Stream-соединение</th>
+<th align="left">Ping интервал (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/investAPI/head-orders/#stream">Stream исполнения поручений пользователя</a></td>
+<td align="left">120000</td>
+</tr>
+<tr>
+<td align="left"><a href="/investAPI/head-marketdata/#bidirectional-stream">Bidirectional-stream получения биржевой информации</a></td>
+<td align="left">120000</td>
+</tr>
+<tr>
+<td align="left"><a href="/investAPI/marketdata/#marketdatastreamservice">Server-side-stream</a></td>
+<td align="left">120000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="websocket-ratelimits">Websocket ratelimits</h2>
+<p>Для получения стриминговых ссобщений через websocket реализован отдельный <a href="/investAPI/ws/">сервис</a>. </p>
+<h3 id="_1">Для сервиса определена отдельная лимитная политика</h3>
                 
               
               
@@ -1597,7 +1485,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/RussianInvestments/investAPI"
-            issue-term="Получение исторических рыночных данных comments"
+            issue-term="Stream-соединения comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"
@@ -1617,7 +1505,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../faq_marketdata/" class="md-footer__link md-footer__link--prev" aria-label="Назад: FAQ" rel="prev">
+        <a href="../eol_v1/" class="md-footer__link md-footer__link--prev" aria-label="Назад: EOL v1" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1626,20 +1514,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              FAQ
+              EOL v1
             </div>
           </div>
         </a>
       
       
         
-        <a href="../head-stoporders/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Описание" rel="next">
+        <a href="../faq/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Ответы на частые вопросы" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Описание
+              Ответы на частые вопросы
             </div>
           </div>
           <div class="md-footer__button md-icon">
