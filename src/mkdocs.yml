@@ -51,6 +51,7 @@ nav:
   - "SLA": sla.md
   - Примеры запросов: example.md
   - "EOL v1": eol_v1.md
+  - "Stream-соединения" : stream.md
 - Ответы на частые вопросы: faq.md
 - Языки программирования:
   - Python: faq_python.md

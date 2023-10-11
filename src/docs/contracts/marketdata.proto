@@ -85,7 +85,7 @@ message MarketDataResponse {
 message SubscribeCandlesRequest {
   SubscriptionAction subscription_action = 1; //Изменение статуса подписки.
   repeated CandleInstrument instruments = 2; //Массив инструментов для подписки на свечи.
-  bool waiting_close = 3; //Флаг ожидания закрытия временного интервала для отправки свечи, применяется только для минутных свечей.
+  bool waiting_close = 3; //Флаг ожидания закрытия временного интервала для отправки свечи.
 }
 
 //Тип операции со списком подписок.
