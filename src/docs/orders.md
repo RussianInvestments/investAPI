@@ -150,7 +150,7 @@ Stream сделок пользователя
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов. |
 | instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
-| time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения |
+| time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения, применяется только к лимитной заявке |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -400,9 +400,9 @@ Stream сделок пользователя
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | TIME_IN_FORCE_UNSPECIFIED | 0 | Значение не определено см. TIME_IN_FORCE_DAY |
-| TIME_IN_FORCE_DAY | 1 | заявка действует до конца торгового дня. значение по умолчанию |
-| TIME_IN_FORCE_FILL_AND_KILL | 2 | заявка исполнена(возможно частично) и уничтожена. |
-| TIME_IN_FORCE_FILL_OR_KILL | 3 | заявка исполнения полностью или уничтожена |
+| TIME_IN_FORCE_DAY | 1 | Заявка действует до конца торгового дня. значение по умолчанию |
+| TIME_IN_FORCE_FILL_AND_KILL | 2 | Заявка исполнена(возможно частично) и уничтожена. |
+| TIME_IN_FORCE_FILL_OR_KILL | 3 | Заявка исполнена полностью или уничтожена, недоступно для срочного рынка |
 
 
  <!-- range .Enums -->
