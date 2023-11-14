@@ -1475,10 +1475,13 @@
 Для поиска базового актива фьючерса можно также использовать метод <a href="/investAPI/instruments/#findinstrument">FindInstrument</a>. Для этого достаточно передать в query значение параметра <code>basic_asset_position_uid</code>, возвращаемое методами GetFutureBy и GetFutures.</p>
 </blockquote>
 <h3 id="_5">Ошибки с сертификатом</h3>
-<p>При работе с API может возникнуть ситуация, когда при подключении будут ошибки:
-    * failed to connect to all addresses;
-    * handshake failed;
-    * certificate verify failed;</p>
+<p>При работе с API может возникнуть ситуация, когда при подключении будут ошибки:</p>
+<pre><code>* failed to connect to all addresses;
+
+* handshake failed;
+
+* certificate verify failed;
+</code></pre>
 <p>Часто подобная проблема связана с недействительным сертификатом, используемым в приложении.
 Можно самому выпустить новый сертификат используя, например,  команду <code>openssl s_client -connect invest-public-api.tinkoff.ru:443</code>, после чего импортировать его.</p>
                 
