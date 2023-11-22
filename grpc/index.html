@@ -1570,17 +1570,20 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 <li>Нажмите <em>New importer</em>. Укажите название источника данных и его тип (<em>gRPC proto files</em>).
 <img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-2.png" title="Интерфейс Kreya" /></li>
 <li>Нажмите <em>Add proto directory</em> и укажите папку со скаченными proto-контрактами сервиса TINKOFF INVEST API. Вы также можете нажать <em>Add proto files</em> и выбрать ручным способом все proto-файлы из папки.
-Скачать актуальную версию контрактов можно по ссылке на официальном GitHub: <a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">TINKOFF INVEST API</a>.
-<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-3.png" title="Интерфейс Kreya" /></li>
-<li>Сохраните изменения и нажмите <em>Back</em>.</li>
-<li>В левом окне нажмите на появившуюся папку <em>Tinkoff</em>. Укажите Endpoint сервиса: https://invest-public-api.tinkoff.ru:443.
+Скачать актуальную версию контрактов можно по ссылке на официальном GitHub: <a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">TINKOFF INVEST API</a>.</li>
+</ol>
+<p><strong>Важно!!</strong> TINKOFF INVEST API использует <code>google.api.field_behavior</code> нотацию применительно к полям контрактов.
+Необходимо дополнительно загрузить <a href="https://github.com/googleapis/googleapis/blob/master/google/api/field_behavior.proto">field_behavior.proto</a> и сохранить
+его в папке <code>&lt;contracts_dir&gt;\google\api</code>, где <code>&lt;contracts_dir&gt;</code> - папка с контрактами TINKOFF INVEST API.
+<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-3.png" title="Интерфейс Kreya" />
+4. Сохраните изменения и нажмите <em>Back</em>.
+5. В левом окне нажмите на появившуюся папку <em>Tinkoff</em>. Укажите Endpoint сервиса: https://invest-public-api.tinkoff.ru:443.
 Остальные настройки укажите в соответствии со скриншотом. Обратите внимание на блок <em>Metadata</em>, 
 в нём требуется указать заголовок Authorization, в значении которого передаётся строка <strong>"Bearer &lt;токен доступа&gt;"</strong>.
 Подробнее о том, как получить токен можно узнать по ссылке: <a href="/investAPI/token/">Токен доступа</a>
-<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-4.png" title="Интерфейс Kreya" /></li>
-<li>Теперь вы можете выполнять запросы к сервису.
-<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-5.png" title="Интерфейс Kreya" /></li>
-</ol>
+<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-4.png" title="Интерфейс Kreya" />
+6. Теперь вы можете выполнять запросы к сервису.
+<img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-5.png" title="Интерфейс Kreya" /></p>
 <p>Kreya позволяет увидеть служебные заголовки ответа сервера:
 <img alt="Интерфейс Kreya" src="/investAPI/img/Kreya-6.png" title="Интерфейс Kreya" /></p>
 <ul>
