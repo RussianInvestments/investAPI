@@ -72,6 +72,10 @@ TINKOFF INVEST API позволяет в запросах добавлять с�
 ![Интерфейс Kreya](/investAPI/img/Kreya-2.png "Интерфейс Kreya")
 3. Нажмите *Add proto directory* и укажите папку со скаченными proto-контрактами сервиса TINKOFF INVEST API. Вы также можете нажать *Add proto files* и выбрать ручным способом все proto-файлы из папки.
 Скачать актуальную версию контрактов можно по ссылке на официальном GitHub: [TINKOFF INVEST API](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts).
+
+**Важно!!** TINKOFF INVEST API использует `google.api.field_behavior` нотацию применительно к полям контрактов.
+Необходимо дополнительно загрузить [field_behavior.proto](https://github.com/googleapis/googleapis/blob/master/google/api/field_behavior.proto) и сохранить
+его в папке `<contracts_dir>\google\api`, где `<contracts_dir>` - папка с контрактами TINKOFF INVEST API.
 ![Интерфейс Kreya](/investAPI/img/Kreya-3.png "Интерфейс Kreya")
 4. Сохраните изменения и нажмите *Back*.
 5. В левом окне нажмите на появившуюся папку *Tinkoff*. Укажите Endpoint сервиса: https://invest-public-api.tinkoff.ru:443.
