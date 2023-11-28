@@ -2178,6 +2178,22 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/v1PostStopOrderRequest'
+            examples:
+              GoodTillCancelStopOrder:
+                summary: An example of a good till cancell stop limit order
+                value:
+                  figi: BBG004730N88
+                  quantity: 1
+                  price:
+                    nano: 0
+                    units: 305
+                  stopPrice:
+                    units: 300
+                    nano: 0
+                  direction: STOP_ORDER_DIRECTION_BUY
+                  accountId: any account
+                  expirationType: STOP_ORDER_EXPIRATION_TYPE_GOOD_TILL_CANCEL
+                  stopOrderType: STOP_ORDER_TYPE_STOP_LIMIT
         description: Запрос выставления стоп-заявки.
         required: true
       responses:
