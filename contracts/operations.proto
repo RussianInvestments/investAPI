@@ -11,6 +11,7 @@ option php_namespace = "Tinkoff\\Invest\\V1";
 
 import "google/protobuf/timestamp.proto";
 import "common.proto";
+import "google/api/field_behavior.proto";
 
 service OperationsService {/*Сервис предназначен для получения:</br> **1**.  списка операций по счёту;</br> **2**.
                               портфеля по счёту;</br> **3**. позиций ценных бумаг на счёте;</br> **4**.
@@ -49,11 +50,11 @@ service OperationsStreamService {
 
 //Запрос получения списка операций по счёту.
 message OperationsRequest {
-  string account_id = 1; //Идентификатор счёта клиента.
-  google.protobuf.Timestamp from = 2; //Начало периода (по UTC).
-  google.protobuf.Timestamp to = 3; //Окончание периода (по UTC).
-  OperationState state = 4; //Статус запрашиваемых операций.
-  string figi = 5; //Figi-идентификатор инструмента для фильтрации.
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор счёта клиента.
+  optional google.protobuf.Timestamp from = 2; //Начало периода (по UTC).
+  optional google.protobuf.Timestamp to = 3; //Окончание периода (по UTC).
+  optional OperationState state = 4; //Статус запрашиваемых операций.
+  optional string figi = 5; //Figi-идентификатор инструмента для фильтрации.
 }
 
 //Список операций.
@@ -92,8 +93,8 @@ message OperationTrade {
 
 //Запрос получения текущего портфеля по счёту.
 message PortfolioRequest {
-  string account_id = 1; //Идентификатор счёта пользователя.
-  CurrencyRequest currency = 2; //Валюта, в которой требуется рассчитать портфель
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор счёта пользователя.
+  optional CurrencyRequest currency = 2; //Валюта, в которой требуется рассчитать портфель
   enum CurrencyRequest {
     RUB = 0; //Рубли
     USD = 1; //Доллары
@@ -120,7 +121,7 @@ message PortfolioResponse {
 
 //Запрос позиций портфеля по счёту.
 message PositionsRequest {
-  string account_id = 1; //Идентификатор счёта пользователя.
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор счёта пользователя.
 }
 
 //Список позиций по счёту.
@@ -135,7 +136,7 @@ message PositionsResponse {
 
 //Запрос доступного для вывода остатка.
 message WithdrawLimitsRequest {
-  string account_id = 1; //Идентификатор счёта пользователя.
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор счёта пользователя.
 }
 
 //Доступный для вывода остаток.
@@ -222,9 +223,9 @@ message BrokerReportResponse {
 }
 
 message GenerateBrokerReportRequest {
-  string account_id = 1; //Идентификатор счёта клиента.
-  google.protobuf.Timestamp from = 2; //Начало периода в часовом поясе UTC.
-  google.protobuf.Timestamp to = 3; //Окончание периода в часовом поясе UTC.
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор счёта клиента.
+  google.protobuf.Timestamp from = 2 [(google.api.field_behavior) = REQUIRED]; //Начало периода в часовом поясе UTC.
+  google.protobuf.Timestamp to = 3 [(google.api.field_behavior) = REQUIRED]; //Окончание периода в часовом поясе UTC.
 }
 
 message GenerateBrokerReportResponse {
@@ -232,8 +233,8 @@ message GenerateBrokerReportResponse {
 }
 
 message GetBrokerReportRequest {
-  string task_id = 1; //Идентификатор задачи формирования брокерского отчёта.
-  int32 page = 2; //Номер страницы отчета (начинается с 1), значение по умолчанию: 0.
+  string task_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор задачи формирования брокерского отчёта.
+  optional int32 page = 2; //Номер страницы отчета (начинается с 1), значение по умолчанию: 0.
 }
 
 message GetBrokerReportResponse {
@@ -363,15 +364,15 @@ message GetDividendsForeignIssuerResponse {
 
 //Объект запроса формирования отчёта "Справка о доходах за пределами РФ".
 message GenerateDividendsForeignIssuerReportRequest {
-  string account_id = 1; //Идентификатор счёта клиента.
-  google.protobuf.Timestamp from = 2; //Начало периода (по UTC).
-  google.protobuf.Timestamp to = 3; //Окончание периода (по UTC).
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор счёта клиента.
+  google.protobuf.Timestamp from = 2 [(google.api.field_behavior) = REQUIRED]; //Начало периода (по UTC).
+  google.protobuf.Timestamp to = 3 [(google.api.field_behavior) = REQUIRED]; //Окончание периода (по UTC), как правило, возможно сформировать отчет по дату, на несколько дней меньше текущей. Начало и окончание периода должны быть в рамках одного календарного года.
 }
 
 // Объект запроса сформированного отчёта "Справка о доходах за пределами РФ".
 message GetDividendsForeignIssuerReportRequest {
-  string task_id = 1; //Идентификатор задачи формирования отчёта.
-  int32 page = 2; //Номер страницы отчета (начинается с 0), значение по умолчанию: 0.
+  string task_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор задачи формирования отчёта.
+  optional int32 page = 2; //Номер страницы отчета (начинается с 0), значение по умолчанию: 0.
 }
 
 // Объект результата задачи запуска формирования отчёта "Справка о доходах за пределами РФ".
@@ -437,17 +438,17 @@ enum PortfolioSubscriptionStatus {
 
 //Запрос списка операций по счёту с пагинацией.
 message GetOperationsByCursorRequest {
-  string account_id = 1; //Идентификатор счёта клиента. Обязательный параметр для данного метода, остальные параметры опциональны.
-  string instrument_id	= 2; //Идентификатор инструмента (Figi инструмента или uid инструмента)
-  google.protobuf.Timestamp from = 6; //Начало периода (по UTC).
-  google.protobuf.Timestamp to = 7; //Окончание периода (по UTC).
-  string cursor	= 11; //Идентификатор элемента, с которого начать формировать ответ.
-  int32 limit	= 12; //Лимит количества операций. По умолчанию устанавливается значение **100**, максимальное значение 1000.
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор счёта клиента. Обязательный параметр для данного метода, остальные параметры опциональны.
+  optional string instrument_id	= 2; //Идентификатор инструмента (Figi инструмента или uid инструмента)
+  optional google.protobuf.Timestamp from = 6; //Начало периода (по UTC).
+  optional google.protobuf.Timestamp to = 7; //Окончание периода (по UTC).
+  optional string cursor	= 11; //Идентификатор элемента, с которого начать формировать ответ.
+  optional int32 limit	= 12; //Лимит количества операций. По умолчанию устанавливается значение **100**, максимальное значение 1000.
   repeated OperationType operation_types	= 13; //Тип операции. Принимает значение из списка OperationType.
-  OperationState state  = 14;	//Статус запрашиваемых операций, возможные значения указаны в OperationState.
-  bool without_commissions	= 15; //Флаг возвращать ли комиссии, по умолчанию false
-  bool without_trades	= 16; //Флаг получения ответа без массива сделок.
-  bool without_overnights = 17; //Флаг не показывать overnight операций.
+  optional OperationState state  = 14;	//Статус запрашиваемых операций, возможные значения указаны в OperationState.
+  optional bool without_commissions	= 15; //Флаг возвращать ли комиссии, по умолчанию false
+  optional bool without_trades	= 16; //Флаг получения ответа без массива сделок.
+  optional bool without_overnights = 17; //Флаг не показывать overnight операций.
 }
 
 //Список операций по счёту с пагинацией.

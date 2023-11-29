@@ -1211,6 +1211,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#poststoporderrequesttrailingdata" class="md-nav__link">
+    PostStopOrderRequest.TrailingData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#poststoporderresponse" class="md-nav__link">
     PostStopOrderResponse
   </a>
@@ -1252,6 +1259,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stopordertrailingdata" class="md-nav__link">
+    StopOrder.TrailingData
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1282,6 +1296,41 @@
           <li class="md-nav__item">
   <a href="#stopordertype" class="md-nav__link">
     StopOrderType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stoporderstatusoption" class="md-nav__link">
+    StopOrderStatusOption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exchangeordertype" class="md-nav__link">
+    ExchangeOrderType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takeprofittype" class="md-nav__link">
+    TakeProfitType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trailingvaluetype" class="md-nav__link">
+    TrailingValueType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trailingstopstatus" class="md-nav__link">
+    TrailingStopStatus
   </a>
   
 </li>
@@ -1562,6 +1611,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#poststoporderrequesttrailingdata" class="md-nav__link">
+    PostStopOrderRequest.TrailingData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#poststoporderresponse" class="md-nav__link">
     PostStopOrderResponse
   </a>
@@ -1603,6 +1659,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stopordertrailingdata" class="md-nav__link">
+    StopOrder.TrailingData
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1633,6 +1696,41 @@
           <li class="md-nav__item">
   <a href="#stopordertype" class="md-nav__link">
     StopOrderType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stoporderstatusoption" class="md-nav__link">
+    StopOrderStatusOption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exchangeordertype" class="md-nav__link">
+    ExchangeOrderType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#takeprofittype" class="md-nav__link">
+    TakeProfitType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trailingvaluetype" class="md-nav__link">
+    TrailingValueType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trailingstopstatus" class="md-nav__link">
+    TrailingStopStatus
   </a>
   
 </li>
@@ -1750,7 +1848,7 @@
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество лотов.</td>
+<td>Количество лотов</td>
 </tr>
 <tr>
 <td>price</td>
@@ -1765,22 +1863,22 @@
 <tr>
 <td>direction</td>
 <td><a href="#stoporderdirection">StopOrderDirection</a></td>
-<td>Направление операции.</td>
+<td>Направление операции</td>
 </tr>
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
+<td>Номер счёта</td>
 </tr>
 <tr>
 <td>expiration_type</td>
 <td><a href="#stoporderexpirationtype">StopOrderExpirationType</a></td>
-<td>Тип экспирации заявки.</td>
+<td>Тип экспирации заявки</td>
 </tr>
 <tr>
 <td>stop_order_type</td>
 <td><a href="#stopordertype">StopOrderType</a></td>
-<td>Тип заявки.</td>
+<td>Тип заявки</td>
 </tr>
 <tr>
 <td>expire_date</td>
@@ -1791,6 +1889,65 @@
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор инструмента, принимает значения Figi или instrument_uid.</td>
+</tr>
+<tr>
+<td>exchange_order_type</td>
+<td><a href="#exchangeordertype">ExchangeOrderType</a></td>
+<td>Тип дочерней биржевой заявки для тейкпрофита</td>
+</tr>
+<tr>
+<td>take_profit_type</td>
+<td><a href="#takeprofittype">TakeProfitType</a></td>
+<td>Подтип стоп-заявки TakeProfit</td>
+</tr>
+<tr>
+<td>trailing_data</td>
+<td><a href="#poststoporderrequesttrailingdata">PostStopOrderRequest.TrailingData</a></td>
+<td>Массив с параметрами трейлинг-стопа</td>
+</tr>
+<tr>
+<td>price_type</td>
+<td><a href="#pricetype">PriceType</a></td>
+<td>Тип цены</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="poststoporderrequesttrailingdata">PostStopOrderRequest.TrailingData</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>indent</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Отступ</td>
+</tr>
+<tr>
+<td>indent_type</td>
+<td><a href="#trailingvaluetype">TrailingValueType</a></td>
+<td>Тип величины отступа</td>
+</tr>
+<tr>
+<td>spread</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Размер защитного спреда</td>
+</tr>
+<tr>
+<td>spread_type</td>
+<td><a href="#trailingvaluetype">TrailingValueType</a></td>
+<td>Тип величины защитного спреда</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1815,7 +1972,7 @@
 <tr>
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор стоп-заявки.</td>
+<td>Уникальный идентификатор стоп-заявки</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1840,7 +1997,22 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента.</td>
+<td>Идентификатор счёта клиента</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#stoporderstatusoption">StopOrderStatusOption</a></td>
+<td>Статус заявок</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Левая граница</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Правая граница</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1865,7 +2037,7 @@
 <tr>
 <td>stop_orders</td>
 <td>Массив объектов <a href="#stoporder">StopOrder</a></td>
-<td>Массив стоп-заявок по счёту.</td>
+<td>Массив стоп-заявок по счёту</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1890,12 +2062,12 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента.</td>
+<td>Идентификатор счёта клиента</td>
 </tr>
 <tr>
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор стоп-заявки.</td>
+<td>Уникальный идентификатор стоп-заявки</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1920,7 +2092,7 @@
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время отмены заявки в часовом поясе UTC.</td>
+<td>Время отмены заявки в часовом поясе UTC</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -1945,47 +2117,47 @@
 <tr>
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор-идентификатор стоп-заявки.</td>
+<td>Идентификатор-идентификатор стоп-заявки</td>
 </tr>
 <tr>
 <td>lots_requested</td>
 <td><a href="#int64">int64</a></td>
-<td>Запрошено лотов.</td>
+<td>Запрошено лотов</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>Figi-идентификатор инструмента</td>
 </tr>
 <tr>
 <td>direction</td>
 <td><a href="#stoporderdirection">StopOrderDirection</a></td>
-<td>Направление операции.</td>
+<td>Направление операции</td>
 </tr>
 <tr>
 <td>currency</td>
 <td><a href="#string">string</a></td>
-<td>Валюта стоп-заявки.</td>
+<td>Валюта стоп-заявки</td>
 </tr>
 <tr>
 <td>order_type</td>
 <td><a href="#stopordertype">StopOrderType</a></td>
-<td>Тип стоп-заявки.</td>
+<td>Тип стоп-заявки</td>
 </tr>
 <tr>
 <td>create_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время выставления заявки в часовом поясе UTC.</td>
+<td>Дата и время выставления заявки в часовом поясе UTC</td>
 </tr>
 <tr>
 <td>activation_date_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC.</td>
+<td>Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC</td>
 </tr>
 <tr>
 <td>expiration_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время снятия заявки в часовом поясе UTC.</td>
+<td>Дата и время снятия заявки в часовом поясе UTC</td>
 </tr>
 <tr>
 <td>price</td>
@@ -2000,7 +2172,76 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>instrument_uid идентификатор инструмента.</td>
+<td>instrument_uid идентификатор инструмента</td>
+</tr>
+<tr>
+<td>take_profit_type</td>
+<td><a href="#takeprofittype">TakeProfitType</a></td>
+<td>Подтип стоп-заявки TakeProfit</td>
+</tr>
+<tr>
+<td>trailing_data</td>
+<td><a href="#stopordertrailingdata">StopOrder.TrailingData</a></td>
+<td>Параметры трейлинг-стопа</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#stoporderstatusoption">StopOrderStatusOption</a></td>
+<td>Статус заявки</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="stopordertrailingdata">StopOrder.TrailingData</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>indent</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Отступ</td>
+</tr>
+<tr>
+<td>indent_type</td>
+<td><a href="#trailingvaluetype">TrailingValueType</a></td>
+<td>Тип величины отступа</td>
+</tr>
+<tr>
+<td>spread</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Размер защитного спреда</td>
+</tr>
+<tr>
+<td>spread_type</td>
+<td><a href="#trailingvaluetype">TrailingValueType</a></td>
+<td>Тип величины защитного спреда</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#trailingstopstatus">TrailingStopStatus</a></td>
+<td>Статус трейлинг-стопа</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена исполнения</td>
+</tr>
+<tr>
+<td>extr</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Локальный экстремум</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2027,17 +2268,17 @@
 <tr>
 <td>STOP_ORDER_DIRECTION_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано.</td>
+<td>Значение не указано</td>
 </tr>
 <tr>
 <td>STOP_ORDER_DIRECTION_BUY</td>
 <td>1</td>
-<td>Покупка.</td>
+<td>Покупка</td>
 </tr>
 <tr>
 <td>STOP_ORDER_DIRECTION_SELL</td>
 <td>2</td>
-<td>Продажа.</td>
+<td>Продажа</td>
 </tr>
 </tbody>
 </table>
@@ -2055,17 +2296,17 @@
 <tr>
 <td>STOP_ORDER_EXPIRATION_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано.</td>
+<td>Значение не указано</td>
 </tr>
 <tr>
 <td>STOP_ORDER_EXPIRATION_TYPE_GOOD_TILL_CANCEL</td>
 <td>1</td>
-<td>Действительно до отмены.</td>
+<td>Действительно до отмены</td>
 </tr>
 <tr>
 <td>STOP_ORDER_EXPIRATION_TYPE_GOOD_TILL_DATE</td>
 <td>2</td>
-<td>Действительно до даты снятия.</td>
+<td>Действительно до даты снятия</td>
 </tr>
 </tbody>
 </table>
@@ -2083,22 +2324,177 @@
 <tr>
 <td>STOP_ORDER_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано.</td>
+<td>Значение не указано</td>
 </tr>
 <tr>
 <td>STOP_ORDER_TYPE_TAKE_PROFIT</td>
 <td>1</td>
-<td>Take-profit заявка.</td>
+<td>Take-profit заявка</td>
 </tr>
 <tr>
 <td>STOP_ORDER_TYPE_STOP_LOSS</td>
 <td>2</td>
-<td>Stop-loss заявка.</td>
+<td>Stop-loss заявка</td>
 </tr>
 <tr>
 <td>STOP_ORDER_TYPE_STOP_LIMIT</td>
 <td>3</td>
-<td>Stop-limit заявка.</td>
+<td>Stop-limit заявка</td>
+</tr>
+</tbody>
+</table>
+<h4 id="stoporderstatusoption">StopOrderStatusOption</h4>
+<p>Статус стоп-заяки.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STOP_ORDER_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не указано</td>
+</tr>
+<tr>
+<td>STOP_ORDER_STATUS_ALL</td>
+<td>1</td>
+<td>Все заявки</td>
+</tr>
+<tr>
+<td>STOP_ORDER_STATUS_ACTIVE</td>
+<td>2</td>
+<td>Активные заявки</td>
+</tr>
+<tr>
+<td>STOP_ORDER_STATUS_EXECUTED</td>
+<td>3</td>
+<td>Исполненные заявки</td>
+</tr>
+<tr>
+<td>STOP_ORDER_STATUS_CANCELED</td>
+<td>4</td>
+<td>Отмененные заявки</td>
+</tr>
+<tr>
+<td>STOP_ORDER_STATUS_EXPIRED</td>
+<td>5</td>
+<td>Истекшие заявки</td>
+</tr>
+</tbody>
+</table>
+<h4 id="exchangeordertype">ExchangeOrderType</h4>
+<p>Тип выставляемой заявки.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EXCHANGE_ORDER_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не указано</td>
+</tr>
+<tr>
+<td>EXCHANGE_ORDER_TYPE_MARKET</td>
+<td>1</td>
+<td>Заявка по рыночной цене</td>
+</tr>
+<tr>
+<td>EXCHANGE_ORDER_TYPE_LIMIT</td>
+<td>2</td>
+<td>Лимитная заявка</td>
+</tr>
+</tbody>
+</table>
+<h4 id="takeprofittype">TakeProfitType</h4>
+<p>Тип TakeProfit заявки.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TAKE_PROFIT_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не указано</td>
+</tr>
+<tr>
+<td>TAKE_PROFIT_TYPE_REGULAR</td>
+<td>1</td>
+<td>Обычная заявка (значение по умолчанию)</td>
+</tr>
+<tr>
+<td>TAKE_PROFIT_TYPE_TRAILING</td>
+<td>2</td>
+<td>Трейлинг-стоп</td>
+</tr>
+</tbody>
+</table>
+<h4 id="trailingvaluetype">TrailingValueType</h4>
+<p>Тип параметров значений Трейлинг-стопа</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRAILING_VALUE_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не указано</td>
+</tr>
+<tr>
+<td>TRAILING_VALUE_ABSOLUTE</td>
+<td>1</td>
+<td>Абсолютное значение в единицах цены</td>
+</tr>
+<tr>
+<td>TRAILING_VALUE_RELATIVE</td>
+<td>2</td>
+<td>Относительное значение в процентах</td>
+</tr>
+</tbody>
+</table>
+<h4 id="trailingstopstatus">TrailingStopStatus</h4>
+<p>Статус Трейлинг-стопа</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRAILING_STOP_UNSPECIFIED</td>
+<td>0</td>
+<td>Значение не указано</td>
+</tr>
+<tr>
+<td>TRAILING_STOP_ACTIVE</td>
+<td>1</td>
+<td>Активный</td>
+</tr>
+<tr>
+<td>TRAILING_STOP_ACTIVATED</td>
+<td>2</td>
+<td>Активированный</td>
 </tr>
 </tbody>
 </table>

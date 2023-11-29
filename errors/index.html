@@ -1327,7 +1327,6 @@
                 
                 
                 <h1 id="tinkoff-invest-api">Ошибки TINKOFF INVEST API</h1>
-<p>Некоторые ошибки </p>
 <table>
 <thead>
 <tr>
@@ -1450,7 +1449,7 @@
 <td>30017</td>
 <td>INVALID_ARGUMENT</td>
 <td>missing parameter: 'price'</td>
-<td>Входной параметр <em>price</em> является обязательным.</br>Укажите корректный параметр <em>price</em>. </br> Значение параметра <em>price</em> должно быть положительным.</br>units и nanos не могут иметь разные знак и модуль nanos должен быть &lt; 999 999 999</td>
+<td>Входной параметр <em>price</em> является обязательным.</br>Укажите корректный параметр <em>price</em>.</br>Значение параметра <em>price</em> должно быть положительным.</br>units и nanos не могут иметь разные знак и модуль nanos должен быть &lt; 999 999 999</td>
 </tr>
 <tr>
 <td>30018</td>
@@ -1510,7 +1509,7 @@
 <td>30028</td>
 <td>INVALID_ARGUMENT</td>
 <td>'order id' is invalid UUID format.</td>
-<td>Входной параметр <em>order_id</em> имеет некорректное значение.</br>Укажите корректный параметр <em>order_id</em> формата UUID.Максимальная длина 36 символов.</td>
+<td>Входной параметр <em>order_id</em> имеет некорректное значение.</br>Укажите корректный параметр <em>order_id</em> формата UUID. Максимальная длина 36 символов.</td>
 </tr>
 <tr>
 <td>30029</td>
@@ -1565,6 +1564,12 @@
 <td>INVALID_ARGUMENT</td>
 <td>'stop_order_type' is invalid</td>
 <td>Входной параметр <em>stop_order_type</em> имеет некорректное значение.</br>Список доступных значений: <a href="https://russianinvestments.github.io/investAPI/stoporders/#stopordertype"><em>stop_order_type</em></a>.</td>
+</tr>
+<tr>
+<td>30039</td>
+<td>INVALID_ARGUMENT</td>
+<td>bad request: 'trailing_data'</td>
+<td>Укажите корректное значение параметра <em>trailing_data</em></td>
 </tr>
 <tr>
 <td>30040</td>
@@ -1648,25 +1653,25 @@
 <td>30054</td>
 <td>INVALID_ARGUMENT</td>
 <td>instrument type is not a share or etf</td>
-<td>Тип инструмента не инвестиционный фонд или акция.</td>
+<td>Тип инструмента не инвестиционный фонд или акция</td>
 </tr>
 <tr>
 <td>30055</td>
 <td>INVALID_ARGUMENT</td>
 <td>order_id cannot be longer than 36 characters</td>
-<td>order_id не может быть длиннее 36 символов.</td>
+<td>order_id не может быть длиннее 36 символов</td>
 </tr>
 <tr>
 <td>30056</td>
 <td>INVALID_ARGUMENT</td>
 <td>stop order settlement currency is not supported</td>
-<td>Валюта выставления стоп-заявки не поддерживается.</td>
+<td>Валюта выставления стоп-заявки не поддерживается</td>
 </tr>
 <tr>
 <td>30057</td>
 <td>INVALID_ARGUMENT</td>
 <td>the order is a duplicate, but the order report was not found</td>
-<td>Заявка является дублем, но отчет по заявке не найден.</br> Проверьте параметр order_id (идентификатор запроса выставления поручения для целей идемпотентности.) - он должен быть уникальным.</td>
+<td>Заявка является дублем, но отчет по заявке не найден.</br>Проверьте параметр order_id (идентификатор запроса выставления поручения для целей идемпотентности.) - он должен быть уникальным.</td>
 </tr>
 <tr>
 <td>30058</td>
@@ -1906,7 +1911,7 @@
 <td>30103</td>
 <td>INVALID_ARGUMENT</td>
 <td>Only best price is allowed</td>
-<td>Для инструмента доступно выставление заявки только типа лучшая цена.</td>
+<td>Для инструмента доступно выставление заявки только типа лучшая цена</td>
 </tr>
 <tr>
 <td>30104</td>
@@ -1931,6 +1936,36 @@
 <td>INVALID_ARGUMENT</td>
 <td>negative values are not allowed</td>
 <td>Некорректное значение <em>limit</em> и/или <em>page</em>. Параметры <em>limit</em> и <em>page</em> не могут принимать отицательные значения.</td>
+</tr>
+<tr>
+<td>30108</td>
+<td>INVALID_ARGUMENT</td>
+<td>specify a lower limit or page value because there are fewer brands</td>
+<td>Количество брендов меньше запрашиваемых параметров.</td>
+</tr>
+<tr>
+<td>30109</td>
+<td>INVALID_ARGUMENT</td>
+<td>maximum transaction amount has been exceeded</td>
+<td>Превышена максимальная сумма сделки. Разделите ордер на несколько ордеров меньшего объема.</td>
+</tr>
+<tr>
+<td>30210</td>
+<td>INVALID_ARGUMENT</td>
+<td>trailing data required</td>
+<td>Проверьте параметры запроса стоп-заявки. Не заданы indent или spread.</td>
+</tr>
+<tr>
+<td>30211</td>
+<td>INVALID_ARGUMENT</td>
+<td>indent type required</td>
+<td>Проверьте параметры запроса стоп-заявки. Не задан indent_type.</td>
+</tr>
+<tr>
+<td>30212</td>
+<td>INVALID_ARGUMENT</td>
+<td>spread type required</td>
+<td>Проверьте параметры запроса стоп-заявки. Не задан spread_type.</td>
 </tr>
 <tr>
 <td>40002</td>

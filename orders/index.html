@@ -1010,6 +1010,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getorderprice" class="md-nav__link">
+    GetOrderPrice
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1145,6 +1152,34 @@
           <li class="md-nav__item">
   <a href="#getmaxlotsresponseselllimitsview" class="md-nav__link">
     GetMaxLotsResponse.SellLimitsView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderpricerequest" class="md-nav__link">
+    GetOrderPriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderpriceresponse" class="md-nav__link">
+    GetOrderPriceResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderpriceresponseextrabond" class="md-nav__link">
+    GetOrderPriceResponse.ExtraBond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderpriceresponseextrafuture" class="md-nav__link">
+    GetOrderPriceResponse.ExtraFuture
   </a>
   
 </li>
@@ -1760,6 +1795,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#getorderprice" class="md-nav__link">
+    GetOrderPrice
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1895,6 +1937,34 @@
           <li class="md-nav__item">
   <a href="#getmaxlotsresponseselllimitsview" class="md-nav__link">
     GetMaxLotsResponse.SellLimitsView
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderpricerequest" class="md-nav__link">
+    GetOrderPriceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderpriceresponse" class="md-nav__link">
+    GetOrderPriceResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderpriceresponseextrabond" class="md-nav__link">
+    GetOrderPriceResponse.ExtraBond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getorderpriceresponseextrafuture" class="md-nav__link">
+    GetOrderPriceResponse.ExtraFuture
   </a>
   
 </li>
@@ -2100,6 +2170,16 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#getmaxlotsresponse">GetMaxLotsResponse</a></p>
+</li>
+</ul>
+<h4 id="getorderprice">GetOrderPrice</h4>
+<p>Метод получения предварительной стоимости для лимитной заявки</p>
+<ul>
+<li>
+<p>Тело запроса — <a href="#getorderpricerequest">GetOrderPriceRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#getorderpriceresponse">GetOrderPriceResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -2310,7 +2390,12 @@
 <tr>
 <td>time_in_force</td>
 <td><a href="#timeinforcetype">TimeInForceType</a></td>
-<td>Алгоритм исполнения поручения, применяется только к лимитной заявке</td>
+<td>Алгоритм исполнения поручения, применяется только к лимитной заявке.</td>
+</tr>
+<tr>
+<td>price_type</td>
+<td><a href="#pricetype">PriceType</a></td>
+<td>Тип цены.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2506,6 +2591,11 @@
 <td>order_id</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор заявки.</td>
+</tr>
+<tr>
+<td>price_type</td>
+<td><a href="#pricetype">PriceType</a></td>
+<td>Тип цены.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2908,6 +2998,167 @@
 </tbody>
 </table>
 <!-- end HasFields -->
+
+<h4 id="getorderpricerequest">GetOrderPriceRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер счета</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значения Figi или instrument_uid</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена инструмента</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#orderdirection">OrderDirection</a></td>
+<td>Направление заявки</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество лотов</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getorderpriceresponse">GetOrderPriceResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total_order_amount</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Итоговая стоимость заявки</td>
+</tr>
+<tr>
+<td>initial_order_amount</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Стоимость заявки без комиссий, НКД, ГО (для фьючерсов — стоимость контрактов)</td>
+</tr>
+<tr>
+<td>lots_requested</td>
+<td><a href="#int64">int64</a></td>
+<td>Запрошено лотов</td>
+</tr>
+<tr>
+<td>executed_commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая комиссия</td>
+</tr>
+<tr>
+<td>executed_commission_rub</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Общая комиссия в рублях</td>
+</tr>
+<tr>
+<td>service_commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Сервисная комиссия</td>
+</tr>
+<tr>
+<td>deal_commission</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Комиссия за проведение сделки</td>
+</tr>
+<tr>
+<td>extra_bond</td>
+<td><a href="#getorderpriceresponseextrabond">GetOrderPriceResponse.ExtraBond</a></td>
+<td>Дополнительная информация по облигациям</td>
+</tr>
+<tr>
+<td>extra_future</td>
+<td><a href="#getorderpriceresponseextrafuture">GetOrderPriceResponse.ExtraFuture</a></td>
+<td>Дополнительная информация по фьючерсам</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getorderpriceresponseextrabond">GetOrderPriceResponse.ExtraBond</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aci_value</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Значение НКД (накопленного купонного дохода) на дату</td>
+</tr>
+<tr>
+<td>nominal_conversion_rate</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Курс конвертации для замещающих облигаций</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="getorderpriceresponseextrafuture">GetOrderPriceResponse.ExtraFuture</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>initial_margin</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Гарантийное обеспечение для фьючерса</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
 <!-- end messages -->
 
 <h3 id="enums">Enums</h3>
@@ -3038,7 +3289,7 @@
 <tr>
 <td>TIME_IN_FORCE_FILL_AND_KILL</td>
 <td>2</td>
-<td>Заявка исполнена(возможно частично) и уничтожена.</td>
+<td>Заявка исполнена(возможно частично) и уничтожена</td>
 </tr>
 <tr>
 <td>TIME_IN_FORCE_FILL_OR_KILL</td>

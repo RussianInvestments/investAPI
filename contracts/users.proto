@@ -10,6 +10,7 @@ option objc_class_prefix = "TIAPI";
 option php_namespace = "Tinkoff\\Invest\\V1";
 
 import "google/protobuf/timestamp.proto";
+import "google/api/field_behavior.proto";
 import "common.proto";
 
 service UsersService { /*Сервис предназначен для получения: </br> **1**.
@@ -82,7 +83,7 @@ enum AccountStatus {
 message GetMarginAttributesRequest {
 
   // Идентификатор счёта пользователя.
-  string account_id = 1;
+  string account_id = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
 //Маржинальные показатели по счёту.

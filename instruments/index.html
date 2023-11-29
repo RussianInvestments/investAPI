@@ -3748,6 +3748,11 @@
 <td>Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация по coupon_date (дата выплаты купона)</td>
 </tr>
 <tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента Figi или instrument_uid</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -5223,6 +5228,21 @@
 <td>Дата первой дневной свечи.</td>
 </tr>
 <tr>
+<td>initial_margin_on_buy</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Гарантийное обеспечение при покупке.</td>
+</tr>
+<tr>
+<td>initial_margin_on_sell</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Гарантийное обеспечение при продаже.</td>
+</tr>
+<tr>
+<td>min_price_increment_amount</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Стоимость шага цены.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -5478,6 +5498,11 @@
 <td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
 </tr>
 <tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента Figi или instrument_uid</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -5566,6 +5591,11 @@
 <td>figi</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор инструмента.</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента Figi или instrument_uid</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -5856,6 +5886,11 @@
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру <em>record_date</em> (дата фиксации реестра).</td>
+</tr>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента Figi или instrument_uid</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -7355,6 +7390,27 @@
 
 <h4 id="getbrandsrequest">GetBrandsRequest</h4>
 <p>Запрос списка брендов.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>paging</td>
+<td><a href="#page">Page</a></td>
+<td>Настройки пагинации.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <!-- end HasFields -->
 
 <h4 id="getbrandrequest">GetBrandRequest</h4>
@@ -7397,6 +7453,11 @@
 <td>brands</td>
 <td>Массив объектов <a href="#brand">Brand</a></td>
 <td>Массив брендов.</td>
+</tr>
+<tr>
+<td>paging</td>
+<td><a href="#pageresponse">PageResponse</a></td>
+<td>Данные по пагинации</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -8184,19 +8245,24 @@
 </thead>
 <tbody>
 <tr>
-<td>RISK_LEVEL_HIGH</td>
+<td>RISK_LEVEL_UNSPECIFIED</td>
 <td>0</td>
-<td>Высокий уровень риска</td>
-</tr>
-<tr>
-<td>RISK_LEVEL_MODERATE</td>
-<td>1</td>
-<td>Средний уровень риска</td>
+<td>не указан</td>
 </tr>
 <tr>
 <td>RISK_LEVEL_LOW</td>
-<td>2</td>
+<td>1</td>
 <td>Низкий уровень риска</td>
+</tr>
+<tr>
+<td>RISK_LEVEL_MODERATE</td>
+<td>2</td>
+<td>Средний уровень риска</td>
+</tr>
+<tr>
+<td>RISK_LEVEL_HIGH</td>
+<td>3</td>
+<td>Высокий уровень риска</td>
 </tr>
 </tbody>
 </table>

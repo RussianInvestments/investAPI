@@ -11,6 +11,7 @@ option php_namespace = "Tinkoff\\Invest\\V1";
 
 import "google/protobuf/timestamp.proto";
 import "common.proto";
+import "google/api/field_behavior.proto";
 
 service MarketDataService { //Сервис получения биржевой информации:</br> **1**. свечи;</br> **2**. стаканы;</br> **3**. торговые статусы;</br> **4**. лента сделок.
 
@@ -313,11 +314,11 @@ message TradingStatus {
 
 //Запрос исторических свечей.
 message GetCandlesRequest {
-  string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
-  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
-  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
-  CandleInterval interval = 4; //Интервал запрошенных свечей.
-  string instrument_id = 5; //Идентификатор инструмента, принимает значение figi или instrument_uid.
+  optional string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
+  google.protobuf.Timestamp from = 2 [(google.api.field_behavior) = REQUIRED]; //Начало запрашиваемого периода в часовом поясе UTC.
+  google.protobuf.Timestamp to = 3 [(google.api.field_behavior) = REQUIRED]; //Окончание запрашиваемого периода в часовом поясе UTC.
+  CandleInterval interval = 4 [(google.api.field_behavior) = REQUIRED]; //Интервал запрошенных свечей.
+  optional string instrument_id = 5; //Идентификатор инструмента, принимает значение figi или instrument_uid.
 }
 
 //Интервал свечей.
@@ -375,9 +376,9 @@ message LastPrice {
 
 //Запрос стакана.
 message GetOrderBookRequest {
-  string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
-  int32 depth = 2; //Глубина стакана.
-  string instrument_id = 3; //Идентификатор инструмента, принимает значение figi или instrument_uid.
+  optional string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
+  int32 depth = 2 [(google.api.field_behavior) = REQUIRED]; //Глубина стакана.
+  optional string instrument_id = 3; //Идентификатор инструмента, принимает значение figi или instrument_uid.
 }
 
 //Информация о стакане.
@@ -398,8 +399,8 @@ message GetOrderBookResponse {
 
 //Запрос получения торгового статуса.
 message GetTradingStatusRequest {
-  string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
-  string instrument_id = 2; //Идентификатор инструмента, принимает значение figi или instrument_uid.
+  optional string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
+  optional string instrument_id = 2; //Идентификатор инструмента, принимает значение figi или instrument_uid.
 }
 
 //Запрос получения торгового статуса.
@@ -424,10 +425,10 @@ message GetTradingStatusResponse {
 
 //Запрос обезличенных сделок за последний час.
 message GetLastTradesRequest {
-  string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
-  google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
-  google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
-  string instrument_id = 4; //Идентификатор инструмента, принимает значение figi или instrument_uid.
+  optional string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
+  google.protobuf.Timestamp from = 2 [(google.api.field_behavior) = REQUIRED]; //Начало запрашиваемого периода в часовом поясе UTC.
+  google.protobuf.Timestamp to = 3 [(google.api.field_behavior) = REQUIRED]; //Окончание запрашиваемого периода в часовом поясе UTC.
+  optional string instrument_id = 4; //Идентификатор инструмента, принимает значение figi или instrument_uid.
 }
 
 //Обезличенных сделок за последний час.
@@ -440,7 +441,7 @@ message GetMySubscriptions { }
 
 //Запрос цен закрытия торговой сессии по инструментам.
 message GetClosePricesRequest {
-  repeated InstrumentClosePriceRequest instruments = 1; //Массив по инструментам.
+  repeated InstrumentClosePriceRequest instruments = 1 [(google.api.field_behavior) = REQUIRED]; //Массив по инструментам.
 }
 
 //Запрос цен закрытия торговой сессии по инструменту.
