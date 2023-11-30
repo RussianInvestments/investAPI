@@ -189,6 +189,11 @@
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр *stop_order_type* имеет некорректное значение.</br>Список доступных значений: [*stop_order_type*](https://russianinvestments.github.io/investAPI/stoporders/#stopordertype)."
   },
+  "30039": {
+    "message": "bad request: 'trailing_data'",
+    "type": "INVALID_ARGUMENT",
+    "description": "Укажите корректное значение параметра *trailing_data*"
+  },
   "30040": {
     "message": "'expire_date' is invalid",
     "type": "INVALID_ARGUMENT",
@@ -498,6 +503,26 @@
     "message": "specify a lower limit or page value because there are fewer brands",
     "type": "INVALID_ARGUMENT",
     "description": "Количество брендов меньше запрашиваемых параметров."
+  },
+  "30109": {
+    "message": "maximum transaction amount has been exceeded",
+    "type": "INVALID_ARGUMENT",
+    "description": "Превышена максимальная сумма сделки. Разделите ордер на несколько ордеров меньшего объема."
+  },
+  "30210": {
+    "message": "trailing data required",
+    "type": "INVALID_ARGUMENT",
+    "description": "Проверьте параметры запроса стоп-заявки. Не заданы indent или spread."
+  },
+  "30211": {
+    "message": "indent type required",
+    "type": "INVALID_ARGUMENT",
+    "description": "Проверьте параметры запроса стоп-заявки. Не задан indent_type."
+  },
+  "30212": {
+    "message": "spread type required",
+    "type": "INVALID_ARGUMENT",
+    "description": "Проверьте параметры запроса стоп-заявки. Не задан spread_type."
   },
   "40002": {
     "message": "insufficient privileges",

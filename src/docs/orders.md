@@ -75,13 +75,21 @@ Stream сделок пользователя
 
 - Тело ответа — [GetMaxLotsResponse](#getmaxlotsresponse)
 
+
+#### GetOrderPrice
+Метод получения предварительной стоимости для лимитной заявки
+
+- Тело запроса — [GetOrderPriceRequest](#getorderpricerequest)
+
+- Тело ответа — [GetOrderPriceResponse](#getorderpriceresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
 ###Сообщения методов
 
 
-
+ 
 #### TradesStreamRequest
 Запрос установки соединения.
 
@@ -92,7 +100,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### TradesStreamResponse
 Информация о торговых поручениях.
 
@@ -104,7 +112,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### OrderTrades
 Информация об исполнении торгового поручения.
 
@@ -121,7 +129,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### OrderTrade
 Информация о сделке.
 
@@ -135,7 +143,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### PostOrderRequest
 Запрос выставления торгового поручения.
 
@@ -150,11 +158,12 @@ Stream сделок пользователя
 | order_type |  [OrderType](#ordertype) | Тип заявки. |
 | order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов. |
 | instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
-| time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения, применяется только к лимитной заявке |
+| time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения, применяется только к лимитной заявке. |
+| price_type |  [PriceType](#pricetype) | Тип цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### PostOrderResponse
 Информация о выставлении поручения.
 
@@ -182,7 +191,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### CancelOrderRequest
 Запрос отмены торгового поручения.
 
@@ -194,7 +203,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### CancelOrderResponse
 Результат отмены торгового поручения.
 
@@ -205,7 +214,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### GetOrderStateRequest
 Запрос получения статуса торгового поручения.
 
@@ -214,10 +223,11 @@ Stream сделок пользователя
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Номер счёта. |
 | order_id |  [string](#string) | Идентификатор заявки. |
+| price_type |  [PriceType](#pricetype) | Тип цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### GetOrdersRequest
 Запрос получения списка активных торговых поручений.
 
@@ -228,7 +238,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### GetOrdersResponse
 Список активных торговых поручений.
 
@@ -239,7 +249,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### OrderState
 Информация о торговом поручении.
 
@@ -269,7 +279,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### OrderStage
 Сделки в рамках торгового поручения.
 
@@ -282,7 +292,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### ReplaceOrderRequest
 Запрос изменения выставленной заявки.
 
@@ -298,7 +308,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### GetMaxLotsRequest
 Запрос на расчет количества доступных для покупки/продажи лотов. Если не указывать цену инструмента, то расчет произведется по текущум ценам в стакане: по лучшему предложению для покупки и по лучшему спросу для продажи.
 
@@ -311,7 +321,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### GetMaxLotsResponse
 Результат количество доступных для покупки/продажи лотов
 
@@ -326,7 +336,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### GetMaxLotsResponse.BuyLimitsView
 
 
@@ -339,7 +349,7 @@ Stream сделок пользователя
  <!-- end Fields -->
  <!-- end HasFields -->
 
-
+ 
 #### GetMaxLotsResponse.SellLimitsView
 
 
@@ -347,6 +357,63 @@ Stream сделок пользователя
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | sell_max_lots |  [int64](#int64) | Максимальное доступное количество лотов для продажи |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### GetOrderPriceRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| account_id |  [string](#string) | Номер счета |
+| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или instrument_uid |
+| price |  [Quotation](#quotation) | Цена инструмента |
+| direction |  [OrderDirection](#orderdirection) | Направление заявки |
+| quantity |  [int64](#int64) | Количество лотов |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### GetOrderPriceResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| total_order_amount |  [MoneyValue](#moneyvalue) | Итоговая стоимость заявки |
+| initial_order_amount |  [MoneyValue](#moneyvalue) | Стоимость заявки без комиссий, НКД, ГО (для фьючерсов — стоимость контрактов) |
+| lots_requested |  [int64](#int64) | Запрошено лотов |
+| executed_commission |  [MoneyValue](#moneyvalue) | Общая комиссия |
+| executed_commission_rub |  [MoneyValue](#moneyvalue) | Общая комиссия в рублях |
+| service_commission |  [MoneyValue](#moneyvalue) | Сервисная комиссия |
+| deal_commission |  [MoneyValue](#moneyvalue) | Комиссия за проведение сделки |
+| extra_bond |  [GetOrderPriceResponse.ExtraBond](#getorderpriceresponseextrabond) | Дополнительная информация по облигациям |
+| extra_future |  [GetOrderPriceResponse.ExtraFuture](#getorderpriceresponseextrafuture) | Дополнительная информация по фьючерсам |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### GetOrderPriceResponse.ExtraBond
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату |
+| nominal_conversion_rate |  [Quotation](#quotation) | Курс конвертации для замещающих облигаций |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### GetOrderPriceResponse.ExtraFuture
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| initial_margin |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение для фьючерса |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -401,7 +468,7 @@ Stream сделок пользователя
 | ---- | ------ | ----------- |
 | TIME_IN_FORCE_UNSPECIFIED | 0 | Значение не определено см. TIME_IN_FORCE_DAY |
 | TIME_IN_FORCE_DAY | 1 | Заявка действует до конца торгового дня. значение по умолчанию |
-| TIME_IN_FORCE_FILL_AND_KILL | 2 | Заявка исполнена(возможно частично) и уничтожена. |
+| TIME_IN_FORCE_FILL_AND_KILL | 2 | Заявка исполнена(возможно частично) и уничтожена |
 | TIME_IN_FORCE_FILL_OR_KILL | 3 | Заявка исполнена полностью или уничтожена, недоступно для срочного рынка |
 
 

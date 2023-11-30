@@ -370,6 +370,7 @@ Deprecated Метод получения списка опционов.
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. Фильтрация по coupon_date (дата выплаты купона) |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация по coupon_date (дата выплаты купона) |
+| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -767,6 +768,9 @@ Deprecated Метод получения списка опционов.
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
+| initial_margin_on_buy |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при покупке. |
+| initial_margin_on_sell |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при продаже. |
+| min_price_increment_amount |  [Quotation](#quotation) | Стоимость шага цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -830,6 +834,7 @@ Deprecated Метод получения списка опционов.
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
+| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -866,6 +871,7 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Идентификатор инструмента. |
+| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -948,6 +954,7 @@ Deprecated Метод получения списка опционов.
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра). |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра). |
+| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1431,6 +1438,11 @@ Deprecated Метод получения списка опционов.
 #### GetBrandsRequest
 Запрос списка брендов.
 
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| paging |  [Page](#page) | Настройки пагинации. |
+ <!-- end Fields -->
  <!-- end HasFields -->
 
 
@@ -1452,6 +1464,7 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | brands | Массив объектов [Brand](#brand) | Массив брендов. |
+| paging |  [PageResponse](#pageresponse) | Данные по пагинации |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1712,9 +1725,10 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| RISK_LEVEL_HIGH | 0 | Высокий уровень риска |
-| RISK_LEVEL_MODERATE | 1 | Средний уровень риска |
-| RISK_LEVEL_LOW | 2 | Низкий уровень риска |
+| RISK_LEVEL_UNSPECIFIED | 0 | не указан |
+| RISK_LEVEL_LOW | 1 | Низкий уровень риска |
+| RISK_LEVEL_MODERATE | 2 | Средний уровень риска |
+| RISK_LEVEL_HIGH | 3 | Высокий уровень риска |
 
 
  <!-- range .Enums -->

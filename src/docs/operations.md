@@ -488,7 +488,7 @@ Server-side stream обновлений информации по изменен
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Идентификатор счёта клиента. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода (по UTC). |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC), как правило, возможно сформировать отчет по дату, на несколько дней меньше текущей. Начало и окончание периода должны быть в рамках одного календарного года.  |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода (по UTC), как правило, возможно сформировать отчет по дату, на несколько дней меньше текущей. Начало и окончание периода должны быть в рамках одного календарного года. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

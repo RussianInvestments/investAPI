@@ -52,6 +52,7 @@ nav:
   - Примеры запросов: example.md
   - "EOL v1": eol_v1.md
   - "Stream-соединения" : stream.md
+  - "Цены облигаций и фьючерсов" : points.md
 - Ответы на частые вопросы: faq.md
 - Языки программирования:
   - Python: faq_python.md
