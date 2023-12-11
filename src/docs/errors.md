@@ -1,7 +1,5 @@
 #Ошибки TINKOFF INVEST API
 
-Некоторые ошибки 
- 
 |Код ошибки|Тип ошибки|Текст ошибки|Причины возникновения и </br> рекомендации по устранению|
 |---|---|---|---|
 12001|UNIMPLEMENTED|Method is unimplemented|Метод не реализован.|
@@ -22,8 +20,8 @@
 30014|INVALID_ARGUMENT|the maximum request period for the given candle interval has been exceeded|Превышен максимальный период запроса для данного интервала свечи.</br>Укажите корректный интервал.</br>Подробнее: [Интервалы свечей и доступные периоды](https://russianinvestments.github.io/investAPI/load_history/).|
 30015|INVALID_ARGUMENT|parameter 'quantity' is missing or equal to 0|Входной параметр *quantity* является обязательным.</br>Укажите корректный параметр *quantity*.|
 30016|INVALID_ARGUMENT|'quantity' is invalid|Входной параметр *quantity* имеет некорректное значение.</br>Укажите корректный параметр *quantity*.|
-30017|INVALID_ARGUMENT|missing parameter: 'price'|Входной параметр *price* является обязательным.</br>Укажите корректный параметр *price*. </br> Значение параметра *price* должно быть положительным.</br>units и nanos не могут иметь разные знак и модуль nanos должен быть < 999 999 999|
-30018|INVALID_ARGUMENT|price is invalid|Входной параметр *price* имеет некорректное значение.</br>Укажите корректный параметр *price*. |
+30017|INVALID_ARGUMENT|missing parameter: 'price'|Входной параметр *price* является обязательным.</br>Укажите корректный параметр *price*.</br>Значение параметра *price* должно быть положительным.</br>units и nanos не могут иметь разные знак и модуль nanos должен быть < 999 999 999|
+30018|INVALID_ARGUMENT|price is invalid|Входной параметр *price* имеет некорректное значение.</br>Укажите корректный параметр *price*.|
 30019|INVALID_ARGUMENT|missing parameter: 'direction'|Входной параметр *direction* является обязательным.</br>Укажите корректный параметр *direction*.|
 30020|INVALID_ARGUMENT|'direction' is invalid|Входной параметр *direction* имеет некорректное значение.|
 30021|INVALID_ARGUMENT|missing parameter: 'account_id'|Входной параметр *account_id* является обязательным.</br>Укажите корректный параметр *account_id*.|
@@ -32,7 +30,7 @@
 30025|INVALID_ARGUMENT|missing parameter: 'order_type'|Входной параметр *order_type* является обязательным.</br>Укажите корректный параметр *order_type*. Список доступных значений: [*order_type*](https://russianinvestments.github.io/investAPI/orders/#ordertype).|
 30026|INVALID_ARGUMENT|invalid parameter: 'order_type'|Входной параметр *order_type* имеет некорректное значение.</br>Укажите корректный параметр *order_type*.|
 30027|INVALID_ARGUMENT|missing parameter: 'order_id'|Входной параметр *order_id* является обязательным.</br>Укажите корректный параметр *order_id*.|
-30028|INVALID_ARGUMENT|'order id' is invalid UUID format.|Входной параметр *order_id* имеет некорректное значение.</br>Укажите корректный параметр *order_id* формата UUID.Максимальная длина 36 символов.|
+30028|INVALID_ARGUMENT|'order id' is invalid UUID format.|Входной параметр *order_id* имеет некорректное значение.</br>Укажите корректный параметр *order_id* формата UUID. Максимальная длина 36 символов.|
 30029|INVALID_ARGUMENT|missing parameter: 'idempotency_key'|Входной параметр *idempotency_key* является обязательным.</br>Укажите корректный параметр *idempotency_key*.|
 30030|INVALID_ARGUMENT|'idempotency_key' is invalid|Входной параметр *idempotency_key* имеет некорректное значение.</br>Укажите корректный параметр *idempotency_key*. Максимальная длина 36 символов.|
 30031|INVALID_ARGUMENT|missing parameter: 'depth'|Входной параметр *depth* является обязательным.</br>Укажите корректный параметр *depth*.|
@@ -42,23 +40,24 @@
 30036|INVALID_ARGUMENT|missing parameter: 'stop_price'|Входной параметр *stop_price* является обязательным.</br>Укажите корректный параметр *stop_price*.|
 30037|INVALID_ARGUMENT|missing parameter: 'stop_order_type'|Входной параметр *stop_order_type* является обязательным.</br>Укажите корректный параметр *stop_order_type*.|
 30038|INVALID_ARGUMENT|'stop_order_type' is invalid|Входной параметр *stop_order_type* имеет некорректное значение.</br>Список доступных значений: [*stop_order_type*](https://russianinvestments.github.io/investAPI/stoporders/#stopordertype).|
+30039|INVALID_ARGUMENT|bad request: 'trailing_data'|Укажите корректное значение параметра *trailing_data*|
 30040|INVALID_ARGUMENT|'expire_date' is invalid|Входной параметр *expire_date* имеет некорректное значение.</br>Укажите корректный параметр *expire_date*.|
 30041|INVALID_ARGUMENT|the method is available only for futures|Метод предназначен только для работы с фьючерсами.</br>Передайте во входные параметры метода идентификатор фьючерса.|
-30042|INVALID_ARGUMENT|not enough assets for a margin trade|Недостаточно активов для маржинальной сделки.</br>Проверьте маржинальные показатели счёта. Вы можете сделать это с помощью метода [*GetMarginAttributes*](https://russianinvestments.github.io/investAPI/users#getmarginattributes). |
+30042|INVALID_ARGUMENT|not enough assets for a margin trade|Недостаточно активов для маржинальной сделки.</br>Проверьте маржинальные показатели счёта. Вы можете сделать это с помощью метода [*GetMarginAttributes*](https://russianinvestments.github.io/investAPI/users#getmarginattributes).|
 30043|INVALID_ARGUMENT|missing parameter: 'expiration_type'|Входной параметр *expiration_type* является обязательным.</br>Укажите корректный параметр *expiration_type*.|
 30044|INVALID_ARGUMENT|'expiration_type' is invalid|Входной параметр *expiration_type* имеет некорректное значение.</br>Список доступных значений: [*expiration_type*](https://russianinvestments.github.io/investAPI/stoporders/#stoporderexpirationtype).|
 30045|INVALID_ARGUMENT|missing parameter: 'ticker'|Входной параметр *ticker* является обязательным.</br>Укажите корректный параметр *ticker*.|
-30047|INVALID_ARGUMENT|price currency does not match the settlement currency|Валюта цены не совпадает с валютой расчётов по инструменту.</br>Укажите корректную валюту цены. Узнать валюту расчета конкретного инструмента вы можете с помощью метода [*GetInstrumentBy*](https://russianinvestments.github.io/investAPI/instruments#getinstrumentby).|
+30047|INVALID_ARGUMENT|price currency does not match the settlement currency|Валюта цены не совпадает с валютой расчётов по инструменту.</br>Укажите корректную валюту цены. Узнать валюту расчета конкретного инструмента вы можете с помощью метода [*GetInstrumentBy*](https://russianinvestments.github.io/investAPI/instruments#getinstrumentby). |
 30048|INVALID_ARGUMENT|instrument type is not bond|Метод предназначен только для запроса информации по облигации.</br>Передайте во входные параметры метода идентификатор облигации.|
 30049|INVALID_ARGUMENT|post order error: %s|Ошибка метода выставления торгового поручения.</br>Подробнее в тексте ошибки.|
 30050|INVALID_ARGUMENT|'instrument_status' is invalid|Входной параметр *instrument_status* имеет некорректное значение.</br>Список доступных значений: [*instrument_status*](https://russianinvestments.github.io/investAPI/instruments#instrumentstatus).|
 30051|INVALID_ARGUMENT|account margin status is disabled|Для данного договора недоступна маржинальная торговля.</br>Для выставления поручений на срочном рынке, необходимо включить маржинальную торговлю в приложении и терминале.|
 30052|INVALID_ARGUMENT|instrument forbidden for trading by API|Для данного инструмента недоступна торговля через API.</br>Вы можете проверить значение параметра api_trade_available_flag данного инструмента c помощью метода [*GetTradingStatus*](https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus).|
 30053|INVALID_ARGUMENT|post stop_order error: %s|Ошибка метода выставления стоп-заявки.</br>Подробнее в тексте ошибки.|
-30054|INVALID_ARGUMENT|instrument type is not a share or etf|Тип инструмента не инвестиционный фонд или акция.|
-30055|INVALID_ARGUMENT|order_id cannot be longer than 36 characters|order_id не может быть длиннее 36 символов.|
-30056|INVALID_ARGUMENT|stop order settlement currency is not supported|Валюта выставления стоп-заявки не поддерживается.|
-30057|INVALID_ARGUMENT|the order is a duplicate, but the order report was not found|Заявка является дублем, но отчет по заявке не найден.</br> Проверьте параметр order_id (идентификатор запроса выставления поручения для целей идемпотентности.) - он должен быть уникальным.|
+30054|INVALID_ARGUMENT|instrument type is not a share or etf|Тип инструмента не инвестиционный фонд или акция|
+30055|INVALID_ARGUMENT|order_id cannot be longer than 36 characters|order_id не может быть длиннее 36 символов|
+30056|INVALID_ARGUMENT|stop order settlement currency is not supported|Валюта выставления стоп-заявки не поддерживается|
+30057|INVALID_ARGUMENT|the order is a duplicate, but the order report was not found|Заявка является дублем, но отчет по заявке не найден.</br>Проверьте параметр order_id (идентификатор запроса выставления поручения для целей идемпотентности.) - он должен быть уникальным.|
 30058|INVALID_ARGUMENT|task not completed yet, please try again later|Выполнение задачи еще не завершено, попробуйте позже.|
 30059|INVALID_ARGUMENT|cancel order error: %s|Ошибка метода отмены заявки.</br>Подробнее в тексте ошибки.|
 30060|INVALID_ARGUMENT|cancel stop-order error: %s|Ошибка метода отмены стоп-заявки.</br>Подробнее в тексте ошибки.|
@@ -79,7 +78,7 @@
 30081|INVALID_ARGUMENT|account status is closed|Аккаунт закрыт.|
 30082|INVALID_ARGUMENT|account status is blocked|Аккаунт заблокирован.|
 30083|INVALID_ARGUMENT|order_type is invalid|Некорректный тип заявки.|
-30084|INVALID_ARGUMENT|maximum request period has been exceeded|Превышен лимит запрашиваемого периода. |
+30084|INVALID_ARGUMENT|maximum request period has been exceeded|Превышен лимит запрашиваемого периода.|
 30085|INVALID_ARGUMENT|price in points is available only for futures and bonds|Тип цены в пунктах доступен только для фьючерсов и облигаций.|
 30086|INVALID_ARGUMENT|year is invalid|Некорректный год.|
 30087|INVALID_ARGUMENT|missing parameter: query|Входной параметр *query* является обязательным.</br>Укажите не пустой параметр *query*.|
@@ -98,14 +97,19 @@
 30100|INVALID_ARGUMENT|the price must be positive|Цена должна быть положительной.|
 30101|INVALID_ARGUMENT|to trade this financial instrument, pass the test|Для торговли этим инструментом пройдите тестирование. О том, как сдать тестирование и кому оно нужно читайте [тут](https://www.tinkoff.ru/blog/articles/test-invest/).|
 30102|INVALID_ARGUMENT|Required parameters missing|Не правильно указаны обязательные параметры.|
-30103|INVALID_ARGUMENT|Only best price is allowed|Для инструмента доступно выставление заявки только типа лучшая цена.|
-30104|INVALID_ARGUMENT|price_type is invalid| Некорректное значение *price_type*. Значением *price_type* может быть только **PRICE_TYPE_POINT** ИЛИ **PRICE_TYPE_CURRENCY**.|
-30105|INVALID_ARGUMENT|exchange_order_type is invalid| Некорректное значение *exchange_order_type*. Значением *exchange_order_type* может быть только **LIMIT** ИЛИ **MARKET**.|
-30106|INVALID_ARGUMENT|status is invalid| Некорректное значение *status*. Значением *status* может быть только **ACTIVE**, **EXCECUTED**, **CANCELED** И **EXPIRED**.|
-30107|INVALID_ARGUMENT|negative values are not allowed| Некорректное значение *limit* и/или *page*. Параметры *limit* и *page* не могут принимать отицательные значения.|
+30103|INVALID_ARGUMENT|Only best price is allowed|Для инструмента доступно выставление заявки только типа лучшая цена|
+30104|INVALID_ARGUMENT|price_type is invalid|Некорректное значение *price_type*. Значением *price_type* может быть только **PRICE_TYPE_POINT** ИЛИ **PRICE_TYPE_CURRENCY**.|
+30105|INVALID_ARGUMENT|exchange_order_type is invalid|Некорректное значение *exchange_order_type*. Значением *exchange_order_type* может быть только **LIMIT** ИЛИ **MARKET**.|
+30106|INVALID_ARGUMENT|status is invalid|Некорректное значение *status*. Значением *status* может быть только **ACTIVE**, **EXCECUTED**, **CANCELED** И **EXPIRED**.|
+30107|INVALID_ARGUMENT|negative values are not allowed|Некорректное значение *limit* и/или *page*. Параметры *limit* и *page* не могут принимать отицательные значения.|
+30108|INVALID_ARGUMENT|specify a lower limit or page value because there are fewer brands|Количество брендов меньше запрашиваемых параметров.|
+30109|INVALID_ARGUMENT|maximum transaction amount has been exceeded|Превышена максимальная сумма сделки. Разделите ордер на несколько ордеров меньшего объема.|
+30210|INVALID_ARGUMENT|trailing data required|Проверьте параметры запроса стоп-заявки. Не заданы indent или spread.|
+30211|INVALID_ARGUMENT|indent type required|Проверьте параметры запроса стоп-заявки. Не задан indent_type.|
+30212|INVALID_ARGUMENT|spread type required|Проверьте параметры запроса стоп-заявки. Не задан spread_type.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции.</br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://russianinvestments.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|authentication token is missing or invalid|Токен доступа не найден или не активен.</br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)|
-40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.</br>Брокерский счет не найден, не принадлежит пользователю или закрыт, либо на пользователе ограничения (от Tinkoff Invest API или от биржи). В этом случае нужно обратиться в техподдержку.|
+40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.</br>Брокерский счет не найден, не принадлежит пользователю или закрыт, либо на пользователе ограничения (от Tinkoff Invest API или от биржи). В этом случае нужно обратиться в техподдержку. |
 50001|NOT_FOUND|exchange not found|Биржа не найдена по переданному *exchange_id*.</br>Укажите корректный *exchange_id*.|
 50002|NOT_FOUND|instrument not found|Инструмент не найден.</br>Укажите корректный идентификатор инструмента.|
 50004|NOT_FOUND|account not found|Счёт не найден по переданному *account_id*.</br>Укажите корректный *account_id*.|

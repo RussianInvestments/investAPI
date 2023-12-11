@@ -74,7 +74,9 @@ API реализован на быстром, удобном и функцион
 * [haskell](https://github.com/nickmi11er/tinkoff-invest-haskell)
 * [php](https://github.com/metaseller/tinkoff-invest-api-v2-php)
 * [php YII2](https://packagist.org/packages/metaseller/tinkoff-invest-api-v2-yii2)
-* [swift](https://github.com/JohnReeze/TinkoffInvestSwiftSDK)
+* swift
+  - [JohnReeze/TinkoffInvestSwiftSDK](https://github.com/JohnReeze/TinkoffInvestSwiftSDK)
+  - [egorbos/invest-api-swift-sdk](https://github.com/egorbos/invest-api-swift-sdk)
 * [ruby](https://github.com/blackchestnut/invest_tinkoff)
 * [rust](https://github.com/ovr/tinkoff-invest-rust)
 * [c++](https://github.com/samoilovv/TinkoffInvestSDK)
