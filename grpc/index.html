@@ -1613,9 +1613,12 @@ bidirectional-stream <a href="/investAPI/head-marketdata/">сервиса кот
 <p>Для получения доступа к новому функионалу, который появился после обновления версии, необходимо актуализировать proto-контракты. 
 Для этого необходимо заново скачать <a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">контракты</a>, 
 заменить скаченные файлы в папке проекта и нажать "Run all importers" в левом верхнем углу приложения. 
-Необходимо убедиться, что все proto-контракты имеют актуальную версию.
+Необходимо убедиться, что все proto-контракты имеют актуальную версию.</p>
+<p><strong>Не храните бекапы и копии контрактов в одной папке с актуальными!</strong>
 <img alt="Обновления контрактов в Kreya" src="/investAPI/img/Kreya-update_contracts.png" title="Обновления контрактов в Kreya" /></p>
-<p><strong>Важно!!</strong> Если вы получили ошибку "The referenced gRPC method is not imported.", убедитесь, что вы очистили проект в Kreya от прошлых загруженных контрактов. Также всегда проверяйте путь до папки с загружаемыми контрактами, полное наличие всех proto-файлов и их соответствие актуальной версии на официальном GitHub: <a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">TINKOFF INVEST API</a>. Изменение proto-файлов повлечет за собой ошибку их прочтения у gRPS-клиентов.</p>
+<p><strong>Важно!!</strong> Если вы получили ошибку "The referenced gRPC method is not imported.", убедитесь, что вы очистили проект в Kreya от прошлых загруженных контрактов. 
+Также всегда проверяйте путь до папки с загружаемыми контрактами, полное наличие всех proto-файлов и их соответствие актуальной версии на официальном GitHub: <a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">TINKOFF INVEST API</a>. 
+Изменение proto-файлов повлечет за собой ошибку их прочтения у gRPS-клиентов.</p>
 <h3 id="bloomrpc">BloomRPC</h3>
 <p>Скачать данный клиент можно по ссылке: <a href="https://github.com/uw-labs/bloomrpc/releases">bloomrpc releases</a>.</p>
 <p>Интерфейс утилиты достаточно прост, для старта работы требуется указать домен сервиса и импортировать
