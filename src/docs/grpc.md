@@ -100,9 +100,12 @@ Kreya позволяет увидеть служебные заголовки о
 Для этого необходимо заново скачать [контракты](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts), 
 заменить скаченные файлы в папке проекта и нажать "Run all importers" в левом верхнем углу приложения. 
 Необходимо убедиться, что все proto-контракты имеют актуальную версию.
+**Не храните бекапы и копии контрактов в одной папке с актуальными!**
 ![Обновления контрактов в Kreya](/investAPI/img/Kreya-update_contracts.png "Обновления контрактов в Kreya")
 
-**Важно!!** Если вы получили ошибку "The referenced gRPC method is not imported.", убедитесь, что вы очистили проект в Kreya от прошлых загруженных контрактов. Также всегда проверяйте путь до папки с загружаемыми контрактами, полное наличие всех proto-файлов и их соответствие актуальной версии на официальном GitHub: [TINKOFF INVEST API](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts). Изменение proto-файлов повлечет за собой ошибку их прочтения у gRPS-клиентов.
+**Важно!!** Если вы получили ошибку "The referenced gRPC method is not imported.", убедитесь, что вы очистили проект в Kreya от прошлых загруженных контрактов. 
+Также всегда проверяйте путь до папки с загружаемыми контрактами, полное наличие всех proto-файлов и их соответствие актуальной версии на официальном GitHub: [TINKOFF INVEST API](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts). 
+Изменение proto-файлов повлечет за собой ошибку их прочтения у gRPS-клиентов.
 
 ###BloomRPC
 
