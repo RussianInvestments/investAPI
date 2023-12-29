@@ -53,6 +53,7 @@ message PostStopOrderRequest {
 //Результат выставления стоп-заявки.
 message PostStopOrderResponse {
   string stop_order_id = 1; //Уникальный идентификатор стоп-заявки
+  ResponseMetadata response_metadata = 254; //Метадата
 }
 
 //Запрос получения списка активных стоп-заявок.

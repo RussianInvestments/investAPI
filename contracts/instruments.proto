@@ -29,6 +29,9 @@ service InstrumentsService {/*Сервис предназначен для по�
   //Метод получения графика выплат купонов по облигации.
   rpc GetBondCoupons (GetBondCouponsRequest) returns (GetBondCouponsResponse);
 
+  //Метод получения событий по облигации
+  rpc GetBondEvents (GetBondEventsRequest) returns (GetBondEventsResponse);
+
   //Метод получения валюты по её идентификатору.
   rpc CurrencyBy (InstrumentRequest) returns (CurrencyResponse);
 
@@ -63,6 +66,9 @@ service InstrumentsService {/*Сервис предназначен для по�
 
   //Метод получения списка акций.
   rpc Shares (InstrumentsRequest) returns (SharesResponse);
+
+  //Метод получения индикативных инструментов (индексов, товаров и др.)
+  rpc Indicatives(IndicativesRequest) returns (IndicativesResponse);
 
   //Метод получения накопленного купонного дохода по облигации.
   rpc GetAccruedInterests (GetAccruedInterestsRequest) returns (GetAccruedInterestsResponse);
@@ -102,6 +108,15 @@ service InstrumentsService {/*Сервис предназначен для по�
 
   //Метод получения фундаментальных показателей по активу
   rpc GetAssetFundamentals(GetAssetFundamentalsRequest) returns (GetAssetFundamentalsResponse);
+
+  //Метод получения расписания выхода отчетностей эмитентов
+  rpc GetAssetReports(GetAssetReportsRequest) returns (GetAssetReportsResponse);
+
+  //Метод получения мнения аналитиков по инструменту
+  rpc GetConsensusForecasts(GetConsensusForecastsRequest) returns (GetConsensusForecastsResponse);
+
+  //Метод получения прогнозов инвестдомов по инструменту
+  rpc GetForecastBy(GetForecastRequest) returns (GetForecastResponse);
 }
 
 //Запрос расписания торгов.
@@ -181,6 +196,52 @@ message GetBondCouponsRequest {
 message GetBondCouponsResponse {
   repeated Coupon events = 1;
 }
+
+//События по облигации.
+message GetBondEventsRequest {
+  optional google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
+  optional google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
+  string instrument_id = 4 [(google.api.field_behavior) = REQUIRED]; //Идентификатор инструмента Figi или instrument_uid
+  EventType type = 5; //Тип события
+
+  enum EventType {
+    EVENT_TYPE_UNSPECIFIED = 0; //Неопределенное значение
+    EVENT_TYPE_CPN = 1; // Купон
+    EVENT_TYPE_CALL = 2; // Опцион (оферта)
+    EVENT_TYPE_MTY = 3;// Погашение
+    EVENT_TYPE_CONV = 4; // Конвертация
+  }
+}
+
+//Объект передачи информации о событии облигации.
+message GetBondEventsResponse {
+  repeated BondEvent events = 1;
+  message BondEvent {
+    string instrument_id = 2; // Идентификатор инструмента
+    int32 event_number = 3; // Номер события для данного типа события
+    google.protobuf.Timestamp event_date = 4; // Дата события
+    GetBondEventsRequest.EventType event_type = 5; // Тип события
+    Quotation event_total_vol = 6; // Полное количество бумаг, задействованных в событии
+    google.protobuf.Timestamp fix_date = 7; // Дата фиксации владельцев для участия в событии
+    google.protobuf.Timestamp rate_date = 8; // Дата определения даты либо факта события
+    google.protobuf.Timestamp  default_date = 9; // Дата дефолта (если применимо)
+    google.protobuf.Timestamp real_pay_date = 10; // Дата реального исполнения обязательства
+    google.protobuf.Timestamp pay_date = 11; // Дата выплаты
+    MoneyValue pay_one_bond = 12; // Выплата на одну облигацию
+    MoneyValue money_flow_val = 13; // Выплаты на все бумаги, задействованные в событии
+    string execution = 14; // Признак исполнения
+    string operation_type = 15; // Тип операции
+    Quotation value = 16; // Стоимость операции (ставка купона, доля номинала, цена выкупа или коэффициент конвертации)
+    string note = 17; // Примечание
+    string convert_to_fin_tool_id = 18; // ID выпуска бумаг, в который произведена конвертация (для конвертаций)
+    google.protobuf.Timestamp coupon_start_date = 19; // Начало купонного периода
+    google.protobuf.Timestamp coupon_end_date = 20; // Окончание купонного периода
+    int32 coupon_period = 21; // Купонный период
+    Quotation  coupon_interest_rate = 22; // Ставка купона, процентов годовых
+  }
+}
+
+
 
 //Объект передачи информации о купоне облигации.
 message Coupon {
@@ -969,6 +1030,8 @@ message FavoriteInstrument {
   string class_code = 3; //Класс-код инструмента.
   string isin = 4; //Isin-идентификатор инструмента.
   string instrument_type = 11; //Тип инструмента.
+  string name = 12; //Название инструмента.
+  string uid = 13; //Уникальный идентификатор инструмента.
   bool otc_flag = 16; //Признак внебиржевой ценной бумаги.
   bool api_trade_available_flag = 17; //Параметр указывает на возможность торговать инструментом через API.
   InstrumentType instrument_kind = 18; //Тип инструмента.
@@ -982,7 +1045,8 @@ message EditFavoritesRequest {
 
 //Массив инструментов для редактирования списка избранных инструментов.
 message EditFavoritesRequestInstrument {
-  string figi = 1 [(google.api.field_behavior) = REQUIRED]; //Figi-идентификатор инструмента.
+  optional string figi = 1  [deprecated = true]; //Figi-идентификатор инструмента.
+  string instrument_id = 2  [(google.api.field_behavior) = REQUIRED]; //Идентификатор инструмента Figi или instrument_uid
 }
 
 //Тип действия со списком избранных инструментов.
@@ -1011,6 +1075,28 @@ message GetCountriesRequest {}
 //Справочник стран.
 message GetCountriesResponse {
   repeated CountryResponse countries = 1; //Массив стран.
+}
+
+//Запрос справочника индексов и товаров
+message IndicativesRequest {}
+
+//Справочник индексов и товаров
+message IndicativesResponse {
+  repeated IndicativeResponse instruments = 1; // Массив инструментов
+};
+
+//Индикатив
+message IndicativeResponse {
+  string figi = 1; // Figi-идентификатор инструмента
+  string ticker = 2;  // Тикер инструмента
+  string class_code = 3; // Класс-код инструмента
+  string currency = 4; // Валюта расчётов
+  InstrumentType instrument_kind = 10; //Тип инструмента.
+  string name = 12; // Название инструмента
+  string exchange = 13; // Tорговая площадка (секция биржи)
+  string uid = 14; // Уникальный идентификатор инструмента
+  bool buy_available_flag = 404; // Признак доступности для покупки
+  bool sell_available_flag = 405; // Признак доступности для продажи
 }
 
 //Данные о стране.
@@ -1069,15 +1155,18 @@ message GetBrandsResponse {
   PageResponse paging = 2; //Данные по пагинации
 }
 
+//Запрос фундаментальных показателей
 message GetAssetFundamentalsRequest {
   repeated string assets = 1 [(google.api.field_behavior) = REQUIRED]; //Массив идентификаторов активов (не более 100 шт.).
 }
 
+//Фундаментальные показатели
 message GetAssetFundamentalsResponse {
   repeated StatisticResponse fundamentals = 1;
 
+  //Фундаментальные показатели по активу
   message StatisticResponse {
-    string asset_uid = 1;
+    string asset_uid = 1; //Идентификатор актива
     string currency = 2; //Валюта
     double market_capitalization = 3; //Рыночная капитализация
     double high_price_last_52_weeks = 4; //Максимум за год
@@ -1135,6 +1224,110 @@ message GetAssetFundamentalsResponse {
     double ev_to_sales = 57; //Отношение EV к выручке
   }
 
+}
+
+//Запрос отчетов эмитентов
+message GetAssetReportsRequest {
+  string instrument_id = 1 [(google.api.field_behavior) = REQUIRED]; //Идентификатор инструмента в формате uid.
+  optional google.protobuf.Timestamp from = 2; //Начало запрашиваемого периода в часовом поясе UTC.
+  optional google.protobuf.Timestamp to = 3; //Окончание запрашиваемого периода в часовом поясе UTC.
+}
+
+//Отчеты эмитентов
+message GetAssetReportsResponse {
+  repeated GetAssetReportsEvent events = 1; // Массив событий по облигации
+  
+  //Отчет
+  message GetAssetReportsEvent {
+    string instrument_id = 1;  // Идентификатор инструмента.
+    google.protobuf.Timestamp report_date = 2; // Дата публикации отчета.
+    int32 period_year = 3; // Год периода отчета.
+    int32 period_num = 4; // Номер периода.
+    AssetReportPeriodType period_type = 5; // Тип отчета.
+    google.protobuf.Timestamp created_at = 6; // Дата создания записи.
+  }
+
+  enum AssetReportPeriodType {
+     PERIOD_TYPE_UNSPECIFIED = 0; //не указан
+     PERIOD_TYPE_QUARTER = 1; // Квартальный
+     PERIOD_TYPE_SEMIANNUAL = 2; // Полугодовой
+     PERIOD_TYPE_ANNUAL = 3; // Годовой
+  }
+}
+
+//Запрос консенсус-прогнозов
+message GetConsensusForecastsRequest {
+  optional Page paging = 1; //Настройки пагинации.
+}
+
+//Консенсус-прогнозы
+message GetConsensusForecastsResponse {
+  repeated ConsensusForecastsItem items = 1; // Массив прогнозов
+  PageResponse page = 2; //Данные по пагинации
+
+  //Прогноз
+  message ConsensusForecastsItem {
+    string uid = 1; // uid идентификатор
+    string asset_uid = 2; // uid идентификатор актива
+    google.protobuf.Timestamp	created_at = 3; // Дата и время создания записи
+    Quotation best_target_price = 4; // Целевая цена на 12 месяцев
+    Quotation best_target_low = 5; // Минимальная прогнозная цена
+    Quotation best_target_high = 6; // Максимальная прогнозная цена
+    int32 total_buy_recommend	= 7; // Количество аналитиков рекомендующих покупать
+    int32 total_hold_recommend = 8;	// Количество аналитиков рекомендующих держать
+    int32 total_sell_recommend = 9; // Количество аналитиков рекомендующих продавать
+    string currency = 10; // Валюта прогнозов /инструмента
+    Recommendation consensus = 11; // Консенсус-прогноз
+    google.protobuf.Timestamp prognosis_date = 12; // Дата прогноза
+  }
+
+}
+
+enum Recommendation {
+  RECOMMENDATION_UNSPECIFIED = 0; // Не определено
+  RECOMMENDATION_BUY = 1; // Покупать
+  RECOMMENDATION_HOLD = 2; // Держать
+  RECOMMENDATION_SELL = 3; // Продавать
+}
+
+//Запрос прогнозов инвестдомов
+message GetForecastRequest {
+  string instrument_id = 1;  // Идентификатор инструмента
+}
+
+//Прогнозы инвестдомов по инструменту
+message GetForecastResponse {
+  repeated TargetItem targets = 1; //Массив прогнозов
+  ConsensusItem consensus = 2; // Согласованный прогноз
+
+  //Прогноз
+  message TargetItem {
+    string uid = 1; // Уникальный идентификатор инструмента
+    string ticker = 2; // Тикер инструмента
+    string company = 3; // Название компании, давшей прогноз
+    Recommendation recommendation = 4; // Прогноз
+    google.protobuf.Timestamp recommendation_date = 5; //Дата прогноза
+    string currency = 6; // Валюта
+    Quotation current_price = 7; // Текущая цена
+    Quotation target_price = 8; // Прогнозируемая цена
+    Quotation price_change = 9; // Изменение цены
+    Quotation price_change_rel = 10; // Относительное изменение цены
+    string show_name = 11; // Наименование инструмента
+  }
+
+  //Консенсус-прогноз
+  message ConsensusItem {
+    string uid = 1; // Уникальный идентификатор инструмента
+    string ticker = 2; // Тикер инструмента
+    Recommendation recommendation = 3; // Прогноз
+    string currency = 4; // Валюта
+    Quotation current_price = 5; // Текущая цена
+    Quotation consensus = 6; // Прогнозируемая цена
+    Quotation min_target = 7; // Минимальная цена прогноза
+    Quotation max_target = 8; // Максимальная цена прогноза
+    Quotation price_change = 9; // Изменение цены
+    Quotation price_change_rel = 10; // Относительное изменение цены
+  }
 }
 
 //Уровень риска облигации.

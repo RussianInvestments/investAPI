@@ -615,6 +615,11 @@
     "type": "RESOURCE_EXHAUSTED",
     "description": "Превышен лимит на отправку СМС, попробуйте через минуту. Если вы не хотите получать СМС при выставлении заявки, отключите отправку СМС в ЛК."
   },
+  "80004": {
+    "message": "No active subscriptions",
+    "type": "RESOURCE_EXHAUSTED",
+    "description": "В стриме отсутствуют активные подписки."
+  },
   "90001": {
     "message": "need confirmation: %s",
     "type": "FAILED_PRECONDITION",

@@ -1244,6 +1244,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#responsemetadata" class="md-nav__link">
+    ResponseMetadata
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2036,6 +2043,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#responsemetadata" class="md-nav__link">
+    ResponseMetadata
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2534,6 +2548,11 @@
 <td>Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.</td>
 </tr>
 <tr>
+<td>response_metadata</td>
+<td><a href="#responsemetadata">ResponseMetadata</a></td>
+<td>Метадата</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -2587,6 +2606,11 @@
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Дата и время отмены заявки в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>response_metadata</td>
+<td><a href="#responsemetadata">ResponseMetadata</a></td>
+<td>Метадата</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3352,6 +3376,29 @@
 <td>PRICE_TYPE_CURRENCY</td>
 <td>2</td>
 <td>Цена в валюте расчётов по инструменту</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responsemetadata">ResponseMetadata</h4>
+<p>Метадата</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://russianinvestments.github.io/investAPI/grpc/#tracking-id">tracking_id</a></td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор трекинга</td>
+</tr>
+<tr>
+<td>server_time</td>
+<td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+<td>Серверное время</td>
 </tr>
 </tbody>
 </table>
