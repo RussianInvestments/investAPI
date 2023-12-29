@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.7'
+  version: '1.8'
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
@@ -376,6 +376,32 @@ paths:
       tags:
         - InstrumentsService
       x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetAssetReports:
+    post:
+      operationId: InstrumentsService_GetAssetReports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetAssetReportsRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetAssetReportsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения расписания выхода отчетностей эмитентов
+      tags:
+        - InstrumentsService
+      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetAssets:
     post:
       operationId: InstrumentsService_GetAssets
@@ -432,6 +458,33 @@ paths:
       tags:
         - InstrumentsService
       x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetBondEvents:
+    post:
+      operationId: InstrumentsService_GetBondEvents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetBondEventsRequest'
+        description: События по облигации.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetBondEventsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения событий по облигации
+      tags:
+        - InstrumentsService
+      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetBrandBy:
     post:
       operationId: InstrumentsService_GetBrandBy
@@ -483,6 +536,32 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
       summary: Метод получения списка брендов.
+      tags:
+        - InstrumentsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetConsensusForecasts:
+    post:
+      operationId: InstrumentsService_GetConsensusForecasts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetConsensusForecastsRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetConsensusForecastsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения мнения аналитиков по инструменту
       tags:
         - InstrumentsService
       x-codegen-request-body-name: body
@@ -567,6 +646,32 @@ paths:
       tags:
         - InstrumentsService
       x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetForecastBy:
+    post:
+      operationId: InstrumentsService_GetForecastBy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetForecastRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetForecastResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения прогнозов инвестдомов по инструменту
+      tags:
+        - InstrumentsService
+      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetFuturesMargin:
     post:
       operationId: InstrumentsService_GetFuturesMargin
@@ -617,6 +722,32 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
       summary: Метод получения основной информации об инструменте.
+      tags:
+        - InstrumentsService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/Indicatives:
+    post:
+      operationId: InstrumentsService_Indicatives
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1IndicativesRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1IndicativesResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения индикативных инструментов (индексов, товаров и др.)
       tags:
         - InstrumentsService
       x-codegen-request-body-name: body
@@ -2382,6 +2513,7 @@ components:
         dividendsPerShare: 0.8851374739011653
       properties:
         assetUid:
+          title: Идентификатор актива
           type: string
         currency:
           title: Валюта
@@ -2609,6 +2741,331 @@ components:
           format: double
           title: Отношение EV к выручке
           type: number
+      title: Фундаментальные показатели по активу
+      type: object
+    GetAssetReportsResponseAssetReportPeriodType:
+      default: PERIOD_TYPE_UNSPECIFIED
+      enum:
+        - PERIOD_TYPE_UNSPECIFIED
+        - PERIOD_TYPE_QUARTER
+        - PERIOD_TYPE_SEMIANNUAL
+        - PERIOD_TYPE_ANNUAL
+      title: |-
+        - PERIOD_TYPE_UNSPECIFIED: не указан
+         - PERIOD_TYPE_QUARTER: Квартальный
+         - PERIOD_TYPE_SEMIANNUAL: Полугодовой
+         - PERIOD_TYPE_ANNUAL: Годовой
+      type: string
+    GetAssetReportsResponseGetAssetReportsEvent:
+      example:
+        periodNum: 6
+        createdAt: 2000-01-23T04:56:07.000Z
+        reportDate: 2000-01-23T04:56:07.000Z
+        periodYear: 0
+        instrumentId: instrumentId
+      properties:
+        instrumentId:
+          description: Идентификатор инструмента.
+          type: string
+        reportDate:
+          description: Дата публикации отчета.
+          format: date-time
+          type: string
+        periodYear:
+          description: Год периода отчета.
+          format: int32
+          type: integer
+        periodNum:
+          description: Номер периода.
+          format: int32
+          type: integer
+        periodType:
+          $ref: '#/components/schemas/GetAssetReportsResponseAssetReportPeriodType'
+        createdAt:
+          description: Дата создания записи.
+          format: date-time
+          type: string
+      title: Отчет
+      type: object
+    GetBondEventsRequestEventType:
+      default: EVENT_TYPE_UNSPECIFIED
+      enum:
+        - EVENT_TYPE_UNSPECIFIED
+        - EVENT_TYPE_CPN
+        - EVENT_TYPE_CALL
+        - EVENT_TYPE_MTY
+        - EVENT_TYPE_CONV
+      title: |-
+        - EVENT_TYPE_UNSPECIFIED: Неопределенное значение
+         - EVENT_TYPE_CPN: Купон
+         - EVENT_TYPE_CALL: Опцион (оферта)
+         - EVENT_TYPE_MTY: Погашение
+         - EVENT_TYPE_CONV: Конвертация
+      type: string
+    GetBondEventsResponseBondEvent:
+      example:
+        fixDate: 2000-01-23T04:56:07.000Z
+        execution: execution
+        note: note
+        defaultDate: 2000-01-23T04:56:07.000Z
+        eventNumber: 0
+        instrumentId: instrumentId
+        couponEndDate: 2000-01-23T04:56:07.000Z
+        rateDate: 2000-01-23T04:56:07.000Z
+        payOneBond:
+          nano: 5
+          currency: currency
+          units: units
+        moneyFlowVal:
+          nano: 5
+          currency: currency
+          units: units
+        couponPeriod: 6
+        convertToFinToolId: convertToFinToolId
+        couponInterestRate:
+          nano: 6
+          units: units
+        eventTotalVol:
+          nano: 6
+          units: units
+        realPayDate: 2000-01-23T04:56:07.000Z
+        operationType: operationType
+        value:
+          nano: 6
+          units: units
+        couponStartDate: 2000-01-23T04:56:07.000Z
+        eventDate: 2000-01-23T04:56:07.000Z
+        payDate: 2000-01-23T04:56:07.000Z
+      properties:
+        instrumentId:
+          title: Идентификатор инструмента
+          type: string
+        eventNumber:
+          format: int32
+          title: Номер события для данного типа события
+          type: integer
+        eventDate:
+          format: date-time
+          title: Дата события
+          type: string
+        eventType:
+          $ref: '#/components/schemas/GetBondEventsRequestEventType'
+        eventTotalVol:
+          $ref: '#/components/schemas/v1Quotation'
+        fixDate:
+          format: date-time
+          title: Дата фиксации владельцев для участия в событии
+          type: string
+        rateDate:
+          format: date-time
+          title: Дата определения даты либо факта события
+          type: string
+        defaultDate:
+          format: date-time
+          title: Дата дефолта (если применимо)
+          type: string
+        realPayDate:
+          format: date-time
+          title: Дата реального исполнения обязательства
+          type: string
+        payDate:
+          format: date-time
+          title: Дата выплаты
+          type: string
+        payOneBond:
+          $ref: '#/components/schemas/v1MoneyValue'
+        moneyFlowVal:
+          $ref: '#/components/schemas/v1MoneyValue'
+        execution:
+          title: Признак исполнения
+          type: string
+        operationType:
+          title: Тип операции
+          type: string
+        value:
+          $ref: '#/components/schemas/v1Quotation'
+        note:
+          title: Примечание
+          type: string
+        convertToFinToolId:
+          title: >-
+            ID выпуска бумаг, в который произведена конвертация (для
+            конвертаций)
+          type: string
+        couponStartDate:
+          format: date-time
+          title: Начало купонного периода
+          type: string
+        couponEndDate:
+          format: date-time
+          title: Окончание купонного периода
+          type: string
+        couponPeriod:
+          format: int32
+          title: Купонный период
+          type: integer
+        couponInterestRate:
+          $ref: '#/components/schemas/v1Quotation'
+      type: object
+    GetConsensusForecastsResponseConsensusForecastsItem:
+      example:
+        uid: uid
+        assetUid: assetUid
+        createdAt: 2000-01-23T04:56:07.000Z
+        bestTargetHigh:
+          nano: 6
+          units: units
+        bestTargetLow:
+          nano: 6
+          units: units
+        totalSellRecommend: 1
+        currency: currency
+        bestTargetPrice:
+          nano: 6
+          units: units
+        totalHoldRecommend: 6
+        prognosisDate: 2000-01-23T04:56:07.000Z
+        totalBuyRecommend: 0
+      properties:
+        uid:
+          title: uid идентификатор
+          type: string
+        assetUid:
+          title: uid идентификатор актива
+          type: string
+        createdAt:
+          format: date-time
+          title: Дата и время создания записи
+          type: string
+        bestTargetPrice:
+          $ref: '#/components/schemas/v1Quotation'
+        bestTargetLow:
+          $ref: '#/components/schemas/v1Quotation'
+        bestTargetHigh:
+          $ref: '#/components/schemas/v1Quotation'
+        totalBuyRecommend:
+          format: int32
+          title: Количество аналитиков рекомендующих покупать
+          type: integer
+        totalHoldRecommend:
+          format: int32
+          title: Количество аналитиков рекомендующих держать
+          type: integer
+        totalSellRecommend:
+          format: int32
+          title: Количество аналитиков рекомендующих продавать
+          type: integer
+        currency:
+          title: Валюта прогнозов /инструмента
+          type: string
+        consensus:
+          $ref: '#/components/schemas/v1Recommendation'
+        prognosisDate:
+          format: date-time
+          title: Дата прогноза
+          type: string
+      title: Прогноз
+      type: object
+    GetForecastResponseConsensusItem:
+      example:
+        consensus:
+          nano: 6
+          units: units
+        priceChange:
+          nano: 6
+          units: units
+        uid: uid
+        maxTarget:
+          nano: 6
+          units: units
+        ticker: ticker
+        priceChangeRel:
+          nano: 6
+          units: units
+        currentPrice:
+          nano: 6
+          units: units
+        currency: currency
+        minTarget:
+          nano: 6
+          units: units
+      properties:
+        uid:
+          title: Уникальный идентификатор инструмента
+          type: string
+        ticker:
+          title: Тикер инструмента
+          type: string
+        recommendation:
+          $ref: '#/components/schemas/v1Recommendation'
+        currency:
+          title: Валюта
+          type: string
+        currentPrice:
+          $ref: '#/components/schemas/v1Quotation'
+        consensus:
+          $ref: '#/components/schemas/v1Quotation'
+        minTarget:
+          $ref: '#/components/schemas/v1Quotation'
+        maxTarget:
+          $ref: '#/components/schemas/v1Quotation'
+        priceChange:
+          $ref: '#/components/schemas/v1Quotation'
+        priceChangeRel:
+          $ref: '#/components/schemas/v1Quotation'
+      title: Консенсус-прогноз
+      type: object
+    GetForecastResponseTargetItem:
+      example:
+        priceChange:
+          nano: 6
+          units: units
+        uid: uid
+        ticker: ticker
+        targetPrice:
+          nano: 6
+          units: units
+        showName: showName
+        priceChangeRel:
+          nano: 6
+          units: units
+        currentPrice:
+          nano: 6
+          units: units
+        company: company
+        currency: currency
+        recommendationDate: 2000-01-23T04:56:07.000Z
+      properties:
+        uid:
+          title: Уникальный идентификатор инструмента
+          type: string
+        ticker:
+          title: Тикер инструмента
+          type: string
+        company:
+          title: Название компании, давшей прогноз
+          type: string
+        recommendation:
+          $ref: '#/components/schemas/v1Recommendation'
+        recommendationDate:
+          format: date-time
+          title: Дата прогноза
+          type: string
+        currency:
+          title: Валюта
+          type: string
+        currentPrice:
+          $ref: '#/components/schemas/v1Quotation'
+        targetPrice:
+          $ref: '#/components/schemas/v1Quotation'
+        priceChange:
+          $ref: '#/components/schemas/v1Quotation'
+        priceChangeRel:
+          $ref: '#/components/schemas/v1Quotation'
+        showName:
+          title: Наименование инструмента
+          type: string
+      title: Прогноз
       type: object
     GetMaxLotsResponseBuyLimitsView:
       example:
@@ -4776,11 +5233,16 @@ components:
       description: Результат отмены торгового поручения.
       example:
         time: 2000-01-23T04:56:07.000Z
+        responseMetadata:
+          serverTime: 2000-01-23T04:56:07.000Z
+          trackingId: trackingId
       properties:
         time:
           description: Дата и время отмены заявки в часовом поясе UTC.
           format: date-time
           type: string
+        responseMetadata:
+          $ref: '#/components/schemas/v1ResponseMetadata'
       type: object
     v1CancelStopOrderRequest:
       description: Запрос отмены выставленной стоп-заявки.
@@ -5515,8 +5977,11 @@ components:
         figi:
           description: Figi-идентификатор инструмента.
           type: string
+        instrumentId:
+          title: Идентификатор инструмента Figi или instrument_uid
+          type: string
       required:
-        - figi
+        - instrumentId
       type: object
     v1EditFavoritesResponse:
       description: Результат редактирования списка избранных инструментов.
@@ -5524,15 +5989,19 @@ components:
         favoriteInstruments:
           - otcFlag: true
             classCode: classCode
+            uid: uid
             ticker: ticker
             instrumentType: instrumentType
+            name: name
             figi: figi
             apiTradeAvailableFlag: true
             isin: isin
           - otcFlag: true
             classCode: classCode
+            uid: uid
             ticker: ticker
             instrumentType: instrumentType
+            name: name
             figi: figi
             apiTradeAvailableFlag: true
             isin: isin
@@ -5931,8 +6400,10 @@ components:
       example:
         otcFlag: true
         classCode: classCode
+        uid: uid
         ticker: ticker
         instrumentType: instrumentType
+        name: name
         figi: figi
         apiTradeAvailableFlag: true
         isin: isin
@@ -5951,6 +6422,12 @@ components:
           type: string
         instrumentType:
           description: Тип инструмента.
+          type: string
+        name:
+          description: Название инструмента.
+          type: string
+        uid:
+          description: Уникальный идентификатор инструмента.
           type: string
         otcFlag:
           description: Признак внебиржевой ценной бумаги.
@@ -6591,6 +7068,7 @@ components:
           type: array
       required:
         - assets
+      title: Запрос фундаментальных показателей
       type: object
     v1GetAssetFundamentalsResponse:
       example:
@@ -6712,6 +7190,45 @@ components:
           items:
             $ref: '#/components/schemas/GetAssetFundamentalsResponseStatisticResponse'
           type: array
+      title: Фундаментальные показатели
+      type: object
+    v1GetAssetReportsRequest:
+      properties:
+        instrumentId:
+          description: Идентификатор инструмента в формате uid.
+          type: string
+        from:
+          description: Начало запрашиваемого периода в часовом поясе UTC.
+          format: date-time
+          type: string
+        to:
+          description: Окончание запрашиваемого периода в часовом поясе UTC.
+          format: date-time
+          type: string
+      required:
+        - instrumentId
+      title: Запрос отчетов эмитентов
+      type: object
+    v1GetAssetReportsResponse:
+      example:
+        events:
+          - periodNum: 6
+            createdAt: 2000-01-23T04:56:07.000Z
+            reportDate: 2000-01-23T04:56:07.000Z
+            periodYear: 0
+            instrumentId: instrumentId
+          - periodNum: 6
+            createdAt: 2000-01-23T04:56:07.000Z
+            reportDate: 2000-01-23T04:56:07.000Z
+            periodYear: 0
+            instrumentId: instrumentId
+      properties:
+        events:
+          items:
+            $ref: '#/components/schemas/GetAssetReportsResponseGetAssetReportsEvent'
+          title: Массив событий по облигации
+          type: array
+      title: Отчеты эмитентов
       type: object
     v1GetBondCouponsRequest:
       description: Запрос купонов по облигации.
@@ -6767,6 +7284,99 @@ components:
         events:
           items:
             $ref: '#/components/schemas/v1Coupon'
+          type: array
+      type: object
+    v1GetBondEventsRequest:
+      description: События по облигации.
+      properties:
+        from:
+          description: Начало запрашиваемого периода в часовом поясе UTC.
+          format: date-time
+          type: string
+        to:
+          description: Окончание запрашиваемого периода в часовом поясе UTC.
+          format: date-time
+          type: string
+        instrumentId:
+          title: Идентификатор инструмента Figi или instrument_uid
+          type: string
+        type:
+          $ref: '#/components/schemas/GetBondEventsRequestEventType'
+      required:
+        - instrumentId
+      type: object
+    v1GetBondEventsResponse:
+      description: Объект передачи информации о событии облигации.
+      example:
+        events:
+          - fixDate: 2000-01-23T04:56:07.000Z
+            execution: execution
+            note: note
+            defaultDate: 2000-01-23T04:56:07.000Z
+            eventNumber: 0
+            instrumentId: instrumentId
+            couponEndDate: 2000-01-23T04:56:07.000Z
+            rateDate: 2000-01-23T04:56:07.000Z
+            payOneBond:
+              nano: 5
+              currency: currency
+              units: units
+            moneyFlowVal:
+              nano: 5
+              currency: currency
+              units: units
+            couponPeriod: 6
+            convertToFinToolId: convertToFinToolId
+            couponInterestRate:
+              nano: 6
+              units: units
+            eventTotalVol:
+              nano: 6
+              units: units
+            realPayDate: 2000-01-23T04:56:07.000Z
+            operationType: operationType
+            value:
+              nano: 6
+              units: units
+            couponStartDate: 2000-01-23T04:56:07.000Z
+            eventDate: 2000-01-23T04:56:07.000Z
+            payDate: 2000-01-23T04:56:07.000Z
+          - fixDate: 2000-01-23T04:56:07.000Z
+            execution: execution
+            note: note
+            defaultDate: 2000-01-23T04:56:07.000Z
+            eventNumber: 0
+            instrumentId: instrumentId
+            couponEndDate: 2000-01-23T04:56:07.000Z
+            rateDate: 2000-01-23T04:56:07.000Z
+            payOneBond:
+              nano: 5
+              currency: currency
+              units: units
+            moneyFlowVal:
+              nano: 5
+              currency: currency
+              units: units
+            couponPeriod: 6
+            convertToFinToolId: convertToFinToolId
+            couponInterestRate:
+              nano: 6
+              units: units
+            eventTotalVol:
+              nano: 6
+              units: units
+            realPayDate: 2000-01-23T04:56:07.000Z
+            operationType: operationType
+            value:
+              nano: 6
+              units: units
+            couponStartDate: 2000-01-23T04:56:07.000Z
+            eventDate: 2000-01-23T04:56:07.000Z
+            payDate: 2000-01-23T04:56:07.000Z
+      properties:
+        events:
+          items:
+            $ref: '#/components/schemas/GetBondEventsResponseBondEvent'
           type: array
       type: object
     v1GetBrandRequest:
@@ -7060,6 +7670,64 @@ components:
             $ref: '#/components/schemas/v1InstrumentClosePriceResponse'
           type: array
       type: object
+    v1GetConsensusForecastsRequest:
+      properties:
+        paging:
+          $ref: '#/components/schemas/v1Page'
+      title: Запрос консенсус-прогнозов
+      type: object
+    v1GetConsensusForecastsResponse:
+      example:
+        page:
+          pageNumber: 6
+          limit: 0
+          totalCount: 1
+        items:
+          - uid: uid
+            assetUid: assetUid
+            createdAt: 2000-01-23T04:56:07.000Z
+            bestTargetHigh:
+              nano: 6
+              units: units
+            bestTargetLow:
+              nano: 6
+              units: units
+            totalSellRecommend: 1
+            currency: currency
+            bestTargetPrice:
+              nano: 6
+              units: units
+            totalHoldRecommend: 6
+            prognosisDate: 2000-01-23T04:56:07.000Z
+            totalBuyRecommend: 0
+          - uid: uid
+            assetUid: assetUid
+            createdAt: 2000-01-23T04:56:07.000Z
+            bestTargetHigh:
+              nano: 6
+              units: units
+            bestTargetLow:
+              nano: 6
+              units: units
+            totalSellRecommend: 1
+            currency: currency
+            bestTargetPrice:
+              nano: 6
+              units: units
+            totalHoldRecommend: 6
+            prognosisDate: 2000-01-23T04:56:07.000Z
+            totalBuyRecommend: 0
+      properties:
+        items:
+          items:
+            $ref: >-
+              #/components/schemas/GetConsensusForecastsResponseConsensusForecastsItem
+          title: Массив прогнозов
+          type: array
+        page:
+          $ref: '#/components/schemas/v1PageResponse'
+      title: Консенсус-прогнозы
+      type: object
     v1GetCountriesRequest:
       description: Запрос справочника стран.
       type: object
@@ -7310,15 +7978,19 @@ components:
         favoriteInstruments:
           - otcFlag: true
             classCode: classCode
+            uid: uid
             ticker: ticker
             instrumentType: instrumentType
+            name: name
             figi: figi
             apiTradeAvailableFlag: true
             isin: isin
           - otcFlag: true
             classCode: classCode
+            uid: uid
             ticker: ticker
             instrumentType: instrumentType
+            name: name
             figi: figi
             apiTradeAvailableFlag: true
             isin: isin
@@ -7328,6 +8000,84 @@ components:
             $ref: '#/components/schemas/v1FavoriteInstrument'
           title: Массив инструментов
           type: array
+      type: object
+    v1GetForecastRequest:
+      properties:
+        instrumentId:
+          title: Идентификатор инструмента
+          type: string
+      title: Запрос прогнозов инвестдомов
+      type: object
+    v1GetForecastResponse:
+      example:
+        consensus:
+          consensus:
+            nano: 6
+            units: units
+          priceChange:
+            nano: 6
+            units: units
+          uid: uid
+          maxTarget:
+            nano: 6
+            units: units
+          ticker: ticker
+          priceChangeRel:
+            nano: 6
+            units: units
+          currentPrice:
+            nano: 6
+            units: units
+          currency: currency
+          minTarget:
+            nano: 6
+            units: units
+        targets:
+          - priceChange:
+              nano: 6
+              units: units
+            uid: uid
+            ticker: ticker
+            targetPrice:
+              nano: 6
+              units: units
+            showName: showName
+            priceChangeRel:
+              nano: 6
+              units: units
+            currentPrice:
+              nano: 6
+              units: units
+            company: company
+            currency: currency
+            recommendationDate: 2000-01-23T04:56:07.000Z
+          - priceChange:
+              nano: 6
+              units: units
+            uid: uid
+            ticker: ticker
+            targetPrice:
+              nano: 6
+              units: units
+            showName: showName
+            priceChangeRel:
+              nano: 6
+              units: units
+            currentPrice:
+              nano: 6
+              units: units
+            company: company
+            currency: currency
+            recommendationDate: 2000-01-23T04:56:07.000Z
+      properties:
+        targets:
+          items:
+            $ref: '#/components/schemas/GetForecastResponseTargetItem'
+          title: Массив прогнозов
+          type: array
+        consensus:
+          $ref: '#/components/schemas/GetForecastResponseConsensusItem'
+      title: Прогнозы инвестдомов по инструменту
       type: object
     v1GetFuturesMarginRequest:
       properties:
@@ -8231,6 +8981,8 @@ components:
       description: Информация о торговом статусе.
       example:
         limitOrderAvailableFlag: true
+        bestpriceOrderAvailableFlag: true
+        onlyBestPrice: true
         marketOrderAvailableFlag: true
         instrumentUid: instrumentUid
         figi: figi
@@ -8253,6 +9005,12 @@ components:
         instrumentUid:
           description: Uid инструмента.
           type: string
+        bestpriceOrderAvailableFlag:
+          title: Признак доступности завяки по лучшей цене
+          type: boolean
+        onlyBestPrice:
+          title: Признак доступности только заявки по лучшей цене
+          type: boolean
       type: object
     v1GetTradingStatusesRequest:
       description: Запрос получения торгового статуса.
@@ -8270,11 +9028,15 @@ components:
       example:
         tradingStatuses:
           - limitOrderAvailableFlag: true
+            bestpriceOrderAvailableFlag: true
+            onlyBestPrice: true
             marketOrderAvailableFlag: true
             instrumentUid: instrumentUid
             figi: figi
             apiTradeAvailableFlag: true
           - limitOrderAvailableFlag: true
+            bestpriceOrderAvailableFlag: true
+            onlyBestPrice: true
             marketOrderAvailableFlag: true
             instrumentUid: instrumentUid
             figi: figi
@@ -8364,6 +9126,81 @@ components:
             Признак завершённости свечи. **false** значит, свеча за текущие
             интервал ещё сформирована не полностью.
           type: boolean
+      type: object
+    v1IndicativeResponse:
+      example:
+        classCode: classCode
+        uid: uid
+        ticker: ticker
+        name: name
+        sellAvailableFlag: true
+        figi: figi
+        currency: currency
+        exchange: exchange
+        buyAvailableFlag: true
+      properties:
+        figi:
+          title: Figi-идентификатор инструмента
+          type: string
+        ticker:
+          title: Тикер инструмента
+          type: string
+        classCode:
+          title: Класс-код инструмента
+          type: string
+        currency:
+          title: Валюта расчётов
+          type: string
+        instrumentKind:
+          $ref: '#/components/schemas/v1InstrumentType'
+        name:
+          title: Название инструмента
+          type: string
+        exchange:
+          title: Tорговая площадка (секция биржи)
+          type: string
+        uid:
+          title: Уникальный идентификатор инструмента
+          type: string
+        buyAvailableFlag:
+          title: Признак доступности для покупки
+          type: boolean
+        sellAvailableFlag:
+          title: Признак доступности для продажи
+          type: boolean
+      title: Индикатив
+      type: object
+    v1IndicativesRequest:
+      title: Запрос справочника индексов и товаров
+      type: object
+    v1IndicativesResponse:
+      example:
+        instruments:
+          - classCode: classCode
+            uid: uid
+            ticker: ticker
+            name: name
+            sellAvailableFlag: true
+            figi: figi
+            currency: currency
+            exchange: exchange
+            buyAvailableFlag: true
+          - classCode: classCode
+            uid: uid
+            ticker: ticker
+            name: name
+            sellAvailableFlag: true
+            figi: figi
+            currency: currency
+            exchange: exchange
+            buyAvailableFlag: true
+      properties:
+        instruments:
+          items:
+            $ref: '#/components/schemas/v1IndicativeResponse'
+          title: Массив инструментов
+          type: array
+      title: Справочник индексов и товаров
       type: object
     v1InfoInstrument:
       description: Запрос подписки на торговый статус.
@@ -8782,6 +9619,8 @@ components:
          - INSTRUMENT_TYPE_SP: Структурная нота.
          - INSTRUMENT_TYPE_OPTION: Опцион.
          - INSTRUMENT_TYPE_CLEARING_CERTIFICATE: Clearing certificate.
+         - INSTRUMENT_TYPE_INDEX: Индекс.
+         - INSTRUMENT_TYPE_COMMODITY: Товар.
       enum:
         - INSTRUMENT_TYPE_UNSPECIFIED
         - INSTRUMENT_TYPE_BOND
@@ -8792,6 +9631,8 @@ components:
         - INSTRUMENT_TYPE_SP
         - INSTRUMENT_TYPE_OPTION
         - INSTRUMENT_TYPE_CLEARING_CERTIFICATE
+        - INSTRUMENT_TYPE_INDEX
+        - INSTRUMENT_TYPE_COMMODITY
       type: string
     v1InstrumentsRequest:
       description: Запрос получения инструментов.
@@ -8896,6 +9737,7 @@ components:
               figi: figi
           trackingId: trackingId
         ping:
+          streamId: streamId
           time: 2000-01-23T04:56:07.000Z
         candle:
           volume: volume
@@ -10480,11 +11322,15 @@ components:
     v1Ping:
       description: Проверка активности стрима.
       example:
+        streamId: streamId
         time: 2000-01-23T04:56:07.000Z
       properties:
         time:
           description: Время проверки.
           format: date-time
+          type: string
+        streamId:
+          title: Идентификатор соединения
           type: string
       type: object
     v1PortfolioPosition:
@@ -10989,6 +11835,7 @@ components:
             currency: currency
             units: units
         ping:
+          streamId: streamId
           time: 2000-01-23T04:56:07.000Z
       properties:
         subscriptions:
@@ -11338,6 +12185,7 @@ components:
             - accountId: accountId
             - accountId: accountId
         ping:
+          streamId: streamId
           time: 2000-01-23T04:56:07.000Z
         position:
           date: 2000-01-23T04:56:07.000Z
@@ -11509,6 +12357,9 @@ components:
           nano: 5
           currency: currency
           units: units
+        responseMetadata:
+          serverTime: 2000-01-23T04:56:07.000Z
+          trackingId: trackingId
       properties:
         orderId:
           description: Биржевой идентификатор заявки.
@@ -11557,6 +12408,8 @@ components:
             Идентификатор ключа идемпотентности, переданный клиентом, в формате
             UID. Максимальная длина 36 символов.
           type: string
+        responseMetadata:
+          $ref: '#/components/schemas/v1ResponseMetadata'
       type: object
     v1PostStopOrderRequest:
       description: Запрос выставления стоп-заявки.
@@ -11624,11 +12477,16 @@ components:
     v1PostStopOrderResponse:
       description: Результат выставления стоп-заявки.
       example:
+        responseMetadata:
+          serverTime: 2000-01-23T04:56:07.000Z
+          trackingId: trackingId
         stopOrderId: stopOrderId
       properties:
         stopOrderId:
           title: Уникальный идентификатор стоп-заявки
           type: string
+        responseMetadata:
+          $ref: '#/components/schemas/v1ResponseMetadata'
       type: object
     v1PriceType:
       default: PRICE_TYPE_UNSPECIFIED
@@ -11673,6 +12531,19 @@ components:
         - REAL_EXCHANGE_RTS
         - REAL_EXCHANGE_OTC
       type: string
+    v1Recommendation:
+      default: RECOMMENDATION_UNSPECIFIED
+      enum:
+        - RECOMMENDATION_UNSPECIFIED
+        - RECOMMENDATION_BUY
+        - RECOMMENDATION_HOLD
+        - RECOMMENDATION_SELL
+      title: |-
+        - RECOMMENDATION_UNSPECIFIED: Не определено
+         - RECOMMENDATION_BUY: Покупать
+         - RECOMMENDATION_HOLD: Держать
+         - RECOMMENDATION_SELL: Продавать
+      type: string
     v1ReplaceOrderRequest:
       description: Запрос изменения выставленной заявки.
       properties:
@@ -11701,6 +12572,19 @@ components:
         - idempotencyKey
         - orderId
         - quantity
+      type: object
+    v1ResponseMetadata:
+      example:
+        serverTime: 2000-01-23T04:56:07.000Z
+        trackingId: trackingId
+      properties:
+        trackingId:
+          title: Идентификатор трекинга
+          type: string
+        serverTime:
+          format: date-time
+          title: Серверное время
+          type: string
       type: object
     v1RiskLevel:
       default: RISK_LEVEL_UNSPECIFIED
@@ -12725,6 +13609,7 @@ components:
       description: Информация о торговых поручениях.
       example:
         ping:
+          streamId: streamId
           time: 2000-01-23T04:56:07.000Z
         orderTrades:
           createdAt: 2000-01-23T04:56:07.000Z
@@ -13176,6 +14061,7 @@ components:
                 figi: figi
             trackingId: trackingId
           ping:
+            streamId: streamId
             time: 2000-01-23T04:56:07.000Z
           candle:
             volume: volume
@@ -13459,6 +14345,7 @@ components:
               currency: currency
               units: units
           ping:
+            streamId: streamId
             time: 2000-01-23T04:56:07.000Z
         error:
           code: 1
@@ -13481,6 +14368,7 @@ components:
               - accountId: accountId
               - accountId: accountId
           ping:
+            streamId: streamId
             time: 2000-01-23T04:56:07.000Z
           position:
             date: 2000-01-23T04:56:07.000Z
@@ -13554,6 +14442,7 @@ components:
       example:
         result:
           ping:
+            streamId: streamId
             time: 2000-01-23T04:56:07.000Z
           orderTrades:
             createdAt: 2000-01-23T04:56:07.000Z

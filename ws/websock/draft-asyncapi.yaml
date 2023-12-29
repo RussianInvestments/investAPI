@@ -1,7 +1,7 @@
 asyncapi: 2.6.0
 info:
   title: Tinkoff Invest API
-  version: 1.3.8-RELEASE
+  version: '1.8'
   description: Websocket API for streaming data
   license:
     name: Apache 2.0
@@ -172,6 +172,7 @@ components:
               figi: figi
           trackingId: trackingId
         ping:
+          streamId: streamId
           time: '2000-01-23T04:56:07.000+00:00'
         candle:
           volume: volume
@@ -237,8 +238,10 @@ components:
         subscribeCandlesResponse:
           candlesSubscriptions:
             - instrumentUid: instrumentUid
+              waitingClose: true
               figi: figi
             - instrumentUid: instrumentUid
+              waitingClose: true
               figi: figi
           trackingId: trackingId
         subscribeLastPriceResponse:
@@ -284,14 +287,20 @@ components:
       example:
         candlesSubscriptions:
           - instrumentUid: instrumentUid
+            waitingClose: true
             figi: figi
           - instrumentUid: instrumentUid
+            waitingClose: true
             figi: figi
         trackingId: trackingId
       properties:
         trackingId:
+          description: >-
+            Уникальный идентификатор запроса, подробнее:
+            [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
           type: string
         candlesSubscriptions:
+          description: Массив статусов подписки на свечи.
           items:
             $ref: '#/components/schemas/v1CandleSubscription'
           type: array
@@ -300,28 +309,73 @@ components:
       description: Статус подписки на свечи.
       example:
         instrumentUid: instrumentUid
+        waitingClose: true
         figi: figi
       properties:
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         interval:
           $ref: '#/components/schemas/v1SubscriptionInterval'
         subscriptionStatus:
           $ref: '#/components/schemas/v1SubscriptionStatus'
         instrumentUid:
+          title: Uid инструмента
           type: string
+        waitingClose:
+          title: Флаг ожидания закрытия временного интервала для отправки свечи
+          type: boolean
       type: object
     v1SubscriptionInterval:
       default: SUBSCRIPTION_INTERVAL_UNSPECIFIED
-      description: Интервал свечи.
+      description: |-
+        Интервал свечи.
+
+         - SUBSCRIPTION_INTERVAL_UNSPECIFIED: Интервал свечи не определён.
+         - SUBSCRIPTION_INTERVAL_ONE_MINUTE: Минутные свечи.
+         - SUBSCRIPTION_INTERVAL_FIVE_MINUTES: Пятиминутные свечи.
+         - SUBSCRIPTION_INTERVAL_FIFTEEN_MINUTES: Пятнадцатиминутные свечи
+         - SUBSCRIPTION_INTERVAL_ONE_HOUR: Часовые свечи
+         - SUBSCRIPTION_INTERVAL_ONE_DAY: Дневные свечи
+         - SUBSCRIPTION_INTERVAL_2_MIN: Двухминутные свечи
+         - SUBSCRIPTION_INTERVAL_3_MIN: Трехминутные свечи
+         - SUBSCRIPTION_INTERVAL_10_MIN: Десятиминутные свечи
+         - SUBSCRIPTION_INTERVAL_30_MIN: Тридцатиминутные свечи
+         - SUBSCRIPTION_INTERVAL_2_HOUR: Двухчасовые свечи
+         - SUBSCRIPTION_INTERVAL_4_HOUR: Четырехчасовые свечи
+         - SUBSCRIPTION_INTERVAL_WEEK: Недельные свечи
+         - SUBSCRIPTION_INTERVAL_MONTH: Месячные свечи
       enum:
         - SUBSCRIPTION_INTERVAL_UNSPECIFIED
         - SUBSCRIPTION_INTERVAL_ONE_MINUTE
         - SUBSCRIPTION_INTERVAL_FIVE_MINUTES
+        - SUBSCRIPTION_INTERVAL_FIFTEEN_MINUTES
+        - SUBSCRIPTION_INTERVAL_ONE_HOUR
+        - SUBSCRIPTION_INTERVAL_ONE_DAY
+        - SUBSCRIPTION_INTERVAL_2_MIN
+        - SUBSCRIPTION_INTERVAL_3_MIN
+        - SUBSCRIPTION_INTERVAL_10_MIN
+        - SUBSCRIPTION_INTERVAL_30_MIN
+        - SUBSCRIPTION_INTERVAL_2_HOUR
+        - SUBSCRIPTION_INTERVAL_4_HOUR
+        - SUBSCRIPTION_INTERVAL_WEEK
+        - SUBSCRIPTION_INTERVAL_MONTH
       type: string
     v1SubscriptionStatus:
       default: SUBSCRIPTION_STATUS_UNSPECIFIED
-      description: Результат подписки.
+      description: |-
+        Результат подписки.
+
+         - SUBSCRIPTION_STATUS_UNSPECIFIED: Статус подписки не определён.
+         - SUBSCRIPTION_STATUS_SUCCESS: Успешно.
+         - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND: Инструмент не найден.
+         - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID: Некорректный статус подписки, список возможных значений: [SubscriptionAction](https://russianinvestments.github.io/investAPI/marketdata#subscriptionaction).
+         - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID: Некорректная глубина стакана, доступные значения: 1, 10, 20, 30, 40, 50.
+         - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID: Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval).
+         - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED: Превышен лимит на общее количество подписок в рамках стрима, подробнее: [Лимитная политика](https://russianinvestments.github.io/investAPI/limits/).
+         - SUBSCRIPTION_STATUS_INTERNAL_ERROR: Внутренняя ошибка сервиса.
+         - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS: Превышен лимит на количество запросов на подписки в течение установленного отрезка времени
+         - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND: Активная подписка не найдена. Ошибка может возникнуть только при отписке от не существующей отписки
       enum:
         - SUBSCRIPTION_STATUS_UNSPECIFIED
         - SUBSCRIPTION_STATUS_SUCCESS
@@ -332,6 +386,7 @@ components:
         - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED
         - SUBSCRIPTION_STATUS_INTERNAL_ERROR
         - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS
+        - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND
       type: string
     v1SubscribeOrderBookResponse:
       description: Результат изменения статуса подписки на стаканы.
@@ -346,8 +401,12 @@ components:
         trackingId: trackingId
       properties:
         trackingId:
+          description: >-
+            Уникальный идентификатор запроса, подробнее:
+            [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
           type: string
         orderBookSubscriptions:
+          description: Массив статусов подписки на стаканы.
           items:
             $ref: '#/components/schemas/v1OrderBookSubscription'
           type: array
@@ -360,13 +419,16 @@ components:
         figi: figi
       properties:
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         depth:
+          description: Глубина стакана.
           format: int32
           type: integer
         subscriptionStatus:
           $ref: '#/components/schemas/v1SubscriptionStatus'
         instrumentUid:
+          title: Uid инструмента
           type: string
       type: object
     v1SubscribeTradesResponse:
@@ -380,8 +442,12 @@ components:
         trackingId: trackingId
       properties:
         trackingId:
+          description: >-
+            Уникальный идентификатор запроса, подробнее:
+            [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
           type: string
         tradeSubscriptions:
+          description: Массив статусов подписки на поток сделок.
           items:
             $ref: '#/components/schemas/v1TradeSubscription'
           type: array
@@ -393,10 +459,12 @@ components:
         figi: figi
       properties:
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         subscriptionStatus:
           $ref: '#/components/schemas/v1SubscriptionStatus'
         instrumentUid:
+          title: Uid инструмента
           type: string
       type: object
     v1SubscribeInfoResponse:
@@ -410,8 +478,12 @@ components:
         trackingId: trackingId
       properties:
         trackingId:
+          description: >-
+            Уникальный идентификатор запроса, подробнее:
+            [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
           type: string
         infoSubscriptions:
+          description: Массив статусов подписки на торговый статус.
           items:
             $ref: '#/components/schemas/v1InfoSubscription'
           type: array
@@ -423,10 +495,12 @@ components:
         figi: figi
       properties:
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         subscriptionStatus:
           $ref: '#/components/schemas/v1SubscriptionStatus'
         instrumentUid:
+          title: Uid инструмента
           type: string
       type: object
     v1Candle:
@@ -451,6 +525,7 @@ components:
           units: units
       properties:
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         interval:
           $ref: '#/components/schemas/v1SubscriptionInterval'
@@ -463,15 +538,19 @@ components:
         close:
           $ref: '#/components/schemas/v1Quotation'
         volume:
+          description: Объём сделок в лотах.
           format: int64
           type: string
         time:
+          description: Время начала интервала свечи в часовом поясе UTC.
           format: date-time
           type: string
         lastTradeTs:
+          description: Время последней сделки, вошедшей в свечу в часовом поясе UTC.
           format: date-time
           type: string
         instrumentUid:
+          title: Uid инструмента
           type: string
       type: object
     v1Quotation:
@@ -487,7 +566,7 @@ components:
           format: int32
           title: дробная часть суммы, может быть отрицательным числом
           type: integer
-      title: Котировка - денежная сумма без указания валюты
+      title: Котировка — денежная сумма без указания валюты
       type: object
     v1Trade:
       description: Информация о сделке.
@@ -501,23 +580,32 @@ components:
         time: '2000-01-23T04:56:07.000+00:00'
       properties:
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         direction:
           $ref: '#/components/schemas/v1TradeDirection'
         price:
           $ref: '#/components/schemas/v1Quotation'
         quantity:
+          description: Количество лотов.
           format: int64
           type: string
         time:
+          description: Время сделки в часовом поясе UTC по времени биржи.
           format: date-time
           type: string
         instrumentUid:
+          title: Uid инструмента
           type: string
       type: object
     v1TradeDirection:
       default: TRADE_DIRECTION_UNSPECIFIED
-      description: Направление сделки.
+      description: |-
+        Направление сделки.
+
+         - TRADE_DIRECTION_UNSPECIFIED: Направление сделки не определено.
+         - TRADE_DIRECTION_BUY: Покупка.
+         - TRADE_DIRECTION_SELL: Продажа.
       enum:
         - TRADE_DIRECTION_UNSPECIFIED
         - TRADE_DIRECTION_BUY
@@ -557,21 +645,30 @@ components:
         isConsistent: true
       properties:
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         depth:
+          description: Глубина стакана.
           format: int32
           type: integer
         isConsistent:
+          description: >-
+            Флаг консистентности стакана. **false** значит не все заявки попали
+            в стакан по причинам сетевых задержек или нарушения порядка
+            доставки.
           type: boolean
         bids:
+          description: Массив предложений.
           items:
             $ref: '#/components/schemas/v1Order'
           type: array
         asks:
+          description: Массив спроса.
           items:
             $ref: '#/components/schemas/v1Order'
           type: array
         time:
+          description: Время формирования стакана в часовом поясе UTC по времени биржи.
           format: date-time
           type: string
         limitUp:
@@ -579,6 +676,7 @@ components:
         limitDown:
           $ref: '#/components/schemas/v1Quotation'
         instrumentUid:
+          title: Uid инструмента
           type: string
       type: object
     v1Order:
@@ -592,6 +690,7 @@ components:
         price:
           $ref: '#/components/schemas/v1Quotation'
         quantity:
+          description: Количество в лотах.
           format: int64
           type: string
       type: object
@@ -605,21 +704,44 @@ components:
         time: '2000-01-23T04:56:07.000+00:00'
       properties:
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         tradingStatus:
           $ref: '#/components/schemas/v1SecurityTradingStatus'
         time:
+          description: Время изменения торгового статуса в часовом поясе UTC.
           format: date-time
           type: string
         limitOrderAvailableFlag:
+          description: Признак доступности выставления лимитной заявки по инструменту.
           type: boolean
         marketOrderAvailableFlag:
+          description: Признак доступности выставления рыночной заявки по инструменту.
           type: boolean
         instrumentUid:
+          title: Uid инструмента
           type: string
       type: object
     v1SecurityTradingStatus:
       default: SECURITY_TRADING_STATUS_UNSPECIFIED
+      description: |-
+        - SECURITY_TRADING_STATUS_UNSPECIFIED: Торговый статус не определён
+         - SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING: Недоступен для торгов
+         - SECURITY_TRADING_STATUS_OPENING_PERIOD: Период открытия торгов
+         - SECURITY_TRADING_STATUS_CLOSING_PERIOD: Период закрытия торгов
+         - SECURITY_TRADING_STATUS_BREAK_IN_TRADING: Перерыв в торговле
+         - SECURITY_TRADING_STATUS_NORMAL_TRADING: Нормальная торговля
+         - SECURITY_TRADING_STATUS_CLOSING_AUCTION: Аукцион закрытия
+         - SECURITY_TRADING_STATUS_DARK_POOL_AUCTION: Аукцион крупных пакетов
+         - SECURITY_TRADING_STATUS_DISCRETE_AUCTION: Дискретный аукцион
+         - SECURITY_TRADING_STATUS_OPENING_AUCTION_PERIOD: Аукцион открытия
+         - SECURITY_TRADING_STATUS_TRADING_AT_CLOSING_AUCTION_PRICE: Период торгов по цене аукциона закрытия
+         - SECURITY_TRADING_STATUS_SESSION_ASSIGNED: Сессия назначена
+         - SECURITY_TRADING_STATUS_SESSION_CLOSE: Сессия закрыта
+         - SECURITY_TRADING_STATUS_SESSION_OPEN: Сессия открыта
+         - SECURITY_TRADING_STATUS_DEALER_NORMAL_TRADING: Доступна торговля в режиме внутренней ликвидности брокера
+         - SECURITY_TRADING_STATUS_DEALER_BREAK_IN_TRADING: Перерыв торговли в режиме внутренней ликвидности брокера
+         - SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING: Недоступна торговля в режиме внутренней ликвидности брокера
       enum:
         - SECURITY_TRADING_STATUS_UNSPECIFIED
         - SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING
@@ -643,11 +765,15 @@ components:
     v1Ping:
       description: Проверка активности стрима.
       example:
+        streamId: streamId
         time: '2000-01-23T04:56:07.000+00:00'
       properties:
         time:
           description: Время проверки.
           format: date-time
+          type: string
+        streamId:
+          title: Идентификатор соединения
           type: string
       type: object
     v1SubscribeLastPriceResponse:
@@ -661,8 +787,12 @@ components:
         trackingId: trackingId
       properties:
         trackingId:
+          description: >-
+            Уникальный идентификатор запроса, подробнее:
+            [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
           type: string
         lastPriceSubscriptions:
+          description: Массив статусов подписки на цену последней сделки.
           items:
             $ref: '#/components/schemas/v1LastPriceSubscription'
           type: array
@@ -674,10 +804,12 @@ components:
         figi: figi
       properties:
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         subscriptionStatus:
           $ref: '#/components/schemas/v1SubscriptionStatus'
         instrumentUid:
+          title: Uid инструмента
           type: string
       type: object
     v1LastPrice:
@@ -691,23 +823,24 @@ components:
         time: '2000-01-23T04:56:07.000+00:00'
       properties:
         figi:
+          description: Figi инструмента.
           type: string
         price:
           $ref: '#/components/schemas/v1Quotation'
         time:
+          description: Время получения последней цены в часовом поясе UTC по времени биржи.
           format: date-time
           type: string
         instrumentUid:
+          title: Uid инструмента
           type: string
       type: object
     rpcStatus:
       example:
         code: 1
         details:
-          - typeUrl: typeUrl
-            value: value
-          - typeUrl: typeUrl
-            value: value
+          - '@type': '@type'
+          - '@type': '@type'
         message: message
       properties:
         code:
@@ -721,15 +854,12 @@ components:
           type: array
       type: object
     protobufAny:
+      additionalProperties:
+        type: object
       example:
-        typeUrl: typeUrl
-        value: value
+        '@type': '@type'
       properties:
-        typeUrl:
-          type: string
-        value:
-          format: byte
-          pattern: ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$
+        '@type':
           type: string
       type: object
     v1MarketDataServerSideStreamRequest:
@@ -751,15 +881,22 @@ components:
         subscriptionAction:
           $ref: '#/components/schemas/v1SubscriptionAction'
         instruments:
+          description: Массив инструментов для подписки на свечи.
           items:
             $ref: '#/components/schemas/v1CandleInstrument'
           type: array
         waitingClose:
+          description: Флаг ожидания закрытия временного интервала для отправки свечи.
           type: boolean
       type: object
     v1SubscriptionAction:
       default: SUBSCRIPTION_ACTION_UNSPECIFIED
-      description: Тип операции со списком подписок.
+      description: |-
+        Тип операции со списком подписок.
+
+         - SUBSCRIPTION_ACTION_UNSPECIFIED: Статус подписки не определён.
+         - SUBSCRIPTION_ACTION_SUBSCRIBE: Подписаться.
+         - SUBSCRIPTION_ACTION_UNSUBSCRIBE: Отписаться.
       enum:
         - SUBSCRIPTION_ACTION_UNSPECIFIED
         - SUBSCRIPTION_ACTION_SUBSCRIBE
@@ -769,10 +906,16 @@ components:
       description: Запрос изменения статус подписки на свечи.
       properties:
         figi:
+          description: >-
+            Deprecated Figi-идентификатор инструмента. Необходимо использовать
+            instrument_id.
           type: string
         interval:
           $ref: '#/components/schemas/v1SubscriptionInterval'
         instrumentId:
+          title: >-
+            Идентификатор инструмента, принимает значение figi или
+            instrument_uid
           type: string
       type: object
     v1SubscribeOrderBookRequest:
@@ -781,6 +924,7 @@ components:
         subscriptionAction:
           $ref: '#/components/schemas/v1SubscriptionAction'
         instruments:
+          description: Массив инструментов для подписки на стаканы.
           items:
             $ref: '#/components/schemas/v1OrderBookInstrument'
           type: array
@@ -789,11 +933,18 @@ components:
       description: Запрос подписки на стаканы.
       properties:
         figi:
+          description: >-
+            Deprecated Figi-идентификатор инструмента. Необходимо использовать
+            instrument_id.
           type: string
         depth:
+          description: Глубина стакана.
           format: int32
           type: integer
         instrumentId:
+          title: >-
+            Идентификатор инструмента, принимает значение figi или
+            instrument_uid
           type: string
       type: object
     v1SubscribeTradesRequest:
@@ -802,6 +953,7 @@ components:
         subscriptionAction:
           $ref: '#/components/schemas/v1SubscriptionAction'
         instruments:
+          description: Массив инструментов для подписки на поток обезличенных сделок.
           items:
             $ref: '#/components/schemas/v1TradeInstrument'
           type: array
@@ -810,8 +962,14 @@ components:
       description: Запрос подписки на поток обезличенных сделок.
       properties:
         figi:
+          description: >-
+            Deprecated Figi-идентификатор инструмента. Необходимо использовать
+            instrument_id.
           type: string
         instrumentId:
+          title: >-
+            Идентификатор инструмента, принимает значение figi или
+            instrument_uid
           type: string
       type: object
     v1SubscribeInfoRequest:
@@ -820,6 +978,7 @@ components:
         subscriptionAction:
           $ref: '#/components/schemas/v1SubscriptionAction'
         instruments:
+          description: Массив инструментов для подписки на торговый статус.
           items:
             $ref: '#/components/schemas/v1InfoInstrument'
           type: array
@@ -828,8 +987,14 @@ components:
       description: Запрос подписки на торговый статус.
       properties:
         figi:
+          description: >-
+            Deprecated Figi-идентификатор инструмента. Необходимо использовать
+            instrument_id.
           type: string
         instrumentId:
+          title: >-
+            Идентификатор инструмента, принимает значение figi или
+            instrument_uid
           type: string
       type: object
     v1SubscribeLastPriceRequest:
@@ -838,6 +1003,7 @@ components:
         subscriptionAction:
           $ref: '#/components/schemas/v1SubscriptionAction'
         instruments:
+          description: Массив инструментов для подписки на цену последней сделки.
           items:
             $ref: '#/components/schemas/v1LastPriceInstrument'
           type: array
@@ -846,8 +1012,14 @@ components:
       description: Запрос подписки на последнюю цену.
       properties:
         figi:
+          description: >-
+            Deprecated Figi-идентификатор инструмента. Необходимо использовать
+            instrument_id.
           type: string
         instrumentId:
+          title: >-
+            Идентификатор инструмента, принимает значение figi или
+            instrument_uid
           type: string
       type: object
     v1MarketDataRequest:
@@ -1051,6 +1223,7 @@ components:
             currency: currency
             units: units
         ping:
+          streamId: streamId
           time: '2000-01-23T04:56:07.000+00:00'
       properties:
         subscriptions:
@@ -1068,6 +1241,7 @@ components:
           - accountId: accountId
       properties:
         accounts:
+          description: Массив счетов клиента.
           items:
             $ref: '#/components/schemas/v1AccountSubscriptionStatus'
           type: array
@@ -1078,13 +1252,20 @@ components:
         accountId: accountId
       properties:
         accountId:
+          title: Идентификатор счёта
           type: string
         subscriptionStatus:
           $ref: '#/components/schemas/v1PortfolioSubscriptionStatus'
       type: object
     v1PortfolioSubscriptionStatus:
       default: PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED
-      description: Результат подписки.
+      description: |-
+        Результат подписки.
+
+         - PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED: Тип не определён.
+         - PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS: Успешно.
+         - PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND: Счёт не найден или недостаточно прав.
+         - PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR: Произошла ошибка.
       enum:
         - PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED
         - PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS
@@ -1284,10 +1465,12 @@ components:
         expectedYield:
           $ref: '#/components/schemas/v1Quotation'
         positions:
+          description: Список позиций портфеля.
           items:
             $ref: '#/components/schemas/v1PortfolioPosition'
           type: array
         accountId:
+          description: Идентификатор счёта пользователя.
           type: string
         totalAmountOptions:
           $ref: '#/components/schemas/v1MoneyValue'
@@ -1296,6 +1479,7 @@ components:
         totalAmountPortfolio:
           $ref: '#/components/schemas/v1MoneyValue'
         virtualPositions:
+          description: Массив виртуальных позиций портфеля.
           items:
             $ref: '#/components/schemas/v1VirtualPortfolioPosition'
           type: array
@@ -1367,8 +1551,10 @@ components:
           units: units
       properties:
         figi:
+          description: Figi-идентификатора инструмента.
           type: string
         instrumentType:
+          description: Тип инструмента.
           type: string
         quantity:
           $ref: '#/components/schemas/v1Quotation'
@@ -1387,12 +1573,15 @@ components:
         quantityLots:
           $ref: '#/components/schemas/v1Quotation'
         blocked:
+          description: Заблокировано на бирже.
           type: boolean
         blockedLots:
           $ref: '#/components/schemas/v1Quotation'
         positionUid:
+          title: position_uid-идентификатора инструмента
           type: string
         instrumentUid:
+          title: instrument_uid-идентификатора инструмента
           type: string
         varMargin:
           $ref: '#/components/schemas/v1MoneyValue'
@@ -1429,12 +1618,16 @@ components:
         expireDate: '2000-01-23T04:56:07.000+00:00'
       properties:
         positionUid:
+          title: position_uid-идентификатора инструмента
           type: string
         instrumentUid:
+          title: instrument_uid-идентификатора инструмента
           type: string
         figi:
+          description: Figi-идентификатора инструмента.
           type: string
         instrumentType:
+          description: Тип инструмента.
           type: string
         quantity:
           $ref: '#/components/schemas/v1Quotation'
@@ -1446,6 +1639,9 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         expireDate:
           format: date-time
+          title: >-
+            Дата до которой нужно продать виртуальные бумаги, после этой даты
+            виртуальная позиция "сгорит"
           type: string
         currentPrice:
           $ref: '#/components/schemas/v1MoneyValue'
@@ -1458,6 +1654,7 @@ components:
         accounts:
           items:
             type: string
+          title: Массив идентификаторов счётов пользователя
           type: array
       type: object
     v1PositionsStreamResponse:
@@ -1468,6 +1665,7 @@ components:
             - accountId: accountId
             - accountId: accountId
         ping:
+          streamId: streamId
           time: '2000-01-23T04:56:07.000+00:00'
         position:
           date: '2000-01-23T04:56:07.000+00:00'
@@ -1540,6 +1738,7 @@ components:
           - accountId: accountId
       properties:
         accounts:
+          description: Массив счетов клиента.
           items:
             $ref: '#/components/schemas/v1PositionsSubscriptionStatus'
           type: array
@@ -1550,13 +1749,20 @@ components:
         accountId: accountId
       properties:
         accountId:
+          title: Идентификатор счёта
           type: string
         subscriptionStatus:
           $ref: '#/components/schemas/v1PositionsAccountSubscriptionStatus'
       type: object
     v1PositionsAccountSubscriptionStatus:
       default: POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED
-      description: Результат подписки.
+      description: |-
+        Результат подписки.
+
+         - POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED: Тип не определён.
+         - POSITIONS_SUBSCRIPTION_STATUS_SUCCESS: Успешно.
+         - POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND: Счёт не найден или недостаточно прав.
+         - POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR: Произошла ошибка.
       enum:
         - POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED
         - POSITIONS_SUBSCRIPTION_STATUS_SUCCESS
@@ -1622,24 +1828,30 @@ components:
             exchangeBlocked: true
       properties:
         accountId:
+          description: Идентификатор счёта.
           type: string
         money:
+          description: Массив валютных позиций портфеля.
           items:
             $ref: '#/components/schemas/v1PositionsMoney'
           type: array
         securities:
+          description: Список ценно-бумажных позиций портфеля.
           items:
             $ref: '#/components/schemas/v1PositionsSecurities'
           type: array
         futures:
+          description: Список фьючерсов портфеля.
           items:
             $ref: '#/components/schemas/v1PositionsFutures'
           type: array
         options:
+          description: Список опционов портфеля.
           items:
             $ref: '#/components/schemas/v1PositionsOptions'
           type: array
         date:
+          description: Дата и время операции в формате UTC.
           format: date-time
           type: string
       type: object
@@ -1672,20 +1884,27 @@ components:
         exchangeBlocked: true
       properties:
         figi:
+          description: Figi-идентификатор бумаги.
           type: string
         blocked:
+          description: Количество бумаг заблокированных выставленными заявками.
           format: int64
           type: string
         balance:
+          description: Текущий незаблокированный баланс.
           format: int64
           type: string
         positionUid:
+          description: Уникальный идентификатор позиции.
           type: string
         instrumentUid:
+          description: Уникальный идентификатор  инструмента.
           type: string
         exchangeBlocked:
+          description: Заблокировано на бирже.
           type: boolean
         instrumentType:
+          description: Тип инструмента.
           type: string
       type: object
     v1PositionsFutures:
@@ -1698,16 +1917,21 @@ components:
         figi: figi
       properties:
         figi:
+          description: Figi-идентификатор фьючерса.
           type: string
         blocked:
+          description: Количество бумаг заблокированных выставленными заявками.
           format: int64
           type: string
         balance:
+          description: Текущий незаблокированный баланс.
           format: int64
           type: string
         positionUid:
+          description: Уникальный идентификатор позиции.
           type: string
         instrumentUid:
+          description: Уникальный идентификатор  инструмента.
           type: string
       type: object
     v1PositionsOptions:
@@ -1719,13 +1943,17 @@ components:
         positionUid: positionUid
       properties:
         positionUid:
+          description: Уникальный идентификатор позиции опциона.
           type: string
         instrumentUid:
+          description: Уникальный идентификатор  инструмента.
           type: string
         blocked:
+          description: Количество бумаг заблокированных выставленными заявками.
           format: int64
           type: string
         balance:
+          description: Текущий незаблокированный баланс.
           format: int64
           type: string
       type: object
@@ -1735,12 +1963,14 @@ components:
         accounts:
           items:
             type: string
+          title: Массив идентификаторов счётов пользователя
           type: array
       type: object
     v1TradesStreamResponse:
       description: Информация о торговых поручениях.
       example:
         ping:
+          streamId: streamId
           time: '2000-01-23T04:56:07.000+00:00'
         orderTrades:
           createdAt: '2000-01-23T04:56:07.000+00:00'
@@ -1790,26 +2020,37 @@ components:
         figi: figi
       properties:
         orderId:
+          description: Идентификатор торгового поручения.
           type: string
         createdAt:
+          description: Дата и время создания сообщения в часовом поясе UTC.
           format: date-time
           type: string
         direction:
           $ref: '#/components/schemas/v1OrderDirection'
         figi:
+          description: Figi-идентификатор инструмента.
           type: string
         trades:
+          description: Массив сделок.
           items:
             $ref: '#/components/schemas/v1OrderTrade'
           type: array
         accountId:
+          description: Идентификатор счёта.
           type: string
         instrumentUid:
+          description: UID идентификатор инструмента.
           type: string
       type: object
     v1OrderDirection:
       default: ORDER_DIRECTION_UNSPECIFIED
-      description: Направление операции.
+      description: |-
+        Направление операции.
+
+         - ORDER_DIRECTION_UNSPECIFIED: Значение не указано
+         - ORDER_DIRECTION_BUY: Покупка
+         - ORDER_DIRECTION_SELL: Продажа
       enum:
         - ORDER_DIRECTION_UNSPECIFIED
         - ORDER_DIRECTION_BUY
@@ -1826,20 +2067,24 @@ components:
         tradeId: tradeId
       properties:
         dateTime:
+          description: Дата и время совершения сделки в часовом поясе UTC.
           format: date-time
           type: string
         price:
           $ref: '#/components/schemas/v1Quotation'
         quantity:
+          description: Количество штук в сделке.
           format: int64
           type: string
         tradeId:
+          description: Идентификатор сделки.
           type: string
       type: object
     v1TradesStreamRequest:
       description: Запрос установки соединения.
       properties:
         accounts:
+          description: Идентификаторы счетов.
           items:
             type: string
           type: array
