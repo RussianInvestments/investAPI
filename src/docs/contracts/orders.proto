@@ -113,6 +113,7 @@ message PostOrderResponse {
   Quotation initial_order_price_pt = 16; //Начальная цена заявки в пунктах (для фьючерсов).
   string instrument_uid = 17; //UID идентификатор инструмента.
   string order_request_id = 20; //Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.
+  ResponseMetadata response_metadata = 254; //Метадата
 }
 
 //Запрос отмены торгового поручения.
@@ -124,6 +125,7 @@ message CancelOrderRequest {
 //Результат отмены торгового поручения.
 message CancelOrderResponse {
   google.protobuf.Timestamp time = 1; //Дата и время отмены заявки в часовом поясе UTC.
+  ResponseMetadata response_metadata = 254; //Метадата
 }
 
 //Запрос получения статуса торгового поручения.

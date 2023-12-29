@@ -86,6 +86,7 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | stop_order_id |  [string](#string) | Уникальный идентификатор стоп-заявки |
+| response_metadata |  [ResponseMetadata](#responsemetadata) | Метадата |
  <!-- end Fields -->
  <!-- end HasFields -->
 
