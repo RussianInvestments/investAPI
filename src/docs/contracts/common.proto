@@ -22,6 +22,8 @@ enum InstrumentType {
   INSTRUMENT_TYPE_SP = 6; //Структурная нота.
   INSTRUMENT_TYPE_OPTION = 7; //Опцион.
   INSTRUMENT_TYPE_CLEARING_CERTIFICATE = 8; //Clearing certificate.
+  INSTRUMENT_TYPE_INDEX = 9; //Индекс.
+  INSTRUMENT_TYPE_COMMODITY = 10; //Товар.
 }
 
 //Денежная сумма в определенной валюте
@@ -70,9 +72,8 @@ enum SecurityTradingStatus {
 
 //Проверка активности стрима.
 message Ping {
-
-  //Время проверки.
-  google.protobuf.Timestamp time = 1;
+  google.protobuf.Timestamp time = 1; //Время проверки.
+  string stream_id = 2; //Идентификатор соединения
 }
 
 //Тип цены.
@@ -91,4 +92,9 @@ message PageResponse {
   int32 limit = 1; //Максимальное число возвращаемых записей.
   int32 page_number = 2; //Порядковый номер страницы, начиная с 0.
   int32 total_count = 3; //Общее количество записей.
+}
+
+message ResponseMetadata {
+  string tracking_id = 42; //Идентификатор трекинга
+  google.protobuf.Timestamp server_time = 43; //Серверное время
 }

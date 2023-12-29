@@ -44,6 +44,14 @@
 - Тело ответа — [GetBondCouponsResponse](#getbondcouponsresponse)
 
 
+#### GetBondEvents
+Метод получения событий по облигации
+
+- Тело запроса — [GetBondEventsRequest](#getbondeventsrequest)
+
+- Тело ответа — [GetBondEventsResponse](#getbondeventsresponse)
+
+
 #### CurrencyBy
 Метод получения валюты по её идентификатору.
 
@@ -130,6 +138,14 @@ Deprecated Метод получения списка опционов.
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
 - Тело ответа — [SharesResponse](#sharesresponse)
+
+
+#### Indicatives
+Метод получения индикативных инструментов (индексов, товаров и др.)
+
+- Тело запроса — [IndicativesRequest](#indicativesrequest)
+
+- Тело ответа — [IndicativesResponse](#indicativesresponse)
 
 
 #### GetAccruedInterests
@@ -234,6 +250,30 @@ Deprecated Метод получения списка опционов.
 - Тело запроса — [GetAssetFundamentalsRequest](#getassetfundamentalsrequest)
 
 - Тело ответа — [GetAssetFundamentalsResponse](#getassetfundamentalsresponse)
+
+
+#### GetAssetReports
+Метод получения расписания выхода отчетностей эмитентов
+
+- Тело запроса — [GetAssetReportsRequest](#getassetreportsrequest)
+
+- Тело ответа — [GetAssetReportsResponse](#getassetreportsresponse)
+
+
+#### GetConsensusForecasts
+Метод получения мнения аналитиков по инструменту
+
+- Тело запроса — [GetConsensusForecastsRequest](#getconsensusforecastsrequest)
+
+- Тело ответа — [GetConsensusForecastsResponse](#getconsensusforecastsresponse)
+
+
+#### GetForecastBy
+Метод получения прогнозов инвестдомов по инструменту
+
+- Тело запроса — [GetForecastRequest](#getforecastrequest)
+
+- Тело ответа — [GetForecastResponse](#getforecastresponse)
 
  <!-- range .Methods -->
  <!-- range .Services -->
@@ -382,6 +422,62 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | events | Массив объектов [Coupon](#coupon) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetBondEventsRequest
+События по облигации.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
+| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
+| type |  [GetBondEventsRequest.EventType](#getbondeventsrequesteventtype) | Тип события |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetBondEventsResponse
+Объект передачи информации о событии облигации.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| events | Массив объектов [GetBondEventsResponse.BondEvent](#getbondeventsresponsebondevent) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetBondEventsResponse.BondEvent
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id |  [string](#string) | Идентификатор инструмента |
+| event_number |  [int32](#int32) | Номер события для данного типа события |
+| event_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата события |
+| event_type |  [GetBondEventsRequest.EventType](#getbondeventsrequesteventtype) | Тип события |
+| event_total_vol |  [Quotation](#quotation) | Полное количество бумаг, задействованных в событии |
+| fix_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации владельцев для участия в событии |
+| rate_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата определения даты либо факта события |
+| default_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата дефолта (если применимо) |
+| real_pay_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата реального исполнения обязательства |
+| pay_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выплаты |
+| pay_one_bond |  [MoneyValue](#moneyvalue) | Выплата на одну облигацию |
+| money_flow_val |  [MoneyValue](#moneyvalue) | Выплаты на все бумаги, задействованные в событии |
+| execution |  [string](#string) | Признак исполнения |
+| operation_type |  [string](#string) | Тип операции |
+| value |  [Quotation](#quotation) | Стоимость операции (ставка купона, доля номинала, цена выкупа или коэффициент конвертации) |
+| note |  [string](#string) | Примечание |
+| convert_to_fin_tool_id |  [string](#string) | ID выпуска бумаг, в который произведена конвертация (для конвертаций) |
+| coupon_start_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало купонного периода |
+| coupon_end_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание купонного периода |
+| coupon_period |  [int32](#int32) | Купонный период |
+| coupon_interest_rate |  [Quotation](#quotation) | Ставка купона, процентов годовых |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1313,6 +1409,8 @@ Deprecated Метод получения списка опционов.
 | class_code |  [string](#string) | Класс-код инструмента. |
 | isin |  [string](#string) | Isin-идентификатор инструмента. |
 | instrument_type |  [string](#string) | Тип инструмента. |
+| name |  [string](#string) | Название инструмента. |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
@@ -1339,6 +1437,7 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
+| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1367,6 +1466,43 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | countries | Массив объектов [CountryResponse](#countryresponse) | Массив стран. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### IndicativesRequest
+Запрос справочника индексов и товаров
+
+ <!-- end HasFields -->
+
+
+#### IndicativesResponse
+Справочник индексов и товаров
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instruments | Массив объектов [IndicativeResponse](#indicativeresponse) | Массив инструментов |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### IndicativeResponse
+Индикатив
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| figi |  [string](#string) | Figi-идентификатор инструмента |
+| ticker |  [string](#string) | Тикер инструмента |
+| class_code |  [string](#string) | Класс-код инструмента |
+| currency |  [string](#string) | Валюта расчётов |
+| instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
+| name |  [string](#string) | Название инструмента |
+| exchange |  [string](#string) | Tорговая площадка (секция биржи) |
+| uid |  [string](#string) | Уникальный идентификатор инструмента |
+| buy_available_flag |  [bool](#bool) | Признак доступности для покупки |
+| sell_available_flag |  [bool](#bool) | Признак доступности для продажи |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1470,7 +1606,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAssetFundamentalsRequest
-
+Запрос фундаментальных показателей
 
 
 | Field | Type | Description |
@@ -1481,7 +1617,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAssetFundamentalsResponse
-
+Фундаментальные показатели
 
 
 | Field | Type | Description |
@@ -1492,12 +1628,12 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAssetFundamentalsResponse.StatisticResponse
-
+Фундаментальные показатели по активу
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| asset_uid |  [string](#string) |  |
+| asset_uid |  [string](#string) | Идентификатор актива |
 | currency |  [string](#string) | Валюта |
 | market_capitalization |  [double](#double) | Рыночная капитализация |
 | high_price_last_52_weeks |  [double](#double) | Максимум за год |
@@ -1553,6 +1689,155 @@ Deprecated Метод получения списка опционов.
 | ebitda_change_five_years |  [double](#double) | Изменение ebitda за 5 лет |
 | total_debt_change_five_years |  [double](#double) | Изменение общей задолжности за 5 лет |
 | ev_to_sales |  [double](#double) | Отношение EV к выручке |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetAssetReportsRequest
+Запрос отчетов эмитентов
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id |  [string](#string) | Идентификатор инструмента в формате uid. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetAssetReportsResponse
+Отчеты эмитентов
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| events | Массив объектов [GetAssetReportsResponse.GetAssetReportsEvent](#getassetreportsresponsegetassetreportsevent) | Массив событий по облигации |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetAssetReportsResponse.GetAssetReportsEvent
+Отчет
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id |  [string](#string) | Идентификатор инструмента. |
+| report_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата публикации отчета. |
+| period_year |  [int32](#int32) | Год периода отчета. |
+| period_num |  [int32](#int32) | Номер периода. |
+| period_type |  [GetAssetReportsResponse.AssetReportPeriodType](#getassetreportsresponseassetreportperiodtype) | Тип отчета. |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата создания записи. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetConsensusForecastsRequest
+Запрос консенсус-прогнозов
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| paging |  [Page](#page) | Настройки пагинации. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetConsensusForecastsResponse
+Консенсус-прогнозы
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| items | Массив объектов [GetConsensusForecastsResponse.ConsensusForecastsItem](#getconsensusforecastsresponseconsensusforecastsitem) | Массив прогнозов |
+| page |  [PageResponse](#pageresponse) | Данные по пагинации |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetConsensusForecastsResponse.ConsensusForecastsItem
+Прогноз
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | uid идентификатор |
+| asset_uid |  [string](#string) | uid идентификатор актива |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи |
+| best_target_price |  [Quotation](#quotation) | Целевая цена на 12 месяцев |
+| best_target_low |  [Quotation](#quotation) | Минимальная прогнозная цена |
+| best_target_high |  [Quotation](#quotation) | Максимальная прогнозная цена |
+| total_buy_recommend |  [int32](#int32) | Количество аналитиков рекомендующих покупать |
+| total_hold_recommend |  [int32](#int32) | Количество аналитиков рекомендующих держать |
+| total_sell_recommend |  [int32](#int32) | Количество аналитиков рекомендующих продавать |
+| currency |  [string](#string) | Валюта прогнозов /инструмента |
+| consensus |  [Recommendation](#recommendation) | Консенсус-прогноз |
+| prognosis_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата прогноза |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetForecastRequest
+Запрос прогнозов инвестдомов
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id |  [string](#string) | Идентификатор инструмента |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetForecastResponse
+Прогнозы инвестдомов по инструменту
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| targets | Массив объектов [GetForecastResponse.TargetItem](#getforecastresponsetargetitem) | Массив прогнозов |
+| consensus |  [GetForecastResponse.ConsensusItem](#getforecastresponseconsensusitem) | Согласованный прогноз |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetForecastResponse.TargetItem
+Прогноз
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | Уникальный идентификатор инструмента |
+| ticker |  [string](#string) | Тикер инструмента |
+| company |  [string](#string) | Название компании, давшей прогноз |
+| recommendation |  [Recommendation](#recommendation) | Прогноз |
+| recommendation_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата прогноза |
+| currency |  [string](#string) | Валюта |
+| current_price |  [Quotation](#quotation) | Текущая цена |
+| target_price |  [Quotation](#quotation) | Прогнозируемая цена |
+| price_change |  [Quotation](#quotation) | Изменение цены |
+| price_change_rel |  [Quotation](#quotation) | Относительное изменение цены |
+| show_name |  [string](#string) | Наименование инструмента |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetForecastResponse.ConsensusItem
+Консенсус-прогноз
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | Уникальный идентификатор инструмента |
+| ticker |  [string](#string) | Тикер инструмента |
+| recommendation |  [Recommendation](#recommendation) | Прогноз |
+| currency |  [string](#string) | Валюта |
+| current_price |  [Quotation](#quotation) | Текущая цена |
+| consensus |  [Quotation](#quotation) | Прогнозируемая цена |
+| min_target |  [Quotation](#quotation) | Минимальная цена прогноза |
+| max_target |  [Quotation](#quotation) | Максимальная цена прогноза |
+| price_change |  [Quotation](#quotation) | Изменение цены |
+| price_change_rel |  [Quotation](#quotation) | Относительное изменение цены |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -1720,6 +2005,19 @@ Deprecated Метод получения списка опционов.
 
 
 
+#### Recommendation
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| RECOMMENDATION_UNSPECIFIED | 0 | Не определено |
+| RECOMMENDATION_BUY | 1 | Покупать |
+| RECOMMENDATION_HOLD | 2 | Держать |
+| RECOMMENDATION_SELL | 3 | Продавать |
+
+
+
+
 #### RiskLevel
 Уровень риска облигации.
 
@@ -1729,6 +2027,33 @@ Deprecated Метод получения списка опционов.
 | RISK_LEVEL_LOW | 1 | Низкий уровень риска |
 | RISK_LEVEL_MODERATE | 2 | Средний уровень риска |
 | RISK_LEVEL_HIGH | 3 | Высокий уровень риска |
+
+
+
+
+#### GetBondEventsRequest.EventType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| EVENT_TYPE_UNSPECIFIED | 0 | Неопределенное значение |
+| EVENT_TYPE_CPN | 1 | Купон |
+| EVENT_TYPE_CALL | 2 | Опцион (оферта) |
+| EVENT_TYPE_MTY | 3 | Погашение |
+| EVENT_TYPE_CONV | 4 | Конвертация |
+
+
+
+
+#### GetAssetReportsResponse.AssetReportPeriodType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| PERIOD_TYPE_UNSPECIFIED | 0 | не указан |
+| PERIOD_TYPE_QUARTER | 1 | Квартальный |
+| PERIOD_TYPE_SEMIANNUAL | 2 | Полугодовой |
+| PERIOD_TYPE_ANNUAL | 3 | Годовой |
 
 
  <!-- range .Enums -->
@@ -1747,6 +2072,40 @@ Deprecated Метод получения списка опционов.
 | INSTRUMENT_TYPE_SP | 6 | Структурная нота |
 | INSTRUMENT_TYPE_OPTION | 7 | Опцион |
 | INSTRUMENT_TYPE_CLEARING_CERTIFICATE | 8 | Clearing certificate |
+| INSTRUMENT_TYPE_INDEX | 9 | Индекс |
+| INSTRUMENT_TYPE_COMMODITY | 10 | Товар |
+
+
+#### Execution
+| Value | Description |
+| ----- | ------ |
+| ED | Execution after Default - платеж выполнен после дефолта (должна быть дата платежа) |
+| ET | Выполнены обязательства по техническому дефолту (платеж выполнен после дефолта) |
+| ES | Выполнены обязательства по соглашению (платеж выполнен после соглашения) |
+| S | Соглашение |
+| T | Технический дефолт |
+| E | Execution - исполнено, платеж выполнен без задержек |
+| D | Default - дефолт |
+| TD | Технически дефолт - задержка платежа более 5 дней, но менее 20 |
+
+
+#### OperationType
+| EventType | Value | Description |
+| --------- | ----- | ----------- |
+| CPN | Одно из значений: Прочий, Переменный, Фиксированный, Ипотечный, Дисконт, Плавающий, Постоянный |
+| MTY | CA | Эмитент реализовал Call-опцион / частичное (амортизационное) погашение |
+| MTY | OA | Call-опциона нет или не реализован / частичное (амортизационное) погашение |
+| MTY | CM | Полное погашение оставшегося номинала, OM - полное погашение оставшегося номинала |
+| MTY | CA | Эмитент реализовал Call-опцион / частичное (амортизационное) погашение |
+| CALL | M | Досрочное погашение облигаций по праву эмитента | 
+| CALL | N | Досрочное погашение облигаций по требованию владельцев | 
+| CALL | C | Call-опцион |
+| CALL | L | Call опцион на период |
+| CALL | O | Оферта с возможностью дальнейшего обращения облигаций по требованию владельцев |
+| CALL | K | Выкуп РЕПО |
+| CALL | A | Досрочный выкуп облигаций по соглашению с их владельцами |
+| CALL | V | Досрочное погашение ковенант |
+| CONV | пусто | Не применимо |
 
 
 ### Нестандартные типы данных

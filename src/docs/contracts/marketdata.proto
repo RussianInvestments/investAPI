@@ -421,6 +421,9 @@ message GetTradingStatusResponse {
   bool market_order_available_flag = 4; //Признак доступности выставления рыночной заявки по инструменту.
   bool api_trade_available_flag = 5; //Признак доступности торгов через API.
   string instrument_uid = 6; //Uid инструмента.
+
+  bool bestprice_order_available_flag = 8; //Признак доступности завяки по лучшей цене
+  bool only_best_price = 9; //Признак доступности только заявки по лучшей цене
 }
 
 //Запрос обезличенных сделок за последний час.

@@ -125,6 +125,7 @@
 80001|RESOURCE_EXHAUSTED|limit of open streams exceeded|Превышен лимит одновременных открытых stream-соединений. Подробнее: [Лимитная политика](https://russianinvestments.github.io/investAPI/limits/)|
 80002|RESOURCE_EXHAUSTED|request limit exceeded|Превышен лимит запросов в минуту. Подробнее: [Лимитная политика](https://russianinvestments.github.io/investAPI/limits/)|
 80003|RESOURCE_EXHAUSTED|The limit on SMS sending has been exceeded, try again in a minute|Превышен лимит на отправку СМС, попробуйте через минуту. Если вы не хотите получать СМС при выставлении заявки, отключите отправку СМС в ЛК.|
+80004|RESOURCE_EXHAUSTED|No active subscriptions|В стриме отсутствуют активные подписки.|
 90001|FAILED_PRECONDITION|need confirmation: %s|Требуется подтверждение операции.</br>Подробнее в тексте ошибки.|
 90002|FAILED_PRECONDITION|only for qualified investors|Торговля этим инструментом доступна только квалифицированным инвесторам.|
 90003|FAILED_PRECONDITION|The price is too high|Цена заявки слишком высокая. Разбейте заявку на заявки меньшего размера. Подробнее: [Ограничения на стоимость заявки](https://russianinvestments.github.io/investAPI/faq_orders/).|

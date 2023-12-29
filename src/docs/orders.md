@@ -188,6 +188,7 @@ Stream сделок пользователя
 | initial_order_price_pt |  [Quotation](#quotation) | Начальная цена заявки в пунктах (для фьючерсов). |
 | instrument_uid |  [string](#string) | UID идентификатор инструмента. |
 | order_request_id |  [string](#string) | Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов. |
+| response_metadata |  [ResponseMetadata](#responsemetadata) | Метадата |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -211,6 +212,7 @@ Stream сделок пользователя
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время отмены заявки в часовом поясе UTC. |
+| response_metadata |  [ResponseMetadata](#responsemetadata) | Метадата |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -483,6 +485,14 @@ Stream сделок пользователя
 | PRICE_TYPE_UNSPECIFIED | 0 | Значение не определено |
 | PRICE_TYPE_POINT | 1 | Цена в пунктах (только для фьючерсов и облигаций) |
 | PRICE_TYPE_CURRENCY | 2 | Цена в валюте расчётов по инструменту |
+
+#### ResponseMetadata
+Метадата
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| [tracking_id](https://russianinvestments.github.io/investAPI/grpc/#tracking-id) |  [string](#string) | Идентификатор трекинга |
+| server_time |  [google.protobuf.Timestamp](#google.protobuf.Timestamp) | Серверное время |
 
 ### Про тип цены
 
