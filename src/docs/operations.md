@@ -781,7 +781,7 @@ Server-side stream обновлений информации по изменен
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | OPERATION_STATE_UNSPECIFIED | 0 | Статус операции не определён |
-| OPERATION_STATE_EXECUTED | 1 | Исполнена. |
+| OPERATION_STATE_EXECUTED | 1 | Исполнена частично или полностью. |
 | OPERATION_STATE_CANCELED | 2 | Отменена. |
 | OPERATION_STATE_PROGRESS | 3 | Исполняется. |
 
