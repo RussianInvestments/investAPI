@@ -117,7 +117,7 @@ enum SubscriptionInterval {
 //Запрос изменения статус подписки на свечи.
 message CandleInstrument {
   string figi = 1 [ deprecated = true ]; // Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
-  SubscriptionInterval interval = 2; //Интервал свечей.
+  SubscriptionInterval interval = 2; //Интервал свечей. (Двухчасовые и четырехчасовые свечи в стриме отсчитываются с 0:00 по UTC)
   string instrument_id = 3; //Идентификатор инструмента, принимает значение figi или instrument_uid
 }
 
