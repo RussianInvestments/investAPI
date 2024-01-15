@@ -168,7 +168,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id. |
-| interval |  [SubscriptionInterval](#subscriptioninterval) | Интервал свечей. |
+| interval |  [SubscriptionInterval](#subscriptioninterval) | Интервал свечей. (Двухчасовые и четырехчасовые свечи в стриме отсчитываются с 0:00 по UTC) |
 | instrument_id |  [string](#string) | Идентификатор инструмента, принимает значение figi или instrument_uid |
  <!-- end Fields -->
  <!-- end HasFields -->
