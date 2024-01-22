@@ -36,7 +36,7 @@ message PostStopOrderRequest {
   string account_id = 6 [(google.api.field_behavior) = REQUIRED]; //Номер счёта
   StopOrderExpirationType expiration_type = 7 [(google.api.field_behavior) = REQUIRED]; //Тип экспирации заявки
   StopOrderType stop_order_type = 8 [(google.api.field_behavior) = REQUIRED]; //Тип заявки
-  optional google.protobuf.Timestamp expire_date = 9; //Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно**.
+  optional google.protobuf.Timestamp expire_date = 9; //Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно, для GoodTillCancel игнорируется**.
   string instrument_id = 10 [(google.api.field_behavior) = REQUIRED]; //Идентификатор инструмента, принимает значения Figi или instrument_uid.
   ExchangeOrderType exchange_order_type = 11; //Тип дочерней биржевой заявки для тейкпрофита
   TakeProfitType take_profit_type = 12; //Подтип стоп-заявки TakeProfit
