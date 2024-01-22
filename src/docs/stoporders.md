@@ -55,7 +55,7 @@
 | account_id |  [string](#string) | Номер счёта |
 | expiration_type |  [StopOrderExpirationType](#stoporderexpirationtype) | Тип экспирации заявки |
 | stop_order_type |  [StopOrderType](#stopordertype) | Тип заявки |
-| expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно**. |
+| expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время окончания действия стоп-заявки в часовом поясе UTC. **Для ExpirationType = GoodTillDate заполнение обязательно, для GoodTillCancel игнорируется**. |
 | instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или instrument_uid. |
 | exchange_order_type |  [ExchangeOrderType](#exchangeordertype) | Тип дочерней биржевой заявки для тейкпрофита |
 | take_profit_type |  [TakeProfitType](#takeprofittype) | Подтип стоп-заявки TakeProfit |
