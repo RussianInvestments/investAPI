@@ -7,7 +7,7 @@
 
 ## Котировки и рыночные данные
 
-Так как торговля осуществляется на внутреннем рынке, [торговый статус](/investAPI/marketdata/#gettradingstatus) инсрумента будет DEALER_NORMAL_TRADING.
+Так как торговля осуществляется на внутреннем рынке, [торговый статус](/investAPI/marketdata/#gettradingstatus) инструмента будет DEALER_NORMAL_TRADING.
 Стакан получается [обычным](/investAPI/marketdata/#getorderbook) методом.
 
 **Важно!** Торговый статус и стакан сейчас недоступны в [стримах](/investAPI/head-marketdata/#bidirectional-stream) и будут добавлены в ближайших релизах.
