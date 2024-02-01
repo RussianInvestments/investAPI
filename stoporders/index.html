@@ -1935,6 +1935,11 @@
 <td>Тип цены</td>
 </tr>
 <tr>
+<td>order_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -1997,6 +2002,11 @@
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
 <td>Уникальный идентификатор стоп-заявки</td>
+</tr>
+<tr>
+<td>order_request_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.</td>
 </tr>
 <tr>
 <td>response_metadata</td>

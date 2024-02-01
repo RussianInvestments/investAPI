@@ -1595,6 +1595,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#orderbooktype" class="md-nav__link">
+    OrderBookType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#securitytradingstatus" class="md-nav__link">
     SecurityTradingStatus
   </a>
@@ -2393,6 +2400,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#orderbooktype" class="md-nav__link">
+    OrderBookType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#securitytradingstatus" class="md-nav__link">
     SecurityTradingStatus
   </a>
@@ -2862,6 +2876,16 @@
 <td>Флаг ожидания закрытия временного интервала для отправки свечи</td>
 </tr>
 <tr>
+<td>stream_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор открытого соединения</td>
+</tr>
+<tr>
+<td>subscription_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор подписки в формате UUID</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -2925,6 +2949,11 @@
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+</tr>
+<tr>
+<td>order_book_type</td>
+<td><a href="#orderbooktype">OrderBookType</a></td>
+<td>Тип стакана</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2995,6 +3024,21 @@
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
 <td>Uid инструмента</td>
+</tr>
+<tr>
+<td>stream_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор открытого соединения</td>
+</tr>
+<tr>
+<td>subscription_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор подписки в формате UUID</td>
+</tr>
+<tr>
+<td>order_book_type</td>
+<td><a href="#orderbooktype">OrderBookType</a></td>
+<td>Тип стакана</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3122,6 +3166,16 @@
 <td>Uid инструмента</td>
 </tr>
 <tr>
+<td>stream_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор открытого соединения</td>
+</tr>
+<tr>
+<td>subscription_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор подписки в формате UUID</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3247,6 +3301,16 @@
 <td>Uid инструмента</td>
 </tr>
 <tr>
+<td>stream_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор открытого соединения</td>
+</tr>
+<tr>
+<td>subscription_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор подписки в формате UUID</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3370,6 +3434,16 @@
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
 <td>Uid инструмента</td>
+</tr>
+<tr>
+<td>stream_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор открытого соединения</td>
+</tr>
+<tr>
+<td>subscription_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор подписки в формате UUID</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3505,6 +3579,11 @@
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
 <td>Uid инструмента</td>
+</tr>
+<tr>
+<td>order_book_type</td>
+<td><a href="#orderbooktype">OrderBookType</a></td>
+<td>Тип стакана</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4593,6 +4672,33 @@
 <td>CANDLE_INTERVAL_MONTH</td>
 <td>13</td>
 <td>от 1 месяца до 10 лет.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderbooktype">OrderBookType</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ORDERBOOK_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>не определен</td>
+</tr>
+<tr>
+<td>ORDERBOOK_TYPE_EXCHANGE</td>
+<td>1</td>
+<td>Биржевой стакан</td>
+</tr>
+<tr>
+<td>ORDERBOOK_TYPE_DEALER</td>
+<td>2</td>
+<td>Стакан дилера</td>
 </tr>
 </tbody>
 </table>

@@ -155,6 +155,7 @@ message TradingDay {
   google.protobuf.Timestamp premarket_end_time = 15; // Время окончания премаркета в часовом поясе UTC.
   google.protobuf.Timestamp closing_auction_start_time = 16; // Время начала аукциона закрытия в часовом поясе UTC.
   google.protobuf.Timestamp opening_auction_end_time = 17; // Время окончания аукциона открытия в часовом поясе UTC.
+  repeated TradingInterval intervals = 18; // Торговые интервалы
 }
 
 //Запрос получения инструмента по идентификатору.
@@ -332,6 +333,7 @@ message Option {
   string country_of_risk = 151; //Код страны рисков.
   string country_of_risk_name = 152; //Наименование страны рисков.
   string sector = 161; //Сектор экономики.
+  BrandData brand = 162; // Информация о бренде.
 
   int32 lot = 201; //Количество бумаг в лоте.
   Quotation basic_asset_size = 211; //Размер основного актива.
@@ -448,6 +450,7 @@ message Bond {
   string uid = 40; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 41; //Реальная площадка исполнения расчётов. (биржа)
   string position_uid = 42; //Уникальный идентификатор позиции инструмента.
+  string asset_uid = 43; //Уникальный идентификатор актива.
 
   bool for_iis_flag = 51; //Признак доступности для ИИС.
   bool for_qual_investor_flag = 52; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
@@ -458,6 +461,7 @@ message Bond {
   google.protobuf.Timestamp first_1min_candle_date = 61; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 62; //Дата первой дневной свечи.
   RiskLevel risk_level = 63; //Уровень риска.
+  BrandData brand = 64; // Информация о бренде.
 }
 
 //Объект передачи информации о валюте.
@@ -502,6 +506,7 @@ message Currency {
   bool blocked_tca_flag = 54; //Флаг заблокированного ТКС.
   google.protobuf.Timestamp first_1min_candle_date = 56; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 57; //Дата первой дневной свечи.
+  BrandData brand = 60; // Информация о бренде.
 }
 
 //Объект передачи информации об инвестиционном фонде.
@@ -543,6 +548,7 @@ message Etf {
   string uid = 31; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 32; //Реальная площадка исполнения расчётов (биржа).
   string position_uid = 33; //Уникальный идентификатор позиции инструмента.
+  string asset_uid = 34; //Уникальный идентификатор актива.
 
   bool for_iis_flag = 41; //Признак доступности для ИИС.
   bool for_qual_investor_flag = 42; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
@@ -551,6 +557,7 @@ message Etf {
   bool liquidity_flag = 45; //Флаг достаточной ликвидности
   google.protobuf.Timestamp first_1min_candle_date = 56; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 57; //Дата первой дневной свечи.
+  BrandData brand = 60; // Информация о бренде.
 }
 
 //Объект передачи информации о фьючерсе.
@@ -605,6 +612,7 @@ message Future {
   MoneyValue initial_margin_on_buy = 61; //Гарантийное обеспечение при покупке.
   MoneyValue initial_margin_on_sell = 62; //Гарантийное обеспечение при продаже.
   Quotation min_price_increment_amount = 63; //Стоимость шага цены.
+  BrandData brand = 64; // Информация о бренде.
 }
 
 //Объект передачи информации об акции.
@@ -647,6 +655,7 @@ message Share {
   string uid = 33; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 34; //Реальная площадка исполнения расчётов (биржа).
   string position_uid = 35; //Уникальный идентификатор позиции инструмента.
+  string asset_uid = 36; //Уникальный идентификатор актива.
 
   bool for_iis_flag = 46; //Признак доступности для ИИС.
   bool for_qual_investor_flag = 47; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
@@ -655,6 +664,7 @@ message Share {
   bool liquidity_flag = 50; //Флаг достаточной ликвидности
   google.protobuf.Timestamp first_1min_candle_date = 56; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 57; //Дата первой дневной свечи.
+  BrandData brand = 60; // Информация о бренде.
 }
 
 //Запрос НКД по облигации
@@ -746,6 +756,7 @@ message Instrument {
   string uid = 25; //Уникальный идентификатор инструмента.
   RealExchange real_exchange = 26; //Реальная площадка исполнения расчётов (биржа).
   string position_uid = 27; //Уникальный идентификатор позиции инструмента.
+  string asset_uid = 28; //Уникальный идентификатор актива.
 
   bool for_iis_flag = 36; //Признак доступности для ИИС.
   bool for_qual_investor_flag = 37; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
@@ -754,6 +765,7 @@ message Instrument {
   InstrumentType instrument_kind = 40; //Тип инструмента.
   google.protobuf.Timestamp first_1min_candle_date = 56; //Дата первой минутной свечи.
   google.protobuf.Timestamp first_1day_candle_date = 57; //Дата первой дневной свечи.
+  BrandData brand = 60; // Информация о бренде.
 }
 
 //Запрос дивидендов.
@@ -1327,6 +1339,16 @@ message GetForecastResponse {
     Quotation max_target = 8; // Максимальная цена прогноза
     Quotation price_change = 9; // Изменение цены
     Quotation price_change_rel = 10; // Относительное изменение цены
+  }
+}
+
+message TradingInterval {
+  string type = 1; //Название интервала
+  TimeInterval interval = 2; //Интервал
+
+  message TimeInterval {
+    google.protobuf.Timestamp start_ts = 1; // Время начала интервала
+    google.protobuf.Timestamp end_ts = 2; // Время окончания интервала
   }
 }
 

@@ -1741,6 +1741,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tradinginterval" class="md-nav__link">
+    TradingInterval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingintervaltimeinterval" class="md-nav__link">
+    TradingInterval.TimeInterval
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3293,6 +3307,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tradinginterval" class="md-nav__link">
+    TradingInterval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tradingintervaltimeinterval" class="md-nav__link">
+    TradingInterval.TimeInterval
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4009,6 +4037,11 @@
 <td>opening_auction_end_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Время окончания аукциона открытия в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>intervals</td>
+<td>Массив объектов <a href="#tradinginterval">TradingInterval</a></td>
+<td>Торговые интервалы</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4790,6 +4823,11 @@
 <td>Сектор экономики.</td>
 </tr>
 <tr>
+<td>brand</td>
+<td><a href="#branddata">BrandData</a></td>
+<td>Информация о бренде.</td>
+</tr>
+<tr>
 <td>lot</td>
 <td><a href="#int32">int32</a></td>
 <td>Количество бумаг в лоте.</td>
@@ -5185,6 +5223,11 @@
 <td>Уникальный идентификатор позиции инструмента.</td>
 </tr>
 <tr>
+<td>asset_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор актива.</td>
+</tr>
+<tr>
 <td>for_iis_flag</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак доступности для ИИС.</td>
@@ -5228,6 +5271,11 @@
 <td>risk_level</td>
 <td><a href="#risklevel">RiskLevel</a></td>
 <td>Уровень риска.</td>
+</tr>
+<tr>
+<td>brand</td>
+<td><a href="#branddata">BrandData</a></td>
+<td>Информация о бренде.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -5420,6 +5468,11 @@
 <td>Дата первой дневной свечи.</td>
 </tr>
 <tr>
+<td>brand</td>
+<td><a href="#branddata">BrandData</a></td>
+<td>Информация о бренде.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -5600,6 +5653,11 @@
 <td>Уникальный идентификатор позиции инструмента.</td>
 </tr>
 <tr>
+<td>asset_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор актива.</td>
+</tr>
+<tr>
 <td>for_iis_flag</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак доступности для ИИС.</td>
@@ -5633,6 +5691,11 @@
 <td>first_1day_candle_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Дата первой дневной свечи.</td>
+</tr>
+<tr>
+<td>brand</td>
+<td><a href="#branddata">BrandData</a></td>
+<td>Информация о бренде.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -5870,6 +5933,11 @@
 <td>Стоимость шага цены.</td>
 </tr>
 <tr>
+<td>brand</td>
+<td><a href="#branddata">BrandData</a></td>
+<td>Информация о бренде.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -6055,6 +6123,11 @@
 <td>Уникальный идентификатор позиции инструмента.</td>
 </tr>
 <tr>
+<td>asset_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор актива.</td>
+</tr>
+<tr>
 <td>for_iis_flag</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак доступности для ИИС.</td>
@@ -6088,6 +6161,11 @@
 <td>first_1day_candle_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Дата первой дневной свечи.</td>
+</tr>
+<tr>
+<td>brand</td>
+<td><a href="#branddata">BrandData</a></td>
+<td>Информация о бренде.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -6445,6 +6523,11 @@
 <td>Уникальный идентификатор позиции инструмента.</td>
 </tr>
 <tr>
+<td>asset_uid</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор актива.</td>
+</tr>
+<tr>
 <td>for_iis_flag</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак доступности для ИИС.</td>
@@ -6478,6 +6561,11 @@
 <td>first_1day_candle_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
 <td>Дата первой дневной свечи.</td>
+</tr>
+<tr>
+<td>brand</td>
+<td><a href="#branddata">BrandData</a></td>
+<td>Информация о бренде.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -8994,6 +9082,64 @@
 <td>price_change_rel</td>
 <td><a href="#quotation">Quotation</a></td>
 <td>Относительное изменение цены</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="tradinginterval">TradingInterval</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><a href="#string">string</a></td>
+<td>Название интервала</td>
+</tr>
+<tr>
+<td>interval</td>
+<td><a href="#tradingintervaltimeinterval">TradingInterval.TimeInterval</a></td>
+<td>Интервал</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="tradingintervaltimeinterval">TradingInterval.TimeInterval</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время начала интервала</td>
+</tr>
+<tr>
+<td>end_ts</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время окончания интервала</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

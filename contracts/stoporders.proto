@@ -42,6 +42,7 @@ message PostStopOrderRequest {
   TakeProfitType take_profit_type = 12; //Подтип стоп-заявки TakeProfit
   TrailingData trailing_data = 13; //Массив с параметрами трейлинг-стопа
   PriceType price_type = 14; //Тип цены
+  string order_id = 15 [(google.api.field_behavior) = REQUIRED]; //Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.
   message TrailingData {
       Quotation indent = 1; //Отступ
       TrailingValueType indent_type = 2; //Тип величины отступа
@@ -53,6 +54,7 @@ message PostStopOrderRequest {
 //Результат выставления стоп-заявки.
 message PostStopOrderResponse {
   string stop_order_id = 1; //Уникальный идентификатор стоп-заявки
+  string order_request_id = 2; //Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.
   ResponseMetadata response_metadata = 254; //Метадата
 }
 

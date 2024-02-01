@@ -1,7 +1,7 @@
 asyncapi: 2.6.0
 info:
   title: Tinkoff Invest API
-  version: '1.8'
+  version: '1.9'
   description: Websocket API for streaming data
   license:
     name: Apache 2.0
@@ -149,10 +149,14 @@ components:
       example:
         subscribeInfoResponse:
           infoSubscriptions:
-            - instrumentUid: instrumentUid
+            - streamId: streamId
+              instrumentUid: instrumentUid
               figi: figi
-            - instrumentUid: instrumentUid
+              subscriptionId: subscriptionId
+            - streamId: streamId
+              instrumentUid: instrumentUid
               figi: figi
+              subscriptionId: subscriptionId
           trackingId: trackingId
         trade:
           quantity: quantity
@@ -165,11 +169,15 @@ components:
         subscribeOrderBookResponse:
           orderBookSubscriptions:
             - depth: 0
+              streamId: streamId
               instrumentUid: instrumentUid
               figi: figi
+              subscriptionId: subscriptionId
             - depth: 0
+              streamId: streamId
               instrumentUid: instrumentUid
               figi: figi
+              subscriptionId: subscriptionId
           trackingId: trackingId
         ping:
           streamId: streamId
@@ -224,10 +232,14 @@ components:
           isConsistent: true
         subscribeTradesResponse:
           tradeSubscriptions:
-            - instrumentUid: instrumentUid
+            - streamId: streamId
+              instrumentUid: instrumentUid
               figi: figi
-            - instrumentUid: instrumentUid
+              subscriptionId: subscriptionId
+            - streamId: streamId
+              instrumentUid: instrumentUid
               figi: figi
+              subscriptionId: subscriptionId
           trackingId: trackingId
         tradingStatus:
           limitOrderAvailableFlag: true
@@ -237,19 +249,27 @@ components:
           time: '2000-01-23T04:56:07.000+00:00'
         subscribeCandlesResponse:
           candlesSubscriptions:
-            - instrumentUid: instrumentUid
+            - streamId: streamId
+              instrumentUid: instrumentUid
               waitingClose: true
               figi: figi
-            - instrumentUid: instrumentUid
+              subscriptionId: subscriptionId
+            - streamId: streamId
+              instrumentUid: instrumentUid
               waitingClose: true
               figi: figi
+              subscriptionId: subscriptionId
           trackingId: trackingId
         subscribeLastPriceResponse:
           lastPriceSubscriptions:
-            - instrumentUid: instrumentUid
+            - streamId: streamId
+              instrumentUid: instrumentUid
               figi: figi
-            - instrumentUid: instrumentUid
+              subscriptionId: subscriptionId
+            - streamId: streamId
+              instrumentUid: instrumentUid
               figi: figi
+              subscriptionId: subscriptionId
           trackingId: trackingId
         lastPrice:
           price:
@@ -286,12 +306,16 @@ components:
       description: Результат изменения статус подписки на свечи.
       example:
         candlesSubscriptions:
-          - instrumentUid: instrumentUid
+          - streamId: streamId
+            instrumentUid: instrumentUid
             waitingClose: true
             figi: figi
-          - instrumentUid: instrumentUid
+            subscriptionId: subscriptionId
+          - streamId: streamId
+            instrumentUid: instrumentUid
             waitingClose: true
             figi: figi
+            subscriptionId: subscriptionId
         trackingId: trackingId
       properties:
         trackingId:
@@ -308,9 +332,11 @@ components:
     v1CandleSubscription:
       description: Статус подписки на свечи.
       example:
+        streamId: streamId
         instrumentUid: instrumentUid
         waitingClose: true
         figi: figi
+        subscriptionId: subscriptionId
       properties:
         figi:
           description: Figi-идентификатор инструмента.
@@ -325,6 +351,12 @@ components:
         waitingClose:
           title: Флаг ожидания закрытия временного интервала для отправки свечи
           type: boolean
+        streamId:
+          title: Идентификатор открытого соединения
+          type: string
+        subscriptionId:
+          title: Идентификатор подписки в формате UUID
+          type: string
       type: object
     v1SubscriptionInterval:
       default: SUBSCRIPTION_INTERVAL_UNSPECIFIED
@@ -393,11 +425,15 @@ components:
       example:
         orderBookSubscriptions:
           - depth: 0
+            streamId: streamId
             instrumentUid: instrumentUid
             figi: figi
+            subscriptionId: subscriptionId
           - depth: 0
+            streamId: streamId
             instrumentUid: instrumentUid
             figi: figi
+            subscriptionId: subscriptionId
         trackingId: trackingId
       properties:
         trackingId:
@@ -415,8 +451,10 @@ components:
       description: Статус подписки.
       example:
         depth: 0
+        streamId: streamId
         instrumentUid: instrumentUid
         figi: figi
+        subscriptionId: subscriptionId
       properties:
         figi:
           description: Figi-идентификатор инструмента.
@@ -430,15 +468,38 @@ components:
         instrumentUid:
           title: Uid инструмента
           type: string
+        streamId:
+          title: Идентификатор открытого соединения
+          type: string
+        subscriptionId:
+          title: Идентификатор подписки в формате UUID
+          type: string
+        orderBookType:
+          $ref: '#/components/schemas/v1OrderBookType'
       type: object
+    v1OrderBookType:
+      default: ORDERBOOK_TYPE_UNSPECIFIED
+      enum:
+        - ORDERBOOK_TYPE_UNSPECIFIED
+        - ORDERBOOK_TYPE_EXCHANGE
+        - ORDERBOOK_TYPE_DEALER
+      title: |-
+        - ORDERBOOK_TYPE_UNSPECIFIED: не определен
+         - ORDERBOOK_TYPE_EXCHANGE: Биржевой стакан
+         - ORDERBOOK_TYPE_DEALER: Стакан дилера
+      type: string
     v1SubscribeTradesResponse:
       description: Результат изменения статуса подписки на поток обезличенных сделок.
       example:
         tradeSubscriptions:
-          - instrumentUid: instrumentUid
+          - streamId: streamId
+            instrumentUid: instrumentUid
             figi: figi
-          - instrumentUid: instrumentUid
+            subscriptionId: subscriptionId
+          - streamId: streamId
+            instrumentUid: instrumentUid
             figi: figi
+            subscriptionId: subscriptionId
         trackingId: trackingId
       properties:
         trackingId:
@@ -455,8 +516,10 @@ components:
     v1TradeSubscription:
       description: Статус подписки.
       example:
+        streamId: streamId
         instrumentUid: instrumentUid
         figi: figi
+        subscriptionId: subscriptionId
       properties:
         figi:
           description: Figi-идентификатор инструмента.
@@ -466,15 +529,25 @@ components:
         instrumentUid:
           title: Uid инструмента
           type: string
+        streamId:
+          title: Идентификатор открытого соединения
+          type: string
+        subscriptionId:
+          title: Идентификатор подписки в формате UUID
+          type: string
       type: object
     v1SubscribeInfoResponse:
       description: Результат изменения статуса подписки на торговый статус.
       example:
         infoSubscriptions:
-          - instrumentUid: instrumentUid
+          - streamId: streamId
+            instrumentUid: instrumentUid
             figi: figi
-          - instrumentUid: instrumentUid
+            subscriptionId: subscriptionId
+          - streamId: streamId
+            instrumentUid: instrumentUid
             figi: figi
+            subscriptionId: subscriptionId
         trackingId: trackingId
       properties:
         trackingId:
@@ -491,8 +564,10 @@ components:
     v1InfoSubscription:
       description: Статус подписки.
       example:
+        streamId: streamId
         instrumentUid: instrumentUid
         figi: figi
+        subscriptionId: subscriptionId
       properties:
         figi:
           description: Figi-идентификатор инструмента.
@@ -501,6 +576,12 @@ components:
           $ref: '#/components/schemas/v1SubscriptionStatus'
         instrumentUid:
           title: Uid инструмента
+          type: string
+        streamId:
+          title: Идентификатор открытого соединения
+          type: string
+        subscriptionId:
+          title: Идентификатор подписки в формате UUID
           type: string
       type: object
     v1Candle:
@@ -678,6 +759,8 @@ components:
         instrumentUid:
           title: Uid инструмента
           type: string
+        orderBookType:
+          $ref: '#/components/schemas/v1OrderBookType'
       type: object
     v1Order:
       description: Массив предложений/спроса.
@@ -780,10 +863,14 @@ components:
       description: Результат изменения статуса подписки на цену последней сделки.
       example:
         lastPriceSubscriptions:
-          - instrumentUid: instrumentUid
+          - streamId: streamId
+            instrumentUid: instrumentUid
             figi: figi
-          - instrumentUid: instrumentUid
+            subscriptionId: subscriptionId
+          - streamId: streamId
+            instrumentUid: instrumentUid
             figi: figi
+            subscriptionId: subscriptionId
         trackingId: trackingId
       properties:
         trackingId:
@@ -800,8 +887,10 @@ components:
     v1LastPriceSubscription:
       description: Статус подписки на цену последней сделки.
       example:
+        streamId: streamId
         instrumentUid: instrumentUid
         figi: figi
+        subscriptionId: subscriptionId
       properties:
         figi:
           description: Figi-идентификатор инструмента.
@@ -810,6 +899,12 @@ components:
           $ref: '#/components/schemas/v1SubscriptionStatus'
         instrumentUid:
           title: Uid инструмента
+          type: string
+        streamId:
+          title: Идентификатор открытого соединения
+          type: string
+        subscriptionId:
+          title: Идентификатор подписки в формате UUID
           type: string
       type: object
     v1LastPrice:
@@ -946,6 +1041,8 @@ components:
             Идентификатор инструмента, принимает значение figi или
             instrument_uid
           type: string
+        orderBookType:
+          $ref: '#/components/schemas/v1OrderBookType'
       type: object
     v1SubscribeTradesRequest:
       description: Изменение статуса подписки на поток обезличенных сделок.
