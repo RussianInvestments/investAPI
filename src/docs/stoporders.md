@@ -61,6 +61,7 @@
 | take_profit_type |  [TakeProfitType](#takeprofittype) | Подтип стоп-заявки TakeProfit |
 | trailing_data |  [PostStopOrderRequest.TrailingData](#poststoporderrequesttrailingdata) | Массив с параметрами трейлинг-стопа |
 | price_type |  [PriceType](#pricetype) | Тип цены |
+| order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -86,6 +87,7 @@
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | stop_order_id |  [string](#string) | Уникальный идентификатор стоп-заявки |
+| order_request_id |  [string](#string) | Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов. |
 | response_metadata |  [ResponseMetadata](#responsemetadata) | Метадата |
  <!-- end Fields -->
  <!-- end HasFields -->

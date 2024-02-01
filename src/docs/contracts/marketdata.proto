@@ -134,6 +134,8 @@ message CandleSubscription {
   SubscriptionStatus subscription_status = 3; //Статус подписки.
   string instrument_uid = 4; //Uid инструмента
   bool waiting_close = 5; //Флаг ожидания закрытия временного интервала для отправки свечи
+  string stream_id = 6; //Идентификатор открытого соединения
+  string subscription_id = 7; //Идентификатор подписки в формате UUID
 }
 
 //Результат подписки.
@@ -161,6 +163,7 @@ message OrderBookInstrument {
   string figi = 1 [ deprecated = true ]; //Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.
   int32 depth = 2; //Глубина стакана.
   string instrument_id = 3; //Идентификатор инструмента, принимает значение figi или instrument_uid
+  OrderBookType order_book_type = 4; //Тип стакана
 }
 
 //Результат изменения статуса подписки на стаканы.
@@ -175,6 +178,9 @@ message OrderBookSubscription {
   int32 depth = 2; //Глубина стакана.
   SubscriptionStatus subscription_status = 3; //Статус подписки.
   string instrument_uid = 4; //Uid инструмента
+  string stream_id = 5; //Идентификатор открытого соединения
+  string subscription_id = 6; //Идентификатор подписки в формате UUID
+  OrderBookType order_book_type = 7; //Тип стакана
 }
 
 //Изменение статуса подписки на поток обезличенных сделок.
@@ -200,6 +206,8 @@ message TradeSubscription {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionStatus subscription_status = 2; //Статус подписки.
   string instrument_uid = 3; //Uid инструмента
+  string stream_id = 4; //Идентификатор открытого соединения
+  string subscription_id = 5; //Идентификатор подписки в формате UUID
 }
 
 //Изменение статуса подписки на торговый статус инструмента.
@@ -225,6 +233,8 @@ message InfoSubscription {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionStatus subscription_status = 2; //Статус подписки.
   string instrument_uid = 3; //Uid инструмента
+  string stream_id = 4; //Идентификатор открытого соединения
+  string subscription_id = 5; //Идентификатор подписки в формате UUID
 }
 
 //Изменение статуса подписки на цену последней сделки по инструменту.
@@ -250,6 +260,8 @@ message LastPriceSubscription {
   string figi = 1; //Figi-идентификатор инструмента.
   SubscriptionStatus subscription_status = 2; //Статус подписки.
   string instrument_uid = 3; //Uid инструмента
+  string stream_id = 4; //Идентификатор открытого соединения
+  string subscription_id = 5; //Идентификатор подписки в формате UUID
 }
 
 //Пакет свечей в рамках стрима.
@@ -277,6 +289,7 @@ message OrderBook {
   Quotation limit_up = 7; //Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://russianinvestments.github.io/investAPI/faq_marketdata/)
   Quotation limit_down = 8; //Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://russianinvestments.github.io/investAPI/faq_marketdata/)
   string instrument_uid = 9; //Uid инструмента
+  OrderBookType order_book_type = 10; //Тип стакана
 }
 
 //Массив предложений/спроса.
@@ -464,4 +477,10 @@ message InstrumentClosePriceResponse {
   Quotation price = 11; //Цена закрытия торговой сессии.
   Quotation evening_session_price = 12; //Цена последней сделки с вечерней сессии
   google.protobuf.Timestamp time = 21; //Дата совершения торгов.
+}
+
+enum OrderBookType {
+    ORDERBOOK_TYPE_UNSPECIFIED = 0; //не определен
+    ORDERBOOK_TYPE_EXCHANGE = 1; //Биржевой стакан
+    ORDERBOOK_TYPE_DEALER = 2; //Стакан дилера
 }

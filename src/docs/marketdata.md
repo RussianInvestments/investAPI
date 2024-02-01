@@ -197,6 +197,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | subscription_status |  [SubscriptionStatus](#subscriptionstatus) | Статус подписки. |
 | instrument_uid |  [string](#string) | Uid инструмента |
 | waiting_close |  [bool](#bool) | Флаг ожидания закрытия временного интервала для отправки свечи |
+| stream_id |  [string](#string) | Идентификатор открытого соединения |
+| subscription_id |  [string](#string) | Идентификатор подписки в формате UUID |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -222,6 +224,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | figi |  [string](#string) | Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id. |
 | depth |  [int32](#int32) | Глубина стакана. |
 | instrument_id |  [string](#string) | Идентификатор инструмента, принимает значение figi или instrument_uid |
+| order_book_type |  [OrderBookType](#orderbooktype) | Тип стакана |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -248,6 +251,9 @@ subscribeCandles | Изменения статуса подписки на св�
 | depth |  [int32](#int32) | Глубина стакана. |
 | subscription_status |  [SubscriptionStatus](#subscriptionstatus) | Статус подписки. |
 | instrument_uid |  [string](#string) | Uid инструмента |
+| stream_id |  [string](#string) | Идентификатор открытого соединения |
+| subscription_id |  [string](#string) | Идентификатор подписки в формате UUID |
+| order_book_type |  [OrderBookType](#orderbooktype) | Тип стакана |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -297,6 +303,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | subscription_status |  [SubscriptionStatus](#subscriptionstatus) | Статус подписки. |
 | instrument_uid |  [string](#string) | Uid инструмента |
+| stream_id |  [string](#string) | Идентификатор открытого соединения |
+| subscription_id |  [string](#string) | Идентификатор подписки в формате UUID |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -346,6 +354,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | subscription_status |  [SubscriptionStatus](#subscriptionstatus) | Статус подписки. |
 | instrument_uid |  [string](#string) | Uid инструмента |
+| stream_id |  [string](#string) | Идентификатор открытого соединения |
+| subscription_id |  [string](#string) | Идентификатор подписки в формате UUID |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -395,6 +405,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | figi |  [string](#string) | Figi-идентификатор инструмента. |
 | subscription_status |  [SubscriptionStatus](#subscriptionstatus) | Статус подписки. |
 | instrument_uid |  [string](#string) | Uid инструмента |
+| stream_id |  [string](#string) | Идентификатор открытого соединения |
+| subscription_id |  [string](#string) | Идентификатор подписки в формате UUID |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -434,6 +446,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | limit_up |  [Quotation](#quotation) | Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://russianinvestments.github.io/investAPI/faq_marketdata/) |
 | limit_down |  [Quotation](#quotation) | Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать [информацию со страницы](https://russianinvestments.github.io/investAPI/faq_marketdata/) |
 | instrument_uid |  [string](#string) | Uid инструмента |
+| order_book_type |  [OrderBookType](#orderbooktype) | Тип стакана |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -816,6 +829,18 @@ subscribeCandles | Изменения статуса подписки на св�
 | CANDLE_INTERVAL_4_HOUR | 11 | от 4 часов до 1 месяца. |
 | CANDLE_INTERVAL_WEEK | 12 | от 1 недели до 2 лет. |
 | CANDLE_INTERVAL_MONTH | 13 | от 1 месяца до 10 лет. |
+
+
+
+
+#### OrderBookType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ORDERBOOK_TYPE_UNSPECIFIED | 0 | не определен |
+| ORDERBOOK_TYPE_EXCHANGE | 1 | Биржевой стакан |
+| ORDERBOOK_TYPE_DEALER | 2 | Стакан дилера |
 
 
  <!-- range .Enums -->

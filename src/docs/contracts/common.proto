@@ -98,3 +98,9 @@ message ResponseMetadata {
   string tracking_id = 42; //Идентификатор трекинга
   google.protobuf.Timestamp server_time = 43; //Серверное время
 }
+
+message BrandData {
+  string logo_name = 1; // Логотип инструмента. Имя файла для получения логотипа.
+  string logo_base_color = 2; //	Цвет бренда.
+  string text_color	= 3; // Цвет текста для цвета логотипа бренда.
+}

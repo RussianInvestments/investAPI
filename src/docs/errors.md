@@ -107,6 +107,7 @@
 30210|INVALID_ARGUMENT|trailing data required|Проверьте параметры запроса стоп-заявки. Не заданы indent или spread.|
 30211|INVALID_ARGUMENT|indent type required|Проверьте параметры запроса стоп-заявки. Не задан indent_type.|
 30212|INVALID_ARGUMENT|spread type required|Проверьте параметры запроса стоп-заявки. Не задан spread_type.|
+30218|INVALID_ARGUMENT|quantity of instruments can't be more than 3000|Количество инструментов в списке не может быть больше 3000.|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции.</br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://russianinvestments.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|authentication token is missing or invalid|Токен доступа не найден или не активен.</br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)|
 40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.</br>Брокерский счет не найден, не принадлежит пользователю или закрыт, либо на пользователе ограничения (от Tinkoff Invest API или от биржи). В этом случае нужно обратиться в техподдержку. |
