@@ -339,6 +339,7 @@ Deprecated Метод получения списка опционов.
 | premarket_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания премаркета в часовом поясе UTC. |
 | closing_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона закрытия в часовом поясе UTC. |
 | opening_auction_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания аукциона открытия в часовом поясе UTC. |
+| intervals | Массив объектов [TradingInterval](#tradinginterval) | Торговые интервалы |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -615,6 +616,7 @@ Deprecated Метод получения списка опционов.
 | country_of_risk |  [string](#string) | Код страны рисков. |
 | country_of_risk_name |  [string](#string) | Наименование страны рисков. |
 | sector |  [string](#string) | Сектор экономики. |
+| brand |  [BrandData](#branddata) | Информация о бренде. |
 | lot |  [int32](#int32) | Количество бумаг в лоте. |
 | basic_asset_size |  [Quotation](#quotation) | Размер основного актива. |
 | klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
@@ -712,6 +714,7 @@ Deprecated Метод получения списка опционов.
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. (биржа) |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
+| asset_uid |  [string](#string) | Уникальный идентификатор актива. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
@@ -721,6 +724,7 @@ Deprecated Метод получения списка опционов.
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
 | risk_level |  [RiskLevel](#risklevel) | Уровень риска. |
+| brand |  [BrandData](#branddata) | Информация о бренде. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -765,6 +769,7 @@ Deprecated Метод получения списка опционов.
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
+| brand |  [BrandData](#branddata) | Информация о бренде. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -807,6 +812,7 @@ Deprecated Метод получения списка опционов.
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
+| asset_uid |  [string](#string) | Уникальный идентификатор актива. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
@@ -814,6 +820,7 @@ Deprecated Метод получения списка опционов.
 | liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
+| brand |  [BrandData](#branddata) | Информация о бренде. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -867,6 +874,7 @@ Deprecated Метод получения списка опционов.
 | initial_margin_on_buy |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при покупке. |
 | initial_margin_on_sell |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение при продаже. |
 | min_price_increment_amount |  [Quotation](#quotation) | Стоимость шага цены. |
+| brand |  [BrandData](#branddata) | Информация о бренде. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -910,6 +918,7 @@ Deprecated Метод получения списка опционов.
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
+| asset_uid |  [string](#string) | Уникальный идентификатор актива. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
@@ -917,6 +926,7 @@ Deprecated Метод получения списка опционов.
 | liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
+| brand |  [BrandData](#branddata) | Информация о бренде. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1030,6 +1040,7 @@ Deprecated Метод получения списка опционов.
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
+| asset_uid |  [string](#string) | Уникальный идентификатор актива. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
@@ -1037,6 +1048,7 @@ Deprecated Метод получения списка опционов.
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
+| brand |  [BrandData](#branddata) | Информация о бренде. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1838,6 +1850,30 @@ Deprecated Метод получения списка опционов.
 | max_target |  [Quotation](#quotation) | Максимальная цена прогноза |
 | price_change |  [Quotation](#quotation) | Изменение цены |
 | price_change_rel |  [Quotation](#quotation) | Относительное изменение цены |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### TradingInterval
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| type |  [string](#string) | Название интервала |
+| interval |  [TradingInterval.TimeInterval](#tradingintervaltimeinterval) | Интервал |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### TradingInterval.TimeInterval
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| start_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала интервала |
+| end_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания интервала |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

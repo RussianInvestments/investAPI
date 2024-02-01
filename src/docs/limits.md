@@ -3,7 +3,10 @@
 В процессе работы торговые роботы могут генерировать огромное количество заявок. Причём особенностью именно 
 алгоритмической торговли можно назвать большой процент отмен заявок. Таким образом пользователи 
 могут генерировать большую нагрузку на инфраструктуру брокера. По этой причине TINKOFF INVEST API 
-обладает системой динамического формирования лимитов для пользователей. 
+обладает системой динамического формирования лимитов для пользователей.
+
+**Для всех запросов с одного адреса установлено суммарное ограничение.** Рекомендуем разрабатывать роботов таким образом,
+чтобы общее число запросов по всем счетам и токенам **в секунду** не превышало 50(RPS).
 
 **Важно** Значение лимита конкретного сервиса включает в себя суммарное количество допустимых запросов по всем методам этого сервиса.
 
@@ -13,18 +16,18 @@
 
 | Сервисы                                                                    | Способ интеграции | Лимит unary-запросов в минуту |
 |:---------------------------------------------------------------------------|:------------------|:------------------------------|
-| [Сервис инструментов](/investAPI/head-instruments/)                        | gRPC<br/>REST     | 200      <br/>100             |
-| [Сервис счетов](/investAPI/head-users/)                                    | gRPC<br/>REST     | 100<br/>50                    |
-| [Сервис операций](/investAPI/head-operations/)                             | gRPC<br/>REST     | 200<br/>100                   |
+| [Сервис инструментов](/investAPI/head-instruments/)                        | gRPC<br/>REST     | 200                           |
+| [Сервис счетов](/investAPI/head-users/)                                    | gRPC<br/>REST     | 100                           |
+| [Сервис операций](/investAPI/head-operations/)                             | gRPC<br/>REST     | 200                           |
 | Формирование отчётов в</br>[Сервисе операций](/investAPI/head-operations/) | gRPC              | 5                             |
-| [Сервис котировок](/investAPI/head-marketdata/)                            | gRPC<br/>REST     | 300        <br/>150           |
+| [Сервис котировок](/investAPI/head-marketdata/)                            | gRPC<br/>REST     | 300                           |
 | <dl><dd> Метод [getHistory](/investAPI/get_history)</dd></dl>              | REST              | 30                            |
-| [Сервис стоп-ордеров](/investAPI/head-stoporders/)                         | gRPC<br/>REST     | 50<br/>25                     |
-| [Песочницы](/investAPI/head-sandbox/)                                      | gRPC<br/>REST     | 200        <br/>100           |
-| [Сервис ордеров](/investAPI/head-orders/)                                 | gRPC<br/>REST     | 100<br/>50                    |
- | <dl><dd> Метод [getOrders](/investAPI/orders#getorders)</dd></dl>          | gRPC<br/>REST     | 200<br/>100                   |
- | <dl><dd>Метод [postOrder](/investAPI/orders#postorder)     </dd></dl>      | gRPC<br/>REST     | 300<br/>150                   |
-| <dl><dd>  Метод [cancelOrder](/investAPI/orders#cancelorder)    </dd></dl> | gRPC<br/>REST     | 100<br/>50                    |
+| [Сервис стоп-ордеров](/investAPI/head-stoporders/)                         | gRPC<br/>REST     | 50                            |
+| [Песочницы](/investAPI/head-sandbox/)                                      | gRPC<br/>REST     | 200                           |
+| [Сервис ордеров](/investAPI/head-orders/)                                  | gRPC<br/>REST     | 100                           |
+ | <dl><dd> Метод [getOrders](/investAPI/orders#getorders)</dd></dl>         | gRPC<br/>REST     | 200                           |
+ | <dl><dd>Метод [postOrder](/investAPI/orders#postorder)     </dd></dl>     | gRPC<br/>REST     | 300                           |
+| <dl><dd>  Метод [cancelOrder](/investAPI/orders#cancelorder)    </dd></dl> | gRPC<br/>REST     | 100                           |
 
 
 
