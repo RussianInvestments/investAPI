@@ -798,7 +798,7 @@ Deprecated Метод получения списка опционов.
 | fixed_commission |  [Quotation](#quotation) | Размер фиксированной комиссии фонда. |
 | focus_type |  [string](#string) | Возможные значения: </br>**equity** — акции;</br>**fixed_income** — облигации;</br>**mixed_allocation** — смешанный;</br>**money_market** — денежный рынок;</br>**real_estate** — недвижимость;</br>**commodity** — товары;</br>**specialty** — специальный;</br>**private_equity** — private equity;</br>**alternative_investment** — альтернативные инвестиции. |
 | released_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска в часовом поясе UTC. |
-| num_shares |  [Quotation](#quotation) | Количество акций фонда в обращении. |
+| num_shares |  [Quotation](#quotation) | Количество паев фонда в обращении. |
 | country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
