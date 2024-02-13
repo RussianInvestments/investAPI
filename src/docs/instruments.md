@@ -798,7 +798,7 @@ Deprecated Метод получения списка опционов.
 | fixed_commission |  [Quotation](#quotation) | Размер фиксированной комиссии фонда. |
 | focus_type |  [string](#string) | Возможные значения: </br>**equity** — акции;</br>**fixed_income** — облигации;</br>**mixed_allocation** — смешанный;</br>**money_market** — денежный рынок;</br>**real_estate** — недвижимость;</br>**commodity** — товары;</br>**specialty** — специальный;</br>**private_equity** — private equity;</br>**alternative_investment** — альтернативные инвестиции. |
 | released_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска в часовом поясе UTC. |
-| num_shares |  [Quotation](#quotation) | Количество акций фонда в обращении. |
+| num_shares |  [Quotation](#quotation) | Количество паев фонда в обращении. |
 | country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
@@ -2164,3 +2164,12 @@ Deprecated Метод получения списка опционов.
 | units |  [int64](#int64) | Целая часть суммы, может быть отрицательным числом |
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
 
+
+#### BrandData
+Данные о бренде
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| logo_name |  [string](#string) | Логотип инструмента. Имя файла для получения логотипа |
+| logo_base_color |  [string](#string) | Цвет бренда |
+| text_color |  [string](#string) | Цвет текста для цвета логотипа бренда |
