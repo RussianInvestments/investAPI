@@ -35,6 +35,8 @@ service MarketDataService { //Сервис получения биржевой �
 
   //Метод запроса цен закрытия торговой сессии по инструментам.
   rpc GetClosePrices(GetClosePricesRequest) returns (GetClosePricesResponse);
+
+  rpc GetTechAnalysis(GetTechAnalysisRequest) returns (GetTechAnalysisResponse);
 }
 
 service MarketDataStreamService {
@@ -479,8 +481,79 @@ message InstrumentClosePriceResponse {
   google.protobuf.Timestamp time = 21; //Дата совершения торгов.
 }
 
+message GetTechAnalysisRequest {
+  IndicatorType indicator_type = 1 [(google.api.field_behavior) = REQUIRED]; //Тип технического индикатора.
+  string instrument_uid = 2 [(google.api.field_behavior) = REQUIRED]; //Uid инструмента.
+  google.protobuf.Timestamp from = 3 [(google.api.field_behavior) = REQUIRED]; //Начало запрашиваемого периода в часовом поясе UTC.
+  google.protobuf.Timestamp to = 4 [(google.api.field_behavior) = REQUIRED]; //Окончание запрашиваемого периода в часовом поясе UTC.
+  IndicatorInterval interval = 5 [(google.api.field_behavior) = REQUIRED]; //Интервал, за который рассчитывается индикатор.
+  TypeOfPrice type_of_price = 6 [(google.api.field_behavior) = REQUIRED]; //Тип цены, используемый при расчёте индикатора.
+  int32 length = 7; //Торговый период, за который рассчитывается индикатор.
+  Deviation deviation = 8; //Параметры отклонения.
+  Smoothing smoothing = 9; //Параметры сглаживания.
+
+  message Smoothing {
+    int32 fast_length = 1; //Короткий период сглаживания для первой экспоненциальной скользящей средней (EMA).
+    int32 slow_length = 2; //Длинный период сглаживания для второй экспоненциальной скользящей средней (EMA).
+    int32 signal_smoothing = 3; //Период сглаживания для третьей экспоненциальной скользящей средней (EMA)
+  }
+
+  message Deviation {
+    Quotation deviation_multiplier = 1; //Кол-во стандартных отклонений, на которые отступает верхняя и нижняя граница
+  }
+
+  //Интервал свечи.
+  enum IndicatorInterval {
+    INDICATOR_INTERVAL_UNSPECIFIED = 0; //Интервал не определён.
+    INDICATOR_INTERVAL_ONE_MINUTE = 1; //1 минута.
+    INDICATOR_INTERVAL_FIVE_MINUTES = 2; //5 минут.
+    INDICATOR_INTERVAL_FIFTEEN_MINUTES = 3; //15 минут.
+    INDICATOR_INTERVAL_ONE_HOUR = 4; //1 час.
+    INDICATOR_INTERVAL_ONE_DAY = 5; //1 день.
+    INDICATOR_INTERVAL_2_MIN = 6; //2 минуты.
+    INDICATOR_INTERVAL_3_MIN = 7; //3 минуты.
+    INDICATOR_INTERVAL_10_MIN = 8; //10 минут.
+    INDICATOR_INTERVAL_30_MIN = 9; //30 минут.
+    INDICATOR_INTERVAL_2_HOUR = 10; //2 часа.
+    INDICATOR_INTERVAL_4_HOUR = 11; //4 часа.
+    INDICATOR_INTERVAL_WEEK = 12; //Неделя
+    INDICATOR_INTERVAL_MONTH = 13; //Месяц
+  }
+
+  enum TypeOfPrice {
+    TYPE_OF_PRICE_UNSPECIFIED = 0; //Не указано.
+    TYPE_OF_PRICE_CLOSE = 1; //Цена закрытия.
+    TYPE_OF_PRICE_OPEN = 2; //Цена открытия.
+    TYPE_OF_PRICE_HIGH = 3; //Максимальное значение за выбранный интервал.
+    TYPE_OF_PRICE_LOW = 4; //Минимальное значение за выбранный интервал.
+    TYPE_OF_PRICE_AVG = 5; //Среднее значение по показателям [ (close + open + high + low) / 4 ].
+  }
+
+  enum IndicatorType {
+    INDICATOR_TYPE_UNSPECIFIED = 0; //Не определен.
+    INDICATOR_TYPE_BB = 1; //Bollinger Bands (Линия Боллинжера).
+    INDICATOR_TYPE_EMA = 2; //Exponential Moving Average (EMA, Экспоненциальная скользящая средняя).
+    INDICATOR_TYPE_RSI = 3; //Relative Strength Index (Индекс относительной силы).
+    INDICATOR_TYPE_MACD = 4; //Moving Average Convergence/Divergence (Схождение/Расхождение скользящих средних).
+    INDICATOR_TYPE_SMA = 5; //Simple Moving Average (Простое скользящее среднее).
+  }
+}
+
+message GetTechAnalysisResponse {
+  repeated TechAnalysisItem technical_indicators = 1; //Массив значений результатов тех. анализа
+
+  message TechAnalysisItem {
+    google.protobuf.Timestamp timestamp = 1; //Временная метка по UTC, для которой были рассчитаны значения индикатора.
+    optional Quotation middle_band = 2; //Значение простого скользящего среднего (средней линии).
+    optional Quotation upper_band = 3; //Значение верхней линии Боллинджера.
+    optional Quotation lower_band = 4; //Значение нижней линии Боллинджера.
+    optional Quotation signal = 5; //Значение сигнальной линии.
+    optional Quotation macd = 6; //Значение линии MACD.
+  }
+}
+
 enum OrderBookType {
-    ORDERBOOK_TYPE_UNSPECIFIED = 0; //не определен
-    ORDERBOOK_TYPE_EXCHANGE = 1; //Биржевой стакан
-    ORDERBOOK_TYPE_DEALER = 2; //Стакан дилера
+  ORDERBOOK_TYPE_UNSPECIFIED = 0; //не определен
+  ORDERBOOK_TYPE_EXCHANGE = 1; //Биржевой стакан
+  ORDERBOOK_TYPE_DEALER = 2; //Стакан дилера
 }

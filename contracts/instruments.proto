@@ -531,7 +531,7 @@ message Etf {
   Quotation fixed_commission = 17; //Размер фиксированной комиссии фонда.
   string focus_type = 18; //Возможные значения: </br>**equity** — акции;</br>**fixed_income** — облигации;</br>**mixed_allocation** — смешанный;</br>**money_market** — денежный рынок;</br>**real_estate** — недвижимость;</br>**commodity** — товары;</br>**specialty** — специальный;</br>**private_equity** — private equity;</br>**alternative_investment** — альтернативные инвестиции.
   google.protobuf.Timestamp released_date = 19; //Дата выпуска в часовом поясе UTC.
-  Quotation num_shares = 20; //Количество акций фонда в обращении.
+  Quotation num_shares = 20; //Количество паев фонда в обращении.
 
   string country_of_risk = 21; //Код страны риска, т.е. страны, в которой компания ведёт основной бизнес.
   string country_of_risk_name = 22; //Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес.

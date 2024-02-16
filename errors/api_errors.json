@@ -524,6 +524,31 @@
     "type": "INVALID_ARGUMENT",
     "description": "Проверьте параметры запроса стоп-заявки. Не задан spread_type."
   },
+  "30213": {
+    "message": "indicator_type is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Проверьте параметры запроса. Некорректный indicator_type."
+  },
+  "30214": {
+    "message": "type_of_price is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Проверьте параметры запроса. Некорректный type_of_price."
+  },
+  "30215": {
+    "message": "length is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Проверьте параметры запроса. Некорректный length."
+  },
+  "30216": {
+    "message": "deviation_data is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Проверьте параметры запроса. Некорректный параметр deviation_data."
+  },
+  "30217": {
+    "message": "smoothing_data is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Проверьте параметры запроса. Некорректный параметр smoothing_data."
+  },
   "30218": {
     "message": "quantity of instruments can't be more than 3000",
     "type": "INVALID_ARGUMENT",

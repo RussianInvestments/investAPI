@@ -562,6 +562,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    О торговле в выходные дни
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     Котировки и рыночные данные
   </a>
   
@@ -569,7 +576,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
+    Торговый статус инструмента
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     Свечи
   </a>
   
@@ -581,7 +595,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     Выставление заявок
   </a>
   
@@ -589,7 +603,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     Получение сделок
   </a>
   
@@ -1175,6 +1189,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_tech_indicators/" class="md-nav__link">
+        Методы работы с индикаторами технического анализа
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1406,6 +1432,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    О торговле в выходные дни
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     Котировки и рыночные данные
   </a>
   
@@ -1413,7 +1446,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
+    Торговый статус инструмента
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     Свечи
   </a>
   
@@ -1425,7 +1465,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     Выставление заявок
   </a>
   
@@ -1433,7 +1473,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     Получение сделок
   </a>
   
@@ -1461,17 +1501,71 @@
                   </a>
                 
                 
-                <h1 id="_1">Особенности торговли в выходные дни</h1>
+                <h1 id="_1">Особенности торговли в выходные дни и на внутреннем рынке</h1>
+<h2 id="_2">О торговле в выходные дни</h2>
 <p>В выходные и нерабочие дни, когда торги на биржах не проводятся, в TINKOFF INVEST API есть возможность совершать операции.
 Заключать сделки возможно только по <a href="/investAPI/faq_instruments/#_20">ограниченному списку инструментов</a>.
 Торговля по выходным имеет ряд <a href="https://www.tinkoff.ru/finance/blog/weekend-trading/">особенностей</a>.</p>
-<h2 id="_2">Котировки и рыночные данные</h2>
+<h2 id="_3">Котировки и рыночные данные</h2>
 <p>Так как торговля осуществляется на внутреннем рынке, <a href="/investAPI/marketdata/#gettradingstatus">торговый статус</a> инструмента будет DEALER_NORMAL_TRADING.
-Стакан получается <a href="/investAPI/marketdata/#getorderbook">обычным</a> методом.</p>
-<p><strong>Важно!</strong> Торговый статус и стакан сейчас недоступны в <a href="/investAPI/head-marketdata/#bidirectional-stream">стримах</a> и будут добавлены в ближайших релизах.</p>
-<h3 id="_3">Свечи</h3>
+Стакан можно получить <a href="/investAPI/marketdata/#getorderbook">обычным</a> методом.</p>
+<h3 id="_4">Торговый статус инструмента</h3>
+<p>Следует различать торговый статус инструмента на бирже и на внутреннем рынке. Возможность торговать инструментом на бирже в API имеет
+больший приоритет, чем торговля внутри брокера. Например, если на бирже торговый статус инструмента NORMAL_TRADING
+и на внутреннем рынке статус DEALER_NORMAL_TRADING, то в ответе методов будет возвращаться 
+SECURITY_TRADING_STATUS_NORMAL_TRADING, при этом изменение внутреннего статуса не будет транслироваться в стримы.</p>
+<p>Изменение биржевого статуса всегда передается в стрим. Если после изменения биржевого статуса торги на бирже не доступны,
+а внутренний рынок открыт для торговли, то после биржевого статуса в стрим будет продублирован торговый статус
+внутреннего рынка. В таблице приведены некоторые ситуации и поведение API:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Ситуация(в динамике)</th>
+<th align="left">Торговый статус инструмента</th>
+<th align="left">Сообщения в стриме</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Открытие торгов на внутреннем рынке</td>
+<td align="left">DEALER_NORMAL_TRADING</td>
+<td align="left">DEALER_NORMAL_TRADING</td>
+</tr>
+<tr>
+<td align="left">Остановка торгов на внутреннем рынке</td>
+<td align="left">DEALER_BREAK_IN_TRADING</td>
+<td align="left">DEALER_BREAK_IN_TRADING</td>
+</tr>
+<tr>
+<td align="left">Открытие торгов на бирже</td>
+<td align="left">NORMAL_TRADING</td>
+<td align="left">NORMAL_TRADING</td>
+</tr>
+<tr>
+<td align="left">Открытие торгов на внутреннем рынке</td>
+<td align="left">NORMAL_TRADING</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Остановка торгов на бирже</td>
+<td align="left">DEALER_NORMAL_TRADING</td>
+<td align="left">сначала BREAK_IN_TRADING, следом DEALER_NORMAL_TRADING</td>
+</tr>
+<tr>
+<td align="left">Возобновление торгов на бирже</td>
+<td align="left">NORMAL_TRADING</td>
+<td align="left">NORMAL_TRADING</td>
+</tr>
+<tr>
+<td align="left">Остановка торгов на внутреннем рынке</td>
+<td align="left">NORMAL_TRADING</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">Свечи</h3>
 <p><a href="/investAPI/marketdata/#getcandles">Свечи</a> за выходные дни сейчас не доступны в API.</p>
-<h2 id="_4">Выставление заявок</h2>
+<h2 id="_6">Выставление заявок</h2>
 <p>В выходные дни выставление заявок возможно с некоторыми ограничениями. Доступные <a href="/investAPI/orders/#ordertype">типы заявок</a> приведены в таблице:</p>
 <table>
 <thead>
@@ -1496,7 +1590,7 @@
 </tbody>
 </table>
 <p><a href="/investAPI/orders/#cancelorder">Отмена</a>, <a href="/investAPI/orders/#getorderstate">cтатус</a> и <a href="/investAPI/orders/#replaceorder">изменение</a> выставленной заявки работают как обычно.</p>
-<h3 id="_5">Получение сделок</h3>
+<h3 id="_7">Получение сделок</h3>
 <p>Сделки, совершенные в выходные, доступны в <a href="/investAPI/orders/#tradesstream">стриме</a>.</p>
                 
               

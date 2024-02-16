@@ -1164,6 +1164,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gettechanalysis" class="md-nav__link">
+    GetTechAnalysis
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1546,6 +1553,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequest" class="md-nav__link">
+    GetTechAnalysisRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequestsmoothing" class="md-nav__link">
+    GetTechAnalysisRequest.Smoothing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequestdeviation" class="md-nav__link">
+    GetTechAnalysisRequest.Deviation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisresponse" class="md-nav__link">
+    GetTechAnalysisResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisresponsetechanalysisitem" class="md-nav__link">
+    GetTechAnalysisResponse.TechAnalysisItem
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1597,6 +1639,27 @@
           <li class="md-nav__item">
   <a href="#orderbooktype" class="md-nav__link">
     OrderBookType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequestindicatorinterval" class="md-nav__link">
+    GetTechAnalysisRequest.IndicatorInterval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequesttypeofprice" class="md-nav__link">
+    GetTechAnalysisRequest.TypeOfPrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequestindicatortype" class="md-nav__link">
+    GetTechAnalysisRequest.IndicatorType
   </a>
   
 </li>
@@ -1672,6 +1735,18 @@
     <li class="md-nav__item">
       <a href="../get_history/" class="md-nav__link">
         Получение исторических рыночных данных
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_tech_indicators/" class="md-nav__link">
+        Методы работы с индикаторами технического анализа
       </a>
     </li>
   
@@ -1969,6 +2044,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gettechanalysis" class="md-nav__link">
+    GetTechAnalysis
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2351,6 +2433,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequest" class="md-nav__link">
+    GetTechAnalysisRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequestsmoothing" class="md-nav__link">
+    GetTechAnalysisRequest.Smoothing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequestdeviation" class="md-nav__link">
+    GetTechAnalysisRequest.Deviation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisresponse" class="md-nav__link">
+    GetTechAnalysisResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisresponsetechanalysisitem" class="md-nav__link">
+    GetTechAnalysisResponse.TechAnalysisItem
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2402,6 +2519,27 @@
           <li class="md-nav__item">
   <a href="#orderbooktype" class="md-nav__link">
     OrderBookType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequestindicatorinterval" class="md-nav__link">
+    GetTechAnalysisRequest.IndicatorInterval
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequesttypeofprice" class="md-nav__link">
+    GetTechAnalysisRequest.TypeOfPrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettechanalysisrequestindicatortype" class="md-nav__link">
+    GetTechAnalysisRequest.IndicatorType
   </a>
   
 </li>
@@ -2540,6 +2678,15 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#getclosepricesresponse">GetClosePricesResponse</a></p>
+</li>
+</ul>
+<h4 id="gettechanalysis">GetTechAnalysis</h4>
+<ul>
+<li>
+<p>Тело запроса — <a href="#gettechanalysisrequest">GetTechAnalysisRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#gettechanalysisresponse">GetTechAnalysisResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -4387,6 +4534,201 @@
 </tbody>
 </table>
 <!-- end HasFields -->
+
+<h4 id="gettechanalysisrequest">GetTechAnalysisRequest</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>indicator_type</td>
+<td><a href="#gettechanalysisrequestindicatortype">GetTechAnalysisRequest.IndicatorType</a></td>
+<td>Тип технического индикатора.</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>Uid инструмента.</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+</tr>
+<tr>
+<td>interval</td>
+<td><a href="#gettechanalysisrequestindicatorinterval">GetTechAnalysisRequest.IndicatorInterval</a></td>
+<td>Интервал, за который рассчитывается индикатор.</td>
+</tr>
+<tr>
+<td>type_of_price</td>
+<td><a href="#gettechanalysisrequesttypeofprice">GetTechAnalysisRequest.TypeOfPrice</a></td>
+<td>Тип цены, используемый при расчёте индикатора.</td>
+</tr>
+<tr>
+<td>length</td>
+<td><a href="#int32">int32</a></td>
+<td>Торговый период, за который рассчитывается индикатор.</td>
+</tr>
+<tr>
+<td>deviation</td>
+<td><a href="#gettechanalysisrequestdeviation">GetTechAnalysisRequest.Deviation</a></td>
+<td>Параметры отклонения.</td>
+</tr>
+<tr>
+<td>smoothing</td>
+<td><a href="#gettechanalysisrequestsmoothing">GetTechAnalysisRequest.Smoothing</a></td>
+<td>Параметры сглаживания.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="gettechanalysisrequestsmoothing">GetTechAnalysisRequest.Smoothing</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fast_length</td>
+<td><a href="#int32">int32</a></td>
+<td>Короткий период сглаживания для первой экспоненциальной скользящей средней (EMA).</td>
+</tr>
+<tr>
+<td>slow_length</td>
+<td><a href="#int32">int32</a></td>
+<td>Длинный период сглаживания для второй экспоненциальной скользящей средней (EMA).</td>
+</tr>
+<tr>
+<td>signal_smoothing</td>
+<td><a href="#int32">int32</a></td>
+<td>Период сглаживания для третьей экспоненциальной скользящей средней (EMA)</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="gettechanalysisrequestdeviation">GetTechAnalysisRequest.Deviation</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deviation_multiplier</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Кол-во стандартных отклонений, на которые отступает верхняя и нижняя граница</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="gettechanalysisresponse">GetTechAnalysisResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>technical_indicators</td>
+<td>Массив объектов <a href="#gettechanalysisresponsetechanalysisitem">GetTechAnalysisResponse.TechAnalysisItem</a></td>
+<td>Массив значений результатов тех. анализа</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="gettechanalysisresponsetechanalysisitem">GetTechAnalysisResponse.TechAnalysisItem</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timestamp</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Временная метка по UTC, для которой были рассчитаны значения индикатора.</td>
+</tr>
+<tr>
+<td>middle_band</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Значение простого скользящего среднего (средней линии).</td>
+</tr>
+<tr>
+<td>upper_band</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Значение верхней линии Боллинджера.</td>
+</tr>
+<tr>
+<td>lower_band</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Значение нижней линии Боллинджера.</td>
+</tr>
+<tr>
+<td>signal</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Значение сигнальной линии.</td>
+</tr>
+<tr>
+<td>macd</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Значение линии MACD.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
 <!-- end messages -->
 
 <h3 id="enums">Enums</h3>
@@ -4699,6 +5041,173 @@
 <td>ORDERBOOK_TYPE_DEALER</td>
 <td>2</td>
 <td>Стакан дилера</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gettechanalysisrequestindicatorinterval">GetTechAnalysisRequest.IndicatorInterval</h4>
+<p>Интервал свечи.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INDICATOR_INTERVAL_UNSPECIFIED</td>
+<td>0</td>
+<td>Интервал не определён.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_ONE_MINUTE</td>
+<td>1</td>
+<td>1 минута.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_FIVE_MINUTES</td>
+<td>2</td>
+<td>5 минут.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_FIFTEEN_MINUTES</td>
+<td>3</td>
+<td>15 минут.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_ONE_HOUR</td>
+<td>4</td>
+<td>1 час.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_ONE_DAY</td>
+<td>5</td>
+<td>1 день.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_2_MIN</td>
+<td>6</td>
+<td>2 минуты.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_3_MIN</td>
+<td>7</td>
+<td>3 минуты.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_10_MIN</td>
+<td>8</td>
+<td>10 минут.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_30_MIN</td>
+<td>9</td>
+<td>30 минут.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_2_HOUR</td>
+<td>10</td>
+<td>2 часа.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_4_HOUR</td>
+<td>11</td>
+<td>4 часа.</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_WEEK</td>
+<td>12</td>
+<td>Неделя</td>
+</tr>
+<tr>
+<td>INDICATOR_INTERVAL_MONTH</td>
+<td>13</td>
+<td>Месяц</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gettechanalysisrequesttypeofprice">GetTechAnalysisRequest.TypeOfPrice</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TYPE_OF_PRICE_UNSPECIFIED</td>
+<td>0</td>
+<td>Не указано.</td>
+</tr>
+<tr>
+<td>TYPE_OF_PRICE_CLOSE</td>
+<td>1</td>
+<td>Цена закрытия.</td>
+</tr>
+<tr>
+<td>TYPE_OF_PRICE_OPEN</td>
+<td>2</td>
+<td>Цена открытия.</td>
+</tr>
+<tr>
+<td>TYPE_OF_PRICE_HIGH</td>
+<td>3</td>
+<td>Максимальное значение за выбранный интервал.</td>
+</tr>
+<tr>
+<td>TYPE_OF_PRICE_LOW</td>
+<td>4</td>
+<td>Минимальное значение за выбранный интервал.</td>
+</tr>
+<tr>
+<td>TYPE_OF_PRICE_AVG</td>
+<td>5</td>
+<td>Среднее значение по показателям [ (close + open + high + low) / 4 ].</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gettechanalysisrequestindicatortype">GetTechAnalysisRequest.IndicatorType</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INDICATOR_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Не определен.</td>
+</tr>
+<tr>
+<td>INDICATOR_TYPE_BB</td>
+<td>1</td>
+<td>Bollinger Bands (Линия Боллинжера).</td>
+</tr>
+<tr>
+<td>INDICATOR_TYPE_EMA</td>
+<td>2</td>
+<td>Exponential Moving Average (EMA, Экспоненциальная скользящая средняя).</td>
+</tr>
+<tr>
+<td>INDICATOR_TYPE_RSI</td>
+<td>3</td>
+<td>Relative Strength Index (Индекс относительной силы).</td>
+</tr>
+<tr>
+<td>INDICATOR_TYPE_MACD</td>
+<td>4</td>
+<td>Moving Average Convergence/Divergence (Схождение/Расхождение скользящих средних).</td>
+</tr>
+<tr>
+<td>INDICATOR_TYPE_SMA</td>
+<td>5</td>
+<td>Simple Moving Average (Простое скользящее среднее).</td>
 </tr>
 </tbody>
 </table>
