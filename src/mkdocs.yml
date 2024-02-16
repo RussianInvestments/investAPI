@@ -84,6 +84,7 @@ nav:
   - Методы: marketdata.md
   - FAQ: faq_marketdata.md
   - Получение исторических рыночных данных: get_history.md
+  - Методы работы с индикаторами технического анализа: get_tech_indicators.md
 - Сервис стоп-ордеров:
   - Описание: head-stoporders.md
   - Методы: stoporders.md

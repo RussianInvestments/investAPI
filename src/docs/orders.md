@@ -291,6 +291,7 @@ Stream сделок пользователя
 | price |  [MoneyValue](#moneyvalue) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. |
 | quantity |  [int64](#int64) | Количество лотов. |
 | trade_id |  [string](#string) | Идентификатор сделки. |
+| execution_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время исполнения сделки |
  <!-- end Fields -->
  <!-- end HasFields -->
 
