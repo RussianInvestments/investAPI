@@ -1069,6 +1069,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Метод получения технических индикаторов по инструменту.
       tags:
         - MarketDataService
       x-codegen-request-body-name: body
