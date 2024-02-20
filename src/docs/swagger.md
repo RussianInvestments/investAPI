@@ -50,4 +50,6 @@
 
 C помощью Swagger вы можете тестировать методы [Tinkoff Invest API](https://russianinvestments.github.io/investAPI/swagger-ui/).
 
+Для спецификации RESTful API характерны отдельные [коды ошибок](/investAPI/http_errors/).
+
 Официальную документацию вы можете найти на сайте [Swagger](https://swagger.io/).

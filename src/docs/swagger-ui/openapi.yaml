@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.9'
+  version: '1.10'
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
@@ -1044,6 +1044,32 @@ paths:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
       summary: Метод получения стакана по инструменту.
+      tags:
+        - MarketDataService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.MarketDataService/GetTechAnalysis:
+    post:
+      operationId: MarketDataService_GetTechAnalysis
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetTechAnalysisRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetTechAnalysisResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Метод получения технических индикаторов по инструменту.
       tags:
         - MarketDataService
       x-codegen-request-body-name: body
@@ -3121,6 +3147,137 @@ components:
       properties:
         initialMargin:
           $ref: '#/components/schemas/v1MoneyValue'
+      type: object
+    GetTechAnalysisRequestDeviation:
+      properties:
+        deviationMultiplier:
+          $ref: '#/components/schemas/v1Quotation'
+      type: object
+    GetTechAnalysisRequestIndicatorInterval:
+      default: INDICATOR_INTERVAL_UNSPECIFIED
+      description: |-
+        Интервал свечи.
+
+         - INDICATOR_INTERVAL_UNSPECIFIED: Интервал не определён.
+         - INDICATOR_INTERVAL_ONE_MINUTE: 1 минута.
+         - INDICATOR_INTERVAL_FIVE_MINUTES: 5 минут.
+         - INDICATOR_INTERVAL_FIFTEEN_MINUTES: 15 минут.
+         - INDICATOR_INTERVAL_ONE_HOUR: 1 час.
+         - INDICATOR_INTERVAL_ONE_DAY: 1 день.
+         - INDICATOR_INTERVAL_2_MIN: 2 минуты.
+         - INDICATOR_INTERVAL_3_MIN: 3 минуты.
+         - INDICATOR_INTERVAL_10_MIN: 10 минут.
+         - INDICATOR_INTERVAL_30_MIN: 30 минут.
+         - INDICATOR_INTERVAL_2_HOUR: 2 часа.
+         - INDICATOR_INTERVAL_4_HOUR: 4 часа.
+         - INDICATOR_INTERVAL_WEEK: Неделя
+         - INDICATOR_INTERVAL_MONTH: Месяц
+      enum:
+        - INDICATOR_INTERVAL_UNSPECIFIED
+        - INDICATOR_INTERVAL_ONE_MINUTE
+        - INDICATOR_INTERVAL_FIVE_MINUTES
+        - INDICATOR_INTERVAL_FIFTEEN_MINUTES
+        - INDICATOR_INTERVAL_ONE_HOUR
+        - INDICATOR_INTERVAL_ONE_DAY
+        - INDICATOR_INTERVAL_2_MIN
+        - INDICATOR_INTERVAL_3_MIN
+        - INDICATOR_INTERVAL_10_MIN
+        - INDICATOR_INTERVAL_30_MIN
+        - INDICATOR_INTERVAL_2_HOUR
+        - INDICATOR_INTERVAL_4_HOUR
+        - INDICATOR_INTERVAL_WEEK
+        - INDICATOR_INTERVAL_MONTH
+      type: string
+    GetTechAnalysisRequestIndicatorType:
+      default: INDICATOR_TYPE_UNSPECIFIED
+      description: |2-
+         - INDICATOR_TYPE_UNSPECIFIED: Не определен.
+         - INDICATOR_TYPE_BB: Bollinger Bands (Линия Боллинжера).
+         - INDICATOR_TYPE_EMA: Exponential Moving Average (EMA, Экспоненциальная скользящая средняя).
+         - INDICATOR_TYPE_RSI: Relative Strength Index (Индекс относительной силы).
+         - INDICATOR_TYPE_MACD: Moving Average Convergence/Divergence (Схождение/Расхождение скользящих средних).
+         - INDICATOR_TYPE_SMA: Simple Moving Average (Простое скользящее среднее).
+      enum:
+        - INDICATOR_TYPE_UNSPECIFIED
+        - INDICATOR_TYPE_BB
+        - INDICATOR_TYPE_EMA
+        - INDICATOR_TYPE_RSI
+        - INDICATOR_TYPE_MACD
+        - INDICATOR_TYPE_SMA
+      type: string
+    GetTechAnalysisRequestSmoothing:
+      properties:
+        fastLength:
+          description: >-
+            Короткий период сглаживания для первой экспоненциальной скользящей
+            средней (EMA).
+          format: int32
+          type: integer
+        slowLength:
+          description: >-
+            Длинный период сглаживания для второй экспоненциальной скользящей
+            средней (EMA).
+          format: int32
+          type: integer
+        signalSmoothing:
+          format: int32
+          title: >-
+            Период сглаживания для третьей экспоненциальной скользящей средней
+            (EMA)
+          type: integer
+      type: object
+    GetTechAnalysisRequestTypeOfPrice:
+      default: TYPE_OF_PRICE_UNSPECIFIED
+      description: |2-
+         - TYPE_OF_PRICE_UNSPECIFIED: Не указано.
+         - TYPE_OF_PRICE_CLOSE: Цена закрытия.
+         - TYPE_OF_PRICE_OPEN: Цена открытия.
+         - TYPE_OF_PRICE_HIGH: Максимальное значение за выбранный интервал.
+         - TYPE_OF_PRICE_LOW: Минимальное значение за выбранный интервал.
+         - TYPE_OF_PRICE_AVG: Среднее значение по показателям [ (close + open + high + low) / 4 ].
+      enum:
+        - TYPE_OF_PRICE_UNSPECIFIED
+        - TYPE_OF_PRICE_CLOSE
+        - TYPE_OF_PRICE_OPEN
+        - TYPE_OF_PRICE_HIGH
+        - TYPE_OF_PRICE_LOW
+        - TYPE_OF_PRICE_AVG
+      type: string
+    GetTechAnalysisResponseTechAnalysisItem:
+      example:
+        lowerBand:
+          nano: 6
+          units: units
+        upperBand:
+          nano: 6
+          units: units
+        macd:
+          nano: 6
+          units: units
+        signal:
+          nano: 6
+          units: units
+        timestamp: 2000-01-23T04:56:07.000Z
+        middleBand:
+          nano: 6
+          units: units
+      properties:
+        timestamp:
+          description: >-
+            Временная метка по UTC, для которой были рассчитаны значения
+            индикатора.
+          format: date-time
+          type: string
+        middleBand:
+          $ref: '#/components/schemas/v1Quotation'
+        upperBand:
+          $ref: '#/components/schemas/v1Quotation'
+        lowerBand:
+          $ref: '#/components/schemas/v1Quotation'
+        signal:
+          $ref: '#/components/schemas/v1Quotation'
+        macd:
+          $ref: '#/components/schemas/v1Quotation'
       type: object
     PortfolioRequestCurrencyRequest:
       default: RUB
@@ -8908,13 +9065,15 @@ components:
             lotsRequested: lotsRequested
             instrumentUid: instrumentUid
             stages:
-              - quantity: quantity
+              - executionTime: 2000-01-23T04:56:07.000Z
+                quantity: quantity
                 price:
                   nano: 5
                   currency: currency
                   units: units
                 tradeId: tradeId
-              - quantity: quantity
+              - executionTime: 2000-01-23T04:56:07.000Z
+                quantity: quantity
                 price:
                   nano: 5
                   currency: currency
@@ -8961,13 +9120,15 @@ components:
             lotsRequested: lotsRequested
             instrumentUid: instrumentUid
             stages:
-              - quantity: quantity
+              - executionTime: 2000-01-23T04:56:07.000Z
+                quantity: quantity
                 price:
                   nano: 5
                   currency: currency
                   units: units
                 tradeId: tradeId
-              - quantity: quantity
+              - executionTime: 2000-01-23T04:56:07.000Z
+                quantity: quantity
                 price:
                   nano: 5
                   currency: currency
@@ -9085,6 +9246,83 @@ components:
           items:
             $ref: '#/components/schemas/v1StopOrder'
           title: Массив стоп-заявок по счёту
+          type: array
+      type: object
+    v1GetTechAnalysisRequest:
+      properties:
+        indicatorType:
+          $ref: '#/components/schemas/GetTechAnalysisRequestIndicatorType'
+        instrumentUid:
+          description: Uid инструмента.
+          type: string
+        from:
+          description: Начало запрашиваемого периода в часовом поясе UTC.
+          format: date-time
+          type: string
+        to:
+          description: Окончание запрашиваемого периода в часовом поясе UTC.
+          format: date-time
+          type: string
+        interval:
+          $ref: '#/components/schemas/GetTechAnalysisRequestIndicatorInterval'
+        typeOfPrice:
+          $ref: '#/components/schemas/GetTechAnalysisRequestTypeOfPrice'
+        length:
+          description: Торговый период, за который рассчитывается индикатор.
+          format: int32
+          type: integer
+        deviation:
+          $ref: '#/components/schemas/GetTechAnalysisRequestDeviation'
+        smoothing:
+          $ref: '#/components/schemas/GetTechAnalysisRequestSmoothing'
+      required:
+        - from
+        - indicatorType
+        - instrumentUid
+        - interval
+        - to
+        - typeOfPrice
+      type: object
+    v1GetTechAnalysisResponse:
+      example:
+        technicalIndicators:
+          - lowerBand:
+              nano: 6
+              units: units
+            upperBand:
+              nano: 6
+              units: units
+            macd:
+              nano: 6
+              units: units
+            signal:
+              nano: 6
+              units: units
+            timestamp: 2000-01-23T04:56:07.000Z
+            middleBand:
+              nano: 6
+              units: units
+          - lowerBand:
+              nano: 6
+              units: units
+            upperBand:
+              nano: 6
+              units: units
+            macd:
+              nano: 6
+              units: units
+            signal:
+              nano: 6
+              units: units
+            timestamp: 2000-01-23T04:56:07.000Z
+            middleBand:
+              nano: 6
+              units: units
+      properties:
+        technicalIndicators:
+          items:
+            $ref: '#/components/schemas/GetTechAnalysisResponseTechAnalysisItem'
+          title: Массив значений результатов тех. анализа
           type: array
       type: object
     v1GetTradingStatusRequest:
@@ -11291,6 +11529,7 @@ components:
     v1OrderStage:
       description: Сделки в рамках торгового поручения.
       example:
+        executionTime: 2000-01-23T04:56:07.000Z
         quantity: quantity
         price:
           nano: 5
@@ -11306,6 +11545,10 @@ components:
           type: string
         tradeId:
           description: Идентификатор сделки.
+          type: string
+        executionTime:
+          format: date-time
+          title: Время исполнения сделки
           type: string
       type: object
     v1OrderState:
@@ -11333,13 +11576,15 @@ components:
         lotsRequested: lotsRequested
         instrumentUid: instrumentUid
         stages:
-          - quantity: quantity
+          - executionTime: 2000-01-23T04:56:07.000Z
+            quantity: quantity
             price:
               nano: 5
               currency: currency
               units: units
             tradeId: tradeId
-          - quantity: quantity
+          - executionTime: 2000-01-23T04:56:07.000Z
+            quantity: quantity
             price:
               nano: 5
               currency: currency
