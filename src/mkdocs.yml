@@ -97,3 +97,4 @@ nav:
 - Коды ошибок: 
   - "GRPC": errors.md 
   - "WebSocket": ws\errors.md
+  - "HTTP": http_errors.md 
