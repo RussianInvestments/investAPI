@@ -1637,8 +1637,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#candlesource" class="md-nav__link">
+    CandleSource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#orderbooktype" class="md-nav__link">
     OrderBookType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcandlesrequestcandlesource" class="md-nav__link">
+    GetCandlesRequest.CandleSource
   </a>
   
 </li>
@@ -2529,8 +2543,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#candlesource" class="md-nav__link">
+    CandleSource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#orderbooktype" class="md-nav__link">
     OrderBookType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcandlesrequestcandlesource" class="md-nav__link">
+    GetCandlesRequest.CandleSource
   </a>
   
 </li>
@@ -2693,6 +2721,7 @@
 </li>
 </ul>
 <h4 id="gettechanalysis">GetTechAnalysis</h4>
+<p>Метод получения технических индикаторов по инструменту</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#gettechanalysisrequest">GetTechAnalysisRequest</a></p>
@@ -3920,6 +3949,11 @@
 <td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
 </tr>
 <tr>
+<td>candle_source_type</td>
+<td><a href="#getcandlesrequestcandlesource">GetCandlesRequest.CandleSource</a></td>
+<td>Тип источника свечи</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3998,6 +4032,11 @@
 <td>is_complete</td>
 <td><a href="#bool">bool</a></td>
 <td>Признак завершённости свечи. <strong>false</strong> значит, свеча за текущие интервал ещё сформирована не полностью.</td>
+</tr>
+<tr>
+<td>candle_source</td>
+<td><a href="#candlesource">CandleSource</a></td>
+<td>Тип источника свечи</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -5029,6 +5068,33 @@
 </tr>
 </tbody>
 </table>
+<h4 id="candlesource">CandleSource</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CANDLE_SOURCE_UNSPECIFIED</td>
+<td>0</td>
+<td>Источник свечей не определён.</td>
+</tr>
+<tr>
+<td>CANDLE_SOURCE_EXCHANGE</td>
+<td>1</td>
+<td>Биржевые свечи.</td>
+</tr>
+<tr>
+<td>CANDLE_SOURCE_DEALER_WEEKEND</td>
+<td>2</td>
+<td>Свечи дилера в результате торговли по выходным.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="orderbooktype">OrderBookType</h4>
 <table>
 <thead>
@@ -5053,6 +5119,28 @@
 <td>ORDERBOOK_TYPE_DEALER</td>
 <td>2</td>
 <td>Стакан дилера</td>
+</tr>
+</tbody>
+</table>
+<h4 id="getcandlesrequestcandlesource">GetCandlesRequest.CandleSource</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CANDLE_SOURCE_UNSPECIFIED</td>
+<td>0</td>
+<td>Все свечи.</td>
+</tr>
+<tr>
+<td>CANDLE_SOURCE_EXCHANGE</td>
+<td>1</td>
+<td>Биржевые свечи.</td>
 </tr>
 </tbody>
 </table>
