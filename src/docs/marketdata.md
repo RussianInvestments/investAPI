@@ -67,7 +67,7 @@
 
 
 #### GetTechAnalysis
-
+Метод получения технических индикаторов по инструменту
 
 - Тело запроса — [GetTechAnalysisRequest](#gettechanalysisrequest)
 
@@ -514,6 +514,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
 | interval |  [CandleInterval](#candleinterval) | Интервал запрошенных свечей. |
 | instrument_id |  [string](#string) | Идентификатор инструмента, принимает значение figi или instrument_uid. |
+| candle_source_type |  [GetCandlesRequest.CandleSource](#getcandlesrequestcandlesource) | Тип источника свечи |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -542,6 +543,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | volume |  [int64](#int64) | Объём торгов в лотах. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время свечи в часовом поясе UTC. |
 | is_complete |  [bool](#bool) | Признак завершённости свечи. **false** значит, свеча за текущие интервал ещё сформирована не полностью. |
+| candle_source |  [CandleSource](#candlesource) | Тип источника свечи |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -911,6 +913,18 @@ subscribeCandles | Изменения статуса подписки на св�
 
 
 
+#### CandleSource
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CANDLE_SOURCE_UNSPECIFIED | 0 | Источник свечей не определён. |
+| CANDLE_SOURCE_EXCHANGE | 1 | Биржевые свечи. |
+| CANDLE_SOURCE_DEALER_WEEKEND | 2 | Свечи дилера в результате торговли по выходным. |
+
+
+
+
 #### OrderBookType
 
 
@@ -919,6 +933,17 @@ subscribeCandles | Изменения статуса подписки на св�
 | ORDERBOOK_TYPE_UNSPECIFIED | 0 | не определен |
 | ORDERBOOK_TYPE_EXCHANGE | 1 | Биржевой стакан |
 | ORDERBOOK_TYPE_DEALER | 2 | Стакан дилера |
+
+
+
+
+#### GetCandlesRequest.CandleSource
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CANDLE_SOURCE_UNSPECIFIED | 0 | Все свечи. |
+| CANDLE_SOURCE_EXCHANGE | 1 | Биржевые свечи. |
 
 
 

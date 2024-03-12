@@ -146,7 +146,9 @@ Bi-directional stream Сервиса котировок поддерживает
 ###Торговля бумагами Тинькофф через TINKOFF INVEST API<a id="2.10"></a>
 
 Из-за огромного количества скальперских сделок мы закрыли торговлю БПИФ от УК "Тинькофф Капитал" в TINKOFF INVEST API. 
-Список бумаг смотрите [здесь](https://russianinvestments.github.io/invest-openapi/).
+Однако есть несколько фондов, доступных для торговли. Определить их можно по двум признакам:
+[доступность инстумента в API](/investAPI/head-instruments/#api) и [торговый статус](/investAPI/faq_trading_status/) `NORMAL_TRADING`.
+
 
 ###Валюты в TINKOFF INVEST API<a id="2.11"></a>
 

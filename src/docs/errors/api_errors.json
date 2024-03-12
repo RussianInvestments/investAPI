@@ -554,6 +554,16 @@
     "type": "INVALID_ARGUMENT",
     "description": "Количество инструментов в списке не может быть больше 3000."
   },
+  "30219": {
+    "message": "input candle_source_type is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Проверьте параметры запроса. Некорректный параметр candle_source_type."
+  },
+  "35001": {
+    "message": "sandbox accounts limit reached",
+    "type": "INVALID_ARGUMENT",
+    "description": "Достигнут лимит на открытие торговых счетов в песочнице. Чтобы открыть новый счет необходимо закрыть один из существующих"
+  },
   "40002": {
     "message": "insufficient privileges",
     "type": "PERMISSION_DENIED",

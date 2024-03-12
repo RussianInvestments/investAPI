@@ -113,6 +113,8 @@
 30216|INVALID_ARGUMENT|deviation_data is invalid|Проверьте параметры запроса. Некорректный параметр deviation_data.|
 30217|INVALID_ARGUMENT|smoothing_data is invalid|Проверьте параметры запроса. Некорректный параметр smoothing_data.|
 30218|INVALID_ARGUMENT|quantity of instruments can't be more than 3000|Количество инструментов в списке не может быть больше 3000.|
+30219|INVALID_ARGUMENT|input candle_source_type is invalid|Проверьте параметры запроса. Некорректный параметр candle_source_type.|
+35001|INVALID_ARGUMENT|sandbox accounts limit reached|Достигнут лимит на открытие торговых счетов в песочнице. Чтобы открыть новый счет необходимо закрыть один из существующих|
 40002|PERMISSION_DENIED|insufficient privileges|Недостаточно прав для совершения операции.</br>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.</br>Подробнее: [Виды токенов](https://russianinvestments.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|authentication token is missing or invalid|Токен доступа не найден или не активен.</br>Вы можете выпустить новый токен по ссылке [Настройки](https://www.tinkoff.ru/invest/settings/)|
 40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.</br>Брокерский счет не найден, не принадлежит пользователю или закрыт, либо на пользователе ограничения (от Tinkoff Invest API или от биржи). В этом случае нужно обратиться в техподдержку. |
