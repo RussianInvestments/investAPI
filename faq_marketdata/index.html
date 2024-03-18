@@ -1337,20 +1337,13 @@
         
           <li class="md-nav__item">
   <a href="#tinkoff-invest-api_5" class="md-nav__link">
-    Торговля бумагами Тинькофф через TINKOFF INVEST API
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tinkoff-invest-api_6" class="md-nav__link">
     Валюты в TINKOFF INVEST API
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tinkoff-invest-api_7" class="md-nav__link">
+  <a href="#tinkoff-invest-api_6" class="md-nav__link">
     Почему отличаются исторические цены в TINKOFF INVEST API и других источниках?
   </a>
   
@@ -1893,20 +1886,13 @@
         
           <li class="md-nav__item">
   <a href="#tinkoff-invest-api_5" class="md-nav__link">
-    Торговля бумагами Тинькофф через TINKOFF INVEST API
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tinkoff-invest-api_6" class="md-nav__link">
     Валюты в TINKOFF INVEST API
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tinkoff-invest-api_7" class="md-nav__link">
+  <a href="#tinkoff-invest-api_6" class="md-nav__link">
     Почему отличаются исторические цены в TINKOFF INVEST API и других источниках?
   </a>
   
@@ -2136,15 +2122,11 @@ isValidPrice(10.16, 0.1) // false
 <p>В данный момент TINKOFF INVEST API предполагает работу только с биржевыми инструментами.</p>
 <h3 id="_22">Какие данные отливаются в стриминг стаканов? <a id="2.9"></a></h3>
 <p>Пока только биржевые. Внебиржевые стаканы, например, TRRE, не транслируются в режиме стриминга.</p>
-<h3 id="tinkoff-invest-api_5">Торговля бумагами Тинькофф через TINKOFF INVEST API<a id="2.10"></a></h3>
-<p>Из-за огромного количества скальперских сделок мы закрыли торговлю БПИФ от УК "Тинькофф Капитал" в TINKOFF INVEST API. 
-Однако есть несколько фондов, доступных для торговли. Определить их можно по двум признакам:
-<a href="/investAPI/head-instruments/#api">доступность инстумента в API</a> и <a href="/investAPI/faq_trading_status/">торговый статус</a> <code>NORMAL_TRADING</code>.</p>
-<h3 id="tinkoff-invest-api_6">Валюты в TINKOFF INVEST API<a id="2.11"></a></h3>
+<h3 id="tinkoff-invest-api_5">Валюты в TINKOFF INVEST API<a id="2.11"></a></h3>
 <p>Получить список доступных валют можно при помощи метода <a href="/investAPI/instruments#currencies">getInstruments/currencies</a>.</p>
 <p>Обратите внимание, что лотность валют ограничена лотностью, которая предоставляет биржа. Например, операции
 с Евро и Долларами возможны только на количества кратные 1000.</p>
-<h3 id="tinkoff-invest-api_7">Почему отличаются исторические цены в TINKOFF INVEST API и других источниках?<a id="2.12"></a></h3>
+<h3 id="tinkoff-invest-api_6">Почему отличаются исторические цены в TINKOFF INVEST API и других источниках?<a id="2.12"></a></h3>
 <p>Исторические данные <a href="https://www.tinkoff.ru/invest/">Тинькофф Инвестиций</a> могут отличаться от данных,
 которые предоставляют другие сервисы. Связано это может быть как с различными источниками первичных данных,
 так и с различными алгоритмами их обработки и агрегации. </p>
