@@ -131,8 +131,11 @@
 #### OpenSandboxAccountRequest
 Запрос открытия счёта в песочнице.
 
-пустой запрос
 
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| name | Массив объектов [string](#string) | Название счёта |
+ <!-- end Fields -->
  <!-- end HasFields -->
 
 
