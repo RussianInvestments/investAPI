@@ -12,7 +12,7 @@ servers:
   - url: https://invest-public-api.tinkoff.ru/rest/
     description: Работа с биржей
   - url: https://sandbox-invest-public-api.tinkoff.ru/rest/
-    description: Работа в песочнице
+    description: Работа с песочницей
 security:
   - Bearer: []
 externalDocs:
