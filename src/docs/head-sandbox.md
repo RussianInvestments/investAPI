@@ -56,8 +56,13 @@
 
 
 ##Методы сервиса операций в песочнице
+* [GetSandboxOperations](/investAPI/sandbox/#getsandboxoperations) и [GetSandboxOperationsByCursor](/investAPI/sandbox/#getsandboxoperationsbycursor) 
+в `OperationType` поддерживают фильтрацию только по типам `OPERATION_TYPE_BUY` и `OPERATION_TYPE_SELL`.
+
+
+
 * [GetDividendsForeignIssuer](/investAPI/sandbox#getdividendsforeignissuer) - получение отчёта "Справка о доходах за пределами РФ";  
-Обращаем ваше внимание, что в данном методе песочницы будет возвращать:
+Обращаем ваше внимание, что в данном методе песочницы всегда будет возвращаться пустой ответ:
 ```
 "div_foreign_issuer_report": {     
         "dividends_foreign_issuer_report": [],
@@ -68,7 +73,7 @@
 "payload": "div_foreign_issuer_report"
 ```
 * [GetBrokerReport](/investAPI/sandbox#getbrokerreport) - получение брокерского отчёта;  
-Обращаем ваше внимание, что в данном методе песочницы будет возвращать:
+Обращаем ваше внимание, что в данном методе песочницы всегда будет возвращаться пустой ответ:
 ```
 "get_broker_report_response": {
     "broker_report": [],
