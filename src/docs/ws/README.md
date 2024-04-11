@@ -268,12 +268,14 @@ json
 ```json
 {
   "subscribeInfoResponse": {
-    "trackingId": "644a898058ce5265b24f9adc21011f67",
+    "trackingId": "ca4af996193cf5d9b3b933fa0ad61910",
     "infoSubscriptions": [
       {
         "figi": "BBG004730RP0",
         "subscriptionStatus": "SUBSCRIPTION_STATUS_SUCCESS",
-        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a"
+        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a",
+        "streamId": "e99563dc-b8cd-4930-9a0a-7c31988c0007",
+        "subscriptionId": "dc550001-b138-4197-9792-84f304c706c2"
       }
     ]
   }
@@ -320,12 +322,14 @@ json
 ```json
 {
   "subscribeLastPriceResponse": {
-    "trackingId": "644a875239934cfcda96460984a55ced",
+    "trackingId": "9db9ee41448a36bf3526c8bd8d1a6c83",
     "lastPriceSubscriptions": [
       {
         "figi": "BBG004730RP0",
         "subscriptionStatus": "SUBSCRIPTION_STATUS_SUCCESS",
-        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a"
+        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a",
+        "streamId": "b620cf01-0080-4e14-8937-1cdcb92201a0",
+        "subscriptionId": "d2969818-2c02-40f2-9d87-668a9b41e9c4"
       }
     ]
   }
@@ -371,12 +375,14 @@ json
 ```json
 {
   "subscribeTradesResponse": {
-    "trackingId": "6440d32adb48515bc217b426880a99a7",
+    "trackingId": "d39351591fce577df57b2e9bea6dde1b",
     "tradeSubscriptions": [
       {
         "figi": "BBG004730RP0",
         "subscriptionStatus": "SUBSCRIPTION_STATUS_SUCCESS",
-        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a"
+        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a",
+        "streamId": "ffb815b3-6344-4c82-9ad6-6072f7bee1db",
+        "subscriptionId": "b34b5c06-0b4c-49e5-9f78-2aa7bc3df3a3"
       }
     ]
   }
@@ -416,8 +422,7 @@ json
         "depth":  10,
         "instrumentId": "962e2a95-02a9-4171-abd7-aa198dbe643a"
       }
-    ],
-    "waitingClose": false
+    ]
   }
 }
 ```
@@ -425,13 +430,16 @@ json
 ```json
 {
   "subscribeOrderBookResponse": {
-    "trackingId": "6440cfbaa85be1a52839fc81e5f0f14f",
+    "trackingId": "0193243a978d7363f55813841f6da08e",
     "orderBookSubscriptions": [
       {
-        "figi": "",
+        "figi": "BBG004730RP0",
         "depth": 10,
         "subscriptionStatus": "SUBSCRIPTION_STATUS_SUCCESS",
-        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a"
+        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a",
+        "streamId": "02df047c-a6b5-4e02-8459-d754978f869a",
+        "subscriptionId": "48e7432d-4c9f-4457-9b71-286a19d9ba30",
+        "orderBookType": "ORDERBOOK_TYPE_EXCHANGE"
       }
     ]
   }
@@ -474,7 +482,8 @@ json
       "units": "156",
       "nano": 240000000
     },
-    "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a"
+    "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a",
+    "orderBookType": "ORDERBOOK_TYPE_EXCHANGE"
   }
 }
 ```
@@ -505,13 +514,16 @@ json
 ```json
 {
   "subscribeCandlesResponse": {
-    "trackingId": "644a8c236378693c5265a3f679698708",
+    "trackingId": "066f2eeff1a0b76f5a6c05b3b41f23df",
     "candlesSubscriptions": [
       {
         "figi": "BBG004730RP0",
         "interval": "SUBSCRIPTION_INTERVAL_ONE_MINUTE",
         "subscriptionStatus": "SUBSCRIPTION_STATUS_SUCCESS",
-        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a"
+        "instrumentUid": "962e2a95-02a9-4171-abd7-aa198dbe643a",
+        "waitingClose": false,
+        "streamId": "8d9a6312-8965-4734-a571-e9f1b599427d",
+        "subscriptionId": "72d91c60-a094-482b-89af-a604ae87d234"
       }
     ]
   }
@@ -556,7 +568,8 @@ json
 ```json
 {
   "ping": {
-    "time": "2023-05-16T08:32:00.472145624Z"
+    "time": "2024-04-11T08:49:14.974035911Z",
+    "streamId": ""
   }
 }
 ```
