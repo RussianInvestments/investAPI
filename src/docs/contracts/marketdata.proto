@@ -468,7 +468,7 @@ message GetLastTradesResponse {
   repeated Trade trades = 1; //Массив сделок.
 }
 
-//Запрос активных подписок.
+//Запрос активных подписок. Запрос вернет по одному сообщению на каждый тип активных подписок (SubscribeLastPriceResponse, SubscribeInfoResponse, SubscribeTradesResponse, SubscribeOrderBookResponse, SubscribeCandlesResponse)
 message GetMySubscriptions {}
 
 //Запрос цен закрытия торговой сессии по инструментам.
