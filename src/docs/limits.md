@@ -20,7 +20,7 @@
 | [Сервис счетов](/investAPI/head-users/)                                    | gRPC<br/>REST     | 100                           |
 | [Сервис операций](/investAPI/head-operations/)                             | gRPC<br/>REST     | 200                           |
 | Формирование отчётов в</br>[Сервисе операций](/investAPI/head-operations/) | gRPC              | 5                             |
-| [Сервис котировок](/investAPI/head-marketdata/)                            | gRPC<br/>REST     | 300                           |
+| [Сервис котировок](/investAPI/head-marketdata/)                            | gRPC<br/>REST     | 600                           |
 | <dl><dd> Метод [getHistory](/investAPI/get_history)</dd></dl>              | REST              | 30                            |
 | [Сервис стоп-ордеров](/investAPI/head-stoporders/)                         | gRPC<br/>REST     | 50                            |
 | [Песочницы](/investAPI/head-sandbox/)                                      | gRPC<br/>REST     | 200                           |
