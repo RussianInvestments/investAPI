@@ -698,7 +698,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 
 #### GetMySubscriptions
-Запрос активных подписок.
+Запрос активных подписок. Запрос вернет по одному сообщению на каждый тип активных подписок (SubscribeLastPriceResponse, SubscribeInfoResponse, SubscribeTradesResponse, SubscribeOrderBookResponse, SubscribeCandlesResponse)
 
  <!-- end HasFields -->
 
