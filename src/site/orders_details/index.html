@@ -2278,8 +2278,8 @@
 <p>Биржа ограничивает цену, которую можно указать в лимитной заявке, крайними предложениями в биржевом 
 стакане — параметры <code>limit_up</code> и <code>limit_down</code>.</p>
 <blockquote>
-<p><strong>Важно</strong></p>
-<p>Иногда <code>limitDown</code> может быть больше <code>limitUp</code>. Это нормально, потому что <code>limitUp</code> ограничивает покупку, а <code>limitDown</code> — продажу.</p>
+<p><strong>Важно</strong>
+Иногда <code>limitDown</code> может быть больше <code>limitUp</code>. Это нормально, потому что <code>limitUp</code> ограничивает покупку, а <code>limitDown</code> — продажу.</p>
 </blockquote>
 <p>Выставить лимитное торговое поручение (заявку) можно через Unary-метод <a href="/investAPI/orders#postorder">postOrder</a>.</p>
 <p><a href="https://www.tinkoff.ru/invest/help/brokerage/account/trade-on-bs/bids/?card=q6#:~:text=%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D1%82%D0%BE%D0%BF%E2%80%91%D0%BB%D0%B8%D0%BC%D0%B8%D1%82-,%D1%87%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BD%D0%B0%D1%8F%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%3F,-%D0%A7%D1%82%D0%BE%D0%B1%D1%8B%20%D0%BD%D0%B5%C2%A0%D1%82%D1%80%D0%B0%D1%82%D0%B8%D1%82%D1%8C">Подробнее о лимитном торговом поручении</a></p>
@@ -2312,14 +2312,13 @@
 <h2 id="_5">Определение доступности выставления торгового поручения</h2>
 <p>Чтобы успешно разместить заявки на бирже, убедитесь, что: </p>
 <ul>
-<li>Счёт доступен для совершения операции. </li>
+<li><strong>Счёт доступен для совершения операции</strong>. </li>
 <li>
-<p>У вас достаточно активов для совершения операции или есть необходимое количество 
-активов для совершения <a href="https://help.tinkoff.ru/margin-trade/">маржинальной сделки</a>. </p>
+<p><strong>У вас достаточно активов для совершения операции или есть необходимое количество активов для совершения <a href="https://help.tinkoff.ru/margin-trade/">маржинальной сделки</a></strong>. </p>
 <p>Чтобы посмотреть текущее состояния портфеля, используйте метод <a href="/investAPI/operations#getpositions">getPositions</a>. Для получения маржинальных показателей счёта — метод <a href="/investAPI/users#getmarginattributes">getMarginAttributes</a>.</p>
 </li>
 <li>
-<p>Инструмент доступен для торгов.</p>
+<p><strong>Инструмент доступен для торгов</strong>.</p>
 <p>Большая часть инструментов доступна для торговли в течение всего времени работы торговой площадки,
 но торги по определённым бумагам могут прерывать и останавливаться. </p>
 <p>Чтобы посмотреть расписания торгов, используйте метод <a href="/investAPI/instruments#tradingschedules">getTradingSchedules</a>.</p>
