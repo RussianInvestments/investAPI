@@ -2,8 +2,8 @@
 
 ## Что такое Tinkoff Invest API
 
-**Tinkoff Invest API** — это [gRPC-интерфейс](/investAPI/grpc) для взаимодействия с торговой платформой 
-[Тинькофф Инвестиции](https://www.tinkoff.ru/invest/).
+Tinkoff Invest API — это [gRPC-интерфейс](/investAPI/grpc) для взаимодействия с торговой платформой 
+[Тинькофф Инвестиции](https://www.tinkoff.ru/invest/). Все данные, предоставляемые Tinkoff Invest API, бесплатные.
 
 С помощью Tinkoff Invest API вы можете:
 
@@ -44,8 +44,7 @@
 
 ## Protobuf-файлы сервиса
 
-Скачать полный список прото-контрактов сервиса:
-[Tinkoff Invest API](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts)
+[Скачать полный список прото-контрактов Tinkoff Invest API](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts)
 
 ## SDK для разработки с использованием Public API
 
@@ -54,6 +53,3 @@
 * [Python](/investAPI/faq_python/)
 * [Java](/investAPI/faq_java/)
 * [C#](/investAPI/faq_csharp/)
-
-
-Все данные, предоставляемые Tinkoff Invest API, являются бесплатными.
