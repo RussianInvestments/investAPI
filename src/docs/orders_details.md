@@ -11,7 +11,7 @@
 Биржа ограничивает цену, которую можно указать в лимитной заявке, крайними предложениями в биржевом 
 стакане — параметры `limit_up` и `limit_down`.
 
-> Иногда `limitDown` может быть больше `limitUp`. Это нормально, потому что `limitUp` ограничивает покупку, а `limitDown` - продажу.
+> Иногда `limitDown` может быть больше `limitUp`. Это нормально, потому что `limitUp` ограничивает покупку, а `limitDown` — продажу.
 
 Выставить лимитное торговое поручение (заявку) можно через Unary-метод [postOrder](/investAPI/orders#postorder).
 
@@ -70,8 +70,9 @@
 активов для совершения [маржинальной сделки](https://help.tinkoff.ru/margin-trade/). 
 
 Чтобы посмотреть:
-- Текущее состояния портфеля — используйте метод [getPositions](/investAPI/operations#getpositions). 
-- Маржинальные показатели счёта — используйте метод [getMarginAttributes](/investAPI/users#getmarginattributes).
+
+* Текущее состояния портфеля — используйте метод [getPositions](/investAPI/operations#getpositions). 
+* Маржинальные показатели счёта — используйте метод [getMarginAttributes](/investAPI/users#getmarginattributes).
 
 3. Инструмент доступен для торгов.
 
@@ -79,5 +80,6 @@
 но торги по определённым бумагам могут прерывать и останавливаться. 
 
 Чтобы посмотреть:
-- Расписания торгов — используйте метод [getTradingSchedules](/investAPI/instruments#tradingschedules).
-- Актуальный статус торговли по инструменту — используйте методы [сервиса инструментов](/investAPI/head-instruments) или [стрим информации по инструменту](/investAPI/head-marketdata#stream).
+
+* Расписания торгов — используйте метод [getTradingSchedules](/investAPI/instruments#tradingschedules).
+* Актуальный статус торговли по инструменту — используйте методы [сервиса инструментов](/investAPI/head-instruments) или [стрим информации по инструменту](/investAPI/head-marketdata#stream).
