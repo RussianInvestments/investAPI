@@ -291,6 +291,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Грейды
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Расчёт грейдов
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1402,6 +1416,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Грейды
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Расчёт грейдов
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1419,22 +1447,26 @@
                   </a>
                 
                 
-                <h1 id="tinkoff-invest-api">Лимитная политика TINKOFF INVEST API</h1>
-<p>В процессе работы торговые роботы могут генерировать огромное количество заявок. Причём особенностью именно 
-алгоритмической торговли можно назвать большой процент отмен заявок. Таким образом пользователи 
-могут генерировать большую нагрузку на инфраструктуру брокера. По этой причине TINKOFF INVEST API 
-обладает системой динамического формирования лимитов для пользователей.</p>
-<p><strong>Для всех запросов с одного адреса установлено суммарное ограничение.</strong> Рекомендуем разрабатывать роботов таким образом,
-чтобы общее число запросов по всем счетам и токенам <strong>в секунду</strong> не превышало 50(RPS).</p>
-<p><strong>Важно</strong> Значение лимита конкретного сервиса включает в себя суммарное количество допустимых запросов по всем методам этого сервиса.</p>
-<p><strong>Важно</strong> Лимитная политика распространяется на все аккаунты (cчета) пользователя.</p>
-<h3 id="unary-">Таблица лимитов Unary-методов</h3>
+                <h1 id="tinkoff-invest-api">Лимиты Tinkoff Invest API</h1>
+<p>В процессе работы торговые роботы могут генерировать огромное количество заявок. 
+Особенность алгоритмической торговли — большой процент отмен заявок, и пользователи 
+могут генерировать большую нагрузку на инфраструктуру брокера. Поэтому у Tinkoff Invest API
+есть система динамического формирования лимитов для пользователей.</p>
+<p>Для всех запросов с одного адреса установлено суммарное ограничение. Мы рекомендуем разрабатывать роботов таким образом,
+чтобы общее число запросов по всем счетам и токенам в секунду не превышало <strong>50 (RPS)</strong>.</p>
+<blockquote>
+<p><strong>Важно</strong></p>
+<p>Значение лимита конкретного сервиса включает в себя суммарное количество допустимых запросов по всем методам этого сервиса.</p>
+<p><strong>Важно</strong></p>
+<p>Лимитная политика распространяется на все аккаунты (cчета) пользователя.</p>
+</blockquote>
+<h2 id="unary-">Таблица лимитов Unary-методов</h2>
 <table>
 <thead>
 <tr>
 <th align="left">Сервисы</th>
 <th align="left">Способ интеграции</th>
-<th align="left">Лимит unary-запросов в минуту</th>
+<th align="left">Лимит Unary-запросов в минуту</th>
 </tr>
 </thead>
 <tbody>
@@ -1454,7 +1486,7 @@
 <td align="left">200</td>
 </tr>
 <tr>
-<td align="left">Формирование отчётов в</br><a href="/investAPI/head-operations/">Сервисе операций</a></td>
+<td align="left">Формирование отчётов в</br><a href="/investAPI/head-operations/">сервисе операций</a></td>
 <td align="left">gRPC</td>
 <td align="left">5</td>
 </tr>
@@ -1462,11 +1494,6 @@
 <td align="left"><a href="/investAPI/head-marketdata/">Сервис котировок</a></td>
 <td align="left">gRPC<br/>REST</td>
 <td align="left">600</td>
-</tr>
-<tr>
-<td align="left"><dl><dd> Метод <a href="/investAPI/get_history">getHistory</a></dd></dl></td>
-<td align="left">REST</td>
-<td align="left">30</td>
 </tr>
 <tr>
 <td align="left"><a href="/investAPI/head-stoporders/">Сервис стоп-ордеров</a></td>
@@ -1484,31 +1511,37 @@
 <td align="left">100</td>
 </tr>
 <tr>
-<td align="left"><dl><dd> Метод <a href="/investAPI/orders#getorders">getOrders</a></dd></dl></td>
+<td align="left">Метод <a href="/investAPI/get_history">getHistory</a></td>
+<td align="left">REST</td>
+<td align="left">30</td>
+</tr>
+<tr>
+<td align="left">Метод <a href="/investAPI/orders#getorders">getOrders</a></td>
 <td align="left">gRPC<br/>REST</td>
 <td align="left">200</td>
 </tr>
 <tr>
-<td align="left"><dl><dd>Метод <a href="/investAPI/orders#postorder">postOrder</a>     </dd></dl></td>
+<td align="left">Метод <a href="/investAPI/orders#postorder">postOrder</a></td>
 <td align="left">gRPC<br/>REST</td>
 <td align="left">300</td>
 </tr>
 <tr>
-<td align="left"><dl><dd>  Метод <a href="/investAPI/orders#cancelorder">cancelOrder</a>    </dd></dl></td>
+<td align="left">Метод <a href="/investAPI/orders#cancelorder">cancelOrder</a></td>
 <td align="left">gRPC<br/>REST</td>
 <td align="left">100</td>
 </tr>
 </tbody>
 </table>
-<p>Всего существует 5 уровней доступа, которые зависят от количества выставленных заявок (любого типа) и
-процента их исполнения:</p>
+<h2 id="_1">Грейды</h2>
+<p>Есть 5 уровней доступа, которые зависят от количества выставленных заявок любого типа и
+процента их исполнения.</p>
 <table>
 <thead>
 <tr>
 <th align="left">Лимитный грейд</th>
-<th align="left">Активных stream-соединений</br><a href="/investAPI/head-marketdata/">Сервиса котировок</a></th>
-<th align="left">Активных stream-соединений</br><a href="/investAPI/head-orders/">Сервиса ордеров</a></th>
-<th align="left">Активных stream-соединений</br><a href="/investAPI/head-operations/">Сервиса операций</a></th>
+<th align="left">Активных Stream-соединений</br><a href="/investAPI/head-marketdata/">сервиса котировок</a></th>
+<th align="left">Активных Stream-соединений</br><a href="/investAPI/head-orders/">сервиса ордеров</a></th>
+<th align="left">Активных Stream-соединений</br><a href="/investAPI/head-operations/">сервиса операций</a></th>
 </tr>
 </thead>
 <tbody>
@@ -1544,73 +1577,82 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Важно</strong> В рамках одного stream-соединения <a href="/investAPI/head-marketdata/">сервиса котировок</a> существует 
+<blockquote>
+<p><strong>Важно</strong></p>
+<p>В рамках одного stream-соединения <a href="/investAPI/head-marketdata/">сервиса котировок</a> есть 
 ограничение в <strong>300</strong> одновременных подписок на свечи, стаканы и ленту обезличенных сделок. Лимит считается
 суммарно по всем трём типам данных. Лимитов на количество подписок в рамках одного стрима на торговые
-статусы инструментов (подписка Info) <strong>нет</strong>.</p>
-<p><strong>Важно</strong> В методе <a href="https://russianinvestments.github.io/investAPI/users/#getusertariff">Запрос тарифа пользователя</a> лимиты для стрим
-соединений могут возвращаться на 1 больше, это сделано на балансировщике для того, чтобы вы могли переподключить стримы,
+статусы инструментов (подписка Info) нет.</p>
+<p><strong>Важно</strong></p>
+<p>В методе <a href="https://russianinvestments.github.io/investAPI/users/#getusertariff">Запрос тарифа пользователя</a> лимиты для 
+стрим-соединений могут возвращаться на 1 больше. Это сделано для того, чтобы вы могли переподключить стримы —
 поэтому мы не рекомендуем использовать максимальное количество из лимита. </p>
-<p><strong>Важно</strong> При превышении лимита клиент получит соответствующую ошибку. Превышение лимита не произойдет, если количество запросов в минуту с IP-адреса клиента не превышает 1000 запросов. Если вы подозреваете, что ваш IP-адрес забанили - обратитесь к нам в поддержку или в <a href="https://t.me/joinchat/VaW05CDzcSdsPULM">Telegram-чат по общим вопросам</a>.</p>
-<p>Счетчик количества стрим соединений обновляется каждые 2 минуты.</p>
-<p>Изменения лимитного грейда пользователя происходит раз в сутки после окончания торгов. Для изменения
+<p><strong>Важно</strong></p>
+<p>При превышении лимита клиент получит соответствующую ошибку. Превышения лимита не будет, если количество запросов в
+минуту с IP-адреса клиента не превышает 1000 запросов. Если вы подозреваете, что ваш IP-адрес забанили — обратитесь к нам
+в поддержку или в <a href="https://t.me/joinchat/VaW05CDzcSdsPULM">Telegram-чат по общим вопросам</a>.</p>
+</blockquote>
+<p>Счётчик количества стрим-соединений обновляется каждые 2 минуты.</p>
+<p>Лимитный грейд пользователя изменяется раз в сутки после окончания торгов. Для изменения
 грейда берётся статистика заявок, выполненных пользователем за последние 30 дней от текущей даты. 
-Т.е. чем больше пользователь выставляет заявок при сохранении высокого уровня исполнения, 
+Чем больше пользователь выставляет заявок при сохранении высокого уровня исполнения, 
 тем выше его лимиты.</p>
-<p>Стоит дополнительно отметить, что лимита на количество активных заявок нет.</p>
-<p>Расчёт лимитных грейдов происходит только для пользователей TINKOFF INVEST API,
-выставлявших заявки. Поэтому, если вы не используете данную
-версию апи для выставления заявок, у вас будет грейд 1. 
-Для того чтобы расчёт грейда происходил, нужно выставить хотя бы одну заявку
-в месяц.</p>
+<blockquote>
+<p><strong>Важно</strong></p>
+<p>Лимита на количество активных заявок нет.</p>
+</blockquote>
+<h2 id="_2">Расчёт грейдов</h2>
+<p>Лимитные грейды рассчитываются только для пользователей Tinkoff Invest API,
+которые выставляли заявки. Если вы не используете эту версию API для выставления заявок, у вас будет первый грейд. 
+Чтобы грейд рассчитывался, нужно выставлять хотя бы одну заявку в месяц.</p>
 <table>
 <thead>
 <tr>
 <th align="left">Количество исполненных заявок / </br> процент исполнения</th>
-<th align="left">больше 50%</th>
-<th align="left">больше 10%</th>
-<th align="left">больше 2%</th>
-<th align="left">меньше 2%</th>
+<th align="left">Больше 50%</th>
+<th align="left">Больше 10%</th>
+<th align="left">Больше 2%</th>
+<th align="left">Меньше 2%</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">меньше <strong>10</strong></td>
+<td align="left">Меньше <strong>10</strong></td>
 <td align="left">1</td>
 <td align="left">1</td>
 <td align="left">1</td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left">меньше <strong>200</strong></td>
+<td align="left">Меньше <strong>200</strong></td>
 <td align="left">2</td>
 <td align="left">2</td>
 <td align="left">2</td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left">меньше <strong>1 000</strong></td>
+<td align="left">Меньше <strong>1 000</strong></td>
 <td align="left">4</td>
 <td align="left">3</td>
 <td align="left">2</td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left">меньше <strong>5 000</strong></td>
+<td align="left">Меньше <strong>5 000</strong></td>
 <td align="left">5</td>
 <td align="left">4</td>
 <td align="left">3</td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left">меньше <strong>10 000</strong></td>
+<td align="left">Меньше <strong>10 000</strong></td>
 <td align="left">5</td>
 <td align="left">5</td>
 <td align="left">4</td>
 <td align="left">2</td>
 </tr>
 <tr>
-<td align="left">больше <strong>10 000</strong></td>
+<td align="left">Больше <strong>10 000</strong></td>
 <td align="left">5</td>
 <td align="left">5</td>
 <td align="left">4</td>

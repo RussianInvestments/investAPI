@@ -330,7 +330,7 @@
         
           <li class="md-nav__item">
   <a href="#timestamp_1" class="md-nav__link">
-    Примеры timestamp
+    Примеры Timestamp
   </a>
   
 </li>
@@ -1484,7 +1484,7 @@
         
           <li class="md-nav__item">
   <a href="#timestamp_1" class="md-nav__link">
-    Примеры timestamp
+    Примеры Timestamp
   </a>
   
 </li>
@@ -1577,13 +1577,13 @@
                   </a>
                 
                 
-                <h1 id="tinkoff-invest-api">Нестандартные типы данных TINKOFF INVEST API</h1>
+                <h1 id="tinkoff-invest-api">Нестандартные типы данных Tinkoff Invest API</h1>
 <h2 id="timestamp">Timestamp</h2>
-<p>Тип данных Timestamp является основным для передачи времени <a href="https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp">в формате protoсol-buffers</a> и представляет собой значение в диапазоне интервала дат 
-от 0001-01-01T00:00:00Z до 9999-12-31T23:59:59.999999999Z</p>
-<p>Timestamp всегда работает в формате UTC с нулевым смещением. Тип Timestamp состоит из двух полей целого типа: seconds и nanos. </p>
-<p>Seconds содержит количество секунд с полуночи (00:00:00) 01.01.1970, а nanos принимает значение от 0 до 999999999.</p>
-<h4 id="timestamp_1">Примеры timestamp</h4>
+<p>Timestamp — основной тип данных для передачи времени в формате <a href="https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp">protoсol-buffers</a>. Он состоит из значения в диапазоне интервала дат — от <code>0001-01-01T00:00:00Z</code> до <code>9999-12-31T23:59:59.999999999Z</code>.</p>
+<p>Timestamp всегда работает в формате UTC с нулевым смещением и состоит из двух полей целого типа:
+- <code>Seconds</code> — количество секунд с полуночи (00:00:00) 01.01.1970;
+- <code>Nanos</code> — значение от 0 до 999999999.</p>
+<h4 id="timestamp_1">Примеры Timestamp</h4>
 <table>
 <thead>
 <tr>
@@ -1638,18 +1638,18 @@ Timestamp timestamp;
 }
 </code></pre>
 <h2 id="moneyvalue">MoneyValue</h2>
-<p>Данный тип данных используется для параметров, имеющих денежный эквивалент. Например, стоимость ценных бумаг.</p>
-<p>Тип состоит из трёх параметров: </p>
+<p>Этот тип данных используется для параметров, у которых есть денежный эквивалент — например, стоимость ценных бумаг.</p>
+<p>MoneyValue состоит из трёх параметров: </p>
 <ul>
-<li>currency — строковый <a href="https://ru.wikipedia.org/wiki/ISO_4217">ISO-код валюты</a>. Например, RUB или USD.</li>
-<li>units — целая часть суммы. </li>
-<li>nano — дробная часть суммы (миллиардные доли). </li>
+<li><code>currency</code> — строковый <a href="https://ru.wikipedia.org/wiki/ISO_4217">ISO-код валюты</a>. Например, RUB или USD.</li>
+<li><code>units</code> — целая часть суммы. </li>
+<li><code>nano</code> — дробная часть суммы, миллиардные доли. </li>
 </ul>
-<p>Для корректной работы с данным типом данных требуется его конвертация в стандартные типы языка программирования,
-который используется для написания торгового робота. </p>
+<p>Чтобы корректно работать с этим типом данных, его нужно сконвертировать в стандартные типы языка программирования,
+который используется для написания торгового робота.</p>
 <h3 id="java">Пример конвертации на Java</h3>
 <pre><code>{
-//MoneyValue - конвертация из BigDecimal в MoneyValue и обратно
+//MoneyValue — конвертация из BigDecimal в MoneyValue и обратно
     BigDecimal value = new BigDecimal("123.456");
     String currency = "RUB";
     MoneyValue moneyValue = MoneyValue.newBuilder() 
@@ -1684,14 +1684,14 @@ Timestamp timestamp;
 </tbody>
 </table>
 <h2 id="quotation">Quotation</h2>
-<p>Данный тип данных аналогичен MoneyValue с той лишь разницей, что в нём не содержится информации о валюте.</p>
+<p>Этот тип данных аналогичен MoneyValue, но в нём не содержится информации о валюте.</p>
 <ul>
-<li>units — целая часть суммы.</li>
-<li>nano — дробная часть суммы. </li>
+<li><code>units</code> — целая часть суммы;</li>
+<li><code>nano</code> — дробная часть суммы. </li>
 </ul>
 <h3 id="java_1">Пример конвертации на Java</h3>
 <pre><code>{
-//Пример конвертации из BigDecimal в Quotation и обратно
+//Из BigDecimal в Quotation и обратно
     BigDecimal value = new BigDecimal("123.456");
     Quotation quotation = Quotation.newBuilder()
         .setUnits(value != null ? value.longValue() : 0)
