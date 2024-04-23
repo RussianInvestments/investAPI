@@ -37,9 +37,9 @@ nav:
 
 - Протоколы:
   - "Доступные протoколы": api_protocols.md
-  - "GRPC": grpc.md 
+  - "gRPC": grpc.md 
   - "WebSocket": ws\README.md
-  - "Как пользоваться Swagger?": swagger.md
+  - "Использование Swagger": swagger.md
  
 - Полезная информация:
   - "Алгоритмический трейдинг": algorithmic_trading.md
