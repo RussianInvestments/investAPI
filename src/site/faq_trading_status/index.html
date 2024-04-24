@@ -434,6 +434,15 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
+      Типы поручений
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
       Описание торговых статусов
     </span>
   </a>
@@ -754,7 +763,7 @@
         
   
   <span class="md-ellipsis">
-    Алгоритмический трейдинг
+    Алгоритмическая торговля
   </span>
   
 
@@ -2143,6 +2152,15 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
+      Типы поручений
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
       Описание торговых статусов
     </span>
   </a>
@@ -2168,15 +2186,16 @@
 
 
 <h1 id="_1">Торговые статусы инструментов и расписание торгов</h1>
-<p>Рекомендуем смотреть актуальную информацию по режимам и статусам торгов на сайтах <a href="https://www.moex.com/">Московской биржи</a> и <a href="https://spbexchange.ru/">СПБ биржи</a>.</p>
-<p>Получить актуальный торговый статус инструмента можно методом <a href="/investAPI/marketdata#gettradingstatus">GetTradingStatus</a>
-или подпиской <a href="/investAPI/marketdata#subscribeinforequest">Info</a> в рамках 
-<a href="/investAPI/marketdata#marketdatastream">stream-соединения сервиса котировок</a>. </p>
-<p>В зависимости от торгового статуса определяется возможность выставления торговых поручений определённого типа: </p>
+<p>Мы рекомендуем смотреть актуальную информацию по режимам и статусам торгов на сайтах <a href="https://www.moex.com/">Московской биржи</a> и <a href="https://spbexchange.ru/">СПБ биржи</a>.</p>
+<p>Получить актуальный торговый статус инструмента можно через метод <a href="/investAPI/marketdata#gettradingstatus">GetTradingStatus</a>
+или подписку <a href="/investAPI/marketdata#subscribeinforequest">Info</a> в рамках 
+<a href="/investAPI/marketdata#marketdatastream">Stream-соединения сервиса котировок</a>. </p>
+<h2 id="_2">Типы поручений</h2>
+<p>Вы можете выставлять торговые поручения определённого типа в зависимости от торгового статуса: </p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Наименование статуса торговли</th>
+<th style="text-align: left;">Название статуса торговли</th>
 <th style="text-align: left;">Описание статуса</th>
 <th style="text-align: left;">Возможность выставлять лимитные заявки</th>
 <th style="text-align: left;">Возможность выставлять рыночные заявки</th>
@@ -2185,119 +2204,119 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">UNSPECIFIED</td>
+<td style="text-align: left;"><code>UNSPECIFIED</code></td>
 <td style="text-align: left;">Торговый статус не определён</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 </tr>
 <tr>
-<td style="text-align: left;">NOT_AVAILABLE_FOR_TRADING</td>
+<td style="text-align: left;"><code>NOT_AVAILABLE_FOR_TRADING</code></td>
 <td style="text-align: left;">Недоступен для торгов</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 </tr>
 <tr>
-<td style="text-align: left;">OPENING_PERIOD</td>
+<td style="text-align: left;"><code>OPENING_PERIOD</code></td>
 <td style="text-align: left;">Период открытия торгов</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">CLOSING_PERIOD</td>
+<td style="text-align: left;"><code>CLOSING_PERIOD</code></td>
 <td style="text-align: left;">Период закрытия торгов</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">BREAK_IN_TRADING</td>
+<td style="text-align: left;"><code>BREAK_IN_TRADING</code></td>
 <td style="text-align: left;">Перерыв в торговле</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 </tr>
 <tr>
-<td style="text-align: left;">NORMAL_TRADING</td>
+<td style="text-align: left;"><code>NORMAL_TRADING</code></td>
 <td style="text-align: left;">Нормальная торговля</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">CLOSING_AUCTION</td>
+<td style="text-align: left;"><code>CLOSING_AUCTION</code></td>
 <td style="text-align: left;">Аукцион закрытия</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">DARK_POOL_AUCTION</td>
+<td style="text-align: left;"><code>DARK_POOL_AUCTION</code></td>
 <td style="text-align: left;">Аукцион крупных пакетов</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Нет</td>
 </tr>
 <tr>
-<td style="text-align: left;">DISCRETE_AUCTION</td>
+<td style="text-align: left;"><code>DISCRETE_AUCTION</code></td>
 <td style="text-align: left;">Дискретный аукцион</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">OPENING_AUCTION_PERIOD</td>
+<td style="text-align: left;"><code>OPENING_AUCTION_PERIOD</code></td>
 <td style="text-align: left;">Аукцион открытия</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">TRADING_AT_CLOSING_AUCTION_PRICE</td>
+<td style="text-align: left;"><code>TRADING_AT_CLOSING_AUCTION_PRICE</code></td>
 <td style="text-align: left;">Период торгов по цене аукциона закрытия</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">SESSION_ASSIGNED</td>
+<td style="text-align: left;"><code>SESSION_ASSIGNED</code></td>
 <td style="text-align: left;">Сессия назначена</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">SESSION_CLOSE</td>
+<td style="text-align: left;"><code>SESSION_CLOSE</code></td>
 <td style="text-align: left;">Сессия закрыта</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 </tr>
 <tr>
-<td style="text-align: left;">SESSION_OPEN</td>
+<td style="text-align: left;"><code>SESSION_OPEN</code></td>
 <td style="text-align: left;">Сессия открыта</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">DEALER_NORMAL_TRADING</td>
+<td style="text-align: left;"><code>DEALER_NORMAL_TRADING</code></td>
 <td style="text-align: left;">Доступна торговля в режиме внутренней ликвидности брокера</td>
 <td style="text-align: left;">Да</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Да</td>
 </tr>
 <tr>
-<td style="text-align: left;">DEALER_BREAK_IN_TRADING</td>
+<td style="text-align: left;"><code>DEALER_BREAK_IN_TRADING</code></td>
 <td style="text-align: left;">Перерыв торговли в режиме внутренней ликвидности брокера</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
 </tr>
 <tr>
-<td style="text-align: left;">DEALER_NOT_AVAILABLE_FOR_TRADING</td>
+<td style="text-align: left;"><code>DEALER_NOT_AVAILABLE_FOR_TRADING</code></td>
 <td style="text-align: left;">Недоступна торговля в режиме внутренней ликвидности брокера</td>
 <td style="text-align: left;">Нет</td>
 <td style="text-align: left;">Нет</td>
@@ -2305,44 +2324,75 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_2">Описание торговых статусов</h2>
-<p>UNSPECIFIED — служебное значение торгового статуса. Устанавливается, если от биржи пришёл
-неизвестный торговый статус инструмента.</p>
-<p>NOT_AVAILABLE_FOR_TRADING — торговля инструментом недоступна. Данный статус возвращается, когда
-торги по инструменту недоступны. Например, при закрытии торговой площадки.</p>
-<p>OPENING_PERIOD — период открытия торгов (премаркет). По инструменту происходит
-аукцион открытия. Это особый режим торгов, когда биржа собирает заявки на покупку/продажу в биржевой стакан. По 
-результатам аукциона открытия при помощи специального алгоритма биржи определяется цена открытия торгов основной сессии.
+<h2 id="_3">Описание торговых статусов</h2>
+<ul>
+<li>
+<p><code>UNSPECIFIED</code> — служебное значение торгового статуса. Устанавливается, если от биржи пришёл неизвестный торговый статус инструмента.</p>
+</li>
+<li>
+<p><code>NOT_AVAILABLE_FOR_TRADING</code> — торговля инструментом недоступна. Возвращается, когда
+торги по инструменту недоступны — например, при закрытии торговой площадки.</p>
+</li>
+<li>
+<p><code>OPENING_PERIOD</code> — период открытия торгов (премаркет). По инструменту происходит
+аукцион открытия. Это особый режим торгов, когда биржа собирает заявки на покупку/продажу в биржевой стакан. По результатам аукциона открытия при помощи специального алгоритма биржи определяется цена открытия торгов основной сессии.
 В данном режиме торгов доступно выставление только лимитных поручений.</p>
-<p>CLOSING_PERIOD — период закрытия торгов (постмаркет). По инструменту происходит аукцион закрытия.
-Это режим торгов, когда биржа собирается заявки для определения цены закрытия сессии. Доступны только лимитные заявки.</p>
-<p>BREAK_IN_TRADING — перерыв в торговле инструментов. Перерыв в торгах по конкретным или всем 
-инструментам биржа может устанавливать по разным причинам. Например, технические сбои или высокая волатильность на рынке.
+</li>
+<li>
+<p><code>CLOSING_PERIOD</code> — период закрытия торгов (постмаркет). По инструменту происходит аукцион закрытия. Это режим торгов, когда биржа собирается заявки для определения цены закрытия сессии. Доступны только лимитные заявки.</p>
+</li>
+<li>
+<p><code>BREAK_IN_TRADING</code> — перерыв в торговле инструментов. Биржа может устанавливать перерыв в торгах по конкретным или всем инструментам по разным причинам — например, технические сбои или высокая волатильность на рынке.
 В данном статусе недоступно выставление поручений по инструменту. </p>
-<p>NORMAL_TRADING — нормальный режим торгов по инструменту. В данном режиме доступны все виды 
+</li>
+<li>
+<p><code>NORMAL_TRADING</code> — нормальный режим торгов по инструменту. В данном режиме доступны все виды 
 поручений.</p>
-<p>CLOSING_AUCTION — то же, что и CLOSING_PERIOD.</p>
-<p>DARK_POOL_AUCTION — режим торгов крупными пакетами (Dark Pool). Это режим торгов со скрытым 
+</li>
+<li>
+<p><code>CLOSING_AUCTION</code> — то же, что и <code>CLOSING_PERIOD</code>.</p>
+</li>
+<li>
+<p><code>DARK_POOL_AUCTION</code> — режим торгов крупными пакетами (Dark Pool). Это режим торгов со скрытым 
 стаканом для заключения крупных сделок. Торги проходят в формате непрерывного заключения сделок (при наличии встречных 
-заявок) по Цене аукциона. Цена аукциона определяется перед его началом на основе заявок в Режиме основных торгов. В 
+заявок) по цене аукциона. Цена аукциона определяется перед его началом на основе заявок в режиме основных торгов. В 
 данном режиме доступно выставление только рыночных торговых поручений с ограничением на минимальный объём заявки.</p>
-<p>DISCRETE_AUCTION — дискретный аукцион. Особый режим, который применяется вместо перерыва
+</li>
+<li>
+<p><code>DISCRETE_AUCTION</code> — дискретный аукцион. Особый режим, который применяется вместо перерыва
 в торгах в моменты высокой волатильности рынков. В данном режиме возможно выставление только лимитных заявок, исполнение
-сделок не происходит до момента возобновления торгов. Отсутствуют механизмы расчёта "рыночной цены". </p>
-<p>OPENING_AUCTION_PERIOD — то же, что и OPENING_PERIOD.</p>
-<p>TRADING_AT_CLOSING_AUCTION_PRICE — режим торгов по цене аукциона закрытия. В данном режиме
-возможно выставление рыночных заявок и лимитных заявок с ценой аукциона закрытия. Все заявки во время данного режима
+сделок не происходит до момента возобновления торгов. Механизмов расчёта рыночной цены нет. </p>
+</li>
+<li>
+<p><code>OPENING_AUCTION_PERIOD</code> — то же, что и <code>OPENING_PERIOD</code>.</p>
+</li>
+<li>
+<p><code>TRADING_AT_CLOSING_AUCTION_PRICE</code> — режим торгов по цене аукциона закрытия. В данном режиме
+возможно выставление рыночных заявок и лимитных заявок с ценой аукциона закрытия. Все заявки
 исполняются по цене аукциона закрытия (при наличии встречных предложений).</p>
-<p>SESSION_ASSIGNED — торговая сессия назначена. Технический статус, время клиринга. В данном 
+</li>
+<li>
+<p><code>SESSION_ASSIGNED</code> — торговая сессия назначена. Технический статус, время клиринга. В данном 
 режиме выставление всех видов торговых поручений недоступно. </p>
-<p>SESSION_CLOSE — сессия закрыта, торговля инструментом недоступна (для опционов и фьючерсов на московской бирже).</p>
-<p>SESSION_OPEN — сессия открыта, торговля инструментом доступна (для опционов и фьючерсов на московской бирже).</p>
-<p>DEALER_NORMAL_TRADING — торги в режиме внутренней ликвидности брокера. Данный статус 
-устанавливается брокером (Тинькофф Инвестиции) во время торговли по выходным. В этом режиме недоступно выставление
-рыночных заявок. Исполняются только лимитные заявки и заявки bestprice при наличии встречных предложений.</p>
-<p>DEALER_BREAK_IN_TRADING — перерыв в торгах в режиме внутренней ликвидности брокера. Выставление
+</li>
+<li>
+<p><code>SESSION_CLOSE</code> — сессия закрыта, торговля инструментом недоступна (для опционов и фьючерсов на московской бирже).</p>
+</li>
+<li>
+<p><code>SESSION_OPEN</code> — сессия открыта, торговля инструментом доступна (для опционов и фьючерсов на московской бирже).</p>
+</li>
+<li>
+<p><code>DEALER_NORMAL_TRADING</code> — торги в режиме внутренней ликвидности брокера. Данный статус 
+устанавливается брокером (Тинькофф Инвестиции) во время торговли по выходным. В этом режиме недоступно выставление рыночных заявок. Исполняются только лимитные заявки и bestprice-заявки при наличии встречных предложений.</p>
+</li>
+<li>
+<p><code>DEALER_BREAK_IN_TRADING</code> — перерыв в торгах в режиме внутренней ликвидности брокера. Выставление
 торговых поручений недоступно.</p>
-<p>DEALER_NOT_AVAILABLE_FOR_TRADING — то же, что и NOT_AVAILABLE_FOR_TRADING.</p>
+</li>
+<li>
+<p><code>DEALER_NOT_AVAILABLE_FOR_TRADING</code> — то же, что и <code>NOT_AVAILABLE_FOR_TRADING</code>.</p>
+</li>
+</ul>
 
 
 
