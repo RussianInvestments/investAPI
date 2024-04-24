@@ -42,6 +42,7 @@
 * **min_price_increment_amount** — стоимость шага цены;
 * **lot** — лотность инструмента.
 
+
 ### Акции
 
 Формула расчёта: **price** * **lot**.
@@ -63,5 +64,3 @@
 Стоимость фьючерсов предоставляется в пунктах.
 
 Формула для пересчёта: **price** / **min_price_increment** * **min_price_increment_amount**.
-
-> **price** / **min_price_increment** * **min_price_increment_amount**
