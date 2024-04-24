@@ -74,6 +74,7 @@ nav:
   - Методы: orders.md
   - FAQ: faq_orders.md
   - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md
+  - Стрим заявок: orders_state_stream.md
 - Сервис операций:
   - Описание: head-operations.md
   - Методы: operations.md
