@@ -251,7 +251,7 @@
   
     <li class="md-nav__item">
       <a href="../limits/" class="md-nav__link">
-        Лимитная политика
+        Лимиты
       </a>
     </li>
   
@@ -335,7 +335,7 @@
   
     <li class="md-nav__item">
       <a href="../deadlines/" class="md-nav__link">
-        Дедлайны запросов
+        Время исполнения запросов
       </a>
     </li>
   
@@ -347,7 +347,7 @@
   
     <li class="md-nav__item">
       <a href="../robot_contest/" class="md-nav__link">
-        Таблица конкурсных работ
+        Конкурсные работы
       </a>
     </li>
   
@@ -371,7 +371,7 @@
   
     <li class="md-nav__item">
       <a href="../cases/" class="md-nav__link">
-        Описание наиболее популярных кейсов
+        Популярные кейсы и их решение
       </a>
     </li>
   
@@ -427,7 +427,7 @@
   
     <li class="md-nav__item">
       <a href="../grpc/" class="md-nav__link">
-        GRPC
+        gRPC
       </a>
     </li>
   
@@ -480,7 +480,7 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Лента сделок.
+    Лента сделок
   </a>
   
 </li>
@@ -500,14 +500,14 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    Лента событий по позициям.
+    Лента событий по позициям
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    Лента событий по портфелям.
+    Лента событий по портфелям
   </a>
   
 </li>
@@ -586,7 +586,7 @@
   
     <li class="md-nav__item">
       <a href="../swagger/" class="md-nav__link">
-        Как пользоваться Swagger?
+        Использование Swagger
       </a>
     </li>
   
@@ -1075,7 +1075,7 @@
   
     <li class="md-nav__item">
       <a href="../table_order_currency/" class="md-nav__link">
-        Таблица параметров возвращающих валюту или пункты
+        Таблица параметров, возвращающих валюту или пункты
       </a>
     </li>
   
@@ -1500,7 +1500,7 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Лента сделок.
+    Лента сделок
   </a>
   
 </li>
@@ -1520,14 +1520,14 @@
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    Лента событий по позициям.
+    Лента событий по позициям
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    Лента событий по портфелям.
+    Лента событий по портфелям
   </a>
   
 </li>
@@ -1609,33 +1609,27 @@
                   </a>
                 
                 
-                <h1 id="websocket-proxy-for-grpc-streaming">Websocket proxy for grpc streaming</h1>
-<p>Сервис для получения сообщений grpc streaming Тинькофф Инвестиции через json websocket</p>
-<p>Адрес для подключения <strong>wss://invest-public-api.tinkoff.ru/ws/</strong></p>
+                <h1 id="websocket-proxy-for-grpc-streaming">WebSocket proxy for gRPC streaming</h1>
+<p>Сервис для получения сообщений gRPC streaming Тинькофф Инвестиции через JSON WebSocket.</p>
+<p>Адрес для подключения — <code>wss://invest-public-api.tinkoff.ru/ws/</code>.</p>
 <ul>
-<li><strong>*token</strong> - токен доступа к счету Тинькофф Инвестиции можно передать в заголовке <code>Authorization: Bearer *token</code>
-  , либо  в заголовке <code>Web-Socket-Protocol: json, *token</code></li>
-<li>запрос на подключение требует указание протокола json в заголовоке <code>Web-Socket-Protocol: json</code></li>
+<li><strong>token</strong> — токен доступа к счёту Тинькофф Инвестиции. Его можно передать в заголовке <code>Authorization: Bearer *token</code> или в заголовке <code>Web-Socket-Protocol: json, *token</code>.</li>
+<li>В запросе на подключение нужно указать протокол JSON в заголовке — <code>Web-Socket-Protocol: json</code>.</li>
 </ul>
-<p>Чтобы получать сообщения c наименованиями полей идентичными наименованиям полей из proto-контрактов, необходимо использовать протокол в заголовке WebSocket-Protocol</p>
-<pre><code>json-proto
-</code></pre>
-<p>вместо</p>
-<pre><code>json
-</code></pre>
-<p>Отправка json-сообщений поддерживается в обоих вариантах,  как в camelCase, так и snake_case.</p>
+<p>Чтобы получать сообщения c названиями полей, идентичными названиям полей из proto-контрактов, используйте <code>WebSocket-Protocol</code> протокол в заголовке — <code>json-proto</code> вместо <code>json</code>.</p>
+<p>Отправка JSON-сообщений поддерживается как в camelCase, так и в snake_case.</p>
 <h2 id="_1">Сервис поручений</h2>
-<h3 id="_2">Лента сделок.</h3>
-<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamRequest">TradesStreamRequest</a>
-<a href="/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamResponse">TradesStreamResponse</a></p>
-<p>Пример запроса</p>
+<h3 id="_2">Лента сделок</h3>
+<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamRequest">TradesStreamRequest</a></p>
+<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamResponse">TradesStreamResponse</a></p>
+<p>Пример запроса:</p>
 <pre><code class="language-json">{
   &quot;accounts&quot;: [
     &quot;*accountId&quot;
   ]
 }
 </code></pre>
-<p>Пример ответа</p>
+<p>Пример ответа:</p>
 <pre><code class="language-json">{
   &quot;orderTrades&quot;: {
     &quot;orderId&quot;: &quot;36042910361&quot;,
@@ -1660,17 +1654,17 @@
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream">Проверить</a></p>
 <h2 id="_3">Сервис операций</h2>
-<h3 id="_4">Лента событий по позициям.</h3>
-<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamRequest">PositionsStreamRequest</a>
-<a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamResponse">PositionsStreamResponse</a></p>
-<p>Пример запроса</p>
+<h3 id="_4">Лента событий по позициям</h3>
+<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamRequest">PositionsStreamRequest</a></p>
+<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamResponse">PositionsStreamResponse</a></p>
+<p>Пример запроса:</p>
 <pre><code class="language-json">{
   &quot;accounts&quot;: [
     &quot;*accountId&quot;
   ]
 }
 </code></pre>
-<p>Пример ответа - подписка успешна</p>
+<p>Пример ответа — подписка успешна:</p>
 <pre><code class="language-json">{
   &quot;subscriptions&quot;: {
     &quot;accounts&quot;: [
@@ -1682,7 +1676,7 @@
   }
 }
 </code></pre>
-<p>Пример события - изменение позици в портфеле</p>
+<p>Пример события — изменение позиции в портфеле:</p>
 <pre><code class="language-json">{
   &quot;position&quot;: {
     &quot;accountId&quot;: &quot;*accountId&quot;,
@@ -1718,17 +1712,17 @@
 }
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream">Проверить</a></p>
-<h3 id="_5">Лента событий по портфелям.</h3>
-<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamRequest">PortfolioStreamRequest</a>
-<a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamResponse">PortfolioStreamResponse</a></p>
-<p>Пример запроса</p>
+<h3 id="_5">Лента событий по портфелям</h3>
+<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamRequest">PortfolioStreamRequest</a></p>
+<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamResponse">PortfolioStreamResponse</a></p>
+<p>Пример запроса:</p>
 <pre><code class="language-json">{
   &quot;accounts&quot;: [
     &quot;*accountId&quot;
   ]
 }
 </code></pre>
-<p>Пример ответа подписка успешна</p>
+<p>Пример ответа — подписка успешна:</p>
 <pre><code class="language-json">{
   &quot;subscriptions&quot;: {
     &quot;accounts&quot;: [
@@ -1740,7 +1734,7 @@
   }
 }
 </code></pre>
-<p>Пример события изменения по портфелю</p>
+<p>Пример события — изменения по портфелю:</p>
 <pre><code class="language-json">{
   &quot;portfolio&quot;: {
     &quot;totalAmountShares&quot;: {
@@ -1814,10 +1808,10 @@
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream">Проверить</a></p>
 <h2 id="_6">Сервис рыночных данных</h2>
-<p><a href="/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataRequest">MarketDataRequest</a>
-<a href="/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataResponse">MarketDataResponse</a></p>
+<p><a href="/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataRequest">MarketDataRequest</a></p>
+<p><a href="/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataResponse">MarketDataResponse</a></p>
 <h3 id="_7">Лента торговых статусов инструментов</h3>
-<p>Пример запроса</p>
+<p>Пример запроса:</p>
 <pre><code class="language-json">{
   &quot;subscribeInfoRequest&quot;: {
     &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
@@ -1829,7 +1823,7 @@
   }
 }
 </code></pre>
-<p>Пример ответа - подписка успешна</p>
+<p>Пример ответа — подписка успешна:</p>
 <pre><code class="language-json">{
   &quot;subscribeInfoResponse&quot;: {
     &quot;trackingId&quot;: &quot;ca4af996193cf5d9b3b933fa0ad61910&quot;,
@@ -1845,7 +1839,7 @@
   }
 }
 </code></pre>
-<p>Пример сообщения торговый статус по инструменту</p>
+<p>Пример сообщения — торговый статус по инструменту:</p>
 <pre><code class="language-json">{
   &quot;tradingStatus&quot;: {
     &quot;figi&quot;: &quot;BBG004730RP0&quot;,
@@ -1859,7 +1853,7 @@
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
 <h3 id="_8">Лента цен последних сделок</h3>
-<p>Пример запроса</p>
+<p>Пример запроса:</p>
 <pre><code class="language-json">{
   &quot;subscribeLastPriceRequest&quot;: {
     &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
@@ -1871,7 +1865,7 @@
   }
 }
 </code></pre>
-<p>Пример ответа - подписка успешна</p>
+<p>Пример ответа — подписка успешна:</p>
 <pre><code class="language-json">{
   &quot;subscribeLastPriceResponse&quot;: {
     &quot;trackingId&quot;: &quot;9db9ee41448a36bf3526c8bd8d1a6c83&quot;,
@@ -1887,7 +1881,7 @@
   }
 }
 </code></pre>
-<p>Пример сообщения последние цены по инструменту</p>
+<p>Пример сообщения — последние цены по инструменту:</p>
 <pre><code class="language-json">{
   &quot;lastPrice&quot;: {
     &quot;figi&quot;: &quot;BBG004730RP0&quot;,
@@ -1902,7 +1896,7 @@
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
 <h3 id="_9">Лента обезличенных сделок</h3>
-<p>Пример запроса</p>
+<p>Пример запроса:</p>
 <pre><code class="language-json">{
   &quot;subscribeTradesRequest&quot;: {
     &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
@@ -1914,7 +1908,7 @@
   }
 }
 </code></pre>
-<p>Пример ответа - подписка успешна</p>
+<p>Пример ответа — подписка успешна:</p>
 <pre><code class="language-json">{
   &quot;subscribeTradesResponse&quot;: {
     &quot;trackingId&quot;: &quot;d39351591fce577df57b2e9bea6dde1b&quot;,
@@ -1930,7 +1924,7 @@
   }
 }
 </code></pre>
-<p>Пример сообщения обезличиные сделки по инстурменту</p>
+<p>Пример сообщения — обезличиные сделки по инструменту:</p>
 <pre><code class="language-json">{
   &quot;trade&quot;: {
     &quot;figi&quot;: &quot;BBG004730RP0&quot;,
@@ -1947,7 +1941,7 @@
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
 <h3 id="_10">Лента событий по стаканам</h3>
-<p>Пример запроса</p>
+<p>Пример запроса:</p>
 <pre><code class="language-json">{
   &quot;subscribeOrderBookRequest&quot;: {
     &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
@@ -1960,7 +1954,7 @@
   }
 }
 </code></pre>
-<p>Пример ответа - подписка успешна</p>
+<p>Пример ответа — подписка успешна:</p>
 <pre><code class="language-json">{
   &quot;subscribeOrderBookResponse&quot;: {
     &quot;trackingId&quot;: &quot;0193243a978d7363f55813841f6da08e&quot;,
@@ -1978,7 +1972,7 @@
   }
 }
 </code></pre>
-<p>Пример сообщения стака по инструменту</p>
+<p>Пример сообщения стака по инструменту:</p>
 <pre><code class="language-json">{
   &quot;orderbook&quot;: {
     &quot;figi&quot;: &quot;BBG004730RP0&quot;,
@@ -2020,7 +2014,7 @@
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
 <h3 id="_11">Лента события по свечам</h3>
-<p>Пример запроса</p>
+<p>Пример запроса:</p>
 <pre><code class="language-json">{
   &quot;subscribeCandlesRequest&quot;: {
     &quot;subscriptionAction&quot;: &quot;SUBSCRIPTION_ACTION_SUBSCRIBE&quot;,
@@ -2034,7 +2028,7 @@
   }
 }
 </code></pre>
-<p>Пример ответа - подписка успешна</p>
+<p>Пример ответа — подписка успешна:</p>
 <pre><code class="language-json">{
   &quot;subscribeCandlesResponse&quot;: {
     &quot;trackingId&quot;: &quot;066f2eeff1a0b76f5a6c05b3b41f23df&quot;,
@@ -2052,7 +2046,7 @@
   }
 }
 </code></pre>
-<p>Пример события свеча по инструменту</p>
+<p>Пример события — свеча по инструменту:</p>
 <pre><code class="language-json">{
   &quot;candle&quot;: {
     &quot;figi&quot;: &quot;BBG004730RP0&quot;,
@@ -2082,7 +2076,7 @@
 </code></pre>
 <p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream">Проверить</a></p>
 <h2 id="_12">Пинг сообщения</h2>
-<p>Пример </p>
+<p>Пример:</p>
 <pre><code class="language-json">{
   &quot;ping&quot;: {
     &quot;time&quot;: &quot;2024-04-11T08:49:14.974035911Z&quot;,
@@ -2117,7 +2111,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../grpc/" class="md-footer__link md-footer__link--prev" aria-label="Назад: GRPC" rel="prev">
+        <a href="../grpc/" class="md-footer__link md-footer__link--prev" aria-label="Назад: gRPC" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2126,20 +2120,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              GRPC
+              gRPC
             </div>
           </div>
         </a>
       
       
         
-        <a href="../swagger/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Как пользоваться Swagger?" rel="next">
+        <a href="../swagger/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Использование Swagger" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Как пользоваться Swagger?
+              Использование Swagger
             </div>
           </div>
           <div class="md-footer__button md-icon">

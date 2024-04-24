@@ -251,7 +251,7 @@
   
     <li class="md-nav__item">
       <a href="../limits/" class="md-nav__link">
-        Лимитная политика
+        Лимиты
       </a>
     </li>
   
@@ -335,7 +335,7 @@
   
     <li class="md-nav__item">
       <a href="../deadlines/" class="md-nav__link">
-        Дедлайны запросов
+        Время исполнения запросов
       </a>
     </li>
   
@@ -347,7 +347,7 @@
   
     <li class="md-nav__item">
       <a href="../robot_contest/" class="md-nav__link">
-        Таблица конкурсных работ
+        Конкурсные работы
       </a>
     </li>
   
@@ -371,7 +371,7 @@
   
     <li class="md-nav__item">
       <a href="../cases/" class="md-nav__link">
-        Описание наиболее популярных кейсов
+        Популярные кейсы и их решение
       </a>
     </li>
   
@@ -437,7 +437,7 @@
   
     <li class="md-nav__item">
       <a href="../grpc/" class="md-nav__link">
-        GRPC
+        gRPC
       </a>
     </li>
   
@@ -461,7 +461,7 @@
   
     <li class="md-nav__item">
       <a href="../swagger/" class="md-nav__link">
-        Как пользоваться Swagger?
+        Использование Swagger
       </a>
     </li>
   
@@ -950,7 +950,7 @@
   
     <li class="md-nav__item">
       <a href="../table_order_currency/" class="md-nav__link">
-        Таблица параметров возвращающих валюту или пункты
+        Таблица параметров, возвращающих валюту или пункты
       </a>
     </li>
   
@@ -1375,36 +1375,36 @@
                 
                 
                 <h1 id="_1">Доступные протоколы взаимодействия</h1>
-<p>TINKOFF INVEST API поддерживает возможность использования различных протоколов.
-О том, как начать работать с gRPC, описано на <a href="/investAPI/grpc/">странице</a>.</p>
+<p>Tinkoff Invest API поддерживает возможность использования различных протоколов.</p>
+<p><a href="/investAPI/grpc/">Как начать работать с gRPC</a></p>
 <table>
 <thead>
 <tr>
 <th>Протокол</th>
-<th>Подробнее</th>
+<th>Детали</th>
 <th>Endpoint</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>gRPC</td>
-<td>API реализован на быстром, удобном и функциональном протоколе <a href="https://grpc.io/docs/">gRPC</a></td>
-<td>invest-public-api.tinkoff.ru:443 — продовый сервис,</br>sandbox-invest-public-api.tinkoff.ru:443 — сервис песочницы</td>
+<td>API реализован на быстром, удобном и функциональном протоколе <a href="https://grpc.io/docs/">gRPC</a>.</td>
+<td><ul><li><code>invest-public-api.tinkoff.ru:443</code> — продовый сервис;</li><li><code>sandbox-invest-public-api.tinkoffru:443</code> — песочница.</li></ul></td>
 </tr>
 <tr>
 <td>gRPC-web</td>
-<td>Для поддержки web-клиентов, например браузерных JS скриптов, внедрена поддержка <a href="https://grpc.io/docs/platforms/web/basics/">gRPC-web</a></td>
-<td>invest-public-api.tinkoff.ru:443 — продовый сервис,</br>sandbox-invest-public-api.tinkoff.ru:443 — сервис песочницы</td>
+<td>Для поддержки web-клиентов, например, браузерных JS скриптов, внедрена поддержка <a href="https://grpc.io/docs/platforms/web/basics/">gRPC-web</a>.</td>
+<td><ul><li><code>invest-public-api.tinkoff.ru:443</code> — продовый сервис;</li><li><code>sandbox-invest-public-api.tinkoffru:443</code> — песочница.</li></ul></td>
 </tr>
 <tr>
 <td>REST API</td>
-<td>Для клиентов, привыкших работать с REST API, реализован прокси <a href="https://russianinvestments.github.io/investAPI/swagger-ui/">Swagger</a>. Инструкция по использованию Swagger описана на <a href="/investAPI/swagger/">странице</a></td>
-<td>https://invest-public-api.tinkoff.ru/rest/ — продовый сервис, </br>https://sandbox-invest-public-api.tinkoff.ru/rest/ — сервис песочницы</td>
+<td>Для клиентов, привыкших работать с REST API, реализован прокси <a href="https://russianinvestments.github.io/investAPI/swagger-ui/">Swagger</a>. <br><br><a href="/investAPI/swagger/">Инструкция по работе со Swagger</a></td>
+<td><ul><li><code>https://invest-public-api.tinkoff.ru/rest/</code> — продовый сервис;</li><li><code>https://sandbox-invest-public-api.tinkoff.ru/rest/</code> — песочница.</li></ul></td>
 </tr>
 <tr>
 <td>WebSocket</td>
-<td>Внедрена поддержка Websocket протокола</td>
-<td>wss://invest-public-api.tinkoff.ru/ws/</td>
+<td>Внедрена поддержка WebSocket-протокола.</td>
+<td><code>wss://invest-public-api.tinkoff.ru/ws/</code></td>
 </tr>
 </tbody>
 </table>
@@ -1435,7 +1435,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../cases/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Описание наиболее популярных кейсов" rel="prev">
+        <a href="../cases/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Популярные кейсы и их решение" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1444,20 +1444,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Описание наиболее популярных кейсов
+              Популярные кейсы и их решение
             </div>
           </div>
         </a>
       
       
         
-        <a href="../grpc/" class="md-footer__link md-footer__link--next" aria-label="Вперед: GRPC" rel="next">
+        <a href="../grpc/" class="md-footer__link md-footer__link--next" aria-label="Вперед: gRPC" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              GRPC
+              gRPC
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -14,7 +14,7 @@
     
     
       
-        <title>Дедлайны запросов - TINKOFF INVEST API</title>
+        <title>Время исполнения запросов - TINKOFF INVEST API</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Дедлайны запросов
+              Время исполнения запросов
             
           </span>
         </div>
@@ -253,7 +253,7 @@
   
     <li class="md-nav__item">
       <a href="../limits/" class="md-nav__link">
-        Лимитная политика
+        Лимиты
       </a>
     </li>
   
@@ -346,12 +346,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Дедлайны запросов
+          Время исполнения запросов
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Дедлайны запросов
+        Время исполнения запросов
       </a>
       
         
@@ -370,7 +370,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Рекомендованные минимальные дедлайны запросов
+    Рекомендованные минимальные сроки исполнения запросов
   </a>
   
 </li>
@@ -389,7 +389,7 @@
   
     <li class="md-nav__item">
       <a href="../robot_contest/" class="md-nav__link">
-        Таблица конкурсных работ
+        Конкурсные работы
       </a>
     </li>
   
@@ -413,7 +413,7 @@
   
     <li class="md-nav__item">
       <a href="../cases/" class="md-nav__link">
-        Описание наиболее популярных кейсов
+        Популярные кейсы и их решение
       </a>
     </li>
   
@@ -467,7 +467,7 @@
   
     <li class="md-nav__item">
       <a href="../grpc/" class="md-nav__link">
-        GRPC
+        gRPC
       </a>
     </li>
   
@@ -491,7 +491,7 @@
   
     <li class="md-nav__item">
       <a href="../swagger/" class="md-nav__link">
-        Как пользоваться Swagger?
+        Использование Swagger
       </a>
     </li>
   
@@ -980,7 +980,7 @@
   
     <li class="md-nav__item">
       <a href="../table_order_currency/" class="md-nav__link">
-        Таблица параметров возвращающих валюту или пункты
+        Таблица параметров, возвращающих валюту или пункты
       </a>
     </li>
   
@@ -1397,7 +1397,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Рекомендованные минимальные дедлайны запросов
+    Рекомендованные минимальные сроки исполнения запросов
   </a>
   
 </li>
@@ -1419,20 +1419,19 @@
                   </a>
                 
                 
-                <h1 id="_1">Дедлайны запросов</h1>
-<p>TINKOFF INVEST API работает по протоколу <a href="/investAPI/grpc/">gRPC</a>, который предполагает использование
-параметра <code>deadline</code> на стороне клиента. Данный параметр отвечает за обозначение крайнего срока выполнения 
-запроса, т.е. по истечению объявленного срока запрос будет прерван принудительно. В TINKOFF INVEST API
-не существует жёсткого регулирования полученного дедлайна, однако стоит учитывать, что время выполнения
-запроса зависит от множества факторов (объёма данных, скорости их обработки, сложности вычислений и т.п.)
-Поэтому команда TINKOFF INVEST API не рекомендует использовать параметр <em>deadline</em> со значениями ниже обозначенных в таблице.</p>
-<p><em>Подробнее про deadline: <a href="https://grpc.io/blog/deadlines/">gRPC and Deadlines</a>.</em></p>
-<h2 id="_2">Рекомендованные минимальные дедлайны запросов</h2>
+                <h1 id="_1">Время исполнения запросов</h1>
+<p>Tinkoff Invest API работает по протоколу <a href="/investAPI/grpc/">gRPC</a>, который предполагает использование
+параметра <code>deadline</code> на стороне клиента. 
+Этот параметр обозначает крайний срок исполнения запроса — по истечении указанного времени запрос будет прерван принудительно. </p>
+<p>В Tinkoff Invest API нет жёсткого регулирования параметра <code>deadline</code>, но учитывайте, что время исполнения запроса зависит от множества факторов — объёма данных, скорости их обработки, сложности вычислений и других.
+Поэтому мы не рекомендуем использовать значения меньше указанных в таблице ниже.</p>
+<p><a href="https://grpc.io/blog/deadlines/">Подробнее про gRPC и <code>deadline</code></a></p>
+<h2 id="_2">Рекомендованные минимальные сроки исполнения запросов</h2>
 <table>
 <thead>
 <tr>
-<th align="left">Метод TINKOFF INVEST API</th>
-<th align="left">Рекомендованный deadline (ms)</th>
+<th align="left">Метод Tinkoff Invest API</th>
+<th align="left">Рекомендованный <code>deadline</code> (ms)</th>
 </tr>
 </thead>
 <tbody>
@@ -1621,7 +1620,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/RussianInvestments/investAPI"
-            issue-term="Дедлайны запросов comments"
+            issue-term="Время исполнения запросов comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"
@@ -1657,13 +1656,13 @@
       
       
         
-        <a href="../robot_contest/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Таблица конкурсных работ" rel="next">
+        <a href="../robot_contest/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Конкурсные работы" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Таблица конкурсных работ
+              Конкурсные работы
             </div>
           </div>
           <div class="md-footer__button md-icon">
