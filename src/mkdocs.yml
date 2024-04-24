@@ -23,23 +23,23 @@ nav:
 - Начало работы: 
   - "Начало работы": index.md
   - Глоссарий: glossary.md
-  - "Лимитная политика": limits.md
+  - "Лимиты": limits.md
   - "Токен доступа": token.md
   - "Идентификация торговых инструментов": faq_identification.md
   - "Нестандартные типы данных": faq_custom_types.md
   - "Торговые статусы инструментов и расписание торгов": faq_trading_status.md
   - "Порядок работы с историческими данными": load_history.md
   - "Работа с торговыми поручениями": orders_details.md
-  - "Дедлайны запросов": deadlines.md
-  - "Таблица конкурсных работ": robot_contest.md
+  - "Время исполнения запросов": deadlines.md
+  - "Конкурсные работы": robot_contest.md
   - "Таблица параметров, возвращающих валюту или пункты": table_order_currency.md
-  - "Описание наиболее популярных кейсов": cases.md
+  - "Популярные кейсы и их решение": cases.md
 
 - Протоколы:
   - "Доступные протoколы": api_protocols.md
-  - "GRPC": grpc.md 
+  - "gRPC": grpc.md 
   - "WebSocket": ws\README.md
-  - "Как пользоваться Swagger?": swagger.md
+  - "Использование Swagger": swagger.md
  
 - Полезная информация:
   - "Алгоритмический трейдинг": algorithmic_trading.md
@@ -73,7 +73,7 @@ nav:
   - Описание: head-orders.md
   - Методы: orders.md
   - FAQ: faq_orders.md
-  - Таблица параметров возвращающих валюту или пункты: table_order_currency.md
+  - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md
 - Сервис операций:
   - Описание: head-operations.md
   - Методы: operations.md
