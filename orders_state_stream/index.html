@@ -14,7 +14,7 @@
     
     
       
-        <title>Описание - TINKOFF INVEST API</title>
+        <title>Стрим заявок - TINKOFF INVEST API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#ordersstatestream" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Описание
+              Стрим заявок
             
           </span>
         </div>
@@ -878,12 +878,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
       
       <label class="md-nav__link" for="__nav_8">
         Сервис ордеров
@@ -947,11 +949,141 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../orders_state_stream/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Стрим заявок
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Стрим заявок
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ordersstatestream" class="md-nav__link">
+    OrdersStateStream
+  </a>
+  
+    <nav class="md-nav" aria-label="OrdersStateStream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Для чего используется
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Особенности работы
+  </a>
+  
+    <nav class="md-nav" aria-label="Особенности работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeinforcetype" class="md-nav__link">
+    TimeInForceType
+  </a>
+  
+    <nav class="md-nav" aria-label="TimeInForceType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeinforcetype_1" class="md-nav__link">
+    Что если не передавать подходящий TimeInForceType?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uid" class="md-nav__link">
+    Ключ идемпотентности в формате UID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Резюме
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replaceorder" class="md-nav__link">
+    ReplaceOrder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Сообщения стрима
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения стрима">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Статусы
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Состав сообщений
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -968,14 +1100,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       <label class="md-nav__link" for="__nav_9">
         Сервис операций
@@ -991,113 +1121,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Описание
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../head-operations/" class="md-nav__link">
         Описание
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Получение списка операций по счёту
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    На что нужно обратить внимание в методах получения списка операций
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Получение портфолио
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Получение списка позиций портфеля по счёту
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Получение доступного остатка для вывода денежных средств
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    Получение различных отчётов
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    Стрим позиций и доходности портфеля
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    Стрим изменения позиций портфеля
-  </a>
-  
-    <nav class="md-nav" aria-label="Стрим изменения позиций портфеля">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    Торговые статусы инструментов и расписание торгов
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1460,8 +1488,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1470,66 +1496,98 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Получение списка операций по счёту
+  <a href="#ordersstatestream" class="md-nav__link">
+    OrdersStateStream
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    На что нужно обратить внимание в методах получения списка операций
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Получение портфолио
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    Получение списка позиций портфеля по счёту
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    Получение доступного остатка для вывода денежных средств
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    Получение различных отчётов
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    Стрим позиций и доходности портфеля
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    Стрим изменения позиций портфеля
-  </a>
-  
-    <nav class="md-nav" aria-label="Стрим изменения позиций портфеля">
+    <nav class="md-nav" aria-label="OrdersStateStream">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    Торговые статусы инструментов и расписание торгов
+  <a href="#_1" class="md-nav__link">
+    Для чего используется
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Особенности работы
+  </a>
+  
+    <nav class="md-nav" aria-label="Особенности работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeinforcetype" class="md-nav__link">
+    TimeInForceType
+  </a>
+  
+    <nav class="md-nav" aria-label="TimeInForceType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeinforcetype_1" class="md-nav__link">
+    Что если не передавать подходящий TimeInForceType?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uid" class="md-nav__link">
+    Ключ идемпотентности в формате UID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Резюме
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replaceorder" class="md-nav__link">
+    ReplaceOrder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Сообщения стрима
+  </a>
+  
+    <nav class="md-nav" aria-label="Сообщения стрима">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Статусы
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Состав сообщений
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1550,86 +1608,94 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/head-operations.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/orders_state_stream.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">Сервис получения информации о портфеле по конкретному счёту</h1>
-<h2 id="_2">Получение списка операций по счёту</h2>
-<p>В процессе работы торговому роботу требуется получать информацию об операциях по счёту. Например, чтобы
-корректно рассчитывать доходности и собирать статистику своей работы. Для реализации данных потребностей
-можно использовать метод <a href="/investAPI/operations#getoperations">getOperations</a>, а также более новый метод <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a>.</p>
-<p>При работе с данными методами необходимо учитывать <a href="/investAPI/operations_problems">особенности взаимодействия</a>.</p>
-<p>Метод <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a> является более предпочтительным для использования, возвращает список всех операций по указанному счету.
-Данный метод возвращает информацию обо всех операциях, в том числе отмененных, поддерживает пагинацию и расширенную фильтрацию.
-Плюс данный метод обладает всеми преимуществами метода <a href="/investAPI/operations#getoperations">getOperations</a>.</p>
-<p><strong>Важно!!!</strong> Метод <a href="/investAPI/operations#getoperations">getOperations</a> не поддерживает опционы. Для получения информации по операциям с опционами
-мы рекомендуем использовать метод <a href="/investAPI/operations#getoperationsbycursor">getOperationsByCursor</a>.</p>
-<p>Для вызова данных методов во входных параметрах достаточно указать только <strong><code>account_id</code></strong>.</p>
-<p>Метод <a href="/investAPI/operations#getoperations">getOperations</a>, в том числе, возвращает отменённые операции (параметр <em>state</em>), это нужно обязательно учитывать
-в алгоритме работы. </p>
-<p><strong>Важно!!!</strong> Метод <a href="/investAPI/operations#getoperations">getOperations</a> возвращает только последнюю тысячу операций.</p>
-<p>Команда TINKOFF INVEST API не рекомендует использовать метод получения операций для идентификации изменения
-статусов торговых поручений, т.к. некоторые операции могут происходить с задержкой относительно реального
-исполнения. Для получения статусов исполнения торговых поручений рекомендуется использовать соответствующий
-stream <a href="/investAPI/head-orders/">сервиса работы с торговыми поручениями</a>. </p>
-<h2 id="_3">На что нужно обратить внимание в методах получения списка операций</h2>
-<ol>
-<li>id операций могут меняться со временем. Не стоит ориентироваться на id операций, как на первичный ключ. Если у вас есть потребность перезагрузить историю операций, при повторном запросе операции, рекомендуем старые id операции удалить.</li>
-<li>По инструментам, прошедшим корпоративные действия, история операций может быть не полной как в api, так и в мобильном приложении. 
-Для получения точной информации рекомендуем воспользоваться <a href="/investAPI/operations/#getbrokerreport">брокерским отчетом</a>.</li>
-</ol>
-<h2 id="_4">Получение портфолио</h2>
-<p>Для получения торговым роботом текущего состояния портфеля по счёту используется метод <a href="/investAPI/operations#getportfolio">getPortfolio</a>.
-Данный метод в отличие от метода <a href="/investAPI/operations#getpositions">getPositions</a> 
-возвращает также статистическую информацию по портфелю (абсолютные и относительные доходности, текущую 
-стоимость активов и т.п.).</p>
-<p>Обратите внимание, что для расчёта суммарной стоимости активов используются текущие цены биржевых
-инструментов. Если торги в данный момент не ведутся, то берётся цена закрытия последней торговой 
-сессии. </p>
-<p><strong>Важно!!!</strong> в данный момент запрос портфолио по счету инвесткопилки ( "type": "ACCOUNT_TYPE_INVEST_BOX") не доступен. </p>
-<p>В данный метод добавлен булев параметр <code>blocked</code>, принимающий значение <em>true</em>, если инструмент заблокирован депозитарием.</p>
-<p><strong>Значения средних цен покупки инструментов (параметры <em>average_position_price</em>, <em>average_position_price_pt</em> и 
-<em>average_position_price_fifo</em>) рассчитываются асинхронно. Возможна задержка в пересчёте до одной секунды.</strong></p>
-<p>Параметр <em>average_position_price</em> - Средневзвешенная цена позиции.</p>
-<p>Параметр <em>average_position_price_fifo</em> - Средняя цена позиции по методу FIFO. </p>
-<p>Более подробно о методах расчета с примерами можно почитать на сайте <a href="https://www.tinkoff.ru/help/invest-educate/yield-analysis/about/math-method/">Тинькофф</a>.</p>
-<h2 id="_5">Получение списка позиций портфеля по счёту</h2>
-<p>Для принятия решений торговому роботу требуется получать список актуальных позиций в портфеле, т.е. 
-количество ценных бумаг, валютных позиций по счёту, включая заблокированные средства. Для этого используется
-метод <a href="/investAPI/operations#getpositions">getPositions</a>. Команда TINKOFF 
-INVEST API рекомендует использовать именно этот метод, когда требуется получить актуальный список позиций, 
-т.к. он является более быстрым и "лёгким" по сравнению с методом получения портфолио. </p>
-<p>В данном методе также возвращается тип инструмента для списка ценно-бумажных позиций портфеля в параметре <code>instrument_type</code>.</p>
-<p>В данный метод добавлен булев параметр <code>exchange_blocked</code>, принимающий значение <em>true,</em> если инструмент заблокирован депозитарием.</p>
-<p>В метод <a href="/investAPI/operations#getpositions">getPositions</a> добавлен массив опционов в портфеле.</p>
-<p><strong>Важно!!!</strong>. Данный метод не возвращает объём средств, заблокированных под гарантийное обеспечение фьючерсов. Для 
-получения этой информации воспользуйтесь методом <a href="/investAPI/operations#getwithdrawlimits">getWithdrawLimits</a>. </p>
-<h2 id="_6">Получение доступного остатка для вывода денежных средств</h2>
-<p>Метод <a href="/investAPI/operations#getwithdrawlimits">getWithdrawLimits</a> позволяет в 
-удобном виде получить доступный для вывода баланс денежных средств, а также количество заблокированных 
-валютных позиций. </p>
-<h2 id="_7">Получение различных отчётов</h2>
-<p>TINKOFF INVEST API позволяет получать различные отчёты. Например, <a href="/investAPI/operations#getbrokerreport">брокерский отчёт</a>
-или <a href="/investAPI/operations#getdividendsforeignissuer">справка о доходах за пределами РФ</a>. Обратите внимание,
-что операции формирования отчётов достаточно трудоёмки, поэтому существуют ограничения на период 
-формирования отчёта и лимиты на количество вызовов соответствующих методов. 
-Запрос справки о доходах за пределами РФ работает корректно в случае, если верхний интервал запрашиваемых дат не позднее, чем 2 рабочих дня от текущей даты.</p>
-<h2 id="_8">Стрим позиций и доходности портфеля</h2>
-<p>Для получения информации об изменении портфеля по факту совершения сделок также можно подписаться на gRPC server-side stream <a href="/investAPI/operations/#portfoliostream">PortfolioStream</a>.
-Стрим позиций и доходностей портфеля возвращает статистическую информацию по портфелю (абсолютные и относительные доходности, текущую
-стоимость активов и т.п.).</p>
-<p>Средневзвешенная цена позиции, текущая рассчитанная доходность, текущая цена инструмента, средняя цена лота в позиции по методу FIFO - 
-возвращаются в валюте инструмента.</p>
-<p>Средняя цена лота в позиции в пунктах (для фьючерсов) - возвращает количество в пунктах. </p>
-<h2 id="_9">Стрим изменения позиций портфеля</h2>
-<p><a href="/investAPI/operations/#positionsstream">PositionsStream</a> - gRPC server-side stream, предназначенный для получения информации по изменению позиций портфеля.</p>
-<p>Стрим в качестве входного <strong>необязательного</strong> параметра принимает массив идентификаторов счетов, по которым вы хотите получать изменения позиций.</p>
-<p>В качестве сообщений стрима приходят изменения позиций, объекты <code>money, securities, futures, options</code>, а также дата и время операции, изменившей позицию. </p>
-<h3 id="_10">Торговые статусы инструментов и расписание торгов</h3>
-<p>Информацию о статусах инструментов и расписаниях торгов вы можете получить на странице <a href="https://russianinvestments.github.io/investAPI/faq_trading_status/">Торговые статусы инструментов и расписание торгов</a>.</p>
-<p>Также рекомендуем смотреть актуальную информацию по режимам и статусам торгов на сайтах <a href="https://www.moex.com/">Московской биржи</a> и <a href="https://spbexchange.ru/">СПБ биржи</a>. </p>
+                  <h1>Стрим заявок</h1>
+                
+                <h2 id="ordersstatestream">OrdersStateStream</h2>
+<p>Стрим соединение TINKOFF INVEST API для получения изменений состояния заявок </p>
+<h3 id="_1">Для чего используется</h3>
+<p>Стрим используется для получения событий по заявкам с момента выставления до момента исполнения или отмены. 
+Статусная модель заявок описана на <a href="/investAPI/head-orders/#_2">странице</a>. Переход заявки от одного статуса в другой формирует событие в стриме.
+В статусе <code>PARTYALLY_FILL</code> события формируются по мере исполнения заявки.</p>
+<h3 id="_2">Особенности работы</h3>
+<p>В методе передаются все заявки по счету из подписки, однако не во всех случаях возможно связать заявку в стриме с поручением отправленным методом <code>PostOrder</code>.
+Заявки, транслируемые в стриме можно идентифицировать по <code>order_request_id</code> - <a href="/investAPI/head-orders/#_6">ключу идемпотентности</a>, переданному при <a href="/investAPI/orders/#postorder">выставлении ордера</a>.
+Чтобы поддержать клиентский идентификатор в стриме требуется выполнение ряда условий:</p>
+<ul>
+<li>
+<p>ордер должен содержать явно заданный <a href="/investAPI/orders/#timeinforcetype">алгоритм исполнения</a>;</p>
+</li>
+<li>
+<p><a href="/investAPI/faq_orders/#order_id-postorder_1">ключ идемпотентности</a> должен быть передан в формате UID;</p>
+</li>
+</ul>
+<h4 id="timeinforcetype">TimeInForceType</h4>
+<p>Для идентификации заявки в стриме по ключу идемпотентности требуется явно указать алгоритм исполнения поручения в <code>PostOrderRequest</code>.
+Ниже приведены подходящие под условия варианты исполнения в зависимости от <a href="/investAPI/orders/#ordertype">типа заявки</a>:</p>
+<table>
+<thead>
+<tr>
+<th>OrderType</th>
+<th>TimeInForceType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ORDER_TYPE_LIMIT</td>
+<td><strong>один из алгоритмов</strong>: </br> TIME_IN_FORCE_DAY </br> TIME_IN_FORCE_FILL_AND_KILL </br> TIME_IN_FORCE_FILL_OR_KILL </br></td>
+</tr>
+<tr>
+<td>ORDER_TYPE_MARKET</td>
+<td>TIME_IN_FORCE_DAY</td>
+</tr>
+<tr>
+<td>ORDER_TYPE_BESTPRICE</td>
+<td>указывать алгоритм исполнения не требуется, все bestprice заявки маршрутизируются в стрим с ключом идемпотентности</td>
+</tr>
+</tbody>
+</table>
+<h5 id="timeinforcetype_1">Что если не передавать подходящий <code>TimeInForceType</code>?</h5>
+<p>В сообщениях стрима <strong>не будет заполнен</strong> <code>order_request_id</code>. Однозначно связать выставленное поручение не получится.</p>
+<h4 id="uid">Ключ идемпотентности в формате UID</h4>
+<p><code>order_request_id</code> в сообщениях стрима передается только формате UID. Если в запросе <a href="/investAPI/orders/#postorderrequest">PostOrderRequest</a> 
+передать значение в любом другом формате, оно <strong>будет подменено</strong> в сообщениях стрима на сгенерированный API UID. Однозначно связать выставленное поручение не получится.</p>
+<h4 id="_3">Резюме</h4>
+<p>В таблице показаны возможные ответы стрима в зависимости от параметов, переданных в <code>PostOrderRequest</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Ключ идемпотентности </br> не передан</th>
+<th>Ключ идемпотентности </br> передан не в UID</th>
+<th>Ключ идемпотентности </br> передан в UID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Тип исполнения не передан</strong>  </br> <strong>или не соответствует типу заявки</strong></td>
+<td>order_request_id </br> отсутствует в сообщениях</td>
+<td>order_request_id </br> отсутствует в сообщениях</td>
+<td>order_request_id </br> отсутствует в сообщениях</td>
+</tr>
+<tr>
+<td><strong>Тип исполнения передан</strong> </br> <strong>и соответствует типу заявки</strong></td>
+<td>в сообщениях order_request_id </br> сгенерированный API</td>
+<td>в сообщениях order_request_id </br> сгенерированный API</td>
+<td><strong>в сообщениях order_request_id </br> из PostOrder</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="replaceorder">ReplaceOrder</h3>
+<p>Методом <a href="/investAPI/orders/#replaceorderrequest">изменения выставленной заявки</a> пока не поддерживается новая маршрутизация. Будет доработано в ближайшее время.</p>
+<h3 id="_4">Сообщения стрима</h3>
+<h4 id="_5">Статусы</h4>
+<p>Первое сообщение по поручению в стриме соответствует получению заявки брокером. На этом этапе еще не определен биржевой номер заявки, в <code>order_id</code> передается внутренний номер.</p>
+<h4 id="_6">Состав сообщений</h4>
+<p>Некоторые параметры ответа, такие, как список сделок и маркер, опциональные и ориентированы на будущее развитие метода.</p>
                 
               
               
@@ -1637,7 +1703,7 @@ INVEST API рекомендует использовать именно этот
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/RussianInvestments/investAPI"
-            issue-term="Описание comments"
+            issue-term="Стрим заявок comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"
@@ -1657,7 +1723,7 @@ INVEST API рекомендует использовать именно этот
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../orders_state_stream/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Стрим заявок" rel="prev">
+        <a href="../table_order_currency/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Таблица параметров, возвращающих валюту или пункты" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1666,20 +1732,20 @@ INVEST API рекомендует использовать именно этот
               <span class="md-footer__direction">
                 Назад
               </span>
-              Стрим заявок
+              Таблица параметров, возвращающих валюту или пункты
             </div>
           </div>
         </a>
       
       
         
-        <a href="../operations/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Методы" rel="next">
+        <a href="../head-operations/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Описание" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Методы
+              Описание
             </div>
           </div>
           <div class="md-footer__button md-icon">
