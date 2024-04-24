@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ordersstatestream" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -980,21 +980,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ordersstatestream" class="md-nav__link">
-    OrdersStateStream
-  </a>
-  
-    <nav class="md-nav" aria-label="OrdersStateStream">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Для чего используется
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Особенности работы
   </a>
@@ -1040,15 +1032,15 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#replaceorder" class="md-nav__link">
     ReplaceOrder
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     Сообщения стрима
   </a>
@@ -1067,11 +1059,6 @@
   <a href="#_6" class="md-nav__link">
     Состав сообщений
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1496,21 +1483,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ordersstatestream" class="md-nav__link">
-    OrdersStateStream
-  </a>
-  
-    <nav class="md-nav" aria-label="OrdersStateStream">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     Для чего используется
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     Особенности работы
   </a>
@@ -1556,15 +1535,15 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#replaceorder" class="md-nav__link">
     ReplaceOrder
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     Сообщения стрима
   </a>
@@ -1583,11 +1562,6 @@
   <a href="#_6" class="md-nav__link">
     Состав сообщений
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1615,13 +1589,12 @@
                 
                   <h1>Стрим заявок</h1>
                 
-                <h2 id="ordersstatestream">OrdersStateStream</h2>
-<p>Стрим соединение TINKOFF INVEST API для получения изменений состояния заявок </p>
-<h3 id="_1">Для чего используется</h3>
+                <p>Стрим соединение Tinkoff Invest API для получения изменений состояния заявок </p>
+<h2 id="_1">Для чего используется</h2>
 <p>Стрим используется для получения событий по заявкам с момента выставления до момента исполнения или отмены. 
 Статусная модель заявок описана на <a href="/investAPI/head-orders/#_2">странице</a>. Переход заявки от одного статуса в другой формирует событие в стриме.
 В статусе <code>PARTYALLY_FILL</code> события формируются по мере исполнения заявки.</p>
-<h3 id="_2">Особенности работы</h3>
+<h2 id="_2">Особенности работы</h2>
 <p>В методе передаются все заявки по счету из подписки, однако не во всех случаях возможно связать заявку в стриме с поручением отправленным методом <code>PostOrder</code>.
 Заявки, транслируемые в стриме можно идентифицировать по <code>order_request_id</code> - <a href="/investAPI/head-orders/#_6">ключу идемпотентности</a>, переданному при <a href="/investAPI/orders/#postorder">выставлении ордера</a>.
 Чтобы поддержать клиентский идентификатор в стриме требуется выполнение ряда условий:</p>
@@ -1633,7 +1606,7 @@
 <p><a href="/investAPI/faq_orders/#order_id-postorder_1">ключ идемпотентности</a> должен быть передан в формате UID;</p>
 </li>
 </ul>
-<h4 id="timeinforcetype">TimeInForceType</h4>
+<h3 id="timeinforcetype">TimeInForceType</h3>
 <p>Для идентификации заявки в стриме по ключу идемпотентности требуется явно указать алгоритм исполнения поручения в <code>PostOrderRequest</code>.
 Ниже приведены подходящие под условия варианты исполнения в зависимости от <a href="/investAPI/orders/#ordertype">типа заявки</a>:</p>
 <table>
@@ -1658,12 +1631,12 @@
 </tr>
 </tbody>
 </table>
-<h5 id="timeinforcetype_1">Что если не передавать подходящий <code>TimeInForceType</code>?</h5>
+<h4 id="timeinforcetype_1">Что если не передавать подходящий <code>TimeInForceType</code>?</h4>
 <p>В сообщениях стрима <strong>не будет заполнен</strong> <code>order_request_id</code>. Однозначно связать выставленное поручение не получится.</p>
-<h4 id="uid">Ключ идемпотентности в формате UID</h4>
+<h3 id="uid">Ключ идемпотентности в формате UID</h3>
 <p><code>order_request_id</code> в сообщениях стрима передается только формате UID. Если в запросе <a href="/investAPI/orders/#postorderrequest">PostOrderRequest</a> 
 передать значение в любом другом формате, оно <strong>будет подменено</strong> в сообщениях стрима на сгенерированный API UID. Однозначно связать выставленное поручение не получится.</p>
-<h4 id="_3">Резюме</h4>
+<h3 id="_3">Резюме</h3>
 <p>В таблице показаны возможные ответы стрима в зависимости от параметов, переданных в <code>PostOrderRequest</code>:</p>
 <table>
 <thead>
@@ -1689,12 +1662,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="replaceorder">ReplaceOrder</h3>
+<h2 id="replaceorder">ReplaceOrder</h2>
 <p>Методом <a href="/investAPI/orders/#replaceorderrequest">изменения выставленной заявки</a> пока не поддерживается новая маршрутизация. Будет доработано в ближайшее время.</p>
-<h3 id="_4">Сообщения стрима</h3>
-<h4 id="_5">Статусы</h4>
+<h2 id="_4">Сообщения стрима</h2>
+<h3 id="_5">Статусы</h3>
 <p>Первое сообщение по поручению в стриме соответствует получению заявки брокером. На этом этапе еще не определен биржевой номер заявки, в <code>order_id</code> передается внутренний номер.</p>
-<h4 id="_6">Состав сообщений</h4>
+<h3 id="_6">Состав сообщений</h3>
 <p>Некоторые параметры ответа, такие, как список сделок и маркер, опциональные и ориентированы на будущее развитие метода.</p>
                 
               
