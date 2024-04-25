@@ -55,7 +55,7 @@ nav:
   - "Stream-соединения" : stream.md
   - "Цены облигаций и фьючерсов" : points.md
 - Ответы на частые вопросы: faq.md
-- Языки программирования:
+- SDK:
   - Python: faq_python.md
   - Java: faq_java.md
   - С#: faq_csharp.md
