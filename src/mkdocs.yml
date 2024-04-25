@@ -56,7 +56,7 @@ nav:
   - "Как ускорить работу с биржей": speedup.md
   - "SLA": sla.md
   - Примеры запросов: example.md
-  - "EOL v1": eol_v1.md
+  - "Прекращение поддержки API v1": eol_v1.md
   - "Stream-соединения" : stream.md
   - "Цены облигаций и фьючерсов" : points.md
 - Ответы на частые вопросы: faq.md
