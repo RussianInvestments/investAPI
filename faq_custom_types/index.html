@@ -612,7 +612,7 @@
   
     <li class="md-nav__item">
       <a href="../algorithmic_trading/" class="md-nav__link">
-        Алгоритмический трейдинг
+        Алгоритмическая торговля
       </a>
     </li>
   
@@ -1592,9 +1592,12 @@
                 <h1 id="tinkoff-invest-api">Нестандартные типы данных Tinkoff Invest API</h1>
 <h2 id="timestamp">Timestamp</h2>
 <p>Timestamp — основной тип данных для передачи времени в формате <a href="https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp">protoсol-buffers</a>. Он состоит из значения в диапазоне интервала дат — от <code>0001-01-01T00:00:00Z</code> до <code>9999-12-31T23:59:59.999999999Z</code>.</p>
-<p>Timestamp всегда работает в формате UTC с нулевым смещением и состоит из двух полей целого типа:
-- <code>Seconds</code> — количество секунд с полуночи (00:00:00) 01.01.1970;
-- <code>Nanos</code> — значение от 0 до 999999999.</p>
+<p>Timestamp всегда работает в формате UTC с нулевым смещением и состоит из двух полей целого типа:</p>
+<ul>
+<li><code>Seconds</code> — количество секунд с полуночи (00:00:00) 01.01.1970;</li>
+<li><code>Nanos</code> — значение от 0 до 999999999.</li>
+</ul>
+
 <h4 id="timestamp_1">Примеры Timestamp</h4>
 <table>
 <thead>
