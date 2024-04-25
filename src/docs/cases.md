@@ -48,11 +48,12 @@
 * `failed to connect to all addresses`;
 * `handshake failed`;
 * `certificate verify failed`;
-	
+    
 Часто эта проблема возникает из-за недействительного сертификата, который используется в приложении.
 
 Выпустите новый сертификат — например, через команду `openssl s_client -connect invest-public-api.tinkoff.ru:443`, и импортируйте его.
-	
+    
+
 ### Загрузить сертификат вручную
 
 Сертификат можно загрузить вручную. Пример шагов для Windows и Google Chrome:
