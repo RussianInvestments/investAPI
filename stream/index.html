@@ -250,6 +250,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        Глоссарий
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../limits/" class="md-nav__link">
         Лимиты
       </a>
@@ -527,10 +539,73 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        Торговля по выходным и на внутриброкерском рынке
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Торговля по выходным и на внутриброкерском рынке" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Торговля по выходным и на внутриброкерском рынке
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../weekend_trading/" class="md-nav__link">
-        Торговля в выходные
+        Описание
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../weekend/" class="md-nav__link">
+        Торговля по выходным
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../held_instruments/" class="md-nav__link">
+        Инструменты иностранных эмитентов
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tinkoff_fund/" class="md-nav__link">
+        Фонды Тинькофф
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -601,7 +676,7 @@
   
     <li class="md-nav__item">
       <a href="../eol_v1/" class="md-nav__link">
-        EOL v1
+        Прекращение поддержки API v1
       </a>
     </li>
   
@@ -665,22 +740,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#websocket-ratelimits" class="md-nav__link">
-    Websocket ratelimits
+  <a href="#websocket" class="md-nav__link">
+    WebSocket
   </a>
-  
-    <nav class="md-nav" aria-label="Websocket ratelimits">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Для сервиса определена отдельная лимитная политика
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -739,13 +801,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       <label class="md-nav__link" for="__nav_5">
-        Языки программирования
+        SDK
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Языки программирования" data-md-level="1">
+      <nav class="md-nav" aria-label="SDK" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Языки программирования
+          SDK
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1461,22 +1523,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#websocket-ratelimits" class="md-nav__link">
-    Websocket ratelimits
+  <a href="#websocket" class="md-nav__link">
+    WebSocket
   </a>
-  
-    <nav class="md-nav" aria-label="Websocket ratelimits">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Для сервиса определена отдельная лимитная политика
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1498,20 +1547,20 @@
                 
                 
                 <h1 id="stream-">Stream-соединения</h1>
-<p>В TINKOFF INVEST API реализовано несколько Stream-соединений:</p>
+<p>В Tinkoff Invest API реализовано несколько Stream-соединений:</p>
 <ul>
 <li>
-<p><a href="/investAPI/head-orders/#stream">Stream исполнения поручений пользователя</a> — для получения всех совершенных сделок</p>
+<p><a href="/investAPI/head-orders/#stream">Stream исполнения поручений пользователя</a> — для получения всех совершённых сделок.</p>
 </li>
 <li>
-<p><a href="/investAPI/head-marketdata/#bidirectional-stream">Bidirectional-stream получения биржевой информации</a> — биржевая информация о стаканах, свечах и другие данные</p>
+<p><a href="/investAPI/head-marketdata/#bidirectional-stream">Bidirectional-stream получения биржевой информации</a> — биржевая информация о стаканах, свечах и другие данные.</p>
 </li>
 <li>
-<p><a href="/investAPI/marketdata/#marketdatastreamservice">Server-side-stream</a> — соединение для трансляции биржевой информации клиентам, которые не поддерживают bidirection стримы</p>
+<p><a href="/investAPI/marketdata/#marketdatastreamservice">Server-side-stream</a> — соединение для трансляции биржевой информации клиентам, которые не поддерживают bidirectional-стримы.</p>
 </li>
 </ul>
 <h2 id="ping">Ping</h2>
-<p>Во всех Stream-соединениях реализована проверка активности стрима. Рекомендуем при использовании сервисов TINKOFF INVEST API добавлять проверки на получение пинга.</p>
+<p>Во всех Stream-соединениях реализована проверка активности стрима. При использовании сервисов Tinkoff Invest API рекомендуем добавлять проверки на получение пинга.</p>
 <h3 id="ping-responce">Значения Ping-responce сообщений для стримов</h3>
 <table>
 <thead>
@@ -1535,9 +1584,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="websocket-ratelimits">Websocket ratelimits</h2>
-<p>Для получения стриминговых ссобщений через websocket реализован отдельный <a href="/investAPI/ws/">сервис</a>. </p>
-<h3 id="_1">Для сервиса определена отдельная лимитная политика</h3>
+<h2 id="websocket">WebSocket</h2>
+<p>Для получения стриминговых сообщений через WebSocket реализован отдельный <a href="/investAPI/ws/">сервис</a> — у него своя лимитная политика.</p>
                 
               
               
@@ -1565,7 +1613,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../eol_v1/" class="md-footer__link md-footer__link--prev" aria-label="Назад: EOL v1" rel="prev">
+        <a href="../eol_v1/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Прекращение поддержки API v1" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1574,7 +1622,7 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              EOL v1
+              Прекращение поддержки API v1
             </div>
           </div>
         </a>
