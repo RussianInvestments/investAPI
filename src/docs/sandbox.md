@@ -121,6 +121,14 @@
 
 - Тело ответа — [WithdrawLimitsResponse](#withdrawlimitsresponse)
 
+
+#### GetSandboxMaxLots
+расчет количества доступных для покупки/продажи лотов в песочнице.
+
+- Тело запроса — [GetMaxLotsRequest](#getmaxlotsrequest)
+
+- Тело ответа — [GetMaxLotsResponse](#getmaxlotsresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 

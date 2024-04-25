@@ -162,6 +162,7 @@
 | take_profit_type |  [TakeProfitType](#takeprofittype) | Подтип стоп-заявки TakeProfit |
 | trailing_data |  [StopOrder.TrailingData](#stopordertrailingdata) | Параметры трейлинг-стопа |
 | status |  [StopOrderStatusOption](#stoporderstatusoption) | Статус заявки |
+| exchange_order_type |  [ExchangeOrderType](#exchangeordertype) | Тип дочерней биржевой заявки для тейкпрофита |
  <!-- end Fields -->
  <!-- end HasFields -->
 

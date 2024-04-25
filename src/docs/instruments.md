@@ -364,6 +364,7 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | instrument_status |  [InstrumentStatus](#instrumentstatus) | Статус запрашиваемых инструментов. Возможные значения: [InstrumentStatus](#instrumentstatus) |
+| instrument_exchange |  [InstrumentExchangeType](#instrumentexchangetype) | Тип площадки торговли. Возможные значения: [InstrumentExchangeType](#instrumentexchangetype) |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -725,6 +726,7 @@ Deprecated Метод получения списка опционов.
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
 | risk_level |  [RiskLevel](#risklevel) | Уровень риска. |
 | brand |  [BrandData](#branddata) | Информация о бренде. |
+| bond_type |  [BondType](#bondtype) | Тип облигации. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -813,6 +815,7 @@ Deprecated Метод получения списка опционов.
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | asset_uid |  [string](#string) | Уникальный идентификатор актива. |
+| instrument_exchange |  [InstrumentExchangeType](#instrumentexchangetype) | Тип площадки торговли. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
@@ -919,6 +922,7 @@ Deprecated Метод получения списка опционов.
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | asset_uid |  [string](#string) | Уникальный идентификатор актива. |
+| instrument_exchange |  [InstrumentExchangeType](#instrumentexchangetype) | Тип площадки торговли. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
 | weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
@@ -2063,6 +2067,28 @@ Deprecated Метод получения списка опционов.
 | RISK_LEVEL_LOW | 1 | Низкий уровень риска |
 | RISK_LEVEL_MODERATE | 2 | Средний уровень риска |
 | RISK_LEVEL_HIGH | 3 | Высокий уровень риска |
+
+
+
+
+#### BondType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| BOND_TYPE_UNSPECIFIED | 0 | Тип облигации не определен. |
+| BOND_TYPE_REPLACED | 1 | Замещающая облигация. |
+
+
+
+
+#### InstrumentExchangeType
+Площадка торговли
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| INSTRUMENT_EXCHANGE_UNSPECIFIED | 0 | Площадка торговли не определена. |
+| INSTRUMENT_EXCHANGE_DEALER | 1 | Бумага, торгуемая у дилера. |
 
 
 

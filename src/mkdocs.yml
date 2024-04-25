@@ -22,40 +22,45 @@ plugins:
 nav:
 - Начало работы: 
   - "Начало работы": index.md
-  - Глоссарий: glossary.md
-  - "Лимитная политика": limits.md
+  - "Глоссарий": glossary.md
+  - "Глоссарий": glossary.md
+  - "Лимиты": limits.md
   - "Токен доступа": token.md
   - "Идентификация торговых инструментов": faq_identification.md
   - "Нестандартные типы данных": faq_custom_types.md
   - "Торговые статусы инструментов и расписание торгов": faq_trading_status.md
   - "Порядок работы с историческими данными": load_history.md
   - "Работа с торговыми поручениями": orders_details.md
-  - "Дедлайны запросов": deadlines.md
-  - "Таблица конкурсных работ": robot_contest.md
+  - "Время исполнения запросов": deadlines.md
+  - "Конкурсные работы": robot_contest.md
   - "Таблица параметров, возвращающих валюту или пункты": table_order_currency.md
-  - "Описание наиболее популярных кейсов": cases.md
+  - "Популярные кейсы и их решение": cases.md
 
 - Протоколы:
   - "Доступные протoколы": api_protocols.md
-  - "GRPC": grpc.md 
+  - "gRPC": grpc.md 
   - "WebSocket": ws\README.md
-  - "Как пользоваться Swagger?": swagger.md
+  - "Использование Swagger": swagger.md
  
 - Полезная информация:
-  - "Алгоритмический трейдинг": algorithmic_trading.md
+  - "Алгоритмическая торговля": algorithmic_trading.md
   - "Индикаторы технического анализа": tech_indicators.md
   - "Торговые площадки и режимы торгов": markets.md
-  - "Торговля в выходные": weekend_trading.md
+  - "Торговля по выходным и на внутриброкерском рынке":
+    - "Описание": weekend_trading.md
+    - "Торговля по выходным": weekend.md
+    - "Инструменты иностранных эмитентов": held_instruments.md
+    - "Фонды Тинькофф": tinkoff_fund.md
   - "Квалифицированный инвестор": accredited_investor.md
   - "Правила обработки корпоративных действий": faq_corp_action.md
   - "Как ускорить работу с биржей": speedup.md
   - "SLA": sla.md
   - Примеры запросов: example.md
-  - "EOL v1": eol_v1.md
+  - "Прекращение поддержки API v1": eol_v1.md
   - "Stream-соединения" : stream.md
   - "Цены облигаций и фьючерсов" : points.md
 - Ответы на частые вопросы: faq.md
-- Языки программирования:
+- SDK:
   - Python: faq_python.md
   - Java: faq_java.md
   - С#: faq_csharp.md
@@ -73,7 +78,8 @@ nav:
   - Описание: head-orders.md
   - Методы: orders.md
   - FAQ: faq_orders.md
-  - Таблица параметров возвращающих валюту или пункты: table_order_currency.md
+  - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md
+  - Стрим заявок: orders_state_stream.md
 - Сервис операций:
   - Описание: head-operations.md
   - Методы: operations.md
