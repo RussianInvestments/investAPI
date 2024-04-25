@@ -4,9 +4,12 @@
 
 Timestamp — основной тип данных для передачи времени в формате [protoсol-buffers](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp). Он состоит из значения в диапазоне интервала дат — от `0001-01-01T00:00:00Z` до `9999-12-31T23:59:59.999999999Z`.
 
-Timestamp всегда работает в формате UTC с нулевым смещением и состоит из двух полей целого типа:
-- `Seconds` — количество секунд с полуночи (00:00:00) 01.01.1970;
-- `Nanos` — значение от 0 до 999999999.
+<p>Timestamp всегда работает в формате UTC с нулевым смещением и состоит из двух полей целого типа:</p>
+<ul>
+<li><code>Seconds</code> — количество секунд с полуночи (00:00:00) 01.01.1970;</li>
+<li><code>Nanos</code> — значение от 0 до 999999999.</li>
+</ul>
+
 
 #### Примеры Timestamp
 
@@ -18,9 +21,9 @@ Timestamp всегда работает в формате UTC с нулевым 
 
     {
         //Пример конвертации из POSIX функции time()
-	Timestamp timestamp;
-    	timestamp.set_seconds(time(NULL));
-    	timestamp.set_nanos(0);
+    Timestamp timestamp;
+        timestamp.set_seconds(time(NULL));
+        timestamp.set_nanos(0);
     }
 
 
