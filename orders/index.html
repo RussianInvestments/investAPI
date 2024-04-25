@@ -966,6 +966,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#orderstatestream" class="md-nav__link">
+    OrderStateStream
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1208,6 +1215,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#orderstatestreamrequest" class="md-nav__link">
+    OrderStateStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponse" class="md-nav__link">
+    OrderStateStreamResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsesubscriptionresponse" class="md-nav__link">
+    OrderStateStreamResponse.SubscriptionResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsesubscriptionresponseerrordetail" class="md-nav__link">
+    OrderStateStreamResponse.SubscriptionResponse.ErrorDetail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponseorderstate" class="md-nav__link">
+    OrderStateStreamResponse.OrderState
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1245,6 +1287,27 @@
           <li class="md-nav__item">
   <a href="#timeinforcetype" class="md-nav__link">
     TimeInForceType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsemarkertype" class="md-nav__link">
+    OrderStateStreamResponse.MarkerType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsestatuscauseinfo" class="md-nav__link">
+    OrderStateStreamResponse.StatusCauseInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsesubscriptionresponsesubscriptionstatus" class="md-nav__link">
+    OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus
   </a>
   
 </li>
@@ -1801,6 +1864,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#orderstatestream" class="md-nav__link">
+    OrderStateStream
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2043,6 +2113,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#orderstatestreamrequest" class="md-nav__link">
+    OrderStateStreamRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponse" class="md-nav__link">
+    OrderStateStreamResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsesubscriptionresponse" class="md-nav__link">
+    OrderStateStreamResponse.SubscriptionResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsesubscriptionresponseerrordetail" class="md-nav__link">
+    OrderStateStreamResponse.SubscriptionResponse.ErrorDetail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponseorderstate" class="md-nav__link">
+    OrderStateStreamResponse.OrderState
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2080,6 +2185,27 @@
           <li class="md-nav__item">
   <a href="#timeinforcetype" class="md-nav__link">
     TimeInForceType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsemarkertype" class="md-nav__link">
+    OrderStateStreamResponse.MarkerType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsestatuscauseinfo" class="md-nav__link">
+    OrderStateStreamResponse.StatusCauseInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orderstatestreamresponsesubscriptionresponsesubscriptionstatus" class="md-nav__link">
+    OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus
   </a>
   
 </li>
@@ -2191,6 +2317,15 @@
 </li>
 <li>
 <p>Тело ответа — <a href="#tradesstreamresponse">TradesStreamResponse</a></p>
+</li>
+</ul>
+<h4 id="orderstatestream">OrderStateStream</h4>
+<ul>
+<li>
+<p>Тело запроса — <a href="#orderstatestreamrequest">OrderStateStreamRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#orderstatestreamresponse">OrderStateStreamResponse</a></p>
 </li>
 </ul>
 <!-- range .Methods -->
@@ -3103,6 +3238,7 @@
 <!-- end HasFields -->
 
 <h4 id="getorderpricerequest">GetOrderPriceRequest</h4>
+<p>Запрос получения предварительной стоимости заявки</p>
 <table>
 <thead>
 <tr>
@@ -3147,6 +3283,7 @@
 <!-- end HasFields -->
 
 <h4 id="getorderpriceresponse">GetOrderPriceResponse</h4>
+<p>Предварительная стоимость заявки</p>
 <table>
 <thead>
 <tr>
@@ -3253,6 +3390,299 @@
 <td>initial_margin</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
 <td>Гарантийное обеспечение для фьючерса</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderstatestreamrequest">OrderStateStreamRequest</h4>
+<p>Запрос установки стрим-соединения торговых поручений</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accounts</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Идентификаторы счетов.</td>
+</tr>
+<tr>
+<td>ping_delay_millis</td>
+<td><a href="#int32">int32</a></td>
+<td>Задержка пинг сообщений milliseconds 1000-120000, default 120000</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderstatestreamresponse">OrderStateStreamResponse</h4>
+<p>Информация по заявкам</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_state</td>
+<td><a href="#orderstatestreamresponseorderstate">OrderStateStreamResponse.OrderState</a></td>
+<td>Информация об исполнении торгового поручения.</td>
+</tr>
+<tr>
+<td>ping</td>
+<td><a href="#ping">Ping</a></td>
+<td>Проверка активности стрима.</td>
+</tr>
+<tr>
+<td>subscription</td>
+<td><a href="#orderstatestreamresponsesubscriptionresponse">OrderStateStreamResponse.SubscriptionResponse</a></td>
+<td>Ответ на запрос на подписку.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderstatestreamresponsesubscriptionresponse">OrderStateStreamResponse.SubscriptionResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tracking_id</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#orderstatestreamresponsesubscriptionresponsesubscriptionstatus">OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus</a></td>
+<td>Статус подписки.</td>
+</tr>
+<tr>
+<td>stream_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор открытого соединения</td>
+</tr>
+<tr>
+<td>accounts</td>
+<td>Массив объектов <a href="#string">string</a></td>
+<td>Идентификаторы счетов.</td>
+</tr>
+<tr>
+<td>error</td>
+<td><a href="#orderstatestreamresponsesubscriptionresponseerrordetail">OrderStateStreamResponse.SubscriptionResponse.ErrorDetail</a></td>
+<td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderstatestreamresponsesubscriptionresponseerrordetail">OrderStateStreamResponse.SubscriptionResponse.ErrorDetail</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td><a href="#string">string</a></td>
+<td>Код ошибки.</td>
+</tr>
+<tr>
+<td>message</td>
+<td><a href="#string">string</a></td>
+<td>Описание ошибки.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderstatestreamresponseorderstate">OrderStateStreamResponse.OrderState</h4>
+<p>Заявка</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_id</td>
+<td><a href="#string">string</a></td>
+<td>Биржевой идентификатор заявки</td>
+</tr>
+<tr>
+<td>order_request_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.</td>
+</tr>
+<tr>
+<td>client_code</td>
+<td><a href="#string">string</a></td>
+<td>Код клиента на бирже</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Дата создания заявки</td>
+</tr>
+<tr>
+<td>execution_report_status</td>
+<td><a href="#orderexecutionreportstatus">OrderExecutionReportStatus</a></td>
+<td>Статус заявки</td>
+</tr>
+<tr>
+<td>status_info</td>
+<td><a href="#orderstatestreamresponsestatuscauseinfo">OrderStateStreamResponse.StatusCauseInfo</a></td>
+<td>Дополнительная информация по статусу</td>
+</tr>
+<tr>
+<td>ticker</td>
+<td><a href="#string">string</a></td>
+<td>Тикер инструмента</td>
+</tr>
+<tr>
+<td>class_code</td>
+<td><a href="#string">string</a></td>
+<td>Класс-код (секция торгов)</td>
+</tr>
+<tr>
+<td>lot_size</td>
+<td><a href="#int32">int32</a></td>
+<td>Лотность инструмента заявки</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#orderdirection">OrderDirection</a></td>
+<td>Направление заявки</td>
+</tr>
+<tr>
+<td>time_in_force</td>
+<td><a href="#timeinforcetype">TimeInForceType</a></td>
+<td>Алгоритм исполнения поручения</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td><a href="#ordertype">OrderType</a></td>
+<td>Тип заявки</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер счета</td>
+</tr>
+<tr>
+<td>initial_order_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Начальная цена заявки</td>
+</tr>
+<tr>
+<td>order_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Цена выставления заявки</td>
+</tr>
+<tr>
+<td>amount</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Предрассчитанная стоимость полной заявки</td>
+</tr>
+<tr>
+<td>executed_order_price</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Исполненная средняя цена одного инструмента в заявке</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#string">string</a></td>
+<td>Валюта исполнения</td>
+</tr>
+<tr>
+<td>lots_requested</td>
+<td><a href="#int64">int64</a></td>
+<td>Запрошено лотов</td>
+</tr>
+<tr>
+<td>lots_executed</td>
+<td><a href="#int64">int64</a></td>
+<td>Исполнено лотов</td>
+</tr>
+<tr>
+<td>lots_left</td>
+<td><a href="#int64">int64</a></td>
+<td>Число неисполненных лотов по заявке</td>
+</tr>
+<tr>
+<td>lots_cancelled</td>
+<td><a href="#int64">int64</a></td>
+<td>Отмененные лоты</td>
+</tr>
+<tr>
+<td>marker</td>
+<td><a href="#orderstatestreamresponsemarkertype">OrderStateStreamResponse.MarkerType</a></td>
+<td>Спецсимвол</td>
+</tr>
+<tr>
+<td>trades</td>
+<td>Массив объектов <a href="#ordertrade">OrderTrade</a></td>
+<td>Список сделок</td>
+</tr>
+<tr>
+<td>completion_time</td>
+<td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
+<td>Время исполнения заявки</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td><a href="#string">string</a></td>
+<td>Код биржи</td>
+</tr>
+<tr>
+<td>instrument_uid</td>
+<td><a href="#string">string</a></td>
+<td>UID идентификатор инструмента</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3370,6 +3800,7 @@
 </tbody>
 </table>
 <h4 id="timeinforcetype">TimeInForceType</h4>
+<p>Алгоритм исполнения заявки</p>
 <table>
 <thead>
 <tr>
@@ -3398,6 +3829,144 @@
 <td>TIME_IN_FORCE_FILL_OR_KILL</td>
 <td>3</td>
 <td>Если в момент выставления возможно полное исполнение заявки, заявка будет исполнена или отменена сразу после выставления, недоступно для срочного рынка и торговли по выходным</td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderstatestreamresponsemarkertype">OrderStateStreamResponse.MarkerType</h4>
+<p>Маркер</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MARKER_UNKNOWN</td>
+<td>0</td>
+<td>не определено</td>
+</tr>
+<tr>
+<td>MARKER_BROKER</td>
+<td>1</td>
+<td>сделки брокера</td>
+</tr>
+<tr>
+<td>MARKER_CHAT</td>
+<td>2</td>
+<td>исполнение поручение, полученного от клиента через каналы связи</td>
+</tr>
+<tr>
+<td>MARKER_PAPER</td>
+<td>3</td>
+<td>исполнение поручение, полученного от клиента в бумажной форме</td>
+</tr>
+<tr>
+<td>MARKER_MARGIN</td>
+<td>4</td>
+<td>принудительное закрытие позиций</td>
+</tr>
+<tr>
+<td>MARKER_TKBNM</td>
+<td>5</td>
+<td>сделки по управлению ликвидностью</td>
+</tr>
+<tr>
+<td>MARKER_SHORT</td>
+<td>6</td>
+<td>сделки РЕПО по привлечению у клиентов бумаг</td>
+</tr>
+<tr>
+<td>MARKER_SPECMM</td>
+<td>7</td>
+<td>перенос временно непокрытых позиций</td>
+</tr>
+<tr>
+<td>MARKER_PO</td>
+<td>8</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderstatestreamresponsestatuscauseinfo">OrderStateStreamResponse.StatusCauseInfo</h4>
+<p>Дополнительная информация по статусу заявки</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAUSE_UNSPECIFIED</td>
+<td>0</td>
+<td>Не определено</td>
+</tr>
+<tr>
+<td>CAUSE_CANCELLED_BY_CLIENT</td>
+<td>15</td>
+<td>Отменено клиентом</td>
+</tr>
+<tr>
+<td>CAUSE_CANCELLED_BY_EXCHANGE</td>
+<td>1</td>
+<td>Отменено биржей</td>
+</tr>
+<tr>
+<td>CAUSE_CANCELLED_NOT_ENOUGH_POSITION</td>
+<td>2</td>
+<td>Заявка не выставлена из-за нехватки средств</td>
+</tr>
+<tr>
+<td>CAUSE_CANCELLED_BY_CLIENT_BLOCK</td>
+<td>3</td>
+<td>Отменено из-за блокировки клиента</td>
+</tr>
+<tr>
+<td>CAUSE_REJECTED_BY_BROKER</td>
+<td>4</td>
+<td>Отклонено брокером</td>
+</tr>
+<tr>
+<td>CAUSE_REJECTED_BY_EXCHANGE</td>
+<td>5</td>
+<td>Отклонено биржей</td>
+</tr>
+<tr>
+<td>CAUSE_CANCELLED_BY_BROKER</td>
+<td>6</td>
+<td>Отменено брокером</td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderstatestreamresponsesubscriptionresponsesubscriptionstatus">OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUBSCRIPTION_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Статус подписки не определен.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_OK</td>
+<td>1</td>
+<td>Подписка успешно установлена.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_ERROR</td>
+<td>13</td>
+<td>Ошибка подписки</td>
 </tr>
 </tbody>
 </table>

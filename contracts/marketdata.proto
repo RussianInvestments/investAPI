@@ -186,10 +186,19 @@ message OrderBookSubscription {
   OrderBookType order_book_type = 7; //Тип стакана
 }
 
+//Источники сделок
+enum TradeSourceType {
+  TRADE_SOURCE_UNSPECIFIED = 0; //Тип сделки не определён.
+  TRADE_SOURCE_EXCHANGE = 1; // биржевые сделки
+  TRADE_SOURCE_DEALER = 2; // сделки дилера
+  TRADE_SOURCE_ALL = 3;  // все сделки
+}
+
 //Изменение статуса подписки на поток обезличенных сделок.
 message SubscribeTradesRequest {
   SubscriptionAction subscription_action = 1; //Изменение статуса подписки.
   repeated TradeInstrument instruments = 2; //Массив инструментов для подписки на поток обезличенных сделок.
+  TradeSourceType trade_type = 3; //Источник сделок
 }
 
 //Запрос подписки на поток обезличенных сделок.
@@ -202,6 +211,7 @@ message TradeInstrument {
 message SubscribeTradesResponse {
   string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
   repeated TradeSubscription trade_subscriptions = 2; //Массив статусов подписки на поток сделок.
+  TradeSourceType trade_type = 3; //Источник сделок
 }
 
 //Статус подписки.
@@ -309,6 +319,7 @@ message Trade {
   int64 quantity = 4; //Количество лотов.
   google.protobuf.Timestamp time = 5; //Время сделки в часовом поясе UTC по времени биржи.
   string instrument_uid = 6; //Uid инструмента
+  TradeSourceType tradeSource = 7; //Источник сделки
 }
 
 //Направление сделки.

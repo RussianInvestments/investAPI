@@ -1867,6 +1867,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#bondtype" class="md-nav__link">
+    BondType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentexchangetype" class="md-nav__link">
+    InstrumentExchangeType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getbondeventsrequesteventtype" class="md-nav__link">
     GetBondEventsRequest.EventType
   </a>
@@ -3476,6 +3490,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#bondtype" class="md-nav__link">
+    BondType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrumentexchangetype" class="md-nav__link">
+    InstrumentExchangeType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getbondeventsrequesteventtype" class="md-nav__link">
     GetBondEventsRequest.EventType
   </a>
@@ -4152,6 +4180,11 @@
 <td>instrument_status</td>
 <td><a href="#instrumentstatus">InstrumentStatus</a></td>
 <td>Статус запрашиваемых инструментов. Возможные значения: <a href="#instrumentstatus">InstrumentStatus</a></td>
+</tr>
+<tr>
+<td>instrument_exchange</td>
+<td><a href="#instrumentexchangetype">InstrumentExchangeType</a></td>
+<td>Тип площадки торговли. Возможные значения: <a href="#instrumentexchangetype">InstrumentExchangeType</a></td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -5328,6 +5361,11 @@
 <td>Информация о бренде.</td>
 </tr>
 <tr>
+<td>bond_type</td>
+<td><a href="#bondtype">BondType</a></td>
+<td>Тип облигации.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -5706,6 +5744,11 @@
 <td>asset_uid</td>
 <td><a href="#string">string</a></td>
 <td>Уникальный идентификатор актива.</td>
+</tr>
+<tr>
+<td>instrument_exchange</td>
+<td><a href="#instrumentexchangetype">InstrumentExchangeType</a></td>
+<td>Тип площадки торговли.</td>
 </tr>
 <tr>
 <td>for_iis_flag</td>
@@ -6176,6 +6219,11 @@
 <td>asset_uid</td>
 <td><a href="#string">string</a></td>
 <td>Уникальный идентификатор актива.</td>
+</tr>
+<tr>
+<td>instrument_exchange</td>
+<td><a href="#instrumentexchangetype">InstrumentExchangeType</a></td>
+<td>Тип площадки торговли.</td>
 </tr>
 <tr>
 <td>for_iis_flag</td>
@@ -9680,6 +9728,51 @@
 <td>RISK_LEVEL_HIGH</td>
 <td>3</td>
 <td>Высокий уровень риска</td>
+</tr>
+</tbody>
+</table>
+<h4 id="bondtype">BondType</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BOND_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Тип облигации не определен.</td>
+</tr>
+<tr>
+<td>BOND_TYPE_REPLACED</td>
+<td>1</td>
+<td>Замещающая облигация.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="instrumentexchangetype">InstrumentExchangeType</h4>
+<p>Площадка торговли</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INSTRUMENT_EXCHANGE_UNSPECIFIED</td>
+<td>0</td>
+<td>Площадка торговли не определена.</td>
+</tr>
+<tr>
+<td>INSTRUMENT_EXCHANGE_DEALER</td>
+<td>1</td>
+<td>Бумага, торгуемая у дилера.</td>
 </tr>
 </tbody>
 </table>

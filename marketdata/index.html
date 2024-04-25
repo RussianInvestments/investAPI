@@ -1635,6 +1635,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tradesourcetype" class="md-nav__link">
+    TradeSourceType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tradedirection" class="md-nav__link">
     TradeDirection
   </a>
@@ -2541,6 +2548,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tradesourcetype" class="md-nav__link">
+    TradeSourceType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tradedirection" class="md-nav__link">
     TradeDirection
   </a>
@@ -3271,6 +3285,11 @@
 <td>Массив инструментов для подписки на поток обезличенных сделок.</td>
 </tr>
 <tr>
+<td>trade_type</td>
+<td><a href="#tradesourcetype">TradeSourceType</a></td>
+<td>Источник сделок</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3329,6 +3348,11 @@
 <td>trade_subscriptions</td>
 <td>Массив объектов <a href="#tradesubscription">TradeSubscription</a></td>
 <td>Массив статусов подписки на поток сделок.</td>
+</tr>
+<tr>
+<td>trade_type</td>
+<td><a href="#tradesourcetype">TradeSourceType</a></td>
+<td>Источник сделок</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3864,6 +3888,11 @@
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
 <td>Uid инструмента</td>
+</tr>
+<tr>
+<td>tradeSource</td>
+<td><a href="#tradesourcetype">TradeSourceType</a></td>
+<td>Источник сделки</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4966,6 +4995,39 @@
 <td>SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND</td>
 <td>9</td>
 <td>Активная подписка не найдена. Ошибка может возникнуть только при отписке от не существующей отписки</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tradesourcetype">TradeSourceType</h4>
+<p>Источники сделок</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRADE_SOURCE_UNSPECIFIED</td>
+<td>0</td>
+<td>Тип сделки не определён.</td>
+</tr>
+<tr>
+<td>TRADE_SOURCE_EXCHANGE</td>
+<td>1</td>
+<td>биржевые сделки</td>
+</tr>
+<tr>
+<td>TRADE_SOURCE_DEALER</td>
+<td>2</td>
+<td>сделки дилера</td>
+</tr>
+<tr>
+<td>TRADE_SOURCE_ALL</td>
+<td>3</td>
+<td>все сделки</td>
 </tr>
 </tbody>
 </table>
