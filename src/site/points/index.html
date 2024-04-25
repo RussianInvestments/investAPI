@@ -894,7 +894,7 @@
         
   
   <span class="md-ellipsis">
-    EOL v1
+    Прекращение поддержки API v1
   </span>
   
 
@@ -1009,7 +1009,7 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      В каких параметрах методов используются пункты цены?
+      Параметры методов, в которых используются пункты цены
     </span>
   </a>
   
@@ -2203,7 +2203,7 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      В каких параметрах методов используются пункты цены?
+      Параметры методов, в которых используются пункты цены
     </span>
   </a>
   
@@ -2230,15 +2230,11 @@
   <h1>Цены облигаций и фьючерсов</h1>
 
 <h2 id="_1">Цены облигаций и фьючерсов</h2>
-<p>Цены облигаций и фьючерсов в TINKOFF INVEST API предоставляются в пунктах. Методика расчёта стоимости
-лота в валюте отличается в зависимости от типа биржевого инструмента.</p>
+<p>Цены облигаций и фьючерсов в Tinkoff Invest API предоставляются в пунктах. Методики расчёта стоимости
+лота в валюте различаются в зависимости от типа биржевого инструмента.</p>
 <h3 id="_2">Перевод цены облигации в валюту</h3>
 <p>Пункты цены для котировок облигаций представляют собой проценты номинала облигации. Для пересчёта пунктов
-в валюту можно воспользоваться формулой:</p>
-<blockquote>
-<p><strong>price</strong> / 100 * <strong>nominal</strong></p>
-</blockquote>
-<p>Где</p>
+в валюту можно воспользоваться формулой: <code>price / 100 * nominal</code>.</p>
 <ul>
 <li>
 <p><strong>price</strong> — текущая котировка ценной бумаги;</p>
@@ -2247,14 +2243,14 @@
 <p><strong>nominal</strong> — номинал облигации.</p>
 </li>
 </ul>
-<p><strong>Важно!!!</strong> Если валюта номинала отличается от валюты расчетов, при переводе используется курс валюты номинала к валюте расчетов, установлоенный ЦБ.</p>
+<blockquote>
+<p><strong>Важно</strong><br>
+Если валюта номинала отличается от валюты расчётов, при переводе используется курс валюты номинала к валюте расчётов, установленный ЦБ.</p>
+</blockquote>
 <p><a name="futures"></a></p>
 <h3 id="_3">Перевод цены фьючерса в валюту</h3>
-<p>Стоимость фьючерсов так же предоставляется в пунктах, для пересчёта можно воспользоваться формулой:</p>
-<blockquote>
-<p><strong>price</strong> / <strong>min_price_increment</strong> * <strong>min_price_increment_amount</strong></p>
-</blockquote>
-<p>Где</p>
+<p>Стоимость фьючерсов также предоставляется в пунктах. Для пересчёта можно воспользоваться формулой:
+<code>price / min_price_increment * min_price_increment_amount</code>.</p>
 <ul>
 <li>
 <p><strong>price</strong> — текущая котировка ценной бумаги;</p>
@@ -2266,41 +2262,44 @@
 <p><strong>min_price_increment_amount</strong> — стоимость шага цены.</p>
 </li>
 </ul>
-<p><strong>Важно!!!</strong> Во многих методах TINKOFF INVEST API ответ по операциям с фьючерсами может возвращаться в валюте цены.
+<blockquote>
+<p><strong>Важно</strong><br>
+Во многих методах Tinkoff Invest API ответ по операциям с фьючерсами может возвращаться в валюте цены.
 Значения в валюте пересчитываются исходя из текущей стоимости шага цены, которая меняется.
-Таким образом стоимость в пунктах остается неизменной, а переоценка в валюте расчетов зависит от установленных биржей параметров на текущий момент.</p>
-<p>Так же при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
-можно при помощи метода: <a href="/investAPI/instruments#getfuturesmargin">getFuturesMargin</a>. Подробнее про срочный
-рынок читайте <a href="https://help.tinkoff.ru/forts/">тут</a></p>
-<h2 id="_4">В каких параметрах методов используются пункты цены?</h2>
+Таким образом стоимость в пунктах остаётся неизменной, а переоценка в валюте расчётов зависит от установленных биржей параметров на текущий момент.<br><br>
+Также при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
+можно через метод <a href="/investAPI/instruments#getfuturesmargin">getFuturesMargin</a>. </p>
+</blockquote>
+<p><a href="https://help.tinkoff.ru/forts/">Подробнее про срочный рынок</a></p>
+<h2 id="_4">Параметры методов, в которых используются пункты цены</h2>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Сервис</th>
 <th style="text-align: left;">Метод</th>
 <th style="text-align: left;">Параметры</th>
-<th style="text-align: left;">share/etf/currency</th>
-<th style="text-align: left;">bond/futures</th>
+<th style="text-align: left;">Share/ETF/Currency</th>
+<th style="text-align: left;">Bond/Futures</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">Instruments</td>
-<td style="text-align: left;">Все методы сервиса</td>
+<td style="text-align: left;">Все методы</td>
 <td style="text-align: left;">Все параметры</td>
 <td style="text-align: left;">В валюте расчётов</td>
 <td style="text-align: left;">В валюте расчётов</td>
 </tr>
 <tr>
 <td style="text-align: left;">MarketData</td>
-<td style="text-align: left;">Все методы сервиса</td>
+<td style="text-align: left;">Все методы</td>
 <td style="text-align: left;">Все параметры</td>
 <td style="text-align: left;">В валюте расчётов</td>
 <td style="text-align: left;">В пунктах цены</td>
 </tr>
 <tr>
 <td style="text-align: left;">Operations</td>
-<td style="text-align: left;">Все методы сервиса</td>
+<td style="text-align: left;">Все методы</td>
 <td style="text-align: left;">Все параметры</td>
 <td style="text-align: left;">В валюте расчётов</td>
 <td style="text-align: left;">В валюте расчётов</td>
@@ -2321,7 +2320,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Operations</td>
-<td style="text-align: left;">Все методы сервиса</td>
+<td style="text-align: left;">Все методы</td>
 <td style="text-align: left;">Все параметры</td>
 <td style="text-align: left;">В валюте расчётов</td>
 <td style="text-align: left;">В валюте расчётов</td>

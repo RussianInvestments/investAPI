@@ -917,7 +917,7 @@
         <li class="md-nav__item">
   <a href="#postorder" class="md-nav__link">
     <span class="md-ellipsis">
-      PostOrder – Метод выставления заявок
+      PostOrder – выставить заявку
     </span>
   </a>
   
@@ -926,7 +926,7 @@
         <li class="md-nav__item">
   <a href="#replaceorder" class="md-nav__link">
     <span class="md-ellipsis">
-      ReplaceOrder – Метод изменения выставленной заявки
+      ReplaceOrder – изменить выставленную заявку
     </span>
   </a>
   
@@ -935,7 +935,7 @@
         <li class="md-nav__item">
   <a href="#poststoporder-" class="md-nav__link">
     <span class="md-ellipsis">
-      PostStopOrder – Метод выставления стоп-заявок
+      PostStopOrder – выставить стоп-заявку
     </span>
   </a>
   
@@ -944,7 +944,7 @@
         <li class="md-nav__item">
   <a href="#getoperationsbycursor" class="md-nav__link">
     <span class="md-ellipsis">
-      GetOperationsByCursor – Метод получения операций по счету с курсором
+      GetOperationsByCursor – получить операции по счёту с курсором
     </span>
   </a>
   
@@ -953,7 +953,7 @@
         <li class="md-nav__item">
   <a href="#getoperations" class="md-nav__link">
     <span class="md-ellipsis">
-      GetOperations – Метод получения операций по счету
+      GetOperations – получить операции по счёту
     </span>
   </a>
   
@@ -962,7 +962,7 @@
         <li class="md-nav__item">
   <a href="#getcandles" class="md-nav__link">
     <span class="md-ellipsis">
-      GetCandles – Метод получения свечей
+      GetCandles – получить свечи
     </span>
   </a>
   
@@ -988,7 +988,7 @@
         
   
   <span class="md-ellipsis">
-    EOL v1
+    Прекращение поддержки API v1
   </span>
   
 
@@ -2188,7 +2188,7 @@
         <li class="md-nav__item">
   <a href="#postorder" class="md-nav__link">
     <span class="md-ellipsis">
-      PostOrder – Метод выставления заявок
+      PostOrder – выставить заявку
     </span>
   </a>
   
@@ -2197,7 +2197,7 @@
         <li class="md-nav__item">
   <a href="#replaceorder" class="md-nav__link">
     <span class="md-ellipsis">
-      ReplaceOrder – Метод изменения выставленной заявки
+      ReplaceOrder – изменить выставленную заявку
     </span>
   </a>
   
@@ -2206,7 +2206,7 @@
         <li class="md-nav__item">
   <a href="#poststoporder-" class="md-nav__link">
     <span class="md-ellipsis">
-      PostStopOrder – Метод выставления стоп-заявок
+      PostStopOrder – выставить стоп-заявку
     </span>
   </a>
   
@@ -2215,7 +2215,7 @@
         <li class="md-nav__item">
   <a href="#getoperationsbycursor" class="md-nav__link">
     <span class="md-ellipsis">
-      GetOperationsByCursor – Метод получения операций по счету с курсором
+      GetOperationsByCursor – получить операции по счёту с курсором
     </span>
   </a>
   
@@ -2224,7 +2224,7 @@
         <li class="md-nav__item">
   <a href="#getoperations" class="md-nav__link">
     <span class="md-ellipsis">
-      GetOperations – Метод получения операций по счету
+      GetOperations – получить операции по счёту
     </span>
   </a>
   
@@ -2233,7 +2233,7 @@
         <li class="md-nav__item">
   <a href="#getcandles" class="md-nav__link">
     <span class="md-ellipsis">
-      GetCandles – Метод получения свечей
+      GetCandles – получить свечи
     </span>
   </a>
   
@@ -2258,85 +2258,85 @@
 
 
 <h1 id="_1">Примеры запросов</h1>
-<p>На данной странице представлены примеры запросов по некоторым методам в формате JSON.</p>
-<h2 id="postorder"><a href="/investAPI/orders/#postorder">PostOrder</a> – Метод выставления заявок</h2>
+<p>На странице привели примеры запросов по некоторым методам в формате JSON.</p>
+<h2 id="postorder"><a href="/investAPI/orders/#postorder">PostOrder</a> – выставить заявку</h2>
 <p>Задача: выставить лимитную заявку на покупку инструмента.</p>
 <pre><code>{
-&quot;figi&quot;: &quot;BBG000000001&quot;, \\ FIGI инструмента по которому выставляется заявка. В данном случае используем Тинькофф Вечный портфель RUB.
-&quot;quantity&quot;: &quot;1&quot;, \\ количество лотов инструмента
-&quot;price&quot;: { \\ цена, по которой будет выставлена заявка
+&quot;figi&quot;: &quot;BBG000000001&quot;, \\ FIGI инструмента, по которому выставляется заявка. В данном случае используем Тинькофф Вечный портфель RUB
+&quot;quantity&quot;: &quot;1&quot;, \\ Количество лотов инструмента
+&quot;price&quot;: { \\ Цена, по которой будет выставлена заявка
 &quot;nano&quot;: 600000000,
 &quot;units&quot;: &quot;5&quot;
 },
-&quot;direction&quot;: &quot;ORDER_DIRECTION_BUY&quot;, \\ Направление заявки, в данном случае покупка
-&quot;accountId&quot;: &quot;XXXXXXXXXX&quot;, \\ Номер счета с которого будет выставлена заявка
-&quot;orderType&quot;: &quot;ORDER_TYPE_LIMIT&quot;, \\ Тип заявки, в данном случае лимитная.
-&quot;orderId&quot;: &quot;string&quot; \\ ключ идемпотентности.
+&quot;direction&quot;: &quot;ORDER_DIRECTION_BUY&quot;, \\ Направление заявки, в данном случае — покупка
+&quot;accountId&quot;: &quot;XXXXXXXXXX&quot;, \\ Номер счёта, с которого будет выставлена заявка
+&quot;orderType&quot;: &quot;ORDER_TYPE_LIMIT&quot;, \\ Тип заявки, в данном случае — лимитная
+&quot;orderId&quot;: &quot;string&quot; \\ Ключ идемпотентности
 }
 </code></pre>
-<h2 id="replaceorder"><a href="/investAPI/orders/#replaceorder">ReplaceOrder</a> – Метод изменения выставленной заявки</h2>
+<h2 id="replaceorder"><a href="/investAPI/orders/#replaceorder">ReplaceOrder</a> – изменить выставленную заявку</h2>
 <p>Задача: изменить выставленную ранее заявку.</p>
 <pre><code>{
-&quot;accountId&quot;: &quot;XXXXXXXXXX&quot;, \\ номер счета с которого выставлена заявка
-&quot;orderId&quot;: &quot;XXXXXXXXX&quot;, \\ номер выставленной заявки
-&quot;idempotencyKey&quot;: &quot;string&quot;, \\ ключ идемпотентности
-&quot;quantity&quot;: &quot;4&quot;, \\ новое количество лотов
-&quot;price&quot;: { \\ новая цена заявки
+&quot;accountId&quot;: &quot;XXXXXXXXXX&quot;, \\ Номер счёта, с которого выставлена заявка
+&quot;orderId&quot;: &quot;XXXXXXXXX&quot;, \\ Номер выставленной заявки
+&quot;idempotencyKey&quot;: &quot;string&quot;, \\ Ключ идемпотентности
+&quot;quantity&quot;: &quot;4&quot;, \\ Новое количество лотов
+&quot;price&quot;: { \\ Новая цена заявки
 &quot;nano&quot;: 700000000,
 &quot;units&quot;: &quot;5&quot;
 }
 }
 </code></pre>
-<h2 id="poststoporder-"><a href="/investAPI/stoporders/#poststoporder">PostStopOrder</a> – Метод выставления стоп-заявок</h2>
+<h2 id="poststoporder-"><a href="/investAPI/stoporders/#poststoporder">PostStopOrder</a> – выставить стоп-заявку</h2>
 <p>Задача: выставить лимитную заявку на покупку инструмента.</p>
 <pre><code>{
-&quot;figi&quot;: &quot;BBG000000001&quot;, \\ FIGI инструмента по которому выставляется заявка. В данном случае используем Тинькофф Вечный портфель RUB
-&quot;quantity&quot;: &quot;2&quot;, \\ количество лотов инструмента
-&quot;price&quot;: { \\ цена, по которой будет выставлена заявка
+&quot;figi&quot;: &quot;BBG000000001&quot;, \\ FIGI инструмента, по которому выставляется заявка. В данном случае используем Тинькофф Вечный портфель RUB
+&quot;quantity&quot;: &quot;2&quot;, \\ Количество лотов инструмента
+&quot;price&quot;: { \\ Цена, по которой будет выставлена заявка
 &quot;nano&quot;: 600000000,
 &quot;units&quot;: &quot;5&quot;
 },
-&quot;stopPrice&quot;: { \\ стоп-цена, она же цена активации заявки. Т.е. когда цена инструмента на бирже достигнет установленной стоп-цены, будет выставлена заявка с указанными параметрами
+&quot;stopPrice&quot;: { \\ Стоп-цена, она же цена активации заявки — это значит, когда цена инструмента на бирже достигнет установленной стоп-цены, заявка будет выставлена с указанными параметрами
 &quot;nano&quot;: 700000000,
 &quot;units&quot;: &quot;5&quot;
 },
-&quot;direction&quot;: &quot;STOP_ORDER_DIRECTION_BUY&quot;, \\ Направление сделки, в данном случае покупка.
-&quot;accountId&quot;: &quot;XXXXXXXXXX&quot;, \\ номер счета с которого будет выставлена заявка
-&quot;expirationType&quot;: &quot;STOP_ORDER_EXPIRATION_TYPE_GOOD_TILL_CANCEL&quot;, \\ срок действия заявки. В данном случае пока не будет отменена
-&quot;stopOrderType&quot;: &quot;STOP_ORDER_TYPE_STOP_LIMIT&quot; \\ Тип стоп заявки. В данном случае стоп-лимит.
+&quot;direction&quot;: &quot;STOP_ORDER_DIRECTION_BUY&quot;, \\ Направление сделки, в данном случае — покупка
+&quot;accountId&quot;: &quot;XXXXXXXXXX&quot;, \\ Номер счёта, с которого будет выставлена заявка
+&quot;expirationType&quot;: &quot;STOP_ORDER_EXPIRATION_TYPE_GOOD_TILL_CANCEL&quot;, \\ Срок действия заявки. В данном случае — пока не будет отменена
+&quot;stopOrderType&quot;: &quot;STOP_ORDER_TYPE_STOP_LIMIT&quot; \\ Тип стоп-заявки. В данном случае — стоп-лимит
 }
 </code></pre>
-<h2 id="getoperationsbycursor"><a href="/investAPI/operations/#getoperationsbycursor">GetOperationsByCursor</a> – Метод получения операций по счету с курсором</h2>
-<p>Задача: получить список операций по счету, за год с постраничным выводом.</p>
+<h2 id="getoperationsbycursor"><a href="/investAPI/operations/#getoperationsbycursor">GetOperationsByCursor</a> – получить операции по счёту с курсором</h2>
+<p>Задача: получить список операций по счёту за год с постраничным выводом.</p>
 <pre><code>{
-&quot;accountId&quot;: &quot;XXXXXXXXX&quot;,  \\ номер счета, единственный обязательный параметр в этом методе. Можно указать только его и получить первые 100 операции по счету
-&quot;instrumentId&quot;: &quot;BBG000000001&quot;, \\ параметр в котором вы можете указать figi или instrument_uid инструмента, по которому хотите получить операции. В данном случае используем Тинькофф Вечный портфель RUB
-&quot;from&quot;: &quot;2021-11-07T12:49:35.896Z&quot;, \\ дата начала периода, с которого отображаются операции.
-&quot;to&quot;: &quot;2022-11-07T12:49:35.896Z&quot;, \\ дата окончания периода, по который отображаются операции.
-&quot;limit&quot;: 1000, \\ лимит вывода количества операций. 1000- максимальный лимит. По-умолчанию передается limit=100
+&quot;accountId&quot;: &quot;XXXXXXXXX&quot;,  \\ Номер счёта, единственный обязательный параметр в этом методе. Можно указать только его и получить первые 100 операций по счёту
+&quot;instrumentId&quot;: &quot;BBG000000001&quot;, \\ Параметр, в котором вы можете указать FIGI или instrument_uid инструмента, по которому хотите получить операции. В данном случае используем Тинькофф Вечный портфель RUB
+&quot;from&quot;: &quot;2021-11-07T12:49:35.896Z&quot;, \\ Дата начала периода, с которого отображаются операции
+&quot;to&quot;: &quot;2022-11-07T12:49:35.896Z&quot;, \\ Дата окончания периода, по который отображаются операции
+&quot;limit&quot;: 1000, \\ Лимит вывода количества операций. Максимальный лимит — 1000, значение по умолчанию — 100
 &quot;operationTypes&quot;: [
-&quot;OPERATION_TYPE_BUY&quot; \\ Тип операций – покупка.
+&quot;OPERATION_TYPE_BUY&quot; \\ Тип операций – покупка
 ],
-&quot;state&quot;: &quot;OPERATION_STATE_EXECUTED&quot; \\ Статус операций, в данном случае исполненные
+&quot;state&quot;: &quot;OPERATION_STATE_EXECUTED&quot; \\ Статус операций, в данном случае — исполненные
 }
 </code></pre>
-<h2 id="getoperations"><a href="/investAPI/operations/#getoperations">GetOperations</a> – Метод получения операций по счету</h2>
-<p>Задача: получить список операций по счету, за год.</p>
+<h2 id="getoperations"><a href="/investAPI/operations/#getoperations">GetOperations</a> – получить операции по счёту</h2>
+<p>Задача: получить список операций по счёту за год.</p>
 <pre><code>{
-&quot;accountId&quot;: &quot;XXXXXXXXXX&quot;,  \\ номер счета, единственный обязательный параметр в этом методе. Можно указать только его и получить первые 100 операции по счету
-&quot;figi&quot;: &quot;BBG000000001&quot;, \\ параметр в котором вы можете указать figi инструмента, по которому хотите получить операции. В данном случае используем Тинькофф Вечный портфель RUB
-&quot;from&quot;: &quot;2021-11-07T12:49:35.896Z&quot;, \\ дата начала периода, с которого отображаются операции.
-&quot;to&quot;: &quot;2022-11-07T12:49:35.896Z&quot;, \\ дата окончания периода, по который отображаются операции.
-&quot;state&quot;: &quot;OPERATION_STATE_EXECUTED&quot; \\ Статус операций, в данном случае исполненные
+&quot;accountId&quot;: &quot;XXXXXXXXXX&quot;,  \\ Номер счёта, единственный обязательный параметр в этом методе. Можно указать только его и получить первые 100 операций по счёту
+&quot;figi&quot;: &quot;BBG000000001&quot;, \\ Параметр, в котором вы можете указать FIGI инструмента, по которому хотите получить операции. В данном случае используем Тинькофф Вечный портфель RUB
+&quot;from&quot;: &quot;2021-11-07T12:49:35.896Z&quot;, \\ Дата начала периода, с которого отображаются операции
+&quot;to&quot;: &quot;2022-11-07T12:49:35.896Z&quot;, \\ Дата окончания периода, по который отображаются операции
+&quot;state&quot;: &quot;OPERATION_STATE_EXECUTED&quot; \\ Статус операций, в данном случае — исполненные
 }
 </code></pre>
-<h2 id="getcandles"><a href="/investAPI/marketdata/#getcandles">GetCandles</a> – Метод получения свечей</h2>
+<h2 id="getcandles"><a href="/investAPI/marketdata/#getcandles">GetCandles</a> – получить свечи</h2>
 <p>Задача: получить минутные свечи за день.</p>
 <pre><code>{
 &quot;from&quot;: &quot;2022-11-08T05:47:40.866Z&quot;, \\ Дата начала периода запрошенных свечей
 &quot;to&quot;: &quot;2022-11-09T05:47:40.866Z&quot;, \\ Дата окончания периода запрошенных свечей
-&quot;interval&quot;: &quot;CANDLE_INTERVAL_1MIN&quot;, \\Интервал свечей
-&quot;instrumentId&quot;: &quot;BBG000000001&quot;  \\ параметр в котором вы можете указать figi или instrument_uid инструмента, по которому хотите получить операции.  В данном случае используем Тинькофф Вечный портфель RUB
+&quot;interval&quot;: &quot;CANDLE_INTERVAL_1MIN&quot;, \\ Интервал свечей
+&quot;instrumentId&quot;: &quot;BBG000000001&quot;  \\ Параметр, в котором вы можете указать FIGI или instrument_uid инструмента, по которому хотите получить операции. В данном случае используем Тинькофф Вечный портфель RUB
 }
 </code></pre>
 
