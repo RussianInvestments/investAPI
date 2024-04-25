@@ -1761,6 +1761,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Stream поручений пользователя
       tags:
         - OrdersStreamService
       x-codegen-request-body-name: body

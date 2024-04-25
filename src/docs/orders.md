@@ -19,7 +19,7 @@ Stream сделок пользователя
 
 
 #### OrderStateStream
-
+Stream поручений пользователя
 
 - Тело запроса — [OrderStateStreamRequest](#orderstatestreamrequest)
 

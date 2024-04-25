@@ -16,6 +16,7 @@ import "google/api/field_behavior.proto";
 service OrdersStreamService {
   //Stream сделок пользователя
   rpc TradesStream(TradesStreamRequest) returns (stream TradesStreamResponse);
+  //Stream поручений пользователя
   rpc OrderStateStream(OrderStateStreamRequest) returns (stream OrderStateStreamResponse);
 }
 
