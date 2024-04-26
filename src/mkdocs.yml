@@ -37,7 +37,7 @@ nav:
 
 - Протоколы:
   - "Доступные протoколы": api_protocols.md
-  - "GRPC": grpc.md 
+  - "gRPC": grpc.md 
   - "WebSocket": ws\README.md
   - "Как пользоваться Swagger?": swagger.md
  
@@ -49,7 +49,7 @@ nav:
   - "Квалифицированный инвестор": accredited_investor.md
   - "Правила обработки корпоративных действий": faq_corp_action.md
   - "Как ускорить работу с биржей": speedup.md
-  - "SLA": sla.md
+  - "Ключ идемпотентности": sla.md
   - Примеры запросов: example.md
   - "EOL v1": eol_v1.md
   - "Stream-соединения" : stream.md
@@ -95,6 +95,6 @@ nav:
   - FAQ: faq_sandbox.md
   - Отличия контура песочницы: url_difference.md
 - Коды ошибок: 
-  - "GRPC": errors.md 
+  - "gRPC": errors.md 
   - "WebSocket": ws\errors.md
   - "HTTP": http_errors.md 
