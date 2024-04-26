@@ -1,136 +1,126 @@
+## Методы для работы с песочницей Tinkoff Invest API
 
+### OpenSandboxAccount
 
+Зарегистрировать счёт.
 
+- Тело запроса — [OpenSandboxAccountRequest](#opensandboxaccountrequest).
 
+- Тело ответа — [OpenSandboxAccountResponse](#opensandboxaccountresponse).
 
+### GetSandboxAccounts
 
-## SandboxService
-Сервис для работы с песочницей TINKOFF INVEST API
+Получить счета.
 
-###Методы сервиса
+- Тело запроса — [GetAccountsRequest](#getaccountsrequest).
 
+- Тело ответа — [GetAccountsResponse](#getaccountsresponse).
 
-#### OpenSandboxAccount
-Метод регистрации счёта в песочнице.
+### CloseSandboxAccount
 
-- Тело запроса — [OpenSandboxAccountRequest](#opensandboxaccountrequest)
+Закрыть счёт.
 
-- Тело ответа — [OpenSandboxAccountResponse](#opensandboxaccountresponse)
-
-
-#### GetSandboxAccounts
-Метод получения счетов в песочнице.
-
-- Тело запроса — [GetAccountsRequest](#getaccountsrequest)
-
-- Тело ответа — [GetAccountsResponse](#getaccountsresponse)
-
-
-#### CloseSandboxAccount
-Метод закрытия счёта в песочнице.
-
-- Тело запроса — [CloseSandboxAccountRequest](#closesandboxaccountrequest)
+- Тело запроса — [CloseSandboxAccountRequest](#closesandboxaccountrequest).
 
 - Тело ответа — [CloseSandboxAccountResponse](#closesandboxaccountresponse)
 
+### PostSandboxOrder
 
-#### PostSandboxOrder
-Метод выставления торгового поручения в песочнице.
+Выставить торговое поручение.
 
-- Тело запроса — [PostOrderRequest](#postorderrequest)
+- Тело запроса — [PostOrderRequest](#postorderrequest).
 
-- Тело ответа — [PostOrderResponse](#postorderresponse)
+- Тело ответа — [PostOrderResponse](#postorderresponse).
 
+### ReplaceSandboxOrder
 
-#### ReplaceSandboxOrder
-Метод изменения выставленной заявки.
+Изменить выставленную заявку.
 
-- Тело запроса — [ReplaceOrderRequest](#replaceorderrequest)
+- Тело запроса — [ReplaceOrderRequest](#replaceorderrequest).
 
-- Тело ответа — [PostOrderResponse](#postorderresponse)
+- Тело ответа — [PostOrderResponse](#postorderresponse).
 
+### GetSandboxOrders
 
-#### GetSandboxOrders
-Метод получения списка активных заявок по счёту в песочнице.
+Получить список активных заявок по счёту.
 
-- Тело запроса — [GetOrdersRequest](#getordersrequest)
+- Тело запроса — [GetOrdersRequest](#getordersrequest).
 
-- Тело ответа — [GetOrdersResponse](#getordersresponse)
+- Тело ответа — [GetOrdersResponse](#getordersresponse).
 
+### CancelSandboxOrder
 
-#### CancelSandboxOrder
-Метод отмены торгового поручения в песочнице.
+Отменить торговое поручение.
 
-- Тело запроса — [CancelOrderRequest](#cancelorderrequest)
+- Тело запроса — [CancelOrderRequest](#cancelorderrequest).
 
-- Тело ответа — [CancelOrderResponse](#cancelorderresponse)
-
-
-#### GetSandboxOrderState
-Метод получения статуса заявки в песочнице. Заявки хранятся в таблице 7 дней.
-
-- Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
-
-- Тело ответа — [OrderState](#orderstate)
+- Тело ответа — [CancelOrderResponse](#cancelorderresponse).
 
 
-#### GetSandboxPositions
-Метод получения позиций по виртуальному счёту песочницы.
+### GetSandboxOrderState
 
-- Тело запроса — [PositionsRequest](#positionsrequest)
+Поулчить статус заявки в песочнице. Заявки хранятся в таблице 7 дней.
 
-- Тело ответа — [PositionsResponse](#positionsresponse)
+- Тело запроса — [GetOrderStateRequest](#getorderstaterequest).
 
+- Тело ответа — [OrderState](#orderstate).
 
-#### GetSandboxOperations
-Метод получения операций в песочнице по номеру счёта.
+### GetSandboxPositions
 
-- Тело запроса — [OperationsRequest](#operationsrequest)
+Получить позиции по виртуальному счёту.
 
-- Тело ответа — [OperationsResponse](#operationsresponse)
+- Тело запроса — [PositionsRequest](#positionsrequest).
 
+- Тело ответа — [PositionsResponse](#positionsresponse).
 
-#### GetSandboxOperationsByCursor
-Метод получения операций в песочнице по номеру счета с пагинацией.
+### GetSandboxOperations
 
-- Тело запроса — [GetOperationsByCursorRequest](#getoperationsbycursorrequest)
+Получить операции по номеру счёта.
 
-- Тело ответа — [GetOperationsByCursorResponse](#getoperationsbycursorresponse)
+- Тело запроса — [OperationsRequest](#operationsrequest).
 
+- Тело ответа — [OperationsResponse](#operationsresponse).
 
-#### GetSandboxPortfolio
-Метод получения портфолио в песочнице.
+### GetSandboxOperationsByCursor
 
-- Тело запроса — [PortfolioRequest](#portfoliorequest)
+Получить операции по номеру счёта с пагинацией.
 
-- Тело ответа — [PortfolioResponse](#portfolioresponse)
+- Тело запроса — [GetOperationsByCursorRequest](#getoperationsbycursorrequest).
 
+- Тело ответа — [GetOperationsByCursorResponse](#getoperationsbycursorresponse).
 
-#### SandboxPayIn
-Метод пополнения счёта в песочнице.
+### GetSandboxPortfolio
 
-- Тело запроса — [SandboxPayInRequest](#sandboxpayinrequest)
+Получить портфолио.
 
-- Тело ответа — [SandboxPayInResponse](#sandboxpayinresponse)
+- Тело запроса — [PortfolioRequest](#portfoliorequest).
 
+- Тело ответа — [PortfolioResponse](#portfolioresponse).
 
-#### GetSandboxWithdrawLimits
-Метод получения доступного остатка для вывода средств в песочнице.
+### SandboxPayIn
 
-- Тело запроса — [WithdrawLimitsRequest](#withdrawlimitsrequest)
+Пополнить счёт.
 
-- Тело ответа — [WithdrawLimitsResponse](#withdrawlimitsresponse)
+- Тело запроса — [SandboxPayInRequest](#sandboxpayinrequest).
+
+- Тело ответа — [SandboxPayInResponse](#sandboxpayinresponse).
+
+### GetSandboxWithdrawLimits
+
+Получить доступный остаток для вывода средств.
+
+- Тело запроса — [WithdrawLimitsRequest](#withdrawlimitsrequest).
+
+- Тело ответа — [WithdrawLimitsResponse](#withdrawlimitsresponse).
 
  <!-- range .Methods -->
  <!-- range .Services -->
 
-###Сообщения методов
+## Сообщения методов
 
+### OpenSandboxAccountRequest
 
-
-#### OpenSandboxAccountRequest
 Запрос открытия счёта в песочнице.
-
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -138,40 +128,35 @@
  <!-- end Fields -->
  <!-- end HasFields -->
 
+### OpenSandboxAccountResponse
 
-#### OpenSandboxAccountResponse
 Номер открытого счёта в песочнице.
 
-
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Номер счёта |
  <!-- end Fields -->
  <!-- end HasFields -->
 
+### CloseSandboxAccountRequest
 
-#### CloseSandboxAccountRequest
 Запрос закрытия счёта в песочнице.
 
-
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Номер счёта |
  <!-- end Fields -->
  <!-- end HasFields -->
 
+### CloseSandboxAccountResponse
 
-#### CloseSandboxAccountResponse
-Результат закрытия счёта в песочнице.
-
-пустой ответ
+Результат закрытия счёта в песочнице. Пустой ответ.
 
  <!-- end HasFields -->
 
+### SandboxPayInRequest
 
-#### SandboxPayInRequest
 Запрос пополнения счёта в песочнице.
-
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -180,10 +165,9 @@
  <!-- end Fields -->
  <!-- end HasFields -->
 
+### SandboxPayInResponse
 
-#### SandboxPayInResponse
 Результат пополнения счёта, текущий баланс.
-
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -196,11 +180,11 @@
  <!-- range HasServices -->
  <!-- range .Files -->
 
-
 ## Нестандартные типы данных
 
 ### MoneyValue
-Денежная сумма в определенной валюте
+
+Денежная сумма в определённой валюте.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
@@ -208,12 +192,11 @@
 | units |  [int64](#int64) | Целая часть суммы, может быть отрицательным числом |
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
 
-
 ### Quotation
-Котировка - денежная сумма без указания валюты
+
+Котировка — денежная сумма без указания валюты.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | units |  [int64](#int64) | Целая часть суммы, может быть отрицательным числом |
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
-
