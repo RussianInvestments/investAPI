@@ -1,28 +1,30 @@
-#Отличия работы методов в песочнице и на продовом контуре.
+## Песочница и прод
 
-Все вызовы продового сервиса выполняются по адресу **`invest-public-api.tinkoff.ru:443`**.
+Адреса для вызова методов: 
 
-Все вызовы сервиса песочницы выполняются по адресу **`sandbox-invest-public-api.tinkoff.ru:443`**.
+- На продовом контуре — `invest-public-api.tinkoff.ru:443`.
 
-Используя адрес песочницы Вы можете выполнять практически те же запросы, что и по адресу продового контура.
-Исключения в работе сервисов или методов описаны в таблице ниже. 
-Это сделано для поддержания единообразия кода и легкости перехода из песочницы на продовый контур.
+- В песочнице — `sandbox-invest-public-api.tinkoff.ru:443`.
 
-Больше деталей различия работы контуров описаны на [странице](/investAPI/head-sandbox/).
+В песочнице вы можете выполнять практически те же запросы, что и на продовом контуре. Это сделано для поддержания единообразия кода и лёгкости перехода из песочницы на прод.
+
+[Подробнее про различия контуров](/investAPI/head-sandbox/)
+
+Исключения в работе методов и сервисов:
 
 | Сервисы                                                                               | Продовый контур | Песочница |
 |---------------------------------------------------------------------------------------|-----------------|-----------|
 | [Сервис инструментов](/investAPI/head-instruments/)                                   |       Да        |    Да     |
 | [Сервис аккаунтов](/investAPI/head-users/)                                            |       Да        |    Да     |
-| <li>[getMarginAttributes](/investAPI/users#getmarginattributes)</li>                  |       Да        |    Да     |
+| [getMarginAttributes](/investAPI/users#getmarginattributes)                  |       Да        |    Да     |
 | [Сервис операций](/investAPI/head-operations/)                                        |       Да        |    Да     |
-| <li>[getBrokerReport](/investAPI/operations/#getbrokerreport)</li>                    |       Да        |  **Нет**  |
-| <li>[PortfolioStream](/investAPI/operations/#portfoliostream)</li>                    |       Да        |    Да     |
-| <li>[PositionsStream](/investAPI/operations/#positionsstream)</li>                    |       Да        |    Да     |
-| <li>[getDividendsForeignIssuer](/investAPI/operations#getdividendsforeignissuer)</li> |       Да        |  **Нет**  |
-| <li>[getWithdrawLimits](/investAPI/operations#getwithdrawlimits)</li>                 |       Да        |    Да     |
+| [getBrokerReport](/investAPI/operations/#getbrokerreport)                   |       Да        |  Нет  |
+| [PortfolioStream](/investAPI/operations/#portfoliostream)                    |       Да        |    Да     |
+| [PositionsStream](/investAPI/operations/#positionsstream)                   |       Да        |    Да     |
+| [getDividendsForeignIssuer](/investAPI/operations#getdividendsforeignissuer) |       Да        |  Нет  |
+| [getWithdrawLimits](/investAPI/operations#getwithdrawlimits)                 |       Да        |    Да     |
 | [Сервис котировок](/investAPI/head-marketdata/)                                       |       Да        |    Да     |
-| [Сервис стоп-заявок](/investAPI/head-stoporders/)                                     |       Да        |  **Нет**  |
+| [Сервис стоп-заявок](/investAPI/head-stoporders/)                                     |       Да        |  Нет  |
 | [Песочницы](/investAPI/head-sandbox/)                                                 |       Да        |    Да     |
 | [Сервис торговых поручений](/investAPI/head-orders/)                                  |       Да        |    Да     |
-| <li>[TradeStream](/investAPI/orders/#tradesstream)</li>                               |       Да        |    Да     |
+| [TradeStream](/investAPI/orders/#tradesstream)                           |       Да        |    Да     |
