@@ -101,6 +101,6 @@ nav:
   - FAQ: faq_sandbox.md
   - Отличия контура песочницы: url_difference.md
 - Коды ошибок: 
-  - "GRPC": errors.md 
+  - "gRPC": errors.md 
   - "WebSocket": ws\errors.md
   - "HTTP": http_errors.md 
