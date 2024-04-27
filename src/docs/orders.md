@@ -17,6 +17,14 @@ Stream сделок пользователя
 
 - Тело ответа — [TradesStreamResponse](#tradesstreamresponse)
 
+
+#### OrderStateStream
+Stream поручений пользователя
+
+- Тело запроса — [OrderStateStreamRequest](#orderstatestreamrequest)
+
+- Тело ответа — [OrderStateStreamResponse](#orderstatestreamresponse)
+
  <!-- range .Methods -->
 
 
@@ -365,7 +373,7 @@ Stream сделок пользователя
 
  
 #### GetOrderPriceRequest
-
+Запрос получения предварительной стоимости заявки
 
 
 | Field | Type | Description |
@@ -380,7 +388,7 @@ Stream сделок пользователя
 
  
 #### GetOrderPriceResponse
-
+Предварительная стоимость заявки
 
 
 | Field | Type | Description |
@@ -417,6 +425,95 @@ Stream сделок пользователя
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | initial_margin |  [MoneyValue](#moneyvalue) | Гарантийное обеспечение для фьючерса |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### OrderStateStreamRequest
+Запрос установки стрим-соединения торговых поручений
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| accounts | Массив объектов [string](#string) | Идентификаторы счетов. |
+| ping_delay_millis |  [int32](#int32) | Задержка пинг сообщений milliseconds 1000-120000, default 120000 |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### OrderStateStreamResponse
+Информация по заявкам
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| order_state |  [OrderStateStreamResponse.OrderState](#orderstatestreamresponseorderstate) | Информация об исполнении торгового поручения. |
+| ping |  [Ping](#ping) | Проверка активности стрима. |
+| subscription |  [OrderStateStreamResponse.SubscriptionResponse](#orderstatestreamresponsesubscriptionresponse) | Ответ на запрос на подписку. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### OrderStateStreamResponse.SubscriptionResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id). |
+| status |  [OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus](#orderstatestreamresponsesubscriptionresponsesubscriptionstatus) | Статус подписки. |
+| stream_id |  [string](#string) | Идентификатор открытого соединения |
+| accounts | Массив объектов [string](#string) | Идентификаторы счетов. |
+| error |  [OrderStateStreamResponse.SubscriptionResponse.ErrorDetail](#orderstatestreamresponsesubscriptionresponseerrordetail) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### OrderStateStreamResponse.SubscriptionResponse.ErrorDetail
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| code |  [string](#string) | Код ошибки. |
+| message |  [string](#string) | Описание ошибки. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### OrderStateStreamResponse.OrderState
+Заявка
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| order_id |  [string](#string) | Биржевой идентификатор заявки |
+| order_request_id |  [string](#string) | Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов. |
+| client_code |  [string](#string) | Код клиента на бирже |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата создания заявки |
+| execution_report_status |  [OrderExecutionReportStatus](#orderexecutionreportstatus) | Статус заявки |
+| status_info |  [OrderStateStreamResponse.StatusCauseInfo](#orderstatestreamresponsestatuscauseinfo) | Дополнительная информация по статусу |
+| ticker |  [string](#string) | Тикер инструмента |
+| class_code |  [string](#string) | Класс-код (секция торгов) |
+| lot_size |  [int32](#int32) | Лотность инструмента заявки |
+| direction |  [OrderDirection](#orderdirection) | Направление заявки |
+| time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения |
+| order_type |  [OrderType](#ordertype) | Тип заявки |
+| account_id |  [string](#string) | Номер счета |
+| initial_order_price |  [MoneyValue](#moneyvalue) | Начальная цена заявки |
+| order_price |  [MoneyValue](#moneyvalue) | Цена выставления заявки |
+| amount |  [MoneyValue](#moneyvalue) | Предрассчитанная стоимость полной заявки |
+| executed_order_price |  [MoneyValue](#moneyvalue) | Исполненная средняя цена одного инструмента в заявке |
+| currency |  [string](#string) | Валюта исполнения |
+| lots_requested |  [int64](#int64) | Запрошено лотов |
+| lots_executed |  [int64](#int64) | Исполнено лотов |
+| lots_left |  [int64](#int64) | Число неисполненных лотов по заявке |
+| lots_cancelled |  [int64](#int64) | Отмененные лоты |
+| marker |  [OrderStateStreamResponse.MarkerType](#orderstatestreamresponsemarkertype) | Спецсимвол |
+| trades | Массив объектов [OrderTrade](#ordertrade) | Список сделок |
+| completion_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время исполнения заявки |
+| exchange |  [string](#string) | Код биржи |
+| instrument_uid |  [string](#string) | UID идентификатор инструмента |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -465,7 +562,7 @@ Stream сделок пользователя
 
 
 #### TimeInForceType
-
+Алгоритм исполнения заявки
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
@@ -473,6 +570,53 @@ Stream сделок пользователя
 | TIME_IN_FORCE_DAY | 1 | Заявка действует до конца торгового дня. Значение по умолчанию |
 | TIME_IN_FORCE_FILL_AND_KILL | 2 | Если в момент выставления возможно исполнение заявки(в т.ч. частичное), заявка будет исполнена или отменена сразу после выставления |
 | TIME_IN_FORCE_FILL_OR_KILL | 3 | Если в момент выставления возможно полное исполнение заявки, заявка будет исполнена или отменена сразу после выставления, недоступно для срочного рынка и торговли по выходным |
+
+
+
+
+#### OrderStateStreamResponse.MarkerType
+Маркер
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| MARKER_UNKNOWN | 0 | не определено |
+| MARKER_BROKER | 1 | сделки брокера |
+| MARKER_CHAT | 2 | исполнение поручение, полученного от клиента через каналы связи |
+| MARKER_PAPER | 3 | исполнение поручение, полученного от клиента в бумажной форме |
+| MARKER_MARGIN | 4 | принудительное закрытие позиций |
+| MARKER_TKBNM | 5 | сделки по управлению ликвидностью |
+| MARKER_SHORT | 6 | сделки РЕПО по привлечению у клиентов бумаг |
+| MARKER_SPECMM | 7 | перенос временно непокрытых позиций |
+| MARKER_PO | 8 | none |
+
+
+
+
+#### OrderStateStreamResponse.StatusCauseInfo
+Дополнительная информация по статусу заявки
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| CAUSE_UNSPECIFIED | 0 | Не определено |
+| CAUSE_CANCELLED_BY_CLIENT | 15 | Отменено клиентом |
+| CAUSE_CANCELLED_BY_EXCHANGE | 1 | Отменено биржей |
+| CAUSE_CANCELLED_NOT_ENOUGH_POSITION | 2 | Заявка не выставлена из-за нехватки средств |
+| CAUSE_CANCELLED_BY_CLIENT_BLOCK | 3 | Отменено из-за блокировки клиента |
+| CAUSE_REJECTED_BY_BROKER | 4 | Отклонено брокером |
+| CAUSE_REJECTED_BY_EXCHANGE | 5 | Отклонено биржей |
+| CAUSE_CANCELLED_BY_BROKER | 6 | Отменено брокером |
+
+
+
+
+#### OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SUBSCRIPTION_STATUS_UNSPECIFIED | 0 | Статус подписки не определен. |
+| SUBSCRIPTION_STATUS_OK | 1 | Подписка успешно установлена. |
+| SUBSCRIPTION_STATUS_ERROR | 13 | Ошибка подписки |
 
 
  <!-- range .Enums -->
