@@ -1381,7 +1381,7 @@
   
     <li class="md-nav__item">
       <a href="../errors/" class="md-nav__link">
-        GRPC
+        gRPC
       </a>
     </li>
   
@@ -1461,7 +1461,7 @@
                   </a>
                 
                 
-                <h1 id="http-tinkoff-invest-api">HTTP коды ответа, используемые в TINKOFF INVEST API</h1>
+                <h1 id="http-tinkoff-invest-api">HTTP-коды ответа Tinkoff Invest API</h1>
 <table>
 <thead>
 <tr>
@@ -1482,79 +1482,79 @@
 <td>400</td>
 <td>INVALID_ARGUMENT</td>
 <td>400 Bad Request</td>
-<td>Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки</td>
+<td>Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки.</td>
 </tr>
 <tr>
 <td>401</td>
 <td>UNAUTHENTICATED</td>
 <td>401 Unauthorized</td>
-<td>Токен доступа не найден или не активен.</br>Вы можете выпустить новый токен по ссылке <a href="https://www.tinkoff.ru/invest/settings/">Настройки</a></td>
+<td>Токен доступа не найден или не активен.</br>Новый токен можно выпустить в <a href="https://www.tinkoff.ru/invest/settings/">личном кабинете</a>.</td>
 </tr>
 <tr>
 <td>403</td>
 <td>PERMISSION_DENIED</td>
 <td>403 Forbidden</td>
-<td>Недостаточно прав для выполнения запроса, проверьте соответствие токена и передаваемого в запросе счета</td>
+<td>Недостаточно прав для выполнения запроса. Проверьте соответствие токена и передаваемого в запросе счёта.</td>
 </tr>
 <tr>
 <td>404</td>
 <td>Unimplemented</td>
 <td>404 Not Found</td>
-<td>Неверный URL запроса или переданный параметр не определен</td>
+<td>Неверный URL запроса.</td>
 </tr>
 <tr>
 <td>405</td>
 <td></td>
 <td>405 Method Not Allowed</td>
-<td>Вызов медота недоступен, попробуйте повторить запрос позже</td>
+<td>Вызов медота недоступен. Попробуйте повторить запрос позже.</td>
 </tr>
 <tr>
 <td>408</td>
 <td></td>
 <td>408 Request Timeout</td>
-<td>Время передачи запроса клиентом истекло. Проверьте работу приложения</td>
+<td>Превышено время ожидания ответа от сервера. Попробуйте повторить запрос позже.</td>
 </tr>
 <tr>
 <td>415</td>
 <td>Internal</td>
 <td>415 Unsupported Media Type</td>
-<td>Неверный тип данных, проверьте формат передаваемого сообщения</td>
+<td>Неверный тип данных.</td>
 </tr>
 <tr>
 <td>426</td>
 <td></td>
 <td>426 Upgrade Required</td>
-<td>Обновите версию протокола в вызове</td>
+<td>Обновите версию протокола в вызове.</td>
 </tr>
 <tr>
 <td>429</td>
 <td>RESOURCE_EXHAUSTED</td>
 <td>429 Too Many Requests</td>
-<td>Превышен лимит запросов в минуту. Подробнее: <a href="https://russianinvestments.github.io/investAPI/limits/">Лимитная политика</a></td>
+<td>Превышен лимит запросов в минуту. <a href="https://russianinvestments.github.io/investAPI/limits/">Подробнее про лимитную политику</a>.</td>
 </tr>
 <tr>
 <td>500</td>
 <td>INTERNAL, UNKNOWN, DATA_LOSS, Unknown</td>
 <td>500 Internal Server Error</td>
-<td>Внутренняя ошибка сервера, попробуйте повторить запрос позже</td>
+<td>Внутренняя ошибка сервера.</td>
 </tr>
 <tr>
 <td>501</td>
 <td>UNIMPLEMENTED</td>
 <td>501 Not Implemented</td>
-<td>Метод не реализован, проверьте путь вызова в запросе</td>
+<td>Сервер не поддерживает функцию, нужную для выполнения запроса.</td>
 </tr>
 <tr>
 <td>503</td>
 <td>UNAVAILABLE</td>
 <td>503 Service Unavailable</td>
-<td>Сервис временно недоступен, попробуйте повторить запрос позже</td>
+<td>Сервис временно недоступен. Попробуйте повторить запрос позже.</td>
 </tr>
 <tr>
 <td>504</td>
 <td>DEADLINE_EXCEEDED</td>
 <td>504 Gateway Timeout</td>
-<td>Превышен интервал ожидания ответа от сервера, попробуйте повторить запрос позже</td>
+<td>Нет ответа от шлюза или прокси-сервера.</td>
 </tr>
 </tbody>
 </table>

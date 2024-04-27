@@ -1344,12 +1344,38 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Отличия контура песочницы
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Отличия контура песочницы
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Песочница и прод
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1391,7 +1417,7 @@
   
     <li class="md-nav__item">
       <a href="../errors/" class="md-nav__link">
-        GRPC
+        gRPC
       </a>
     </li>
   
@@ -1443,8 +1469,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Песочница и прод
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1461,13 +1500,21 @@
                   </a>
                 
                 
-                <h1 id="_1">Отличия работы методов в песочнице и на продовом контуре.</h1>
-<p>Все вызовы продового сервиса выполняются по адресу <strong><code>invest-public-api.tinkoff.ru:443</code></strong>.</p>
-<p>Все вызовы сервиса песочницы выполняются по адресу <strong><code>sandbox-invest-public-api.tinkoff.ru:443</code></strong>.</p>
-<p>Используя адрес песочницы Вы можете выполнять практически те же запросы, что и по адресу продового контура.
-Исключения в работе сервисов или методов описаны в таблице ниже. 
-Это сделано для поддержания единообразия кода и легкости перехода из песочницы на продовый контур.</p>
-<p>Больше деталей различия работы контуров описаны на <a href="/investAPI/head-sandbox/">странице</a>.</p>
+                  <h1>Отличия контура песочницы</h1>
+                
+                <h2 id="_1">Песочница и прод</h2>
+<p>Адреса для вызова методов: </p>
+<ul>
+<li>
+<p>На продовом контуре — <code>invest-public-api.tinkoff.ru:443</code>.</p>
+</li>
+<li>
+<p>В песочнице — <code>sandbox-invest-public-api.tinkoff.ru:443</code>.</p>
+</li>
+</ul>
+<p>В песочнице вы можете выполнять практически те же запросы, что и на продовом контуре. Это сделано для поддержания единообразия кода и лёгкости перехода из песочницы на прод.</p>
+<p><a href="/investAPI/head-sandbox/">Подробнее про различия контуров</a></p>
+<p>Исключения в работе методов и сервисов:</p>
 <table>
 <thead>
 <tr>
@@ -1488,7 +1535,7 @@
 <td>Да</td>
 </tr>
 <tr>
-<td><li><a href="/investAPI/users#getmarginattributes">getMarginAttributes</a></li></td>
+<td><a href="/investAPI/users#getmarginattributes">getMarginAttributes</a></td>
 <td>Да</td>
 <td>Да</td>
 </tr>
@@ -1498,27 +1545,27 @@
 <td>Да</td>
 </tr>
 <tr>
-<td><li><a href="/investAPI/operations/#getbrokerreport">getBrokerReport</a></li></td>
+<td><a href="/investAPI/operations/#getbrokerreport">getBrokerReport</a></td>
 <td>Да</td>
-<td><strong>Нет</strong></td>
+<td>Нет</td>
 </tr>
 <tr>
-<td><li><a href="/investAPI/operations/#portfoliostream">PortfolioStream</a></li></td>
-<td>Да</td>
-<td>Да</td>
-</tr>
-<tr>
-<td><li><a href="/investAPI/operations/#positionsstream">PositionsStream</a></li></td>
+<td><a href="/investAPI/operations/#portfoliostream">PortfolioStream</a></td>
 <td>Да</td>
 <td>Да</td>
 </tr>
 <tr>
-<td><li><a href="/investAPI/operations#getdividendsforeignissuer">getDividendsForeignIssuer</a></li></td>
+<td><a href="/investAPI/operations/#positionsstream">PositionsStream</a></td>
 <td>Да</td>
-<td><strong>Нет</strong></td>
+<td>Да</td>
 </tr>
 <tr>
-<td><li><a href="/investAPI/operations#getwithdrawlimits">getWithdrawLimits</a></li></td>
+<td><a href="/investAPI/operations#getdividendsforeignissuer">getDividendsForeignIssuer</a></td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td><a href="/investAPI/operations#getwithdrawlimits">getWithdrawLimits</a></td>
 <td>Да</td>
 <td>Да</td>
 </tr>
@@ -1530,7 +1577,7 @@
 <tr>
 <td><a href="/investAPI/head-stoporders/">Сервис стоп-заявок</a></td>
 <td>Да</td>
-<td><strong>Нет</strong></td>
+<td>Нет</td>
 </tr>
 <tr>
 <td><a href="/investAPI/head-sandbox/">Песочницы</a></td>
@@ -1543,7 +1590,7 @@
 <td>Да</td>
 </tr>
 <tr>
-<td><li><a href="/investAPI/orders/#tradesstream">TradeStream</a></li></td>
+<td><a href="/investAPI/orders/#tradesstream">TradeStream</a></td>
 <td>Да</td>
 <td>Да</td>
 </tr>
@@ -1592,13 +1639,13 @@
       
       
         
-        <a href="../errors/" class="md-footer__link md-footer__link--next" aria-label="Вперед: GRPC" rel="next">
+        <a href="../errors/" class="md-footer__link md-footer__link--next" aria-label="Вперед: gRPC" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              GRPC
+              gRPC
             </div>
           </div>
           <div class="md-footer__button md-icon">
