@@ -1,32 +1,25 @@
-# Websocket proxy for grpc streaming
+# WebSocket proxy for gRPC streaming
 
-Сервис для получения сообщений grpc streaming Тинькофф Инвестиции через json websocket
+Сервис для получения сообщений gRPC streaming Тинькофф Инвестиции через JSON WebSocket.
 
-Адрес для подключения **wss://invest-public-api.tinkoff.ru/ws/**
+Адрес для подключения — `wss://invest-public-api.tinkoff.ru/ws/`.
 
-* ***token** - токен доступа к счету Тинькофф Инвестиции можно передать в заголовке `Authorization: Bearer *token`
-  , либо  в заголовке `Web-Socket-Protocol: json, *token`
-* запрос на подключение требует указание протокола json в заголовоке `Web-Socket-Protocol: json`
+* **token** — токен доступа к счёту Тинькофф Инвестиции. Его можно передать в заголовке `Authorization: Bearer *token` или в заголовке `Web-Socket-Protocol: json, *token`.
+* В запросе на подключение нужно указать протокол JSON в заголовке — `Web-Socket-Protocol: json`.
 
-Чтобы получать сообщения c наименованиями полей идентичными наименованиям полей из proto-контрактов, необходимо использовать протокол в заголовке WebSocket-Protocol
-```
-json-proto
-```
- вместо
-```
-json
-``` 
-Отправка json-сообщений поддерживается в обоих вариантах,  как в camelCase, так и snake_case.
+Чтобы получать сообщения c названиями полей, идентичными названиям полей из proto-контрактов, используйте `WebSocket-Protocol` протокол в заголовке — `json-proto` вместо `json`.
 
+Отправка JSON-сообщений поддерживается как в camelCase, так и в snake_case.
 
 ## Сервис поручений
 
-### Лента сделок.
+### Лента сделок
 
 [TradesStreamRequest](/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamRequest)
+
 [TradesStreamResponse](/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamResponse)
 
-Пример запроса
+Пример запроса:
 
 ```json
 {
@@ -35,7 +28,8 @@ json
   ]
 }
 ```
-Пример ответа
+Пример ответа:
+
 ```json
 {
   "orderTrades": {
@@ -60,17 +54,17 @@ json
 }
 ```
 
-
 [Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream)
 
 ## Сервис операций
 
-### Лента событий по позициям.
+### Лента событий по позициям
 
 [PositionsStreamRequest](/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamRequest)
+
 [PositionsStreamResponse](/investAPI/ws/websock-docs/output/index.html#schema-v1PositionsStreamResponse)
 
-Пример запроса
+Пример запроса:
 
 ```json
 {
@@ -80,8 +74,7 @@ json
 }
 ```
 
-
-Пример ответа - подписка успешна
+Пример ответа — подписка успешна:
 
 ```json
 {
@@ -96,7 +89,8 @@ json
 }
 ```
 
-Пример события - изменение позици в портфеле
+Пример события — изменение позиции в портфеле:
+
 ```json
 {
   "position": {
@@ -135,12 +129,13 @@ json
 
 [Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream)
 
-### Лента событий по портфелям.
+### Лента событий по портфелям
 
 [PortfolioStreamRequest](/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamRequest)
+
 [PortfolioStreamResponse](/investAPI/ws/websock-docs/output/index.html#schema-v1PortfolioStreamResponse)
 
-Пример запроса
+Пример запроса:
 
 ```json
 {
@@ -150,8 +145,7 @@ json
 }
 ```
 
-
-Пример ответа подписка успешна
+Пример ответа — подписка успешна:
 
 ```json
 {
@@ -166,7 +160,8 @@ json
 }
 ```
 
-Пример события изменения по портфелю
+Пример события — изменения по портфелю:
+
 ```json
 {
   "portfolio": {
@@ -245,11 +240,12 @@ json
 ## Сервис рыночных данных
 
 [MarketDataRequest](/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataRequest)
+
 [MarketDataResponse](/investAPI/ws/websock-docs/output/index.html#message-v1MarketDataResponse)
 
 ### Лента торговых статусов инструментов
 
-Пример запроса
+Пример запроса:
 
 ```json
 {
@@ -264,7 +260,8 @@ json
 }
 ```
 
-Пример ответа - подписка успешна
+Пример ответа — подписка успешна:
+
 ```json
 {
   "subscribeInfoResponse": {
@@ -282,7 +279,7 @@ json
 }
 ```
 
-Пример сообщения торговый статус по инструменту
+Пример сообщения — торговый статус по инструменту:
 
 ```json
 {
@@ -300,10 +297,9 @@ json
 [Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream)
 
 
-
 ### Лента цен последних сделок
 
-Пример запроса
+Пример запроса:
 
 ```json
 {
@@ -318,7 +314,8 @@ json
 }
 ```
 
-Пример ответа - подписка успешна
+Пример ответа — подписка успешна:
+
 ```json
 {
   "subscribeLastPriceResponse": {
@@ -336,7 +333,8 @@ json
 }
 ```
 
-Пример сообщения последние цены по инструменту
+Пример сообщения — последние цены по инструменту:
+
 ```json
 {
   "lastPrice": {
@@ -356,7 +354,7 @@ json
 
 ### Лента обезличенных сделок
 
-Пример запроса
+Пример запроса:
 
 ```json
 {
@@ -371,7 +369,8 @@ json
 }
 ```
 
-Пример ответа - подписка успешна
+Пример ответа — подписка успешна:
+
 ```json
 {
   "subscribeTradesResponse": {
@@ -389,7 +388,8 @@ json
 }
 ```
 
-Пример сообщения обезличиные сделки по инстурменту
+Пример сообщения — обезличиные сделки по инструменту:
+
 ```json
 {
   "trade": {
@@ -411,7 +411,7 @@ json
 
 ### Лента событий по стаканам
 
-Пример запроса
+Пример запроса:
 
 ```json
 {
@@ -426,7 +426,8 @@ json
   }
 }
 ```
-Пример ответа - подписка успешна
+Пример ответа — подписка успешна:
+
 ```json
 {
   "subscribeOrderBookResponse": {
@@ -446,7 +447,8 @@ json
 }
 ```
 
-Пример сообщения стака по инструменту
+Пример сообщения стака по инструменту:
+
 ```json
 {
   "orderbook": {
@@ -493,7 +495,7 @@ json
 
 ### Лента события по свечам
 
-Пример запроса
+Пример запроса:
 
 ```json
 {
@@ -510,7 +512,8 @@ json
 }
 ```
 
-Пример ответа - подписка успешна
+Пример ответа — подписка успешна:
+
 ```json
 {
   "subscribeCandlesResponse": {
@@ -530,7 +533,8 @@ json
 }
 ```
 
-Пример события свеча по инструменту
+Пример события — свеча по инструменту:
+
 ```json
 {
   "candle": {
@@ -564,7 +568,8 @@ json
 
 ## Пинг сообщения
 
-Пример 
+Пример:
+
 ```json
 {
   "ping": {

@@ -22,7 +22,8 @@ plugins:
 nav:
 - Начало работы: 
   - "Начало работы": index.md
-  - Глоссарий: glossary.md
+  - "Глоссарий": glossary.md
+  - "Глоссарий": glossary.md
   - "Лимиты": limits.md
   - "Токен доступа": token.md
   - "Идентификация торговых инструментов": faq_identification.md
@@ -37,25 +38,29 @@ nav:
 
 - Протоколы:
   - "Доступные протoколы": api_protocols.md
-  - "GRPC": grpc.md 
+  - "gRPC": grpc.md 
   - "WebSocket": ws\README.md
-  - "Как пользоваться Swagger?": swagger.md
+  - "Использование Swagger": swagger.md
  
 - Полезная информация:
-  - "Алгоритмический трейдинг": algorithmic_trading.md
+  - "Алгоритмическая торговля": algorithmic_trading.md
   - "Индикаторы технического анализа": tech_indicators.md
   - "Торговые площадки и режимы торгов": markets.md
-  - "Торговля в выходные": weekend_trading.md
+  - "Торговля по выходным и на внутриброкерском рынке":
+    - "Описание": weekend_trading.md
+    - "Торговля по выходным": weekend.md
+    - "Инструменты иностранных эмитентов": held_instruments.md
+    - "Фонды Тинькофф": tinkoff_fund.md
   - "Квалифицированный инвестор": accredited_investor.md
   - "Правила обработки корпоративных действий": faq_corp_action.md
   - "Как ускорить работу с биржей": speedup.md
-  - "SLA": sla.md
-  - Примеры запросов: example.md
-  - "EOL v1": eol_v1.md
+  - "Время жизни и хранение информации": sla.md
+  - "Примеры запросов": example.md
+  - "Прекращение поддержки API v1": eol_v1.md
   - "Stream-соединения" : stream.md
   - "Цены облигаций и фьючерсов" : points.md
 - Ответы на частые вопросы: faq.md
-- Языки программирования:
+- SDK:
   - Python: faq_python.md
   - Java: faq_java.md
   - С#: faq_csharp.md
@@ -69,6 +74,7 @@ nav:
     - Описание: head-instruments.md
     - Методы: instruments.md
     - FAQ: faq_instruments.md
+    - Больше информации о сервисе инструментов: more-instrument.md
   - Ордеры:
     - Описание: head-orders.md
     - Методы: orders.md
@@ -78,7 +84,8 @@ nav:
     - Описание: head-operations.md
     - Методы: operations.md
     - FAQ: faq_operations.md
-    - Особенности взаимодействия: operations_problems.md 
+    - Особенности взаимодействия: operations_problems.md
+    - Стрим заявок: orders_state_stream.md
   - Котировки:
     - Описание: head-marketdata.md
     - Методы: marketdata.md
@@ -95,6 +102,6 @@ nav:
   - FAQ: faq_sandbox.md
   - Отличия контура песочницы: url_difference.md
 - Коды ошибок: 
-  - "GRPC": errors.md 
+  - "gRPC": errors.md 
   - "WebSocket": ws\errors.md
   - "HTTP": http_errors.md 
