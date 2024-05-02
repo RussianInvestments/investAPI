@@ -23,7 +23,6 @@ nav:
 - Начало работы: 
   - "Начало работы": index.md
   - "Глоссарий": glossary.md
-  - "Глоссарий": glossary.md
   - "Лимиты": limits.md
   - "Токен доступа": token.md
   - "Идентификация торговых инструментов": faq_identification.md
