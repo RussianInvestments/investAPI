@@ -1901,11 +1901,11 @@
                   <h1>Методы</h1>
                 
                 <h2 id="usersservice">UsersService</h2>
-<p>Сервис предназначен для получения: </br> <strong>1</strong>.
-списка счетов пользователя; </br> <strong>2</strong>. маржинальных показателей по счёту.</p>
+<p>С помощью сервиса можно получить: </br> 1.
+список счетов пользователя; </br> 2. маржинальные показатели по счёту.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getaccounts">GetAccounts</h4>
-<p>Метод получения счетов пользователя.</p>
+<p>Получить счета пользователя.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getaccountsrequest">GetAccountsRequest</a></p>
@@ -1915,7 +1915,7 @@
 </li>
 </ul>
 <h4 id="getmarginattributes">GetMarginAttributes</h4>
-<p>Расчёт маржинальных показателей по счёту.</p>
+<p>Рассчитать маржинальные показатели по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getmarginattributesrequest">GetMarginAttributesRequest</a></p>
@@ -1925,7 +1925,7 @@
 </li>
 </ul>
 <h4 id="getusertariff">GetUserTariff</h4>
-<p>Запрос тарифа пользователя.</p>
+<p>Запросить тариф пользователя.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getusertariffrequest">GetUserTariffRequest</a></p>
@@ -1935,7 +1935,7 @@
 </li>
 </ul>
 <h4 id="getinfo">GetInfo</h4>
-<p>Метод получения информации о пользователе.</p>
+<p>Получить информацию о пользователе.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getinforequest">GetInfoRequest</a></p>
@@ -2033,7 +2033,7 @@
 <!-- end HasFields -->
 
 <h4 id="getmarginattributesrequest">GetMarginAttributesRequest</h4>
-<p>Запрос маржинальных показателей по счёту</p>
+<p>Запрос маржинальных показателей по счёту.</p>
 <table>
 <thead>
 <tr>
@@ -2071,17 +2071,17 @@
 <tr>
 <td>liquid_portfolio</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Ликвидная стоимость портфеля. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/liquid-portfolio/">что такое ликвидный портфель?</a>.</td>
+<td>Ликвидная стоимость портфеля. <a href="https://help.tinkoff.ru/margin-trade/short/liquid-portfolio/">Подробнее про ликвидный портфель</a>.</td>
 </tr>
 <tr>
 <td>starting_margin</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная маржа — начальное обеспечение для совершения новой сделки. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/">начальная и минимальная маржа</a>.</td>
+<td>Начальная маржа — начальное обеспечение для совершения новой сделки. <a href="https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/">Подробнее про начальную и минимальную маржу</a>.</td>
 </tr>
 <tr>
 <td>minimal_margin</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. Подробнее: <a href="https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/">начальная и минимальная маржа</a>.</td>
+<td>Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. <a href="https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/">Подробнее про начальную и минимальную маржу</a>.</td>
 </tr>
 <tr>
 <td>funds_sufficiency_level</td>
@@ -2096,7 +2096,7 @@
 <tr>
 <td>corrected_margin</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Скорректированная маржа.Начальная маржа, в которой плановые позиции рассчитываются с учётом активных заявок на покупку позиций лонг или продажу позиций шорт.</td>
+<td>Скорректированная маржа. Начальная маржа, в которой плановые позиции рассчитываются с учётом активных заявок на покупку позиций лонг или продажу позиций шорт.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2276,7 +2276,7 @@
 <tr>
 <td>ACCOUNT_TYPE_TINKOFF_IIS</td>
 <td>2</td>
-<td>ИИС счёт.</td>
+<td>ИИС.</td>
 </tr>
 <tr>
 <td>ACCOUNT_TYPE_INVEST_BOX</td>
@@ -2342,12 +2342,12 @@
 <tr>
 <td>ACCOUNT_ACCESS_LEVEL_READ_ONLY</td>
 <td>2</td>
-<td>Доступ с уровнем прав "только чтение".</td>
+<td>Доступ с уровнем прав «только чтение».</td>
 </tr>
 <tr>
 <td>ACCOUNT_ACCESS_LEVEL_NO_ACCESS</td>
 <td>3</td>
-<td>Доступ отсутствует.</td>
+<td>Доступа нет.</td>
 </tr>
 </tbody>
 </table>
