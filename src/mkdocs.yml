@@ -1,4 +1,4 @@
-site_name: 'TINKOFF INVEST API'
+site_name: 'Tinkoff Invest API'
 docs_dir: docs
 repo_url: https://github.com/RussianInvestments/investAPI
 theme:
@@ -22,7 +22,7 @@ plugins:
 nav:
 - Начало работы: 
   - "Начало работы": index.md
-  - Глоссарий: glossary.md
+  - "Глоссарий": glossary.md
   - "Лимиты": limits.md
   - "Токен доступа": token.md
   - "Идентификация торговых инструментов": faq_identification.md
@@ -37,64 +37,70 @@ nav:
 
 - Протоколы:
   - "Доступные протoколы": api_protocols.md
-  - "GRPC": grpc.md 
+  - "gRPC": grpc.md 
   - "WebSocket": ws\README.md
-  - "Как пользоваться Swagger?": swagger.md
+  - "Использование Swagger": swagger.md
  
 - Полезная информация:
-  - "Алгоритмический трейдинг": algorithmic_trading.md
+  - "Алгоритмическая торговля": algorithmic_trading.md
   - "Индикаторы технического анализа": tech_indicators.md
   - "Торговые площадки и режимы торгов": markets.md
-  - "Торговля в выходные": weekend_trading.md
+  - "Торговля по выходным и на внутриброкерском рынке":
+    - "Описание": weekend_trading.md
+    - "Торговля по выходным": weekend.md
+    - "Инструменты иностранных эмитентов": held_instruments.md
+    - "Фонды Тинькофф": tinkoff_fund.md
   - "Квалифицированный инвестор": accredited_investor.md
   - "Правила обработки корпоративных действий": faq_corp_action.md
   - "Как ускорить работу с биржей": speedup.md
-  - "SLA": sla.md
-  - Примеры запросов: example.md
-  - "EOL v1": eol_v1.md
+  - "Время жизни и хранение информации": sla.md
+  - "Примеры запросов": example.md
+  - "Прекращение поддержки API v1": eol_v1.md
   - "Stream-соединения" : stream.md
   - "Цены облигаций и фьючерсов" : points.md
 - Ответы на частые вопросы: faq.md
-- Языки программирования:
+- SDK:
   - Python: faq_python.md
   - Java: faq_java.md
   - С#: faq_csharp.md
   - Golang: faq_golang.md
-- Сервис счетов:
-  - Описание: head-users.md
-  - Методы: users.md
-  - FAQ: faq_users.md
-- Сервис инструментов: 
-  - Описание: head-instruments.md
-  - Методы: instruments.md
-  - FAQ: faq_instruments.md
-  - Глоссарий и дополнительная информация: more-instrument.md
-- Сервис ордеров:
-  - Описание: head-orders.md
-  - Методы: orders.md
-  - FAQ: faq_orders.md
-  - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md
-- Сервис операций:
-  - Описание: head-operations.md
-  - Методы: operations.md
-  - FAQ: faq_operations.md
-  - Особенности взаимодействия: operations_problems.md
-- Сервис котировок:
-  - Описание: head-marketdata.md
-  - Методы: marketdata.md
-  - FAQ: faq_marketdata.md
-  - Получение исторических рыночных данных: get_history.md
-  - Методы работы с индикаторами технического анализа: get_tech_indicators.md
-- Сервис стоп-ордеров:
-  - Описание: head-stoporders.md
-  - Методы: stoporders.md
-  - FAQ: faq_stoporders.md
+- Сервисы:
+  - Счета: 
+    - Описание: head-users.md
+    - Методы: users.md
+    - FAQ: faq_users.md
+  - Инструменты:
+    - Описание: head-instruments.md
+    - Методы: instruments.md
+    - FAQ: faq_instruments.md
+    - Глоссарий и дополнительная информация: more-instrument.md
+  - Ордеры:
+    - Описание: head-orders.md
+    - Методы: orders.md
+    - FAQ: faq_orders.md
+    - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md
+    - Стрим заявок: orders_state_stream.md
+  - Операции:
+    - Описание: head-operations.md
+    - Методы: operations.md
+    - FAQ: faq_operations.md
+    - Особенности взаимодействия: operations_problems.md
+  - Котировки:
+    - Описание: head-marketdata.md
+    - Методы: marketdata.md
+    - FAQ: faq_marketdata.md
+    - Получение исторических рыночных данных: get_history.md
+    - Методы работы с индикаторами технического анализа: get_tech_indicators.md 
+  - Стоп-ордеры: 
+    - Описание: head-stoporders.md
+    - Методы: stoporders.md
+    - FAQ: faq_stoporders.md   
 - Песочница:
   - Описание: head-sandbox.md
   - Методы: sandbox.md
   - FAQ: faq_sandbox.md
   - Отличия контура песочницы: url_difference.md
 - Коды ошибок: 
-  - "GRPC": errors.md 
+  - "gRPC": errors.md 
   - "WebSocket": ws\errors.md
   - "HTTP": http_errors.md 

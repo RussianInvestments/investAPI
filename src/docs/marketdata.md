@@ -274,6 +274,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Изменение статуса подписки. |
 | instruments | Массив объектов [TradeInstrument](#tradeinstrument) | Массив инструментов для подписки на поток обезличенных сделок. |
+| trade_type |  [TradeSourceType](#tradesourcetype) | Источник сделок |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -298,6 +299,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id). |
 | trade_subscriptions | Массив объектов [TradeSubscription](#tradesubscription) | Массив статусов подписки на поток сделок. |
+| trade_type |  [TradeSourceType](#tradesourcetype) | Источник сделок |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -483,6 +485,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | quantity |  [int64](#int64) | Количество лотов. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время сделки в часовом поясе UTC по времени биржи. |
 | instrument_uid |  [string](#string) | Uid инструмента |
+| tradeSource |  [TradeSourceType](#tradesourcetype) | Источник сделки |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -874,6 +877,19 @@ subscribeCandles | Изменения статуса подписки на св�
 | SUBSCRIPTION_STATUS_INTERNAL_ERROR | 7 | Внутренняя ошибка сервиса. |
 | SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS | 8 | Превышен лимит на количество запросов на подписки в течение установленного отрезка времени |
 | SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND | 9 | Активная подписка не найдена. Ошибка может возникнуть только при отписке от не существующей отписки |
+
+
+
+
+#### TradeSourceType
+Источники сделок
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TRADE_SOURCE_UNSPECIFIED | 0 | Тип сделки не определён. |
+| TRADE_SOURCE_EXCHANGE | 1 | биржевые сделки |
+| TRADE_SOURCE_DEALER | 2 | сделки дилера |
+| TRADE_SOURCE_ALL | 3 | все сделки |
 
 
 

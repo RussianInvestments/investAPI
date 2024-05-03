@@ -1,39 +1,45 @@
-##SDK для Java
+### Официальный SDK
 
-####Официальные SDK:
-* [invest-api-java-sdk](https://github.com/RussianInvestments/invest-api-java-sdk)
-
-####Неофициальные SDK:
-
-
-##Примеры взаимодействия: 
-
-Примеры подключения и получения данных доступны в репозитории официальной SDK:
-[/tinkoff/piapi/example/Example.java](https://github.com/RussianInvestments/invest-api-java-sdk/blob/main/example/src/main/java/ru/tinkoff/piapi/example/Example.java)
+* [invest-api-java-sdk](https://github.com/RussianInvestments/invest-api-java-sdk).
+- [Примеры подключения и получения данных](https://github.com/RussianInvestments/invest-api-java-sdk/blob/main/example/src/main/java/ru/tinkoff/piapi/example/Example.java).
 
 ### Основные классы для работы
-`ManagedChannel` - абстракция канала до сервера. Следует переиспользовать один и тот же канал во всем приложении.
 
-При создании канала следует использовать метод `io.grpc.ManagedChannelBuilder#useTransportSecurity`, т.к. сервер API поддерживает только защищенное соединение.
-
-Для автоматической проверки работоспособности канала следует использовать метод `io.grpc.ManagedChannelBuilder#keepAliveTime` при иницииализации. Допускается время `keepAlive` не менее 10 секунд.
-
-`*Stub` - сгенерированные классы клиентов для сервисов API.
-Существует три варианта клиентов:
-1. Неблокирующий - `ServiceNameStub`, например `InstrumentsServiceStub`. Все методы такого клиента принимают два параметра: запрос и обработчик результата вызова `io.grpc.stub.StreamObserver`. Методы обработчика будут вызваны после получения результата. Не рекомендуется выполнять блокирующие операции (I/O, любые операции с ожиданием завершения) в методах обработчика.
-2. Блокирующий - `ServiceNameBlockingStub`, например `InstrumentsServiceBlockingStub`. Все методы такого клиента принимают один параметр - запрос и возвращают результат либо выбрасывают исключение. Вызов метода блокирует поток исполнения до получения результата или исключения.
-3. Асинхронный - `ServiceNameFutureStub`, например `InstrumentsServiceFutureStub`. Все методы такого клиента принимают один параметр - запрос и возвращают объект типа `com.google.common.util.concurrent.ListenableFuture`.
+<ul>
+<li><p><strong>ManagedChannel</strong> — абстракция канала до сервера. Используйте один и тот же канал во всём приложении.</p>
+<p> При создании канала рекомендуем использовать метод <code>io.grpc.ManagedChannelBuilder#useTransportSecurity</code>, так как сервер API поддерживает только защищённое соединение.</p>
+<p> Для автоматической проверки работоспособности канала при иницииализации используйте метод <code>io.grpc.ManagedChannelBuilder#keepAliveTime</code>. Допустимое время <code>keepAlive</code> — не меньше 10 секунд.</p>
+</li>
+<li><p><strong>Stub</strong> — сгенерированные классы клиентов для сервисов API. Есть три варианта клиентов:</p>
+<ul>
+<li>Не блокирующий — <code>ServiceNameStub</code>, например <code>InstrumentsServiceStub</code>. Все методы такого клиента принимают два параметра: запрос и обработчик результата вызова <code>io.grpc.stub.StreamObserver</code>. Методы обработчика будут вызваны после получения результата. Не рекомендуется выполнять блокирующие операции (I/O, любые операции с ожиданием завершения) в методах обработчика.</li>
+<li>Блокирующий — <code>ServiceNameBlockingStub</code>, например <code>InstrumentsServiceBlockingStub</code>. Все методы такого клиента принимают один параметр — запрос — и возвращают результат либо выбрасывают исключение. Вызов метода блокирует поток исполнения до получения результата или исключения.</li>
+<li>Асинхронный — <code>ServiceNameFutureStub</code>, например <code>InstrumentsServiceFutureStub</code>. Все методы такого клиента принимают один параметр — запрос — и возвращают объект типа <code>com.google.common.util.concurrent.ListenableFuture</code>.</li>
+</ul>
+</li>
+</ul>
 
 ### Таймаут запроса
-В gRPC используется deadline вместо таймаута - время в будущем, до наступления которого будет проводится ожидание выполнения вызова. Если результат не получен, и время deadline наступило - на клиенте возникнет ошибка с кодом `DEADLINE_EXCEEDED`. При этом возможна ситуация, что на сервере API операция была обработана успешно. Для критичных действий предлагается использовать ключ идемпотентности.
 
-Рекомендуемый способ установки deadline: вызов метода `io.grpc.stub.AbstractStub#withDeadlineAfter`. Обратите внимание, что период времени начинает отсчитываться сразу после выполнения этого метода.
+В gRPC вместо таймаута используется `deadline` — время в будущем, до наступления которого будет ожидаться выполнение вызова. 
+
+Если результат не получен и deadline наступил, возникнет ошибка с кодом `DEADLINE_EXCEEDED`. При этом может быть ситуация, когда на сервере API операция была обработана успешно. Для критичных действий используйте ключ идемпотентности.
+
+Рекомендуем устанавливать `deadline` через метод `io.grpc.stub.AbstractStub#withDeadlineAfter`.
+
+>**Обратите внимание**<br>
+>Период времени начинает отсчитываться сразу после отправки запроса через метод.
 
 ### Метаданные
-Метаданные - аналог заголовков в HTTP.
+
+Метаданные — аналог заголовков в HTTP.
+
 #### Передача метаданных запроса
-Для использования API необходимо передавать метаданные с ключом `"Authorization"` и значением `"bearer {token}"`. [Подробнее здесь](https://russianinvestments.github.io/investAPI/token/).
-Можно добавить перехватчик в канал с помощью метода `io.grpc.ManagedChannelBuilder#intercept(io.grpc.ClientInterceptor...)`. Пример авторизационного перехватичка:
+
+Чтобы использовать API, нужно передавать метаданные с ключом `Authorization` и значением `bearer {token}`. [Подробнее](https://russianinvestments.github.io/investAPI/token/).
+
+Перехватчик можно добавить в канал через метод `io.grpc.ManagedChannelBuilder#intercept(io.grpc.ClientInterceptor...)`. Пример авторизационного перехватичка:
+
 ```java
 public class AuthInterceptor implements ClientInterceptor {
 
@@ -61,13 +67,16 @@ public class AuthInterceptor implements ClientInterceptor {
 ```
 
 #### Получение метаданных ответа
-В метаданных ответа для unary-методов передаются [идентификатор отслеживания](https://russianinvestments.github.io/investAPI/grpc/#tracking-id) и описание ошибки.
+
+В метаданных ответа для Unary-методов передаются [идентификатор отслеживания](https://russianinvestments.github.io/investAPI/grpc/#tracking-id) и описание ошибки.
+
 Для получения метаданных ответа можно использовать перехватчик `io.grpc.stub.MetadataUtils#newCaptureMetadataInterceptor`, например:
 ```java
 var headersCapture = new AtomicReference<Metadata>();
 var trailersCapture = new AtomicReference<Metadata>();
 instruments.withInterceptors(MetadataUtils.newCaptureMetadataInterceptor(headersCapture, trailersCapture)).getInstrumentBy(...);
 ```
-После выполнения метода переменная `headersCapture` будет содержать метаданные ответа.
 
-При работе с методами клиентов исключения следует конвертировать в статус с помощью `io.grpc.Status#fromThrowable`. В поле `description` статуса будет содержаться [код ошибки](https://russianinvestments.github.io/investAPI/errors/).
+После исполнения метода метаданные ответа вернутся в переменной `headersCapture`.
+
+При работе с методами клиентов конвертируйте исключения в статус через `io.grpc.Status#fromThrowable`. В поле `description` статуса вернётся [код ошибки](https://russianinvestments.github.io/investAPI/errors/).
