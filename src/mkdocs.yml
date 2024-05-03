@@ -78,13 +78,13 @@ nav:
     - Описание: head-orders.md
     - Методы: orders.md
     - FAQ: faq_orders.md
-    - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md 
+    - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md
+    - Стрим заявок: orders_state_stream.md
   - Операции:
     - Описание: head-operations.md
     - Методы: operations.md
     - FAQ: faq_operations.md
     - Особенности взаимодействия: operations_problems.md
-    - Стрим заявок: orders_state_stream.md
   - Котировки:
     - Описание: head-marketdata.md
     - Методы: marketdata.md
