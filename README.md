@@ -51,8 +51,9 @@ API реализован на быстром, удобном и функцион
 
 Для поддержки web-клиентов, например браузерных JS скриптов, внедрена поддержка [gRPC-web](https://grpc.io/docs/platforms/web/basics/).
 
-А для клиентов, привыкших работать с REST API, реализован прокси [Swagger](https://russianInvestments.github.io/investAPI/swagger-ui/)
+Для клиентов, привыкших работать с REST API, реализован прокси [Swagger](https://russianInvestments.github.io/investAPI/swagger-ui/).
 
+Есть поддержка WebSocket стриминга. [Спецификация](https://github.com/RussianInvestments/investAPI/blob/main/src/docs/ws/asyncapi.yaml)
 
 [Документация для разработчиков](https://RussianInvestments.github.io/investAPI/)
 
