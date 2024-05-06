@@ -19,7 +19,7 @@ Stream сделок пользователя
 
 
 #### OrderStateStream
-Stream поручений пользователя
+Stream поручений пользователя. Перед работой прочитайте [статью](https://russianinvestments.github.io/investAPI/orders_state_stream/).
 
 - Тело запроса — [OrderStateStreamRequest](#orderstatestreamrequest)
 
