@@ -8,30 +8,30 @@
 |---------------------------|---------------------------------|-------------|--------------------------------------| ---|
 | Методы сервиса MarketData |                                 | Валюта      | Пункты                               | Пункты|
 | postOrder                 | Лимитная заявка — входящая цена | Валюта      | Валюта                               | Пункты|
-|                           | initial_order_price             | Валюта      | Валюта + НКД, добавляемый системой   | Валюта|
-|                           | executed_order_price            | Валюта      | Валюта                               | Валюта|
-|                           | initial_order_price_pt          |             |                                      | Пункты|
-|                           | total_order_amount              | Валюта      | Валюта                               | Валюта|
-|                           | initial_commission              | Валюта      | Валюта                               | Валюта|
-|                           | executed_commission             | Валюта      | Валюта                               | Валюта|
-|                           | aci_value                       | Валюта      | Валюта                               | Валюта|
-|                           | initial_security_price          | Валюта      | Валюта без НКД                  | Валюта|
-| GetOrderState             | stages.price                    | Валюта      | Пункты                               | Валюта|
-|                           | initial_order_price             | Валюта      | Валюта                               | Валюта|
-|                           | executed_order_price            | Валюта      | Валюта, включая НКД                  | Валюта|
-|                           | total_order_amount              | Валюта      | Валюта, включая НКД                  | Валюта|
-|                           | average_position_price          | Валюта      | Пункты                               | Валюта|
-|                           | initialCommission               | Валюта      | Валюта                               | Валюта|
-|                           | executedCommission              | Валюта      | Валюта                               | Валюта|
-|                           | initial_security_price          | Валюта      | Пункты                               | Валюта|
-| postStopOrder             | price, stop_price               | Валюта      | Пункты                               | Пункты|
-| getStopOrders             | price, stop_price               | Валюта      | Валюта                               | Пункты|
-| getOperationByCurcor      | payment                         | Валюта      | Валюта                               | Валюта|
-|                           | price                           | Валюта      | Валюта                               | Пункты|
-|                           | trades.price                    | Валюта      | Валюта                               | Пункты|
-| getOperation              | payment                         | Валюта      | Валюта                               | Валюта|
-|                           | price                           | Валюта      | Валюта                               | Пункты|
-|                           | trades.price                    | Валюта      | Валюта                               | Валюта|
+|                           | `initial_order_price`             | Валюта      | Валюта + НКД, добавляемый системой   | Валюта|
+|                           | `executed_order_price  `          | Валюта      | Валюта                               | Валюта|
+|                           | `initial_order_price_pt`          |             |                                      | Пункты|
+|                           | `total_order_amount`              | Валюта      | Валюта                               | Валюта|
+|                           | `initial_commission`              | Валюта      | Валюта                               | Валюта|
+|                           | `executed_commission`             | Валюта      | Валюта                               | Валюта|
+|                           | `aci_value`                       | Валюта      | Валюта                               | Валюта|
+|                           | `initial_security_price`          | Валюта      | Валюта без НКД                  | Валюта|
+| GetOrderState             | `stages.price `                   | Валюта      | Пункты                               | Валюта|
+|                           | `initial_order_price`             | Валюта      | Валюта                               | Валюта|
+|                           | `executed_order_price`            | Валюта      | Валюта, включая НКД                  | Валюта|
+|                           | `total_order_amount`              | Валюта      | Валюта, включая НКД                  | Валюта|
+|                           | `average_position_price`          | Валюта      | Пункты                               | Валюта|
+|                           | `initialCommission`               | Валюта      | Валюта                               | Валюта|
+|                           | `executedCommission`              | Валюта      | Валюта                               | Валюта|
+|                           | `initial_security_price`          | Валюта      | Пункты                               | Валюта|
+| postStopOrder             | `price`, `stop_price`               | Валюта      | Пункты                               | Пункты|
+| getStopOrders             | `price`, `stop_price`               | Валюта      | Валюта                               | Пункты|
+| getOperationByCurcor      | `payment`                         | Валюта      | Валюта                               | Валюта|
+|                           | `price`                           | Валюта      | Валюта                               | Пункты|
+|                           | `trades.price `                   | Валюта      | Валюта                               | Пункты|
+| getOperation              | `payment`                         | Валюта      | Валюта                               | Валюта|
+|                           | `price`                           | Валюта      | Валюта                               | Пункты|
+|                           | `trades.price `                   | Валюта      | Валюта                               | Валюта|
 
 
 ## Формулы расчёта реальной стоимости инструментов в валюте
