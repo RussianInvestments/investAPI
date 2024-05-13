@@ -1,14 +1,18 @@
-#Нестандартные типы данных TINKOFF INVEST API
+# Нестандартные типы данных Tinkoff Invest API
 
-##Timestamp 
-Тип данных Timestamp является основным для передачи времени [в формате protoсol-buffers](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp) и представляет собой значение в диапазоне интервала дат 
-от 0001-01-01T00:00:00Z до 9999-12-31T23:59:59.999999999Z
+## Timestamp 
 
-Timestamp всегда работает в формате UTC с нулевым смещением. Тип Timestamp состоит из двух полей целого типа: seconds и nanos. 
+Timestamp — основной тип данных для передачи времени в формате [protoсol-buffers](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#timestamp). Он состоит из значения в диапазоне интервала дат — от `0001-01-01T00:00:00Z` до `9999-12-31T23:59:59.999999999Z`.
 
-Seconds содержит количество секунд с полуночи (00:00:00) 01.01.1970, а nanos принимает значение от 0 до 999999999.
+<p>Timestamp всегда работает в формате UTC с нулевым смещением и состоит из двух полей целого типа:</p>
+<ul>
+<li><code>Seconds</code> — количество секунд с полуночи (00:00:00) 01.01.1970;</li>
+<li><code>Nanos</code> — значение от 0 до 999999999.</li>
+</ul>
 
-####Примеры timestamp
+
+#### Примеры Timestamp
+
 |Seconds|Nanos|Значение|
 |:-------|:----------------|:------------------|
 |1645718039|0|24 February 2022, 15:53:59.000|
@@ -17,9 +21,9 @@ Seconds содержит количество секунд с полуночи (
 
     {
         //Пример конвертации из POSIX функции time()
-	Timestamp timestamp;
-    	timestamp.set_seconds(time(NULL));
-    	timestamp.set_nanos(0);
+    Timestamp timestamp;
+        timestamp.set_seconds(time(NULL));
+        timestamp.set_nanos(0);
     }
 
 
@@ -48,22 +52,23 @@ Seconds содержит количество секунд с полуночи (
     }
 
 
-##MoneyValue
-Данный тип данных используется для параметров, имеющих денежный эквивалент. Например, стоимость ценных бумаг.
+## MoneyValue
 
-Тип состоит из трёх параметров: 
+Этот тип данных используется для параметров, у которых есть денежный эквивалент — например, стоимость ценных бумаг.
 
-* currency — строковый [ISO-код валюты](https://ru.wikipedia.org/wiki/ISO_4217). Например, RUB или USD.
-* units — целая часть суммы. 
-* nano — дробная часть суммы (миллиардные доли). 
+MoneyValue состоит из трёх параметров: 
 
-Для корректной работы с данным типом данных требуется его конвертация в стандартные типы языка программирования,
-который используется для написания торгового робота. 
+* `currency` — строковый [ISO-код валюты](https://ru.wikipedia.org/wiki/ISO_4217). Например, RUB или USD.
+* `units` — целая часть суммы. 
+* `nano` — дробная часть суммы, миллиардные доли. 
 
-###Пример конвертации на Java
+Чтобы корректно работать с этим типом данных, его нужно сконвертировать в стандартные типы языка программирования,
+который используется для написания торгового робота.
+
+### Пример конвертации на Java
 
     {
-    //MoneyValue - конвертация из BigDecimal в MoneyValue и обратно
+    //MoneyValue — конвертация из BigDecimal в MoneyValue и обратно
         BigDecimal value = new BigDecimal("123.456");
         String currency = "RUB";
         MoneyValue moneyValue = MoneyValue.newBuilder() 
@@ -74,23 +79,25 @@ Seconds содержит количество секунд с полуночи (
         BigDecimal bigDecimal = moneyValue.getUnits() == 0 && moneyValue.getNano() == 0 ? BigDecimal.ZERO : BigDecimal.valueOf(moneyValue.getUnits()).add(BigDecimal.valueOf(moneyValue.getNano(), 9));
     }
 
-####Примеры конвертированных значений 
+#### Примеры конвертированных значений 
+
 |Сумма в валюте|Сумма в MoneyValue|
 |:---------------|:-----------------|
 | 114,25 рублей  |`{`</br>`"currency": "RUB",`</br>`"units": "114",`</br>`"nano": 250000000`</br>`}`|
 |-200,20 долларов|`{`</br>`"currency": "USD",`</br>`"units": "-200",`</br>`"nano": -200000000`</br>`}`|
 |-0.01 юаней     |`{`</br>`"currency": "CNY",`</br>`"units": "-0",`</br>`"nano": -10000000`</br>`}`|
 
-##Quotation
-Данный тип данных аналогичен MoneyValue с той лишь разницей, что в нём не содержится информации о валюте.
+## Quotation
 
-* units — целая часть суммы.
-* nano — дробная часть суммы. 
+Этот тип данных аналогичен MoneyValue, но в нём не содержится информации о валюте.
 
-###Пример конвертации на Java
+* `units` — целая часть суммы;
+* `nano` — дробная часть суммы. 
+
+### Пример конвертации на Java
 
     {
-    //Пример конвертации из BigDecimal в Quotation и обратно
+    //Из BigDecimal в Quotation и обратно
         BigDecimal value = new BigDecimal("123.456");
         Quotation quotation = Quotation.newBuilder()
             .setUnits(value != null ? value.longValue() : 0)
@@ -99,7 +106,8 @@ Seconds содержит количество секунд с полуночи (
         BigDecimal bigDecimal = quotation.getUnits() == 0 && quotation.getNano() == 0 ? BigDecimal.ZERO : BigDecimal.valueOf(quotation.getUnits()).add(BigDecimal.valueOf(quotation.getNano(), 9));
     }
 
-####Примеры конвертированных значений
+#### Примеры конвертированных значений
+
 |Сумма   |Сумма в Quotation|
 |:-------|:----------------|
 | 114,25 |`{`</br>`"units": "114",`</br>`"nano": 250000000`</br>`}`|

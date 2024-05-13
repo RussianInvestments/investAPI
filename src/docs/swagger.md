@@ -1,55 +1,53 @@
-**C помощью Swagger вы можете тестировать методы Tinkoff Invest API. [Cсылка на Swagger Tinkoff Invest API](https://russianinvestments.github.io/investAPI/swagger-ui/).**
 
-## Что такое Swagger?
+C помощью Swagger вы можете тестировать методы Tinkoff Invest API. 
 
-**Swagger** - это фреймворк для спецификации RESTful API. Один из его инструментов, Swagger UI, позволяет не только интерактивно просматривать спецификацию, но и отправлять запросы.
+[Swagger Tinkoff Invest API](https://russianinvestments.github.io/investAPI/swagger-ui/)
 
-## Что такое Swagger UI?
+## Swagger
 
-**[Swagger UI](https://swagger.io/tools/swagger-ui/)** - один из самых популярных инструментов для создания интерактивной документации. Swagger UI создает интерактивную консоль API для экспериментов с запросами в реальном времени. 
+[**Swagger**](https://swagger.io/) — это фреймворк для спецификации RESTful API. Один из его инструментов, Swagger UI, позволяет не только интерактивно просматривать спецификацию, но и отправлять запросы.
 
-## Инструкция по использованию
+## Swagger UI
+
+**[Swagger UI](https://swagger.io/tools/swagger-ui/)** — один из самых популярных инструментов для создания интерактивной документации. Swagger UI создаёт интерактивную консоль API для экспериментов с запросами в реальном времени. 
+
+## Использование
 
 ### Авторизация
 
-Прежде чем делать какие-либо запросы, нужна авторизация. Нажимаем кнопку Authorize и заполняем информацию, требуемую в окне «Авторизация», изображенном ниже:
+Перед отправкой запросов вам нужно авторизоваться:
 
-![Swagger авторизация](/investAPI/img/Auth_swagger1.png "Swagger авторизация")
+1. Нажмите **Authorize**.
 
-![Swagger авторизация - интерфейс](/investAPI/img/Auth_swagger.png "Swagger авторизация - интерфейс")
+    <img src="/investAPI/img/Auth_swagger1.png" width="650">
 
-В нашем случае необходимо ввести токен токен доступа. Подробнее о том, как получить токен можно узнать по ссылке: [Токен доступа](/investAPI/token/)
+2. Введите данные в окне **Available authorizations** и нажмите **Authorize**. В нашем примере нужно ввести токен токен доступа. Пример токена — `Bearer t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg`.
 
-Например:
-`t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg`
+    [Как получить токен доступа](/investAPI/token/)
 
-###  Создание запроса
+    <img src="/investAPI/img/Auth_swagger.png" width="650">
 
-Теперь создадим запрос:
+### Отправка запроса
 
-- Разворачиваем конечную точку 
-- Нажимаем кнопку Try it out
+Чтобы создать запрос:
 
-![Swagger Try](/investAPI/img/Swagger_try.png "Swagger Try")
+1. Разверните конечную точку и нажмите **Try it out**.
 
-- После того, как мы нажмем кнопку Try it out, значение примера в поле «Тело запроса» станет редактируемым.
+    <img src="/investAPI/img/Swagger_try.png" width="650">
 
-- В редактируемом поле изменяем значения параметров.
+    Значение примера в поле **Request body** станет редактируемым.
 
-- Нажимаем Execute.
+2. В редактируемом поле измените значения параметров и нажмите **Execute**.
 
-![Swagger Try 2](/investAPI/img/Swagger_try2.png "Swagger Try 2")
+    <img src="/investAPI/img/Swagger_try2.png" width="650">
 
-Пользовательский интерфейс Swagger отправляет запрос и показывает отправленный curl. Раздел Ответы показывает тело ответа и заголовки ответа.
+Пользовательский интерфейс Swagger отправляет запрос и показывает отправленный curl. В разделе **Responses** можно посмотреть тело и заголовки ответа.   
 
-Самый ожидаемый ответ, в случае правильной обработки запроса сервером, имеет код 200 и показывает то, как должна выглядеть структура ответа.
+Если сервер обработал запрос корректно, вернётся 200 ответ. Он показывает, как должна выглядеть структура ответа.
 
-![Swagger Response](/investAPI/img/response_swagger.png "Swagger Respons")
+<img src="/investAPI/img/response_swagger.png" width="650">
 
-![Swagger Response](/investAPI/img/response_swagger2.png "Swagger Respons")
+<img src="/investAPI/img/response_swagger2.png" width="650">
 
-C помощью Swagger вы можете тестировать методы [Tinkoff Invest API](https://russianinvestments.github.io/investAPI/swagger-ui/).
 
-Для спецификации RESTful API характерны отдельные [коды ошибок](/investAPI/http_errors/).
-
-Официальную документацию вы можете найти на сайте [Swagger](https://swagger.io/).
+>Для спецификации RESTful API характерны отдельные [коды ошибок](/investAPI/http_errors/).

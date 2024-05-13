@@ -92,6 +92,26 @@ nav:
     - Методы работы с индикаторами технического анализа: get_tech_indicators.md 
     - FAQ: faq_marketdata.md
   - Стоп-заявки: 
+    - FAQ: faq_instruments.md
+    - Глоссарий и дополнительная информация: more-instrument.md
+  - Ордеры:
+    - Описание: head-orders.md
+    - Методы: orders.md
+    - FAQ: faq_orders.md
+    - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md
+    - Стрим заявок: orders_state_stream.md
+  - Операции:
+    - Описание: head-operations.md
+    - Методы: operations.md
+    - FAQ: faq_operations.md
+    - Особенности взаимодействия: operations_problems.md
+  - Котировки:
+    - Описание: head-marketdata.md
+    - Методы: marketdata.md
+    - FAQ: faq_marketdata.md
+    - Получение исторических рыночных данных: get_history.md
+    - Методы работы с индикаторами технического анализа: get_tech_indicators.md 
+  - Стоп-ордеры: 
     - Описание: head-stoporders.md
     - Методы: stoporders.md
     - FAQ: faq_stoporders.md   

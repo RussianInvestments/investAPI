@@ -9,7 +9,7 @@
 1. Проверьте, существует ли позиция по бумаге через метод [FindInstrument](/investAPI/instruments/#findinstrument).
 2. Проверьте статус торгового инструмента через метод [GetTradingStatus](/investAPI/marketdata/#gettradingstatus).
 3. Получите последние цены на инструмент через метод [GetLastPrice](/investAPI/marketdata#getlastprices).
-4. Получите параметр `min_price_increment` для расчёта цены, которую можно выставить, через метод [GetInstrumentBy](/src/docs/instruments.md/#getinstrumentby).
+4. Получите параметр `min_price_increment` для расчёта цены, которую можно выставить, через метод [GetInstrumentBy](/investAPI/instruments/#getinstrumentby).
 5. Проверьте свой счёт в аккаунте.
 6. Выставите заявку через метод [PostOrder](/investAPI/orders#postorder) и сохраните полученный параметр `order_id`.
 7. Получите список активных заявок через метод [GetOrders](/investAPI/orders#getorders) и по параметру `order_id` проверьте, есть ли заявка в списке активных.
@@ -48,11 +48,12 @@
 * `failed to connect to all addresses`;
 * `handshake failed`;
 * `certificate verify failed`;
-	
+    
 Часто эта проблема возникает из-за недействительного сертификата, который используется в приложении.
 
 Выпустите новый сертификат — например, через команду `openssl s_client -connect invest-public-api.tinkoff.ru:443`, и импортируйте его.
-	
+    
+
 ### Загрузить сертификат вручную
 
 Сертификат можно загрузить вручную. Пример шагов для Windows и Google Chrome:

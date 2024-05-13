@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tinkoff.ru
-  version: '1.19'
+  version: '1.21'
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
@@ -12,7 +12,7 @@ servers:
   - url: https://invest-public-api.tinkoff.ru/rest/
     description: Работа с биржей
   - url: https://sandbox-invest-public-api.tinkoff.ru/rest/
-    description: Работа с песочницей
+    description: Работа в песочнице
 security:
   - Bearer: []
 externalDocs:
@@ -1534,7 +1534,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/v1OrderState'
+                $ref: '#/components/schemas/contractv1OrderState'
           description: A successful response.
         default:
           content:
@@ -1738,6 +1738,33 @@ paths:
       tags:
         - OrdersService
       x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.OrdersStreamService/OrderStateStream:
+    post:
+      operationId: OrdersStreamService_OrderStateStream
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1OrderStateStreamRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: >-
+                  #/components/schemas/Stream_result_of_v1OrderStateStreamResponse
+          description: A successful response.(streaming responses)
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Stream поручений пользователя
+      tags:
+        - OrdersStreamService
+      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream:
     post:
       operationId: OrdersStreamService_TradesStream
@@ -1846,6 +1873,37 @@ paths:
       tags:
         - SandboxService
       x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.SandboxService/GetSandboxMaxLots:
+    post:
+      operationId: SandboxService_GetSandboxMaxLots
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetMaxLotsRequest'
+        description: >-
+          Запрос на расчет количества доступных для покупки/продажи лотов. Если
+          не указывать цену инструмента, то расчет произведется по текущум ценам
+          в стакане: по лучшему предложению для покупки и по лучшему спросу для
+          продажи.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetMaxLotsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: расчет количества доступных для покупки/продажи лотов в песочнице.
+      tags:
+        - SandboxService
+      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.SandboxService/GetSandboxOperations:
     post:
       operationId: SandboxService_GetSandboxOperations
@@ -1915,7 +1973,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/v1OrderState'
+                $ref: '#/components/schemas/contractv1OrderState'
           description: A successful response.
         default:
           content:
@@ -3276,6 +3334,92 @@ components:
         macd:
           $ref: '#/components/schemas/v1Quotation'
       type: object
+    OrderStateStreamResponseMarkerType:
+      default: MARKER_UNKNOWN
+      description: |-
+        - MARKER_UNKNOWN: не определено
+         - MARKER_BROKER: сделки брокера
+         - MARKER_CHAT: исполнение поручение, полученного от клиента через каналы связи
+         - MARKER_PAPER: исполнение поручение, полученного от клиента в бумажной форме
+         - MARKER_MARGIN: принудительное закрытие позиций
+         - MARKER_TKBNM: сделки по управлению ликвидностью
+         - MARKER_SHORT: сделки РЕПО по привлечению у клиентов бумаг
+         - MARKER_SPECMM: перенос временно непокрытых позиций
+      enum:
+        - MARKER_UNKNOWN
+        - MARKER_BROKER
+        - MARKER_CHAT
+        - MARKER_PAPER
+        - MARKER_MARGIN
+        - MARKER_TKBNM
+        - MARKER_SHORT
+        - MARKER_SPECMM
+        - MARKER_PO
+      title: Маркер
+      type: string
+    OrderStateStreamResponseStatusCauseInfo:
+      default: CAUSE_UNSPECIFIED
+      description: |-
+        - CAUSE_UNSPECIFIED: Не определено
+         - CAUSE_CANCELLED_BY_CLIENT: Отменено клиентом
+         - CAUSE_CANCELLED_BY_EXCHANGE: Отменено биржей
+         - CAUSE_CANCELLED_NOT_ENOUGH_POSITION: Заявка не выставлена из-за нехватки средств
+         - CAUSE_CANCELLED_BY_CLIENT_BLOCK: Отменено из-за блокировки клиента
+         - CAUSE_REJECTED_BY_BROKER: Отклонено брокером
+         - CAUSE_REJECTED_BY_EXCHANGE: Отклонено биржей
+         - CAUSE_CANCELLED_BY_BROKER: Отменено брокером
+      enum:
+        - CAUSE_UNSPECIFIED
+        - CAUSE_CANCELLED_BY_CLIENT
+        - CAUSE_CANCELLED_BY_EXCHANGE
+        - CAUSE_CANCELLED_NOT_ENOUGH_POSITION
+        - CAUSE_CANCELLED_BY_CLIENT_BLOCK
+        - CAUSE_REJECTED_BY_BROKER
+        - CAUSE_REJECTED_BY_EXCHANGE
+        - CAUSE_CANCELLED_BY_BROKER
+      title: Дополнительная информация по статусу заявки
+      type: string
+    OrderStateStreamResponseSubscriptionResponse:
+      example:
+        streamId: streamId
+        accounts:
+          - accounts
+          - accounts
+        error:
+          code: code
+          message: message
+        trackingId: trackingId
+      properties:
+        trackingId:
+          description: >-
+            Уникальный идентификатор запроса, подробнее:
+            [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+          type: string
+        status:
+          $ref: >-
+            #/components/schemas/OrderStateStreamResponseSubscriptionResponseSubscriptionStatus
+        streamId:
+          title: Идентификатор открытого соединения
+          type: string
+        accounts:
+          description: Идентификаторы счетов.
+          items:
+            type: string
+          type: array
+        error:
+          $ref: '#/components/schemas/SubscriptionResponseErrorDetail'
+      type: object
+    OrderStateStreamResponseSubscriptionResponseSubscriptionStatus:
+      default: SUBSCRIPTION_STATUS_UNSPECIFIED
+      enum:
+        - SUBSCRIPTION_STATUS_UNSPECIFIED
+        - SUBSCRIPTION_STATUS_OK
+        - SUBSCRIPTION_STATUS_ERROR
+      title: |-
+        - SUBSCRIPTION_STATUS_UNSPECIFIED: Статус подписки не определен.
+         - SUBSCRIPTION_STATUS_OK: Подписка успешно установлена.
+         - SUBSCRIPTION_STATUS_ERROR: Ошибка подписки
+      type: string
     PortfolioRequestCurrencyRequest:
       default: RUB
       enum:
@@ -3287,6 +3431,18 @@ components:
          - USD: Доллары
          - EUR: Евро
       type: string
+    SubscriptionResponseErrorDetail:
+      example:
+        code: code
+        message: message
+      properties:
+        code:
+          description: Код ошибки.
+          type: string
+        message:
+          description: Описание ошибки.
+          type: string
+      type: object
     TradingIntervalTimeInterval:
       example:
         endTs: 2000-01-23T04:56:07.000Z
@@ -3311,6 +3467,149 @@ components:
         - CANDLE_SOURCE_UNSPECIFIED
         - CANDLE_SOURCE_EXCHANGE
         - CANDLE_SOURCE_DEALER_WEEKEND
+      type: string
+    contractv1OrderState:
+      description: Информация о торговом поручении.
+      example:
+        orderId: orderId
+        figi: figi
+        initialOrderPrice:
+          nano: 5
+          currency: currency
+          units: units
+        initialCommission:
+          nano: 5
+          currency: currency
+          units: units
+        averagePositionPrice:
+          nano: 5
+          currency: currency
+          units: units
+        lotsExecuted: lotsExecuted
+        totalOrderAmount:
+          nano: 5
+          currency: currency
+          units: units
+        lotsRequested: lotsRequested
+        instrumentUid: instrumentUid
+        stages:
+          - executionTime: 2000-01-23T04:56:07.000Z
+            quantity: quantity
+            price:
+              nano: 5
+              currency: currency
+              units: units
+            tradeId: tradeId
+          - executionTime: 2000-01-23T04:56:07.000Z
+            quantity: quantity
+            price:
+              nano: 5
+              currency: currency
+              units: units
+            tradeId: tradeId
+        orderRequestId: orderRequestId
+        executedOrderPrice:
+          nano: 5
+          currency: currency
+          units: units
+        executedCommission:
+          nano: 5
+          currency: currency
+          units: units
+        initialSecurityPrice:
+          nano: 5
+          currency: currency
+          units: units
+        serviceCommission:
+          nano: 5
+          currency: currency
+          units: units
+        currency: currency
+        orderDate: 2000-01-23T04:56:07.000Z
+      properties:
+        orderId:
+          description: Биржевой идентификатор заявки.
+          type: string
+        executionReportStatus:
+          $ref: '#/components/schemas/v1OrderExecutionReportStatus'
+        lotsRequested:
+          description: Запрошено лотов.
+          format: int64
+          type: string
+        lotsExecuted:
+          description: Исполнено лотов.
+          format: int64
+          type: string
+        initialOrderPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        executedOrderPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        totalOrderAmount:
+          $ref: '#/components/schemas/v1MoneyValue'
+        averagePositionPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        initialCommission:
+          $ref: '#/components/schemas/v1MoneyValue'
+        executedCommission:
+          $ref: '#/components/schemas/v1MoneyValue'
+        figi:
+          description: Figi-идентификатор инструмента.
+          type: string
+        direction:
+          $ref: '#/components/schemas/v1OrderDirection'
+        initialSecurityPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        stages:
+          description: Стадии выполнения заявки.
+          items:
+            $ref: '#/components/schemas/v1OrderStage'
+          type: array
+        serviceCommission:
+          $ref: '#/components/schemas/v1MoneyValue'
+        currency:
+          description: Валюта заявки.
+          type: string
+        orderType:
+          $ref: '#/components/schemas/v1OrderType'
+        orderDate:
+          description: Дата и время выставления заявки в часовом поясе UTC.
+          format: date-time
+          type: string
+        instrumentUid:
+          description: UID идентификатор инструмента.
+          type: string
+        orderRequestId:
+          description: >-
+            Идентификатор ключа идемпотентности, переданный клиентом, в формате
+            UID. Максимальная длина 36 символов.
+          type: string
+      type: object
+    contractv1SubscriptionStatus:
+      default: SUBSCRIPTION_STATUS_UNSPECIFIED
+      description: |-
+        Результат подписки.
+
+         - SUBSCRIPTION_STATUS_UNSPECIFIED: Статус подписки не определён.
+         - SUBSCRIPTION_STATUS_SUCCESS: Успешно.
+         - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND: Инструмент не найден.
+         - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID: Некорректный статус подписки, список возможных значений: [SubscriptionAction](https://russianinvestments.github.io/investAPI/marketdata#subscriptionaction).
+         - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID: Некорректная глубина стакана, доступные значения: 1, 10, 20, 30, 40, 50.
+         - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID: Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval).
+         - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED: Превышен лимит на общее количество подписок в рамках стрима, подробнее: [Лимитная политика](https://russianinvestments.github.io/investAPI/limits/).
+         - SUBSCRIPTION_STATUS_INTERNAL_ERROR: Внутренняя ошибка сервиса.
+         - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS: Превышен лимит на количество запросов на подписки в течение установленного отрезка времени
+         - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND: Активная подписка не найдена. Ошибка может возникнуть только при отписке от не существующей отписки
+      enum:
+        - SUBSCRIPTION_STATUS_UNSPECIFIED
+        - SUBSCRIPTION_STATUS_SUCCESS
+        - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND
+        - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID
+        - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID
+        - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID
+        - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED
+        - SUBSCRIPTION_STATUS_INTERNAL_ERROR
+        - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS
+        - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND
       type: string
     protobufAny:
       additionalProperties:
@@ -4879,6 +5178,8 @@ components:
           $ref: '#/components/schemas/v1RiskLevel'
         brand:
           $ref: '#/components/schemas/v1BrandData'
+        bondType:
+          $ref: '#/components/schemas/v1BondType'
       type: object
     v1BondResponse:
       description: Информация об облигации.
@@ -4966,6 +5267,15 @@ components:
         instrument:
           $ref: '#/components/schemas/v1Bond'
       type: object
+    v1BondType:
+      default: BOND_TYPE_UNSPECIFIED
+      description: |2-
+         - BOND_TYPE_UNSPECIFIED: Тип облигации не определен.
+         - BOND_TYPE_REPLACED: Замещающая облигация.
+      enum:
+        - BOND_TYPE_UNSPECIFIED
+        - BOND_TYPE_REPLACED
+      type: string
     v1BondsResponse:
       description: Список облигаций.
       example:
@@ -5603,7 +5913,7 @@ components:
         interval:
           $ref: '#/components/schemas/v1SubscriptionInterval'
         subscriptionStatus:
-          $ref: '#/components/schemas/v1SubscriptionStatus'
+          $ref: '#/components/schemas/contractv1SubscriptionStatus'
         instrumentUid:
           title: Uid инструмента
           type: string
@@ -6426,6 +6736,8 @@ components:
         assetUid:
           description: Уникальный идентификатор актива.
           type: string
+        instrumentExchange:
+          $ref: '#/components/schemas/v1InstrumentExchangeType'
         forIisFlag:
           description: Признак доступности для ИИС.
           type: boolean
@@ -8644,7 +8956,11 @@ components:
       title: Результат количество доступных для покупки/продажи лотов
       type: object
     v1GetMySubscriptions:
-      description: Запрос активных подписок.
+      title: >-
+        Запрос активных подписок. Запрос вернет по одному сообщению на каждый
+        тип активных подписок (SubscribeLastPriceResponse,
+        SubscribeInfoResponse, SubscribeTradesResponse,
+        SubscribeOrderBookResponse, SubscribeCandlesResponse)
       type: object
     v1GetOperationsByCursorRequest:
       description: Запрос списка операций по счёту с пагинацией.
@@ -8971,6 +9287,7 @@ components:
           format: int64
           title: Количество лотов
           type: string
+      title: Запрос получения предварительной стоимости заявки
       type: object
     v1GetOrderPriceResponse:
       example:
@@ -9033,6 +9350,7 @@ components:
           $ref: '#/components/schemas/GetOrderPriceResponseExtraBond'
         extraFuture:
           $ref: '#/components/schemas/GetOrderPriceResponseExtraFuture'
+      title: Предварительная стоимость заявки
       type: object
     v1GetOrderStateRequest:
       description: Запрос получения статуса торгового поручения.
@@ -9176,7 +9494,7 @@ components:
         orders:
           description: Массив активных заявок.
           items:
-            $ref: '#/components/schemas/v1OrderState'
+            $ref: '#/components/schemas/contractv1OrderState'
           type: array
       type: object
     v1GetStopOrdersRequest:
@@ -9611,7 +9929,7 @@ components:
           description: Figi-идентификатор инструмента.
           type: string
         subscriptionStatus:
-          $ref: '#/components/schemas/v1SubscriptionStatus'
+          $ref: '#/components/schemas/contractv1SubscriptionStatus'
         instrumentUid:
           title: Uid инструмента
           type: string
@@ -9823,6 +10141,16 @@ components:
           format: date-time
           type: string
       type: object
+    v1InstrumentExchangeType:
+      default: INSTRUMENT_EXCHANGE_UNSPECIFIED
+      description: |-
+        - INSTRUMENT_EXCHANGE_UNSPECIFIED: Площадка торговли не определена.
+         - INSTRUMENT_EXCHANGE_DEALER: Бумага, торгуемая у дилера.
+      enum:
+        - INSTRUMENT_EXCHANGE_UNSPECIFIED
+        - INSTRUMENT_EXCHANGE_DEALER
+      title: Площадка торговли
+      type: string
     v1InstrumentIdType:
       default: INSTRUMENT_ID_UNSPECIFIED
       description: |-
@@ -10045,6 +10373,8 @@ components:
       properties:
         instrumentStatus:
           $ref: '#/components/schemas/v1InstrumentStatus'
+        instrumentExchange:
+          $ref: '#/components/schemas/v1InstrumentExchangeType'
       type: object
     v1LastPrice:
       description: Информация о цене последней сделки.
@@ -10095,7 +10425,7 @@ components:
           description: Figi-идентификатор инструмента.
           type: string
         subscriptionStatus:
-          $ref: '#/components/schemas/v1SubscriptionStatus'
+          $ref: '#/components/schemas/contractv1SubscriptionStatus'
         instrumentUid:
           title: Uid инструмента
           type: string
@@ -10120,7 +10450,11 @@ components:
         subscribeLastPriceRequest:
           $ref: '#/components/schemas/v1SubscribeLastPriceRequest'
         getMySubscriptions:
-          description: Запрос активных подписок.
+          title: >-
+            Запрос активных подписок. Запрос вернет по одному сообщению на
+            каждый тип активных подписок (SubscribeLastPriceResponse,
+            SubscribeInfoResponse, SubscribeTradesResponse,
+            SubscribeOrderBookResponse, SubscribeCandlesResponse)
           type: object
       type: object
     v1MarketDataResponse:
@@ -11494,7 +11828,7 @@ components:
           format: int32
           type: integer
         subscriptionStatus:
-          $ref: '#/components/schemas/v1SubscriptionStatus'
+          $ref: '#/components/schemas/contractv1SubscriptionStatus'
         instrumentUid:
           title: Uid инструмента
           type: string
@@ -11573,121 +11907,219 @@ components:
           title: Время исполнения сделки
           type: string
       type: object
-    v1OrderState:
-      description: Информация о торговом поручении.
+    v1OrderStateStreamRequest:
+      properties:
+        accounts:
+          description: Идентификаторы счетов.
+          items:
+            type: string
+          type: array
+        pingDelayMillis:
+          format: int32
+          title: Задержка пинг сообщений milliseconds 1000-120000, default 120000
+          type: integer
+      title: Запрос установки стрим-соединения торговых поручений
+      type: object
+    v1OrderStateStreamResponse:
+      example:
+        ping:
+          streamId: streamId
+          time: 2000-01-23T04:56:07.000Z
+        subscription:
+          streamId: streamId
+          accounts:
+            - accounts
+            - accounts
+          error:
+            code: code
+            message: message
+          trackingId: trackingId
+        orderState:
+          orderId: orderId
+          initialOrderPrice:
+            nano: 5
+            currency: currency
+            units: units
+          createdAt: 2000-01-23T04:56:07.000Z
+          completionTime: 2000-01-23T04:56:07.000Z
+          lotsLeft: lotsLeft
+          orderPrice:
+            nano: 5
+            currency: currency
+            units: units
+          executedOrderPrice:
+            nano: 5
+            currency: currency
+            units: units
+          currency: currency
+          classCode: classCode
+          ticker: ticker
+          amount:
+            nano: 5
+            currency: currency
+            units: units
+          lotSize: 0
+          lotsCancelled: lotsCancelled
+          trades:
+            - dateTime: 2000-01-23T04:56:07.000Z
+              quantity: quantity
+              price:
+                nano: 6
+                units: units
+              tradeId: tradeId
+            - dateTime: 2000-01-23T04:56:07.000Z
+              quantity: quantity
+              price:
+                nano: 6
+                units: units
+              tradeId: tradeId
+          accountId: accountId
+          lotsExecuted: lotsExecuted
+          clientCode: clientCode
+          lotsRequested: lotsRequested
+          instrumentUid: instrumentUid
+          orderRequestId: orderRequestId
+          exchange: exchange
+      properties:
+        orderState:
+          $ref: '#/components/schemas/v1OrderStateStreamResponseOrderState'
+        ping:
+          $ref: '#/components/schemas/v1Ping'
+        subscription:
+          $ref: '#/components/schemas/OrderStateStreamResponseSubscriptionResponse'
+      title: Информация по заявкам
+      type: object
+    v1OrderStateStreamResponseOrderState:
       example:
         orderId: orderId
-        figi: figi
         initialOrderPrice:
           nano: 5
           currency: currency
           units: units
-        initialCommission:
+        createdAt: 2000-01-23T04:56:07.000Z
+        completionTime: 2000-01-23T04:56:07.000Z
+        lotsLeft: lotsLeft
+        orderPrice:
           nano: 5
           currency: currency
           units: units
-        averagePositionPrice:
-          nano: 5
-          currency: currency
-          units: units
-        lotsExecuted: lotsExecuted
-        totalOrderAmount:
-          nano: 5
-          currency: currency
-          units: units
-        lotsRequested: lotsRequested
-        instrumentUid: instrumentUid
-        stages:
-          - executionTime: 2000-01-23T04:56:07.000Z
-            quantity: quantity
-            price:
-              nano: 5
-              currency: currency
-              units: units
-            tradeId: tradeId
-          - executionTime: 2000-01-23T04:56:07.000Z
-            quantity: quantity
-            price:
-              nano: 5
-              currency: currency
-              units: units
-            tradeId: tradeId
-        orderRequestId: orderRequestId
         executedOrderPrice:
-          nano: 5
-          currency: currency
-          units: units
-        executedCommission:
-          nano: 5
-          currency: currency
-          units: units
-        initialSecurityPrice:
-          nano: 5
-          currency: currency
-          units: units
-        serviceCommission:
           nano: 5
           currency: currency
           units: units
         currency: currency
-        orderDate: 2000-01-23T04:56:07.000Z
+        classCode: classCode
+        ticker: ticker
+        amount:
+          nano: 5
+          currency: currency
+          units: units
+        lotSize: 0
+        lotsCancelled: lotsCancelled
+        trades:
+          - dateTime: 2000-01-23T04:56:07.000Z
+            quantity: quantity
+            price:
+              nano: 6
+              units: units
+            tradeId: tradeId
+          - dateTime: 2000-01-23T04:56:07.000Z
+            quantity: quantity
+            price:
+              nano: 6
+              units: units
+            tradeId: tradeId
+        accountId: accountId
+        lotsExecuted: lotsExecuted
+        clientCode: clientCode
+        lotsRequested: lotsRequested
+        instrumentUid: instrumentUid
+        orderRequestId: orderRequestId
+        exchange: exchange
       properties:
         orderId:
-          description: Биржевой идентификатор заявки.
-          type: string
-        executionReportStatus:
-          $ref: '#/components/schemas/v1OrderExecutionReportStatus'
-        lotsRequested:
-          description: Запрошено лотов.
-          format: int64
-          type: string
-        lotsExecuted:
-          description: Исполнено лотов.
-          format: int64
-          type: string
-        initialOrderPrice:
-          $ref: '#/components/schemas/v1MoneyValue'
-        executedOrderPrice:
-          $ref: '#/components/schemas/v1MoneyValue'
-        totalOrderAmount:
-          $ref: '#/components/schemas/v1MoneyValue'
-        averagePositionPrice:
-          $ref: '#/components/schemas/v1MoneyValue'
-        initialCommission:
-          $ref: '#/components/schemas/v1MoneyValue'
-        executedCommission:
-          $ref: '#/components/schemas/v1MoneyValue'
-        figi:
-          description: Figi-идентификатор инструмента.
-          type: string
-        direction:
-          $ref: '#/components/schemas/v1OrderDirection'
-        initialSecurityPrice:
-          $ref: '#/components/schemas/v1MoneyValue'
-        stages:
-          description: Стадии выполнения заявки.
-          items:
-            $ref: '#/components/schemas/v1OrderStage'
-          type: array
-        serviceCommission:
-          $ref: '#/components/schemas/v1MoneyValue'
-        currency:
-          description: Валюта заявки.
-          type: string
-        orderType:
-          $ref: '#/components/schemas/v1OrderType'
-        orderDate:
-          description: Дата и время выставления заявки в часовом поясе UTC.
-          format: date-time
-          type: string
-        instrumentUid:
-          description: UID идентификатор инструмента.
+          title: Биржевой идентификатор заявки
           type: string
         orderRequestId:
           description: >-
             Идентификатор ключа идемпотентности, переданный клиентом, в формате
             UID. Максимальная длина 36 символов.
           type: string
+        clientCode:
+          title: Код клиента на бирже
+          type: string
+        createdAt:
+          format: date-time
+          title: Дата создания заявки
+          type: string
+        executionReportStatus:
+          $ref: '#/components/schemas/v1OrderExecutionReportStatus'
+        statusInfo:
+          $ref: '#/components/schemas/OrderStateStreamResponseStatusCauseInfo'
+        ticker:
+          title: Тикер инструмента
+          type: string
+        classCode:
+          title: Класс-код (секция торгов)
+          type: string
+        lotSize:
+          format: int32
+          title: Лотность инструмента заявки
+          type: integer
+        direction:
+          $ref: '#/components/schemas/v1OrderDirection'
+        timeInForce:
+          $ref: '#/components/schemas/v1TimeInForceType'
+        orderType:
+          $ref: '#/components/schemas/v1OrderType'
+        accountId:
+          title: Номер счета
+          type: string
+        initialOrderPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        orderPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        amount:
+          $ref: '#/components/schemas/v1MoneyValue'
+        executedOrderPrice:
+          $ref: '#/components/schemas/v1MoneyValue'
+        currency:
+          title: Валюта исполнения
+          type: string
+        lotsRequested:
+          format: int64
+          title: Запрошено лотов
+          type: string
+        lotsExecuted:
+          format: int64
+          title: Исполнено лотов
+          type: string
+        lotsLeft:
+          format: int64
+          title: Число неисполненных лотов по заявке
+          type: string
+        lotsCancelled:
+          format: int64
+          title: Отмененные лоты
+          type: string
+        marker:
+          $ref: '#/components/schemas/OrderStateStreamResponseMarkerType'
+        trades:
+          items:
+            $ref: '#/components/schemas/v1OrderTrade'
+          title: Список сделок
+          type: array
+        completionTime:
+          format: date-time
+          title: Время исполнения заявки
+          type: string
+        exchange:
+          title: Код биржи
+          type: string
+        instrumentUid:
+          title: UID идентификатор инструмента
+          type: string
+      title: Заявка
       type: object
     v1OrderTrade:
       description: Информация о сделке.
@@ -13327,6 +13759,8 @@ components:
         assetUid:
           description: Уникальный идентификатор актива.
           type: string
+        instrumentExchange:
+          $ref: '#/components/schemas/v1InstrumentExchangeType'
         forIisFlag:
           description: Признак доступности для ИИС.
           type: boolean
@@ -13651,6 +14085,8 @@ components:
           $ref: '#/components/schemas/v1StopOrderTrailingData'
         status:
           $ref: '#/components/schemas/v1StopOrderStatusOption'
+        exchangeOrderType:
+          $ref: '#/components/schemas/v1ExchangeOrderType'
       type: object
     v1StopOrderDirection:
       default: STOP_ORDER_DIRECTION_UNSPECIFIED
@@ -13939,6 +14375,8 @@ components:
           items:
             $ref: '#/components/schemas/v1TradeInstrument'
           type: array
+        tradeType:
+          $ref: '#/components/schemas/v1TradeSourceType'
       type: object
     v1SubscribeTradesResponse:
       description: Результат изменения статуса подписки на поток обезличенных сделок.
@@ -13964,6 +14402,8 @@ components:
           items:
             $ref: '#/components/schemas/v1TradeSubscription'
           type: array
+        tradeType:
+          $ref: '#/components/schemas/v1TradeSourceType'
       type: object
     v1SubscriptionAction:
       default: SUBSCRIPTION_ACTION_UNSPECIFIED
@@ -14013,33 +14453,6 @@ components:
         - SUBSCRIPTION_INTERVAL_WEEK
         - SUBSCRIPTION_INTERVAL_MONTH
       type: string
-    v1SubscriptionStatus:
-      default: SUBSCRIPTION_STATUS_UNSPECIFIED
-      description: |-
-        Результат подписки.
-
-         - SUBSCRIPTION_STATUS_UNSPECIFIED: Статус подписки не определён.
-         - SUBSCRIPTION_STATUS_SUCCESS: Успешно.
-         - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND: Инструмент не найден.
-         - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID: Некорректный статус подписки, список возможных значений: [SubscriptionAction](https://russianinvestments.github.io/investAPI/marketdata#subscriptionaction).
-         - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID: Некорректная глубина стакана, доступные значения: 1, 10, 20, 30, 40, 50.
-         - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID: Некорректный интервал свечей, список возможных значений: [SubscriptionInterval](https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval).
-         - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED: Превышен лимит на общее количество подписок в рамках стрима, подробнее: [Лимитная политика](https://russianinvestments.github.io/investAPI/limits/).
-         - SUBSCRIPTION_STATUS_INTERNAL_ERROR: Внутренняя ошибка сервиса.
-         - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS: Превышен лимит на количество запросов на подписки в течение установленного отрезка времени
-         - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND: Активная подписка не найдена. Ошибка может возникнуть только при отписке от не существующей отписки
-      enum:
-        - SUBSCRIPTION_STATUS_UNSPECIFIED
-        - SUBSCRIPTION_STATUS_SUCCESS
-        - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND
-        - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID
-        - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID
-        - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID
-        - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED
-        - SUBSCRIPTION_STATUS_INTERNAL_ERROR
-        - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS
-        - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND
-      type: string
     v1TakeProfitType:
       default: TAKE_PROFIT_TYPE_UNSPECIFIED
       description: |-
@@ -14055,17 +14468,18 @@ components:
       type: string
     v1TimeInForceType:
       default: TIME_IN_FORCE_UNSPECIFIED
-      enum:
-        - TIME_IN_FORCE_UNSPECIFIED
-        - TIME_IN_FORCE_DAY
-        - TIME_IN_FORCE_FILL_AND_KILL
-        - TIME_IN_FORCE_FILL_OR_KILL
-      title: >-
+      description: >-
         - TIME_IN_FORCE_UNSPECIFIED: Значение не определено см.
         TIME_IN_FORCE_DAY
          - TIME_IN_FORCE_DAY: Заявка действует до конца торгового дня. Значение по умолчанию
          - TIME_IN_FORCE_FILL_AND_KILL: Если в момент выставления возможно исполнение заявки(в т.ч. частичное), заявка будет исполнена или отменена сразу после выставления
          - TIME_IN_FORCE_FILL_OR_KILL: Если в момент выставления возможно полное исполнение заявки, заявка будет исполнена или отменена сразу после выставления, недоступно для срочного рынка и торговли по выходным
+      enum:
+        - TIME_IN_FORCE_UNSPECIFIED
+        - TIME_IN_FORCE_DAY
+        - TIME_IN_FORCE_FILL_AND_KILL
+        - TIME_IN_FORCE_FILL_OR_KILL
+      title: Алгоритм исполнения заявки
       type: string
     v1Trade:
       description: Информация о сделке.
@@ -14096,6 +14510,8 @@ components:
         instrumentUid:
           title: Uid инструмента
           type: string
+        tradeSource:
+          $ref: '#/components/schemas/v1TradeSourceType'
       type: object
     v1TradeDirection:
       default: TRADE_DIRECTION_UNSPECIFIED
@@ -14124,6 +14540,20 @@ components:
             instrument_uid
           type: string
       type: object
+    v1TradeSourceType:
+      default: TRADE_SOURCE_UNSPECIFIED
+      description: |-
+        - TRADE_SOURCE_UNSPECIFIED: Тип сделки не определён.
+         - TRADE_SOURCE_EXCHANGE: биржевые сделки
+         - TRADE_SOURCE_DEALER: сделки дилера
+         - TRADE_SOURCE_ALL: все сделки
+      enum:
+        - TRADE_SOURCE_UNSPECIFIED
+        - TRADE_SOURCE_EXCHANGE
+        - TRADE_SOURCE_DEALER
+        - TRADE_SOURCE_ALL
+      title: Источники сделок
+      type: string
     v1TradeSubscription:
       description: Статус подписки.
       example:
@@ -14136,7 +14566,7 @@ components:
           description: Figi-идентификатор инструмента.
           type: string
         subscriptionStatus:
-          $ref: '#/components/schemas/v1SubscriptionStatus'
+          $ref: '#/components/schemas/contractv1SubscriptionStatus'
         instrumentUid:
           title: Uid инструмента
           type: string
@@ -15089,6 +15519,80 @@ components:
         error:
           $ref: '#/components/schemas/rpcStatus'
       title: Stream result of v1PositionsStreamResponse
+      type: object
+    Stream_result_of_v1OrderStateStreamResponse:
+      example:
+        result:
+          ping:
+            streamId: streamId
+            time: 2000-01-23T04:56:07.000Z
+          subscription:
+            streamId: streamId
+            accounts:
+              - accounts
+              - accounts
+            error:
+              code: code
+              message: message
+            trackingId: trackingId
+          orderState:
+            orderId: orderId
+            initialOrderPrice:
+              nano: 5
+              currency: currency
+              units: units
+            createdAt: 2000-01-23T04:56:07.000Z
+            completionTime: 2000-01-23T04:56:07.000Z
+            lotsLeft: lotsLeft
+            orderPrice:
+              nano: 5
+              currency: currency
+              units: units
+            executedOrderPrice:
+              nano: 5
+              currency: currency
+              units: units
+            currency: currency
+            classCode: classCode
+            ticker: ticker
+            amount:
+              nano: 5
+              currency: currency
+              units: units
+            lotSize: 0
+            lotsCancelled: lotsCancelled
+            trades:
+              - dateTime: 2000-01-23T04:56:07.000Z
+                quantity: quantity
+                price:
+                  nano: 6
+                  units: units
+                tradeId: tradeId
+              - dateTime: 2000-01-23T04:56:07.000Z
+                quantity: quantity
+                price:
+                  nano: 6
+                  units: units
+                tradeId: tradeId
+            accountId: accountId
+            lotsExecuted: lotsExecuted
+            clientCode: clientCode
+            lotsRequested: lotsRequested
+            instrumentUid: instrumentUid
+            orderRequestId: orderRequestId
+            exchange: exchange
+        error:
+          code: 1
+          details:
+            - '@type': '@type'
+            - '@type': '@type'
+          message: message
+      properties:
+        result:
+          $ref: '#/components/schemas/v1OrderStateStreamResponse'
+        error:
+          $ref: '#/components/schemas/rpcStatus'
+      title: Stream result of v1OrderStateStreamResponse
       type: object
     Stream_result_of_v1TradesStreamResponse:
       example:

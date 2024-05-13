@@ -5,15 +5,15 @@
 
 
 ## InstrumentsService
-Сервис предназначен для получения:</br>**1**. информации об инструментах;</br>**2**.
-расписания торговых сессий;</br>**3**. календаря выплат купонов по облигациям;</br>**4**.
-размера гарантийного обеспечения по фьючерсам;</br>**5**. дивидендов по ценной бумаге.
+Методы сервиса предназначены для получения:</br>1. Информации об инструментах.</br>2.
+Расписания торговых сессий.</br>3. Календаря выплат купонов по облигациям.</br>4.
+Размера гарантийного обеспечения по фьючерсам.</br>5. Дивидендов по ценной бумаге.
 
 ###Методы сервиса
 
 
 #### TradingSchedules
-Метод получения расписания торгов торговых площадок.
+Получить расписания торгов торговых площадок.
 
 - Тело запроса — [TradingSchedulesRequest](#tradingschedulesrequest)
 
@@ -21,7 +21,7 @@
 
 
 #### BondBy
-Метод получения облигации по её идентификатору.
+Получить облигации по её идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -29,7 +29,7 @@
 
 
 #### Bonds
-Метод получения списка облигаций.
+Получить список облигаций.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -37,7 +37,7 @@
 
 
 #### GetBondCoupons
-Метод получения графика выплат купонов по облигации.
+Получить график выплат купонов по облигации.
 
 - Тело запроса — [GetBondCouponsRequest](#getbondcouponsrequest)
 
@@ -45,7 +45,7 @@
 
 
 #### GetBondEvents
-Метод получения событий по облигации
+Получить события по облигации
 
 - Тело запроса — [GetBondEventsRequest](#getbondeventsrequest)
 
@@ -53,7 +53,7 @@
 
 
 #### CurrencyBy
-Метод получения валюты по её идентификатору.
+Получить валюту по её идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -61,7 +61,7 @@
 
 
 #### Currencies
-Метод получения списка валют.
+Получить список валют.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -69,7 +69,7 @@
 
 
 #### EtfBy
-Метод получения инвестиционного фонда по его идентификатору.
+Получить инвестиционный фонд по его идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -77,7 +77,7 @@
 
 
 #### Etfs
-Метод получения списка инвестиционных фондов.
+Получить список инвестиционных фондов.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -85,7 +85,7 @@
 
 
 #### FutureBy
-Метод получения фьючерса по его идентификатору.
+Получить фьючерс по его идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -93,7 +93,7 @@
 
 
 #### Futures
-Метод получения списка фьючерсов.
+Получить список фьючерсов.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -101,7 +101,7 @@
 
 
 #### OptionBy
-Метод получения опциона по его идентификатору.
+Получить опцион по его идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -109,7 +109,7 @@
 
 
 #### Options
-Deprecated Метод получения списка опционов.
+Deprecated Получить списка опционов.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -117,7 +117,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### OptionsBy
-Метод получения списка опционов.
+Получить список опционов.
 
 - Тело запроса — [FilterOptionsRequest](#filteroptionsrequest)
 
@@ -125,7 +125,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### ShareBy
-Метод получения акции по её идентификатору.
+Получить акцию по её идентификатору.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -133,7 +133,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### Shares
-Метод получения списка акций.
+Получить список акций.
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -141,7 +141,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### Indicatives
-Метод получения индикативных инструментов (индексов, товаров и др.)
+Получить индикативные инструменты — индексы, товары и другие.
 
 - Тело запроса — [IndicativesRequest](#indicativesrequest)
 
@@ -149,7 +149,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAccruedInterests
-Метод получения накопленного купонного дохода по облигации.
+Получить накопленный купонный доход по облигации.
 
 - Тело запроса — [GetAccruedInterestsRequest](#getaccruedinterestsrequest)
 
@@ -157,7 +157,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetFuturesMargin
-Метод получения размера гарантийного обеспечения по фьючерсам.
+Получить размера гарантийного обеспечения по фьючерсам.
 
 - Тело запроса — [GetFuturesMarginRequest](#getfuturesmarginrequest)
 
@@ -165,7 +165,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetInstrumentBy
-Метод получения основной информации об инструменте.
+Получить основную информацию об инструменте.
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -173,7 +173,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetDividends
-Метод для получения событий выплаты дивидендов по инструменту.
+Получить события выплаты дивидендов по инструменту.
 
 - Тело запроса — [GetDividendsRequest](#getdividendsrequest)
 
@@ -181,7 +181,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAssetBy
-Метод получения актива по его идентификатору.
+Получить актив по его идентификатору.
 
 - Тело запроса — [AssetRequest](#assetrequest)
 
@@ -189,7 +189,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAssets
-Метод получения списка активов. Метод работает для всех инструментов, за исключением срочных - опционов и фьючерсов.
+Получить список активов. Метод работает для всех инструментов, кроме срочных — опционов и фьючерсов.
 
 - Тело запроса — [AssetsRequest](#assetsrequest)
 
@@ -197,7 +197,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetFavorites
-Метод получения списка избранных инструментов.
+Получить список избранных инструментов.
 
 - Тело запроса — [GetFavoritesRequest](#getfavoritesrequest)
 
@@ -205,7 +205,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### EditFavorites
-Метод редактирования списка избранных инструментов.
+Отредактировать список избранных инструментов.
 
 - Тело запроса — [EditFavoritesRequest](#editfavoritesrequest)
 
@@ -213,7 +213,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetCountries
-Метод получения списка стран.
+Получить список стран.
 
 - Тело запроса — [GetCountriesRequest](#getcountriesrequest)
 
@@ -221,7 +221,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### FindInstrument
-Метод поиска инструмента.
+Найти инструмент.
 
 - Тело запроса — [FindInstrumentRequest](#findinstrumentrequest)
 
@@ -229,7 +229,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetBrands
-Метод получения списка брендов.
+Получить список брендов.
 
 - Тело запроса — [GetBrandsRequest](#getbrandsrequest)
 
@@ -237,7 +237,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetBrandBy
-Метод получения бренда по его идентификатору.
+Получить бренд по его идентификатору.
 
 - Тело запроса — [GetBrandRequest](#getbrandrequest)
 
@@ -245,7 +245,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAssetFundamentals
-Метод получения фундаментальных показателей по активу
+Получить фундаментальные показатели по активу.
 
 - Тело запроса — [GetAssetFundamentalsRequest](#getassetfundamentalsrequest)
 
@@ -253,7 +253,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAssetReports
-Метод получения расписания выхода отчетностей эмитентов
+Получить расписания выхода отчётностей эмитентов.
 
 - Тело запроса — [GetAssetReportsRequest](#getassetreportsrequest)
 
@@ -261,7 +261,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetConsensusForecasts
-Метод получения мнения аналитиков по инструменту
+Получить мнения аналитиков по инструменту.
 
 - Тело запроса — [GetConsensusForecastsRequest](#getconsensusforecastsrequest)
 
@@ -269,7 +269,7 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetForecastBy
-Метод получения прогнозов инвестдомов по инструменту
+Получить прогнозов инвестдомов по инструменту.
 
 - Тело запроса — [GetForecastRequest](#getforecastrequest)
 
@@ -289,8 +289,8 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | exchange |  [string](#string) | Наименование биржи или расчетного календаря. </br>Если не передаётся, возвращается информация по всем доступным торговым площадкам. |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода по часовому поясу UTC. |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода по часовому поясу UTC. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало периода по UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание периода по UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -326,20 +326,20 @@ Deprecated Метод получения списка опционов.
 | ----- | ---- | ----------- |
 | date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата. |
 | is_trading_day |  [bool](#bool) | Признак торгового дня на бирже. |
-| start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала торгов по часовому поясу UTC. |
-| end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания торгов по часовому поясу UTC. |
-| opening_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона открытия в часовом поясе UTC. |
-| closing_auction_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания аукциона закрытия в часовом поясе UTC. |
-| evening_opening_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона открытия вечерней сессии в часовом поясе UTC. |
-| evening_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала вечерней сессии в часовом поясе UTC. |
-| evening_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания вечерней сессии в часовом поясе UTC. |
-| clearing_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала основного клиринга в часовом поясе UTC. |
-| clearing_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания основного клиринга в часовом поясе UTC. |
-| premarket_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала премаркета в часовом поясе UTC. |
-| premarket_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания премаркета в часовом поясе UTC. |
-| closing_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона закрытия в часовом поясе UTC. |
-| opening_auction_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания аукциона открытия в часовом поясе UTC. |
-| intervals | Массив объектов [TradingInterval](#tradinginterval) | Торговые интервалы |
+| start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала торгов по UTC. |
+| end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания торгов по UTC. |
+| opening_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона открытия по UTC. |
+| closing_auction_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания аукциона закрытия по UTC. |
+| evening_opening_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона открытия вечерней сессии по UTC. |
+| evening_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала вечерней сессии по UTC. |
+| evening_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания вечерней сессии по UTC. |
+| clearing_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала основного клиринга по UTC. |
+| clearing_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания основного клиринга по UTC. |
+| premarket_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала премаркета по UTC. |
+| premarket_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания премаркета по UTC. |
+| closing_auction_start_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала аукциона закрытия по UTC. |
+| opening_auction_end_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания аукциона открытия по UTC. |
+| intervals | Массив объектов [TradingInterval](#tradinginterval) | Торговые интервалы. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -350,8 +350,8 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения: figi, ticker. Подробнее об идентификации инструментов: [Идентификация инструментов](https://russianinvestments.github.io/investAPI/faq_identification/) |
-| class_code |  [string](#string) | Идентификатор class_code. Обязателен при id_type = ticker. |
+| id_type |  [InstrumentIdType](#instrumentidtype) | Тип идентификатора инструмента. Возможные значения — `figi`, `ticker`. [Подробнее об идентификации инструментов](https://russianinvestments.github.io/investAPI/faq_identification/). |
+| class_code |  [string](#string) | Идентификатор `class_code`. Обязательный, если `id_type = ticker`. |
 | id |  [string](#string) | Идентификатор запрашиваемого инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -363,19 +363,20 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_status |  [InstrumentStatus](#instrumentstatus) | Статус запрашиваемых инструментов. Возможные значения: [InstrumentStatus](#instrumentstatus) |
+| instrument_status |  [InstrumentStatus](#instrumentstatus) | Статус запрашиваемых инструментов. [Возможные значения](#instrumentstatus). |
+| instrument_exchange |  [InstrumentExchangeType](#instrumentexchangetype) | Тип площадки торговли. [Возможные значения](#instrumentexchangetype). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### FilterOptionsRequest
-Параметры фильтрации опционов
+Параметры фильтрации опционов.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | basic_asset_uid |  [string](#string) | Идентификатор базового актива опциона.  Обязательный параметр. |
-| basic_asset_position_uid |  [string](#string) | Идентификатор позиции базового актива опциона |
+| basic_asset_position_uid |  [string](#string) | Идентификатор позиции базового актива опциона. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -408,10 +409,10 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. Фильтрация по coupon_date (дата выплаты купона) |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация по coupon_date (дата выплаты купона) |
-| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. Фильтрация по `coupon_date` — дата выплаты купона. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. Фильтрация по `coupon_date` — дата выплаты купона. |
+| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -433,9 +434,9 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
-| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. |
+| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
 | type |  [GetBondEventsRequest.EventType](#getbondeventsrequesteventtype) | Тип события |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -458,27 +459,27 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id |  [string](#string) | Идентификатор инструмента |
-| event_number |  [int32](#int32) | Номер события для данного типа события |
-| event_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата события |
-| event_type |  [GetBondEventsRequest.EventType](#getbondeventsrequesteventtype) | Тип события |
-| event_total_vol |  [Quotation](#quotation) | Полное количество бумаг, задействованных в событии |
-| fix_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации владельцев для участия в событии |
-| rate_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата определения даты либо факта события |
-| default_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата дефолта (если применимо) |
-| real_pay_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата реального исполнения обязательства |
-| pay_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выплаты |
-| pay_one_bond |  [MoneyValue](#moneyvalue) | Выплата на одну облигацию |
-| money_flow_val |  [MoneyValue](#moneyvalue) | Выплаты на все бумаги, задействованные в событии |
-| execution |  [string](#string) | Признак исполнения |
-| operation_type |  [string](#string) | Тип операции |
-| value |  [Quotation](#quotation) | Стоимость операции (ставка купона, доля номинала, цена выкупа или коэффициент конвертации) |
-| note |  [string](#string) | Примечание |
-| convert_to_fin_tool_id |  [string](#string) | ID выпуска бумаг, в который произведена конвертация (для конвертаций) |
-| coupon_start_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало купонного периода |
-| coupon_end_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание купонного периода |
-| coupon_period |  [int32](#int32) | Купонный период |
-| coupon_interest_rate |  [Quotation](#quotation) | Ставка купона, процентов годовых |
+| instrument_id |  [string](#string) | Идентификатор инструмента. |
+| event_number |  [int32](#int32) | Номер события для данного типа события. |
+| event_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата события. |
+| event_type |  [GetBondEventsRequest.EventType](#getbondeventsrequesteventtype) | Тип события. |
+| event_total_vol |  [Quotation](#quotation) | Полное количество бумаг, задействованных в событии. |
+| fix_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации владельцев для участия в событии. |
+| rate_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата определения даты или факта события. |
+| default_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата дефолта, если применимо. |
+| real_pay_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата реального исполнения обязательства. |
+| pay_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выплаты. |
+| pay_one_bond |  [MoneyValue](#moneyvalue) | Выплата на одну облигацию. |
+| money_flow_val |  [MoneyValue](#moneyvalue) | Выплаты на все бумаги, задействованные в событии. |
+| execution |  [string](#string) | Признак исполнения. |
+| operation_type |  [string](#string) | Тип операции. |
+| value |  [Quotation](#quotation) | Стоимость операции — ставка купона, доля номинала, цена выкупа или коэффициент конвертации. |
+| note |  [string](#string) | Примечание. |
+| convert_to_fin_tool_id |  [string](#string) | ID выпуска бумаг, в который произведена конвертация (для конвертаций). |
+| coupon_start_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало купонного периода. |
+| coupon_end_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание купонного периода. |
+| coupon_period |  [int32](#int32) | Купонный период. |
+| coupon_interest_rate |  [Quotation](#quotation) | Ставка купона, процентов годовых. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -489,10 +490,10 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | coupon_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выплаты купона. |
 | coupon_number |  [int64](#int64) | Номер купона. |
-| fix_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | (Опционально) Дата фиксации реестра для выплаты купона. |
+| fix_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации реестра для выплаты купона — опционально. |
 | pay_one_bond |  [MoneyValue](#moneyvalue) | Выплата на одну облигацию. |
 | coupon_type |  [CouponType](#coupontype) | Тип купона. |
 | coupon_start_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало купонного периода. |
@@ -602,9 +603,9 @@ Deprecated Метод получения списка опционов.
 | class_code |  [string](#string) | Класс-код. |
 | basic_asset_position_uid |  [string](#string) | Уникальный идентификатор позиции основного инструмента. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
-| real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). Допустимые значения: [REAL_EXCHANGE_MOEX, REAL_EXCHANGE_RTS] |
+| real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). Допустимые значения — `REAL_EXCHANGE_MOEX`, `REAL_EXCHANGE_RTS`. |
 | direction |  [OptionDirection](#optiondirection) | Направление опциона. |
-| payment_type |  [OptionPaymentType](#optionpaymenttype) | Тип расчетов по опциону. |
+| payment_type |  [OptionPaymentType](#optionpaymenttype) | Тип расчётов по опциону. |
 | style |  [OptionStyle](#optionstyle) | Стиль опциона. |
 | settlement_type |  [OptionSettlementType](#optionsettlementtype) | Способ исполнения опциона. |
 | name |  [string](#string) | Название инструмента. |
@@ -619,12 +620,12 @@ Deprecated Метод получения списка опционов.
 | brand |  [BrandData](#branddata) | Информация о бренде. |
 | lot |  [int32](#int32) | Количество бумаг в лоте. |
 | basic_asset_size |  [Quotation](#quotation) | Размер основного актива. |
-| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт.  Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт.  Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
 | min_price_increment |  [Quotation](#quotation) | Минимальный шаг цены. |
 | strike_price |  [MoneyValue](#moneyvalue) | Цена страйка. |
 | expiration_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата истечения срока в формате UTC. |
@@ -633,14 +634,14 @@ Deprecated Метод получения списка опционов.
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи в формате UTC. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи в формате UTC. |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций шорт. |
-| for_iis_flag |  [bool](#bool) | Возможность покупки/продажи на ИИС. |
+| for_iis_flag |  [bool](#bool) | Возможность покупки или продажи на ИИС. |
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
-| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
-| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом по выходным. |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
-| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
+| api_trade_available_flag |  [bool](#bool) | Возможность торговать инструментом через API. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -673,31 +674,31 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
-| isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://russianinvestments.github.io/investAPI/glossary#lot) |
+| isin |  [string](#string) | ISIN-идентификатор инструмента. |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](https://russianinvestments.github.io/investAPI/glossary#lot). |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
 | coupon_quantity_per_year |  [int32](#int32) | Количество выплат по купонам в год. |
-| maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения облигации в часовом поясе UTC. |
+| maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения облигации по UTC. |
 | nominal |  [MoneyValue](#moneyvalue) | Номинал облигации. |
 | initial_nominal |  [MoneyValue](#moneyvalue) | Первоначальный номинал облигации. |
-| state_reg_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска облигации в часовом поясе UTC. |
-| placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения в часовом поясе UTC. |
+| state_reg_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска облигации по UTC. |
+| placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения по UTC. |
 | placement_price |  [MoneyValue](#moneyvalue) | Цена размещения. |
 | aci_value |  [MoneyValue](#moneyvalue) | Значение НКД (накопленного купонного дохода) на дату. |
-| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
-| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk |  [string](#string) | Код страны риска — то есть страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска — то есть страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
 | issue_kind |  [string](#string) | Форма выпуска. Возможные значения: </br>**documentary** — документарная; </br>**non_documentary** — бездокументарная. |
 | issue_size |  [int64](#int64) | Размер выпуска. |
@@ -716,15 +717,16 @@ Deprecated Метод получения списка опционов.
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | asset_uid |  [string](#string) | Уникальный идентификатор актива. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
-| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
-| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
-| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
+| for_qual_investor_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом по выходным. |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
 | subordinated_flag |  [bool](#bool) | Признак субординированной облигации. |
-| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
+| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
 | risk_level |  [RiskLevel](#risklevel) | Уровень риска. |
 | brand |  [BrandData](#branddata) | Информация о бренде. |
+| bond_type |  [BondType](#bondtype) | Тип облигации. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -735,24 +737,24 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
-| isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://russianinvestments.github.io/investAPI/glossary#lot) |
+| isin |  [string](#string) | ISIN-идентификатор инструмента. |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](https://russianinvestments.github.io/investAPI/glossary#lot). |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
-| exchange |  [string](#string) | Tорговая площадка (секция биржи) |
+| exchange |  [string](#string) | Tорговая площадка (секция биржи). |
 | nominal |  [MoneyValue](#moneyvalue) | Номинал. |
-| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
-| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk |  [string](#string) | Код страны риска — то есть страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска — то есть страны, в которой компания ведёт основной бизнес. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
@@ -764,8 +766,8 @@ Deprecated Метод получения списка опционов.
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
-| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
-| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом по выходным. |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
@@ -780,27 +782,27 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
-| isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://russianinvestments.github.io/investAPI/glossary#lot) |
+| isin |  [string](#string) | ISIN-идентификатор инструмента. |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](https://russianinvestments.github.io/investAPI/glossary#lot). |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
 | fixed_commission |  [Quotation](#quotation) | Размер фиксированной комиссии фонда. |
 | focus_type |  [string](#string) | Возможные значения: </br>**equity** — акции;</br>**fixed_income** — облигации;</br>**mixed_allocation** — смешанный;</br>**money_market** — денежный рынок;</br>**real_estate** — недвижимость;</br>**commodity** — товары;</br>**specialty** — специальный;</br>**private_equity** — private equity;</br>**alternative_investment** — альтернативные инвестиции. |
-| released_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска в часовом поясе UTC. |
+| released_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска по UTC. |
 | num_shares |  [Quotation](#quotation) | Количество паев фонда в обращении. |
-| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
-| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk |  [string](#string) | Код страны риска — то есть страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска — то есть страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
 | rebalancing_freq |  [string](#string) | Частота ребалансировки. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
@@ -813,11 +815,12 @@ Deprecated Метод получения списка опционов.
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | asset_uid |  [string](#string) | Уникальный идентификатор актива. |
+| instrument_exchange |  [InstrumentExchangeType](#instrumentexchangetype) | Тип площадки торговли. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
-| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
-| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | ФлагФлаг, отображающий доступность торговли инструментом по выходным. |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
-| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
+| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
 | brand |  [BrandData](#branddata) | Информация о бренде. |
@@ -831,28 +834,28 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://russianinvestments.github.io/investAPI/glossary#lot) |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](https://russianinvestments.github.io/investAPI/glossary#lot). |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт ](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
-| first_trade_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата начала обращения контракта в часовом поясе UTC. |
-| last_trade_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата в часовом поясе UTC, до которой возможно проведение операций с фьючерсом. |
+| first_trade_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата начала обращения контракта по UTC. |
+| last_trade_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата по UTC, до которой возможно проведение операций с фьючерсом. |
 | futures_type |  [string](#string) | Тип фьючерса. Возможные значения: </br>**physical_delivery** — физические поставки; </br>**cash_settlement** — денежный эквивалент. |
 | asset_type |  [string](#string) | Тип актива. Возможные значения: </br>**commodity** — товар; </br>**currency** — валюта; </br>**security** — ценная бумага; </br>**index** — индекс. |
 | basic_asset |  [string](#string) | Основной актив. |
 | basic_asset_size |  [Quotation](#quotation) | Размер основного актива. |
-| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
-| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk |  [string](#string) | Код страны риска — то есть страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска — то есть страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
 | expiration_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата истечения срока в часов поясе UTC. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
@@ -866,8 +869,8 @@ Deprecated Метод получения списка опционов.
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | basic_asset_position_uid |  [string](#string) | Уникальный идентификатор позиции основного инструмента. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
-| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
-| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом по выходным. |
 | blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
@@ -885,25 +888,25 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
-| isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://russianinvestments.github.io/investAPI/glossary#lot) |
+| isin |  [string](#string) | ISIN-идентификатор инструмента. |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](https://russianinvestments.github.io/investAPI/glossary#lot) |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
-| ipo_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата IPO акции в часовом поясе UTC. |
+| ipo_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата IPO акции по UTC. |
 | issue_size |  [int64](#int64) | Размер выпуска. |
-| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
-| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk |  [string](#string) | Код страны риска — то есть страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска — то есть страны, в которой компания ведёт основной бизнес. |
 | sector |  [string](#string) | Сектор экономики. |
 | issue_size_plan |  [int64](#int64) | Плановый размер выпуска. |
 | nominal |  [MoneyValue](#moneyvalue) | Номинал. |
@@ -912,18 +915,19 @@ Deprecated Метод получения списка опционов.
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
-| share_type |  [ShareType](#sharetype) | Тип акции. Возможные значения: [ShareType](https://russianinvestments.github.io/investAPI/instruments#sharetype) |
+| share_type |  [ShareType](#sharetype) | Тип акции. Возможные значения — `[ShareType](https://russianinvestments.github.io/investAPI/instruments#sharetype)`. |
 | min_price_increment |  [Quotation](#quotation) | Шаг цены. |
-| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
+| api_trade_available_flag |  [bool](#bool) | Возможность торговать инструментом через API. |
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | asset_uid |  [string](#string) | Уникальный идентификатор актива. |
+| instrument_exchange |  [InstrumentExchangeType](#instrumentexchangetype) | Тип площадки торговли. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
-| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
-| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
-| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
-| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности |
+| for_qual_investor_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом по выходным. |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
+| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
 | brand |  [BrandData](#branddata) | Информация о бренде. |
@@ -932,21 +936,21 @@ Deprecated Метод получения списка опционов.
 
 
 #### GetAccruedInterestsRequest
-Запрос НКД по облигации
+Запрос НКД по облигации.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
-| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. |
+| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### GetAccruedInterestsResponse
-НКД облигации
+НКД облигации.
 
 
 | Field | Type | Description |
@@ -962,7 +966,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выплаты в часовом поясе UTC. |
+| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выплаты по UTC. |
 | value |  [Quotation](#quotation) | Величина выплаты. |
 | value_percent |  [Quotation](#quotation) | Величина выплаты в процентах от номинала. |
 | nominal |  [Quotation](#quotation) | Номинал облигации. |
@@ -977,7 +981,7 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Идентификатор инструмента. |
-| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
+| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1013,23 +1017,23 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код инструмента. |
-| isin |  [string](#string) | Isin-идентификатор инструмента. |
-| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру *lot*. Подробнее: [лот](https://russianinvestments.github.io/investAPI/glossary#lot) |
+| isin |  [string](#string) | ISIN-идентификатор инструмента. |
+| lot |  [int32](#int32) | Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](https://russianinvestments.github.io/investAPI/glossary#lot). |
 | currency |  [string](#string) | Валюта расчётов. |
-| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР). 1 – клиент с повышенным уровнем риска (КПУР) |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг.Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. Подробнее: [ставка риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/) |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. Подробнее: [ставка риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/) |
+| klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
-| country_of_risk |  [string](#string) | Код страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
-| country_of_risk_name |  [string](#string) | Наименование страны риска, т.е. страны, в которой компания ведёт основной бизнес. |
+| country_of_risk |  [string](#string) | Код страны риска — то есть страны, в которой компания ведёт основной бизнес. |
+| country_of_risk_name |  [string](#string) | Наименование страны риска — то есть страны, в которой компания ведёт основной бизнес. |
 | instrument_type |  [string](#string) | Тип инструмента. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
@@ -1042,9 +1046,9 @@ Deprecated Метод получения списка опционов.
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | asset_uid |  [string](#string) | Уникальный идентификатор актива. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
-| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
-| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
-| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
+| for_qual_investor_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом по выходным. |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
@@ -1059,10 +1063,10 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра). |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. Фильтрация происходит по параметру *record_date* (дата фиксации реестра). |
-| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. Фильтрация происходит по параметру `record_date` — дата фиксации реестра. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. Фильтрация происходит по параметру `record_date` — дата фиксации реестра. |
+| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1085,15 +1089,15 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | dividend_net |  [MoneyValue](#moneyvalue) | Величина дивиденда на 1 ценную бумагу (включая валюту). |
-| payment_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фактических выплат в часовом поясе UTC. |
-| declared_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата объявления дивидендов в часовом поясе UTC. |
-| last_buy_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Последний день (включительно) покупки для получения выплаты в часовом поясе UTC. |
-| dividend_type |  [string](#string) | Тип выплаты. Возможные значения: Regular Cash – регулярные выплаты, Cancelled – выплата отменена, Daily Accrual – ежедневное начисление, Return of Capital – возврат капитала, прочие типы выплат. |
-| record_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации реестра в часовом поясе UTC. |
-| regularity |  [string](#string) | Регулярность выплаты. Возможные значения: Annual – ежегодная, Semi-Anl – каждые полгода, прочие типы выплат. |
-| close_price |  [MoneyValue](#moneyvalue) | Цена закрытия инструмента на момент ex_dividend_date. |
+| payment_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фактических выплат по UTC. |
+| declared_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата объявления дивидендов по UTC. |
+| last_buy_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Последний день (включительно) покупки для получения выплаты по UTC. |
+| dividend_type |  [string](#string) | Тип выплаты. Возможные значения: `Regular Cash` – регулярные выплаты, `Cancelled` – выплата отменена, `Daily Accrual` – ежедневное начисление, `Return of Capital` – возврат капитала, прочие типы выплат. |
+| record_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации реестра по UTC. |
+| regularity |  [string](#string) | Регулярность выплаты. Возможные значения: `Annual` – ежегодная, `Semi-Anl` – каждые полгода, прочие типы выплат. |
+| close_price |  [MoneyValue](#moneyvalue) | Цена закрытия инструмента на момент `ex_dividend_date`. |
 | yield_value |  [Quotation](#quotation) | Величина доходности. |
-| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи в часовом поясе UTC. |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи по UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1104,7 +1108,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| id |  [string](#string) | uid-идентификатор актива. |
+| id |  [string](#string) | UID-идентификатор актива. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1155,8 +1159,8 @@ Deprecated Метод получения списка опционов.
 | description |  [string](#string) | Описание актива. |
 | deleted_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время удаления актива. |
 | required_tests | Массив объектов [string](#string) | Тестирование клиентов. |
-| currency |  [AssetCurrency](#assetcurrency) | Валюта. Обязательно и заполняется только для type = "ASSET_TYPE_CURRENCY". |
-| security |  [AssetSecurity](#assetsecurity) | Ценная бумага. Обязательно и заполняется только для type = "ASSET_TYPE_SECURITY". |
+| currency |  [AssetCurrency](#assetcurrency) | Валюта. Обязательно и заполняется только для `type = ASSET_TYPE_CURRENCY`. |
+| security |  [AssetSecurity](#assetsecurity) | Ценная бумага. Обязательно и заполняется только для `type = ASSET_TYPE_SECURITY`. |
 | gos_reg_code |  [string](#string) | Номер государственной регистрации. |
 | cfi |  [string](#string) | Код CFI. |
 | code_nsd |  [string](#string) | Код НРД инструмента. |
@@ -1204,11 +1208,11 @@ Deprecated Метод получения списка опционов.
 | isin |  [string](#string) | ISIN-идентификатор ценной бумаги. |
 | type |  [string](#string) | Тип ценной бумаги. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
-| share |  [AssetShare](#assetshare) | Акция. Заполняется только для акций (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = share). |
-| bond |  [AssetBond](#assetbond) | Облигация. Заполняется только для облигаций (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = bond). |
-| sp |  [AssetStructuredProduct](#assetstructuredproduct) | Структурная нота. Заполняется только для структурных продуктов (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = sp). |
-| etf |  [AssetEtf](#assetetf) | Фонд. Заполняется только для фондов (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = etf). |
-| clearing_certificate |  [AssetClearingCertificate](#assetclearingcertificate) | Клиринговый сертификат участия. Заполняется только для клиринговых сертификатов (тип актива asset.type = "ASSET_TYPE_SECURITY" и security.type = clearing_certificate). |
+| share |  [AssetShare](#assetshare) | Акция. Заполняется только для акций — тип актива `asset.type = ASSET_TYPE_SECURITY` и `security.type = share`. |
+| bond |  [AssetBond](#assetbond) | Облигация. Заполняется только для облигаций — тип актива `asset.type = ASSET_TYPE_SECURITY` и `security.type = bond`. |
+| sp |  [AssetStructuredProduct](#assetstructuredproduct) | Структурная нота. Заполняется только для структурных продуктов — тип актива `asset.type = ASSET_TYPE_SECURITY` и `security.type = sp`. |
+| etf |  [AssetEtf](#assetetf) | Фонд. Заполняется только для фондов — тип актива `asset.type = ASSET_TYPE_SECURITY` и `security.type = etf`. |
+| clearing_certificate |  [AssetClearingCertificate](#assetclearingcertificate) | Клиринговый сертификат участия. Заполняется только для клиринговых сертификатов — тип актива `asset.type = ASSET_TYPE_SECURITY` и security.type = `clearing_certificate`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1232,7 +1236,7 @@ Deprecated Метод получения списка опционов.
 | issue_kind |  [string](#string) | Форма выпуска ФИ. |
 | placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения акции. |
 | repres_isin |  [string](#string) | ISIN базового актива. |
-| issue_size_plan |  [Quotation](#quotation) | Объявленное количество шт. |
+| issue_size_plan |  [Quotation](#quotation) | Объявленное количество, шт. |
 | total_float |  [Quotation](#quotation) | Количество акций в свободном обращении. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -1255,7 +1259,7 @@ Deprecated Метод получения списка опционов.
 | indexed_nominal_flag |  [bool](#bool) | Признак облигации с индексируемым номиналом. |
 | subordinated_flag |  [bool](#bool) | Признак субординированной облигации. |
 | collateral_flag |  [bool](#bool) | Признак обеспеченной облигации. |
-| tax_free_flag |  [bool](#bool) | Признак показывает, что купоны облигации не облагаются налогом (для mass market). |
+| tax_free_flag |  [bool](#bool) | Признак показывает, что купоны облигации не облагаются налогом — для mass market. |
 | amortization_flag |  [bool](#bool) | Признак облигации с амортизацией долга. |
 | floating_coupon_flag |  [bool](#bool) | Признак облигации с плавающим купоном. |
 | perpetual_flag |  [bool](#bool) | Признак бессрочной облигации. |
@@ -1264,7 +1268,7 @@ Deprecated Метод получения списка опционов.
 | state_reg_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата выпуска облигации. |
 | placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения облигации. |
 | placement_price |  [Quotation](#quotation) | Цена размещения облигации. |
-| issue_size_plan |  [Quotation](#quotation) | Объявленное количество шт. |
+| issue_size_plan |  [Quotation](#quotation) | Объявленное количество, шт. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1275,17 +1279,17 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| borrow_name |  [string](#string) | Наименование заемщика. |
+| borrow_name |  [string](#string) | Наименование заёмщика. |
 | nominal |  [Quotation](#quotation) | Номинал. |
 | nominal_currency |  [string](#string) | Валюта номинала. |
 | type |  [StructuredProductType](#structuredproducttype) | Тип структурной ноты. |
 | logic_portfolio |  [string](#string) | Стратегия портфеля. |
 | asset_type |  [AssetType](#assettype) | Тип базового актива. |
 | basic_asset |  [string](#string) | Вид базового актива в зависимости от типа базового актива. |
-| safety_barrier |  [Quotation](#quotation) | Барьер сохранности (в процентах). |
+| safety_barrier |  [Quotation](#quotation) | Барьер сохранности в процентах. |
 | maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения. |
-| issue_size_plan |  [Quotation](#quotation) | Объявленное количество шт. |
-| issue_size |  [Quotation](#quotation) | Объем размещения. |
+| issue_size_plan |  [Quotation](#quotation) | Объявленное количество, шт. |
+| issue_size |  [Quotation](#quotation) | Объём размещения. |
 | placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения ноты. |
 | issue_kind |  [string](#string) | Форма выпуска. |
  <!-- end Fields -->
@@ -1298,14 +1302,14 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| total_expense |  [Quotation](#quotation) | Суммарные расходы фонда (в %). |
-| hurdle_rate |  [Quotation](#quotation) | Барьерная ставка доходности после которой фонд имеет право на perfomance fee (в процентах). |
-| performance_fee |  [Quotation](#quotation) | Комиссия за успешные результаты фонда (в процентах). |
-| fixed_commission |  [Quotation](#quotation) | Фиксированная комиссия за управление (в процентах). |
+| total_expense |  [Quotation](#quotation) | Суммарные расходы фонда в процентах. |
+| hurdle_rate |  [Quotation](#quotation) | Барьерная ставка доходности, после которой фонд имеет право на perfomance fee — в процентах. |
+| performance_fee |  [Quotation](#quotation) | Комиссия за успешные результаты фонда в процентах. |
+| fixed_commission |  [Quotation](#quotation) | Фиксированная комиссия за управление в процентах. |
 | payment_type |  [string](#string) | Тип распределения доходов от выплат по бумагам. |
 | watermark_flag |  [bool](#bool) | Признак необходимости выхода фонда в плюс для получения комиссии. |
-| buy_premium |  [Quotation](#quotation) | Премия (надбавка к цене) при покупке доли в фонде (в процентах). |
-| sell_discount |  [Quotation](#quotation) | Ставка дисконта (вычет из цены) при продаже доли в фонде (в процентах). |
+| buy_premium |  [Quotation](#quotation) | Премия (надбавка к цене) при покупке доли в фонде — в процентах. |
+| sell_discount |  [Quotation](#quotation) | Ставка дисконта (вычет из цены) при продаже доли в фонде — в процентах. |
 | rebalancing_flag |  [bool](#bool) | Признак ребалансируемости портфеля фонда. |
 | rebalancing_freq |  [string](#string) | Периодичность ребалансировки. |
 | management_type |  [string](#string) | Тип управления. |
@@ -1318,11 +1322,11 @@ Deprecated Метод получения списка опционов.
 | description |  [string](#string) | Описание фонда. |
 | primary_index_description |  [string](#string) | Описание индекса, за которым следует фонд. |
 | primary_index_company |  [string](#string) | Основные компании, в которые вкладывается фонд. |
-| index_recovery_period |  [Quotation](#quotation) | Срок восстановления индекса (после просадки). |
+| index_recovery_period |  [Quotation](#quotation) | Срок восстановления индекса после просадки. |
 | inav_code |  [string](#string) | IVAV-код. |
 | div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
-| expense_commission |  [Quotation](#quotation) | Комиссия на покрытие расходов фонда (в процентах). |
-| primary_index_tracking_error |  [Quotation](#quotation) | Ошибка следования за индексом (в процентах). |
+| expense_commission |  [Quotation](#quotation) | Комиссия на покрытие расходов фонда в процентах. |
+| primary_index_tracking_error |  [Quotation](#quotation) | Ошибка следования за индексом в процентах. |
 | rebalancing_plan |  [string](#string) | Плановая ребалансировка портфеля. |
 | tax_rate |  [string](#string) | Ставки налогообложения дивидендов и купонов. |
 | rebalancing_dates | Массив объектов [google.protobuf.Timestamp](#googleprotobuftimestamp) | Даты ребалансировок. |
@@ -1351,7 +1355,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| uid |  [string](#string) | uid идентификатор бренда. |
+| uid |  [string](#string) | UID-идентификатор бренда. |
 | name |  [string](#string) | Наименование бренда. |
 | description |  [string](#string) | Описание. |
 | info |  [string](#string) | Информация о бренде. |
@@ -1369,14 +1373,14 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| uid |  [string](#string) | uid идентификатор инструмента. |
-| figi |  [string](#string) | figi идентификатор инструмента. |
+| uid |  [string](#string) | UID-идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | instrument_type |  [string](#string) | Тип инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код (секция торгов). |
 | links | Массив объектов [InstrumentLink](#instrumentlink) | Массив связанных инструментов. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
-| position_uid |  [string](#string) | id позиции. |
+| position_uid |  [string](#string) | ID позиции. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1388,7 +1392,7 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | type |  [string](#string) | Тип связи. |
-| instrument_uid |  [string](#string) | uid идентификатор связанного инструмента. |
+| instrument_uid |  [string](#string) | UID-идентификатор связанного инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1405,7 +1409,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| favorite_instruments | Массив объектов [FavoriteInstrument](#favoriteinstrument) | Массив инструментов |
+| favorite_instruments | Массив объектов [FavoriteInstrument](#favoriteinstrument) | Массив инструментов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1416,15 +1420,15 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
 | class_code |  [string](#string) | Класс-код инструмента. |
-| isin |  [string](#string) | Isin-идентификатор инструмента. |
+| isin |  [string](#string) | ISIN-идентификатор инструмента. |
 | instrument_type |  [string](#string) | Тип инструмента. |
 | name |  [string](#string) | Название инструмента. |
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
-| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
+| api_trade_available_flag |  [bool](#bool) | Возможность торговать инструментом через API. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -1448,8 +1452,8 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента. |
-| instrument_id |  [string](#string) | Идентификатор инструмента Figi или instrument_uid |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
+| instrument_id |  [string](#string) | Идентификатор инструмента — `figi` или `instrument_uid`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1460,7 +1464,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| favorite_instruments | Массив объектов [FavoriteInstrument](#favoriteinstrument) | Массив инструментов |
+| favorite_instruments | Массив объектов [FavoriteInstrument](#favoriteinstrument) | Массив инструментов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1494,7 +1498,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instruments | Массив объектов [IndicativeResponse](#indicativeresponse) | Массив инструментов |
+| instruments | Массив объектов [IndicativeResponse](#indicativeresponse) | Массив инструментов. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1505,16 +1509,16 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| figi |  [string](#string) | Figi-идентификатор инструмента |
-| ticker |  [string](#string) | Тикер инструмента |
-| class_code |  [string](#string) | Класс-код инструмента |
-| currency |  [string](#string) | Валюта расчётов |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код инструмента. |
+| currency |  [string](#string) | Валюта расчётов. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
-| name |  [string](#string) | Название инструмента |
-| exchange |  [string](#string) | Tорговая площадка (секция биржи) |
-| uid |  [string](#string) | Уникальный идентификатор инструмента |
-| buy_available_flag |  [bool](#bool) | Признак доступности для покупки |
-| sell_available_flag |  [bool](#bool) | Признак доступности для продажи |
+| name |  [string](#string) | Название инструмента. |
+| exchange |  [string](#string) | Tорговая площадка (секция биржи). |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
+| sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1563,8 +1567,8 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| isin |  [string](#string) | Isin инструмента. |
-| figi |  [string](#string) | Figi инструмента. |
+| isin |  [string](#string) | ISIN инструмента. |
+| figi |  [string](#string) | FIGI инструмента. |
 | ticker |  [string](#string) | Ticker инструмента. |
 | class_code |  [string](#string) | ClassCode инструмента. |
 | instrument_type |  [string](#string) | Тип инструмента. |
@@ -1572,13 +1576,13 @@ Deprecated Метод получения списка опционов.
 | uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции инструмента. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
-| api_trade_available_flag |  [bool](#bool) | Параметр указывает на возможность торговать инструментом через API. |
+| api_trade_available_flag |  [bool](#bool) | Возможность торговать инструментом через API. |
 | for_iis_flag |  [bool](#bool) | Признак доступности для ИИС. |
 | first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
 | first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
-| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
-| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным |
-| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС |
+| for_qual_investor_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| weekend_flag |  [bool](#bool) | Флаг, отображающий доступность торговли инструментом по выходным. |
+| blocked_tca_flag |  [bool](#bool) | Флаг заблокированного ТКС. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1600,7 +1604,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| id |  [string](#string) | Uid-идентификатор бренда. |
+| id |  [string](#string) | UID-идентификатор бренда. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1612,7 +1616,7 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | brands | Массив объектов [Brand](#brand) | Массив брендов. |
-| paging |  [PageResponse](#pageresponse) | Данные по пагинации |
+| paging |  [PageResponse](#pageresponse) | Данные по пагинации. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1623,7 +1627,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| assets | Массив объектов [string](#string) | Массив идентификаторов активов (не более 100 шт.). |
+| assets | Массив объектов [string](#string) | Массив идентификаторов активов, не более 100 шт. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1645,62 +1649,62 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| asset_uid |  [string](#string) | Идентификатор актива |
-| currency |  [string](#string) | Валюта |
-| market_capitalization |  [double](#double) | Рыночная капитализация |
-| high_price_last_52_weeks |  [double](#double) | Максимум за год |
-| low_price_last_52_weeks |  [double](#double) | Минимум за год |
-| average_daily_volume_last_10_days |  [double](#double) | Средний объем торгов за 10 дней |
-| average_daily_volume_last_4_weeks |  [double](#double) | Средний объем торгов за месяц |
+| asset_uid |  [string](#string) | Идентификатор актива. |
+| currency |  [string](#string) | Валюта. |
+| market_capitalization |  [double](#double) | Рыночная капитализация. |
+| high_price_last_52_weeks |  [double](#double) | Максимум за год. |
+| low_price_last_52_weeks |  [double](#double) | Минимум за год. |
+| average_daily_volume_last_10_days |  [double](#double) | Средний объём торгов за 10 дней. |
+| average_daily_volume_last_4_weeks |  [double](#double) | Средний объём торгов за месяц. |
 | beta |  [double](#double) |  |
-| free_float |  [double](#double) | Доля акций в свободном обращении |
+| free_float |  [double](#double) | Доля акций в свободном обращении. |
 | forward_annual_dividend_yield |  [double](#double) | Процент форвардной дивидендной доходности по отношению к цене акций. |
-| shares_outstanding |  [double](#double) | Количество акций в обращении |
-| revenue_ttm |  [double](#double) | Выручка |
-| ebitda_ttm |  [double](#double) | EBITDA Прибыль до вычета процентов, налогов, износа и амортизации |
-| net_income_ttm |  [double](#double) | Чистая прибыль |
-| eps_ttm |  [double](#double) | EPS Величина чистой прибыли компании, приходящуюся на каждую обыкновенную акцию |
-| diluted_eps_ttm |  [double](#double) | EPS компании с допущением, что все конвертируемые ценные бумаги компании были сконвертированы в обыкновенные акции |
-| free_cash_flow_ttm |  [double](#double) | Свободный денежный поток |
-| five_year_annual_revenue_growth_rate |  [double](#double) | Среднегодовой  рocт выручки (за 5 лет) |
-| three_year_annual_revenue_growth_rate |  [double](#double) | Среднегодовой  рocт выручки (за 3 года) |
-| pe_ratio_ttm |  [double](#double) | Показывает соотношение рыночной капитализации компании к ее чистой прибыли |
-| price_to_sales_ttm |  [double](#double) | Показывает соотношение рыночной капитализации компании к ее выручке |
-| price_to_book_ttm |  [double](#double) | Показывает соотношение рыночной капитализации компании к ее балансовой стоимости |
-| price_to_free_cash_flow_ttm |  [double](#double) | Показывает соотношение рыночной капитализации компании к ее свободному денежному потоку |
-| total_enterprise_value_mrq |  [double](#double) | Рыночная стоимость компании |
-| ev_to_ebitda_mrq |  [double](#double) | Соотношение EV и EBITDA |
-| net_margin_mrq |  [double](#double) | Маржа чистой прибыли |
-| net_interest_margin_mrq |  [double](#double) | Рентабельность чистой прибыли |
-| roe |  [double](#double) | Рентабельность собственного капитала |
-| roa |  [double](#double) | Рентабельность активов |
-| roic |  [double](#double) | Рентабельность активов |
-| total_debt_mrq |  [double](#double) | Сумма краткосрочных и долгосрочных обязательств компании |
-| total_debt_to_equity_mrq |  [double](#double) | Соотношение долга к собственному капиталу |
-| total_debt_to_ebitda_mrq |  [double](#double) | Total Debt/EBITDA |
-| free_cash_flow_to_price |  [double](#double) | Отношение свободглго кэша к стоимости |
-| net_debt_to_ebitda |  [double](#double) | Отношение чистого долга к ebitda |
-| current_ratio_mrq |  [double](#double) | Коэффициент текущей ликвидности |
-| fixed_charge_coverage_ratio_fy |  [double](#double) | Коэффициент покрытия фиксированных платежей (FCCR) |
-| dividend_yield_daily_ttm |  [double](#double) | Дивидендная доходность за 12 мес |
-| dividend_rate_ttm |  [double](#double) | Выплаченные дивиденды за 12 мес. |
-| dividends_per_share |  [double](#double) | Значение дивидендов на акцию |
-| five_years_average_dividend_yield |  [double](#double) | Средняя дивидендная доходность за 5 лет |
-| five_year_annual_dividend_growth_rate |  [double](#double) | Среднегодовой рост дивидендов за 5 лет |
-| dividend_payout_ratio_fy |  [double](#double) | Процент чистой прибыли, уходящий на выплату дивидендов |
-| buy_back_ttm |  [double](#double) | Деньги, потраченные на обратный выкуп акций |
-| one_year_annual_revenue_growth_rate |  [double](#double) | Рост выручки за 1 год |
-| domicile_indicator_code |  [string](#string) | Код страны |
-| adr_to_common_share_ratio |  [double](#double) | Соотношение депозитарной расписки к акциям |
-| number_of_employees |  [double](#double) | Количество сотрудников |
+| shares_outstanding |  [double](#double) | Количество акций в обращении. |
+| revenue_ttm |  [double](#double) | Выручка. |
+| ebitda_ttm |  [double](#double) | EBITDA — прибыль до вычета процентов, налогов, износа и амортизации. |
+| net_income_ttm |  [double](#double) | Чистая прибыль. |
+| eps_ttm |  [double](#double) | EPS — величина чистой прибыли компании, которая приходится на каждую обыкновенную акцию. |
+| diluted_eps_ttm |  [double](#double) | EPS компании с допущением, что все конвертируемые ценные бумаги компании были сконвертированы в обыкновенные акции. |
+| free_cash_flow_ttm |  [double](#double) | Свободный денежный поток. |
+| five_year_annual_revenue_growth_rate |  [double](#double) | Среднегодовой  рocт выручки за 5 лет. |
+| three_year_annual_revenue_growth_rate |  [double](#double) | Среднегодовой  рocт выручки за 3 года. |
+| pe_ratio_ttm |  [double](#double) | Соотношение рыночной капитализации компании к её чистой прибыли. |
+| price_to_sales_ttm |  [double](#double) | Соотношение рыночной капитализации компании к её выручке. |
+| price_to_book_ttm |  [double](#double) | Соотношение рыночной капитализации компании к её балансовой стоимости. |
+| price_to_free_cash_flow_ttm |  [double](#double) | Соотношение рыночной капитализации компании к её свободному денежному потоку. |
+| total_enterprise_value_mrq |  [double](#double) | Рыночная стоимость компании. |
+| ev_to_ebitda_mrq |  [double](#double) | Соотношение EV и EBITDA. |
+| net_margin_mrq |  [double](#double) | Маржа чистой прибыли. |
+| net_interest_margin_mrq |  [double](#double) | Рентабельность чистой прибыли. |
+| roe |  [double](#double) | Рентабельность собственного капитала. |
+| roa |  [double](#double) | Рентабельность активов. |
+| roic |  [double](#double) | Рентабельность активов. |
+| total_debt_mrq |  [double](#double) | Сумма краткосрочных и долгосрочных обязательств компании. |
+| total_debt_to_equity_mrq |  [double](#double) | Соотношение долга к собственному капиталу. |
+| total_debt_to_ebitda_mrq |  [double](#double) | Total Debt/EBITDA. |
+| free_cash_flow_to_price |  [double](#double) | Отношение свободногоо кэша к стоимости. |
+| net_debt_to_ebitda |  [double](#double) | Отношение чистого долга к EBITDA. |
+| current_ratio_mrq |  [double](#double) | Коэффициент текущей ликвидности. |
+| fixed_charge_coverage_ratio_fy |  [double](#double) | Коэффициент покрытия фиксированных платежей — FCCR. |
+| dividend_yield_daily_ttm |  [double](#double) | Дивидендная доходность за 12 месяцев. |
+| dividend_rate_ttm |  [double](#double) | Выплаченные дивиденды за 12 месяцев. |
+| dividends_per_share |  [double](#double) | Значение дивидендов на акцию. |
+| five_years_average_dividend_yield |  [double](#double) | Средняя дивидендная доходность за 5 лет. |
+| five_year_annual_dividend_growth_rate |  [double](#double) | Среднегодовой рост дивидендов за 5 лет. |
+| dividend_payout_ratio_fy |  [double](#double) | Процент чистой прибыли, уходящий на выплату дивидендов. |
+| buy_back_ttm |  [double](#double) | Деньги, потраченные на обратный выкуп акций. |
+| one_year_annual_revenue_growth_rate |  [double](#double) | Рост выручки за 1 год. |
+| domicile_indicator_code |  [string](#string) | Код страны. |
+| adr_to_common_share_ratio |  [double](#double) | Соотношение депозитарной расписки к акциям. |
+| number_of_employees |  [double](#double) | Количество сотрудников. |
 | ex_dividend_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) |  |
-| fiscal_period_start_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало фискального периода |
-| fiscal_period_end_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Конец фискального периода |
-| revenue_change_five_years |  [double](#double) | Изменение общего дохода за 5 лет |
-| eps_change_five_years |  [double](#double) | Изменение eps за 5 лет |
-| ebitda_change_five_years |  [double](#double) | Изменение ebitda за 5 лет |
-| total_debt_change_five_years |  [double](#double) | Изменение общей задолжности за 5 лет |
-| ev_to_sales |  [double](#double) | Отношение EV к выручке |
+| fiscal_period_start_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало фискального периода. |
+| fiscal_period_end_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание фискального периода. |
+| revenue_change_five_years |  [double](#double) | Изменение общего дохода за 5 лет. |
+| eps_change_five_years |  [double](#double) | Изменение EPS за 5 лет. |
+| ebitda_change_five_years |  [double](#double) | Изменение EBIDTA за 5 лет. |
+| total_debt_change_five_years |  [double](#double) | Изменение общей задолжности за 5 лет. |
+| ev_to_sales |  [double](#double) | Отношение EV к выручке. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1711,9 +1715,9 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id |  [string](#string) | Идентификатор инструмента в формате uid. |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода в часовом поясе UTC. |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода в часовом поясе UTC. |
+| instrument_id |  [string](#string) | Идентификатор инструмента в формате UID. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1724,7 +1728,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| events | Массив объектов [GetAssetReportsResponse.GetAssetReportsEvent](#getassetreportsresponsegetassetreportsevent) | Массив событий по облигации |
+| events | Массив объектов [GetAssetReportsResponse.GetAssetReportsEvent](#getassetreportsresponsegetassetreportsevent) | Массив событий по облигации. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1736,10 +1740,10 @@ Deprecated Метод получения списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | instrument_id |  [string](#string) | Идентификатор инструмента. |
-| report_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата публикации отчета. |
+| report_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата публикации отчёта. |
 | period_year |  [int32](#int32) | Год периода отчета. |
 | period_num |  [int32](#int32) | Номер периода. |
-| period_type |  [GetAssetReportsResponse.AssetReportPeriodType](#getassetreportsresponseassetreportperiodtype) | Тип отчета. |
+| period_type |  [GetAssetReportsResponse.AssetReportPeriodType](#getassetreportsresponseassetreportperiodtype) | Тип отчёта. |
 | created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата создания записи. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -1762,8 +1766,8 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| items | Массив объектов [GetConsensusForecastsResponse.ConsensusForecastsItem](#getconsensusforecastsresponseconsensusforecastsitem) | Массив прогнозов |
-| page |  [PageResponse](#pageresponse) | Данные по пагинации |
+| items | Массив объектов [GetConsensusForecastsResponse.ConsensusForecastsItem](#getconsensusforecastsresponseconsensusforecastsitem) | Массив прогнозов. |
+| page |  [PageResponse](#pageresponse) | Данные по пагинации. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1774,41 +1778,41 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| uid |  [string](#string) | uid идентификатор |
-| asset_uid |  [string](#string) | uid идентификатор актива |
-| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи |
-| best_target_price |  [Quotation](#quotation) | Целевая цена на 12 месяцев |
-| best_target_low |  [Quotation](#quotation) | Минимальная прогнозная цена |
-| best_target_high |  [Quotation](#quotation) | Максимальная прогнозная цена |
-| total_buy_recommend |  [int32](#int32) | Количество аналитиков рекомендующих покупать |
-| total_hold_recommend |  [int32](#int32) | Количество аналитиков рекомендующих держать |
-| total_sell_recommend |  [int32](#int32) | Количество аналитиков рекомендующих продавать |
-| currency |  [string](#string) | Валюта прогнозов /инструмента |
-| consensus |  [Recommendation](#recommendation) | Консенсус-прогноз |
-| prognosis_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата прогноза |
+| uid |  [string](#string) | UID-идентификатор. |
+| asset_uid |  [string](#string) | UID-идентификатор актива. |
+| created_at |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания записи. |
+| best_target_price |  [Quotation](#quotation) | Целевая цена на 12 месяцев. |
+| best_target_low |  [Quotation](#quotation) | Минимальная прогнозная цена. |
+| best_target_high |  [Quotation](#quotation) | Максимальная прогнозная цена. |
+| total_buy_recommend |  [int32](#int32) | Количество аналитиков рекомендующих покупать. |
+| total_hold_recommend |  [int32](#int32) | Количество аналитиков рекомендующих держать. |
+| total_sell_recommend |  [int32](#int32) | Количество аналитиков рекомендующих продавать. |
+| currency |  [string](#string) | Валюта прогнозов инструмента. |
+| consensus |  [Recommendation](#recommendation) | Консенсус-прогноз. |
+| prognosis_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата прогноза. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### GetForecastRequest
-Запрос прогнозов инвестдомов
+Запрос прогнозов инвестдомов.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id |  [string](#string) | Идентификатор инструмента |
+| instrument_id |  [string](#string) | Идентификатор инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### GetForecastResponse
-Прогнозы инвестдомов по инструменту
+Прогнозы инвестдомов по инструменту.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| targets | Массив объектов [GetForecastResponse.TargetItem](#getforecastresponsetargetitem) | Массив прогнозов |
-| consensus |  [GetForecastResponse.ConsensusItem](#getforecastresponseconsensusitem) | Согласованный прогноз |
+| targets | Массив объектов [GetForecastResponse.TargetItem](#getforecastresponsetargetitem) | Массив прогнозов. |
+| consensus |  [GetForecastResponse.ConsensusItem](#getforecastresponseconsensusitem) | Согласованный прогноз. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1819,37 +1823,37 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| uid |  [string](#string) | Уникальный идентификатор инструмента |
-| ticker |  [string](#string) | Тикер инструмента |
-| company |  [string](#string) | Название компании, давшей прогноз |
-| recommendation |  [Recommendation](#recommendation) | Прогноз |
-| recommendation_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата прогноза |
-| currency |  [string](#string) | Валюта |
-| current_price |  [Quotation](#quotation) | Текущая цена |
-| target_price |  [Quotation](#quotation) | Прогнозируемая цена |
-| price_change |  [Quotation](#quotation) | Изменение цены |
-| price_change_rel |  [Quotation](#quotation) | Относительное изменение цены |
-| show_name |  [string](#string) | Наименование инструмента |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| company |  [string](#string) | Название компании, давшей прогноз. |
+| recommendation |  [Recommendation](#recommendation) | Прогноз. |
+| recommendation_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата прогноза. |
+| currency |  [string](#string) | Валюта. |
+| current_price |  [Quotation](#quotation) | Текущая цена. |
+| target_price |  [Quotation](#quotation) | Прогнозируемая цена. |
+| price_change |  [Quotation](#quotation) | Изменение цены. |
+| price_change_rel |  [Quotation](#quotation) | Относительное изменение цены. |
+| show_name |  [string](#string) | Наименование инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### GetForecastResponse.ConsensusItem
-Консенсус-прогноз
+Консенсус-прогноз.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| uid |  [string](#string) | Уникальный идентификатор инструмента |
-| ticker |  [string](#string) | Тикер инструмента |
-| recommendation |  [Recommendation](#recommendation) | Прогноз |
-| currency |  [string](#string) | Валюта |
-| current_price |  [Quotation](#quotation) | Текущая цена |
-| consensus |  [Quotation](#quotation) | Прогнозируемая цена |
-| min_target |  [Quotation](#quotation) | Минимальная цена прогноза |
-| max_target |  [Quotation](#quotation) | Максимальная цена прогноза |
-| price_change |  [Quotation](#quotation) | Изменение цены |
-| price_change_rel |  [Quotation](#quotation) | Относительное изменение цены |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| recommendation |  [Recommendation](#recommendation) | Прогноз. |
+| currency |  [string](#string) | Валюта. |
+| current_price |  [Quotation](#quotation) | Текущая цена. |
+| consensus |  [Quotation](#quotation) | Прогнозируемая цена. |
+| min_target |  [Quotation](#quotation) | Минимальная цена прогноза. |
+| max_target |  [Quotation](#quotation) | Максимальная цена прогноза. |
+| price_change |  [Quotation](#quotation) | Изменение цены. |
+| price_change_rel |  [Quotation](#quotation) | Относительное изменение цены. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1860,8 +1864,7 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| type |  [string](#string) | Название интервала |
-| interval |  [TradingInterval.TimeInterval](#tradingintervaltimeinterval) | Интервал |
+| type |  [string](#string) | Название интервала. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1872,8 +1875,8 @@ Deprecated Метод получения списка опционов.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| start_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала интервала |
-| end_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания интервала |
+| start_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала интервала. |
+| end_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания интервала. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
@@ -1886,14 +1889,14 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| COUPON_TYPE_UNSPECIFIED | 0 | Неопределенное значение |
-| COUPON_TYPE_CONSTANT | 1 | Постоянный |
-| COUPON_TYPE_FLOATING | 2 | Плавающий |
-| COUPON_TYPE_DISCOUNT | 3 | Дисконт |
-| COUPON_TYPE_MORTGAGE | 4 | Ипотечный |
-| COUPON_TYPE_FIX | 5 | Фиксированный |
-| COUPON_TYPE_VARIABLE | 6 | Переменный |
-| COUPON_TYPE_OTHER | 7 | Прочее |
+| COUPON_TYPE_UNSPECIFIED | 0 | Неопределённое значение. |
+| COUPON_TYPE_CONSTANT | 1 | Постоянный. |
+| COUPON_TYPE_FLOATING | 2 | Плавающий. |
+| COUPON_TYPE_DISCOUNT | 3 | Дисконт. |
+| COUPON_TYPE_MORTGAGE | 4 | Ипотечный. |
+| COUPON_TYPE_FIX | 5 | Фиксированный. |
+| COUPON_TYPE_VARIABLE | 6 | Переменный. |
+| COUPON_TYPE_OTHER | 7 | Прочее. |
 
 
 
@@ -1903,7 +1906,7 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| OPTION_DIRECTION_UNSPECIFIED | 0 | Тип не определен. |
+| OPTION_DIRECTION_UNSPECIFIED | 0 | Тип не определён. |
 | OPTION_DIRECTION_PUT | 1 | Опцион на продажу. |
 | OPTION_DIRECTION_CALL | 2 | Опцион на покупку. |
 
@@ -1911,12 +1914,12 @@ Deprecated Метод получения списка опционов.
 
 
 #### OptionPaymentType
-Тип расчетов по опциону.
+Тип расчётов по опциону.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| OPTION_PAYMENT_TYPE_UNSPECIFIED | 0 | Тип не определен. |
-| OPTION_PAYMENT_TYPE_PREMIUM | 1 | Опционы с использованием премии в расчетах. |
+| OPTION_PAYMENT_TYPE_UNSPECIFIED | 0 | Тип не определён. |
+| OPTION_PAYMENT_TYPE_PREMIUM | 1 | Опционы с использованием премии в расчётах. |
 | OPTION_PAYMENT_TYPE_MARGINAL | 2 | Маржируемые опционы. |
 
 
@@ -1927,7 +1930,7 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| OPTION_STYLE_UNSPECIFIED | 0 | Тип не определен. |
+| OPTION_STYLE_UNSPECIFIED | 0 | Тип не определён. |
 | OPTION_STYLE_AMERICAN | 1 | Американский опцион. |
 | OPTION_STYLE_EUROPEAN | 2 | Европейский опцион. |
 
@@ -1939,20 +1942,20 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| OPTION_EXECUTION_TYPE_UNSPECIFIED | 0 | Тип не определен. |
+| OPTION_EXECUTION_TYPE_UNSPECIFIED | 0 | Тип не определён. |
 | OPTION_EXECUTION_TYPE_PHYSICAL_DELIVERY | 1 | Поставочный тип опциона. |
-| OPTION_EXECUTION_TYPE_CASH_SETTLEMENT | 2 | Расчетный тип опциона. |
+| OPTION_EXECUTION_TYPE_CASH_SETTLEMENT | 2 | Расчётный тип опциона. |
 
 
 
 
 #### InstrumentIdType
-Тип идентификатора инструмента. Подробнее об идентификации инструментов: [Идентификация инструментов](https://russianinvestments.github.io/investAPI/faq_identification/)
+Тип идентификатора инструмента. [Подробнее об идентификации инструментов](https://russianinvestments.github.io/investAPI/faq_identification/).
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | INSTRUMENT_ID_UNSPECIFIED | 0 | Значение не определено. |
-| INSTRUMENT_ID_TYPE_FIGI | 1 | Figi. |
+| INSTRUMENT_ID_TYPE_FIGI | 1 | FIGI. |
 | INSTRUMENT_ID_TYPE_TICKER | 2 | Ticker. |
 | INSTRUMENT_ID_TYPE_UID | 3 | Уникальный идентификатор. |
 | INSTRUMENT_ID_TYPE_POSITION_UID | 4 | Идентификатор позиции. |
@@ -1966,7 +1969,7 @@ Deprecated Метод получения списка опционов.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | INSTRUMENT_STATUS_UNSPECIFIED | 0 | Значение не определено. |
-| INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). Инструменты доступные для торговли через TINKOFF INVEST API. Cейчас списки бумаг, доступных из api и других интерфейсах совпадают (за исключением внебиржевых бумаг), но в будущем возможны ситуации, когда списки инструментов будут отличаться |
+| INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). Инструменты, доступные для торговли через Tinkoff Invest API. Cейчас списки бумаг, которые доступны из API и других интерфейсах совпадают — кроме внебиржевых бумаг. Но в будущем возможны ситуации, когда списки инструментов будут отличаться. |
 | INSTRUMENT_STATUS_ALL | 2 | Список всех инструментов. |
 
 
@@ -1978,14 +1981,14 @@ Deprecated Метод получения списка опционов.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | SHARE_TYPE_UNSPECIFIED | 0 | Значение не определено. |
-| SHARE_TYPE_COMMON | 1 | Обыкновенная |
-| SHARE_TYPE_PREFERRED | 2 | Привилегированная |
-| SHARE_TYPE_ADR | 3 | Американские депозитарные расписки |
-| SHARE_TYPE_GDR | 4 | Глобальные депозитарные расписки |
-| SHARE_TYPE_MLP | 5 | Товарищество с ограниченной ответственностью |
-| SHARE_TYPE_NY_REG_SHRS | 6 | Акции из реестра Нью-Йорка |
-| SHARE_TYPE_CLOSED_END_FUND | 7 | Закрытый инвестиционный фонд |
-| SHARE_TYPE_REIT | 8 | Траст недвижимости |
+| SHARE_TYPE_COMMON | 1 | Обыкновенная. |
+| SHARE_TYPE_PREFERRED | 2 | Привилегированная. |
+| SHARE_TYPE_ADR | 3 | Американские депозитарные расписки. |
+| SHARE_TYPE_GDR | 4 | Глобальные депозитарные расписки. |
+| SHARE_TYPE_MLP | 5 | Товарищество с ограниченной ответственностью. |
+| SHARE_TYPE_NY_REG_SHRS | 6 | Акции из реестра Нью-Йорка. |
+| SHARE_TYPE_CLOSED_END_FUND | 7 | Закрытый инвестиционный фонд. |
+| SHARE_TYPE_REIT | 8 | Траст недвижимости. |
 
 
 
@@ -2046,10 +2049,10 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| RECOMMENDATION_UNSPECIFIED | 0 | Не определено |
-| RECOMMENDATION_BUY | 1 | Покупать |
-| RECOMMENDATION_HOLD | 2 | Держать |
-| RECOMMENDATION_SELL | 3 | Продавать |
+| RECOMMENDATION_UNSPECIFIED | 0 | Не определено. |
+| RECOMMENDATION_BUY | 1 | Покупать. |
+| RECOMMENDATION_HOLD | 2 | Держать. |
+| RECOMMENDATION_SELL | 3 | Продавать. |
 
 
 
@@ -2059,10 +2062,32 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| RISK_LEVEL_UNSPECIFIED | 0 | не указан |
-| RISK_LEVEL_LOW | 1 | Низкий уровень риска |
-| RISK_LEVEL_MODERATE | 2 | Средний уровень риска |
-| RISK_LEVEL_HIGH | 3 | Высокий уровень риска |
+| RISK_LEVEL_UNSPECIFIED | 0 | Не указан. |
+| RISK_LEVEL_LOW | 1 | Низкий уровень риска. |
+| RISK_LEVEL_MODERATE | 2 | Средний уровень риска. |
+| RISK_LEVEL_HIGH | 3 | Высокий уровень риска. |
+
+
+
+
+#### BondType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| BOND_TYPE_UNSPECIFIED | 0 | Тип облигации не определён. |
+| BOND_TYPE_REPLACED | 1 | Замещающая облигация. |
+
+
+
+
+#### InstrumentExchangeType
+Площадка торговли.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| INSTRUMENT_EXCHANGE_UNSPECIFIED | 0 | Площадка торговли не определена. |
+| INSTRUMENT_EXCHANGE_DEALER | 1 | Бумага, торгуемая у дилера. |
 
 
 
@@ -2072,11 +2097,11 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| EVENT_TYPE_UNSPECIFIED | 0 | Неопределенное значение |
-| EVENT_TYPE_CPN | 1 | Купон |
-| EVENT_TYPE_CALL | 2 | Опцион (оферта) |
-| EVENT_TYPE_MTY | 3 | Погашение |
-| EVENT_TYPE_CONV | 4 | Конвертация |
+| EVENT_TYPE_UNSPECIFIED | 0 | Неопределённое значение. |
+| EVENT_TYPE_CPN | 1 | Купон. |
+| EVENT_TYPE_CALL | 2 | Опцион (оферта). |
+| EVENT_TYPE_MTY | 3 | Погашение. |
+| EVENT_TYPE_CONV | 4 | Конвертация. |
 
 
 
@@ -2086,10 +2111,10 @@ Deprecated Метод получения списка опционов.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| PERIOD_TYPE_UNSPECIFIED | 0 | не указан |
-| PERIOD_TYPE_QUARTER | 1 | Квартальный |
-| PERIOD_TYPE_SEMIANNUAL | 2 | Полугодовой |
-| PERIOD_TYPE_ANNUAL | 3 | Годовой |
+| PERIOD_TYPE_UNSPECIFIED | 0 | Не указан. |
+| PERIOD_TYPE_QUARTER | 1 | Квартальный. |
+| PERIOD_TYPE_SEMIANNUAL | 2 | Полугодовой. |
+| PERIOD_TYPE_ANNUAL | 3 | Годовой. |
 
 
  <!-- range .Enums -->
