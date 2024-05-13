@@ -17,7 +17,7 @@
 
 ### Как с помощью Tinkoff Invest API получить брокерский отчёт? 
 
-Можно воспользоваться методом [GetBrokerReport](/investAPI/operations#getbrokerreport).
+Через метод [GetBrokerReport](/investAPI/operations#getbrokerreport).
 
 Обратите внимание: получение брокерского отчёта асинхронно — сначала вы запрашиваете формирование
 отчёта, отправляя пакет [generate_broker_report_request](/investAPI/operations#generatebrokerreportrequest), и
