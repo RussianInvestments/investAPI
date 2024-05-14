@@ -265,21 +265,11 @@ message OrderStateStreamResponse {
 
   message SubscriptionResponse {
     string tracking_id = 1; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
-    SubscriptionStatus status = 2; //Статус подписки.
+    ResultSubscriptionStatus status = 2; //Статус подписки.
     string stream_id = 4; //Идентификатор открытого соединения
     repeated string accounts = 5; //Идентификаторы счетов.
     optional ErrorDetail error = 7;
 
-    enum SubscriptionStatus {
-      SUBSCRIPTION_STATUS_UNSPECIFIED = 0; //Статус подписки не определен.
-      SUBSCRIPTION_STATUS_OK = 1; //Подписка успешно установлена.
-      SUBSCRIPTION_STATUS_ERROR = 13; //Ошибка подписки
-    }
-
-    message ErrorDetail {
-      string code = 1; //Код ошибки.
-      string message = 3; //Описание ошибки.
-    }
   }
 
   //Заявка
