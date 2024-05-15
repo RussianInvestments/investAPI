@@ -1348,6 +1348,7 @@ message GetForecastResponse {
 
 message TradingInterval {
   string type = 1; //Название интервала.
+  TimeInterval interval = 2; //Интервал.
 
   message TimeInterval {
     google.protobuf.Timestamp start_ts = 1; // Время начала интервала.

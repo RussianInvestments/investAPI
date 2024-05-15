@@ -1317,13 +1317,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamresponsesubscriptionresponseerrordetail" class="md-nav__link">
-    OrderStateStreamResponse.SubscriptionResponse.ErrorDetail
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#orderstatestreamresponseorderstate" class="md-nav__link">
     OrderStateStreamResponse.OrderState
   </a>
@@ -1386,13 +1379,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamresponsesubscriptionresponsesubscriptionstatus" class="md-nav__link">
-    OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#pricetype" class="md-nav__link">
     PriceType
   </a>
@@ -1402,6 +1388,20 @@
           <li class="md-nav__item">
   <a href="#responsemetadata" class="md-nav__link">
     ResponseMetadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultsubscriptionstatus" class="md-nav__link">
+    ResultSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errordetail" class="md-nav__link">
+    ErrorDetail
   </a>
   
 </li>
@@ -2212,13 +2212,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamresponsesubscriptionresponseerrordetail" class="md-nav__link">
-    OrderStateStreamResponse.SubscriptionResponse.ErrorDetail
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#orderstatestreamresponseorderstate" class="md-nav__link">
     OrderStateStreamResponse.OrderState
   </a>
@@ -2281,13 +2274,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamresponsesubscriptionresponsesubscriptionstatus" class="md-nav__link">
-    OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#pricetype" class="md-nav__link">
     PriceType
   </a>
@@ -2297,6 +2283,20 @@
           <li class="md-nav__item">
   <a href="#responsemetadata" class="md-nav__link">
     ResponseMetadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultsubscriptionstatus" class="md-nav__link">
+    ResultSubscriptionStatus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errordetail" class="md-nav__link">
+    ErrorDetail
   </a>
   
 </li>
@@ -3560,7 +3560,7 @@
 </tr>
 <tr>
 <td>status</td>
-<td><a href="#orderstatestreamresponsesubscriptionresponsesubscriptionstatus">OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus</a></td>
+<td><a href="#resultsubscriptionstatus">ResultSubscriptionStatus</a></td>
 <td>Статус подписки.</td>
 </tr>
 <tr>
@@ -3575,37 +3575,8 @@
 </tr>
 <tr>
 <td>error</td>
-<td><a href="#orderstatestreamresponsesubscriptionresponseerrordetail">OrderStateStreamResponse.SubscriptionResponse.ErrorDetail</a></td>
+<td><a href="#errordetail">ErrorDetail</a></td>
 <td></td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="orderstatestreamresponsesubscriptionresponseerrordetail">OrderStateStreamResponse.SubscriptionResponse.ErrorDetail</h4>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>code</td>
-<td><a href="#string">string</a></td>
-<td>Код ошибки.</td>
-</tr>
-<tr>
-<td>message</td>
-<td><a href="#string">string</a></td>
-<td>Описание ошибки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4021,33 +3992,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="orderstatestreamresponsesubscriptionresponsesubscriptionstatus">OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Number</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SUBSCRIPTION_STATUS_UNSPECIFIED</td>
-<td>0</td>
-<td>Статус подписки не определен.</td>
-</tr>
-<tr>
-<td>SUBSCRIPTION_STATUS_OK</td>
-<td>1</td>
-<td>Подписка успешно установлена.</td>
-</tr>
-<tr>
-<td>SUBSCRIPTION_STATUS_ERROR</td>
-<td>13</td>
-<td>Ошибка подписки</td>
-</tr>
-</tbody>
-</table>
 <!-- range .Enums -->
 <!-- range HasServices -->
 <!-- range .Files -->
@@ -4099,6 +4043,57 @@
 <td>server_time</td>
 <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
 <td>Серверное время</td>
+</tr>
+</tbody>
+</table>
+<h4 id="resultsubscriptionstatus">ResultSubscriptionStatus</h4>
+<p>Результат подписки</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUBSCRIPTION_STATUS_UNSPECIFIED</td>
+<td>0</td>
+<td>Статус подписки не определен.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_OK</td>
+<td>1</td>
+<td>Подписка успешно установлена.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_ERROR</td>
+<td>13</td>
+<td>Ошибка подписки</td>
+</tr>
+</tbody>
+</table>
+<h4 id="errordetail">ErrorDetail</h4>
+<p>Описание ошибки</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td><a href="#string">string</a></td>
+<td>Код ошибки.</td>
+</tr>
+<tr>
+<td>message</td>
+<td><a href="#string">string</a></td>
+<td>Описание ошибки.</td>
 </tr>
 </tbody>
 </table>

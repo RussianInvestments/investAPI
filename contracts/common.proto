@@ -104,3 +104,14 @@ message BrandData {
   string logo_base_color = 2; //	Цвет бренда.
   string text_color	= 3; // Цвет текста для цвета логотипа бренда.
 }
+
+enum ResultSubscriptionStatus {
+  RESULT_SUBSCRIPTION_STATUS_UNSPECIFIED = 0; //Статус подписки не определен.
+  RESULT_SUBSCRIPTION_STATUS_OK = 1; //Подписка успешно установлена.
+  RESULT_SUBSCRIPTION_STATUS_ERROR = 13; //Ошибка подписки
+}
+
+message ErrorDetail {
+  string code = 1; //Код ошибки.
+  string message = 3; //Описание ошибки.
+}
