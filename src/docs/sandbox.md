@@ -5,13 +5,13 @@
 
 
 ## SandboxService
-Сервис для работы с песочницей TINKOFF INVEST API
+Методы для работы с песочницей Tinkoff Invest API
 
 ###Методы сервиса
 
 
 #### OpenSandboxAccount
-Метод регистрации счёта в песочнице.
+Зарегистрировать счёт.
 
 - Тело запроса — [OpenSandboxAccountRequest](#opensandboxaccountrequest)
 
@@ -19,7 +19,7 @@
 
 
 #### GetSandboxAccounts
-Метод получения счетов в песочнице.
+Получить счета.
 
 - Тело запроса — [GetAccountsRequest](#getaccountsrequest)
 
@@ -27,7 +27,7 @@
 
 
 #### CloseSandboxAccount
-Метод закрытия счёта в песочнице.
+Закрыть счёт.
 
 - Тело запроса — [CloseSandboxAccountRequest](#closesandboxaccountrequest)
 
@@ -35,7 +35,7 @@
 
 
 #### PostSandboxOrder
-Метод выставления торгового поручения в песочнице.
+Выставить торговое поручение.
 
 - Тело запроса — [PostOrderRequest](#postorderrequest)
 
@@ -43,7 +43,7 @@
 
 
 #### ReplaceSandboxOrder
-Метод изменения выставленной заявки.
+Изменить выставленную заявку.
 
 - Тело запроса — [ReplaceOrderRequest](#replaceorderrequest)
 
@@ -51,7 +51,7 @@
 
 
 #### GetSandboxOrders
-Метод получения списка активных заявок по счёту в песочнице.
+Получить список активных заявок по счёту.
 
 - Тело запроса — [GetOrdersRequest](#getordersrequest)
 
@@ -59,7 +59,7 @@
 
 
 #### CancelSandboxOrder
-Метод отмены торгового поручения в песочнице.
+Отменить торговое поручение.
 
 - Тело запроса — [CancelOrderRequest](#cancelorderrequest)
 
@@ -67,7 +67,7 @@
 
 
 #### GetSandboxOrderState
-Метод получения статуса заявки в песочнице. Заявки хранятся в таблице 7 дней.
+Поулчить статус заявки в песочнице. Заявки хранятся в таблице 7 дней.
 
 - Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
 
@@ -75,7 +75,7 @@
 
 
 #### GetSandboxPositions
-Метод получения позиций по виртуальному счёту песочницы.
+Получить позиции по виртуальному счёту.
 
 - Тело запроса — [PositionsRequest](#positionsrequest)
 
@@ -83,7 +83,7 @@
 
 
 #### GetSandboxOperations
-Метод получения операций в песочнице по номеру счёта.
+Получить операции по номеру счёта.
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
 
@@ -91,7 +91,7 @@
 
 
 #### GetSandboxOperationsByCursor
-Метод получения операций в песочнице по номеру счета с пагинацией.
+Получить операции по номеру счёта с пагинацией.
 
 - Тело запроса — [GetOperationsByCursorRequest](#getoperationsbycursorrequest)
 
@@ -99,7 +99,7 @@
 
 
 #### GetSandboxPortfolio
-Метод получения портфолио в песочнице.
+Получить портфель.
 
 - Тело запроса — [PortfolioRequest](#portfoliorequest)
 
@@ -107,7 +107,7 @@
 
 
 #### SandboxPayIn
-Метод пополнения счёта в песочнице.
+Пополнить счёт.
 
 - Тело запроса — [SandboxPayInRequest](#sandboxpayinrequest)
 
@@ -115,11 +115,19 @@
 
 
 #### GetSandboxWithdrawLimits
-Метод получения доступного остатка для вывода средств в песочнице.
+Получить доступный остаток для вывода средств.
 
 - Тело запроса — [WithdrawLimitsRequest](#withdrawlimitsrequest)
 
 - Тело ответа — [WithdrawLimitsResponse](#withdrawlimitsresponse)
+
+
+#### GetSandboxMaxLots
+Расчёт количества доступных для покупки/продажи лотов в песочнице.
+
+- Тело запроса — [GetMaxLotsRequest](#getmaxlotsrequest)
+
+- Тело ответа — [GetMaxLotsResponse](#getmaxlotsresponse)
 
  <!-- range .Methods -->
  <!-- range .Services -->
