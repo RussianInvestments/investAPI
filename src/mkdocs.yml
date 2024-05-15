@@ -88,8 +88,8 @@ nav:
   - Котировки:
     - Описание: head-marketdata.md
     - Методы: marketdata.md
-    - Получение исторических рыночных данных: get_history.md
-    - Методы работы с индикаторами технического анализа: get_tech_indicators.md 
+    - Исторические рыночные данные: get_history.md
+    - Работа с индикаторами технического анализа: get_tech_indicators.md 
     - FAQ: faq_marketdata.md
   - Стоп-заявки: 
     - Описание: head-stoporders.md
