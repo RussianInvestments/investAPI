@@ -854,7 +854,8 @@ Server-side stream обновлений информации по изменен
 | OPERATION_TYPE_OVER_PLACEMENT | 61 | Размещение биржевого овернайта |
 | OPERATION_TYPE_OVER_COM | 62 | Списание комиссии |
 | OPERATION_TYPE_OVER_INCOME | 63 | Доход от оверанайта |
-| OPERATION_TYPE_OPTION_EXPIRATION | 64 | Экспирация |
+| OPERATION_TYPE_OPTION_EXPIRATION | 64 | Экспирация опциона |
+| OPERATION_TYPE_FUTURE_EXPIRATION | 65 | Экспирация фьючерса |
 
 
 

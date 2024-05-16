@@ -1,6 +1,6 @@
 # Глоссарий
 
-[Голоссарий списков инструментов](https://russianinvestments.github.io/investAPI/glossary-instrument/)
+[Голоссарий сервиса инструментов](https://russianinvestments.github.io/investAPI/more-instrument/)
 
 ## Термины биржевой торговли
 
