@@ -461,22 +461,10 @@ Stream поручений пользователя. Перед работой п
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id). |
-| status |  [OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus](#orderstatestreamresponsesubscriptionresponsesubscriptionstatus) | Статус подписки. |
+| status |  [ResultSubscriptionStatus](#resultsubscriptionstatus) | Статус подписки. |
 | stream_id |  [string](#string) | Идентификатор открытого соединения |
 | accounts | Массив объектов [string](#string) | Идентификаторы счетов. |
-| error |  [OrderStateStreamResponse.SubscriptionResponse.ErrorDetail](#orderstatestreamresponsesubscriptionresponseerrordetail) |  |
- <!-- end Fields -->
- <!-- end HasFields -->
-
- 
-#### OrderStateStreamResponse.SubscriptionResponse.ErrorDetail
-
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| code |  [string](#string) | Код ошибки. |
-| message |  [string](#string) | Описание ошибки. |
+| error |  [ErrorDetail](#errordetail) |  |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -607,18 +595,6 @@ Stream поручений пользователя. Перед работой п
 | CAUSE_CANCELLED_BY_BROKER | 6 | Отменено брокером |
 
 
-
-
-#### OrderStateStreamResponse.SubscriptionResponse.SubscriptionStatus
-
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| SUBSCRIPTION_STATUS_UNSPECIFIED | 0 | Статус подписки не определен. |
-| SUBSCRIPTION_STATUS_OK | 1 | Подписка успешно установлена. |
-| SUBSCRIPTION_STATUS_ERROR | 13 | Ошибка подписки |
-
-
  <!-- range .Enums -->
  <!-- range HasServices -->
  <!-- range .Files -->
@@ -638,6 +614,23 @@ Stream поручений пользователя. Перед работой п
 | ----- | ---- | ----------- |
 | [tracking_id](https://russianinvestments.github.io/investAPI/grpc/#tracking-id) |  [string](#string) | Идентификатор трекинга |
 | server_time |  [google.protobuf.Timestamp](#google.protobuf.Timestamp) | Серверное время |
+
+#### ResultSubscriptionStatus
+Результат подписки
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| SUBSCRIPTION_STATUS_UNSPECIFIED | 0 | Статус подписки не определен. |
+| SUBSCRIPTION_STATUS_OK | 1 | Подписка успешно установлена. |
+| SUBSCRIPTION_STATUS_ERROR | 13 | Ошибка подписки |
+
+#### ErrorDetail
+Описание ошибки
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| code |  [string](#string) | Код ошибки. |
+| message |  [string](#string) | Описание ошибки. |
 
 ### Про тип цены
 
@@ -664,7 +657,6 @@ Stream поручений пользователя. Перед работой п
 | ----- | ---- | ----------- |
 | units |  [int64](#int64) | Целая часть суммы, может быть отрицательным числом |
 | nano |  [int32](#int32) | Дробная часть суммы, может быть отрицательным числом |
-
 
 
 ####Числа с плавающей точкой(запятой)

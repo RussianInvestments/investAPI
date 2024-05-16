@@ -1865,6 +1865,7 @@ Deprecated Получить списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | type |  [string](#string) | Название интервала. |
+| interval |  [TradingInterval.TimeInterval](#tradingintervaltimeinterval) | Интервал. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

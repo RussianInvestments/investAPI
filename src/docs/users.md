@@ -185,6 +185,7 @@
 | ACCOUNT_TYPE_TINKOFF | 1 | Брокерский счёт Тинькофф. |
 | ACCOUNT_TYPE_TINKOFF_IIS | 2 | ИИС. |
 | ACCOUNT_TYPE_INVEST_BOX | 3 | Инвесткопилка. |
+| ACCOUNT_TYPE_INVEST_FUND | 4 | Фонд денежного рынка. |
 
 
 
