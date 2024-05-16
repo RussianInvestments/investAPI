@@ -72,6 +72,26 @@ nav:
   - Инструменты:
     - Описание: head-instruments.md
     - Методы: instruments.md
+    - Глоссарий и дополнительная информация: more-instrument.md
+    - FAQ: faq_instruments.md
+  - Заявки:
+    - Описание: head-orders.md
+    - Методы: orders.md
+    - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md
+    - Стрим заявок: orders_state_stream.md
+    - FAQ: faq_orders.md
+  - Операции:
+    - Описание: head-operations.md
+    - Методы: operations.md
+    - Особенности методов: operations_problems.md
+    - FAQ: faq_operations.md
+  - Котировки:
+    - Описание: head-marketdata.md
+    - Методы: marketdata.md
+    - Получение исторических рыночных данных: get_history.md
+    - Методы работы с индикаторами технического анализа: get_tech_indicators.md 
+    - FAQ: faq_marketdata.md
+  - Стоп-заявки: 
     - FAQ: faq_instruments.md
     - Глоссарий и дополнительная информация: more-instrument.md
   - Заявки:
@@ -98,8 +118,8 @@ nav:
 - Песочница:
   - Описание: head-sandbox.md
   - Методы: sandbox.md
-  - FAQ: faq_sandbox.md
   - Отличия контура песочницы: url_difference.md
+  - FAQ: faq_sandbox.md
 - Коды ошибок: 
   - "gRPC": errors.md 
   - "WebSocket": ws\errors.md
