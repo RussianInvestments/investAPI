@@ -74,7 +74,7 @@ nav:
     - Методы: instruments.md
     - FAQ: faq_instruments.md
     - Глоссарий и дополнительная информация: more-instrument.md
-  - Ордеры:
+  - Заявки:
     - Описание: head-orders.md
     - Методы: orders.md
     - FAQ: faq_orders.md
@@ -91,7 +91,7 @@ nav:
     - FAQ: faq_marketdata.md
     - Получение исторических рыночных данных: get_history.md
     - Методы работы с индикаторами технического анализа: get_tech_indicators.md 
-  - Стоп-ордеры: 
+  - Стоп-заявки: 
     - Описание: head-stoporders.md
     - Методы: stoporders.md
     - FAQ: faq_stoporders.md   
