@@ -37,7 +37,7 @@
 1. Вызовите один из методов: [GetFutureBy](/investAPI/instruments/#futureby) или [GetFutures](/investAPI/instruments/#futures). 
 2. Сохраните значение параметра `basic_asset_position_uid` — это уникальный идентификатор позиции основного инструмента.
 
->**Примечание**
+>**Примечание**<br>
 > Для поиска базового актива фьючерса можно также использовать метод [FindInstrument](/investAPI/instruments/#findinstrument) — в `query` передайте значение параметра `basic_asset_position_uid`, который возвращается в методах [GetFutureBy](/investAPI/instruments/#futureby) и [GetFutures](/investAPI/instruments/#futures).
 
 
