@@ -14,7 +14,7 @@
     
     
       
-        <title>Время жизни и хранение информации - Tinkoff Invest API</title>
+        <title>Время жизни ключа и стрим-соединений - Tinkoff Invest API</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Время жизни и хранение информации
+              Время жизни ключа и стрим-соединений
             
           </span>
         </div>
@@ -227,7 +227,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Начало работы
+        Про Tinkoff Invest API
       </a>
     </li>
   
@@ -311,7 +311,7 @@
   
     <li class="md-nav__item">
       <a href="../load_history/" class="md-nav__link">
-        Порядок работы с историческими данными
+        Исторические данные
       </a>
     </li>
   
@@ -323,7 +323,7 @@
   
     <li class="md-nav__item">
       <a href="../orders_details/" class="md-nav__link">
-        Работа с торговыми поручениями
+        Торговые поручения
       </a>
     </li>
   
@@ -336,18 +336,6 @@
     <li class="md-nav__item">
       <a href="../deadlines/" class="md-nav__link">
         Время исполнения запросов
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../robot_contest/" class="md-nav__link">
-        Конкурсные работы
       </a>
     </li>
   
@@ -371,7 +359,19 @@
   
     <li class="md-nav__item">
       <a href="../cases/" class="md-nav__link">
-        Популярные кейсы и их решение
+        Популярные запросы и их решение
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../robot_contest/" class="md-nav__link">
+        Конкурсные работы
       </a>
     </li>
   
@@ -647,12 +647,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Время жизни и хранение информации
+          Время жизни ключа и стрим-соединений
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Время жизни и хранение информации
+        Время жизни ключа и стрим-соединений
       </a>
       
         
@@ -1514,16 +1514,15 @@
                   </a>
                 
                 
-                  <h1>Время жизни и хранение информации</h1>
+                  <h1>Время жизни ключа и стрим-соединений</h1>
                 
                 <h3 id="_1">Сколько действует ключ идемпотентности</h3>
-<p>Ключ идемпотентности передаётся как параметры <code>order_id</code> в методе <a href="/investAPI/orders#postorder">postOrder</a> и <code>idempotency_key</code> в методе <a href="/investAPI/orders#replaceorder">replaceOrder</a>.</p>
-<p>Он хранится на стороне брокера, уникальность значений отслеживается <strong>только за последний месяц</strong>.</p>
+<p>Ключ идемпотентности передаётся как параметр <code>order_id</code> в методе <a href="/investAPI/orders#postorder">postOrder</a> и <code>idempotency_key</code> в методе <a href="/investAPI/orders#replaceorder">replaceOrder</a>.</p>
+<p>Он хранится на стороне брокера, уникальность значений отслеживается только за последний месяц.</p>
 <h3 id="-">Время работы стрим-соединения</h3>
-<p>Стрим-соединения не ограничиваются по сроку жизни, однако они периодически могут закрываться по инициативе API, 
-это может быть вызвано техническими работами, обновлениями и другими регламентными мероприятиями.
-Рекомендуется реализовывать обработку ошибок, связанных с закрытием соединений, и, в случае закрытия стрим-соединения, 
-поднимать новое соединение.</p>
+<p>Стрим-соединения не ограничиваются по сроку жизни, но периодически могут закрываться по инициативе API.
+Это может быть связано с техническими работами, обновлениями и другими регламентными мероприятиями.</p>
+<p>Рекомендуем реализовывать обработку ошибок, связанных с закрытием соединений, и в случае закрытия стрим-соединения поднимать новое.</p>
                 
               
               
@@ -1531,7 +1530,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/RussianInvestments/investAPI"
-            issue-term="Время жизни и хранение информации comments"
+            issue-term="Время жизни ключа и стрим-соединений comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"

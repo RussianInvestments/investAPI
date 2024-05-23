@@ -14,7 +14,7 @@
     
     
       
-        <title>Порядок работы с историческими данными - Tinkoff Invest API</title>
+        <title>Исторические данные - Tinkoff Invest API</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Порядок работы с историческими данными
+              Исторические данные
             
           </span>
         </div>
@@ -229,7 +229,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Начало работы
+        Про Tinkoff Invest API
       </a>
     </li>
   
@@ -322,7 +322,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Порядок работы с историческими данными
+        Исторические данные
       </a>
       
     </li>
@@ -335,7 +335,7 @@
   
     <li class="md-nav__item">
       <a href="../orders_details/" class="md-nav__link">
-        Работа с торговыми поручениями
+        Торговые поручения
       </a>
     </li>
   
@@ -348,18 +348,6 @@
     <li class="md-nav__item">
       <a href="../deadlines/" class="md-nav__link">
         Время исполнения запросов
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../robot_contest/" class="md-nav__link">
-        Конкурсные работы
       </a>
     </li>
   
@@ -383,7 +371,19 @@
   
     <li class="md-nav__item">
       <a href="../cases/" class="md-nav__link">
-        Популярные кейсы и их решение
+        Популярные запросы и их решение
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../robot_contest/" class="md-nav__link">
+        Конкурсные работы
       </a>
     </li>
   
@@ -650,7 +650,7 @@
   
     <li class="md-nav__item">
       <a href="../sla/" class="md-nav__link">
-        Время жизни и хранение информации
+        Время жизни ключа и стрим-соединений
       </a>
     </li>
   
@@ -1461,12 +1461,12 @@
                   </a>
                 
                 
-                <h1 id="_1">Загрузка исторических котировок</h1>
+                <h1 id="_1">Получить исторические котировки</h1>
 <p>Пользователи Tinkoff Invest API могут получать исторические рыночные данные по
-инструментам. Для загрузки истории котировок можно воспользоваться Unary-методом 
-<a href="#getcandles">GetCandles</a><a href="/investAPI/head-marketdata">сервиса котировок</a>. </p>
+инструментам. Для загрузки истории котировок можно воспользоваться unary-методом 
+<a href="#getcandles">GetCandles</a> <a href="/investAPI/head-marketdata">сервиса котировок</a>. </p>
 <p>Дата начала истории по одному и тому же инструменту может отличаться на разных интервалах свечей, а глубина исторических данных может быть разной для разных инструментов — это связано с особенностями получения исторических данных в <a href="https://www.tinkoff.ru/invest/">Тинькофф Инвестициях</a>.</p>
-<p>В Tinkoff Invest API есть ограничение на максимальную длину запрашиваемого интервала — это нужно для того, чтобы сократить нагрузку на инфраструктуру системы. Ограничение зависит от интервала свечи: </p>
+<p>В Tinkoff Invest API есть ограничение на максимальную длину запрашиваемого интервала — это нужно, чтобы сократить нагрузку на инфраструктуру системы. Ограничение зависит от интервала свечи: </p>
 <table>
 <thead>
 <tr>
@@ -1530,8 +1530,7 @@
 </tbody>
 </table>
 <p>В методах сервиса инструментов для получения информации о дате начала истории добавлены параметры <code>first_1min_candle_date</code> и <code>first_1day_candle_date</code>.</p>
-<p>Для получения исторических данных за год можно воспользоваться информацией со страницы <a href="/investAPI/get_history">GetHistory</a>. 
-Архивы с историческими данными можно получить как за один инструмент, так и по списку инструментов, воспользовавшись специально подготовленным скриптом.</p>
+<p>Вы можете получить архивы с историческими данными как за один инструмент, так и по списку инструментов, воспользовавшись специально подготовленным скриптом. <a href="/investAPI/get_history">Подробнее</a>.</p>
                 
               
               
@@ -1539,7 +1538,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/RussianInvestments/investAPI"
-            issue-term="Порядок работы с историческими данными comments"
+            issue-term="Исторические данные comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"
@@ -1575,13 +1574,13 @@
       
       
         
-        <a href="../orders_details/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Работа с торговыми поручениями" rel="next">
+        <a href="../orders_details/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Торговые поручения" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Работа с торговыми поручениями
+              Торговые поручения
             </div>
           </div>
           <div class="md-footer__button md-icon">
