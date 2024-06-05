@@ -94,7 +94,6 @@ SDK на других языках в процессе разработки.
 
 * [Telegram-канал](https://t.me/tinkoffinvestopenapi)
 * [Telegram-чат по общим вопросам](https://t.me/joinchat/VaW05CDzcSdsPULM)
-* [Telegram-чат для заказчиков и разработчиков торговых роботов](https://t.me/tinkoff_invest_robot_development)
 
 # Разработчикам ПО для широкого круга пользователей
 
