@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
-  title: Tinkoff Invest API
-  termsOfService: https://www.tinkoff.ru/invest/disclaimers/basic-information/
+  title: T-Invest API
+  termsOfService: https://www.tbank.ru/invest/disclaimers/basic-information/
   contact:
-    email: al.a.volkov@tinkoff.ru
+    email: al.a.volkov@tbank.ru
   version: '1.21'
   license:
     name: Apache 2.0
@@ -16,7 +16,7 @@ servers:
 security:
   - Bearer: []
 externalDocs:
-  description: Документация Tinkoff Invest API
+  description: Документация T-Invest API
   url: https://russianinvestments.github.io/investAPI/
 tags:
   - name: InstrumentsService
@@ -3714,7 +3714,7 @@ components:
         Тип счёта.
 
          - ACCOUNT_TYPE_UNSPECIFIED: Тип аккаунта не определён.
-         - ACCOUNT_TYPE_TINKOFF: Брокерский счёт Тинькофф.
+         - ACCOUNT_TYPE_TINKOFF: Брокерский счёт Т-Инвестиций.
          - ACCOUNT_TYPE_TINKOFF_IIS: ИИС счёт.
          - ACCOUNT_TYPE_INVEST_BOX: Инвесткопилка.
       enum:
@@ -10333,7 +10333,7 @@ components:
         Статус запрашиваемых инструментов.
 
          - INSTRUMENT_STATUS_UNSPECIFIED: Значение не определено.
-         - INSTRUMENT_STATUS_BASE: Базовый список инструментов (по умолчанию). Инструменты доступные для торговли через TINKOFF INVEST API. Cейчас списки бумаг, доступных из api и других интерфейсах совпадают (за исключением внебиржевых бумаг), но в будущем возможны ситуации, когда списки инструментов будут отличаться
+         - INSTRUMENT_STATUS_BASE: Базовый список инструментов (по умолчанию). Инструменты доступные для торговли через T-Invest API. Cейчас списки бумаг, доступных из api и других интерфейсах совпадают (за исключением внебиржевых бумаг), но в будущем возможны ситуации, когда списки инструментов будут отличаться
          - INSTRUMENT_STATUS_ALL: Список всех инструментов.
       enum:
         - INSTRUMENT_STATUS_UNSPECIFIED

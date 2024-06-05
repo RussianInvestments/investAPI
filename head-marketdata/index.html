@@ -14,7 +14,7 @@
     
     
       
-        <title>Описание - Tinkoff Invest API</title>
+        <title>Описание - T-Invest API</title>
       
     
     
@@ -76,7 +76,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Tinkoff Invest API" class="md-header__button md-logo" aria-label="Tinkoff Invest API" data-md-component="logo">
+    <a href=".." title="T-Invest API" class="md-header__button md-logo" aria-label="T-Invest API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -89,7 +89,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Tinkoff Invest API
+            T-Invest API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -173,13 +173,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Tinkoff Invest API" class="md-nav__button md-logo" aria-label="Tinkoff Invest API" data-md-component="logo">
+    <a href=".." title="T-Invest API" class="md-nav__button md-logo" aria-label="T-Invest API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Tinkoff Invest API
+    T-Invest API
   </label>
   
     <div class="md-nav__source">
@@ -227,7 +227,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Про Tinkoff Invest API
+        Про T-Invest API
       </a>
     </li>
   
@@ -583,8 +583,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../tinkoff_fund/" class="md-nav__link">
-        Фонды Тинькофф
+      <a href="../tbank_fund/" class="md-nav__link">
+        Фонды Т-Банка
       </a>
     </li>
   
@@ -1773,7 +1773,7 @@
 
 <blockquote>
 <p><strong>Важно</strong><br>
-Цены облигаций и фьючерсов в Tinkoff Invest API отображаются в пунктах. Для облигаций один пункт равен одному проценту номинала облигации. </p>
+Цены облигаций и фьючерсов в T-Invest API отображаются в пунктах. Для облигаций один пункт равен одному проценту номинала облигации. </p>
 <p>Формула расчёта реальной стоимости фьючерса: <strong>price</strong> / <strong>min_price_increment</strong> * <strong>min_price_increment_amount</strong></p>
 </blockquote>
 
@@ -1818,7 +1818,7 @@
 <p>Чтобы получить цены последних сделок всех доступных для торговли инструментов, используйте метод <a href="/investAPI/marketdata#getlastprices">getLastPrices</a>. В запросе нужно передать пустой массив <code>instruments</code>.</p>
 <p>Если вам нужно оперативно получать информацию о цене последней сделки, мы рекомендуем использовать <a href="/investAPI/marketdata#subscribetradesrequest">подписку на поток обезличенных сделок</a> в рамках <a href="/investAPI/marketdata#marketdatastream">stream-соединения сервиса</a>.</p>
 <h2 id="_9">Получить текущий стакан</h2>
-<p><a href="https://www.tinkoff.ru/invest/account/help/trade-on-bs/bids/#q13">Биржевой стакан</a> — один из ключевых показателей торгового инструмента. Стакан содержит заявки пользователей на покупку или продажу определённого инструмента.</p>
+<p><a href="https://www.tbank.ru/invest/account/help/trade-on-bs/bids/#q13">Биржевой стакан</a> — один из ключевых показателей торгового инструмента. Стакан содержит заявки пользователей на покупку или продажу определённого инструмента.</p>
 <p>Для получения стакана можно использовать метод <a href="/investAPI/marketdata#getorderbook">getOrderbook</a>. 
 Он также позволяет получать время формирования стакана на бирже, время получения цены закрытия и цены последней сделки.</p>
 <p>Для высоколиквидных инструментов стакан может изменяться на бирже несколько раз в секунду, поэтому 
@@ -1857,7 +1857,7 @@
 отправляется ping-пакет. Клиенту не нужно реагировать на него.</p>
 <blockquote>
 <p><strong>Обратите внимание</strong><br>
-Максимальное количество подписок на одно соединение ограничено <a href="/investAPI/limits/">лимитной политикой</a> Tinkoff Invest API, но это ограничение не распространяется на подписку <strong>info</strong> — получение торгового статуса инструмента.</p>
+Максимальное количество подписок на одно соединение ограничено <a href="/investAPI/limits/">лимитной политикой</a> T-Invest API, но это ограничение не распространяется на подписку <strong>info</strong> — получение торгового статуса инструмента.</p>
 </blockquote>
 <h3 id="_10">Особенности трансляции свечей</h3>
 <p>Свечи в рамках bidirectional stream собираются из ленты обезличенных сделок в режиме реального времени.</p>

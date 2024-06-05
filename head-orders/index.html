@@ -14,7 +14,7 @@
     
     
       
-        <title>Описание - Tinkoff Invest API</title>
+        <title>Описание - T-Invest API</title>
       
     
     
@@ -76,7 +76,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Tinkoff Invest API" class="md-header__button md-logo" aria-label="Tinkoff Invest API" data-md-component="logo">
+    <a href=".." title="T-Invest API" class="md-header__button md-logo" aria-label="T-Invest API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -89,7 +89,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Tinkoff Invest API
+            T-Invest API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -173,13 +173,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Tinkoff Invest API" class="md-nav__button md-logo" aria-label="Tinkoff Invest API" data-md-component="logo">
+    <a href=".." title="T-Invest API" class="md-nav__button md-logo" aria-label="T-Invest API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Tinkoff Invest API
+    T-Invest API
   </label>
   
     <div class="md-nav__source">
@@ -227,7 +227,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Про Tinkoff Invest API
+        Про T-Invest API
       </a>
     </li>
   
@@ -583,8 +583,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../tinkoff_fund/" class="md-nav__link">
-        Фонды Тинькофф
+      <a href="../tbank_fund/" class="md-nav__link">
+        Фонды Т-Банка
       </a>
     </li>
   
@@ -1679,7 +1679,7 @@
 <p>Выставлять заявку с отрицательным значением цены можно только для фьючерсов — в остальных случаях метод вернёт ошибку.</p>
 <blockquote>
 <p><strong>Рекомендация</strong><br>
-Сейчас выставить заявку стоимостью больше 6 млн рублей через Tinkoff Invest API нелья — её нужно подтверждать по СМС. Поэтому мы рекомендуем разбивать такие заявки на заявки меньшего размера.</p>
+Сейчас выставить заявку стоимостью больше 6 млн рублей через T-Invest API нелья — её нужно подтверждать по СМС. Поэтому мы рекомендуем разбивать такие заявки на заявки меньшего размера.</p>
 </blockquote>
 <h2 id="_3">Получить список активных заявок по счёту</h2>
 <p>Чтобы торговый робот более эффективно управлял торговыми поручениями, ему нужно иметь 
@@ -1714,7 +1714,7 @@
 <p>Ситуация на рынке меняется динамично, поэтому торговому роботу нужна возможность отменять
 выставленные заявки — для этого используйте метод <a href="/investAPI/orders#cancelorder">cancelOrder</a>.</p>
 <h2 id="_7">Стрим исполнения поручений пользователя</h2>
-<p>Tinkoff Invest API предоставляет стрим с трансляцией исполнения сделок. В этот стрим попадают все
+<p>T-Invest API предоставляет стрим с трансляцией исполнения сделок. В этот стрим попадают все
 совершённые сделки по всем счетам пользователя. </p>
 <p>Чтобы сохранять стабильное подключение при отсутствии данных в stream-соединении, сервер периодически
 отправляет ping-пакет. Клиенту не нужно на него реагировать.</p>
@@ -1729,7 +1729,7 @@
 </ul>
 <p><a href="/investAPI/errors">Все коды и описания ошибок</a></p>
 <h3 id="_9">Стрим совершённых сделок пользователя</h3>
-<p>В Tinkoff Invest API есть gRPC server-side <a href="https://russianinvestments.github.io/investAPI/orders/#tradesstream">TradesStream</a> получения сделок с биржи.
+<p>В T-Invest API есть gRPC server-side <a href="https://russianinvestments.github.io/investAPI/orders/#tradesstream">TradesStream</a> получения сделок с биржи.
 Стрим предназначен для получения событий по поручениям пользователя по факту их исполнения.</p>
 <p>TradesStream используется для быстрого получения информации об исполнении поручения и выполненных сделках в рамках поручения с отображением номера счёта, на котором выполнилось поручение.</p>
 <p>Для работы со стрим-соединениями есть <a href="/investAPI/limits">ограничения</a>.</p>
@@ -1737,7 +1737,7 @@
 <p><a href="https://russianinvestments.github.io/investAPI/faq_trading_status/">Торговые статусы инструментов и расписание торгов</a></p>
 <p>Также рекомендуем смотреть актуальную информацию по режимам и статусам торгов на сайтах <a href="https://www.moex.com/">Московской биржи</a> и <a href="https://spbexchange.ru/">СПБ биржи</a>. </p>
 <h3 id="_11">Выставить заявки по опционам</h3>
-<p>Сейчас для работы с опционами в Tinkoff Invest API доступны только лимитные заявки. 
+<p>Сейчас для работы с опционами в T-Invest API доступны только лимитные заявки. 
 Рыночная заявка, тейк-профиты и стоп-заявки в разработке. </p>
                 
               

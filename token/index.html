@@ -14,7 +14,7 @@
     
     
       
-        <title>Токен доступа - Tinkoff Invest API</title>
+        <title>Токен доступа - T-Invest API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tinkoff-invest-api" class="md-skip">
+        <a href="#t-invest-api" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -76,7 +76,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Tinkoff Invest API" class="md-header__button md-logo" aria-label="Tinkoff Invest API" data-md-component="logo">
+    <a href=".." title="T-Invest API" class="md-header__button md-logo" aria-label="T-Invest API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -89,7 +89,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Tinkoff Invest API
+            T-Invest API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -173,13 +173,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Tinkoff Invest API" class="md-nav__button md-logo" aria-label="Tinkoff Invest API" data-md-component="logo">
+    <a href=".." title="T-Invest API" class="md-nav__button md-logo" aria-label="T-Invest API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Tinkoff Invest API
+    T-Invest API
   </label>
   
     <div class="md-nav__source">
@@ -229,7 +229,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Про Tinkoff Invest API
+        Про T-Invest API
       </a>
     </li>
   
@@ -646,8 +646,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../tinkoff_fund/" class="md-nav__link">
-        Фонды Тинькофф
+      <a href="../tbank_fund/" class="md-nav__link">
+        Фонды Т-Банка
       </a>
     </li>
   
@@ -1548,21 +1548,21 @@
                   </a>
                 
                 
-                <h1 id="tinkoff-invest-api">Токен для работы с Tinkoff Invest API</h1>
+                <h1 id="t-invest-api">Токен для работы с T-Invest API</h1>
 <p>Токен — это набор символов, в котором зашифрована информация о владельце, правах доступа 
-и другой необходимой информации для авторизации в Tinkoff Invest API. В процессе работы с Tinkoff Invest API токен нужно передавать в metadata каждого unary-запроса, а также в запросах на установление всех видов stream-соединений.</p>
+и другой необходимой информации для авторизации в T-Invest API. В процессе работы с T-Invest API токен нужно передавать в metadata каждого unary-запроса, а также в запросах на установление всех видов stream-соединений.</p>
 <blockquote>
 <p><strong>Важно</strong><br>
-Работать с Tinkoff Invest API без токена нельзя.</p>
+Работать с T-Invest API без токена нельзя.</p>
 </blockquote>
 <h2 id="_1">Виды токенов</h2>
-<p>В Tinkoff Invest API есть несколько видов токенов с разным набором прав — вы
+<p>В T-Invest API есть несколько видов токенов с разным набором прав — вы
 можете выпустить несколько токенов для решения разных задач алгоритмической торговли или
 мониторинга рынка ценных бумаг.</p>
 <ul>
 <li><p><strong>Readonly token</strong> — токен для получения информации: например, состояние портфеля, расписание торгов различных торговых площадок, текущие котировки, исторические данные. С этим типом токена нельзя выставлять торговые поручения.</p>
 </li>
-<li><p><strong>Full-access token</strong> — токен для работы со всеми методами Tinkoff Invest API. Это основной тип токена для реальной работы с API.</p>
+<li><p><strong>Full-access token</strong> — токен для работы со всеми методами T-Invest API. Это основной тип токена для реальной работы с API.</p>
 </li>
 <li><p><strong>Токен с доступом к конкретному счёту</strong> — токен для получения доступа только к одному конкретному счёту пользователя. Уровень прав доступа (readonly, full-access) также можно настроить.</p>
 </li>
@@ -1573,14 +1573,14 @@
 
 <h2 id="_2">Получить токен</h2>
 <ol>
-<li><p>Перейдите в <a href="https://www.tinkoff.ru/invest/settings/">настройки профиля Тинькофф Инвестиции</a> и авторизуйтесь в системе, если это требуется.</p>
+<li><p>Перейдите в <a href="https://www.tbank.ru/invest/settings/">настройки профиля Т-Инвестиции</a> и авторизуйтесь в системе, если это требуется.</p>
 <p>Функция <strong>Подтверждение сделок кодом</strong> должна быть отключена. </p>
 <blockquote>
 <p><strong>Важно</strong><br>
 Сделки на сумму больше 6 000 000 рублей, $100 000 или €100 000 требуют подтверждения и будут недоступны через API.</p>
 </blockquote>
 </li>
-<li><p>Выпустите токен Tinkoff Invest API для биржи и/или песочницы. Возможно, система попросит вас авторизоваться ещё раз — это нужно для подключения робота к торговой платформе.</p>
+<li><p>Выпустите токен T-Invest API для биржи и/или песочницы. Возможно, система попросит вас авторизоваться ещё раз — это нужно для подключения робота к торговой платформе.</p>
 </li>
 <li>Скопируйте токен и сохраните его. Токен отображается только один раз, просмотреть его позже не
 получится. Вы можете выпускать неограниченное количество токенов.</li>
@@ -1595,14 +1595,14 @@
 </code></pre>
 <p>Токен может перестать быть актуальным, если:</p>
 <ul>
-<li>Пользователь перестал быть клиентом Тинькофф.</li>
+<li>Пользователь перестал быть клиентом Т-Инвестиций.</li>
 <li>Пользователь завершил активные сессии для всех устройств.</li>
 <li>Аккаунт пользователя заблокировали.</li>
 <li>Карту пользователя заблокировали.</li>
 <li>Токен отозвали.</li>
 </ul>
 <h2 id="_4">Отозвать токен</h2>
-<p>Отозвать токен Tinkoff Invest API можно <a href="https://id.tinkoff.ru/account">в личном кабинете</a>.</p>
+<p>Отозвать токен T-Invest API можно <a href="https://id.tbank.ru/account">в личном кабинете</a>.</p>
                 
               
               

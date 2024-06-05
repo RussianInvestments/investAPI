@@ -467,7 +467,7 @@
   "30101": {
     "message": "Pass the test to trade this financial instrument",
     "type": "INVALID_ARGUMENT",
-    "description": "Для торговли этим инструментом пройдите тестирование. [Подробнее про тестирование](https://www.tinkoff.ru/blog/articles/test-invest/)."
+    "description": "Для торговли этим инструментом пройдите тестирование. [Подробнее про тестирование](https://www.tbank.ru/blog/articles/test-invest/)."
   },
   "30102": {
     "message": "Required parameters missing",
@@ -572,12 +572,12 @@
   "40003": {
     "message": "Authentication token is missing or invalid",
     "type": "UNAUTHENTICATED",
-    "description": "Токен доступа не найден или не активен.</br>Новый токен можно выпустить в [личном кабинете](https://www.tinkoff.ru/invest/settings/)."
+    "description": "Токен доступа не найден или не активен.</br>Новый токен можно выпустить в [личном кабинете](https://www.tbank.ru/invest/settings/)."
   },
   "40004": {
     "message": "Working with orders is not available with this account",
     "type": "PERMISSION_DENIED",
-    "description": "Выставление заявок недоступно с текущего аккаунта.</br>Брокерский счет не найден, не принадлежит пользователю или закрыт. Возможно, на пользователе ограничения от Tinkoff Invest API или от биржи — в этом случае обратитесь в техподдержку."
+    "description": "Выставление заявок недоступно с текущего аккаунта.</br>Брокерский счет не найден, не принадлежит пользователю или закрыт. Возможно, на пользователе ограничения от T-Invest API или от биржи — в этом случае обратитесь в техподдержку."
   },
 
   "50001": {

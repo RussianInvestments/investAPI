@@ -14,7 +14,7 @@
     
     
       
-        <title>gRPC - Tinkoff Invest API</title>
+        <title>gRPC - T-Invest API</title>
       
     
     
@@ -76,7 +76,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Tinkoff Invest API" class="md-header__button md-logo" aria-label="Tinkoff Invest API" data-md-component="logo">
+    <a href=".." title="T-Invest API" class="md-header__button md-logo" aria-label="T-Invest API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -89,7 +89,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Tinkoff Invest API
+            T-Invest API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -173,13 +173,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Tinkoff Invest API" class="md-nav__button md-logo" aria-label="Tinkoff Invest API" data-md-component="logo">
+    <a href=".." title="T-Invest API" class="md-nav__button md-logo" aria-label="T-Invest API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    Tinkoff Invest API
+    T-Invest API
   </label>
   
     <div class="md-nav__source">
@@ -227,7 +227,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Про Tinkoff Invest API
+        Про T-Invest API
       </a>
     </li>
   
@@ -703,8 +703,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../tinkoff_fund/" class="md-nav__link">
-        Фонды Тинькофф
+      <a href="../tbank_fund/" class="md-nav__link">
+        Фонды Т-Банка
       </a>
     </li>
   
@@ -1667,14 +1667,14 @@
                   <h1>gRPC</h1>
                 
                 <h2 id="_1">Протокол взаимодействия</h2>
-<p>Вся работа с Tinkoff Invest API ведётся по протоколу gRPC. </p>
+<p>Вся работа с T-Invest API ведётся по протоколу gRPC. </p>
 <p><a href="https://grpc.io/docs/">Документация gRPC</a></p>
 <p>Одна из ключевых особенностей протокола — <a href="https://grpc.io/docs/what-is-grpc/core-concepts/">bidirectional streaming</a>. Это особый режим работы, при котором открывается одно стрим-соединение, в которое оба участника взаимодействия могут отправлять сообщения. Это позволяет более гибко и оперативно реализовать работу. </p>
 <p>Например, bidirectional streaming <a href="/investAPI/head-marketdata/">сервиса котировок</a> 
 в одном и том же соединении принимает сообщения об изменении статуса подписки и предоставляет различные 
 виды биржевой информации — стаканы, свечи, поток обезличенных сделок и другие.</p>
 <h2 id="_2">Авторизация</h2>
-<p>Для успешной работы с Tinkoff Invest API нужно передавать токен доступа в <code>metadata</code>
+<p>Для успешной работы с T-Invest API нужно передавать токен доступа в <code>metadata</code>
 каждого запроса.</p>
 <p>Формат заголовка — <code>Authorization: Bearer [токен доступа]</code>.</p>
 <p>Пример запроса:
@@ -1687,7 +1687,7 @@
 </ul>
 <p><a href="/investAPI/url_difference/">Подробнее про различия контуров</a></p>
 <h2 id="trackingid">trackingId запросов</h2>
-<p>Заголовок <code>x-tracking-id</code> добавляется во все ответы unary-методов Tinkoff Invest API. </p>
+<p>Заголовок <code>x-tracking-id</code> добавляется во все ответы unary-методов T-Invest API. </p>
 <p>Это уникальный UUID запроса, который нужен технической поддержке для разбора 
 инцидентов. При обращении в службу технической поддержки обязательно указывайте <code>x-tracking-id</code> запроса — 
 это ускорит решение вашего вопроса. </p>
@@ -1696,15 +1696,15 @@
 виде выходного параметра.</p>
 </blockquote>
 <h2 id="_4">Полный текст ошибки</h2>
-<p>Если при вызове метода Tinkoff Invest API происходит ошибка, в ответе возвращается параметр <code>message</code>.
+<p>Если при вызове метода T-Invest API происходит ошибка, в ответе возвращается параметр <code>message</code>.
 В нём можно посмотреть полный текст описания ошибки. </p>
 <p>В <a href="/investAPI/grpc/#kreya">Kreya</a> текст ошибки можно посмотреть на вкладке <strong>Header</strong> в поле <strong>message</strong>.</p>
 <h2 id="appname">AppName запросов</h2>
-<p>В запросы к Tinkoff Invest API можно добавлять служебный заголовок <strong>x-app-name</strong> — он 
+<p>В запросы к T-Invest API можно добавлять служебный заголовок <strong>x-app-name</strong> — он 
 нужен для сбора статистики по используемым инструментам. </p>
 <p>Если вы разработчик SDK, рекомендуем использовать AppName формата <code>&lt;Ник в GitHub&gt;.&lt;Название репозитория&gt;</code> — например, <code>user.tinkoffSDK</code>.</p>
 <h2 id="_5">Рекомендации по тестированию методов</h2>
-<p>Для тестирования работы Tinkoff Invest API можно использовать любой доступный gRPC-клиент.</p>
+<p>Для тестирования работы T-Invest API можно использовать любой доступный gRPC-клиент.</p>
 <p>Ниже приведены краткие инструкции по настройке двух наиболее популярных клиентов — Kreya и BloomRPC, а также ссылка на гайд по настройке встроенного gRPC-клиента IntelliJ от энтузиаста.</p>
 <h3 id="kreya">Kreya</h3>
 <p>Бесплатный gRPC-клиент с широким набором функционала и возможностей.</p>
@@ -1716,11 +1716,11 @@
 <li><p>Нажмите <strong>New importer</strong>. Укажите название источника данных и его тип — <strong>gRPC proto files</strong>.</p>
 <p><img src="/investAPI/img/Kreya-2.png" width="650"></p>
 </li>
-<li><p>Нажмите <strong>Add proto directory</strong> и укажите папку со скачанными proto-контрактами сервиса Tinkoff Invest API. Также можно нажать <strong>Add proto files</strong> и выбрать все proto-файлы из папки вручную.</p>
+<li><p>Нажмите <strong>Add proto directory</strong> и укажите папку со скачанными proto-контрактами сервиса T-Invest API. Также можно нажать <strong>Add proto files</strong> и выбрать все proto-файлы из папки вручную.</p>
 <p><img src="/investAPI/img/Kreya-3.png" width="650"></p>
-<p><a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Скачать актуальную версию контрактов Tinkoff Invest API</a></p>
+<p><a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Скачать актуальную версию контрактов T-Invest API</a></p>
 <p><strong>Важно</strong></p>
-<p>Tinkoff Invest API использует <code>google.api.field_behavior</code>-нотацию к полям контрактов. Скачайте <a href="https://github.com/googleapis/googleapis/blob/master/google/api/field_behavior.proto">field_behavior.proto</a> и сохраните его в папке <code>&lt;contracts_dir&gt;\google\api</code>, где <code>&lt;contracts_dir&gt;</code> — папка с контрактами Tinkoff Invest API.</p>
+<p>T-Invest API использует <code>google.api.field_behavior</code>-нотацию к полям контрактов. Скачайте <a href="https://github.com/googleapis/googleapis/blob/master/google/api/field_behavior.proto">field_behavior.proto</a> и сохраните его в папке <code>&lt;contracts_dir&gt;\google\api</code>, где <code>&lt;contracts_dir&gt;</code> — папка с контрактами T-Invest API.</p>
 </li>
 <li><p>Сохраните изменения и нажмите <strong>Back</strong>.</p>
 </li>
@@ -1756,7 +1756,7 @@
 <p><img src="/investAPI/img/Kreya-update_contracts.png" width="650"></p>
 <blockquote>
 <p>Если вы получили ошибку <code>The referenced gRPC method is not imported.</code>, убедитесь, что вы очистили проект в Kreya от прошлых загруженных контрактов. 
-Всегда проверяйте путь до папки с загружаемыми контрактами, полное наличие всех proto-файлов и их соответствие актуальной версии <a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Tinkoff Invest API</a>. 
+Всегда проверяйте путь до папки с загружаемыми контрактами, полное наличие всех proto-файлов и их соответствие актуальной версии <a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">T-Invest API</a>. 
 Изменение proto-файлов повлечет за собой ошибку их прочтения у gRPS-клиентов.</p>
 </blockquote>
 <h3 id="bloomrpc">BloomRPC</h3>
@@ -1765,7 +1765,7 @@
 <p><a href="https://github.com/uw-labs/bloomrpc/releases">Скачать клиент</a></p>
 <ol>
 <li><p>Импортируйте скачанные proto-контракты сервиса. </p>
-<p><a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Скачать актуальную версию контрактов Tinkoff Invest API</a></p>
+<p><a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Скачать актуальную версию контрактов T-Invest API</a></p>
 <p><img src="/investAPI/img/Bloom-1.png" width="650"></p>
 </li>
 <li><p>Укажите адрес сервера — <code>invest-public-api.tinkoff.ru:443</code> — и заполните поле <strong>metadata</strong>: подставьте своё значение <a href="/investAPI/token/">токена доступа</a>.</p>
