@@ -2,7 +2,7 @@
 
 >**Важно**<br>
 >С мая 2023 поддержка старой версии OpenAPI прекращается.
-Если вы используете [старую версию](https://github.com/Tinkoff/invest-openapi/) и серверы `api-invest.tinkoff.ru/openapi`, переключитесь на новую версию Tinkoff Invest API.
+Если вы используете [старую версию](https://github.com/Tinkoff/invest-openapi/) и серверы `api-invest.tinkoff.ru/openapi`, переключитесь на новую версию T-Invest API.
 
 В новой версии поддерживаются все изменения брокера:
 
@@ -28,4 +28,4 @@
 Если у вас остались вопросы, напишите нам:
 
 * в [неофициальный Телеграм-чат](https://t.me/joinchat/VaW05CDzcSdsPULM);
-* на почту — [invest-public-api@tinkoff.ru](mailto:invest-public-api@tinkoff.ru).
+* на почту — [invest-public-api@tbank.ru](mailto:invest-public-api@tbank.ru).

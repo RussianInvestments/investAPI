@@ -1,4 +1,4 @@
-# Нестандартные типы данных Tinkoff Invest API
+# Нестандартные типы данных T-Invest API
 
 ## Timestamp 
 

@@ -622,10 +622,10 @@ Deprecated Получить списка опционов.
 | basic_asset_size |  [Quotation](#quotation) | Размер основного актива. |
 | klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
 | kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
 | min_price_increment |  [Quotation](#quotation) | Минимальный шаг цены. |
 | strike_price |  [MoneyValue](#moneyvalue) | Цена страйка. |
 | expiration_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата истечения срока в формате UTC. |
@@ -682,10 +682,10 @@ Deprecated Получить списка опционов.
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
 | kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
@@ -745,10 +745,10 @@ Deprecated Получить списка опционов.
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
 | kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
@@ -790,10 +790,10 @@ Deprecated Получить списка опционов.
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
 | kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
@@ -841,10 +841,10 @@ Deprecated Получить списка опционов.
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
 | kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт ](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт ](https://help.tbank.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
@@ -896,10 +896,10 @@ Deprecated Получить списка опционов.
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
 | kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
@@ -1025,10 +1025,10 @@ Deprecated Получить списка опционов.
 | currency |  [string](#string) | Валюта расчётов. |
 | klong |  [Quotation](#quotation) | Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
 | kshort |  [Quotation](#quotation) | Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР). |
-| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
-| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tinkoff.ru/margin-trade/long/risk-rate/). |
-| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tinkoff.ru/margin-trade/short/risk-rate/). |
+| dlong |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort |  [Quotation](#quotation) | Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
+| dlong_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/). |
+| dshort_min |  [Quotation](#quotation) | Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/). |
 | short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
 | name |  [string](#string) | Название инструмента. |
 | exchange |  [string](#string) | Tорговая площадка (секция биржи). |
@@ -1970,7 +1970,7 @@ Deprecated Получить списка опционов.
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | INSTRUMENT_STATUS_UNSPECIFIED | 0 | Значение не определено. |
-| INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). Инструменты, доступные для торговли через Tinkoff Invest API. Cейчас списки бумаг, которые доступны из API и других интерфейсах совпадают — кроме внебиржевых бумаг. Но в будущем возможны ситуации, когда списки инструментов будут отличаться. |
+| INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). Инструменты, доступные для торговли через T-Invest API. Cейчас списки бумаг, которые доступны из API и других интерфейсах совпадают — кроме внебиржевых бумаг. Но в будущем возможны ситуации, когда списки инструментов будут отличаться. |
 | INSTRUMENT_STATUS_ALL | 2 | Список всех инструментов. |
 
 

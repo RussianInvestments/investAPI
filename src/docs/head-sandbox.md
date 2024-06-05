@@ -1,4 +1,4 @@
-# Песочница Tinkoff Invest API
+# Песочница T-Invest API
 
 ## Работа с песочницей
 
@@ -49,7 +49,7 @@
 ### Торговые поручения
 
 Параметры методов выставления, отмены и получения статуса торгового поручения в 
-песочнице аналогичны основным методам Tinkoff Invest API. 
+песочнице аналогичны основным методам T-Invest API. 
 
 * [postSandboxOrder](/investAPI/sandbox#postsandboxorder) — выставить торговое поручение;
 * [getSandboxOrderState](/investAPI/sandbox#getsandboxorderstate) — получить статус торгового поручения;

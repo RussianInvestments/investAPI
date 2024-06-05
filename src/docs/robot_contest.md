@@ -1,6 +1,6 @@
 # Конкурсные работы
 
-Мы проводили конкурс по разработке торгового робота для Тинькофф Инвестиций. Задача участников — написать пример торговой системы, которая реализует любую торговую стратегию на бирже и работает через новый API Тинькофф Инвестиций. 
+Мы проводили конкурс по разработке торгового робота для Т-Инвестиций. Задача участников — написать пример торговой системы, которая реализует любую торговую стратегию на бирже и работает через новый API Т-Инвестиций. 
 
 Ниже собраны работы сообщества, которые были сделаны в рамках конкурса. Работы созданы энтузиастами — использовать их можно на свой страх и риск. 
 
@@ -11,7 +11,7 @@
 | [https://github.com/AndreVasilev/Kwatoko](https://github.com/AndreVasilev/Kwatoko) | Победитель номинации «Лучший торговый робот для мобильных устройств».<br><br>Приложение на Swift для IOS-устройств.<br>В приложении можно создать до 10 роботов с указанием стратегии, инструмента и всех необходимых параметров для торговли по выбранной стратегии. | Swift |
 | [https://github.com/DenisKamensky/tinkoff-invest-robot-contest-](https://github.com/DenisKamensky/tinkoff-invest-robot-contest-) | Робот на NodeJS c поддержкой нескольких бирж. | JS |
 | [https://github.com/EIDiamond/invest-bot](https://github.com/EIDiamond/invest-bot ) | Робот на Python для внутридневного трейдинга (интрадей) на Московской бирже. Через робот можно настроить информирование о сделках и результатах торговли в Telegram. | Python |
-| [https://github.com/khutdi/TI_API_2](https://github.com/khutdi/TI_API_2) | Инструмент проработки торговых стратегий через Tinkoff API на Python. | Python |
+| [https://github.com/khutdi/TI_API_2](https://github.com/khutdi/TI_API_2) | Инструмент проработки торговых стратегий через T-Invest API на Python. | Python |
 | [https://github.com/MitjaSh/tinkoff_trader](https://github.com/MitjaSh/tinkoff_trader) | Торговый робот на Python. | Python |
 | [https://github.com/Pruanik/tinkoff-trading-bot](https://github.com/Pruanik/tinkoff-trading-bot) | Торговый робот на Go и JS с UI и хорошим описанием. | Go, JS |
 | [https://github.com/pskucherov/OpexBot](https://github.com/pskucherov/OpexBot) | Торговый робот на JS. Вся работа с роботом — через UI. | JS |

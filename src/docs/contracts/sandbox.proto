@@ -15,7 +15,7 @@ import "operations.proto";
 import "users.proto";
 import "google/api/field_behavior.proto";
 
-service SandboxService { // Методы для работы с песочницей Tinkoff Invest API
+service SandboxService { // Методы для работы с песочницей T-Invest API
 
   //Зарегистрировать счёт.
   rpc OpenSandboxAccount(OpenSandboxAccountRequest) returns (OpenSandboxAccountResponse);

@@ -60,7 +60,7 @@
 </li>
 </ul>
 
-[Подробнее о методах расчёта с примерами](https://www.tinkoff.ru/help/invest-educate/yield-analysis/about/math-method/)
+[Подробнее о методах расчёта с примерами](https://www.tbank.ru/help/invest-educate/yield-analysis/about/math-method/)
 
 ## Получить список позиций портфеля по счёту
 
@@ -84,7 +84,7 @@
 
 ## Получить отчёты
 
-В Tinkoff Invest API можно получать различные отчёты. Например, [брокерский отчёт](/investAPI/operations#getbrokerreport) или [справку о доходах за пределами РФ](/investAPI/operations#getdivIDendsforeignissuer). 
+В T-Invest API можно получать различные отчёты. Например, [брокерский отчёт](/investAPI/operations#getbrokerreport) или [справку о доходах за пределами РФ](/investAPI/operations#getdivIDendsforeignissuer). 
 
 >**Обратите внимание**<br>
 >Операции формирования отчётов трудоёмкие, поэтому есть ограничения на период формирования отчёта и лимиты на количество вызовов методов. 

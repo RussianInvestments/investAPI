@@ -1,4 +1,4 @@
-# Ошибки Tinkoff Invest API
+# Ошибки T-Invest API
 
 |Код ошибки|Тип ошибки|Текст ошибки|Причины возникновения и </br> рекомендации по устранению|
 |---|---|---|---|
@@ -95,7 +95,7 @@
 30098|INVALID_ARGUMENT|Currently, there is no trading on this financial instrument|Торги по этому финансовому инструменту сейчас не проводятся.</br>Проверить актуальный торговый статус инструмента можно через метод [GetTradingStatus](https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus).|
 30099|INVALID_ARGUMENT|The price is outside the limits for this instrument|Цена вне лимитов по инструменту или сделки вне лимита.</br>[Подробнее про выставление торговых поручений](https://russianinvestments.github.io/investAPI/orders_details)|
 30100|INVALID_ARGUMENT|The price must be positive|Цена должна быть положительной.|
-30101|INVALID_ARGUMENT|To trade this financial instrument, pass the test|Для торговли этим инструментом пройдите тестирование. [Подробнее про тестирование](https://www.tinkoff.ru/blog/articles/test-invest/).|
+30101|INVALID_ARGUMENT|To trade this financial instrument, pass the test|Для торговли этим инструментом пройдите тестирование. [Подробнее про тестирование](https://www.tbank.ru/blog/articles/test-invest/).|
 30102|INVALID_ARGUMENT|Required parameters Missing|Обязательные параметры указаны неправильно.|
 30103|INVALID_ARGUMENT|Only best price is allowed|Для инструмента можно выставить заявки только с типом «лучшая цена».|
 30104|INVALID_ARGUMENT|`price_type` is invalid|Некорректное значение `price_type`. Значением `price_type` может быть только `PRICE_TYPE_POINT` или `PRICE_TYPE_CURRENCY`.|
@@ -116,8 +116,8 @@
 30219|INVALID_ARGUMENT|input `candle_source_type` is invalid|Проверьте параметры запроса. Некорректный параметр `candle_source_type`.|
 35001|INVALID_ARGUMENT|Sandbox accounts limit reached|Достигнут лимит на открытие торговых счетов в песочнице. Чтобы открыть новый счёт, закройте один из существующих.|
 40002|PERMISSION_DENIED|Insufficient privileges|Недостаточно прав для совершения операции.</br>Токен доступа имеет уровень прав read-only или у токена нет доступа к указанному счёту.</br>[Подробнее про виды токенов](https://russianinvestments.github.io/investAPI/index#_2)|
-40003|UNAUTHENTICATED|Authentication token is missing or invalid|Токен доступа не найден или неактивен.</br>Новый токен можно выпустить в [личном кабинете](https://www.tinkoff.ru/invest/settings/).|
-40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.</br>Брокерский счёт не найден, не принадлежит пользователю или закрыт. Возможно, на пользователе ограничения от Tinkoff Invest API или от биржи — в этом случае обратитесь в техподдержку. |
+40003|UNAUTHENTICATED|Authentication token is missing or invalid|Токен доступа не найден или неактивен.</br>Новый токен можно выпустить в [личном кабинете](https://www.tbank.ru/invest/settings/).|
+40004|PERMISSION_DENIED|Working with orders is not available with this account|Выставление заявок недоступно с текущего аккаунта.</br>Брокерский счёт не найден, не принадлежит пользователю или закрыт. Возможно, на пользователе ограничения от T-Invest API или от биржи — в этом случае обратитесь в техподдержку. |
 50001|NOT_FOUND|Exchange not found|Биржа не найдена по переданному `exchange_id`.</br>Укажите корректный `exchange_id`.|
 50002|NOT_FOUND|Instrument not found|Инструмент не найден.</br>Укажите корректный идентификатор инструмента.|
 50004|NOT_FOUND|Account not found|Счёт по переданному `account_id` не найден.</br>Укажите корректный `account_id`.|

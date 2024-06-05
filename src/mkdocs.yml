@@ -1,4 +1,4 @@
-site_name: 'Tinkoff Invest API'
+site_name: 'T-Invest API'
 docs_dir: docs
 repo_url: https://github.com/RussianInvestments/investAPI
 theme:
@@ -21,7 +21,7 @@ plugins:
 
 nav:
 - Начало работы: 
-  - "Про Tinkoff Invest API": index.md
+  - "Про T-Invest API": index.md
   - "Глоссарий": glossary.md
   - "Лимиты": limits.md
   - "Токен доступа": token.md
@@ -49,7 +49,7 @@ nav:
     - "Описание": weekend_trading.md
     - "Торговля по выходным": weekend.md
     - "Инструменты иностранных эмитентов": held_instruments.md
-    - "Фонды Тинькофф": tinkoff_fund.md
+    - "Фонды Т-Банка": tbank_fund.md
   - "Квалифицированный инвестор": accredited_investor.md
   - "Правила обработки корпоративных действий": faq_corp_action.md
   - "Как ускорить работу с биржей": speedup.md

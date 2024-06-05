@@ -1,6 +1,6 @@
 ## Протокол взаимодействия
 
-Вся работа с Tinkoff Invest API ведётся по протоколу gRPC. 
+Вся работа с T-Invest API ведётся по протоколу gRPC. 
 
 [Документация gRPC](https://grpc.io/docs/)
 
@@ -12,7 +12,7 @@
 
 ## Авторизация
 
-Для успешной работы с Tinkoff Invest API нужно передавать токен доступа в `metadata`
+Для успешной работы с T-Invest API нужно передавать токен доступа в `metadata`
 каждого запроса.
 
 Формат заголовка — `Authorization: Bearer [токен доступа]`.
@@ -31,7 +31,7 @@
 
 ## trackingId запросов
 
-Заголовок `x-tracking-id` добавляется во все ответы unary-методов Tinkoff Invest API. 
+Заголовок `x-tracking-id` добавляется во все ответы unary-методов T-Invest API. 
 
 Это уникальный UUID запроса, который нужен технической поддержке для разбора 
 инцидентов. При обращении в службу технической поддержки обязательно указывайте `x-tracking-id` запроса — 
@@ -42,21 +42,21 @@
 
 ## Полный текст ошибки
 
-Если при вызове метода Tinkoff Invest API происходит ошибка, в ответе возвращается параметр `message`.
+Если при вызове метода T-Invest API происходит ошибка, в ответе возвращается параметр `message`.
 В нём можно посмотреть полный текст описания ошибки. 
 
 В [Kreya](/investAPI/grpc/#kreya) текст ошибки можно посмотреть на вкладке **Header** в поле **message**.
 
 ## AppName запросов
 
-В запросы к Tinkoff Invest API можно добавлять служебный заголовок **x-app-name** — он 
+В запросы к T-Invest API можно добавлять служебный заголовок **x-app-name** — он 
 нужен для сбора статистики по используемым инструментам. 
 
 Если вы разработчик SDK, рекомендуем использовать AppName формата `<Ник в GitHub>.<Название репозитория>` — например, `user.tinkoffSDK`.
 
 ## Рекомендации по тестированию методов
 
-Для тестирования работы Tinkoff Invest API можно использовать любой доступный gRPC-клиент.
+Для тестирования работы T-Invest API можно использовать любой доступный gRPC-клиент.
 
 Ниже приведены краткие инструкции по настройке двух наиболее популярных клиентов — Kreya и BloomRPC, а также ссылка на гайд по настройке встроенного gRPC-клиента IntelliJ от энтузиаста.
 
@@ -73,11 +73,11 @@
 <li><p>Нажмите <strong>New importer</strong>. Укажите название источника данных и его тип — <strong>gRPC proto files</strong>.</p>
 <p><img src="/investAPI/img/Kreya-2.png" width="650"></p>
 </li>
-<li><p>Нажмите <strong>Add proto directory</strong> и укажите папку со скачанными proto-контрактами сервиса Tinkoff Invest API. Также можно нажать <strong>Add proto files</strong> и выбрать все proto-файлы из папки вручную.</p>
+<li><p>Нажмите <strong>Add proto directory</strong> и укажите папку со скачанными proto-контрактами сервиса T-Invest API. Также можно нажать <strong>Add proto files</strong> и выбрать все proto-файлы из папки вручную.</p>
 <p><img src="/investAPI/img/Kreya-3.png" width="650"></p>
-<p><a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Скачать актуальную версию контрактов Tinkoff Invest API</a></p>
+<p><a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Скачать актуальную версию контрактов T-Invest API</a></p>
 <p><strong>Важно</strong></p>
-<p>Tinkoff Invest API использует <code>google.api.field_behavior</code>-нотацию к полям контрактов. Скачайте <a href="https://github.com/googleapis/googleapis/blob/master/google/api/field_behavior.proto">field_behavior.proto</a> и сохраните его в папке <code>&lt;contracts_dir&gt;\google\api</code>, где <code>&lt;contracts_dir&gt;</code> — папка с контрактами Tinkoff Invest API.</p>
+<p>T-Invest API использует <code>google.api.field_behavior</code>-нотацию к полям контрактов. Скачайте <a href="https://github.com/googleapis/googleapis/blob/master/google/api/field_behavior.proto">field_behavior.proto</a> и сохраните его в папке <code>&lt;contracts_dir&gt;\google\api</code>, где <code>&lt;contracts_dir&gt;</code> — папка с контрактами T-Invest API.</p>
 </li>
 <li><p>Сохраните изменения и нажмите <strong>Back</strong>.</p>
 </li>
@@ -119,7 +119,7 @@
 
 
 >Если вы получили ошибку `The referenced gRPC method is not imported.`, убедитесь, что вы очистили проект в Kreya от прошлых загруженных контрактов. 
-Всегда проверяйте путь до папки с загружаемыми контрактами, полное наличие всех proto-файлов и их соответствие актуальной версии [Tinkoff Invest API](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts). 
+Всегда проверяйте путь до папки с загружаемыми контрактами, полное наличие всех proto-файлов и их соответствие актуальной версии [T-Invest API](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts). 
 Изменение proto-файлов повлечет за собой ошибку их прочтения у gRPS-клиентов.
 
 ### BloomRPC
@@ -131,7 +131,7 @@
 
 <ol>
 <li><p>Импортируйте скачанные proto-контракты сервиса. </p>
-<p><a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Скачать актуальную версию контрактов Tinkoff Invest API</a></p>
+<p><a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Скачать актуальную версию контрактов T-Invest API</a></p>
 <p><img src="/investAPI/img/Bloom-1.png" width="650"></p>
 </li>
 <li><p>Укажите адрес сервера — <code>invest-public-api.tinkoff.ru:443</code> — и заполните поле <strong>metadata</strong>: подставьте своё значение <a href="/investAPI/token/">токена доступа</a>.</p>

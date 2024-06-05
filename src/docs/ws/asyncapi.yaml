@@ -1,6 +1,6 @@
 asyncapi: 2.6.0
 info:
-  title: Tinkoff Invest API
+  title: T-Invest API
   version: '1.21'
   description: Websocket API for streaming data
   license:

@@ -14,7 +14,7 @@
 
 - **RSI** — индекс относительной силы.
 
-## [SMA и EMA](https://www.tinkoff.ru/invest/help/educate/trading/about/ma-ema/)
+## [SMA и EMA](https://www.tbank.ru/invest/help/educate/trading/about/ma-ema/)
 
 Параметры: 
 
@@ -43,7 +43,7 @@
 - **upper_band** — верхняя граница.
 
 
-## [MACD](https://www.tinkoff.ru/invest/help/educate/trading/about/macd/)
+## [MACD](https://www.tbank.ru/invest/help/educate/trading/about/macd/)
 
 Кроме `interval`, для MACD характерны следующие настроечные параметры:
 
@@ -60,7 +60,7 @@
 - **signal** — значение сигнальной линии.
 
 
-## [Индекс Относительной силы (RSI)](https://www.tinkoff.ru/invest/help/educate/trading/about/rsi/)
+## [Индекс Относительной силы (RSI)](https://www.tbank.ru/invest/help/educate/trading/about/rsi/)
 
 Так как RSI рассчитывается на основе EMA, ему характерны те же входные параметры — `interval` и `length`.
 

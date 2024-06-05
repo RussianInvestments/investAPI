@@ -1,10 +1,10 @@
 # WebSocket proxy for gRPC streaming
 
-Сервис для получения сообщений gRPC streaming Тинькофф Инвестиции через JSON WebSocket.
+Сервис для получения сообщений gRPC streaming Т-Инвестиции через JSON WebSocket.
 
 Адрес для подключения — `wss://invest-public-api.tinkoff.ru/ws/`.
 
-* **token** — токен доступа к счёту Тинькофф Инвестиции. Его можно передать в заголовке `Authorization: Bearer *token` или в заголовке `Web-Socket-Protocol: json, *token`.
+* **token** — токен доступа к счёту Т-Инвестиции. Его можно передать в заголовке `Authorization: Bearer *token` или в заголовке `Web-Socket-Protocol: json, *token`.
 * В запросе на подключение нужно указать протокол JSON в заголовке — `Web-Socket-Protocol: json`.
 
 Чтобы получать сообщения c названиями полей, идентичными названиям полей из proto-контрактов, используйте `WebSocket-Protocol` протокол в заголовке — `json-proto` вместо `json`.

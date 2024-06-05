@@ -100,9 +100,9 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| liquid_portfolio |  [MoneyValue](#moneyvalue) | Ликвидная стоимость портфеля. [Подробнее про ликвидный портфель](https://help.tinkoff.ru/margin-trade/short/liquid-portfolio/). |
-| starting_margin |  [MoneyValue](#moneyvalue) | Начальная маржа — начальное обеспечение для совершения новой сделки. [Подробнее про начальную и минимальную маржу](https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/). |
-| minimal_margin |  [MoneyValue](#moneyvalue) | Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. [Подробнее про начальную и минимальную маржу](https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/). |
+| liquid_portfolio |  [MoneyValue](#moneyvalue) | Ликвидная стоимость портфеля. [Подробнее про ликвидный портфель](https://help.tbank.ru/margin-trade/short/liquid-portfolio/). |
+| starting_margin |  [MoneyValue](#moneyvalue) | Начальная маржа — начальное обеспечение для совершения новой сделки. [Подробнее про начальную и минимальную маржу](https://help.tbank.ru/margin-trade/short/initial-and-maintenance-margin/). |
+| minimal_margin |  [MoneyValue](#moneyvalue) | Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. [Подробнее про начальную и минимальную маржу](https://help.tbank.ru/margin-trade/short/initial-and-maintenance-margin/). |
 | funds_sufficiency_level |  [Quotation](#quotation) | Уровень достаточности средств. Соотношение стоимости ликвидного портфеля к начальной марже. |
 | amount_of_missing_funds |  [MoneyValue](#moneyvalue) | Объем недостающих средств. Разница между стартовой маржой и ликвидной стоимости портфеля. |
 | corrected_margin |  [MoneyValue](#moneyvalue) | Скорректированная маржа. Начальная маржа, в которой плановые позиции рассчитываются с учётом активных заявок на покупку позиций лонг или продажу позиций шорт. |
@@ -182,7 +182,7 @@
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | ACCOUNT_TYPE_UNSPECIFIED | 0 | Тип аккаунта не определён. |
-| ACCOUNT_TYPE_TINKOFF | 1 | Брокерский счёт Тинькофф. |
+| ACCOUNT_TYPE_TINKOFF | 1 | Брокерский счёт Т-Инвестиций. |
 | ACCOUNT_TYPE_TINKOFF_IIS | 2 | ИИС. |
 | ACCOUNT_TYPE_INVEST_BOX | 3 | Инвесткопилка. |
 | ACCOUNT_TYPE_INVEST_FUND | 4 | Фонд денежного рынка. |

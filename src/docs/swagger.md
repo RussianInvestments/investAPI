@@ -1,7 +1,7 @@
 
-C помощью Swagger вы можете тестировать методы Tinkoff Invest API. 
+C помощью Swagger вы можете тестировать методы T-Invest API. 
 
-[Swagger Tinkoff Invest API](https://russianinvestments.github.io/investAPI/swagger-ui/)
+[Swagger T-Invest API](https://russianinvestments.github.io/investAPI/swagger-ui/)
 
 ## Swagger
 

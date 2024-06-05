@@ -1,22 +1,17 @@
-На внутреброкерском рынке Т-Инвестиций заключаются операции с инструментами, по которым приостановлена торговля на биржах.
-Не все ценные бумаги обращаются на внутреннем рынке. На странице представлен доступный функционал T-Invest API.
+Существует несколько фондов Т-Банка, которые не торгуются на биржах.
+В T-Invest API есть возможность работать с этими инструментами.
 
 >Сейчас в T-Invest API нельзя совершать операции с этими инструментами.
 Возможность торговли появится в ближайшее время.
 
+
 ## Торгуемые инструменты
 
-Инструменты [торговой площадки](/investAPI/markets/) `dealer_int_exchange`. Получить список можно
-методами [Shares](/investAPI/instruments/#shares) и [Etfs](/investAPI/instruments/#etfs) задав параметры:
-
-* [Статус запрашиваемых инструментов](/investAPI/instruments/#instrumentstatus) — `INSTRUMENT_STATUS_ALL`
-
-* [Площадка торговли](/investAPI/instruments/#instrumentexchangetype) — `INSTRUMENT_EXCHANGE_DEALER`
-
+Инструменты [торговой площадки](/investAPI/markets/) `dealer_realestate` и  [class_code](/investAPI/faq_instruments/#1.3)`ZPIF_OTC`
 
 ## Расписание торгов
 
-Торговая сессия проходит с 12:00 по 21:00 по Москве (UTC +3).
+Торговая сессия проходит по рабочим дням с 10:00 по 19:00 по Москве (UTC +3).
 
 > Расписание торгов может меняться в зависимости от выходных, праздников и от работы биржи.
 Актуальную информацию лучше получать методом [getTradingSchedules](/investAPI/instruments#tradingschedules),
@@ -28,11 +23,12 @@
 
 Недоступно
 
+
 ### OrderBook
 
 Стакан можно получить методом [GetOrderBook](/investAPI/marketdata/#getorderbook) 
 или в [Stream-соединениях](/investAPI/marketdata/#subscribeorderbookrequest).
-Для получения стакана в стриме нужно указать [тип подписки](/investAPI/marketdata/#orderbooktype) `ORDERBOOK_TYPE_DEALER`.
+Для получения стакана по фондам Т-Банка в стриме нужно указать [тип подписки](/investAPI/marketdata/#orderbooktype) `ORDERBOOK_TYPE_DEALER`.
 
 
 ### Цена последней сделки
@@ -60,3 +56,4 @@
 ## Торговля
 
 Недоступно
+

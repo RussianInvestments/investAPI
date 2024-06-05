@@ -5,7 +5,7 @@
 
 
 ## SandboxService
-Методы для работы с песочницей Tinkoff Invest API
+Методы для работы с песочницей T-Invest API
 
 ###Методы сервиса
 

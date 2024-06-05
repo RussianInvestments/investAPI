@@ -16,7 +16,7 @@
 
 Выставить лимитное торговое поручение (заявку) можно через unary-метод [postOrder](/investAPI/orders#postorder).
 
-[Подробнее о лимитном торговом поручении](https://www.tinkoff.ru/invest/help/brokerage/account/trade-on-bs/bids/?card=q6#:~:text=%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D1%82%D0%BE%D0%BF%E2%80%91%D0%BB%D0%B8%D0%BC%D0%B8%D1%82-,%D1%87%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BD%D0%B0%D1%8F%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%3F,-%D0%A7%D1%82%D0%BE%D0%B1%D1%8B%20%D0%BD%D0%B5%C2%A0%D1%82%D1%80%D0%B0%D1%82%D0%B8%D1%82%D1%8C)
+[Подробнее о лимитном торговом поручении](https://www.tbank.ru/invest/help/brokerage/account/trade-on-bs/bids/?card=q6#:~:text=%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D1%82%D0%BE%D0%BF%E2%80%91%D0%BB%D0%B8%D0%BC%D0%B8%D1%82-,%D1%87%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BB%D0%B8%D0%BC%D0%B8%D1%82%D0%BD%D0%B0%D1%8F%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%3F,-%D0%A7%D1%82%D0%BE%D0%B1%D1%8B%20%D0%BD%D0%B5%C2%A0%D1%82%D1%80%D0%B0%D1%82%D0%B8%D1%82%D1%8C)
 
 ### Рыночное
 
@@ -31,7 +31,7 @@
 
 Выставить рыночное торговое поручение можно через unary-метод [postOrder](/investAPI/orders#postorder).
 
-[Подробнее о рыночном торговом поручении](https://www.tinkoff.ru/invest/help/brokerage/account/trade-on-bs/bids/?card=q6#:~:text=150%C2%A0%24%20%D0%B8%D0%BB%D0%B8%20%D0%B2%D1%8B%D1%88%D0%B5.-,%D1%87%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%80%D1%8B%D0%BD%D0%BE%D1%87%D0%BD%D0%B0%D1%8F%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%3F,-%D0%AD%D1%82%D0%BE%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0)
+[Подробнее о рыночном торговом поручении](https://www.tbank.ru/invest/help/brokerage/account/trade-on-bs/bids/?card=q6#:~:text=150%C2%A0%24%20%D0%B8%D0%BB%D0%B8%20%D0%B2%D1%8B%D1%88%D0%B5.-,%D1%87%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%80%D1%8B%D0%BD%D0%BE%D1%87%D0%BD%D0%B0%D1%8F%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%3F,-%D0%AD%D1%82%D0%BE%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0)
 
 ### «Лучшая цена» (Best price) 
 
@@ -42,13 +42,13 @@
 
 Заявка «Лучшая цена» — это лимитная заявка, цена которой на 0.3% выше, чем цена Last Price. Но она исполняется сразу и не добавляется в стакан, как обычная лимитная заявка.  
 
-[Подробнее о «Лучшей цене»](https://www.tinkoff.ru/invest/help/brokerage/account/trade-on-bs/bids/#:~:text=%D0%BD%D0%B5%D0%B2%D1%8B%D0%B3%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D1%86%D0%B5%D0%BD%D0%B5%20%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%B8.-,%D1%87%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%C2%AB%D0%BB%D1%83%D1%87%D1%88%D0%B0%D1%8F%20%D1%86%D0%B5%D0%BD%D0%B0%C2%BB%3F,-%D0%AD%D1%82%D0%BE%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0)
+[Подробнее о «Лучшей цене»](https://www.tbank.ru/invest/help/brokerage/account/trade-on-bs/bids/#:~:text=%D0%BD%D0%B5%D0%B2%D1%8B%D0%B3%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9%20%D1%86%D0%B5%D0%BD%D0%B5%20%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%B8.-,%D1%87%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%C2%AB%D0%BB%D1%83%D1%87%D1%88%D0%B0%D1%8F%20%D1%86%D0%B5%D0%BD%D0%B0%C2%BB%3F,-%D0%AD%D1%82%D0%BE%20%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0)
 
 Выставить торговое поручение по «Лучшей цене» можно через unary-метод [postOrder](/investAPI/orders#postorder).
 
 ## Особенности исполнения заявок на Санкт-Петербургской бирже
 
-Все операции с иностранными ценными бумагами в [Тинькофф Инвестициях](https://www.tinkoff.ru/invest/) 
+Все операции с иностранными ценными бумагами в [Т-Инвестициях](https://www.tbank.ru/invest/) 
 проводятся на Санкт-Петербургской бирже, которая имеет ряд особенностей исполнения заявок.
 
 У биржи есть два пула ликвидности — США и собственный. Пул США подключается в 14:30 мск по летнему 
@@ -67,7 +67,7 @@
 Чтобы успешно разместить заявки на бирже, убедитесь, что: 
 
 - Счёт доступен для совершения операции. 
-- У вас достаточно активов для совершения операции или есть необходимое количество активов для совершения [маржинальной сделки](https://help.tinkoff.ru/margin-trade/). 
+- У вас достаточно активов для совершения операции или есть необходимое количество активов для совершения [маржинальной сделки](https://help.tbank.ru/margin-trade/). 
 
     Чтобы посмотреть текущее состояния портфеля, используйте метод [getPositions](/investAPI/operations#getpositions). Для получения маржинальных показателей счёта — метод [getMarginAttributes](/investAPI/users#getmarginattributes).
 

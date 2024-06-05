@@ -15,7 +15,7 @@
 
 В рамках сервиса операций параметр `quantity` всегда передаётся в лотах инструмента.
 
-### Как с помощью Tinkoff Invest API получить брокерский отчёт? 
+### Как с помощью T-Invest API получить брокерский отчёт? 
 
 Через метод [GetBrokerReport](/investAPI/operations#getbrokerreport).
 
@@ -26,7 +26,7 @@
 
 Если формирование отчёта ещё не закончено, вы получите соответствующее сообщение об ошибке.
 
-[Подробнее о брокерском отчёте](https://www.tinkoff.ru/invest/account/help/trade-on-bs/get-report/)
+[Подробнее о брокерском отчёте](https://www.tbank.ru/invest/account/help/trade-on-bs/get-report/)
 
 ### Как получить информацию о позициях и доходности портфеля?
 
@@ -40,7 +40,7 @@
 Через [getOperationsByCursor](/investAPI/operations#getoperationsbycursor). Метод возвращает постраничную информацию обо всех операциях, в том числе отменённых, поддерживает пагинацию и расширенную фильтрацию.
 Во входных параметрах запроса достаточно указать только `account_id`.
 
-Также в Tinkoff Invest API есть метод [getOperations](/investAPI/operations#getoperations) — это более старая версия [getOperationsByCursor](/investAPI/operations#getoperationsbycursor). Мы рекомендуем использовать [getOperationsByCursor](/investAPI/operations#getoperationsbycursor).
+Также в T-Invest API есть метод [getOperations](/investAPI/operations#getoperations) — это более старая версия [getOperationsByCursor](/investAPI/operations#getoperationsbycursor). Мы рекомендуем использовать [getOperationsByCursor](/investAPI/operations#getoperationsbycursor).
 
 >**Важно**<br>
 >Метод [getOperations](/investAPI/operations#getoperations) возвращает только последнюю тысячу операций.

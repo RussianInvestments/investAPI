@@ -66,7 +66,7 @@ message Account {
 //Тип счёта.
 enum AccountType {
   ACCOUNT_TYPE_UNSPECIFIED = 0; //Тип аккаунта не определён.
-  ACCOUNT_TYPE_TINKOFF = 1; //Брокерский счёт Тинькофф.
+  ACCOUNT_TYPE_TINKOFF = 1; //Брокерский счёт Т-Инвестиций.
   ACCOUNT_TYPE_TINKOFF_IIS = 2; //ИИС.
   ACCOUNT_TYPE_INVEST_BOX = 3; //Инвесткопилка.
   ACCOUNT_TYPE_INVEST_FUND = 4; //Фонд денежного рынка.
@@ -90,13 +90,13 @@ message GetMarginAttributesRequest {
 //Маржинальные показатели по счёту.
 message GetMarginAttributesResponse {
 
-  // Ликвидная стоимость портфеля. [Подробнее про ликвидный портфель](https://help.tinkoff.ru/margin-trade/short/liquid-portfolio/).
+  // Ликвидная стоимость портфеля. [Подробнее про ликвидный портфель](https://help.tbank.ru/margin-trade/short/liquid-portfolio/).
   MoneyValue liquid_portfolio = 1;
 
-  // Начальная маржа — начальное обеспечение для совершения новой сделки. [Подробнее про начальную и минимальную маржу](https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/).
+  // Начальная маржа — начальное обеспечение для совершения новой сделки. [Подробнее про начальную и минимальную маржу](https://help.tbank.ru/margin-trade/short/initial-and-maintenance-margin/).
   MoneyValue starting_margin = 2;
 
-  // Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. [Подробнее про начальную и минимальную маржу](https://help.tinkoff.ru/margin-trade/short/initial-and-maintenance-margin/).
+  // Минимальная маржа — это минимальное обеспечение для поддержания позиции, которую вы уже открыли. [Подробнее про начальную и минимальную маржу](https://help.tbank.ru/margin-trade/short/initial-and-maintenance-margin/).
   MoneyValue minimal_margin = 3;
 
   // Уровень достаточности средств. Соотношение стоимости ликвидного портфеля к начальной марже.
