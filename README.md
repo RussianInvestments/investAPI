@@ -1,4 +1,4 @@
-#T-Invest API
+# T-Invest API
 
 T-Invest API — это интерфейс для взаимодействия с торговой платформой [Т-Инвестиции](https://www.tbank.ru/invest/).
 
