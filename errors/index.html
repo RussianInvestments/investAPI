@@ -1512,7 +1512,7 @@
 <td>30005</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>id_type</code> is invalid</td>
-<td>Входной параметр <code>id_type</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/instruments#instrumentidtype">Список доступных значений</a></td>
+<td>Входной параметр <code>id_type</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/instruments#instrumentidtype">Список доступных значений</a>.</td>
 </tr>
 <tr>
 <td>30006</td>
@@ -1548,7 +1548,7 @@
 <td>30011</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>interval</code> is invalid</td>
-<td>Входной параметр <code>interval</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval">Список доступных значений</a></td>
+<td>Входной параметр <code>interval</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval">Список доступных значений</a>.</td>
 </tr>
 <tr>
 <td>30012</td>
@@ -1560,13 +1560,13 @@
 <td>30013</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>class_code</code> require for <code>id_type</code> = <code>ticker</code></td>
-<td>Входной параметр <code>class_code</code> не может быть пустым при поиске по тикеру.</br>Укажите корректный параметр <code>class_code</code>.</br><a href="https://russianinvestments.github.io/investAPI/faq_identification/">Подробнее</a></td>
+<td>Входной параметр <code>class_code</code> не может быть пустым при поиске по тикеру.</br>Укажите корректный параметр <code>class_code</code>.</br><a href="https://russianinvestments.github.io/investAPI/faq_identification/">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>30014</td>
 <td>INVALID_ARGUMENT</td>
 <td>The maximum request period for the given candle interval has been exceeded</td>
-<td>Превышен максимальный период запроса для данного интервала свечи.</br>Укажите корректный интервал.</br><a href="https://russianinvestments.github.io/investAPI/load_history/">Подробнее</a></td>
+<td>Превышен максимальный период запроса для данного интервала свечи.</br>Укажите корректный интервал.</br><a href="https://russianinvestments.github.io/investAPI/load_history/">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>30015</td>
@@ -1584,7 +1584,7 @@
 <td>30017</td>
 <td>INVALID_ARGUMENT</td>
 <td>Missing parameter: <code>price</code></td>
-<td>Входной параметр <code>price</code> является обязательным.</br>Укажите корректный параметр <code>price</code>.</br>Значение параметра <code>price</code> должно быть положительным.</br>units и nanos не могут иметь разные знак, модуль nanos должен быть &lt; 999 999 999.</td>
+<td>Входной параметр <code>price</code> является обязательным.</br>Укажите корректный параметр <code>price</code>.</br>Значение параметра <code>price</code> должно быть положительным.</br><code>units</code> и <code>nanos</code> не могут иметь разные знак и модуль <code>nanos</code> должен быть &lt; 999 999 999</td>
 </tr>
 <tr>
 <td>30018</td>
@@ -1613,25 +1613,25 @@
 <tr>
 <td>30022</td>
 <td>INVALID_ARGUMENT</td>
-<td>Missing parameter: <code>state</code></td>
-<td>Входной параметр <code>state</code> является обязательным.</br>Укажите корректный параметр <code>state</code>.</br>Список доступных значений: <a href="https://russianinvestments.github.io/investAPI/operations/#operationstate"><code>direction</code></a>.</td>
+<td><code>account_id</code> is invalid</td>
+<td>Входной параметр <code>account_id</code> имеет некорректное значение.</td>
 </tr>
 <tr>
 <td>30023</td>
 <td>INVALID_ARGUMENT</td>
-<td>invalid parameter: <code>state</code></td>
-<td>Входной параметр <code>state</code> имеет некорректное значение.</br>Укажите корректный параметр <code>state</code>.</br>Список доступных значений: <a href="https://russianinvestments.github.io/investAPI/operations/#operationstate"><code>direction</code></a>.</td>
+<td>Invalid parameter: <code>state</code></td>
+<td>Входной параметр <code>state</code> имеет некорректное значение.</br>Укажите корректный параметр <code>state</code>.</br><a href="https://russianinvestments.github.io/investAPI/operations/#operationstate">Список доступных значений</a>.</td>
 </tr>
 <tr>
 <td>30025</td>
 <td>INVALID_ARGUMENT</td>
 <td>Missing parameter: <code>order_type</code></td>
-<td>Входной параметр <code>order_type</code> является обязательным.</br>Укажите корректный параметр <code>order_type</code>. Список доступных значений: <a href="https://russianinvestments.github.io/investAPI/orders/#ordertype"><code>order_type</code></a>.</td>
+<td>Входной параметр <code>order_type</code> является обязательным.</br>Укажите корректный параметр <code>order_type</code>. <a href="https://russianinvestments.github.io/investAPI/orders/#ordertype">Список доступных значений</a>.</td>
 </tr>
 <tr>
 <td>30026</td>
 <td>INVALID_ARGUMENT</td>
-<td>invalid parameter: <code>order_type</code></td>
+<td>Invalid parameter: <code>order_type</code></td>
 <td>Входной параметр <code>order_type</code> имеет некорректное значение.</br>Укажите корректный параметр <code>order_type</code>.</td>
 </tr>
 <tr>
@@ -1643,8 +1643,8 @@
 <tr>
 <td>30028</td>
 <td>INVALID_ARGUMENT</td>
-<td><code>order id</code> is invalid UUID format.</td>
-<td>Входной параметр <code>order_id</code> имеет некорректное значение.</br>Укажите корректный параметр <code>order_id</code> формата UUID. Максимальная длина — 36 символов.</td>
+<td><code>order id</code> has invalid UUID format</td>
+<td>Входной параметр <code>order_id</code> имеет некорректное значение.</br>Укажите корректный параметр <code>order_id</code> формата UUID. Максимальная длина 36 символов.</td>
 </tr>
 <tr>
 <td>30029</td>
@@ -1656,7 +1656,7 @@
 <td>30030</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>idempotency_key</code> is invalid</td>
-<td>Входной параметр <code>idempotency_key</code> имеет некорректное значение.</br>Укажите корректный параметр <code>idempotency_key</code>. Максимальная длина — 36 символов.</td>
+<td>Входной параметр <code>idempotency_key</code> имеет некорректное значение.</br>Укажите корректный параметр <code>idempotency_key</code>. Максимальная длина 36 символов.</td>
 </tr>
 <tr>
 <td>30031</td>
@@ -1692,19 +1692,19 @@
 <td>30037</td>
 <td>INVALID_ARGUMENT</td>
 <td>Missing parameter: <code>stop_order_type</code></td>
-<td>Входной параметр <code>stop_order_type</code> является обязательным.</br>Укажите корректный параметр <code>stop_order_type</code>.</td>
+<td>Входной параметр <code>stop_order_type</code> является обязательным.</br>Укажите корректный параметр <code>stop_order_typ</code>.</td>
 </tr>
 <tr>
 <td>30038</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>stop_order_type</code> is invalid</td>
-<td>Входной параметр <code>stop_order_type</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/stoporders/#stopordertype">Список доступных значений</a></td>
+<td>Входной параметр <code>stop_order_type</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/stoporders/#stopordertype">Список доступных значений</a>.</td>
 </tr>
 <tr>
 <td>30039</td>
 <td>INVALID_ARGUMENT</td>
 <td>Bad request: <code>trailing_data</code></td>
-<td>Укажите корректное значение параметра <code>trailing_data</code>.</td>
+<td>Укажите корректное значение параметра <code>trailing_data</code></td>
 </tr>
 <tr>
 <td>30040</td>
@@ -1734,7 +1734,7 @@
 <td>30044</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>expiration_type</code> is invalid</td>
-<td>Входной параметр <code>expiration_type</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/stoporders/#stoporderexpirationtype">Список доступных значен</a>.</td>
+<td>Входной параметр <code>expiration_type</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/stoporders/#stoporderexpirationtype">Список доступных значений</a>.</td>
 </tr>
 <tr>
 <td>30045</td>
@@ -1746,7 +1746,7 @@
 <td>30047</td>
 <td>INVALID_ARGUMENT</td>
 <td>Price currency does not match the settlement currency</td>
-<td>Валюта цены не совпадает с валютой расчётов по инструменту.</br>Укажите корректную валюту цены. Узнать валюту расчёта конкретного инструмента можно через метод <a href="https://russianinvestments.github.io/investAPI/instruments#getinstrumentby">GetInstrumentBy</a>.</td>
+<td>Валюта цены не совпадает с валютой расчётов по инструменту.</br>Укажите корректную валюту цены. Узнать валюту расчета конкретного инструмента можно через метод <a href="https://russianinvestments.github.io/investAPI/instruments#getinstrumentby">GetInstrumentBy</a>.</td>
 </tr>
 <tr>
 <td>30048</td>
@@ -1764,19 +1764,19 @@
 <td>30050</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>instrument_status</code> is invalid</td>
-<td>Входной параметр <code>instrument_status</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/instruments#instrumentstatus">Список доступных значений</a></td>
+<td>Входной параметр <code>instrument_status</code> имеет некорректное значение.</br><a href="https://russianinvestments.github.io/investAPI/instruments#instrumentstatus">Список доступных значений</a>.</td>
 </tr>
 <tr>
 <td>30051</td>
 <td>INVALID_ARGUMENT</td>
 <td>Account margin status is disabled</td>
-<td>Для данного договора недоступна маржинальная торговля.</br>Чтобы выставлять поручения на срочном рынке, включите маржинальную торговлю в приложении и терминале.</td>
+<td>Для данного договора недоступна маржинальная торговля.</br>Для выставления поручений на срочном рынке, необходимо включить маржинальную торговлю в приложении и терминале.</td>
 </tr>
 <tr>
 <td>30052</td>
 <td>INVALID_ARGUMENT</td>
 <td>Instrument forbidden for trading by API</td>
-<td>Для данного инструмента торговля через API недоступна.</br>Вы можете проверить значение параметра <code>api_trade_available_flag</code> инструмента через метод <a href="https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus">GetTradingStatus</a>.</td>
+<td>Для данного инструмента недоступна торговля через API.</br>Вы можете проверить значение параметра <code>api_trade_available_flag</code> данного инструмента через метод <a href="https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus">GetTradingStatus</a>.</td>
 </tr>
 <tr>
 <td>30053</td>
@@ -1788,31 +1788,31 @@
 <td>30054</td>
 <td>INVALID_ARGUMENT</td>
 <td>Instrument type is not a share or etf</td>
-<td>Тип инструмента не инвестиционный фонд или акция.</td>
+<td>Тип инструмента не инвестиционный фонд или акция</td>
 </tr>
 <tr>
 <td>30055</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>order_id</code> cannot be longer than 36 characters</td>
-<td><code>order_id</code> не может быть длиннее 36 символов.</td>
+<td><code>order_id</code> не может быть длиннее 36 символов</td>
 </tr>
 <tr>
 <td>30056</td>
 <td>INVALID_ARGUMENT</td>
 <td>Stop order settlement currency is not supported</td>
-<td>Валюта выставления стоп-заявки не поддерживается.</td>
+<td>Валюта выставления стоп-заявки не поддерживается</td>
 </tr>
 <tr>
 <td>30057</td>
 <td>INVALID_ARGUMENT</td>
 <td>The order is a duplicate, but the order report was not found</td>
-<td>Заявка является дублем, но отчёт по заявке не найден.</br>Проверьте параметр <code>order_id</code> (идентификатор запроса выставления поручения для целей идемпотентности) — он должен быть уникальным.</td>
+<td>Заявка является дублем, но отчет по заявке не найден.</br>Проверьте параметр <code>order_id</code> (идентификатор запроса выставления поручения для целей идемпотентности.) - он должен быть уникальным.</td>
 </tr>
 <tr>
 <td>30058</td>
 <td>INVALID_ARGUMENT</td>
 <td>Task not completed yet, please try again later</td>
-<td>Выполнение задачи ещё не завершено, попробуйте позже.</td>
+<td>Выполнение задачи еще не завершено, попробуйте позже.</td>
 </tr>
 <tr>
 <td>30059</td>
@@ -1872,7 +1872,7 @@
 <td>30068</td>
 <td>INVALID_ARGUMENT</td>
 <td>Only limit order is allowed</td>
-<td>В настоящий момент возможно выставление только лимитного торгового поручения. <br><a href="https://russianinvestments.github.io/investAPI/orders_details">Подробнее про выставление торговых поручений</a></td>
+<td>В настоящий момент возможно выставление только лимитного торгового поручения. <a href="https://russianinvestments.github.io/investAPI/orders_details">Подробнее про выставление торговых поручений</a>.</td>
 </tr>
 <tr>
 <td>30069</td>
@@ -1884,13 +1884,13 @@
 <td>30070</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>from</code> can't be more than the current date</td>
-<td>Входной параметр <code>from</code> имеет некорректное значение.</br>Укажите значение, которое не превышает текущую дату и время.</td>
+<td>Входной параметр <code>from</code> имеет некорректное значение.</br>Укажите значение не превышающее текущую дату и время.</td>
 </tr>
 <tr>
 <td>30077</td>
 <td>INVALID_ARGUMENT</td>
 <td>Not available for OTC instruments</td>
-<td>Метод недоступен для внебиржевых инструментов.</br>У таких инструментов параметр <code>api_trade_available_flag</code> метода <a href="https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus"><code>GetTradingStatus</code></a> будет иметь значение <code>false</code>.</td>
+<td>Метод недоступен для внебиржевых инструментов.</br>У таких инструментов параметр <code>api_trade_available_flag</code> метода <a href="https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus">GetTradingStatus</a> будет иметь значение <code>false</code>.</td>
 </tr>
 <tr>
 <td>30078</td>
@@ -1902,12 +1902,12 @@
 <td>30079</td>
 <td>INVALID_ARGUMENT</td>
 <td>Instrument is not available for trading</td>
-<td>Инструмент недоступен для торгов.<br> <a href="https://russianinvestments.github.io/investAPI/faq_trading_status">Подробнее о торговых статусах</a></td>
+<td>Инструмент недоступен для торгов. <a href="https://russianinvestments.github.io/investAPI/faq_trading_status">Подробнее о торговых статусах</a>.</td>
 </tr>
 <tr>
 <td>30080</td>
 <td>INVALID_ARGUMENT</td>
-<td>Quantity must be positive</td>
+<td><code>quantity</code> must be positive</td>
 <td>Количество лотов должно быть положительным числом.</td>
 </tr>
 <tr>
@@ -1961,7 +1961,7 @@
 <tr>
 <td>30089</td>
 <td>INVALID_ARGUMENT</td>
-<td><code>to</code> must not be later than <code>%s</code></td>
+<td><code>to</code> must not be later than %s</td>
 <td>Поле <code>to</code> не должно быть позднее даты, указанной в тексте ошибки.</br>Дата указана в формате ISO 8601.</td>
 </tr>
 <tr>
@@ -1973,20 +1973,20 @@
 <tr>
 <td>30091</td>
 <td>INVALID_ARGUMENT</td>
-<td>Quantity of instruments can`t be more than 100</td>
+<td>Quantity of instruments can't be more than 100</td>
 <td>Количество инструментов не может превышать 100.</td>
 </tr>
 <tr>
 <td>30092</td>
 <td>INVALID_ARGUMENT</td>
 <td>Trading unavailable on weekends</td>
-<td>Торги недоступны по нерабочим дням. </br><a href="https://russianinvestments.github.io/investAPI/markets">Подробнее о торговых сессиях</a></td>
+<td>Торги недоступны по нерабочим дням. <a href="https://russianinvestments.github.io/investAPI/markets">Подробнее о торговых сессиях</a>.</td>
 </tr>
 <tr>
 <td>30093</td>
 <td>INVALID_ARGUMENT</td>
 <td>Missing parameter: <code>figi</code> or <code>instrument_id</code></td>
-<td>Один из параметров — <code>figi</code> или <code>instrument_id</code> — является обязательным.</td>
+<td>Один из параметров <code>figi</code> или <code>instrument_id</code> является обязательным.</td>
 </tr>
 <tr>
 <td>30094</td>
@@ -1998,7 +1998,7 @@
 <td>30095</td>
 <td>INVALID_ARGUMENT</td>
 <td>The request was not executed by the exchange</td>
-<td>Заявка не исполнена биржей.</br>Лимитная заявка может не исполняться, потому что не достигла установленной цены на бирже.</br>Рыночная — из-за отсутствия сделок с данными инструментов, то есть низкой ликвидности.</td>
+<td>Заявка не исполнена биржей.</br>Лимитная заявка может не исполняться по причине недостижения установленной цены на бирже.</br>Рыночная же может не исполняться по причине отсутствия сделок с данными инструментов (низкая ликвидность).</td>
 </tr>
 <tr>
 <td>30096</td>
@@ -2010,19 +2010,19 @@
 <td>30097</td>
 <td>INVALID_ARGUMENT</td>
 <td>Inappropriate trading session</td>
-<td>Сейчас эта сессия не идёт. </br><a href="https://russianinvestments.github.io/investAPI/markets">Подробнее о торговых сессиях</a></td>
+<td>Сейчас эта сессия не идёт. <a href="https://russianinvestments.github.io/investAPI/markets">Подробнее о торговых сессиях</a>.</td>
 </tr>
 <tr>
 <td>30098</td>
 <td>INVALID_ARGUMENT</td>
-<td>Currently, there is no trading on this financial instrument</td>
-<td>Торги по этому финансовому инструменту сейчас не проводятся.</br>Проверить актуальный торговый статус инструмента можно через метод <a href="https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus">GetTradingStatus</a>.</td>
+<td>Currently there is no trading on this financial instrument</td>
+<td>Торги по этому финансовому инструменту сейчас не проводятся.</br>Проверить актуальный торговый статус инструмента через метод <a href="https://russianinvestments.github.io/investAPI/marketdata#gettradingstatus">GetTradingStatus</a>.</td>
 </tr>
 <tr>
 <td>30099</td>
 <td>INVALID_ARGUMENT</td>
 <td>The price is outside the limits for this instrument</td>
-<td>Цена вне лимитов по инструменту или сделки вне лимита.</br><a href="https://russianinvestments.github.io/investAPI/orders_details">Подробнее про выставление торговых поручений</a></td>
+<td>Цена вне лимитов по инструменту или цена сделки вне лимита. <a href="https://russianinvestments.github.io/investAPI/orders_details">Подробнее про выставление торговых поручений</a>.</td>
 </tr>
 <tr>
 <td>30100</td>
@@ -2064,7 +2064,7 @@
 <td>30106</td>
 <td>INVALID_ARGUMENT</td>
 <td><code>status</code> is invalid</td>
-<td>Некорректное значение <code>status</code>. Значением <code>status</code> может быть только <code>ACTIVE</code>, <code>EXCECUTED</code>, <code>CANCELED</code> или <code>EXPIRED</code>.</td>
+<td>Некорректное значение <code>status</code>. Значением <code>status</code> может быть только <code>ACTIVE</code>, <code>EXCECUTED</code>, <code>CANCELED</code> И <code>EXPIRED</code>.</td>
 </tr>
 <tr>
 <td>30107</td>
@@ -2075,7 +2075,7 @@
 <tr>
 <td>30108</td>
 <td>INVALID_ARGUMENT</td>
-<td>Specify a lower limit or page value because there are fewer brands</td>
+<td>Specify a lower <code>limit</code> or <code>page</code> value because there are fewer brands</td>
 <td>Количество брендов меньше запрашиваемых параметров.</td>
 </tr>
 <tr>
@@ -2123,7 +2123,7 @@
 <tr>
 <td>30216</td>
 <td>INVALID_ARGUMENT</td>
-<td>d<code>eviation_data</code> is invalid</td>
+<td><code>deviation_data</code> is invalid</td>
 <td>Проверьте параметры запроса. Некорректный параметр <code>deviation_data</code>.</td>
 </tr>
 <tr>
@@ -2143,6 +2143,12 @@
 <td>INVALID_ARGUMENT</td>
 <td>input <code>candle_source_type</code> is invalid</td>
 <td>Проверьте параметры запроса. Некорректный параметр <code>candle_source_type</code>.</td>
+</tr>
+<tr>
+<td>30221</td>
+<td>INVALID_ARGUMENT</td>
+<td><code>order_request_id</code> not in UUID format</td>
+<td>Входной параметр <code>order_request_id</code> имеет некорректное значение. Укажите параметр <code>order_request_id</code> в UUID формате. Максимальная длина — 36 символов.</td>
 </tr>
 <tr>
 <td>35001</td>
@@ -2232,7 +2238,7 @@
 <td>70002</td>
 <td>INTERNAL</td>
 <td>Internal network error</td>
-<td>Неизвестная сетевая ошибка, попробуйте выполнить запрос позднее.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.</td>
+<td>Неизвестная сетевая ошибка, попробуйте выполнить запрос позже.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.</td>
 </tr>
 <tr>
 <td>70003</td>
@@ -2244,13 +2250,13 @@
 <td>80001</td>
 <td>RESOURCE_EXHAUSTED</td>
 <td>Limit of open streams exceeded</td>
-<td>Превышен лимит одновременных открытых stream-соединений. <a href="https://russianinvestments.github.io/investAPI/limits/">Подробнее про лимитную политику</a>.</td>
+<td>Превышен лимит одновременных открытых stream-соединений. <a href="https://russianinvestments.github.io/investAPI/limits/">Подробнее про лимитную политику</a></td>
 </tr>
 <tr>
 <td>80002</td>
 <td>RESOURCE_EXHAUSTED</td>
 <td>Request limit exceeded</td>
-<td>Превышен лимит запросов в минуту. <a href="https://russianinvestments.github.io/investAPI/limits/">Подробнее про лимитную политику</a>.</td>
+<td>Превышен лимит запросов в минуту. <a href="https://russianinvestments.github.io/investAPI/limits/">Подробнее про лимитную политику</a></td>
 </tr>
 <tr>
 <td>80003</td>

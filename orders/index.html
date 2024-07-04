@@ -1087,6 +1087,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#postorderasync" class="md-nav__link">
+    PostOrderAsync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cancelorder" class="md-nav__link">
     CancelOrder
   </a>
@@ -1179,6 +1186,20 @@
           <li class="md-nav__item">
   <a href="#postorderresponse" class="md-nav__link">
     PostOrderResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorderasyncrequest" class="md-nav__link">
+    PostOrderAsyncRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorderasyncresponse" class="md-nav__link">
+    PostOrderAsyncResponse
   </a>
   
 </li>
@@ -1303,15 +1324,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamresponse" class="md-nav__link">
-    OrderStateStreamResponse
+  <a href="#subscriptionresponse" class="md-nav__link">
+    SubscriptionResponse
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamresponsesubscriptionresponse" class="md-nav__link">
-    OrderStateStreamResponse.SubscriptionResponse
+  <a href="#orderstatestreamresponse" class="md-nav__link">
+    OrderStateStreamResponse
   </a>
   
 </li>
@@ -1399,15 +1420,15 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#errordetail" class="md-nav__link">
     ErrorDetail
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1982,6 +2003,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#postorderasync" class="md-nav__link">
+    PostOrderAsync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cancelorder" class="md-nav__link">
     CancelOrder
   </a>
@@ -2074,6 +2102,20 @@
           <li class="md-nav__item">
   <a href="#postorderresponse" class="md-nav__link">
     PostOrderResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorderasyncrequest" class="md-nav__link">
+    PostOrderAsyncRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorderasyncresponse" class="md-nav__link">
+    PostOrderAsyncResponse
   </a>
   
 </li>
@@ -2198,15 +2240,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamresponse" class="md-nav__link">
-    OrderStateStreamResponse
+  <a href="#subscriptionresponse" class="md-nav__link">
+    SubscriptionResponse
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderstatestreamresponsesubscriptionresponse" class="md-nav__link">
-    OrderStateStreamResponse.SubscriptionResponse
+  <a href="#orderstatestreamresponse" class="md-nav__link">
+    OrderStateStreamResponse
   </a>
   
 </li>
@@ -2294,15 +2336,15 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#errordetail" class="md-nav__link">
     ErrorDetail
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2423,6 +2465,15 @@
 <p>Тело ответа — <a href="#postorderresponse">PostOrderResponse</a></p>
 </li>
 </ul>
+<h4 id="postorderasync">PostOrderAsync</h4>
+<ul>
+<li>
+<p>Тело запроса — <a href="#postorderasyncrequest">PostOrderAsyncRequest</a></p>
+</li>
+<li>
+<p>Тело ответа — <a href="#postorderasyncresponse">PostOrderAsyncResponse</a></p>
+</li>
+</ul>
 <h4 id="cancelorder">CancelOrder</h4>
 <p>Метод отмены биржевой заявки.</p>
 <ul>
@@ -2532,6 +2583,11 @@
 <td>ping</td>
 <td><a href="#ping">Ping</a></td>
 <td>Проверка активности стрима.</td>
+</tr>
+<tr>
+<td>subscription</td>
+<td><a href="#subscriptionresponse">SubscriptionResponse</a></td>
+<td>Ответ на запрос на подписку.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2812,6 +2868,105 @@
 <td>response_metadata</td>
 <td><a href="#responsemetadata">ResponseMetadata</a></td>
 <td>Метадата</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="postorderasyncrequest">PostOrderAsyncRequest</h4>
+<p>Запрос выставления асинхронного торгового поручения.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instrument_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор инструмента, принимает значения Figi или Instrument_uid.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td><a href="#int64">int64</a></td>
+<td>Количество лотов.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений.</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><a href="#orderdirection">OrderDirection</a></td>
+<td>Направление операции.</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Номер счёта.</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td><a href="#ordertype">OrderType</a></td>
+<td>Тип заявки.</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.</td>
+</tr>
+<tr>
+<td>time_in_force</td>
+<td><a href="#timeinforcetype">TimeInForceType</a></td>
+<td>Алгоритм исполнения поручения, применяется только к лимитной заявке.</td>
+</tr>
+<tr>
+<td>price_type</td>
+<td><a href="#pricetype">PriceType</a></td>
+<td>Тип цены.</td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="postorderasyncresponse">PostOrderAsyncResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_request_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.</td>
+</tr>
+<tr>
+<td>execution_report_status</td>
+<td><a href="#orderexecutionreportstatus">OrderExecutionReportStatus</a></td>
+<td>Текущий статус заявки.</td>
+</tr>
+<tr>
+<td>trade_intent_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор торгового поручения.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3508,42 +3663,7 @@
 </table>
 <!-- end HasFields -->
 
-<h4 id="orderstatestreamresponse">OrderStateStreamResponse</h4>
-<p>Информация по заявкам</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>order_state</td>
-<td><a href="#orderstatestreamresponseorderstate">OrderStateStreamResponse.OrderState</a></td>
-<td>Информация об исполнении торгового поручения.</td>
-</tr>
-<tr>
-<td>ping</td>
-<td><a href="#ping">Ping</a></td>
-<td>Проверка активности стрима.</td>
-</tr>
-<tr>
-<td>subscription</td>
-<td><a href="#orderstatestreamresponsesubscriptionresponse">OrderStateStreamResponse.SubscriptionResponse</a></td>
-<td>Ответ на запрос на подписку.</td>
-</tr>
-<tr>
-<td><!-- end Fields --></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- end HasFields -->
-
-<h4 id="orderstatestreamresponsesubscriptionresponse">OrderStateStreamResponse.SubscriptionResponse</h4>
+<h4 id="subscriptionresponse">SubscriptionResponse</h4>
 <table>
 <thead>
 <tr>
@@ -3577,6 +3697,41 @@
 <td>error</td>
 <td><a href="#errordetail">ErrorDetail</a></td>
 <td></td>
+</tr>
+<tr>
+<td><!-- end Fields --></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- end HasFields -->
+
+<h4 id="orderstatestreamresponse">OrderStateStreamResponse</h4>
+<p>Информация по заявкам</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_state</td>
+<td><a href="#orderstatestreamresponseorderstate">OrderStateStreamResponse.OrderState</a></td>
+<td>Информация об исполнении торгового поручения.</td>
+</tr>
+<tr>
+<td>ping</td>
+<td><a href="#ping">Ping</a></td>
+<td>Проверка активности стрима.</td>
+</tr>
+<tr>
+<td>subscription</td>
+<td><a href="#subscriptionresponse">SubscriptionResponse</a></td>
+<td>Ответ на запрос на подписку.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4074,7 +4229,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="errordetail">ErrorDetail</h4>
+<h3 id="errordetail">ErrorDetail</h3>
 <p>Описание ошибки</p>
 <table>
 <thead>
@@ -4098,7 +4253,7 @@
 </tbody>
 </table>
 <h3 id="_4">Про тип цены</h3>
-<p>В T-Invest API ответ в методах для фьючерсов и облигаций может возвращаться как в валюте расчетов, так и в пунктах цены.
+<p>В T-INVEST API ответ в методах для фьючерсов и облигаций может возвращаться как в валюте расчетов, так и в пунктах цены.
 Стоимость пункта может меняться в зависимости от курсовой разницы.
 Про конвертацию пунктов в валюту можно почитать <a href="https://russianinvestments.github.io/investAPI/points/">тут</a></p>
 <h3 id="_5">Нестандартные типы данных</h3>

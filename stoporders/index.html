@@ -1929,11 +1929,10 @@
                   <h1>Методы</h1>
                 
                 <h2 id="stopordersservice">StopOrdersService</h2>
-<p>Сервис предназначен для работы со стоп-заявками:</br> <strong>1</strong>.
-выставление;</br> <strong>2</strong>. отмена;</br> <strong>3</strong>. получение списка стоп-заявок.</p>
+<p>Сервис для работы со стоп-заявками: выставление, отмена, получение списка стоп-заявок.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="poststoporder">PostStopOrder</h4>
-<p>Метод выставления стоп-заявки.</p>
+<p>Выставить стоп-заявку.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#poststoporderrequest">PostStopOrderRequest</a></p>
@@ -1943,7 +1942,7 @@
 </li>
 </ul>
 <h4 id="getstoporders">GetStopOrders</h4>
-<p>Метод получения списка активных стоп заявок по счёту.</p>
+<p>Получить список активных стоп-заявок по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getstopordersrequest">GetStopOrdersRequest</a></p>
@@ -1953,7 +1952,7 @@
 </li>
 </ul>
 <h4 id="cancelstoporder">CancelStopOrder</h4>
-<p>Метод отмены стоп-заявки.</p>
+<p>Отменить стоп-заявку.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#cancelstoporderrequest">CancelStopOrderRequest</a></p>
@@ -1980,77 +1979,77 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте <code>instrument_id</code>.</td>
 </tr>
 <tr>
 <td>quantity</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество лотов</td>
+<td>Количество лотов.</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>stop_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Стоп-цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Стоп-цена заявки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>direction</td>
 <td><a href="#stoporderdirection">StopOrderDirection</a></td>
-<td>Направление операции</td>
+<td>Направление операции.</td>
 </tr>
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счёта</td>
+<td>Номер счёта.</td>
 </tr>
 <tr>
 <td>expiration_type</td>
 <td><a href="#stoporderexpirationtype">StopOrderExpirationType</a></td>
-<td>Тип экспирации заявки</td>
+<td>Тип экспирации заявки.</td>
 </tr>
 <tr>
 <td>stop_order_type</td>
 <td><a href="#stopordertype">StopOrderType</a></td>
-<td>Тип заявки</td>
+<td>Тип заявки.</td>
 </tr>
 <tr>
 <td>expire_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время окончания действия стоп-заявки в часовом поясе UTC. <strong>Для ExpirationType = GoodTillDate заполнение обязательно, для GoodTillCancel игнорируется</strong>.</td>
+<td>Дата и время окончания действия стоп-заявки по UTC. Для <code>ExpirationType = GoodTillDate</code> заполнение обязательно, для <code>GoodTillCancel</code> игнорируется.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значения Figi или instrument_uid.</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td>exchange_order_type</td>
 <td><a href="#exchangeordertype">ExchangeOrderType</a></td>
-<td>Тип дочерней биржевой заявки для тейкпрофита</td>
+<td>Тип дочерней биржевой заявки для тейкпрофита.</td>
 </tr>
 <tr>
 <td>take_profit_type</td>
 <td><a href="#takeprofittype">TakeProfitType</a></td>
-<td>Подтип стоп-заявки TakeProfit</td>
+<td>Подтип стоп-заявки — <code>TakeProfit</code>.</td>
 </tr>
 <tr>
 <td>trailing_data</td>
 <td><a href="#poststoporderrequesttrailingdata">PostStopOrderRequest.TrailingData</a></td>
-<td>Массив с параметрами трейлинг-стопа</td>
+<td>Массив с параметрами трейлинг-стопа.</td>
 </tr>
 <tr>
 <td>price_type</td>
 <td><a href="#pricetype">PriceType</a></td>
-<td>Тип цены</td>
+<td>Тип цены.</td>
 </tr>
 <tr>
 <td>order_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.</td>
+<td>Идентификатор запроса выставления поручения для целей идемпотентности в формате <code>UID</code>. Максимальная длина — 36 символов.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2074,22 +2073,22 @@
 <tr>
 <td>indent</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Отступ</td>
+<td>Отступ.</td>
 </tr>
 <tr>
 <td>indent_type</td>
 <td><a href="#trailingvaluetype">TrailingValueType</a></td>
-<td>Тип величины отступа</td>
+<td>Тип величины отступа.</td>
 </tr>
 <tr>
 <td>spread</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Размер защитного спреда</td>
+<td>Размер защитного спреда.</td>
 </tr>
 <tr>
 <td>spread_type</td>
 <td><a href="#trailingvaluetype">TrailingValueType</a></td>
-<td>Тип величины защитного спреда</td>
+<td>Тип величины защитного спреда.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2114,17 +2113,17 @@
 <tr>
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор стоп-заявки</td>
+<td>Уникальный идентификатор стоп-заявки.</td>
 </tr>
 <tr>
 <td>order_request_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов.</td>
+<td>Идентификатор ключа идемпотентности, переданный клиентом, в формате <code>UID</code>. Максимальная длина 36 — символов.</td>
 </tr>
 <tr>
 <td>response_metadata</td>
 <td><a href="#responsemetadata">ResponseMetadata</a></td>
-<td>Метадата</td>
+<td>Метадата.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2149,22 +2148,22 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента</td>
+<td>Идентификатор счёта клиента.</td>
 </tr>
 <tr>
 <td>status</td>
 <td><a href="#stoporderstatusoption">StopOrderStatusOption</a></td>
-<td>Статус заявок</td>
+<td>Статус заявок.</td>
 </tr>
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Левая граница</td>
+<td>Левая граница.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Правая граница</td>
+<td>Правая граница.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2189,7 +2188,7 @@
 <tr>
 <td>stop_orders</td>
 <td>Массив объектов <a href="#stoporder">StopOrder</a></td>
-<td>Массив стоп-заявок по счёту</td>
+<td>Массив стоп-заявок по счёту.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2214,12 +2213,12 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента</td>
+<td>Идентификатор счёта клиента.</td>
 </tr>
 <tr>
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор стоп-заявки</td>
+<td>Уникальный идентификатор стоп-заявки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2244,7 +2243,7 @@
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время отмены заявки в часовом поясе UTC</td>
+<td>Время отмены заявки по UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2269,82 +2268,82 @@
 <tr>
 <td>stop_order_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор-идентификатор стоп-заявки</td>
+<td>Идентификатор-идентификатор стоп-заявки.</td>
 </tr>
 <tr>
 <td>lots_requested</td>
 <td><a href="#int64">int64</a></td>
-<td>Запрошено лотов</td>
+<td>Запрошено лотов.</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>direction</td>
 <td><a href="#stoporderdirection">StopOrderDirection</a></td>
-<td>Направление операции</td>
+<td>Направление операции.</td>
 </tr>
 <tr>
 <td>currency</td>
 <td><a href="#string">string</a></td>
-<td>Валюта стоп-заявки</td>
+<td>Валюта стоп-заявки.</td>
 </tr>
 <tr>
 <td>order_type</td>
 <td><a href="#stopordertype">StopOrderType</a></td>
-<td>Тип стоп-заявки</td>
+<td>Тип стоп-заявки.</td>
 </tr>
 <tr>
 <td>create_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время выставления заявки в часовом поясе UTC</td>
+<td>Дата и время выставления заявки по UTC.</td>
 </tr>
 <tr>
 <td>activation_date_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время конвертации стоп-заявки в биржевую в часовом поясе UTC</td>
+<td>Дата и время конвертации стоп-заявки в биржевую по UTC.</td>
 </tr>
 <tr>
 <td>expiration_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время снятия заявки в часовом поясе UTC</td>
+<td>Дата и время снятия заявки по UTC.</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена заявки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>stop_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена активации стоп-заявки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена активации стоп-заявки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>instrument_uid идентификатор инструмента</td>
+<td><code>instrument_uid</code>-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>take_profit_type</td>
 <td><a href="#takeprofittype">TakeProfitType</a></td>
-<td>Подтип стоп-заявки TakeProfit</td>
+<td>Подтип стоп-заявки — <code>TakeProfit</code>.</td>
 </tr>
 <tr>
 <td>trailing_data</td>
 <td><a href="#stopordertrailingdata">StopOrder.TrailingData</a></td>
-<td>Параметры трейлинг-стопа</td>
+<td>Параметры трейлинг-стопа.</td>
 </tr>
 <tr>
 <td>status</td>
 <td><a href="#stoporderstatusoption">StopOrderStatusOption</a></td>
-<td>Статус заявки</td>
+<td>Статус заявки.</td>
 </tr>
 <tr>
 <td>exchange_order_type</td>
 <td><a href="#exchangeordertype">ExchangeOrderType</a></td>
-<td>Тип дочерней биржевой заявки для тейкпрофита</td>
+<td>Тип дочерней биржевой заявки для тейкпрофита.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2368,37 +2367,37 @@
 <tr>
 <td>indent</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Отступ</td>
+<td>Отступ.</td>
 </tr>
 <tr>
 <td>indent_type</td>
 <td><a href="#trailingvaluetype">TrailingValueType</a></td>
-<td>Тип величины отступа</td>
+<td>Тип величины отступа.</td>
 </tr>
 <tr>
 <td>spread</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Размер защитного спреда</td>
+<td>Размер защитного спреда.</td>
 </tr>
 <tr>
 <td>spread_type</td>
 <td><a href="#trailingvaluetype">TrailingValueType</a></td>
-<td>Тип величины защитного спреда</td>
+<td>Тип величины защитного спреда.</td>
 </tr>
 <tr>
 <td>status</td>
 <td><a href="#trailingstopstatus">TrailingStopStatus</a></td>
-<td>Статус трейлинг-стопа</td>
+<td>Статус трейлинг-стопа.</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена исполнения</td>
+<td>Цена исполнения.</td>
 </tr>
 <tr>
 <td>extr</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Локальный экстремум</td>
+<td>Локальный экстремум.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2425,17 +2424,17 @@
 <tr>
 <td>STOP_ORDER_DIRECTION_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано</td>
+<td>Значение не указано.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_DIRECTION_BUY</td>
 <td>1</td>
-<td>Покупка</td>
+<td>Покупка.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_DIRECTION_SELL</td>
 <td>2</td>
-<td>Продажа</td>
+<td>Продажа.</td>
 </tr>
 </tbody>
 </table>
@@ -2453,17 +2452,17 @@
 <tr>
 <td>STOP_ORDER_EXPIRATION_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано</td>
+<td>Значение не указано.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_EXPIRATION_TYPE_GOOD_TILL_CANCEL</td>
 <td>1</td>
-<td>Действительно до отмены</td>
+<td>Действительно до отмены.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_EXPIRATION_TYPE_GOOD_TILL_DATE</td>
 <td>2</td>
-<td>Действительно до даты снятия</td>
+<td>Действительно до даты снятия.</td>
 </tr>
 </tbody>
 </table>
@@ -2481,22 +2480,22 @@
 <tr>
 <td>STOP_ORDER_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано</td>
+<td>Значение не указано.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_TYPE_TAKE_PROFIT</td>
 <td>1</td>
-<td>Take-profit заявка</td>
+<td><code>Take-profit</code>-заявка.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_TYPE_STOP_LOSS</td>
 <td>2</td>
-<td>Stop-loss заявка</td>
+<td><code>Stop-loss</code>-заявка.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_TYPE_STOP_LIMIT</td>
 <td>3</td>
-<td>Stop-limit заявка</td>
+<td><code>Stop-limit</code>-заявка.</td>
 </tr>
 </tbody>
 </table>
@@ -2514,32 +2513,32 @@
 <tr>
 <td>STOP_ORDER_STATUS_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано</td>
+<td>Значение не указано.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_STATUS_ALL</td>
 <td>1</td>
-<td>Все заявки</td>
+<td>Все заявки.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_STATUS_ACTIVE</td>
 <td>2</td>
-<td>Активные заявки</td>
+<td>Активные заявки.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_STATUS_EXECUTED</td>
 <td>3</td>
-<td>Исполненные заявки</td>
+<td>Исполненные заявки.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_STATUS_CANCELED</td>
 <td>4</td>
-<td>Отмененные заявки</td>
+<td>Отменённые заявки.</td>
 </tr>
 <tr>
 <td>STOP_ORDER_STATUS_EXPIRED</td>
 <td>5</td>
-<td>Истекшие заявки</td>
+<td>Истёкшие заявки.</td>
 </tr>
 </tbody>
 </table>
@@ -2557,22 +2556,22 @@
 <tr>
 <td>EXCHANGE_ORDER_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано</td>
+<td>Значение не указано.</td>
 </tr>
 <tr>
 <td>EXCHANGE_ORDER_TYPE_MARKET</td>
 <td>1</td>
-<td>Заявка по рыночной цене</td>
+<td>Заявка по рыночной цене.</td>
 </tr>
 <tr>
 <td>EXCHANGE_ORDER_TYPE_LIMIT</td>
 <td>2</td>
-<td>Лимитная заявка</td>
+<td>Лимитная заявка.</td>
 </tr>
 </tbody>
 </table>
 <h4 id="takeprofittype">TakeProfitType</h4>
-<p>Тип TakeProfit заявки.</p>
+<p>Тип TakeProfit-заявки.</p>
 <table>
 <thead>
 <tr>
@@ -2585,22 +2584,22 @@
 <tr>
 <td>TAKE_PROFIT_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано</td>
+<td>Значение не указано.</td>
 </tr>
 <tr>
 <td>TAKE_PROFIT_TYPE_REGULAR</td>
 <td>1</td>
-<td>Обычная заявка (значение по умолчанию)</td>
+<td>Обычная заявка, значение по умолчанию.</td>
 </tr>
 <tr>
 <td>TAKE_PROFIT_TYPE_TRAILING</td>
 <td>2</td>
-<td>Трейлинг-стоп</td>
+<td>Трейлинг-стоп.</td>
 </tr>
 </tbody>
 </table>
 <h4 id="trailingvaluetype">TrailingValueType</h4>
-<p>Тип параметров значений Трейлинг-стопа</p>
+<p>Тип параметров значений трейлинг-стопа.</p>
 <table>
 <thead>
 <tr>
@@ -2613,22 +2612,22 @@
 <tr>
 <td>TRAILING_VALUE_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано</td>
+<td>Значение не указано.</td>
 </tr>
 <tr>
 <td>TRAILING_VALUE_ABSOLUTE</td>
 <td>1</td>
-<td>Абсолютное значение в единицах цены</td>
+<td>Абсолютное значение в единицах цены.</td>
 </tr>
 <tr>
 <td>TRAILING_VALUE_RELATIVE</td>
 <td>2</td>
-<td>Относительное значение в процентах</td>
+<td>Относительное значение в процентах.</td>
 </tr>
 </tbody>
 </table>
 <h4 id="trailingstopstatus">TrailingStopStatus</h4>
-<p>Статус Трейлинг-стопа</p>
+<p>Статус трейлинг-стопа.</p>
 <table>
 <thead>
 <tr>
@@ -2641,17 +2640,17 @@
 <tr>
 <td>TRAILING_STOP_UNSPECIFIED</td>
 <td>0</td>
-<td>Значение не указано</td>
+<td>Значение не указано.</td>
 </tr>
 <tr>
 <td>TRAILING_STOP_ACTIVE</td>
 <td>1</td>
-<td>Активный</td>
+<td>Активный.</td>
 </tr>
 <tr>
 <td>TRAILING_STOP_ACTIVATED</td>
 <td>2</td>
-<td>Активированный</td>
+<td>Активированный.</td>
 </tr>
 </tbody>
 </table>

@@ -2513,13 +2513,13 @@
                   <h1>Методы</h1>
                 
                 <h2 id="operationsservice">OperationsService</h2>
-<p>Сервис предназначен для получения:</br> <strong>1</strong>.  списка операций по счёту;</br> <strong>2</strong>.
-портфеля по счёту;</br> <strong>3</strong>. позиций ценных бумаг на счёте;</br> <strong>4</strong>.
-доступного остатка для вывода средств;</br> <strong>5</strong>. получения различных отчётов.</p>
+<p>С помощью методов сервиса можно получить:</br></br> <strong>1</strong>. Список операций по счёту.</br> <strong>2</strong>.
+Портфель по счёту.</br> <strong>3</strong>. Позиции ценных бумаг на счёте.</br> <strong>4</strong>.
+Доступный остаток для вывода средств.</br> <strong>5</strong>. Различные отчёты.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getoperations">GetOperations</h4>
-<p>Метод получения списка операций по счёту.При работе с данным методом необходимо учитывать
-<a href="/investAPI/operations_problems">особенности взаимодействия</a> с данным методом.</p>
+<p>Получить список операций по счёту. При работе с методом учитывайте
+<a href="/investAPI/operations_problems">особенности взаимодействия</a>.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#operationsrequest">OperationsRequest</a></p>
@@ -2529,7 +2529,7 @@
 </li>
 </ul>
 <h4 id="getportfolio">GetPortfolio</h4>
-<p>Метод получения портфеля по счёту.</p>
+<p>Получить портфель по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#portfoliorequest">PortfolioRequest</a></p>
@@ -2539,7 +2539,7 @@
 </li>
 </ul>
 <h4 id="getpositions">GetPositions</h4>
-<p>Метод получения списка позиций по счёту.</p>
+<p>Получить список позиций по счёту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#positionsrequest">PositionsRequest</a></p>
@@ -2549,7 +2549,7 @@
 </li>
 </ul>
 <h4 id="getwithdrawlimits">GetWithdrawLimits</h4>
-<p>Метод получения доступного остатка для вывода средств.</p>
+<p>Получить доступный остаток для вывода средств.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#withdrawlimitsrequest">WithdrawLimitsRequest</a></p>
@@ -2559,7 +2559,7 @@
 </li>
 </ul>
 <h4 id="getbrokerreport">GetBrokerReport</h4>
-<p>Метод получения брокерского отчёта.</p>
+<p>Получить брокерский отчёт.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#brokerreportrequest">BrokerReportRequest</a></p>
@@ -2569,7 +2569,7 @@
 </li>
 </ul>
 <h4 id="getdividendsforeignissuer">GetDividendsForeignIssuer</h4>
-<p>Метод получения отчёта "Справка о доходах за пределами РФ".</p>
+<p>Получить отчёт «Справка о доходах за пределами РФ».</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getdividendsforeignissuerrequest">GetDividendsForeignIssuerRequest</a></p>
@@ -2579,8 +2579,8 @@
 </li>
 </ul>
 <h4 id="getoperationsbycursor">GetOperationsByCursor</h4>
-<p>Метод получения списка операций по счёту с пагинацией. При работе с данным методом необходимо учитывать
-<a href="/investAPI/operations_problems">особенности взаимодействия</a> с данным методом.</p>
+<p>Получить список операций по счёту с пагинацией. При работе с методом учитывайте
+<a href="/investAPI/operations_problems">особенности взаимодействия</a>.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getoperationsbycursorrequest">GetOperationsByCursorRequest</a></p>
@@ -2594,7 +2594,7 @@
 <h2 id="operationsstreamservice">OperationsStreamService</h2>
 <h3 id="_2">Методы сервиса</h3>
 <h4 id="portfoliostream">PortfolioStream</h4>
-<p>Server-side stream обновлений портфеля</p>
+<p>Server-side stream обновлений портфеля.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#portfoliostreamrequest">PortfolioStreamRequest</a></p>
@@ -2604,7 +2604,7 @@
 </li>
 </ul>
 <h4 id="positionsstream">PositionsStream</h4>
-<p>Server-side stream обновлений информации по изменению позиций портфеля</p>
+<p>Server-side stream обновлений информации по изменению позиций портфеля.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#positionsstreamrequest">PositionsStreamRequest</a></p>
@@ -2636,12 +2636,12 @@
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало периода (по UTC).</td>
+<td>Начало периода по UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание периода (по UTC).</td>
+<td>Окончание периода по UTC.</td>
 </tr>
 <tr>
 <td>state</td>
@@ -2651,7 +2651,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента для фильтрации.</td>
+<td>FIGI-идентификатор инструмента для фильтрации.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2721,7 +2721,7 @@
 <tr>
 <td>price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена операции за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена операции за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>state</td>
@@ -2741,12 +2741,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента, связанного с операцией.</td>
+<td>FIGI-идентификатор инструмента, связанного с операцией.</td>
 </tr>
 <tr>
 <td>instrument_type</td>
 <td><a href="#string">string</a></td>
-<td>Тип инструмента. Возможные значения: </br><strong>bond</strong> — облигация; </br><strong>share</strong> — акция; </br><strong>currency</strong> — валюта; </br><strong>etf</strong> — фонд; </br><strong>futures</strong> — фьючерс.</td>
+<td>Тип инструмента. Возможные значения: </br></br><code>bond</code> — облигация; </br><code>share</code> — акция; </br><code>currency</code> — валюта; </br><code>etf</code> — фонд; </br><code>futures</code> — фьючерс.</td>
 </tr>
 <tr>
 <td>date</td>
@@ -2776,7 +2776,7 @@
 <tr>
 <td>position_uid</td>
 <td><a href="#string">string</a></td>
-<td>position_uid-идентификатора инструмента.</td>
+<td>Уникальный идентификатор позиции.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
@@ -2811,7 +2811,7 @@
 <tr>
 <td>date_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время сделки в часовом поясе UTC.</td>
+<td>Дата и время сделки по UTC.</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -2821,7 +2821,7 @@
 <tr>
 <td>price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2851,7 +2851,7 @@
 <tr>
 <td>currency</td>
 <td><a href="#portfoliorequestcurrencyrequest">PortfolioRequest.CurrencyRequest</a></td>
-<td>Валюта, в которой требуется рассчитать портфель</td>
+<td>Валюта, в которой нужно рассчитать портфель.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2901,7 +2901,7 @@
 <tr>
 <td>expected_yield</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Текущая относительная доходность портфеля, в %.</td>
+<td>Текущая относительная доходность портфеля в %.</td>
 </tr>
 <tr>
 <td>positions</td>
@@ -2996,7 +2996,7 @@
 <tr>
 <td>limits_loading_in_progress</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак идущей в данный момент выгрузки лимитов.</td>
+<td>Признак идущей выгрузки лимитов в данный момент.</td>
 </tr>
 <tr>
 <td>futures</td>
@@ -3018,7 +3018,7 @@
 <!-- end HasFields -->
 
 <h4 id="withdrawlimitsrequest">WithdrawLimitsRequest</h4>
-<p>Запрос доступного для вывода остатка.</p>
+<p>Запрос доступного остатка для вывода.</p>
 <table>
 <thead>
 <tr>
@@ -3043,7 +3043,7 @@
 <!-- end HasFields -->
 
 <h4 id="withdrawlimitsresponse">WithdrawLimitsResponse</h4>
-<p>Доступный для вывода остаток.</p>
+<p>Доступный остаток для вывода.</p>
 <table>
 <thead>
 <tr>
@@ -3091,7 +3091,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатора инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>instrument_type</td>
@@ -3106,7 +3106,7 @@
 <tr>
 <td>average_position_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средневзвешенная цена позиции. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+<td>Средневзвешенная цена позиции. Для пересчёта возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td>expected_yield</td>
@@ -3121,17 +3121,17 @@
 <tr>
 <td>average_position_price_pt</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Deprecated Средняя цена позиции в пунктах (для фьючерсов). <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+<td>Deprecated Средняя цена позиции в пунктах (для фьючерсов). Для пересчёта возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td>current_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Текущая цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>average_position_price_fifo</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средняя цена позиции по методу FIFO. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+<td>Средняя цена позиции по методу FIFO. Для пересчёта возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td>quantity_lots</td>
@@ -3151,17 +3151,17 @@
 <tr>
 <td>position_uid</td>
 <td><a href="#string">string</a></td>
-<td>position_uid-идентификатора инструмента</td>
+<td>Уникальный идентификатор позиции.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>instrument_uid-идентификатора инструмента</td>
+<td>Уникальный идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>var_margin</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Вариационная маржа</td>
+<td>Вариационная маржа.</td>
 </tr>
 <tr>
 <td>expected_yield_fifo</td>
@@ -3190,17 +3190,17 @@
 <tr>
 <td>position_uid</td>
 <td><a href="#string">string</a></td>
-<td>position_uid-идентификатора инструмента</td>
+<td>Уникальный идентификатор позиции.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>instrument_uid-идентификатора инструмента</td>
+<td>Уникальный идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатора инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>instrument_type</td>
@@ -3215,7 +3215,7 @@
 <tr>
 <td>average_position_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средневзвешенная цена позиции. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+<td>Средневзвешенная цена позиции. Для пересчёта возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td>expected_yield</td>
@@ -3230,17 +3230,17 @@
 <tr>
 <td>expire_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата до которой нужно продать виртуальные бумаги, после этой даты виртуальная позиция "сгорит"</td>
+<td>Дата, до которой нужно продать виртуальные бумаги. После этой даты виртуальная позиция «сгораетт».</td>
 </tr>
 <tr>
 <td>current_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Текущая цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента.</td>
+<td>Текущая цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.</td>
 </tr>
 <tr>
 <td>average_position_price_fifo</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средняя цена позиции по методу FIFO. <strong>Возможна задержка до секунды для пересчёта</strong>.</td>
+<td>Средняя цена позиции по методу FIFO. Для пересчёта возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3265,12 +3265,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор бумаги.</td>
+<td>FIGI-идентификатор бумаги.</td>
 </tr>
 <tr>
 <td>blocked</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество бумаг заблокированных выставленными заявками.</td>
+<td>Количество бумаг, заблокированных выставленными заявками.</td>
 </tr>
 <tr>
 <td>balance</td>
@@ -3285,7 +3285,7 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор  инструмента.</td>
+<td>Уникальный идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>exchange_blocked</td>
@@ -3320,12 +3320,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор фьючерса.</td>
+<td>FIGI-идентификатор фьючерса.</td>
 </tr>
 <tr>
 <td>blocked</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество бумаг заблокированных выставленными заявками.</td>
+<td>Количество бумаг, заблокированных выставленными заявками.</td>
 </tr>
 <tr>
 <td>balance</td>
@@ -3375,7 +3375,7 @@
 <tr>
 <td>blocked</td>
 <td><a href="#int64">int64</a></td>
-<td>Количество бумаг заблокированных выставленными заявками.</td>
+<td>Количество бумаг, заблокированных выставленными заявками.</td>
 </tr>
 <tr>
 <td>balance</td>
@@ -3467,12 +3467,12 @@
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало периода в часовом поясе UTC.</td>
+<td>Начало периода по UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание периода в часовом поясе UTC.</td>
+<td>Окончание периода по UTC.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3525,7 +3525,7 @@
 <tr>
 <td>page</td>
 <td><a href="#int32">int32</a></td>
-<td>Номер страницы отчета (начинается с 1), значение по умолчанию: 0.</td>
+<td>Номер страницы отчёта, начинается с 1. Значение по умолчанию — 0.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3554,17 +3554,17 @@
 <tr>
 <td>itemsCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество записей в отчете.</td>
+<td>Количество записей в отчёте.</td>
 </tr>
 <tr>
 <td>pagesCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество страниц с данными отчета (начинается с 0).</td>
+<td>Количество страниц с данными отчёта, начинается с 0.</td>
 </tr>
 <tr>
 <td>page</td>
 <td><a href="#int32">int32</a></td>
-<td>Текущая страница (начинается с 0).</td>
+<td>Текущая страница, начинается с 0.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3598,7 +3598,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификаторинструмента.</td>
 </tr>
 <tr>
 <td>execute_sign</td>
@@ -3608,7 +3608,7 @@
 <tr>
 <td>trade_datetime</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата и время заключения в часовом поясе UTC.</td>
+<td>Дата и время заключения по UTC.</td>
 </tr>
 <tr>
 <td>exchange</td>
@@ -3648,7 +3648,7 @@
 <tr>
 <td>order_amount</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Сумма (без НКД).</td>
+<td>Сумма без НКД.</td>
 </tr>
 <tr>
 <td>aci_value</td>
@@ -3673,27 +3673,27 @@
 <tr>
 <td>exchange_clearing_commission</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Комиссия клир. центра.</td>
+<td>Комиссия клирингового центра.</td>
 </tr>
 <tr>
 <td>repo_rate</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Ставка РЕПО (%).</td>
+<td>Ставка РЕПО, %.</td>
 </tr>
 <tr>
 <td>party</td>
 <td><a href="#string">string</a></td>
-<td>Контрагент/Брокер.</td>
+<td>Контрагент или брокерарокер.</td>
 </tr>
 <tr>
 <td>clear_value_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата расчётов в часовом поясе UTC.</td>
+<td>Дата расчётов по UTC.</td>
 </tr>
 <tr>
 <td>sec_value_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата поставки в часовом поясе UTC.</td>
+<td>Дата поставки по UTC.</td>
 </tr>
 <tr>
 <td>broker_status</td>
@@ -3703,17 +3703,17 @@
 <tr>
 <td>separate_agreement_type</td>
 <td><a href="#string">string</a></td>
-<td>Тип дог.</td>
+<td>Тип договора.</td>
 </tr>
 <tr>
 <td>separate_agreement_number</td>
 <td><a href="#string">string</a></td>
-<td>Номер дог.</td>
+<td>Номер договора.</td>
 </tr>
 <tr>
 <td>separate_agreement_date</td>
 <td><a href="#string">string</a></td>
-<td>Дата дог.</td>
+<td>Дата договора.</td>
 </tr>
 <tr>
 <td>delivery_type</td>
@@ -3776,7 +3776,7 @@
 <tr>
 <td>div_foreign_issuer_report</td>
 <td><a href="#getdividendsforeignissuerreportresponse">GetDividendsForeignIssuerReportResponse</a></td>
-<td>Отчёт "Справка о доходах за пределами РФ".</td>
+<td>Отчёт «Справка о доходах за пределами РФ».</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3788,7 +3788,7 @@
 <!-- end HasFields -->
 
 <h4 id="generatedividendsforeignissuerreportrequest">GenerateDividendsForeignIssuerReportRequest</h4>
-<p>Объект запроса формирования отчёта "Справка о доходах за пределами РФ".</p>
+<p>Объект запроса формирования отчёта «Справка о доходах за пределами РФ».</p>
 <table>
 <thead>
 <tr>
@@ -3806,12 +3806,12 @@
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало периода (по UTC).</td>
+<td>Начало периода по UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание периода (по UTC), как правило, возможно сформировать отчет по дату, на несколько дней меньше текущей. Начало и окончание периода должны быть в рамках одного календарного года.</td>
+<td>Окончание периода по UTC. Как правило, можно сформировать отчёт по дату на несколько дней меньше текущей. Начало и окончание периода должны быть в рамках одного календарного года.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3823,7 +3823,7 @@
 <!-- end HasFields -->
 
 <h4 id="getdividendsforeignissuerreportrequest">GetDividendsForeignIssuerReportRequest</h4>
-<p>Объект запроса сформированного отчёта "Справка о доходах за пределами РФ".</p>
+<p>Объект запроса сформированного отчёта «Справка о доходах за пределами РФ».</p>
 <table>
 <thead>
 <tr>
@@ -3853,7 +3853,7 @@
 <!-- end HasFields -->
 
 <h4 id="generatedividendsforeignissuerreportresponse">GenerateDividendsForeignIssuerReportResponse</h4>
-<p>Объект результата задачи запуска формирования отчёта "Справка о доходах за пределами РФ".</p>
+<p>Объект результата задачи запуска формирования отчёта «Справка о доходах за пределами РФ».</p>
 <table>
 <thead>
 <tr>
@@ -3895,17 +3895,17 @@
 <tr>
 <td>itemsCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество записей в отчете.</td>
+<td>Количество записей в отчёте.</td>
 </tr>
 <tr>
 <td>pagesCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество страниц с данными отчета (начинается с 0).</td>
+<td>Количество страниц с данными отчёта, начинается с 0.</td>
 </tr>
 <tr>
 <td>page</td>
 <td><a href="#int32">int32</a></td>
-<td>Текущая страница (начинается с 0).</td>
+<td>Текущая страница, начинается с 0.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3917,7 +3917,7 @@
 <!-- end HasFields -->
 
 <h4 id="dividendsforeignissuerreport">DividendsForeignIssuerReport</h4>
-<p>Отчёт "Справка о доходах за пределами РФ".</p>
+<p>Отчёт «Справка о доходах за пределами РФ».</p>
 <table>
 <thead>
 <tr>
@@ -4010,7 +4010,7 @@
 <tr>
 <td>accounts</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Массив идентификаторов счётов пользователя</td>
+<td>Массив идентификаторов счётов пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4073,6 +4073,16 @@
 <td>Массив счетов клиента.</td>
 </tr>
 <tr>
+<td>tracking_id</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+</tr>
+<tr>
+<td>stream_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор открытого соединения</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -4082,7 +4092,7 @@
 <!-- end HasFields -->
 
 <h4 id="accountsubscriptionstatus">AccountSubscriptionStatus</h4>
-<p>Счет клиента.</p>
+<p>Счёт клиента.</p>
 <table>
 <thead>
 <tr>
@@ -4095,7 +4105,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта</td>
+<td>Идентификатор счёта.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
@@ -4125,22 +4135,22 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента. Обязательный параметр для данного метода, остальные параметры опциональны.</td>
+<td>Идентификатор счёта клиента, обязательный параметр. Остальные параметры опциональны.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента (Figi инструмента или uid инструмента)</td>
+<td>Идентификатор инструмента — FIGI или UID инструмента.</td>
 </tr>
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало периода (по UTC).</td>
+<td>Начало периода по UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание периода (по UTC).</td>
+<td>Окончание периода по UTC.</td>
 </tr>
 <tr>
 <td>cursor</td>
@@ -4150,22 +4160,22 @@
 <tr>
 <td>limit</td>
 <td><a href="#int32">int32</a></td>
-<td>Лимит количества операций. По умолчанию устанавливается значение <strong>100</strong>, максимальное значение 1000.</td>
+<td>Лимит количества операций. По умолчанию — <code>100</code>, максимальное значение — <code>1000</code>.</td>
 </tr>
 <tr>
 <td>operation_types</td>
 <td>Массив объектов <a href="#operationtype">OperationType</a></td>
-<td>Тип операции. Принимает значение из списка OperationType.</td>
+<td>Тип операции. Принимает значение из списка <code>OperationType</code>.</td>
 </tr>
 <tr>
 <td>state</td>
 <td><a href="#operationstate">OperationState</a></td>
-<td>Статус запрашиваемых операций, возможные значения указаны в OperationState.</td>
+<td>Статус запрашиваемых операций. Возможные значения указаны в <code>OperationState</code>.</td>
 </tr>
 <tr>
 <td>without_commissions</td>
 <td><a href="#bool">bool</a></td>
-<td>Флаг возвращать ли комиссии, по умолчанию false</td>
+<td>Флаг возврата комиссии. По умолчанию — <code>false</code>.</td>
 </tr>
 <tr>
 <td>without_trades</td>
@@ -4175,7 +4185,7 @@
 <tr>
 <td>without_overnights</td>
 <td><a href="#bool">bool</a></td>
-<td>Флаг не показывать overnight операций.</td>
+<td>Флаг показа overnight операций.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4240,7 +4250,7 @@
 <tr>
 <td>broker_account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счета клиента.</td>
+<td>Номер счёта клиента.</td>
 </tr>
 <tr>
 <td>id</td>
@@ -4250,7 +4260,7 @@
 <tr>
 <td>parent_operation_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор родительской операции, может измениться, если изменился id родительской операции.</td>
+<td>Идентификатор родительской операции. Может измениться, если изменился ID родительской операции.</td>
 </tr>
 <tr>
 <td>name</td>
@@ -4285,7 +4295,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi.</td>
+<td>FIGI.</td>
 </tr>
 <tr>
 <td>instrument_type</td>
@@ -4300,7 +4310,7 @@
 <tr>
 <td>position_uid</td>
 <td><a href="#string">string</a></td>
-<td>position_uid-идентификатора инструмента.</td>
+<td>Уникальный идентификатор позиции.</td>
 </tr>
 <tr>
 <td>payment</td>
@@ -4365,7 +4375,7 @@
 <tr>
 <td>asset_uid</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор актива</td>
+<td>Идентификатор актива.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4415,12 +4425,12 @@
 <tr>
 <td>num</td>
 <td><a href="#string">string</a></td>
-<td>Номер сделки</td>
+<td>Номер сделки.</td>
 </tr>
 <tr>
 <td>date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата сделки</td>
+<td>Дата сделки.</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -4465,7 +4475,7 @@
 <tr>
 <td>accounts</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Массив идентификаторов счётов пользователя</td>
+<td>Массив идентификаторов счётов пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4528,6 +4538,16 @@
 <td>Массив счетов клиента.</td>
 </tr>
 <tr>
+<td>tracking_id</td>
+<td><a href="#string">string</a></td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+</tr>
+<tr>
+<td>stream_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор открытого соединения</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -4537,7 +4557,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionssubscriptionstatus">PositionsSubscriptionStatus</h4>
-<p>Счет клиента.</p>
+<p>Счёт клиента.</p>
 <table>
 <thead>
 <tr>
@@ -4550,7 +4570,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта</td>
+<td>Идентификатор счёта.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
@@ -4635,7 +4655,7 @@
 <tr>
 <td>blocked_value</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Заблокированное количество валютный позиций.</td>
+<td>Заблокированное количество валютных позиций.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4662,7 +4682,7 @@
 <tr>
 <td>OPERATION_STATE_UNSPECIFIED</td>
 <td>0</td>
-<td>Статус операции не определён</td>
+<td>Статус операции не определён.</td>
 </tr>
 <tr>
 <td>OPERATION_STATE_EXECUTED</td>
@@ -4925,7 +4945,7 @@
 <tr>
 <td>OPERATION_TYPE_OUT_FEE</td>
 <td>46</td>
-<td>Комиссия за вывод валюты с брокерского счета.</td>
+<td>Комиссия за вывод валюты с брокерского счёта.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OUT_STAMP_DUTY</td>
@@ -4935,77 +4955,77 @@
 <tr>
 <td>OPERATION_TYPE_OUTPUT_SWIFT</td>
 <td>50</td>
-<td>SWIFT-перевод</td>
+<td>SWIFT-перевод.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_INPUT_SWIFT</td>
 <td>51</td>
-<td>SWIFT-перевод</td>
+<td>SWIFT-перевод.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OUTPUT_ACQUIRING</td>
 <td>53</td>
-<td>Перевод на карту</td>
+<td>Перевод на карту.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_INPUT_ACQUIRING</td>
 <td>54</td>
-<td>Перевод с карты</td>
+<td>Перевод с карты.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OUTPUT_PENALTY</td>
 <td>55</td>
-<td>Комиссия за вывод средств</td>
+<td>Комиссия за вывод средств.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_ADVICE_FEE</td>
 <td>56</td>
-<td>Списание оплаты за сервис Советов</td>
+<td>Списание оплаты за сервис Советов.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TRANS_IIS_BS</td>
 <td>57</td>
-<td>Перевод ценных бумаг с ИИС на Брокерский счет</td>
+<td>Перевод ценных бумаг с ИИС на брокерский счёт.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TRANS_BS_BS</td>
 <td>58</td>
-<td>Перевод ценных бумаг с одного брокерского счета на другой</td>
+<td>Перевод ценных бумаг с одного брокерского счёта на другой.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OUT_MULTI</td>
 <td>59</td>
-<td>Вывод денежных средств со счета</td>
+<td>Вывод денежных средств со счёта.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_INP_MULTI</td>
 <td>60</td>
-<td>Пополнение денежных средств со счета</td>
+<td>Пополнение денежных средств со счёта.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OVER_PLACEMENT</td>
 <td>61</td>
-<td>Размещение биржевого овернайта</td>
+<td>Размещение биржевого овернайта.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OVER_COM</td>
 <td>62</td>
-<td>Списание комиссии</td>
+<td>Списание комиссии.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OVER_INCOME</td>
 <td>63</td>
-<td>Доход от оверанайта</td>
+<td>Доход от оверанайта.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OPTION_EXPIRATION</td>
 <td>64</td>
-<td>Экспирация опциона</td>
+<td>Экспирация опциона.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_FUTURE_EXPIRATION</td>
 <td>65</td>
-<td>Экспирация фьючерса</td>
+<td>Экспирация фьючерса.</td>
 </tr>
 </tbody>
 </table>

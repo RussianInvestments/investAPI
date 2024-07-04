@@ -1744,6 +1744,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lastpricetype" class="md-nav__link">
+    LastPriceType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getcandlesrequestcandlesource" class="md-nav__link">
     GetCandlesRequest.CandleSource
   </a>
@@ -2660,6 +2667,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lastpricetype" class="md-nav__link">
+    LastPriceType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getcandlesrequestcandlesource" class="md-nav__link">
     GetCandlesRequest.CandleSource
   </a>
@@ -2751,10 +2765,10 @@
                   <h1>Методы</h1>
                 
                 <h2 id="marketdataservice">MarketDataService</h2>
-<p>Сервис получения биржевой информации:</br> <strong>1</strong>. свечи;</br> <strong>2</strong>. стаканы;</br> <strong>3</strong>. торговые статусы;</br> <strong>4</strong>. лента сделок.</p>
+<p>Сервис для получения биржевой информации:</br> 1. Свечи.</br> 2. Стаканы.</br> 3. Торговые статусы.</br> 4. Лента сделок.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getcandles">GetCandles</h4>
-<p>Метод запроса исторических свечей по инструменту.</p>
+<p>Запросить исторические свечи по инструменту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getcandlesrequest">GetCandlesRequest</a></p>
@@ -2764,7 +2778,7 @@
 </li>
 </ul>
 <h4 id="getlastprices">GetLastPrices</h4>
-<p>Метод запроса цен последних сделок по инструментам.</p>
+<p>Запросить цены последних сделок по инструментам.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getlastpricesrequest">GetLastPricesRequest</a></p>
@@ -2774,7 +2788,7 @@
 </li>
 </ul>
 <h4 id="getorderbook">GetOrderBook</h4>
-<p>Метод получения стакана по инструменту.</p>
+<p>Получить стакан по инструменту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getorderbookrequest">GetOrderBookRequest</a></p>
@@ -2784,7 +2798,7 @@
 </li>
 </ul>
 <h4 id="gettradingstatus">GetTradingStatus</h4>
-<p>Метод запроса статуса торгов по инструментам.</p>
+<p>Запросить статус торгов по инструментам.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#gettradingstatusrequest">GetTradingStatusRequest</a></p>
@@ -2794,7 +2808,7 @@
 </li>
 </ul>
 <h4 id="gettradingstatuses">GetTradingStatuses</h4>
-<p>Метод запроса статуса торгов по инструментам.</p>
+<p>Запросить статус торгов по инструментам.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#gettradingstatusesrequest">GetTradingStatusesRequest</a></p>
@@ -2804,7 +2818,7 @@
 </li>
 </ul>
 <h4 id="getlasttrades">GetLastTrades</h4>
-<p>Метод запроса обезличенных сделок за последний час.</p>
+<p>Запросить обезличенные сделки за последний час.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getlasttradesrequest">GetLastTradesRequest</a></p>
@@ -2814,7 +2828,7 @@
 </li>
 </ul>
 <h4 id="getcloseprices">GetClosePrices</h4>
-<p>Метод запроса цен закрытия торговой сессии по инструментам.</p>
+<p>Запросить цены закрытия торговой сессии по инструментам.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getclosepricesrequest">GetClosePricesRequest</a></p>
@@ -2824,7 +2838,7 @@
 </li>
 </ul>
 <h4 id="gettechanalysis">GetTechAnalysis</h4>
-<p>Метод получения технических индикаторов по инструменту</p>
+<p>Получить технические индикаторы по инструменту.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#gettechanalysisrequest">GetTechAnalysisRequest</a></p>
@@ -2838,7 +2852,7 @@
 <h2 id="marketdatastreamservice">MarketDataStreamService</h2>
 <h3 id="_2">Методы сервиса</h3>
 <h4 id="marketdatastream">MarketDataStream</h4>
-<p>Bi-directional стрим предоставления биржевой информации.</p>
+<p>Bidirectional-стрим предоставления биржевой информации.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#marketdatarequest">MarketDataRequest</a></p>
@@ -3079,17 +3093,17 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте <code>instrument_id</code>.</td>
 </tr>
 <tr>
 <td>interval</td>
 <td><a href="#subscriptioninterval">SubscriptionInterval</a></td>
-<td>Интервал свечей. (Двухчасовые и четырехчасовые свечи в стриме отсчитываются с 0:00 по UTC)</td>
+<td>Интервал свечей. Двухчасовые и четырёхчасовые свечи в стриме отсчитываются с 0:00 по UTC.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3114,7 +3128,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>candles_subscriptions</td>
@@ -3144,7 +3158,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>interval</td>
@@ -3159,22 +3173,22 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>waiting_close</td>
 <td><a href="#bool">bool</a></td>
-<td>Флаг ожидания закрытия временного интервала для отправки свечи</td>
+<td>Флаг ожидания закрытия временного интервала для отправки свечи.</td>
 </tr>
 <tr>
 <td>stream_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор открытого соединения</td>
+<td>Идентификатор открытого соединения.</td>
 </tr>
 <tr>
 <td>subscription_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор подписки в формате UUID</td>
+<td>Идентификатор подписки в формате <code>UUID</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3229,7 +3243,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте <code>instrument_id</code>.</td>
 </tr>
 <tr>
 <td>depth</td>
@@ -3239,12 +3253,12 @@
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td>order_book_type</td>
 <td><a href="#orderbooktype">OrderBookType</a></td>
-<td>Тип стакана</td>
+<td>Тип стакана.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3269,7 +3283,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>order_book_subscriptions</td>
@@ -3299,7 +3313,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>depth</td>
@@ -3314,22 +3328,22 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>stream_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор открытого соединения</td>
+<td>Идентификатор открытого соединения.</td>
 </tr>
 <tr>
 <td>subscription_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор подписки в формате UUID</td>
+<td>Идентификатор подписки в формате <code>UUID</code>.</td>
 </tr>
 <tr>
 <td>order_book_type</td>
 <td><a href="#orderbooktype">OrderBookType</a></td>
-<td>Тип стакана</td>
+<td>Тип стакана.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3364,7 +3378,7 @@
 <tr>
 <td>trade_type</td>
 <td><a href="#tradesourcetype">TradeSourceType</a></td>
-<td>Источник сделок</td>
+<td>Источник сделок.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3389,12 +3403,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте instrument_id`.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3419,7 +3433,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>trade_subscriptions</td>
@@ -3429,7 +3443,7 @@
 <tr>
 <td>trade_type</td>
 <td><a href="#tradesourcetype">TradeSourceType</a></td>
-<td>Источник сделок</td>
+<td>Источник сделок.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3454,7 +3468,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
@@ -3464,17 +3478,17 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>stream_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор открытого соединения</td>
+<td>Идентификатор открытого соединения.</td>
 </tr>
 <tr>
 <td>subscription_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор подписки в формате UUID</td>
+<td>Идентификатор подписки в формате UUID.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3529,12 +3543,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте instrument_id`.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3559,7 +3573,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>info_subscriptions</td>
@@ -3589,7 +3603,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
@@ -3599,17 +3613,17 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>stream_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор открытого соединения</td>
+<td>Идентификатор открытого соединения.</td>
 </tr>
 <tr>
 <td>subscription_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор подписки в формате UUID</td>
+<td>Идентификатор подписки в формате UUID.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3664,12 +3678,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте instrument_id`.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3694,7 +3708,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>last_price_subscriptions</td>
@@ -3724,7 +3738,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
@@ -3734,17 +3748,17 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>stream_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор открытого соединения</td>
+<td>Идентификатор открытого соединения.</td>
 </tr>
 <tr>
 <td>subscription_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор подписки в формате UUID</td>
+<td>Идентификатор подписки в формате <code>UUID</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3769,7 +3783,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>interval</td>
@@ -3779,22 +3793,22 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена открытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Максимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Минимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>volume</td>
@@ -3804,17 +3818,17 @@
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время начала интервала свечи в часовом поясе UTC.</td>
+<td>Время начала интервала свечи по UTC.</td>
 </tr>
 <tr>
 <td>last_trade_ts</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время последней сделки, вошедшей в свечу в часовом поясе UTC.</td>
+<td>Время последней сделки, вошедшей в свечу по UTC.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3839,7 +3853,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>depth</td>
@@ -3849,7 +3863,7 @@
 <tr>
 <td>is_consistent</td>
 <td><a href="#bool">bool</a></td>
-<td>Флаг консистентности стакана. <strong>false</strong> значит не все заявки попали в стакан по причинам сетевых задержек или нарушения порядка доставки.</td>
+<td>Флаг консистентности стакана. <strong>false</strong> — не все заявки попали в стакан из-за сетевых задержек или нарушения порядка доставки.</td>
 </tr>
 <tr>
 <td>bids</td>
@@ -3869,22 +3883,22 @@
 <tr>
 <td>limit_up</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Верхний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>limit_down</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Нижний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>order_book_type</td>
 <td><a href="#orderbooktype">OrderBookType</a></td>
-<td>Тип стакана</td>
+<td>Тип стакана.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3909,7 +3923,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -3939,7 +3953,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>direction</td>
@@ -3949,7 +3963,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -3964,12 +3978,12 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>tradeSource</td>
 <td><a href="#tradesourcetype">TradeSourceType</a></td>
-<td>Источник сделки</td>
+<td>Источник сделки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3994,7 +4008,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>trading_status</td>
@@ -4004,7 +4018,7 @@
 <tr>
 <td>time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время изменения торгового статуса в часовом поясе UTC.</td>
+<td>Время изменения торгового статуса по UTC.</td>
 </tr>
 <tr>
 <td>limit_order_available_flag</td>
@@ -4019,7 +4033,7 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4044,17 +4058,17 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте <code>instrument_id</code>.</td>
 </tr>
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+<td>Начало запрашиваемого периода по UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+<td>Окончание запрашиваемого периода по UTC.</td>
 </tr>
 <tr>
 <td>interval</td>
@@ -4064,12 +4078,17 @@
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td>candle_source_type</td>
 <td><a href="#getcandlesrequestcandlesource">GetCandlesRequest.CandleSource</a></td>
-<td>Тип источника свечи</td>
+<td>Тип источника свечи.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td><a href="#int32">int32</a></td>
+<td>Максимальное количество свечей в ответе.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4119,22 +4138,22 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена открытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Максимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Минимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>volume</td>
@@ -4149,7 +4168,7 @@
 <tr>
 <td>is_complete</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак завершённости свечи. <strong>false</strong> значит, свеча за текущие интервал ещё сформирована не полностью.</td>
+<td>Признак завершённости свечи. <strong>false</strong> — свеча за текущие интервал ещё сформирована не полностью.</td>
 </tr>
 <tr>
 <td>candle_source</td>
@@ -4179,12 +4198,17 @@
 <tr>
 <td>figi</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте <code>instrument_id</code>.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Массив идентификаторов инструмента, принимает значения figi или instrument_uid.</td>
+<td>Массив идентификаторов инструмента. Принимает значения <code>figi</code> или <code>instrument_uid</code>.</td>
+</tr>
+<tr>
+<td>last_price_type</td>
+<td><a href="#lastpricetype">LastPriceType</a></td>
+<td>Тип запрашиваемой последней цены.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4234,12 +4258,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi инструмента.</td>
+<td>FIGI инструмента.</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена последней сделки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>time</td>
@@ -4249,7 +4273,12 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента</td>
+<td>UID инструмента.</td>
+</tr>
+<tr>
+<td>last_price_type</td>
+<td><a href="#lastpricetype">LastPriceType</a></td>
+<td>Тип последней цены.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4274,7 +4303,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте <code>instrument_id</code>.</td>
 </tr>
 <tr>
 <td>depth</td>
@@ -4284,7 +4313,7 @@
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4309,7 +4338,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>depth</td>
@@ -4329,22 +4358,22 @@
 <tr>
 <td>last_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена последней сделки за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена последней сделки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>close_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>limit_up</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Верхний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Верхний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>limit_down</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Нижний лимит цены за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Для перевод цен в валюту рекомендуем использовать <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/">информацию со страницы</a></td>
+<td>Нижний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>last_price_ts</td>
@@ -4364,7 +4393,7 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента.</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4389,12 +4418,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте <code>instrument_id</code>.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4419,7 +4448,7 @@
 <tr>
 <td>instrument_id</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4444,7 +4473,7 @@
 <tr>
 <td>trading_statuses</td>
 <td>Массив объектов <a href="#gettradingstatusresponse">GetTradingStatusResponse</a></td>
-<td>Массив информации о торговых статусах</td>
+<td>Массив информации о торговых статусах.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4469,7 +4498,7 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi-идентификатор инструмента.</td>
+<td>FIGI-идентификатор инструмента.</td>
 </tr>
 <tr>
 <td>trading_status</td>
@@ -4494,17 +4523,17 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента.</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>bestprice_order_available_flag</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак доступности завяки по лучшей цене</td>
+<td>Признак доступности завяки по лучшей цене.</td>
 </tr>
 <tr>
 <td>only_best_price</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак доступности только заявки по лучшей цене</td>
+<td>Признак доступности только заявки по лучшей цене.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4529,22 +4558,22 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Deprecated Figi-идентификатор инструмента. Необходимо использовать instrument_id.</td>
+<td>Deprecated FIGI-идентификатор инструмента. Используйте <code>instrument_id</code>.</td>
 </tr>
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+<td>Начало запрашиваемого периода по UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+<td>Окончание запрашиваемого периода по UTC.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4581,7 +4610,7 @@
 <!-- end HasFields -->
 
 <h4 id="getmysubscriptions">GetMySubscriptions</h4>
-<p>Запрос активных подписок. Запрос вернет по одному сообщению на каждый тип активных подписок (SubscribeLastPriceResponse, SubscribeInfoResponse, SubscribeTradesResponse, SubscribeOrderBookResponse, SubscribeCandlesResponse)</p>
+<p>Запрос активных подписок. Возвращает по одному сообщению на каждый тип активных подписок — <code>SubscribeLastPriceResponse</code>, <code>SubscribeInfoResponse</code>, <code>SubscribeTradesResponse</code>, <code>SubscribeOrderBookResponse</code>, <code>SubscribeCandlesResponse</code>.</p>
 <!-- end HasFields -->
 
 <h4 id="getclosepricesrequest">GetClosePricesRequest</h4>
@@ -4623,7 +4652,7 @@
 <tr>
 <td>instrument_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор инструмента, принимает значение figi или instrument_uid.</td>
+<td>Идентификатор инструмента. Принимает значение <code>figi</code> или <code>instrument_uid</code>.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4673,12 +4702,12 @@
 <tr>
 <td>figi</td>
 <td><a href="#string">string</a></td>
-<td>Figi инструмента.</td>
+<td>FIGI инструмента.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента.</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>price</td>
@@ -4688,7 +4717,7 @@
 <tr>
 <td>evening_session_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена последней сделки с вечерней сессии</td>
+<td>Цена последней сделки с вечерней сессии.</td>
 </tr>
 <tr>
 <td>time</td>
@@ -4722,17 +4751,17 @@
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>Uid инструмента.</td>
+<td>UID инструмента.</td>
 </tr>
 <tr>
 <td>from</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Начало запрашиваемого периода в часовом поясе UTC.</td>
+<td>Начало запрашиваемого периода по UTC.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание запрашиваемого периода в часовом поясе UTC.</td>
+<td>Окончание запрашиваемого периода по UTC.</td>
 </tr>
 <tr>
 <td>interval</td>
@@ -4742,7 +4771,7 @@
 <tr>
 <td>type_of_price</td>
 <td><a href="#gettechanalysisrequesttypeofprice">GetTechAnalysisRequest.TypeOfPrice</a></td>
-<td>Тип цены, используемый при расчёте индикатора.</td>
+<td>Тип цены, который используется при расчёте индикатора.</td>
 </tr>
 <tr>
 <td>length</td>
@@ -4815,7 +4844,7 @@
 <tr>
 <td>deviation_multiplier</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Кол-во стандартных отклонений, на которые отступает верхняя и нижняя граница</td>
+<td>Количество стандартных отклонений, на которые отступают верхняя и нижняя границы.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4839,7 +4868,7 @@
 <tr>
 <td>technical_indicators</td>
 <td>Массив объектов <a href="#gettechanalysisresponsetechanalysisitem">GetTechAnalysisResponse.TechAnalysisItem</a></td>
-<td>Массив значений результатов тех. анализа</td>
+<td>Массив значений результатов технического анализа.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4958,57 +4987,57 @@
 <tr>
 <td>SUBSCRIPTION_INTERVAL_FIFTEEN_MINUTES</td>
 <td>3</td>
-<td>Пятнадцатиминутные свечи</td>
+<td>Пятнадцатиминутные свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_ONE_HOUR</td>
 <td>4</td>
-<td>Часовые свечи</td>
+<td>Часовые свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_ONE_DAY</td>
 <td>5</td>
-<td>Дневные свечи</td>
+<td>Дневные свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_2_MIN</td>
 <td>6</td>
-<td>Двухминутные свечи</td>
+<td>Двухминутные свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_3_MIN</td>
 <td>7</td>
-<td>Трехминутные свечи</td>
+<td>Трёхминутные свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_10_MIN</td>
 <td>8</td>
-<td>Десятиминутные свечи</td>
+<td>Десятиминутные свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_30_MIN</td>
 <td>9</td>
-<td>Тридцатиминутные свечи</td>
+<td>Тридцатиминутные свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_2_HOUR</td>
 <td>10</td>
-<td>Двухчасовые свечи</td>
+<td>Двухчасовые свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_4_HOUR</td>
 <td>11</td>
-<td>Четырехчасовые свечи</td>
+<td>Четырёхчасовые свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_WEEK</td>
 <td>12</td>
-<td>Недельные свечи</td>
+<td>Недельные свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_MONTH</td>
 <td>13</td>
-<td>Месячные свечи</td>
+<td>Месячные свечи.</td>
 </tr>
 </tbody>
 </table>
@@ -5041,22 +5070,22 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID</td>
 <td>3</td>
-<td>Некорректный статус подписки, список возможных значений: <a href="https://russianinvestments.github.io/investAPI/marketdata#subscriptionaction">SubscriptionAction</a>.</td>
+<td>Некорректный статус подписки. <a href="https://russianinvestments.github.io/investAPI/marketdata#subscriptionaction">Список возможных значений</a>.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_DEPTH_IS_INVALID</td>
 <td>4</td>
-<td>Некорректная глубина стакана, доступные значения: 1, 10, 20, 30, 40, 50.</td>
+<td>Некорректная глубина стакана. Доступные значения — 1, 10, 20, 30, 40, 50.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID</td>
 <td>5</td>
-<td>Некорректный интервал свечей, список возможных значений: <a href="https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval">SubscriptionInterval</a>.</td>
+<td>Некорректный интервал свечей. <a href="https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval">Список возможных значений</a>.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED</td>
 <td>6</td>
-<td>Превышен лимит на общее количество подписок в рамках стрима, подробнее: <a href="https://russianinvestments.github.io/investAPI/limits/">Лимитная политика</a>.</td>
+<td>Превышен лимит на общее количество подписок в рамках стрима. <a href="https://russianinvestments.github.io/investAPI/limits/">Лимитная политика</a>.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>
@@ -5066,17 +5095,17 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS</td>
 <td>8</td>
-<td>Превышен лимит на количество запросов на подписки в течение установленного отрезка времени</td>
+<td>Превышен лимит на количество запросов на подписки в течение установленного отрезка времени.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND</td>
 <td>9</td>
-<td>Активная подписка не найдена. Ошибка может возникнуть только при отписке от не существующей отписки</td>
+<td>Активная подписка не найдена. Ошибка может возникнуть только при отписке от несуществующей подписки.</td>
 </tr>
 </tbody>
 </table>
 <h4 id="tradesourcetype">TradeSourceType</h4>
-<p>Источники сделок</p>
+<p>Источники сделок.</p>
 <table>
 <thead>
 <tr>
@@ -5094,17 +5123,17 @@
 <tr>
 <td>TRADE_SOURCE_EXCHANGE</td>
 <td>1</td>
-<td>биржевые сделки</td>
+<td>Биржевые сделки.</td>
 </tr>
 <tr>
 <td>TRADE_SOURCE_DEALER</td>
 <td>2</td>
-<td>сделки дилера</td>
+<td>Сделки дилера.</td>
 </tr>
 <tr>
 <td>TRADE_SOURCE_ALL</td>
 <td>3</td>
-<td>все сделки</td>
+<td>Все сделки.</td>
 </tr>
 </tbody>
 </table>
@@ -5155,67 +5184,67 @@
 <tr>
 <td>CANDLE_INTERVAL_1_MIN</td>
 <td>1</td>
-<td>от 1 минуты до 1 дня.</td>
+<td>От 1 минуты до 1 дня.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_5_MIN</td>
 <td>2</td>
-<td>от 5 минут до 1 дня.</td>
+<td>От 5 минут до 1 дня.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_15_MIN</td>
 <td>3</td>
-<td>от 15 минут до 1 дня.</td>
+<td>От 15 минут до 1 дня.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_HOUR</td>
 <td>4</td>
-<td>от 1 часа до 1 недели.</td>
+<td>От 1 часа до 1 недели.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_DAY</td>
 <td>5</td>
-<td>от 1 дня до 1 года.</td>
+<td>От 1 дня до 1 года.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_2_MIN</td>
 <td>6</td>
-<td>от 2 минут до 1 дня.</td>
+<td>От 2 минут до 1 дня.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_3_MIN</td>
 <td>7</td>
-<td>от 3 минут до 1 дня.</td>
+<td>От 3 минут до 1 дня.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_10_MIN</td>
 <td>8</td>
-<td>от 10 минут до 1 дня.</td>
+<td>От 10 минут до 1 дня.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_30_MIN</td>
 <td>9</td>
-<td>от 30 минут до 2 дней.</td>
+<td>От 30 минут до 2 дней.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_2_HOUR</td>
 <td>10</td>
-<td>от 2 часов до 1 месяца.</td>
+<td>От 2 часов до 1 месяца.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_4_HOUR</td>
 <td>11</td>
-<td>от 4 часов до 1 месяца.</td>
+<td>От 4 часов до 1 месяца.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_WEEK</td>
 <td>12</td>
-<td>от 1 недели до 2 лет.</td>
+<td>От 1 недели до 2 лет.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_MONTH</td>
 <td>13</td>
-<td>от 1 месяца до 10 лет.</td>
+<td>От 1 месяца до 10 лет.</td>
 </tr>
 </tbody>
 </table>
@@ -5259,17 +5288,45 @@
 <tr>
 <td>ORDERBOOK_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>не определен</td>
+<td>Не определён.</td>
 </tr>
 <tr>
 <td>ORDERBOOK_TYPE_EXCHANGE</td>
 <td>1</td>
-<td>Биржевой стакан</td>
+<td>Биржевой стакан.</td>
 </tr>
 <tr>
 <td>ORDERBOOK_TYPE_DEALER</td>
 <td>2</td>
-<td>Стакан дилера</td>
+<td>Стакан дилера.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="lastpricetype">LastPriceType</h4>
+<p>Тип последней цены</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LAST_PRICE_UNSPECIFIED</td>
+<td>0</td>
+<td>Не определен.</td>
+</tr>
+<tr>
+<td>LAST_PRICE_EXCHANGE</td>
+<td>1</td>
+<td>Цена биржи.</td>
+</tr>
+<tr>
+<td>LAST_PRICE_DEALER</td>
+<td>2</td>
+<td>Цена дилера</td>
 </tr>
 </tbody>
 </table>
@@ -5292,6 +5349,11 @@
 <td>CANDLE_SOURCE_EXCHANGE</td>
 <td>1</td>
 <td>Биржевые свечи.</td>
+</tr>
+<tr>
+<td>CANDLE_SOURCE_INCLUDE_WEEKEND</td>
+<td>3</td>
+<td>Все свечи с учетом торговли по выходным.</td>
 </tr>
 </tbody>
 </table>
@@ -5369,12 +5431,12 @@
 <tr>
 <td>INDICATOR_INTERVAL_WEEK</td>
 <td>12</td>
-<td>Неделя</td>
+<td>Неделя.</td>
 </tr>
 <tr>
 <td>INDICATOR_INTERVAL_MONTH</td>
 <td>13</td>
-<td>Месяц</td>
+<td>Месяц.</td>
 </tr>
 </tbody>
 </table>
@@ -5433,32 +5495,32 @@
 <tr>
 <td>INDICATOR_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Не определен.</td>
+<td>Не определён.</td>
 </tr>
 <tr>
 <td>INDICATOR_TYPE_BB</td>
 <td>1</td>
-<td>Bollinger Bands (Линия Боллинжера).</td>
+<td>Bollinger Bands — линия Боллинжера.</td>
 </tr>
 <tr>
 <td>INDICATOR_TYPE_EMA</td>
 <td>2</td>
-<td>Exponential Moving Average (EMA, Экспоненциальная скользящая средняя).</td>
+<td>Exponential Moving Average — EMA, экспоненциальная скользящая средняя.</td>
 </tr>
 <tr>
 <td>INDICATOR_TYPE_RSI</td>
 <td>3</td>
-<td>Relative Strength Index (Индекс относительной силы).</td>
+<td>Relative Strength Index — индекс относительной силы.</td>
 </tr>
 <tr>
 <td>INDICATOR_TYPE_MACD</td>
 <td>4</td>
-<td>Moving Average Convergence/Divergence (Схождение/Расхождение скользящих средних).</td>
+<td>Moving Average Convergence/Divergence — схождение/расхождение скользящих средних.</td>
 </tr>
 <tr>
 <td>INDICATOR_TYPE_SMA</td>
 <td>5</td>
-<td>Simple Moving Average (Простое скользящее среднее).</td>
+<td>Simple Moving Average — простое скользящее среднее.</td>
 </tr>
 </tbody>
 </table>
