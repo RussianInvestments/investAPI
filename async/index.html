@@ -14,7 +14,7 @@
     
     
       
-        <title>Описание - T-Invest API</title>
+        <title>Асинхронный метод выставления заявок - T-Invest API</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#-" class="md-skip">
+        <a href="#_1" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Описание
+              Асинхронный метод выставления заявок
             
           </span>
         </div>
@@ -820,14 +820,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
       
       <label class="md-nav__link" for="__nav_6_1">
         Счета
@@ -843,72 +841,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Описание
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../head-users/" class="md-nav__link">
         Описание
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Получить список счетов
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Получить текущие лимиты запросов
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Получить маржинальные показатели по счёту
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    Получить информацию о статусе пользователя
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1021,12 +958,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" checked>
       
       <label class="md-nav__link" for="__nav_6_3">
         Заявки
@@ -1090,11 +1029,85 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../async/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Асинхронный метод выставления заявок
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Асинхронный метод выставления заявок
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#postorderasync" class="md-nav__link">
+    PostOrderAsync запрос
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postorderasync_1" class="md-nav__link">
+    PostOrderAsync ответ
+  </a>
+  
+    <nav class="md-nav" aria-label="PostOrderAsync ответ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    В случае ошибки
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Успешное выставление заявки
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Получить статус торгового поручения.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1518,29 +1531,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Получить список счетов
+  <a href="#postorderasync" class="md-nav__link">
+    PostOrderAsync запрос
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#postorderasync_1" class="md-nav__link">
+    PostOrderAsync ответ
+  </a>
+  
+    <nav class="md-nav" aria-label="PostOrderAsync ответ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    Получить текущие лимиты запросов
+    В случае ошибки
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    Получить маржинальные показатели по счёту
+    Успешное выставление заявки
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    Получить информацию о статусе пользователя
+    Получить статус торгового поручения.
   </a>
   
 </li>
@@ -1557,42 +1583,47 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/head-users.md" title="Редактировать страницу" class="md-content__button md-icon">
+                  <a href="https://github.com/RussianInvestments/investAPI/edit/master/docs/async.md" title="Редактировать страницу" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="-">Получить информацию о пользователе и его счетах в Т-Инвестициях</h1>
-<h2 id="_1">Получить список счетов</h2>
-<p>В <a href="https://www.tbank.ru/invest/">Т-Инвестициях</a> каждый пользователь может открывать несколько счетов, в том числе разных типов — брокерский, ИИС, инвесткопилка. </p>
-<p>Чтобы получить список счетов, их статусы и типы, используйте метод <a href="/investAPI/users#getaccounts">getAccounts</a>.
-Метод возвращает только те счета, к которым у вас есть доступ — заблокированные счета не выводятся. Если вы вызываете метод с токеном для одного счёта, возвращаются данные только по счёту, к которому выдан доступ токеном.</p>
-<h2 id="_2">Получить текущие лимиты запросов</h2>
-<p>В T-Invest API есть система динамического назначения лимитов запросов для пользователя. </p>
-<p><a href="/investAPI/limits/">Подробнее про лимиты в T-Invest API</a></p>
-<p>Чтобы получить информацию по лимитам для каждого метода сервиса T-Invest API и лимиты по stream-соединениям, используйте метод <a href="https://russianinvestments.github.io/investAPI/users/#getusertariff">GetUserTariff</a>.</p>
-<h2 id="_3">Получить маржинальные показатели по счёту</h2>
-<p>В T-Invest API пользователи могут использовать маржинальную торговлю.</p>
-<p>Маржинальная торговля — это режим, в котором можно совершать сделки не только со своими деньгами и 
-ценными бумагами, но и с активами, которые вы как бы берёте в долг у брокера. </p>
-<p><a href="https://help.tbank.ru/margin-trade/">Подробнее о маржинальной торговле</a></p>
-<p>Чтобы получить показатели маржинальной торговли, используйте метод <a href="/investAPI/users#getmarginattributes">getMarginAttributes</a>. Он возвращает следующие параметры: </p>
-<ul>
-<li><code>liquid_portfolio</code> — стоимость плановых позиций активов, которые признаны ликвидными — то есть для которых определены ставки риска.</li>
-<li><code>starting_margin</code> — сумма модулей стоимостей плановых позиций активов, которые признаны ликвидными, умноженные на начальные ставки риска.</li>
-<li><code>minimal_margin</code> — сумма модулей стоимостей плановых позиций активов, которые признаны ликвидными, умноженные на минимальные ставки риска.</li>
-<li><code>funds_sufficiency_level</code> — уровень достаточности средств. Формула расчёта: <code>(Стоимость портфеля − минимальная маржа) ÷ (Начальная маржа – минимальная маржа)</code>. Округляется до двух знаков после запятой.</li>
-<li><code>amount_of_missing_funds</code> — объём недостающих средств. Формула расчёта: <code>starting_margin − liquid_portfolio</code>. </li>
-<li><code>corrected_Margin</code> — начальная маржа, в которой плановые позиции рассчитываются с учётом активных заявок на покупку позиций лонг или продажу позиций шорт.</li>
-</ul>
-<h2 id="_4">Получить информацию о статусе пользователя</h2>
-<p>Чтобы посмотреть различные атрибуты пользователя, можно использовать метод <a href="/investAPI/users#getinfo">getInfo</a>.
-С помощью него можно:</p>
-<ul>
-<li>посмотреть, имеет ли пользователь статус квалифицированного инвестора;</li>
-<li>посмотреть, является ли премиальным клиентом;</li>
-<li>получить список типов инструментов, к которым пользователь имеет доступ по итогам тестирования.</li>
-</ul>
+                <h1 id="_1">Асинхронный метод выставления заявок</h1>
+<p>С целью уменьшить latency доставки торговых поручений до биржи в T-Invest API реализован асинхронный метод выставления поручений.
+При подачи поручений асинхронным методом брокер не дожидается подтверждения от бирже об успешном статусе выставления заявки и 
+присвоении ей биржевого номера. При работе с асинхронным методом есть ряд особенностей.</p>
+<h2 id="postorderasync">PostOrderAsync запрос</h2>
+<p>Входные параметры асинхронного метода идентичны <a href="https://russianinvestments.github.io/investAPI/orders/#postorder">PostOrder</a>.
+При этом есть особенности.</p>
+<p><a href="https://russianinvestments.github.io/investAPI/head-orders/#_5">Идентификатор ключа идемпотентности</a> <code>order_id</code> является обязательным
+и должен быть передан в UUID формате.</p>
+<h2 id="postorderasync_1">PostOrderAsync ответ</h2>
+<h3 id="_2">В случае ошибки</h3>
+<p>При выставлении асинхронного поручения на стороне брокера проводятся предварительные проверки, идентичные синхронному взаимодействию.
+В случае ошибок валидации ответ будет идентичен <a href="https://russianinvestments.github.io/investAPI/orders/#postorder">PostOrder</a>.</p>
+<h3 id="_3">Успешное выставление заявки</h3>
+<p>Если проверки пройдены и заявка передана на биржу, то вернется <a href="https://russianinvestments.github.io/investAPI/orders/#postorderasyncresponse">ответ</a>, где
+<code>order_request_id</code> - ключ идемпотентности, переданный в запросе в виде <code>order_id</code>.</p>
+<blockquote>
+<p><strong>Важно</strong><br>
+</p>
+</blockquote>
+<blockquote>
+<p><strong>Важно</strong><br>
+В ответе метода нет биржевого идентификатора.  <code>trade_intent_id</code> — внутренний идентификатор брокера. </p>
+</blockquote>
+
+<blockquote>
+<p><strong>Важно</strong><br>
+Успешный ответ не гарантирует, что заявка будет выставлена на бирже. Биржа на своей стороне может отклонить заявку.</p>
+</blockquote>
+
+<h2 id="_4">Получить статус торгового поручения.</h2>
+<p>Изменение статуса торгового поручения можно подписавшись на <a href="https://russianinvestments.github.io/investAPI/orders_state_stream/">Стрим заявок</a>.
+<code>order_request_id</code> в сообщениях стрима соответствует <code>order_request_id</code> в ответе PostOrderAsync, <code>order_id</code> — биржевому номеру заявки.
+Получив из стрима биржевой номер, дальнейшие статусы можно отслеживать методами <a href="https://russianinvestments.github.io/investAPI/orders/#getorderstate">GetOrderState</a>
+и <a href="https://russianinvestments.github.io/investAPI/orders/#getorders">GetOrder</a>, а отменить методом <a href="https://russianinvestments.github.io/investAPI/orders/#cancelorder">CancelOrder</a>.
+В ближайших релизах GetOrderState и CancelOrder будут поддерживать работу и по ключу идемпотентности <code>order_request_id</code>.</p>
                 
               
               
@@ -1600,7 +1631,7 @@
 <div class="container">
     <script src="https://utteranc.es/client.js"
             repo="https://github.com/RussianInvestments/investAPI"
-            issue-term="Описание comments"
+            issue-term="Асинхронный метод выставления заявок comments"
             label="documentation"
             theme="github-light"
             crossorigin="anonymous"
@@ -1620,7 +1651,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../faq_golang/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Golang" rel="prev">
+        <a href="../orders_state_stream/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Стрим заявок" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1629,20 +1660,20 @@
               <span class="md-footer__direction">
                 Назад
               </span>
-              Golang
+              Стрим заявок
             </div>
           </div>
         </a>
       
       
         
-        <a href="../users/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Методы" rel="next">
+        <a href="../faq_orders/" class="md-footer__link md-footer__link--next" aria-label="Вперед: FAQ" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Вперед
               </span>
-              Методы
+              FAQ
             </div>
           </div>
           <div class="md-footer__button md-icon">
