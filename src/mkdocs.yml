@@ -79,6 +79,7 @@ nav:
     - Методы: orders.md
     - Таблица параметров, возвращающих валюту или пункты: table_order_currency.md
     - Стрим заявок: orders_state_stream.md
+    - Асинхронный метод выставления заявок: async.md
     - FAQ: faq_orders.md
   - Операции:
     - Описание: head-operations.md

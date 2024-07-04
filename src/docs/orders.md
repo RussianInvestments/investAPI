@@ -44,6 +44,14 @@ Stream поручений пользователя. Перед работой п
 - Тело ответа — [PostOrderResponse](#postorderresponse)
 
 
+#### PostOrderAsync
+
+
+- Тело запроса — [PostOrderAsyncRequest](#postorderasyncrequest)
+
+- Тело ответа — [PostOrderAsyncResponse](#postorderasyncresponse)
+
+
 #### CancelOrder
 Метод отмены биржевой заявки.
 
@@ -117,6 +125,7 @@ Stream поручений пользователя. Перед работой п
 | ----- | ---- | ----------- |
 | order_trades |  [OrderTrades](#ordertrades) | Информация об исполнении торгового поручения. |
 | ping |  [Ping](#ping) | Проверка активности стрима. |
+| subscription |  [SubscriptionResponse](#subscriptionresponse) | Ответ на запрос на подписку. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -197,6 +206,38 @@ Stream поручений пользователя. Перед работой п
 | instrument_uid |  [string](#string) | UID идентификатор инструмента. |
 | order_request_id |  [string](#string) | Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов. |
 | response_metadata |  [ResponseMetadata](#responsemetadata) | Метадата |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### PostOrderAsyncRequest
+Запрос выставления асинхронного торгового поручения.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
+| quantity |  [int64](#int64) | Количество лотов. |
+| price |  [Quotation](#quotation) | Цена за 1 инструмент. Для получения стоимости лота требуется умножить на лотность инструмента. Игнорируется для рыночных поручений. |
+| direction |  [OrderDirection](#orderdirection) | Направление операции. |
+| account_id |  [string](#string) | Номер счёта. |
+| order_type |  [OrderType](#ordertype) | Тип заявки. |
+| order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов. |
+| time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения, применяется только к лимитной заявке. |
+| price_type |  [PriceType](#pricetype) | Тип цены. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### PostOrderAsyncResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| order_request_id |  [string](#string) | Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов. |
+| execution_report_status |  [OrderExecutionReportStatus](#orderexecutionreportstatus) | Текущий статус заявки. |
+| trade_intent_id |  [string](#string) | Идентификатор торгового поручения. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -441,20 +482,7 @@ Stream поручений пользователя. Перед работой п
  <!-- end HasFields -->
 
  
-#### OrderStateStreamResponse
-Информация по заявкам
-
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| order_state |  [OrderStateStreamResponse.OrderState](#orderstatestreamresponseorderstate) | Информация об исполнении торгового поручения. |
-| ping |  [Ping](#ping) | Проверка активности стрима. |
-| subscription |  [OrderStateStreamResponse.SubscriptionResponse](#orderstatestreamresponsesubscriptionresponse) | Ответ на запрос на подписку. |
- <!-- end Fields -->
- <!-- end HasFields -->
-
- 
-#### OrderStateStreamResponse.SubscriptionResponse
+#### SubscriptionResponse
 
 
 
@@ -465,6 +493,19 @@ Stream поручений пользователя. Перед работой п
 | stream_id |  [string](#string) | Идентификатор открытого соединения |
 | accounts | Массив объектов [string](#string) | Идентификаторы счетов. |
 | error |  [ErrorDetail](#errordetail) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### OrderStateStreamResponse
+Информация по заявкам
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| order_state |  [OrderStateStreamResponse.OrderState](#orderstatestreamresponseorderstate) | Информация об исполнении торгового поручения. |
+| ping |  [Ping](#ping) | Проверка активности стрима. |
+| subscription |  [SubscriptionResponse](#subscriptionresponse) | Ответ на запрос на подписку. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -624,7 +665,7 @@ Stream поручений пользователя. Перед работой п
 | SUBSCRIPTION_STATUS_OK | 1 | Подписка успешно установлена. |
 | SUBSCRIPTION_STATUS_ERROR | 13 | Ошибка подписки |
 
-#### ErrorDetail
+### ErrorDetail
 Описание ошибки
 
 | Field | Type | Description |
@@ -634,7 +675,7 @@ Stream поручений пользователя. Перед работой п
 
 ### Про тип цены
 
-В T-Invest API ответ в методах для фьючерсов и облигаций может возвращаться как в валюте расчетов, так и в пунктах цены.
+В T-INVEST API ответ в методах для фьючерсов и облигаций может возвращаться как в валюте расчетов, так и в пунктах цены.
 Стоимость пункта может меняться в зависимости от курсовой разницы.
 Про конвертацию пунктов в валюту можно почитать [тут](https://russianinvestments.github.io/investAPI/points/)
 

@@ -2041,6 +2041,7 @@ Deprecated Получить списка опционов.
 | REAL_EXCHANGE_MOEX | 1 | Московская биржа. |
 | REAL_EXCHANGE_RTS | 2 | Санкт-Петербургская биржа. |
 | REAL_EXCHANGE_OTC | 3 | Внебиржевой инструмент. |
+| REAL_EXCHANGE_DEALER | 4 | Инструмент, торгуемый на площадке брокера. |
 
 
 
