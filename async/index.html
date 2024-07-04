@@ -797,12 +797,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Сервисы
@@ -956,12 +958,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" checked>
       
       <label class="md-nav__link" for="__nav_6_3">
         Заявки
@@ -1018,6 +1022,92 @@
       <a href="../orders_state_stream/" class="md-nav__link">
         Стрим заявок
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Асинхронный метод выставления заявок
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Асинхронный метод выставления заявок
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#postorderasync" class="md-nav__link">
+    PostOrderAsync запрос
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postorderasync_1" class="md-nav__link">
+    PostOrderAsync ответ
+  </a>
+  
+    <nav class="md-nav" aria-label="PostOrderAsync ответ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    В случае ошибки
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Успешное выставление заявки
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Получить статус торгового поручения.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1499,25 +1589,23 @@
                 
                 
                 <h1 id="_1">Асинхронный метод выставления заявок</h1>
-<p>С целью уменьшить latency доставки торговых поручений до биржи в T-Invest API реализован асинхронный метод выставления поручений.
-При подачи поручений асинхронным методом брокер не дожидается подтверждения от бирже об успешном статусе выставления заявки и 
+<p>С целью уменьшить latency доставки торговых поручений до биржи в T-Invest API реализован асинхронный метод выставления заявок.
+При подачи поручений асинхронным методом брокер не дожидается подтверждения от биржи об успешном статусе выставления заявки и 
 присвоении ей биржевого номера. При работе с асинхронным методом есть ряд особенностей.</p>
+<p>Метод позволяет выставлять поручения параллельно, не создавая очереди заявок, что возможно при работе с PostOrder.
+Это позволяет ускорить работа алгоритма распараллелив процессы.</p>
 <h2 id="postorderasync">PostOrderAsync запрос</h2>
-<p>Входные параметры асинхронного метода идентичны <a href="https://russianinvestments.github.io/investAPI/orders/#postorder">PostOrder</a>.
-При этом есть особенности.</p>
-<p><a href="https://russianinvestments.github.io/investAPI/head-orders/#_5">Идентификатор ключа идемпотентности</a> <code>order_id</code> является обязательным
-и должен быть передан в UUID формате.</p>
+<p>Входные параметры асинхронного метода идентичны <a href="/investAPI/orders/#postorder">PostOrder</a>.
+При этом есть особенности:</p>
+<p><a href="/investAPI/head-orders/#_5">Идентификатор ключа идемпотентности</a> <code>order_id</code> является обязательным
+и должен быть передан в UUID формате любой версии.</p>
 <h2 id="postorderasync_1">PostOrderAsync ответ</h2>
 <h3 id="_2">В случае ошибки</h3>
 <p>При выставлении асинхронного поручения на стороне брокера проводятся предварительные проверки, идентичные синхронному взаимодействию.
-В случае ошибок валидации ответ будет идентичен <a href="https://russianinvestments.github.io/investAPI/orders/#postorder">PostOrder</a>.</p>
+В случае ошибок валидации ответ будет идентичен <a href="/investAPI/orders/#postorder">PostOrder</a>.</p>
 <h3 id="_3">Успешное выставление заявки</h3>
-<p>Если проверки пройдены и заявка передана на биржу, то вернется <a href="https://russianinvestments.github.io/investAPI/orders/#postorderasyncresponse">ответ</a>, где
+<p>Если проверки пройдены и заявка передана на биржу, то вернется <a href="/investAPI/orders/#postorderasyncresponse">ответ</a>, где
 <code>order_request_id</code> - ключ идемпотентности, переданный в запросе в виде <code>order_id</code>.</p>
-<blockquote>
-<p><strong>Важно</strong><br>
-</p>
-</blockquote>
 <blockquote>
 <p><strong>Важно</strong><br>
 В ответе метода нет биржевого идентификатора.  <code>trade_intent_id</code> — внутренний идентификатор брокера. </p>
@@ -1529,11 +1617,11 @@
 </blockquote>
 
 <h2 id="_4">Получить статус торгового поручения.</h2>
-<p>Изменение статуса торгового поручения можно подписавшись на <a href="https://russianinvestments.github.io/investAPI/orders_state_stream/">Стрим заявок</a>.
+<p>Изменение статуса торгового поручения можно подписавшись на <a href="/investAPI/orders_state_stream/">Стрим заявок</a>.
 <code>order_request_id</code> в сообщениях стрима соответствует <code>order_request_id</code> в ответе PostOrderAsync, <code>order_id</code> — биржевому номеру заявки.
-Получив из стрима биржевой номер, дальнейшие статусы можно отслеживать методами <a href="https://russianinvestments.github.io/investAPI/orders/#getorderstate">GetOrderState</a>
-и <a href="https://russianinvestments.github.io/investAPI/orders/#getorders">GetOrder</a>, а отменить методом <a href="https://russianinvestments.github.io/investAPI/orders/#cancelorder">CancelOrder</a>.
-В ближайших релизах GetOrderState и CancelOrder будут поддерживать работу и по ключу идемпотентности <code>order_request_id</code>.</p>
+Получив из стрима биржевой номер, дальнейшие статусы можно отслеживать методами <a href="/investAPI/orders/#getorderstate">GetOrderState</a>
+и <a href="/investAPI/orders/#getorders">GetOrder</a>, а отменить методом <a href="/investAPI/orders/#cancelorder">CancelOrder</a>.</p>
+<p>В релизе 1.24 GetOrderState и CancelOrder будут поддерживать работу и по ключу идемпотентности <code>order_request_id</code>.</p>
                 
               
               
@@ -1557,6 +1645,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../orders_state_stream/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Стрим заявок" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              Стрим заявок
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../faq_orders/" class="md-footer__link md-footer__link--next" aria-label="Вперед: FAQ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              FAQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
