@@ -81,6 +81,7 @@ message Operation {
   string asset_uid = 16;	//Идентификатор актива
   string position_uid	= 17; //Уникальный идентификатор позиции.
   string instrument_uid	= 18; //Уникальный идентификатор инструмента.
+  repeated ChildOperationItem child_operations = 19; //Массив дочерних операций.
 }
 
 //Сделка по операции.
@@ -490,6 +491,7 @@ message OperationItem {
   string cancel_reason = 57; //Причина отмены операции.
   OperationItemTrades trades_info = 61; //Массив сделок.
   string asset_uid = 64;	//Идентификатор актива.
+  repeated ChildOperationItem child_operations = 65; //Массив дочерних операций.
 }
 
 //Массив с информацией о сделках.
@@ -556,4 +558,9 @@ message PositionData {
 message PositionsMoney {
   MoneyValue available_value = 1; //Доступное количество валютный позиций.
   MoneyValue blocked_value = 2; //Заблокированное количество валютных позиций.
+}
+
+message ChildOperationItem {
+  string instrument_uid = 1; //Уникальный идентификатор инструмента.
+  MoneyValue payment = 2; //Сумма операции.
 }

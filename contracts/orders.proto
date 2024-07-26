@@ -144,6 +144,7 @@ message PostOrderAsyncResponse {
 message CancelOrderRequest {
   string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Номер счёта.
   string order_id = 2 [(google.api.field_behavior) = REQUIRED]; //Идентификатор заявки.
+  optional OrderIdType order_id_type = 3; //Тип идентификатора заявки.
 }
 
 //Результат отмены торгового поручения.
@@ -157,6 +158,7 @@ message GetOrderStateRequest {
   string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Номер счёта.
   string order_id = 2 [(google.api.field_behavior) = REQUIRED]; //Идентификатор заявки.
   PriceType price_type = 3; //Тип цены.
+  optional OrderIdType order_id_type = 4; //Тип идентификатора заявки.
 }
 
 //Запрос получения списка активных торговых поручений.
@@ -383,4 +385,11 @@ enum TimeInForceType {
   TIME_IN_FORCE_DAY = 1; //Заявка действует до конца торгового дня. Значение по умолчанию
   TIME_IN_FORCE_FILL_AND_KILL = 2; //Если в момент выставления возможно исполнение заявки(в т.ч. частичное), заявка будет исполнена или отменена сразу после выставления
   TIME_IN_FORCE_FILL_OR_KILL = 3; //Если в момент выставления возможно полное исполнение заявки, заявка будет исполнена или отменена сразу после выставления, недоступно для срочного рынка и торговли по выходным
+}
+
+//Тип идентификатора заявки
+enum OrderIdType {
+  ORDER_ID_TYPE_UNSPECIFIED = 0; //Тип идентификатора не указан.
+  ORDER_ID_TYPE_EXCHANGE = 1; //Биржевой идентификатор
+  ORDER_ID_TYPE_REQUEST = 2; //Ключ идемпотентности, переданный клиентом
 }

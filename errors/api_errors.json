@@ -559,6 +559,36 @@
     "type": "INVALID_ARGUMENT",
     "description": "Проверьте параметры запроса. Некорректный параметр `candle_source_type`."
   },
+  "30221": {
+    "message": "`order_request_id` not in UUID format",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `order_request_id` имеет некорректное значение. Укажите параметр `order_request_id` в UUID формате. Максимальная длина — 36 символов."
+  },
+  "30222": {
+    "message": "`signal_id` not in UUID format",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `signal_id` имеет некорректное значение. Укажите параметр `signal_id` в UUID формате. Максимальная длина — 36 символов."
+  },
+  "30223": {
+    "message": "`strategy_id` not in UUID format",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `strategy_id` имеет некорректное значение. Укажите параметр `strategy_id` в UUID формате. Максимальная длина — 36 символов."
+  },
+  "30224": {
+    "message": "`strategy_type` is not valid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `strategy_type` имеет некорректное значение."
+  },
+  "30225": {
+    "message": "`active` is not valid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `active` имеет некорректное значение."
+  },
+  "30226": {
+    "message": "Specify a lower limit or page value because there are fewer items",
+    "type": "INVALID_ARGUMENT",
+    "description": "Количество элементов меньше запрашиваемых параметров."
+  },
   "35001": {
     "message": "Sandbox accounts limit reached",
     "type": "INVALID_ARGUMENT",
@@ -624,6 +654,16 @@
     "message": "Brand not found",
     "type": "NOT_FOUND",
     "description": "Бренд не найден.</br>Укажите корректный идентификатор бренда."
+  },
+  "50011": {
+    "message": "Strategy not found",
+    "type": "NOT_FOUND",
+    "description": "Стратегия не найдена. Укажите корректный идентификатор стратегии."
+  },
+  "50012": {
+    "message": "Signal not found",
+    "type": "NOT_FOUND",
+    "description": "Сигнал не найден. Укажите корректный идентификатор сигнала."
   },
   "70001": {
     "message": "Internal error",

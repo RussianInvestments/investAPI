@@ -1386,6 +1386,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#orderidtype" class="md-nav__link">
+    OrderIdType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#orderstatestreamresponsemarkertype" class="md-nav__link">
     OrderStateStreamResponse.MarkerType
   </a>
@@ -2314,6 +2321,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#orderidtype" class="md-nav__link">
+    OrderIdType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#orderstatestreamresponsemarkertype" class="md-nav__link">
     OrderStateStreamResponse.MarkerType
   </a>
@@ -3011,6 +3025,11 @@
 <td>Идентификатор заявки.</td>
 </tr>
 <tr>
+<td>order_id_type</td>
+<td><a href="#orderidtype">OrderIdType</a></td>
+<td>Тип идентификатора заявки.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3074,6 +3093,11 @@
 <td>price_type</td>
 <td><a href="#pricetype">PriceType</a></td>
 <td>Тип цены.</td>
+</tr>
+<tr>
+<td>order_id_type</td>
+<td><a href="#orderidtype">OrderIdType</a></td>
+<td>Тип идентификатора заявки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4045,6 +4069,34 @@
 <td>TIME_IN_FORCE_FILL_OR_KILL</td>
 <td>3</td>
 <td>Если в момент выставления возможно полное исполнение заявки, заявка будет исполнена или отменена сразу после выставления, недоступно для срочного рынка и торговли по выходным</td>
+</tr>
+</tbody>
+</table>
+<h4 id="orderidtype">OrderIdType</h4>
+<p>Тип идентификатора заявки</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ORDER_ID_TYPE_UNSPECIFIED</td>
+<td>0</td>
+<td>Тип идентификатора не указан.</td>
+</tr>
+<tr>
+<td>ORDER_ID_TYPE_EXCHANGE</td>
+<td>1</td>
+<td>Биржевой идентификатор</td>
+</tr>
+<tr>
+<td>ORDER_ID_TYPE_REQUEST</td>
+<td>2</td>
+<td>Ключ идемпотентности, переданный клиентом</td>
 </tr>
 </tbody>
 </table>
