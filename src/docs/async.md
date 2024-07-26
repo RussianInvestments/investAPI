@@ -49,4 +49,4 @@
 Получив из стрима биржевой номер, дальнейшие статусы можно отслеживать методами [GetOrderState](/investAPI/orders/#getorderstate)
 и [GetOrder](/investAPI/orders/#getorders), а отменить методом [CancelOrder](/investAPI/orders/#cancelorder).
 
-В релизе 1.24 GetOrderState и CancelOrder будут поддерживать работу и по ключу идемпотентности `order_request_id`.
+Дополнительно в методы GetOrderState и CancelOrder добавлена поддержка работы по ключу идемпотентности `order_request_id`.
