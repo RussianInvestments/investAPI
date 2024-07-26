@@ -115,6 +115,11 @@
 30218|INVALID_ARGUMENT|Quantity of instruments can`t be more than 3000|Количество инструментов в списке не может быть больше 3000.|
 30219|INVALID_ARGUMENT|input `candle_source_type` is invalid|Проверьте параметры запроса. Некорректный параметр `candle_source_type`.|
 30221|INVALID_ARGUMENT|`order_request_id` not in UUID format|Входной параметр `order_request_id` имеет некорректное значение. Укажите параметр `order_request_id` в UUID формате. Максимальная длина — 36 символов.|
+30222|INVALID_ARGUMENT|`signal_id` not in UUID format|Входной параметр `signal_id` имеет некорректное значение. Укажите параметр `signal_id` в UUID формате. Максимальная длина — 36 символов.|
+30223|INVALID_ARGUMENT|`strategy_id` not in UUID format|Входной параметр `strategy_id` имеет некорректное значение. Укажите параметр `strategy_id` в UUID формате. Максимальная длина — 36 символов.|
+30224|INVALID_ARGUMENT|`strategy_type` is not valid|Входной параметр `strategy_type` имеет некорректное значение.|
+30225|INVALID_ARGUMENT|`active` is not valid|Входной параметр `active` имеет некорректное значение.|
+30226|INVALID_ARGUMENT|Specify a lower limit or page value because there are fewer items|Количество элементов меньше запрашиваемых параметров.|
 35001|INVALID_ARGUMENT|Sandbox accounts limit reached|Достигнут лимит на открытие торговых счетов в песочнице. Чтобы открыть новый счёт, закройте один из существующих.|
 40002|PERMISSION_DENIED|Insufficient privileges|Недостаточно прав для совершения операции.</br>Токен доступа имеет уровень прав read-only или у токена нет доступа к указанному счёту.</br>[Подробнее про виды токенов](https://russianinvestments.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|Authentication token is missing or invalid|Токен доступа не найден или неактивен.</br>Новый токен можно выпустить в [личном кабинете](https://www.tbank.ru/invest/settings/).|
@@ -128,6 +133,8 @@
 50008|NOT_FOUND|No orderbook provider|Отсутствует источник данных по стаканам.|
 50009|NOT_FOUND|Asset not found|Актив не найден.</br>Укажите корректный идентификатор актива.|
 50010|NOT_FOUND|Brand not found|Бренд не найден.</br>Укажите корректный идентификатор бренда.|
+50011|NOT_FOUND|Strategy not found|Стратегия не найдена. Укажите корректный идентификатор стратегии.|
+50012|NOT_FOUND|Signal not found|Сигнал не найден. Укажите корректный идентификатор сигнала.|
 70001|INTERNAL|Internal error|Внутренняя ошибка сервиса.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
 70002|INTERNAL|Internal network error|Неизвестная сетевая ошибка, попробуйте выполнить запрос позже.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|
 70003|INTERNAL|Internal error, please try again later|Внутренняя ошибка сервиса, попробуйте выполнить запрос позже.</br>Если ошибка повторяется, обратитесь в службу технической поддержки.|

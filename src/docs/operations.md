@@ -149,6 +149,7 @@ Server-side stream обновлений информации по изменен
 | asset_uid |  [string](#string) | Идентификатор актива |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| child_operations | Массив объектов [ChildOperationItem](#childoperationitem) | Массив дочерних операций. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -668,6 +669,7 @@ Server-side stream обновлений информации по изменен
 | cancel_reason |  [string](#string) | Причина отмены операции. |
 | trades_info |  [OperationItemTrades](#operationitemtrades) | Массив сделок. |
 | asset_uid |  [string](#string) | Идентификатор актива. |
+| child_operations | Массив объектов [ChildOperationItem](#childoperationitem) | Массив дочерних операций. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -772,6 +774,18 @@ Server-side stream обновлений информации по изменен
 | ----- | ---- | ----------- |
 | available_value |  [MoneyValue](#moneyvalue) | Доступное количество валютный позиций. |
 | blocked_value |  [MoneyValue](#moneyvalue) | Заблокированное количество валютных позиций. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### ChildOperationItem
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| payment |  [MoneyValue](#moneyvalue) | Сумма операции. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

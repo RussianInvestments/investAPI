@@ -162,6 +162,7 @@
 | trailing_data |  [StopOrder.TrailingData](#stopordertrailingdata) | Параметры трейлинг-стопа. |
 | status |  [StopOrderStatusOption](#stoporderstatusoption) | Статус заявки. |
 | exchange_order_type |  [ExchangeOrderType](#exchangeordertype) | Тип дочерней биржевой заявки для тейкпрофита. |
+| exchange_order_id |  [string](#string) | Идентификатор биржевой заявки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

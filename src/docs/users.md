@@ -52,6 +52,11 @@
 #### GetAccountsRequest
 Запрос получения счетов пользователя.
 
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| status |  [AccountStatus](#accountstatus) | Статус счета. |
+ <!-- end Fields -->
  <!-- end HasFields -->
 
 
@@ -199,6 +204,7 @@
 | ACCOUNT_STATUS_NEW | 1 | Новый, в процессе открытия. |
 | ACCOUNT_STATUS_OPEN | 2 | Открытый и активный счёт. |
 | ACCOUNT_STATUS_CLOSED | 3 | Закрытый счёт. |
+| ACCOUNT_STATUS_ALL | 4 | Все счета. |
 
 
 
