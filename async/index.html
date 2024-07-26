@@ -1621,7 +1621,7 @@
 <code>order_request_id</code> в сообщениях стрима соответствует <code>order_request_id</code> в ответе PostOrderAsync, <code>order_id</code> — биржевому номеру заявки.
 Получив из стрима биржевой номер, дальнейшие статусы можно отслеживать методами <a href="/investAPI/orders/#getorderstate">GetOrderState</a>
 и <a href="/investAPI/orders/#getorders">GetOrder</a>, а отменить методом <a href="/investAPI/orders/#cancelorder">CancelOrder</a>.</p>
-<p>В релизе 1.24 GetOrderState и CancelOrder будут поддерживать работу и по ключу идемпотентности <code>order_request_id</code>.</p>
+<p>Дополнительно в методы GetOrderState и CancelOrder добавлена поддержка работы по ключу идемпотентности <code>order_request_id</code>.</p>
                 
               
               
