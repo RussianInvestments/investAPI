@@ -122,33 +122,6 @@
 Всегда проверяйте путь до папки с загружаемыми контрактами, полное наличие всех proto-файлов и их соответствие актуальной версии [T-Invest API](https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts). 
 Изменение proto-файлов повлечет за собой ошибку их прочтения у gRPS-клиентов.
 
-### BloomRPC
-
-Клиент с простым интерфейсом — чтобы начать работу, нужно указать домен сервиса и импортировать
-все proto-файлы. 
-
-[Скачать клиент](https://github.com/uw-labs/bloomrpc/releases)
-
-<ol>
-<li><p>Импортируйте скачанные proto-контракты сервиса. </p>
-<p><a href="https://github.com/RussianInvestments/investAPI/tree/main/src/docs/contracts">Скачать актуальную версию контрактов T-Invest API</a></p>
-<p><img src="/investAPI/img/Bloom-1.png" width="650"></p>
-</li>
-<li><p>Укажите адрес сервера — <code>invest-public-api.tinkoff.ru:443</code> — и заполните поле <strong>metadata</strong>: подставьте своё значение <a href="/investAPI/token/">токена доступа</a>.</p>
-<p><code>{
-   &quot;Authorization&quot;: &quot;Bearer t.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg&quot;
-}</code></p>
-<p><img src="/investAPI/img/Bloom-2.png" width="650"></p>
-</li>
-<p>При выполнении запросов обязательно указывайте тип TLS-подключения.</p>
-<p><img src="/investAPI/img/Bloom-3.png" width="650"></p>
-</ol>
-
-После этого можно выполнять запросы к сервису.
-
-<img src="/investAPI/img/Bloom-4.png" width="650">
-
->В BloomRPC нельзя увидеть заголовки ответов сервера, поэтому мы рекомендуем использовать Kreya.
 
 ### Встроенный gRPS-клиент IntelliJ
 
