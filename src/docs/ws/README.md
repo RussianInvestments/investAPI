@@ -15,9 +15,9 @@
 
 ### Стрим заявок
 
-[OrderStateStreamRequest](/investAPI/ws/asyncapi.yaml#/components/schemas/v1OrderStateStreamRequest)
+[OrderStateStreamRequest](/investAPI/ws/websock-docs/output/index.html#schema-v1OrderStateStreamRequest)
 
-[OrderStateStreamResponse](/investAPI/ws/asyncapi.yaml#/components/schemas/v1OrderStateStreamResponse)
+[OrderStateStreamResponse](/investAPI/ws/websock-docs/output/index.html#schema-v1OrderStateStreamResponse)
 
 Пример запроса:
 
