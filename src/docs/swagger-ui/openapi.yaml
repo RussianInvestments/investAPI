@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tbank.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tbank.ru
-  version: '1.23'
+  version: '1.24'
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
@@ -10019,11 +10019,13 @@ components:
          - ACCOUNT_STATUS_NEW: Новый, в процессе открытия.
          - ACCOUNT_STATUS_OPEN: Открытый и активный счёт.
          - ACCOUNT_STATUS_CLOSED: Закрытый счёт.
+         - ACCOUNT_STATUS_ALL: Все счета.
       enum:
         - ACCOUNT_STATUS_UNSPECIFIED
         - ACCOUNT_STATUS_NEW
         - ACCOUNT_STATUS_OPEN
         - ACCOUNT_STATUS_CLOSED
+        - ACCOUNT_STATUS_ALL
       type: string
     v1AccountSubscriptionStatus:
       description: Счёт клиента.
@@ -12085,6 +12087,8 @@ components:
         orderId:
           description: Идентификатор заявки.
           type: string
+        orderIdType:
+          $ref: '#/components/schemas/v1OrderIdType'
       required:
         - accountId
         - orderId
@@ -12256,6 +12260,20 @@ components:
         subscriptionId:
           description: Идентификатор подписки в формате `UUID`.
           type: string
+      type: object
+    v1ChildOperationItem:
+      example:
+        instrumentUid: instrumentUid
+        payment:
+          nano: 5
+          currency: currency
+          units: units
+      properties:
+        instrumentUid:
+          description: Уникальный идентификатор инструмента.
+          type: string
+        payment:
+          $ref: '#/components/schemas/v1MoneyValue'
       type: object
     v1CloseSandboxAccountRequest:
       description: Запрос закрытия счёта в песочнице.
@@ -13928,6 +13946,9 @@ components:
       type: object
     v1GetAccountsRequest:
       description: Запрос получения счетов пользователя.
+      properties:
+        status:
+          $ref: '#/components/schemas/v1AccountStatus'
       type: object
     v1GetAccountsResponse:
       description: Список счетов пользователя.
@@ -15425,6 +15446,17 @@ components:
             quantityRest: quantityRest
             cancelReason: cancelReason
             instrumentType: instrumentType
+            childOperations:
+              - instrumentUid: instrumentUid
+                payment:
+                  nano: 5
+                  currency: currency
+                  units: units
+              - instrumentUid: instrumentUid
+                payment:
+                  nano: 5
+                  currency: currency
+                  units: units
             quantity: quantity
             parentOperationId: parentOperationId
             positionUid: positionUid
@@ -15495,6 +15527,17 @@ components:
             quantityRest: quantityRest
             cancelReason: cancelReason
             instrumentType: instrumentType
+            childOperations:
+              - instrumentUid: instrumentUid
+                payment:
+                  nano: 5
+                  currency: currency
+                  units: units
+              - instrumentUid: instrumentUid
+                payment:
+                  nano: 5
+                  currency: currency
+                  units: units
             quantity: quantity
             parentOperationId: parentOperationId
             positionUid: positionUid
@@ -15712,6 +15755,8 @@ components:
           type: string
         priceType:
           $ref: '#/components/schemas/v1PriceType'
+        orderIdType:
+          $ref: '#/components/schemas/v1OrderIdType'
       required:
         - accountId
         - orderId
@@ -15898,6 +15943,7 @@ components:
             currency: currency
             stopOrderId: stopOrderId
             createDate: 2000-01-23T04:56:07.000Z
+            exchangeOrderId: exchangeOrderId
           - activationDateTime: 2000-01-23T04:56:07.000Z
             figi: figi
             trailingData:
@@ -15927,6 +15973,7 @@ components:
             currency: currency
             stopOrderId: stopOrderId
             createDate: 2000-01-23T04:56:07.000Z
+            exchangeOrderId: exchangeOrderId
       properties:
         stopOrders:
           description: Массив стоп-заявок по счёту.
@@ -17032,6 +17079,17 @@ components:
         date: 2000-01-23T04:56:07.000Z
         assetUid: assetUid
         instrumentType: instrumentType
+        childOperations:
+          - instrumentUid: instrumentUid
+            payment:
+              nano: 5
+              currency: currency
+              units: units
+          - instrumentUid: instrumentUid
+            payment:
+              nano: 5
+              currency: currency
+              units: units
         quantity: quantity
         parentOperationId: parentOperationId
         trades:
@@ -17120,6 +17178,11 @@ components:
         instrumentUid:
           description: Уникальный идентификатор инструмента.
           type: string
+        childOperations:
+          description: Массив дочерних операций.
+          items:
+            $ref: '#/components/schemas/v1ChildOperationItem'
+          type: array
       type: object
     v1OperationItem:
       description: Данные об операции.
@@ -17185,6 +17248,17 @@ components:
         quantityRest: quantityRest
         cancelReason: cancelReason
         instrumentType: instrumentType
+        childOperations:
+          - instrumentUid: instrumentUid
+            payment:
+              nano: 5
+              currency: currency
+              units: units
+          - instrumentUid: instrumentUid
+            payment:
+              nano: 5
+              currency: currency
+              units: units
         quantity: quantity
         parentOperationId: parentOperationId
         positionUid: positionUid
@@ -17273,6 +17347,11 @@ components:
         assetUid:
           description: Идентификатор актива.
           type: string
+        childOperations:
+          description: Массив дочерних операций.
+          items:
+            $ref: '#/components/schemas/v1ChildOperationItem'
+          type: array
       type: object
     v1OperationItemTrade:
       description: Сделка по операции.
@@ -17550,6 +17629,17 @@ components:
           - date: 2000-01-23T04:56:07.000Z
             assetUid: assetUid
             instrumentType: instrumentType
+            childOperations:
+              - instrumentUid: instrumentUid
+                payment:
+                  nano: 5
+                  currency: currency
+                  units: units
+              - instrumentUid: instrumentUid
+                payment:
+                  nano: 5
+                  currency: currency
+                  units: units
             quantity: quantity
             parentOperationId: parentOperationId
             trades:
@@ -17585,6 +17675,17 @@ components:
           - date: 2000-01-23T04:56:07.000Z
             assetUid: assetUid
             instrumentType: instrumentType
+            childOperations:
+              - instrumentUid: instrumentUid
+                payment:
+                  nano: 5
+                  currency: currency
+                  units: units
+              - instrumentUid: instrumentUid
+                payment:
+                  nano: 5
+                  currency: currency
+                  units: units
             quantity: quantity
             parentOperationId: parentOperationId
             trades:
@@ -18245,6 +18346,18 @@ components:
         - EXECUTION_REPORT_STATUS_NEW
         - EXECUTION_REPORT_STATUS_PARTIALLYFILL
       title: Текущий статус заявки (поручения)
+      type: string
+    v1OrderIdType:
+      default: ORDER_ID_TYPE_UNSPECIFIED
+      description: |-
+        - ORDER_ID_TYPE_UNSPECIFIED: Тип идентификатора не указан.
+         - ORDER_ID_TYPE_EXCHANGE: Биржевой идентификатор
+         - ORDER_ID_TYPE_REQUEST: Ключ идемпотентности, переданный клиентом
+      enum:
+        - ORDER_ID_TYPE_UNSPECIFIED
+        - ORDER_ID_TYPE_EXCHANGE
+        - ORDER_ID_TYPE_REQUEST
+      title: Тип идентификатора заявки
       type: string
     v1OrderStage:
       description: Сделки в рамках торгового поручения.
@@ -20500,6 +20613,7 @@ components:
         currency: currency
         stopOrderId: stopOrderId
         createDate: 2000-01-23T04:56:07.000Z
+        exchangeOrderId: exchangeOrderId
       properties:
         stopOrderId:
           description: Идентификатор-идентификатор стоп-заявки.
@@ -20545,6 +20659,9 @@ components:
           $ref: '#/components/schemas/v1StopOrderStatusOption'
         exchangeOrderType:
           $ref: '#/components/schemas/v1ExchangeOrderType'
+        exchangeOrderId:
+          description: Идентификатор биржевой заявки.
+          type: string
       type: object
     v1StopOrderDirection:
       default: STOP_ORDER_DIRECTION_UNSPECIFIED
