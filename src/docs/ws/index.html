@@ -12,7 +12,77 @@
 <li>запрос на подключение требует указание протокола json в заголовоке <code>Web-Socket-Protocol: json</code></li>
 </ul>
 <h2 id="-">Сервис поручений</h2>
-<h3 id="-">Лента сделок.</h3>
+<h3 id="-">Стрим заявок.</h3>
+<p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.OrdersStreamService/OrderStateStream</p>
+<p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1OrderStateStreamRequest">OrderStateStreamRequest</a>
+<a href="/investAPI/ws/websock-docs/output/index.html#schema-v1OrderStateStreamResponse">OrderStateStreamResponse</a></p>
+<p>Пример запроса</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"accounts"</span>: [
+    <span class="hljs-string">"*accountId"</span>
+  ]
+}
+</code></pre>
+<p>Пример ответа</p>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"orderState"</span>: {
+    <span class="hljs-attr">"orderId"</span>: <span class="hljs-string">"49478317886"</span>,
+	<span class="hljs-attr">"orderRequestId"</span>: <span class="hljs-string">"ec5e2892-58ca-4851-bc47-c2acf1368fde"</span>,
+	<span class="hljs-attr">"clientCode"</span>: <span class="hljs-string">"770083706834"</span>,
+	<span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2024-07-15T07:07:17.321267Z"</span>,
+	<span class="hljs-attr">"executionReportStatus"</span>: <span class="hljs-string">"EXECUTION_REPORT_STATUS_NEW"</span>,
+	<span class="hljs-attr">"ticker"</span>: <span class="hljs-string">"POLY"</span>,
+	<span class="hljs-attr">"classCode"</span>: <span class="hljs-string">"TQBR"</span>,
+	<span class="hljs-attr">"lotSize"</span>: <span class="hljs-number">1</span>,
+	<span class="hljs-attr">"direction"</span>: <span class="hljs-string">"ORDER_DIRECTION_BUY"</span>,
+	<span class="hljs-attr">"timeInForce"</span>: <span class="hljs-string">"TIME_IN_FORCE_DAY"</span>,
+	<span class="hljs-attr">"orderType"</span>: <span class="hljs-string">"ORDER_TYPE_LIMIT"</span>,
+	<span class="hljs-attr">"accountId"</span>: <span class="hljs-string">"123456789"</span>,
+	<span class="hljs-attr">"initialOrderPrice"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"RUB"</span>,
+		  <span class="hljs-attr">"units"</span>: <span class="hljs-string">"195"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">200000000</span>
+        },
+	<span class="hljs-attr">"orderPrice"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"RUB"</span>,
+		  <span class="hljs-attr">"units"</span>: <span class="hljs-string">"195"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">200000000</span>
+        },
+	<span class="hljs-attr">"amount"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"RUB"</span>,
+		  <span class="hljs-attr">"units"</span>: <span class="hljs-string">"195"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">200000000</span>
+        },
+	<span class="hljs-attr">"executedOrderPrice"</span>: {
+          <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"RUB"</span>,
+		  <span class="hljs-attr">"units"</span>: <span class="hljs-string">"195"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">200000000</span>
+        },
+	<span class="hljs-attr">"currency"</span>: <span class="hljs-string">"123456789"</span>,
+	<span class="hljs-attr">"lotsRequested"</span>: <span class="hljs-string">"1"</span>,
+	<span class="hljs-attr">"lotsExecuted"</span>: <span class="hljs-string">"1"</span>,
+	<span class="hljs-attr">"lotsLeft"</span>: <span class="hljs-string">"0"</span>,
+	<span class="hljs-attr">"lotsCancelled"</span>: <span class="hljs-string">"0"</span>,
+	<span class="hljs-attr">"marker"</span>: <span class="hljs-string">"MARKER_UNKNOWN"</span>,
+	<span class="hljs-attr">"trades"</span>: [
+      {
+        <span class="hljs-attr">"dateTime"</span>: <span class="hljs-string">"2024-07-15T07:07:17.321267Z"</span>,
+        <span class="hljs-attr">"price"</span>: {
+          <span class="hljs-attr">"units"</span>: <span class="hljs-string">"195"</span>,
+          <span class="hljs-attr">"nano"</span>: <span class="hljs-number">200000000</span>
+        },
+        <span class="hljs-attr">"quantity"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"tradeId"</span>: <span class="hljs-string">"7653265991"</span>
+      }
+    ],
+	<span class="hljs-attr">"exchange"</span>: <span class="hljs-string">"MOEX"</span>,
+	<span class="hljs-attr">"instrumentUid"</span>: <span class="hljs-string">"127361c2-32ec-448c-b3ec-602166f537ea"</span>
+  }
+}
+</code></pre>
+<p><a href="/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream">Проверить</a></p>
+<h3 id="-">Лента сделок (DEPRICATED).</h3>
+<p>Вместо Ленты сделок рекомендуем использовать Стрим заявок, который обеспечивает лучшее быстродействие, отличается большей стабильностью и содержит расширенную информацию по заявкам и сделкам.</p>
 <p>endpoint: wss://invest-public-api.tinkoff.ru/ws/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream</p>
 <p><a href="/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamRequest">TradesStreamRequest</a>
 <a href="/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamResponse">TradesStreamResponse</a></p>

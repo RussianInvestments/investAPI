@@ -13,7 +13,87 @@
 
 ## Сервис поручений
 
-### Лента сделок
+### Стрим заявок
+
+[OrderStateStreamRequest](/investAPI/ws/asyncapi.yaml#/components/schemas/v1OrderStateStreamRequest)
+
+[OrderStateStreamResponse](/investAPI/ws/asyncapi.yaml#/components/schemas/v1OrderStateStreamResponse)
+
+Пример запроса:
+
+```json
+{
+  "accounts": [
+    "*accountId"
+  ]
+}
+```
+Пример ответа:
+
+```json
+{
+  "orderState": {
+    "orderId": "49478317886",
+    "orderRequestId": "ec5e2892-58ca-4851-bc47-c2acf1368fde",
+    "clientCode": "770083706834",
+    "createdAt": "2024-07-15T07:07:17.321267Z",
+    "executionReportStatus": "EXECUTION_REPORT_STATUS_NEW",
+    "ticker": "POLY",
+    "classCode": "TQBR",
+    "lotSize": 1,
+    "direction": "ORDER_DIRECTION_BUY",
+    "timeInForce": "TIME_IN_FORCE_DAY",
+    "orderType": "ORDER_TYPE_LIMIT",
+    "accountId": "2223337448",
+    "initialOrderPrice": {
+      "currency": "RUB",
+      "units": "195",
+      "nano": 200000000
+    },
+    "orderPrice": {
+      "currency": "RUB",
+      "units": "195",
+      "nano": 200000000
+    },
+    "amount": {
+      "currency": "RUB",
+      "units": "195",
+      "nano": 200000000
+    },
+    "executedOrderPrice": {
+      "currency": "RUB",
+      "units": "195",
+      "nano": 200000000
+    },
+    "currency": "RUB",
+    "lotsRequested": "1",
+    "lotsExecuted": "1",
+    "lotsLeft": "0",
+    "lotsCancelled": "0",
+    "marker": "MARKER_UNKNOWN",
+    "trades": [
+      {
+        "dateTime": "2024-07-15T07:07:17.321267Z",
+        "price": {
+          "units": "195",
+          "nano": 200000000
+        },
+        "quantity": "1",
+        "tradeId": "7653265991"
+      }
+    ],
+    "exchange": "MOEX",
+    "instrumentUid": "127361c2-32ec-448c-b3ec-602166f537ea"
+  }
+}
+```
+
+[Проверить](/investAPI/ws/websock/index.html#/tinkoff.public.invest.api.contract.v1.OrdersStreamService/OrderStateStream)
+
+
+### Лента сделок (DEPRICATED)
+
+Вместо Ленты сделок рекомендуем использовать Стрим заявок, который обеспечивает лучшее быстродействие, отличается большей стабильностью и содержит расширенную информацию по заявкам и сделкам.
 
 [TradesStreamRequest](/investAPI/ws/websock-docs/output/index.html#schema-v1TradesStreamRequest)
 
@@ -32,7 +112,7 @@
 
 ```json
 {
-  "orderTrades": {
+  "orderState": {
     "orderId": "36042910361",
     "createdAt": "2023-05-16T13:27:14.682140664Z",
     "direction": "ORDER_DIRECTION_SELL",
