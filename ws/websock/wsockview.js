@@ -148,6 +148,8 @@ const WSockView  = {
             '/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream',
             '/tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream',
             '/tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream',
+            '/tinkoff.public.invest.api.contract.v1.OrdersStreamService/OrderStateStream',                  
+                  
 
             ]
           },
