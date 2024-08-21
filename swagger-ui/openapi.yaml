@@ -6167,6 +6167,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      summary: Асинхронный метод выставления заявки.
       tags:
         - OrdersService
       x-codegen-request-body-name: body
