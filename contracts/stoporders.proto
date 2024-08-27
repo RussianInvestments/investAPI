@@ -29,8 +29,8 @@ service StopOrdersService { /* Сервис для работы со стоп-з
 message PostStopOrderRequest {
   optional string figi = 1 [ deprecated = true ]; //Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`.
   int64 quantity = 2 [(google.api.field_behavior) = REQUIRED]; //Количество лотов.
-  optional Quotation price = 3; //Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.
-  optional Quotation stop_price = 4; //Стоп-цена заявки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.
+  optional Quotation price = 3; //Цена за 1 инструмент биржевой заявки, которая будет выставлена при срабатывании по достижению `stop_price`. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.
+  optional Quotation stop_price = 4; //Стоп-цена заявки за 1 инструмент. При достижении стоп-цены происходит активация стоп-заявки, в результате чего выставляется биржевая заявка. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.
   StopOrderDirection direction = 5 [(google.api.field_behavior) = REQUIRED]; //Направление операции.
   string account_id = 6 [(google.api.field_behavior) = REQUIRED]; //Номер счёта.
   StopOrderExpirationType expiration_type = 7 [(google.api.field_behavior) = REQUIRED]; //Тип экспирации заявки.
@@ -83,7 +83,7 @@ message CancelStopOrderResponse {
 
 //Информация о стоп-заявке.
 message StopOrder {
-  string stop_order_id = 1; //Идентификатор-идентификатор стоп-заявки.
+  string stop_order_id = 1; //Уникальный идентификатор стоп-заявки.
   int64 lots_requested = 2;  //Запрошено лотов.
   string figi = 3; //FIGI-идентификатор инструмента.
   StopOrderDirection direction = 4; //Направление операции.
