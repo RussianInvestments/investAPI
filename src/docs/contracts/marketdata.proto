@@ -506,7 +506,7 @@ message InstrumentClosePriceResponse {
   string figi = 1; //FIGI инструмента.
   string instrument_uid = 2; //UID инструмента.
   Quotation price = 11; //Цена закрытия торговой сессии.
-  Quotation evening_session_price = 12; //Цена последней сделки с вечерней сессии.
+  Quotation evening_session_price = 12; //Цена последней сделки с вечерней сессии. Цена публикуется биржей по торговым дням и в нерабочие дни не обновляется.
   google.protobuf.Timestamp time = 21; //Дата совершения торгов.
 }
 

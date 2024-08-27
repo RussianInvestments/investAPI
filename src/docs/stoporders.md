@@ -48,8 +48,8 @@
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`. |
 | quantity |  [int64](#int64) | Количество лотов. |
-| price |  [Quotation](#quotation) | Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. |
-| stop_price |  [Quotation](#quotation) | Стоп-цена заявки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. |
+| price |  [Quotation](#quotation) | Цена за 1 инструмент биржевой заявки, которая будет выставлена при срабатывании по достижению `stop_price`. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. |
+| stop_price |  [Quotation](#quotation) | Стоп-цена заявки за 1 инструмент. При достижении стоп-цены происходит активация стоп-заявки, в результате чего выставляется биржевая заявка. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. |
 | direction |  [StopOrderDirection](#stoporderdirection) | Направление операции. |
 | account_id |  [string](#string) | Номер счёта. |
 | expiration_type |  [StopOrderExpirationType](#stoporderexpirationtype) | Тип экспирации заявки. |
@@ -146,7 +146,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| stop_order_id |  [string](#string) | Идентификатор-идентификатор стоп-заявки. |
+| stop_order_id |  [string](#string) | Уникальный идентификатор стоп-заявки. |
 | lots_requested |  [int64](#int64) | Запрошено лотов. |
 | figi |  [string](#string) | FIGI-идентификатор инструмента. |
 | direction |  [StopOrderDirection](#stoporderdirection) | Направление операции. |

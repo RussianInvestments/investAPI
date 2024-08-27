@@ -45,7 +45,7 @@ Stream поручений пользователя. Перед работой п
 
 
 #### PostOrderAsync
-
+Асинхронный метод выставления заявки.
 
 - Тело запроса — [PostOrderAsyncRequest](#postorderasyncrequest)
 
@@ -230,7 +230,7 @@ Stream поручений пользователя. Перед работой п
 
  
 #### PostOrderAsyncResponse
-
+Результат выставления асинхронного торгового поручения.
 
 
 | Field | Type | Description |
@@ -485,7 +485,7 @@ Stream поручений пользователя. Перед работой п
 
  
 #### SubscriptionResponse
-
+Информация по подпискам
 
 
 | Field | Type | Description |

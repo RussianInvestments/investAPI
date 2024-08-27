@@ -603,7 +603,7 @@ Deprecated Получить списка опционов.
 | class_code |  [string](#string) | Класс-код. |
 | basic_asset_position_uid |  [string](#string) | Уникальный идентификатор позиции основного инструмента. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
-| real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). Допустимые значения — `REAL_EXCHANGE_MOEX`, `REAL_EXCHANGE_RTS`. |
+| real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов (биржа). |
 | direction |  [OptionDirection](#optiondirection) | Направление опциона. |
 | payment_type |  [OptionPaymentType](#optionpaymenttype) | Тип расчётов по опциону. |
 | style |  [OptionStyle](#optionstyle) | Стиль опциона. |

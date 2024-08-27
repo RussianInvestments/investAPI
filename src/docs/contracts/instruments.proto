@@ -319,7 +319,7 @@ message Option {
   string basic_asset_position_uid = 5; //Уникальный идентификатор позиции основного инструмента.
 
   SecurityTradingStatus trading_status = 21; //Текущий режим торгов инструмента.
-  RealExchange real_exchange = 31; //Реальная площадка исполнения расчётов (биржа). Допустимые значения — `REAL_EXCHANGE_MOEX`, `REAL_EXCHANGE_RTS`.
+  RealExchange real_exchange = 31; //Реальная площадка исполнения расчётов (биржа).
   OptionDirection direction = 41; //Направление опциона.
   OptionPaymentType payment_type = 42; //Тип расчётов по опциону.
   OptionStyle style = 43; //Стиль опциона.
