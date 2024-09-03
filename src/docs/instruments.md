@@ -911,7 +911,7 @@ Deprecated Получить списка опционов.
 | issue_size_plan |  [int64](#int64) | Плановый размер выпуска. |
 | nominal |  [MoneyValue](#moneyvalue) | Номинал. |
 | trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
-| otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. |
+| otc_flag |  [bool](#bool) | Признак внебиржевой ценной бумаги. Осторожно, флаг не заполнен, ориентируйтесь на признак `exchange == 'otc_ncc'`, [высокая комиссия за сделки](https://www.tbank.ru/invest/help/educate/otc/about/rus-shares/?internal_source=app_inv/) |
 | buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
 | sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
 | div_yield_flag |  [bool](#bool) | Признак наличия дивидендной доходности. |
