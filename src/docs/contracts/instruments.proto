@@ -340,10 +340,10 @@ message Option {
   Quotation basic_asset_size = 211; //Размер основного актива.
   Quotation klong = 221; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation kshort = 222; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation dlong = 223; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort = 224; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
-  Quotation dlong_min = 225; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort_min = 226; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
+  Quotation dlong = 223; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort = 224; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dlong_min = 225; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort_min = 226; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation min_price_increment = 231; //Минимальный шаг цены.
   MoneyValue strike_price = 241; //Цена страйка.
 
@@ -355,7 +355,7 @@ message Option {
 
   bool short_enabled_flag = 401; //Признак доступности для операций шорт.
   bool for_iis_flag = 402; //Возможность покупки или продажи на ИИС.
-  bool otc_flag = 403; //Признак внебиржевой ценной бумаги.
+  bool otc_flag = 403; //Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструметов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.
   bool buy_available_flag = 404; //Признак доступности для покупки.
   bool sell_available_flag = 405; //Признак доступности для продажи.
   bool for_qual_investor_flag = 406; //Флаг, отображающий доступность торговли инструментом только для квалифицированных инвесторов.
@@ -413,10 +413,10 @@ message Bond {
 
   Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
-  Quotation dlong_min = 11; // Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
+  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dlong_min = 11; // Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Tорговая площадка (секция биржи).
@@ -439,7 +439,7 @@ message Bond {
   int64 issue_size_plan = 30; //Плановый размер выпуска.
 
   SecurityTradingStatus trading_status = 31; //Текущий режим торгов инструмента.
-  bool otc_flag = 32; //Признак внебиржевой ценной бумаги.
+  bool otc_flag = 32; //Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструметов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.
   bool buy_available_flag = 33; //Признак доступности для покупки.
   bool sell_available_flag = 34; //Признак доступности для продажи.
   bool floating_coupon_flag = 35; //Признак облигации с плавающим купоном.
@@ -477,10 +477,10 @@ message Currency {
 
   Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
-  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
+  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Tорговая площадка (секция биржи).
@@ -491,7 +491,7 @@ message Currency {
   string country_of_risk_name = 19; //Наименование страны риска — то есть страны, в которой компания ведёт основной бизнес.
 
   SecurityTradingStatus trading_status = 20; //Текущий режим торгов инструмента.
-  bool otc_flag = 21; //Признак внебиржевой ценной бумаги.
+  bool otc_flag = 21; //Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструметов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.
   bool buy_available_flag = 22; //Признак доступности для покупки.
   bool sell_available_flag = 23; //Признак доступности для продажи.
   string iso_currency_name = 24; //Строковый ISO-код валюты.
@@ -522,10 +522,10 @@ message Etf {
 
   Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
-  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
+  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Tорговая площадка (секция биржи).
@@ -541,7 +541,7 @@ message Etf {
   string rebalancing_freq = 24; //Частота ребалансировки.
 
   SecurityTradingStatus trading_status = 25; //Текущий режим торгов инструмента.
-  bool otc_flag = 26; //Признак внебиржевой ценной бумаги.
+  bool otc_flag = 26; //Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструметов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.
   bool buy_available_flag = 27; //Признак доступности для покупки.
   bool sell_available_flag = 28; //Признак доступности для продажи.
   Quotation min_price_increment = 29; //Шаг цены.
@@ -573,10 +573,10 @@ message Future {
 
   Quotation klong = 6; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation kshort = 7; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation dlong = 8; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort = 9; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
-  Quotation dlong_min = 10; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort_min = 11; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт ](https://help.tbank.ru/margin-trade/short/risk-rate/).
+  Quotation dlong = 8; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort = 9; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dlong_min = 10; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort_min = 11; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   bool short_enabled_flag = 12; //Признак доступности для операций шорт.
   string name = 13; //Название инструмента.
   string exchange = 14; //Tорговая площадка (секция биржи).
@@ -594,7 +594,7 @@ message Future {
   google.protobuf.Timestamp expiration_date = 24; //Дата истечения срока в часов поясе UTC.
 
   SecurityTradingStatus trading_status = 25; //Текущий режим торгов инструмента.
-  bool otc_flag = 26; //Признак внебиржевой ценной бумаги.
+  bool otc_flag = 26; //Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструметов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.
   bool buy_available_flag = 27; //Признак доступности для покупки.
   bool sell_available_flag = 28; //Признак доступности для продажи.
   Quotation min_price_increment = 29; //Шаг цены.
@@ -629,10 +629,10 @@ message Share {
 
   Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
-  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
+  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 15; //Название инструмента.
   string exchange = 16; //Tорговая площадка (секция биржи).
@@ -647,7 +647,7 @@ message Share {
   MoneyValue nominal = 23; //Номинал.
 
   SecurityTradingStatus trading_status = 25; //Текущий режим торгов инструмента.
-  bool otc_flag = 26; //Признак внебиржевой ценной бумаги.
+  bool otc_flag = 26; //Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструметов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.
   bool buy_available_flag = 27; //Признак доступности для покупки.
   bool sell_available_flag = 28; //Признак доступности для продажи.
   bool div_yield_flag = 29; //Признак наличия дивидендной доходности.
@@ -738,10 +738,10 @@ message Instrument {
 
   Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
-  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска в лонг](https://help.tbank.ru/margin-trade/long/risk-rate/).
-  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска в шорт](https://help.tbank.ru/margin-trade/short/risk-rate/).
+  Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+  Quotation dshort_min = 12; //Ставка риска начальной маржи для КПУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   bool short_enabled_flag = 13; //Признак доступности для операций в шорт.
   string name = 14; //Название инструмента.
   string exchange = 15; //Tорговая площадка (секция биржи).
@@ -751,7 +751,7 @@ message Instrument {
   string instrument_type = 18; //Тип инструмента.
 
   SecurityTradingStatus trading_status = 19; //Текущий режим торгов инструмента.
-  bool otc_flag = 20; //Признак внебиржевой ценной бумаги.
+  bool otc_flag = 20; //Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструметов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.
   bool buy_available_flag = 21; //Признак доступности для покупки.
   bool sell_available_flag = 22; //Признак доступности для продажи.
   Quotation min_price_increment = 23; //Шаг цены.
@@ -1048,7 +1048,7 @@ message FavoriteInstrument {
   string instrument_type = 11; //Тип инструмента.
   string name = 12; //Название инструмента.
   string uid = 13; //Уникальный идентификатор инструмента.
-  bool otc_flag = 16; //Признак внебиржевой ценной бумаги.
+  bool otc_flag = 16; //Флаг, используемый ранее для определения внебиржевых инструментов. На данный момент не используется для торгуемых через API инструметов. Может использоваться как фильтр для операций, совершавшихся некоторое время назад на ОТС площадке.
   bool api_trade_available_flag = 17; //Возможность торговать инструментом через API.
   InstrumentType instrument_kind = 18; //Тип инструмента.
 }
