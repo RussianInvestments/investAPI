@@ -305,6 +305,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Ограничения по доставке данных в стримах
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1541,6 +1548,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Ограничения по доставке данных в стримах
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1654,26 +1668,26 @@
 <tr>
 <th align="left">Лимитный грейд</th>
 <th align="left">Активных stream-соединений</br><a href="/investAPI/head-marketdata/">сервиса котировок</a></th>
-<th align="left">Активных stream-соединений</br><a href="/investAPI/head-orders/">сервиса ордеров</a></th>
+<th align="left">Активных stream-соединений на каждый метод</br><a href="/investAPI/head-orders/">сервиса ордеров</a></th>
 <th align="left">Активных stream-соединений на каждый метод</br><a href="/investAPI/head-operations/">сервиса операций</a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">1</td>
-<td align="left">2</td>
+<td align="left">16</td>
 <td align="left">10</td>
 <td align="left">2</td>
 </tr>
 <tr>
 <td align="left">2</td>
-<td align="left">4</td>
+<td align="left">16</td>
 <td align="left">10</td>
 <td align="left">2</td>
 </tr>
 <tr>
 <td align="left">3</td>
-<td align="left">5</td>
+<td align="left">16</td>
 <td align="left">10</td>
 <td align="left">2</td>
 </tr>
@@ -1763,6 +1777,41 @@
 <td align="left">5</td>
 <td align="left">4</td>
 <td align="left">2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Ограничения по доставке данных в стримах</h2>
+<p>В пики активности на бирже возможны ситуации, когда за одну секунду происходят сотни событий по инструменту.
+Для ограничения нагрузки на клиентов и на сервис были введены интервалы по отправки сообщений в стрим.
+За один интервал времени может быть отправлено только одно сообщение по одной подписке.
+Значения в миллисекундах приведены в таблице:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Тип подписки</th>
+<th align="left">Величина интервала</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Trades</td>
+<td align="left">без ограничений</td>
+</tr>
+<tr>
+<td align="left">Orderbook</td>
+<td align="left">100</td>
+</tr>
+<tr>
+<td align="left">Candles</td>
+<td align="left">100</td>
+</tr>
+<tr>
+<td align="left">LastPrice</td>
+<td align="left">без ограничений</td>
+</tr>
+<tr>
+<td align="left">Info</td>
+<td align="left">без ограничений</td>
 </tr>
 </tbody>
 </table>
