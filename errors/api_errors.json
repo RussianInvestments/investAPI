@@ -589,6 +589,11 @@
     "type": "INVALID_ARGUMENT",
     "description": "Количество элементов меньше запрашиваемых параметров."
   },
+  "30227": {
+    "message": "Order cancelled",
+    "type": "INVALID_ARGUMENT",
+    "description": "Заявка с заданными параметрами не может быть исполнена и отменена Биржей или Брокером."
+  },
   "35001": {
     "message": "Sandbox accounts limit reached",
     "type": "INVALID_ARGUMENT",
