@@ -113,6 +113,7 @@ Stream поручений пользователя. Перед работой п
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | accounts | Массив объектов [string](#string) | Идентификаторы счетов. |
+| ping_delay_ms |  [int32](#int32) | Задержка пинг сообщений milliseconds 5000-180000, default 120000 |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -479,7 +480,7 @@ Stream поручений пользователя. Перед работой п
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | accounts | Массив объектов [string](#string) | Идентификаторы счетов. |
-| ping_delay_millis |  [int32](#int32) | Задержка пинг сообщений milliseconds 1000-120000, default 120000 |
+| ping_delay_ms |  [int32](#int32) | Задержка пинг сообщений milliseconds 5000-180000, default 120000 |
  <!-- end Fields -->
  <!-- end HasFields -->
 

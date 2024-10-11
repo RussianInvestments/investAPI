@@ -116,6 +116,8 @@ Server-side стрим предоставления биржевой инфор�
 | subscribe_info_request |  [SubscribeInfoRequest](#subscribeinforequest) | Запрос подписки на торговые статусы инструментов. |
 | subscribe_last_price_request |  [SubscribeLastPriceRequest](#subscribelastpricerequest) | Запрос подписки на цены последних сделок. |
 | get_my_subscriptions |  [GetMySubscriptions](#getmysubscriptions) | Запрос своих подписок. |
+| ping |  [PingRequest](#pingrequest) | Запрос проверки активности соединения. |
+| ping_settings |  [PingDelaySettings](#pingdelaysettings) | Запрос настройки пинга. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -131,6 +133,7 @@ Server-side стрим предоставления биржевой инфор�
 | subscribe_trades_request |  [SubscribeTradesRequest](#subscribetradesrequest) | Запрос подписки на ленту обезличенных сделок. |
 | subscribe_info_request |  [SubscribeInfoRequest](#subscribeinforequest) | Запрос подписки на торговые статусы инструментов. |
 | subscribe_last_price_request |  [SubscribeLastPriceRequest](#subscribelastpricerequest) | Запрос подписки на цены последних сделок. |
+| ping_settings |  [PingDelaySettings](#pingdelaysettings) | Запрос настройки пинга. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -232,7 +235,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`. |
 | depth |  [int32](#int32) | Глубина стакана. |
 | instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
-| order_book_type |  [OrderBookType](#orderbooktype) | Тип стакана. |
+| order_book_type |  [OrderBookType](#orderbooktype) | Тип стакана. По умолчанию ORDERBOOK_TYPE_ALL - стакан биржевой и дилера. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -274,7 +277,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Изменение статуса подписки. |
 | instruments | Массив объектов [TradeInstrument](#tradeinstrument) | Массив инструментов для подписки на поток обезличенных сделок. |
-| trade_type |  [TradeSourceType](#tradesourcetype) | Источник сделок. |
+| trade_source |  [TradeSourceType](#tradesourcetype) | Тип источника сделок. По умолчанию TRADE_SOURCE_ALL - все сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -299,7 +302,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | tracking_id |  [string](#string) | Уникальный идентификатор запроса. [Подробнее](https://russianinvestments.github.io/investAPI/grpc#tracking-id). |
 | trade_subscriptions | Массив объектов [TradeSubscription](#tradesubscription) | Массив статусов подписки на поток сделок. |
-| trade_type |  [TradeSourceType](#tradesourcetype) | Источник сделок. |
+| trade_source |  [TradeSourceType](#tradesourcetype) | Тип источника сделок. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -485,7 +488,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | quantity |  [int64](#int64) | Количество лотов. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время сделки в часовом поясе UTC по времени биржи. |
 | instrument_uid |  [string](#string) | UID инструмента. |
-| tradeSource |  [TradeSourceType](#tradesourcetype) | Источник сделки. |
+| trade_source |  [TradeSourceType](#tradesourcetype) | Тип источника сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -688,6 +691,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. |
 | instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| trade_source |  [TradeSourceType](#tradesourcetype) | Тип источника сделок. По умолчанию TRADE_SOURCE_ALL - все сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -885,11 +889,11 @@ subscribeCandles | Изменения статуса подписки на св�
 
 
 #### TradeSourceType
-Источники сделок.
+Типы источников сделок.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
-| TRADE_SOURCE_UNSPECIFIED | 0 | Тип сделки не определён. |
+| TRADE_SOURCE_UNSPECIFIED | 0 | Тип источника сделки не определён. |
 | TRADE_SOURCE_EXCHANGE | 1 | Биржевые сделки. |
 | TRADE_SOURCE_DEALER | 2 | Сделки дилера. |
 | TRADE_SOURCE_ALL | 3 | Все сделки. |
@@ -952,6 +956,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ORDERBOOK_TYPE_UNSPECIFIED | 0 | Не определён. |
 | ORDERBOOK_TYPE_EXCHANGE | 1 | Биржевой стакан. |
 | ORDERBOOK_TYPE_DEALER | 2 | Стакан дилера. |
+| ORDERBOOK_TYPE_ALL | 3 | Стакан биржевой и дилера. |
 
 
 

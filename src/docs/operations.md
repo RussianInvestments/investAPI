@@ -560,6 +560,7 @@ Server-side stream обновлений информации по изменен
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | accounts | Массив объектов [string](#string) | Массив идентификаторов счётов пользователя. |
+| ping_settings |  [PingDelaySettings](#pingdelaysettings) | Запрос настройки пинга. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -708,6 +709,7 @@ Server-side stream обновлений информации по изменен
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | accounts | Массив объектов [string](#string) | Массив идентификаторов счётов пользователя. |
+| ping_settings |  [PingDelaySettings](#pingdelaysettings) | Запрос настройки пинга. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

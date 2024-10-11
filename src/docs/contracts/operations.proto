@@ -408,6 +408,7 @@ message DividendsForeignIssuerReport {
 //Запрос установки stream-соединения.
 message PortfolioStreamRequest {
   repeated string accounts = 1; //Массив идентификаторов счётов пользователя.
+  PingDelaySettings ping_settings = 15; //Запрос настройки пинга.
 }
 
 //Информация по позициям и доходностям портфелей.
@@ -512,6 +513,7 @@ message OperationItemTrade {
 //Запрос установки stream-соединения позиций.
 message PositionsStreamRequest {
   repeated string accounts = 1; //Массив идентификаторов счётов пользователя.
+  PingDelaySettings ping_settings = 15; //Запрос настройки пинга.
 }
 
 //Информация по изменению позиций портфеля.

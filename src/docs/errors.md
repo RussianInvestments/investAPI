@@ -120,6 +120,7 @@
 30224|INVALID_ARGUMENT|`strategy_type` is not valid|Входной параметр `strategy_type` имеет некорректное значение.|
 30225|INVALID_ARGUMENT|`active` is not valid|Входной параметр `active` имеет некорректное значение.|
 30226|INVALID_ARGUMENT|Specify a lower limit or page value because there are fewer items|Количество элементов меньше запрашиваемых параметров.|
+30227|INVALID_ARGUMENT|Order cancelled|Заявка с заданными параметрами не может быть исполнена и отменена Биржей или Брокером.|
 35001|INVALID_ARGUMENT|Sandbox accounts limit reached|Достигнут лимит на открытие торговых счетов в песочнице. Чтобы открыть новый счёт, закройте один из существующих.|
 40002|PERMISSION_DENIED|Insufficient privileges|Недостаточно прав для совершения операции.</br>Токен доступа имеет уровень прав read-only или у токена нет доступа к указанному счёту.</br>[Подробнее про виды токенов](https://russianinvestments.github.io/investAPI/index#_2)|
 40003|UNAUTHENTICATED|Authentication token is missing or invalid|Токен доступа не найден или неактивен.</br>Новый токен можно выпустить в [личном кабинете](https://www.tbank.ru/invest/settings/).|

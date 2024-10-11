@@ -1,7 +1,7 @@
 asyncapi: 2.6.0
 info:
   title: T-Invest API
-  version: '1.23'
+  version: '1.25'
   description: Websocket API for streaming data
   license:
     name: Apache 2.0
@@ -210,6 +210,7 @@ components:
           trackingId: trackingId
         ping:
           streamId: streamId
+          pingRequestTime: '2000-01-23T04:56:07.000+00:00'
           time: '2000-01-23T04:56:07.000+00:00'
         candle:
           volume: volume
@@ -512,10 +513,12 @@ components:
          - ORDERBOOK_TYPE_UNSPECIFIED: Не определён.
          - ORDERBOOK_TYPE_EXCHANGE: Биржевой стакан.
          - ORDERBOOK_TYPE_DEALER: Стакан дилера.
+         - ORDERBOOK_TYPE_ALL: Стакан биржевой и дилера.
       enum:
         - ORDERBOOK_TYPE_UNSPECIFIED
         - ORDERBOOK_TYPE_EXCHANGE
         - ORDERBOOK_TYPE_DEALER
+        - ORDERBOOK_TYPE_ALL
       type: string
     v1SubscribeTradesResponse:
       description: Результат изменения статуса подписки на поток обезличенных сделок.
@@ -541,7 +544,7 @@ components:
           items:
             $ref: '#/components/schemas/v1TradeSubscription'
           type: array
-        tradeType:
+        tradeSource:
           $ref: '#/components/schemas/v1TradeSourceType'
       type: object
     v1TradeSubscription:
@@ -570,9 +573,9 @@ components:
     v1TradeSourceType:
       default: TRADE_SOURCE_UNSPECIFIED
       description: |-
-        Источники сделок.
+        Типы источников сделок.
 
-         - TRADE_SOURCE_UNSPECIFIED: Тип сделки не определён.
+         - TRADE_SOURCE_UNSPECIFIED: Тип источника сделки не определён.
          - TRADE_SOURCE_EXCHANGE: Биржевые сделки.
          - TRADE_SOURCE_DEALER: Сделки дилера.
          - TRADE_SOURCE_ALL: Все сделки.
@@ -896,6 +899,7 @@ components:
       description: Проверка активности стрима.
       example:
         streamId: streamId
+        pingRequestTime: '2000-01-23T04:56:07.000+00:00'
         time: '2000-01-23T04:56:07.000+00:00'
       properties:
         time:
@@ -904,6 +908,10 @@ components:
           type: string
         streamId:
           description: Идентификатор соединения.
+          type: string
+        pingRequestTime:
+          format: date-time
+          title: Время формирования запроса
           type: string
       type: object
     v1SubscribeLastPriceResponse:
@@ -1030,6 +1038,8 @@ components:
           $ref: '#/components/schemas/v1SubscribeInfoRequest'
         subscribeLastPriceRequest:
           $ref: '#/components/schemas/v1SubscribeLastPriceRequest'
+        pingSettings:
+          $ref: '#/components/schemas/v1PingDelaySettings'
       type: object
     v1SubscribeCandlesRequest:
       description: subscribeCandles | Изменения статуса подписки на свечи.
@@ -1115,7 +1125,7 @@ components:
           items:
             $ref: '#/components/schemas/v1TradeInstrument'
           type: array
-        tradeType:
+        tradeSource:
           $ref: '#/components/schemas/v1TradeSourceType'
       type: object
     v1TradeInstrument:
@@ -1182,6 +1192,13 @@ components:
             `instrument_uid`.
           type: string
       type: object
+    v1PingDelaySettings:
+      properties:
+        pingDelayMs:
+          format: int32
+          title: Задержка пинг сообщений milliseconds 5000-180000, default 120000
+          type: integer
+      type: object
     v1MarketDataRequest:
       description: Запрос подписки или отписки на определённые биржевые данные.
       properties:
@@ -1197,6 +1214,17 @@ components:
           $ref: '#/components/schemas/v1SubscribeLastPriceRequest'
         getMySubscriptions:
           $ref: '#/components/schemas/EmptyObj'
+        ping:
+          $ref: '#/components/schemas/v1PingRequest'
+        pingSettings:
+          $ref: '#/components/schemas/v1PingDelaySettings'
+      type: object
+    v1PingRequest:
+      properties:
+        time:
+          format: date-time
+          title: Время формирования запроса
+          type: string
       type: object
     v1PortfolioStreamResponse:
       description: Информация по позициям и доходностям портфелей.
@@ -1386,6 +1414,7 @@ components:
             units: units
         ping:
           streamId: streamId
+          pingRequestTime: '2000-01-23T04:56:07.000+00:00'
           time: '2000-01-23T04:56:07.000+00:00'
       properties:
         subscriptions:
@@ -1828,6 +1857,8 @@ components:
           items:
             type: string
           type: array
+        pingSettings:
+          $ref: '#/components/schemas/v1PingDelaySettings'
       type: object
     v1PositionsStreamResponse:
       description: Информация по изменению позиций портфеля.
@@ -1840,6 +1871,7 @@ components:
           trackingId: trackingId
         ping:
           streamId: streamId
+          pingRequestTime: '2000-01-23T04:56:07.000+00:00'
           time: '2000-01-23T04:56:07.000+00:00'
         position:
           date: '2000-01-23T04:56:07.000+00:00'
@@ -2149,11 +2181,14 @@ components:
           items:
             type: string
           type: array
+        pingSettings:
+          $ref: '#/components/schemas/v1PingDelaySettings'
       type: object
     v1OrderStateStreamResponse:
       example:
         ping:
           streamId: streamId
+          pingRequestTime: '2000-01-23T04:56:07.000+00:00'
           time: '2000-01-23T04:56:07.000+00:00'
         subscription:
           streamId: streamId
@@ -2508,6 +2543,7 @@ components:
           type: array
         error:
           $ref: '#/components/schemas/v1ErrorDetail'
+      title: Информация по подпискам
       type: object
     v1ResultSubscriptionStatus:
       default: RESULT_SUBSCRIPTION_STATUS_UNSPECIFIED
@@ -2539,9 +2575,9 @@ components:
           items:
             type: string
           type: array
-        pingDelayMillis:
+        pingDelayMs:
           format: int32
-          title: Задержка пинг сообщений milliseconds 1000-120000, default 120000
+          title: Задержка пинг сообщений milliseconds 5000-180000, default 120000
           type: integer
       title: Запрос установки стрим-соединения торговых поручений
       type: object
@@ -2550,6 +2586,7 @@ components:
       example:
         ping:
           streamId: streamId
+          pingRequestTime: '2000-01-23T04:56:07.000+00:00'
           time: '2000-01-23T04:56:07.000+00:00'
         subscription:
           streamId: streamId
@@ -2641,6 +2678,10 @@ components:
           items:
             type: string
           type: array
+        pingDelayMs:
+          format: int32
+          title: Задержка пинг сообщений milliseconds 5000-180000, default 120000
+          type: integer
       type: object
     EmptyObj:
       type: object

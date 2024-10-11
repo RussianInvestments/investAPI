@@ -70,10 +70,19 @@ enum SecurityTradingStatus {
   SECURITY_TRADING_STATUS_DEALER_NOT_AVAILABLE_FOR_TRADING = 16; //Недоступна торговля в режиме внутренней ликвидности брокера.
 }
 
+message PingRequest {
+  optional google.protobuf.Timestamp time = 1; //Время формирования запроса
+}
+
+message PingDelaySettings {
+  optional int32 ping_delay_ms = 15; //Задержка пинг сообщений milliseconds 5000-180000, default 120000
+}
+
 //Проверка активности стрима.
 message Ping {
   google.protobuf.Timestamp time = 1; //Время проверки.
   string stream_id = 2; //Идентификатор соединения.
+  optional google.protobuf.Timestamp ping_request_time = 4; //Время формирования запроса
 }
 
 //Тип цены.

@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tbank.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tbank.ru
-  version: '1.24'
+  version: '1.25'
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
@@ -1568,7 +1568,7 @@ paths:
           description: An unexpected error response.
       summary: >-
         Получить список активов. Метод работает для всех инструментов, кроме
-        срочных — опционов и фьючерсов.
+        срочных — фьючерсов и опционов.
       tags:
         - InstrumentsService
       x-codegen-request-body-name: body
@@ -8206,6 +8206,212 @@ paths:
       tags:
         - SandboxService
       x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.SignalService/GetSignals:
+    post:
+      operationId: SignalService_GetSignals
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetSignalsRequest'
+        description: Запрос сигналов.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetSignalsResponse'
+          description: A successful response.
+        '400':
+          description: >-
+            400 Bad Request - Запрос составлен неверно, проверьте параметры
+            вызова и синтаксические ошибки.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: 3
+                message: interval is invalid
+                description: 30011
+        '401':
+          description: 401 Unauthorized - Токен доступа не найден или не активен.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: 16
+                message: authentication token is missing or invalid
+                description: 40003
+        '403':
+          description: >-
+            403 Forbidden - Недостаточно прав для выполнения запроса, проверьте
+            соответствие токена и передаваемого в запросе счета.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: 7
+                message: insufficient privileges
+                description: 40002
+        '404':
+          description: >-
+            404 Not Found - Неверный URL запроса или переданный параметр не
+            определен.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: 5
+                message: account not found
+                description: 50004
+        '408':
+          description: >-
+            408 Request Timeout - Время передачи запроса клиентом истекло.
+            Проверьте работу приложения.
+        '415':
+          description: >-
+            415 Unsupported Media Type - Неверный тип данных, проверьте формат
+            передаваемого сообщения.
+        '429':
+          description: 429 Too Many Requests - Превышен лимит запросов в минуту.
+        '500':
+          description: >-
+            500 Internal Server Error - Внутренняя ошибка сервера, попробуйте
+            повторить запрос позже
+        '501':
+          description: >-
+            501 Not Implemented - Метод не реализован, проверьте путь вызова в
+            запросе.
+        '503':
+          description: >-
+            503 Service Unavailable - Сервис временно недоступен, попробуйте
+            повторить запрос позже.
+        '504':
+          description: >-
+            504 Gateway Timeout - Превышен интервал ожидания ответа от сервера,
+            попробуйте повторить запрос позже.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Запросить сигналы.
+      tags:
+        - SignalService
+      x-codegen-request-body-name: body
+  /tinkoff.public.invest.api.contract.v1.SignalService/GetStrategies:
+    post:
+      operationId: SignalService_GetStrategies
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/v1GetStrategiesRequest'
+        description: Запрос стратегий.
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/v1GetStrategiesResponse'
+          description: A successful response.
+        '400':
+          description: >-
+            400 Bad Request - Запрос составлен неверно, проверьте параметры
+            вызова и синтаксические ошибки.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: 3
+                message: interval is invalid
+                description: 30011
+        '401':
+          description: 401 Unauthorized - Токен доступа не найден или не активен.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: 16
+                message: authentication token is missing or invalid
+                description: 40003
+        '403':
+          description: >-
+            403 Forbidden - Недостаточно прав для выполнения запроса, проверьте
+            соответствие токена и передаваемого в запросе счета.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: 7
+                message: insufficient privileges
+                description: 40002
+        '404':
+          description: >-
+            404 Not Found - Неверный URL запроса или переданный параметр не
+            определен.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: 5
+                message: account not found
+                description: 50004
+        '408':
+          description: >-
+            408 Request Timeout - Время передачи запроса клиентом истекло.
+            Проверьте работу приложения.
+        '415':
+          description: >-
+            415 Unsupported Media Type - Неверный тип данных, проверьте формат
+            передаваемого сообщения.
+        '429':
+          description: 429 Too Many Requests - Превышен лимит запросов в минуту.
+        '500':
+          description: >-
+            500 Internal Server Error - Внутренняя ошибка сервера, попробуйте
+            повторить запрос позже
+        '501':
+          description: >-
+            501 Not Implemented - Метод не реализован, проверьте путь вызова в
+            запросе.
+        '503':
+          description: >-
+            503 Service Unavailable - Сервис временно недоступен, попробуйте
+            повторить запрос позже.
+        '504':
+          description: >-
+            504 Gateway Timeout - Превышен интервал ожидания ответа от сервера,
+            попробуйте повторить запрос позже.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      summary: Запросить стратегии.
+      tags:
+        - SignalService
+      x-codegen-request-body-name: body
   /tinkoff.public.invest.api.contract.v1.StopOrdersService/CancelStopOrder:
     post:
       operationId: StopOrdersService_CancelStopOrder
@@ -11446,7 +11652,11 @@ components:
         tradingStatus:
           $ref: '#/components/schemas/v1SecurityTradingStatus'
         otcFlag:
-          description: Признак внебиржевой ценной бумаги.
+          description: >-
+            Флаг, используемый ранее для определения внебиржевых инструментов.
+            На данный момент не используется для торгуемых через API
+            инструментов. Может использоваться как фильтр для операций,
+            совершавшихся некоторое время назад на ОТС площадке.
           type: boolean
         buyAvailableFlag:
           description: Признак доступности для покупки.
@@ -12614,7 +12824,11 @@ components:
         tradingStatus:
           $ref: '#/components/schemas/v1SecurityTradingStatus'
         otcFlag:
-          description: Признак внебиржевой ценной бумаги.
+          description: >-
+            Флаг, используемый ранее для определения внебиржевых инструментов.
+            На данный момент не используется для торгуемых через API
+            инструментов. Может использоваться как фильтр для операций,
+            совершавшихся некоторое время назад на ОТС площадке.
           type: boolean
         buyAvailableFlag:
           description: Признак доступности для покупки.
@@ -13072,7 +13286,11 @@ components:
         tradingStatus:
           $ref: '#/components/schemas/v1SecurityTradingStatus'
         otcFlag:
-          description: Признак внебиржевой ценной бумаги.
+          description: >-
+            Флаг, используемый ранее для определения внебиржевых инструментов.
+            На данный момент не используется для торгуемых через API
+            инструментов. Может использоваться как фильтр для операций,
+            совершавшихся некоторое время назад на ОТС площадке.
           type: boolean
         buyAvailableFlag:
           description: Признак доступности для покупки.
@@ -13375,7 +13593,11 @@ components:
           description: Уникальный идентификатор инструмента.
           type: string
         otcFlag:
-          description: Признак внебиржевой ценной бумаги.
+          description: >-
+            Флаг, используемый ранее для определения внебиржевых инструментов.
+            На данный момент не используется для торгуемых через API
+            инструментов. Может использоваться как фильтр для операций,
+            совершавшихся некоторое время назад на ОТС площадке.
           type: boolean
         apiTradeAvailableFlag:
           description: Возможность торговать инструментом через API.
@@ -13421,6 +13643,7 @@ components:
             figi: figi
             apiTradeAvailableFlag: true
             first1minCandleDate: 2000-01-23T04:56:07.000Z
+            lot: 0
             uid: uid
             blockedTcaFlag: true
             name: name
@@ -13436,6 +13659,7 @@ components:
             figi: figi
             apiTradeAvailableFlag: true
             first1minCandleDate: 2000-01-23T04:56:07.000Z
+            lot: 0
             uid: uid
             blockedTcaFlag: true
             name: name
@@ -13605,7 +13829,11 @@ components:
         tradingStatus:
           $ref: '#/components/schemas/v1SecurityTradingStatus'
         otcFlag:
-          description: Признак внебиржевой ценной бумаги.
+          description: >-
+            Флаг, используемый ранее для определения внебиржевых инструментов.
+            На данный момент не используется для торгуемых через API
+            инструментов. Может использоваться как фильтр для операций,
+            совершавшихся некоторое время назад на ОТС площадке.
           type: boolean
         buyAvailableFlag:
           description: Признак доступности для покупки.
@@ -15194,6 +15422,8 @@ components:
             Идентификатор инструмента. Принимает значение `figi` или
             `instrument_uid`.
           type: string
+        tradeSource:
+          $ref: '#/components/schemas/v1TradeSourceType'
       required:
         - from
         - to
@@ -15892,6 +16122,96 @@ components:
             $ref: '#/components/schemas/contractv1OrderState'
           type: array
       type: object
+    v1GetSignalsRequest:
+      description: Запрос сигналов.
+      properties:
+        signalId:
+          description: Идентификатор сигнала.
+          type: string
+        strategyId:
+          description: Идентификатор стратегии.
+          type: string
+        strategyType:
+          $ref: '#/components/schemas/v1StrategyType'
+        instrumentUid:
+          title: Идентификатор бумаги
+          type: string
+        from:
+          description: Дата начала запрашиваемого интервала в часовом поясе UTC.
+          format: date-time
+          type: string
+        to:
+          description: Дата конца запрашиваемого интервала  в часовом поясе UTC.
+          format: date-time
+          type: string
+        direction:
+          $ref: '#/components/schemas/v1SignalDirection'
+        active:
+          $ref: '#/components/schemas/v1SignalState'
+        paging:
+          $ref: '#/components/schemas/v1Page'
+      type: object
+    v1GetSignalsResponse:
+      description: Сигналы.
+      example:
+        signals:
+          - strategyName: strategyName
+            stoploss:
+              nano: 6
+              units: units
+            initialPrice:
+              nano: 6
+              units: units
+            probability: 0
+            endDt: 2000-01-23T04:56:07.000Z
+            createDt: 2000-01-23T04:56:07.000Z
+            closeDt: 2000-01-23T04:56:07.000Z
+            targetPrice:
+              nano: 6
+              units: units
+            signalId: signalId
+            instrumentUid: instrumentUid
+            name: name
+            strategyId: strategyId
+            closePrice:
+              nano: 6
+              units: units
+            info: info
+          - strategyName: strategyName
+            stoploss:
+              nano: 6
+              units: units
+            initialPrice:
+              nano: 6
+              units: units
+            probability: 0
+            endDt: 2000-01-23T04:56:07.000Z
+            createDt: 2000-01-23T04:56:07.000Z
+            closeDt: 2000-01-23T04:56:07.000Z
+            targetPrice:
+              nano: 6
+              units: units
+            signalId: signalId
+            instrumentUid: instrumentUid
+            name: name
+            strategyId: strategyId
+            closePrice:
+              nano: 6
+              units: units
+            info: info
+        paging:
+          pageNumber: 6
+          limit: 0
+          totalCount: 1
+      properties:
+        signals:
+          description: Массив сигналов.
+          items:
+            $ref: '#/components/schemas/v1Signal'
+          type: array
+        paging:
+          $ref: '#/components/schemas/v1PageResponse'
+      type: object
     v1GetStopOrdersRequest:
       description: Запрос получения списка активных стоп-заявок.
       properties:
@@ -15981,6 +16301,61 @@ components:
           items:
             $ref: '#/components/schemas/v1StopOrder'
           type: array
+      type: object
+    v1GetStrategiesRequest:
+      description: Запрос стратегий.
+      properties:
+        strategyId:
+          title: Идентификатор стратегии
+          type: string
+      type: object
+    v1GetStrategiesResponse:
+      example:
+        strategies:
+          - strategyName: strategyName
+            strategyDescription: strategyDescription
+            averageSignalYield:
+              nano: 6
+              units: units
+            strategyUrl: strategyUrl
+            yieldYear:
+              nano: 6
+              units: units
+            yield:
+              nano: 6
+              units: units
+            strategyId: strategyId
+            totalSignals: 6
+            timeInPosition: timeInPosition
+            averageSignalYieldYear:
+              nano: 6
+              units: units
+            activeSignals: 0
+          - strategyName: strategyName
+            strategyDescription: strategyDescription
+            averageSignalYield:
+              nano: 6
+              units: units
+            strategyUrl: strategyUrl
+            yieldYear:
+              nano: 6
+              units: units
+            yield:
+              nano: 6
+              units: units
+            strategyId: strategyId
+            totalSignals: 6
+            timeInPosition: timeInPosition
+            averageSignalYieldYear:
+              nano: 6
+              units: units
+            activeSignals: 0
+      properties:
+        strategies:
+          items:
+            $ref: '#/components/schemas/v1Strategy'
+          type: array
+      title: Стратегии
       type: object
     v1GetTechAnalysisRequest:
       properties:
@@ -16450,7 +16825,11 @@ components:
         tradingStatus:
           $ref: '#/components/schemas/v1SecurityTradingStatus'
         otcFlag:
-          description: Признак внебиржевой ценной бумаги.
+          description: >-
+            Флаг, используемый ранее для определения внебиржевых инструментов.
+            На данный момент не используется для торгуемых через API
+            инструментов. Может использоваться как фильтр для операций,
+            совершавшихся некоторое время назад на ОТС площадке.
           type: boolean
         buyAvailableFlag:
           description: Признак доступности для покупки.
@@ -16666,6 +17045,7 @@ components:
         figi: figi
         apiTradeAvailableFlag: true
         first1minCandleDate: 2000-01-23T04:56:07.000Z
+        lot: 0
         uid: uid
         blockedTcaFlag: true
         name: name
@@ -16723,6 +17103,10 @@ components:
         blockedTcaFlag:
           description: Флаг заблокированного ТКС.
           type: boolean
+        lot:
+          description: Количество бумаг в лоте.
+          format: int32
+          type: integer
       type: object
     v1InstrumentStatus:
       default: INSTRUMENT_STATUS_UNSPECIFIED
@@ -16867,6 +17251,10 @@ components:
             `SubscribeInfoResponse`, `SubscribeTradesResponse`,
             `SubscribeOrderBookResponse`, `SubscribeCandlesResponse`.
           type: object
+        ping:
+          $ref: '#/components/schemas/v1PingRequest'
+        pingSettings:
+          $ref: '#/components/schemas/v1PingDelaySettings'
       type: object
     v1MarketDataResponse:
       description: Пакет биржевой информации по подписке.
@@ -16905,6 +17293,7 @@ components:
           trackingId: trackingId
         ping:
           streamId: streamId
+          pingRequestTime: 2000-01-23T04:56:07.000Z
           time: 2000-01-23T04:56:07.000Z
         candle:
           volume: volume
@@ -17038,6 +17427,8 @@ components:
           $ref: '#/components/schemas/v1SubscribeInfoRequest'
         subscribeLastPriceRequest:
           $ref: '#/components/schemas/v1SubscribeLastPriceRequest'
+        pingSettings:
+          $ref: '#/components/schemas/v1PingDelaySettings'
       type: object
     v1MoneyValue:
       description: Денежная сумма в определённой валюте.
@@ -17896,7 +18287,11 @@ components:
           description: Возможность покупки или продажи на ИИС.
           type: boolean
         otcFlag:
-          description: Признак внебиржевой ценной бумаги.
+          description: >-
+            Флаг, используемый ранее для определения внебиржевых инструментов.
+            На данный момент не используется для торгуемых через API
+            инструментов. Может использоваться как фильтр для операций,
+            совершавшихся некоторое время назад на ОТС площадке.
           type: boolean
         buyAvailableFlag:
           description: Признак доступности для покупки.
@@ -18313,10 +18708,12 @@ components:
          - ORDERBOOK_TYPE_UNSPECIFIED: Не определён.
          - ORDERBOOK_TYPE_EXCHANGE: Биржевой стакан.
          - ORDERBOOK_TYPE_DEALER: Стакан дилера.
+         - ORDERBOOK_TYPE_ALL: Стакан биржевой и дилера.
       enum:
         - ORDERBOOK_TYPE_UNSPECIFIED
         - ORDERBOOK_TYPE_EXCHANGE
         - ORDERBOOK_TYPE_DEALER
+        - ORDERBOOK_TYPE_ALL
       type: string
     v1OrderDirection:
       default: ORDER_DIRECTION_UNSPECIFIED
@@ -18392,9 +18789,9 @@ components:
           items:
             type: string
           type: array
-        pingDelayMillis:
+        pingDelayMs:
           format: int32
-          title: Задержка пинг сообщений milliseconds 1000-120000, default 120000
+          title: Задержка пинг сообщений milliseconds 5000-180000, default 120000
           type: integer
       title: Запрос установки стрим-соединения торговых поручений
       type: object
@@ -18402,6 +18799,7 @@ components:
       example:
         ping:
           streamId: streamId
+          pingRequestTime: 2000-01-23T04:56:07.000Z
           time: 2000-01-23T04:56:07.000Z
         subscription:
           streamId: streamId
@@ -18718,6 +19116,7 @@ components:
       description: Проверка активности стрима.
       example:
         streamId: streamId
+        pingRequestTime: 2000-01-23T04:56:07.000Z
         time: 2000-01-23T04:56:07.000Z
       properties:
         time:
@@ -18726,6 +19125,24 @@ components:
           type: string
         streamId:
           description: Идентификатор соединения.
+          type: string
+        pingRequestTime:
+          format: date-time
+          title: Время формирования запроса
+          type: string
+      type: object
+    v1PingDelaySettings:
+      properties:
+        pingDelayMs:
+          format: int32
+          title: Задержка пинг сообщений milliseconds 5000-180000, default 120000
+          type: integer
+      type: object
+    v1PingRequest:
+      properties:
+        time:
+          format: date-time
+          title: Время формирования запроса
           type: string
       type: object
     v1PortfolioPosition:
@@ -19044,6 +19461,8 @@ components:
           items:
             type: string
           type: array
+        pingSettings:
+          $ref: '#/components/schemas/v1PingDelaySettings'
       type: object
     v1PortfolioStreamResponse:
       description: Информация по позициям и доходностям портфелей.
@@ -19233,6 +19652,7 @@ components:
             units: units
         ping:
           streamId: streamId
+          pingRequestTime: 2000-01-23T04:56:07.000Z
           time: 2000-01-23T04:56:07.000Z
       properties:
         subscriptions:
@@ -19583,6 +20003,8 @@ components:
           items:
             type: string
           type: array
+        pingSettings:
+          $ref: '#/components/schemas/v1PingDelaySettings'
       type: object
     v1PositionsStreamResponse:
       description: Информация по изменению позиций портфеля.
@@ -19595,6 +20017,7 @@ components:
           trackingId: trackingId
         ping:
           streamId: streamId
+          pingRequestTime: 2000-01-23T04:56:07.000Z
           time: 2000-01-23T04:56:07.000Z
         position:
           date: 2000-01-23T04:56:07.000Z
@@ -19732,6 +20155,7 @@ components:
         - quantity
       type: object
     v1PostOrderAsyncResponse:
+      description: Результат выставления асинхронного торгового поручения.
       example:
         tradeIntentId: tradeIntentId
         orderRequestId: orderRequestId
@@ -20302,7 +20726,11 @@ components:
         tradingStatus:
           $ref: '#/components/schemas/v1SecurityTradingStatus'
         otcFlag:
-          description: Признак внебиржевой ценной бумаги.
+          description: >-
+            Флаг, используемый ранее для определения внебиржевых инструментов.
+            На данный момент не используется для торгуемых через API
+            инструментов. Может использоваться как фильтр для операций,
+            совершавшихся некоторое время назад на ОТС площадке.
           type: boolean
         buyAvailableFlag:
           description: Признак доступности для покупки.
@@ -20582,6 +21010,116 @@ components:
             $ref: '#/components/schemas/v1Share'
           type: array
       type: object
+    v1Signal:
+      description: Сигнал.
+      example:
+        strategyName: strategyName
+        stoploss:
+          nano: 6
+          units: units
+        initialPrice:
+          nano: 6
+          units: units
+        probability: 0
+        endDt: 2000-01-23T04:56:07.000Z
+        createDt: 2000-01-23T04:56:07.000Z
+        closeDt: 2000-01-23T04:56:07.000Z
+        targetPrice:
+          nano: 6
+          units: units
+        signalId: signalId
+        instrumentUid: instrumentUid
+        name: name
+        strategyId: strategyId
+        closePrice:
+          nano: 6
+          units: units
+        info: info
+      properties:
+        signalId:
+          description: Идентификатор сигнала.
+          type: string
+        strategyId:
+          description: Идентификатор стратегии.
+          type: string
+        strategyName:
+          description: Название стратегии.
+          type: string
+        instrumentUid:
+          description: Идентификатор бумаги.
+          type: string
+        createDt:
+          description: Дата и время создания сигнала  в часовом поясе UTC.
+          format: date-time
+          type: string
+        direction:
+          $ref: '#/components/schemas/v1SignalDirection'
+        initialPrice:
+          $ref: '#/components/schemas/v1Quotation'
+        info:
+          description: Дополнительная информация о сигнале.
+          type: string
+        name:
+          description: Название сигнала.
+          type: string
+        targetPrice:
+          $ref: '#/components/schemas/v1Quotation'
+        endDt:
+          description: Дата и время дедлайна сигнала в часовом поясе UTC.
+          format: date-time
+          type: string
+        probability:
+          description: Вероятность сигнала.
+          format: int32
+          type: integer
+        stoploss:
+          $ref: '#/components/schemas/v1Quotation'
+        closePrice:
+          $ref: '#/components/schemas/v1Quotation'
+        closeDt:
+          description: Дата и время закрытия сигнала в часовом поясе UTC.
+          format: date-time
+          type: string
+      required:
+        - createDt
+        - direction
+        - endDt
+        - initialPrice
+        - instrumentUid
+        - name
+        - signalId
+        - strategyId
+        - strategyName
+        - targetPrice
+      type: object
+    v1SignalDirection:
+      default: SIGNAL_DIRECTION_UNSPECIFIED
+      description: |-
+        Направление сигнала.
+
+         - SIGNAL_DIRECTION_UNSPECIFIED: Не определен.
+         - SIGNAL_DIRECTION_BUY: Покупка.
+         - SIGNAL_DIRECTION_SELL: Продажа.
+      enum:
+        - SIGNAL_DIRECTION_UNSPECIFIED
+        - SIGNAL_DIRECTION_BUY
+        - SIGNAL_DIRECTION_SELL
+      type: string
+    v1SignalState:
+      default: SIGNAL_STATE_UNSPECIFIED
+      description: |-
+        Статус сигнала.
+
+         - SIGNAL_STATE_UNSPECIFIED: Не определен.
+         - SIGNAL_STATE_ACTIVE: Активный сигнал.
+         - SIGNAL_STATE_CLOSED: Закрытый сигнал.
+         - SIGNAL_STATE_ALL: Все состояния.
+      enum:
+        - SIGNAL_STATE_UNSPECIFIED
+        - SIGNAL_STATE_ACTIVE
+        - SIGNAL_STATE_CLOSED
+        - SIGNAL_STATE_ALL
+      type: string
     v1StopOrder:
       description: Информация о стоп-заявке.
       example:
@@ -20617,7 +21155,7 @@ components:
         exchangeOrderId: exchangeOrderId
       properties:
         stopOrderId:
-          description: Идентификатор-идентификатор стоп-заявки.
+          description: Уникальный идентификатор стоп-заявки.
           type: string
         lotsRequested:
           description: Запрошено лотов.
@@ -20753,6 +21291,88 @@ components:
         - STOP_ORDER_TYPE_TAKE_PROFIT
         - STOP_ORDER_TYPE_STOP_LOSS
         - STOP_ORDER_TYPE_STOP_LIMIT
+      type: string
+    v1Strategy:
+      example:
+        strategyName: strategyName
+        strategyDescription: strategyDescription
+        averageSignalYield:
+          nano: 6
+          units: units
+        strategyUrl: strategyUrl
+        yieldYear:
+          nano: 6
+          units: units
+        yield:
+          nano: 6
+          units: units
+        strategyId: strategyId
+        totalSignals: 6
+        timeInPosition: timeInPosition
+        averageSignalYieldYear:
+          nano: 6
+          units: units
+        activeSignals: 0
+      properties:
+        strategyId:
+          description: Идентификатор стратегии.
+          type: string
+        strategyName:
+          description: Название стратегии.
+          type: string
+        strategyDescription:
+          description: Описание стратегии.
+          type: string
+        strategyUrl:
+          description: Ссылка на страницу с описанием стратегии.
+          type: string
+        strategyType:
+          $ref: '#/components/schemas/v1StrategyType'
+        activeSignals:
+          description: Количество активных сигналов.
+          format: int32
+          type: integer
+        totalSignals:
+          description: Общее количество сигналов.
+          format: int32
+          type: integer
+        timeInPosition:
+          description: Среднее время нахождения сигнала в позиции.
+          format: int64
+          type: string
+        averageSignalYield:
+          $ref: '#/components/schemas/v1Quotation'
+        averageSignalYieldYear:
+          $ref: '#/components/schemas/v1Quotation'
+        yield:
+          $ref: '#/components/schemas/v1Quotation'
+        yieldYear:
+          $ref: '#/components/schemas/v1Quotation'
+      required:
+        - activeSignals
+        - averageSignalYield
+        - averageSignalYieldYear
+        - strategyId
+        - strategyName
+        - strategyType
+        - timeInPosition
+        - totalSignals
+        - yield
+        - yieldYear
+      title: Стратегия
+      type: object
+    v1StrategyType:
+      default: STRATEGY_TYPE_UNSPECIFIED
+      description: |-
+        Тип стратегии.
+
+         - STRATEGY_TYPE_UNSPECIFIED: Не определен.
+         - STRATEGY_TYPE_TECHNICAL: Техническая стратегия.
+         - STRATEGY_TYPE_FUNDAMENTAL: Фундаментальная стратегия.
+      enum:
+        - STRATEGY_TYPE_UNSPECIFIED
+        - STRATEGY_TYPE_TECHNICAL
+        - STRATEGY_TYPE_FUNDAMENTAL
       type: string
     v1StreamLimit:
       description: Лимит stream-соединений.
@@ -20951,7 +21571,7 @@ components:
           items:
             $ref: '#/components/schemas/v1TradeInstrument'
           type: array
-        tradeType:
+        tradeSource:
           $ref: '#/components/schemas/v1TradeSourceType'
       type: object
     v1SubscribeTradesResponse:
@@ -20978,7 +21598,7 @@ components:
           items:
             $ref: '#/components/schemas/v1TradeSubscription'
           type: array
-        tradeType:
+        tradeSource:
           $ref: '#/components/schemas/v1TradeSourceType'
       type: object
     v1SubscriptionAction:
@@ -21057,6 +21677,7 @@ components:
           type: array
         error:
           $ref: '#/components/schemas/v1ErrorDetail'
+      title: Информация по подпискам
       type: object
     v1SubscriptionStatus:
       default: SUBSCRIPTION_STATUS_UNSPECIFIED
@@ -21175,9 +21796,9 @@ components:
     v1TradeSourceType:
       default: TRADE_SOURCE_UNSPECIFIED
       description: |-
-        Источники сделок.
+        Типы источников сделок.
 
-         - TRADE_SOURCE_UNSPECIFIED: Тип сделки не определён.
+         - TRADE_SOURCE_UNSPECIFIED: Тип источника сделки не определён.
          - TRADE_SOURCE_EXCHANGE: Биржевые сделки.
          - TRADE_SOURCE_DEALER: Сделки дилера.
          - TRADE_SOURCE_ALL: Все сделки.
@@ -21218,12 +21839,17 @@ components:
           items:
             type: string
           type: array
+        pingDelayMs:
+          format: int32
+          title: Задержка пинг сообщений milliseconds 5000-180000, default 120000
+          type: integer
       type: object
     v1TradesStreamResponse:
       description: Информация о торговых поручениях.
       example:
         ping:
           streamId: streamId
+          pingRequestTime: 2000-01-23T04:56:07.000Z
           time: 2000-01-23T04:56:07.000Z
         subscription:
           streamId: streamId
@@ -21778,6 +22404,7 @@ components:
             trackingId: trackingId
           ping:
             streamId: streamId
+            pingRequestTime: 2000-01-23T04:56:07.000Z
             time: 2000-01-23T04:56:07.000Z
           candle:
             volume: volume
@@ -22076,6 +22703,7 @@ components:
               units: units
           ping:
             streamId: streamId
+            pingRequestTime: 2000-01-23T04:56:07.000Z
             time: 2000-01-23T04:56:07.000Z
         error:
           code: 1
@@ -22101,6 +22729,7 @@ components:
             trackingId: trackingId
           ping:
             streamId: streamId
+            pingRequestTime: 2000-01-23T04:56:07.000Z
             time: 2000-01-23T04:56:07.000Z
           position:
             date: 2000-01-23T04:56:07.000Z
@@ -22175,6 +22804,7 @@ components:
         result:
           ping:
             streamId: streamId
+            pingRequestTime: 2000-01-23T04:56:07.000Z
             time: 2000-01-23T04:56:07.000Z
           subscription:
             streamId: streamId
@@ -22249,6 +22879,7 @@ components:
         result:
           ping:
             streamId: streamId
+            pingRequestTime: 2000-01-23T04:56:07.000Z
             time: 2000-01-23T04:56:07.000Z
           subscription:
             streamId: streamId
