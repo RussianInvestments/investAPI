@@ -3161,6 +3161,11 @@
 <td>Флаг ожидания закрытия временного интервала для отправки свечи.</td>
 </tr>
 <tr>
+<td>candle_source_type</td>
+<td><a href="#getcandlesrequestcandlesource">GetCandlesRequest.CandleSource</a></td>
+<td>Источник свечей.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3279,6 +3284,11 @@
 <td>subscription_id</td>
 <td><a href="#string">string</a></td>
 <td>Идентификатор подписки в формате <code>UUID</code>.</td>
+</tr>
+<tr>
+<td>candle_source_type</td>
+<td><a href="#getcandlesrequestcandlesource">GetCandlesRequest.CandleSource</a></td>
+<td>Источник свечей.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3921,6 +3931,11 @@
 <td>UID инструмента.</td>
 </tr>
 <tr>
+<td>candle_source_type</td>
+<td><a href="#candlesource">CandleSource</a></td>
+<td>Источник свечей</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -4261,7 +4276,7 @@
 <td>Признак завершённости свечи. <strong>false</strong> — свеча за текущие интервал ещё сформирована не полностью.</td>
 </tr>
 <tr>
-<td>candle_source</td>
+<td>candle_source_type</td>
 <td><a href="#candlesource">CandleSource</a></td>
 <td>Тип источника свечи</td>
 </tr>
@@ -5196,6 +5211,11 @@
 <td>SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND</td>
 <td>9</td>
 <td>Активная подписка не найдена. Ошибка может возникнуть только при отписке от несуществующей подписки.</td>
+</tr>
+<tr>
+<td>SUBSCRIPTION_STATUS_SOURCE_IS_INVALID</td>
+<td>10</td>
+<td>Указан некорректный источник</td>
 </tr>
 </tbody>
 </table>

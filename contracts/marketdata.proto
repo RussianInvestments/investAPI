@@ -93,6 +93,7 @@ message SubscribeCandlesRequest {
   SubscriptionAction subscription_action = 1; //Изменение статуса подписки.
   repeated CandleInstrument instruments = 2; //Массив инструментов для подписки на свечи.
   bool waiting_close = 3; //Флаг ожидания закрытия временного интервала для отправки свечи.
+  optional GetCandlesRequest.CandleSource candle_source_type = 9; //Источник свечей.
 }
 
 //Тип операции со списком подписок.
@@ -142,6 +143,7 @@ message CandleSubscription {
   bool waiting_close = 5; //Флаг ожидания закрытия временного интервала для отправки свечи.
   string stream_id = 6; //Идентификатор открытого соединения.
   string subscription_id = 7; //Идентификатор подписки в формате `UUID`.
+  optional GetCandlesRequest.CandleSource candle_source_type = 9; //Источник свечей.
 }
 
 //Результат подписки.
@@ -156,6 +158,7 @@ enum SubscriptionStatus {
   SUBSCRIPTION_STATUS_INTERNAL_ERROR = 7; //Внутренняя ошибка сервиса.
   SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS = 8; //Превышен лимит на количество запросов на подписки в течение установленного отрезка времени.
   SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND = 9; // Активная подписка не найдена. Ошибка может возникнуть только при отписке от несуществующей подписки.
+  SUBSCRIPTION_STATUS_SOURCE_IS_INVALID = 10; //Указан некорректный источник
 }
 
 //Запрос на изменение статуса подписки на стаканы.
@@ -292,6 +295,7 @@ message Candle {
   google.protobuf.Timestamp time = 8; //Время начала интервала свечи по UTC.
   google.protobuf.Timestamp last_trade_ts = 9; //Время последней сделки, вошедшей в свечу по UTC.
   string instrument_uid = 10; //UID инструмента.
+  CandleSource candle_source_type = 19; //Источник свечей
 }
 
 //Пакет стаканов в рамках стрима.
@@ -397,7 +401,7 @@ message HistoricCandle {
   int64 volume = 5; //Объём торгов в лотах.
   google.protobuf.Timestamp time = 6; //Время свечи в часовом поясе UTC.
   bool is_complete = 7; //Признак завершённости свечи. **false** — свеча за текущие интервал ещё сформирована не полностью.
-  CandleSource candle_source = 9;  //Тип источника свечи
+  CandleSource candle_source_type = 9;  //Тип источника свечи
 }
 
 //Запрос получения цен последних сделок.
