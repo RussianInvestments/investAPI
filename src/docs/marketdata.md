@@ -168,6 +168,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Изменение статуса подписки. |
 | instruments | Массив объектов [CandleInstrument](#candleinstrument) | Массив инструментов для подписки на свечи. |
 | waiting_close |  [bool](#bool) | Флаг ожидания закрытия временного интервала для отправки свечи. |
+| candle_source_type |  [GetCandlesRequest.CandleSource](#getcandlesrequestcandlesource) | Источник свечей. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -210,6 +211,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | waiting_close |  [bool](#bool) | Флаг ожидания закрытия временного интервала для отправки свечи. |
 | stream_id |  [string](#string) | Идентификатор открытого соединения. |
 | subscription_id |  [string](#string) | Идентификатор подписки в формате `UUID`. |
+| candle_source_type |  [GetCandlesRequest.CandleSource](#getcandlesrequestcandlesource) | Источник свечей. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -440,6 +442,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала интервала свечи по UTC. |
 | last_trade_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время последней сделки, вошедшей в свечу по UTC. |
 | instrument_uid |  [string](#string) | UID инструмента. |
+| candle_source_type |  [CandleSource](#candlesource) | Источник свечей |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -550,7 +553,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | volume |  [int64](#int64) | Объём торгов в лотах. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время свечи в часовом поясе UTC. |
 | is_complete |  [bool](#bool) | Признак завершённости свечи. **false** — свеча за текущие интервал ещё сформирована не полностью. |
-| candle_source |  [CandleSource](#candlesource) | Тип источника свечи |
+| candle_source_type |  [CandleSource](#candlesource) | Тип источника свечи |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -884,6 +887,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | SUBSCRIPTION_STATUS_INTERNAL_ERROR | 7 | Внутренняя ошибка сервиса. |
 | SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS | 8 | Превышен лимит на количество запросов на подписки в течение установленного отрезка времени. |
 | SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND | 9 | Активная подписка не найдена. Ошибка может возникнуть только при отписке от несуществующей подписки. |
+| SUBSCRIPTION_STATUS_SOURCE_IS_INVALID | 10 | Указан некорректный источник |
 
 
 
