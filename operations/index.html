@@ -3028,6 +3028,16 @@
 <td>Массив виртуальных позиций портфеля.</td>
 </tr>
 <tr>
+<td>daily_yield</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Рассчитанная доходность портфеля за день в рублях</td>
+</tr>
+<tr>
+<td>daily_yield_relative</td>
+<td><a href="#quotation">Quotation</a></td>
+<td>Относительная доходность в день в %</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3101,6 +3111,11 @@
 <td>options</td>
 <td>Массив объектов <a href="#positionsoptions">PositionsOptions</a></td>
 <td>Список опционов портфеля.</td>
+</tr>
+<tr>
+<td>account_id</td>
+<td><a href="#string">string</a></td>
+<td>Идентификатор счёта пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3263,6 +3278,11 @@
 <td>Текущая рассчитанная доходность позиции.</td>
 </tr>
 <tr>
+<td>daily_yield</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Рассчитанная доходность портфеля за день</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -3335,6 +3355,11 @@
 <td>average_position_price_fifo</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
 <td>Средняя цена позиции по методу FIFO. Для пересчёта возможна задержка до одной секунды.</td>
+</tr>
+<tr>
+<td>daily_yield</td>
+<td><a href="#moneyvalue">MoneyValue</a></td>
+<td>Рассчитанная доходность портфеля за день</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4582,6 +4607,11 @@
 <td>Массив идентификаторов счётов пользователя.</td>
 </tr>
 <tr>
+<td>with_initial_positions</td>
+<td><a href="#bool">bool</a></td>
+<td>Получение состояния позиций на момент подключения.</td>
+</tr>
+<tr>
 <td>ping_settings</td>
 <td><a href="#pingdelaysettings">PingDelaySettings</a></td>
 <td>Запрос настройки пинга.</td>
@@ -4620,6 +4650,11 @@
 <td>ping</td>
 <td><a href="#ping">Ping</a></td>
 <td>Проверка активности стрима.</td>
+</tr>
+<tr>
+<td>initial_positions</td>
+<td><a href="#positionsresponse">PositionsResponse</a></td>
+<td>Текущие позиции.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

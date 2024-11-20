@@ -118,6 +118,8 @@ message PortfolioResponse {
   MoneyValue total_amount_sp = 10; //Общая стоимость структурных нот в портфеле.
   MoneyValue total_amount_portfolio = 11; //Общая стоимость портфеля.
   repeated VirtualPortfolioPosition virtual_positions = 12; //Массив виртуальных позиций портфеля.
+  MoneyValue daily_yield = 15;  // Рассчитанная доходность портфеля за день в рублях
+  Quotation daily_yield_relative = 16; //Относительная доходность в день в %
 }
 
 //Запрос позиций портфеля по счёту.
@@ -133,6 +135,7 @@ message PositionsResponse {
   bool limits_loading_in_progress = 4;  //Признак идущей выгрузки лимитов в данный момент.
   repeated PositionsFutures futures = 5;  //Список фьючерсов портфеля.
   repeated PositionsOptions options = 6;  //Список опционов портфеля.
+  string account_id = 15; //Идентификатор счёта пользователя.
 }
 
 //Запрос доступного остатка для вывода.
@@ -165,6 +168,7 @@ message PortfolioPosition {
   string instrument_uid = 25; //Уникальный идентификатор инструмента.
   MoneyValue var_margin = 26; //Вариационная маржа.
   Quotation expected_yield_fifo = 27; //Текущая рассчитанная доходность позиции.
+  MoneyValue daily_yield = 31;  // Рассчитанная доходность портфеля за день
 }
 
 message VirtualPortfolioPosition {
@@ -179,6 +183,7 @@ message VirtualPortfolioPosition {
   google.protobuf.Timestamp expire_date = 9; //Дата, до которой нужно продать виртуальные бумаги. После этой даты виртуальная позиция «сгораетт».
   MoneyValue current_price = 10; //Текущая цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента.
   MoneyValue average_position_price_fifo = 11; //Средняя цена позиции по методу FIFO. Для пересчёта возможна задержка до одной секунды.
+  MoneyValue daily_yield = 31;  // Рассчитанная доходность портфеля за день
 }
 
 //Баланс позиции ценной бумаги.
@@ -513,6 +518,7 @@ message OperationItemTrade {
 //Запрос установки stream-соединения позиций.
 message PositionsStreamRequest {
   repeated string accounts = 1; //Массив идентификаторов счётов пользователя.
+  bool with_initial_positions = 3; //Получение состояния позиций на момент подключения.
   PingDelaySettings ping_settings = 15; //Запрос настройки пинга.
 }
 
@@ -522,6 +528,7 @@ message PositionsStreamResponse {
     PositionsSubscriptionResult subscriptions = 1; //Объект результата подписки.
     PositionData position = 2; //Объект стриминга позиций.
     Ping ping = 3; //Проверка активности стрима.
+    PositionsResponse initial_positions = 5; //Текущие позиции.
   }
 }
 
