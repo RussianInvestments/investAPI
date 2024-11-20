@@ -198,6 +198,8 @@ Server-side stream обновлений информации по изменен
 | total_amount_sp |  [MoneyValue](#moneyvalue) | Общая стоимость структурных нот в портфеле. |
 | total_amount_portfolio |  [MoneyValue](#moneyvalue) | Общая стоимость портфеля. |
 | virtual_positions | Массив объектов [VirtualPortfolioPosition](#virtualportfolioposition) | Массив виртуальных позиций портфеля. |
+| daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день в рублях |
+| daily_yield_relative |  [Quotation](#quotation) | Относительная доходность в день в % |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -225,6 +227,7 @@ Server-side stream обновлений информации по изменен
 | limits_loading_in_progress |  [bool](#bool) | Признак идущей выгрузки лимитов в данный момент. |
 | futures | Массив объектов [PositionsFutures](#positionsfutures) | Список фьючерсов портфеля. |
 | options | Массив объектов [PositionsOptions](#positionsoptions) | Список опционов портфеля. |
+| account_id |  [string](#string) | Идентификатор счёта пользователя. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -275,6 +278,7 @@ Server-side stream обновлений информации по изменен
 | instrument_uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | var_margin |  [MoneyValue](#moneyvalue) | Вариационная маржа. |
 | expected_yield_fifo |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
+| daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -296,6 +300,7 @@ Server-side stream обновлений информации по изменен
 | expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата, до которой нужно продать виртуальные бумаги. После этой даты виртуальная позиция «сгораетт». |
 | current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. |
 | average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена позиции по методу FIFO. Для пересчёта возможна задержка до одной секунды. |
+| daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -709,6 +714,7 @@ Server-side stream обновлений информации по изменен
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | accounts | Массив объектов [string](#string) | Массив идентификаторов счётов пользователя. |
+| with_initial_positions |  [bool](#bool) | Получение состояния позиций на момент подключения. |
 | ping_settings |  [PingDelaySettings](#pingdelaysettings) | Запрос настройки пинга. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -723,6 +729,7 @@ Server-side stream обновлений информации по изменен
 | subscriptions |  [PositionsSubscriptionResult](#positionssubscriptionresult) | Объект результата подписки. |
 | position |  [PositionData](#positiondata) | Объект стриминга позиций. |
 | ping |  [Ping](#ping) | Проверка активности стрима. |
+| initial_positions |  [PositionsResponse](#positionsresponse) | Текущие позиции. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

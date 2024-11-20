@@ -594,6 +594,16 @@
     "type": "INVALID_ARGUMENT",
     "description": "Заявка с заданными параметрами не может быть исполнена и отменена Биржей или Брокером."
   },
+  "30228": {
+    "message": "`from` or `limit` have to be specified",
+    "type": "INVALID_ARGUMENT",
+    "description": "Необходимо указать один из параметров `from` или `limit`"
+  },
+  "30229": {
+    "message": "Price in points not available",
+    "type": "INVALID_ARGUMENT",
+    "description": "Конвертация цены фьючерса в данный момент не доступна. Возможно фьючерс истек или отсутствуют данные для расчета"
+  },
   "35001": {
     "message": "Sandbox accounts limit reached",
     "type": "INVALID_ARGUMENT",

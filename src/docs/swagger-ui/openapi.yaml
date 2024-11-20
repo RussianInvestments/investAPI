@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tbank.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tbank.ru
-  version: '1.25'
+  version: '1.26'
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
@@ -11478,8 +11478,12 @@ components:
       description: Объект передачи информации об облигации.
       example:
         assetUid: assetUid
+        callDate: 2000-01-23T04:56:07.000Z
         countryOfRisk: countryOfRisk
         blockedTcaFlag: true
+        dlongClient:
+          nano: 6
+          units: units
         maturityDate: 2000-01-23T04:56:07.000Z
         sellAvailableFlag: true
         first1dayCandleDate: 2000-01-23T04:56:07.000Z
@@ -11496,6 +11500,9 @@ components:
         forIisFlag: true
         positionUid: positionUid
         shortEnabledFlag: true
+        dshortClient:
+          nano: 6
+          units: units
         dshort:
           nano: 6
           units: units
@@ -11723,14 +11730,26 @@ components:
           $ref: '#/components/schemas/v1BrandData'
         bondType:
           $ref: '#/components/schemas/v1BondType'
+        callDate:
+          description: Дата погашения облигации.
+          format: date-time
+          type: string
+        dlongClient:
+          $ref: '#/components/schemas/v1Quotation'
+        dshortClient:
+          $ref: '#/components/schemas/v1Quotation'
       type: object
     v1BondResponse:
       description: Информация об облигации.
       example:
         instrument:
           assetUid: assetUid
+          callDate: 2000-01-23T04:56:07.000Z
           countryOfRisk: countryOfRisk
           blockedTcaFlag: true
+          dlongClient:
+            nano: 6
+            units: units
           maturityDate: 2000-01-23T04:56:07.000Z
           sellAvailableFlag: true
           first1dayCandleDate: 2000-01-23T04:56:07.000Z
@@ -11747,6 +11766,9 @@ components:
           forIisFlag: true
           positionUid: positionUid
           shortEnabledFlag: true
+          dshortClient:
+            nano: 6
+            units: units
           dshort:
             nano: 6
             units: units
@@ -11824,8 +11846,12 @@ components:
       example:
         instruments:
           - assetUid: assetUid
+            callDate: 2000-01-23T04:56:07.000Z
             countryOfRisk: countryOfRisk
             blockedTcaFlag: true
+            dlongClient:
+              nano: 6
+              units: units
             maturityDate: 2000-01-23T04:56:07.000Z
             sellAvailableFlag: true
             first1dayCandleDate: 2000-01-23T04:56:07.000Z
@@ -11842,6 +11868,9 @@ components:
             forIisFlag: true
             positionUid: positionUid
             shortEnabledFlag: true
+            dshortClient:
+              nano: 6
+              units: units
             dshort:
               nano: 6
               units: units
@@ -11902,8 +11931,12 @@ components:
             countryOfRiskName: countryOfRiskName
             isin: isin
           - assetUid: assetUid
+            callDate: 2000-01-23T04:56:07.000Z
             countryOfRisk: countryOfRisk
             blockedTcaFlag: true
+            dlongClient:
+              nano: 6
+              units: units
             maturityDate: 2000-01-23T04:56:07.000Z
             sellAvailableFlag: true
             first1dayCandleDate: 2000-01-23T04:56:07.000Z
@@ -11920,6 +11953,9 @@ components:
             forIisFlag: true
             positionUid: positionUid
             shortEnabledFlag: true
+            dshortClient:
+              nano: 6
+              units: units
             dshort:
               nano: 6
               units: units
@@ -12391,6 +12427,8 @@ components:
         instrumentUid:
           description: UID инструмента.
           type: string
+        candleSourceType:
+          $ref: '#/components/schemas/contractv1CandleSource'
       type: object
     v1CandleInstrument:
       description: Запрос изменения статус подписки на свечи.
@@ -12410,23 +12448,25 @@ components:
       type: object
     v1CandleInterval:
       default: CANDLE_INTERVAL_UNSPECIFIED
-      description: |-
-        Интервал свечей.
+      description: >-
+        Интервал свечей. Максимальное значение интервала приведено
+        ориентировочно, может отличаться в большую сторону в зависимости от
+        параметров запроса.
 
          - CANDLE_INTERVAL_UNSPECIFIED: Интервал не определён.
-         - CANDLE_INTERVAL_1_MIN: От 1 минуты до 1 дня.
-         - CANDLE_INTERVAL_5_MIN: От 5 минут до 1 дня.
-         - CANDLE_INTERVAL_15_MIN: От 15 минут до 1 дня.
-         - CANDLE_INTERVAL_HOUR: От 1 часа до 1 недели.
-         - CANDLE_INTERVAL_DAY: От 1 дня до 1 года.
-         - CANDLE_INTERVAL_2_MIN: От 2 минут до 1 дня.
-         - CANDLE_INTERVAL_3_MIN: От 3 минут до 1 дня.
-         - CANDLE_INTERVAL_10_MIN: От 10 минут до 1 дня.
-         - CANDLE_INTERVAL_30_MIN: От 30 минут до 2 дней.
-         - CANDLE_INTERVAL_2_HOUR: От 2 часов до 1 месяца.
-         - CANDLE_INTERVAL_4_HOUR: От 4 часов до 1 месяца.
-         - CANDLE_INTERVAL_WEEK: От 1 недели до 2 лет.
-         - CANDLE_INTERVAL_MONTH: От 1 месяца до 10 лет.
+         - CANDLE_INTERVAL_1_MIN: От 1 минуты до 1 дня (лимит 2400).
+         - CANDLE_INTERVAL_5_MIN: От 5 минут до недели (лимит 2400).
+         - CANDLE_INTERVAL_15_MIN: От 15 минут до 3 недель (лимит 2400).
+         - CANDLE_INTERVAL_HOUR: От 1 часа до 3 месяцев (лимит 2400).
+         - CANDLE_INTERVAL_DAY: От 1 дня до 6 лет (лимит 2400).
+         - CANDLE_INTERVAL_2_MIN: От 2 минут до 1 дня (лимит 1200).
+         - CANDLE_INTERVAL_3_MIN: От 3 минут до 1 дня (лимит 750).
+         - CANDLE_INTERVAL_10_MIN: От 10 минут до недели (лимит 1200).
+         - CANDLE_INTERVAL_30_MIN: От 30 минут до 3 недель (лимит 1200).
+         - CANDLE_INTERVAL_2_HOUR: От 2 часов до 3 месяцев (лимит 2400).
+         - CANDLE_INTERVAL_4_HOUR: От 4 часов до 3 месяцев (лимит 700).
+         - CANDLE_INTERVAL_WEEK: От 1 недели до 5 лет (лимит 300).
+         - CANDLE_INTERVAL_MONTH: От 1 месяца до 10 лет (лимит 120).
       enum:
         - CANDLE_INTERVAL_UNSPECIFIED
         - CANDLE_INTERVAL_1_MIN
@@ -12471,6 +12511,8 @@ components:
         subscriptionId:
           description: Идентификатор подписки в формате `UUID`.
           type: string
+        candleSourceType:
+          $ref: '#/components/schemas/v1GetCandlesRequestCandleSource'
       type: object
     v1ChildOperationItem:
       example:
@@ -12608,6 +12650,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             nominal:
               nano: 5
               currency: currency
@@ -12639,6 +12684,9 @@ components:
               nano: 6
               units: units
             otcFlag: true
+            dshortClient:
+              nano: 6
+              units: units
             klong:
               nano: 6
               units: units
@@ -12661,6 +12709,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             nominal:
               nano: 5
               currency: currency
@@ -12692,6 +12743,9 @@ components:
               nano: 6
               units: units
             otcFlag: true
+            dshortClient:
+              nano: 6
+              units: units
             klong:
               nano: 6
               units: units
@@ -12722,6 +12776,9 @@ components:
         uid: uid
         blockedTcaFlag: true
         dlong:
+          nano: 6
+          units: units
+        dlongClient:
           nano: 6
           units: units
         nominal:
@@ -12755,6 +12812,9 @@ components:
           nano: 6
           units: units
         otcFlag: true
+        dshortClient:
+          nano: 6
+          units: units
         klong:
           nano: 6
           units: units
@@ -12876,6 +12936,10 @@ components:
           type: string
         brand:
           $ref: '#/components/schemas/v1BrandData'
+        dlongClient:
+          $ref: '#/components/schemas/v1Quotation'
+        dshortClient:
+          $ref: '#/components/schemas/v1Quotation'
       type: object
     v1CurrencyResponse:
       description: Данные по валюте.
@@ -12891,6 +12955,9 @@ components:
           uid: uid
           blockedTcaFlag: true
           dlong:
+            nano: 6
+            units: units
+          dlongClient:
             nano: 6
             units: units
           nominal:
@@ -12924,6 +12991,9 @@ components:
             nano: 6
             units: units
           otcFlag: true
+          dshortClient:
+            nano: 6
+            units: units
           klong:
             nano: 6
             units: units
@@ -13161,6 +13231,9 @@ components:
         dlong:
           nano: 6
           units: units
+        dlongClient:
+          nano: 6
+          units: units
         sellAvailableFlag: true
         currency: currency
         first1dayCandleDate: 2000-01-23T04:56:07.000Z
@@ -13191,6 +13264,9 @@ components:
           nano: 6
           units: units
         otcFlag: true
+        dshortClient:
+          nano: 6
+          units: units
         klong:
           nano: 6
           units: units
@@ -13345,6 +13421,10 @@ components:
           type: string
         brand:
           $ref: '#/components/schemas/v1BrandData'
+        dlongClient:
+          $ref: '#/components/schemas/v1Quotation'
+        dshortClient:
+          $ref: '#/components/schemas/v1Quotation'
       type: object
     v1EtfResponse:
       description: Данные по фонду.
@@ -13364,6 +13444,9 @@ components:
           uid: uid
           blockedTcaFlag: true
           dlong:
+            nano: 6
+            units: units
+          dlongClient:
             nano: 6
             units: units
           sellAvailableFlag: true
@@ -13396,6 +13479,9 @@ components:
             nano: 6
             units: units
           otcFlag: true
+          dshortClient:
+            nano: 6
+            units: units
           klong:
             nano: 6
             units: units
@@ -13434,6 +13520,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             sellAvailableFlag: true
             currency: currency
             first1dayCandleDate: 2000-01-23T04:56:07.000Z
@@ -13464,6 +13553,9 @@ components:
               nano: 6
               units: units
             otcFlag: true
+            dshortClient:
+              nano: 6
+              units: units
             klong:
               nano: 6
               units: units
@@ -13494,6 +13586,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             sellAvailableFlag: true
             currency: currency
             first1dayCandleDate: 2000-01-23T04:56:07.000Z
@@ -13524,6 +13619,9 @@ components:
               nano: 6
               units: units
             otcFlag: true
+            dshortClient:
+              nano: 6
+              units: units
             klong:
               nano: 6
               units: units
@@ -13691,6 +13789,9 @@ components:
         dlong:
           nano: 6
           units: units
+        dlongClient:
+          nano: 6
+          units: units
         lastTradeDate: 2000-01-23T04:56:07.000Z
         sellAvailableFlag: true
         currency: currency
@@ -13730,6 +13831,9 @@ components:
           units: units
         otcFlag: true
         basicAssetPositionUid: basicAssetPositionUid
+        dshortClient:
+          nano: 6
+          units: units
         klong:
           nano: 6
           units: units
@@ -13887,6 +13991,10 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         brand:
           $ref: '#/components/schemas/v1BrandData'
+        dlongClient:
+          $ref: '#/components/schemas/v1Quotation'
+        dshortClient:
+          $ref: '#/components/schemas/v1Quotation'
       type: object
     v1FutureResponse:
       description: Данные по фьючерсу.
@@ -13906,6 +14014,9 @@ components:
           futuresType: futuresType
           blockedTcaFlag: true
           dlong:
+            nano: 6
+            units: units
+          dlongClient:
             nano: 6
             units: units
           lastTradeDate: 2000-01-23T04:56:07.000Z
@@ -13947,6 +14058,9 @@ components:
             units: units
           otcFlag: true
           basicAssetPositionUid: basicAssetPositionUid
+          dshortClient:
+            nano: 6
+            units: units
           klong:
             nano: 6
             units: units
@@ -13985,6 +14099,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             lastTradeDate: 2000-01-23T04:56:07.000Z
             sellAvailableFlag: true
             currency: currency
@@ -14024,6 +14141,9 @@ components:
               units: units
             otcFlag: true
             basicAssetPositionUid: basicAssetPositionUid
+            dshortClient:
+              nano: 6
+              units: units
             klong:
               nano: 6
               units: units
@@ -14054,6 +14174,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             lastTradeDate: 2000-01-23T04:56:07.000Z
             sellAvailableFlag: true
             currency: currency
@@ -14093,6 +14216,9 @@ components:
               units: units
             otcFlag: true
             basicAssetPositionUid: basicAssetPositionUid
+            dshortClient:
+              nano: 6
+              units: units
             klong:
               nano: 6
               units: units
@@ -16597,7 +16723,7 @@ components:
             Признак завершённости свечи. **false** — свеча за текущие интервал
             ещё сформирована не полностью.
           type: boolean
-        candleSource:
+        candleSourceType:
           $ref: '#/components/schemas/contractv1CandleSource'
       type: object
     v1IndicativeResponse:
@@ -16727,6 +16853,9 @@ components:
         dlong:
           nano: 6
           units: units
+        dlongClient:
+          nano: 6
+          units: units
         sellAvailableFlag: true
         currency: currency
         first1dayCandleDate: 2000-01-23T04:56:07.000Z
@@ -16755,6 +16884,9 @@ components:
           nano: 6
           units: units
         otcFlag: true
+        dshortClient:
+          nano: 6
+          units: units
         klong:
           nano: 6
           units: units
@@ -16879,6 +17011,10 @@ components:
           type: string
         brand:
           $ref: '#/components/schemas/v1BrandData'
+        dlongClient:
+          $ref: '#/components/schemas/v1Quotation'
+        dshortClient:
+          $ref: '#/components/schemas/v1Quotation'
       type: object
     v1InstrumentClosePriceRequest:
       description: Запрос цен закрытия торговой сессии по инструменту.
@@ -16990,6 +17126,9 @@ components:
           dlong:
             nano: 6
             units: units
+          dlongClient:
+            nano: 6
+            units: units
           sellAvailableFlag: true
           currency: currency
           first1dayCandleDate: 2000-01-23T04:56:07.000Z
@@ -17018,6 +17157,9 @@ components:
             nano: 6
             units: units
           otcFlag: true
+          dshortClient:
+            nano: 6
+            units: units
           klong:
             nano: 6
             units: units
@@ -18130,6 +18272,9 @@ components:
         dlong:
           nano: 6
           units: units
+        dlongClient:
+          nano: 6
+          units: units
         lastTradeDate: 2000-01-23T04:56:07.000Z
         sellAvailableFlag: true
         currency: currency
@@ -18165,6 +18310,9 @@ components:
           nano: 6
           units: units
         basicAssetPositionUid: basicAssetPositionUid
+        dshortClient:
+          nano: 6
+          units: units
         otcFlag: true
         klong:
           nano: 6
@@ -18260,6 +18408,10 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         strikePrice:
           $ref: '#/components/schemas/v1MoneyValue'
+        dlongClient:
+          $ref: '#/components/schemas/v1Quotation'
+        dshortClient:
+          $ref: '#/components/schemas/v1Quotation'
         expirationDate:
           description: Дата истечения срока в формате UTC.
           format: date-time
@@ -18354,6 +18506,9 @@ components:
           dlong:
             nano: 6
             units: units
+          dlongClient:
+            nano: 6
+            units: units
           lastTradeDate: 2000-01-23T04:56:07.000Z
           sellAvailableFlag: true
           currency: currency
@@ -18389,6 +18544,9 @@ components:
             nano: 6
             units: units
           basicAssetPositionUid: basicAssetPositionUid
+          dshortClient:
+            nano: 6
+            units: units
           otcFlag: true
           klong:
             nano: 6
@@ -18449,6 +18607,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             lastTradeDate: 2000-01-23T04:56:07.000Z
             sellAvailableFlag: true
             currency: currency
@@ -18484,6 +18645,9 @@ components:
               nano: 6
               units: units
             basicAssetPositionUid: basicAssetPositionUid
+            dshortClient:
+              nano: 6
+              units: units
             otcFlag: true
             klong:
               nano: 6
@@ -18510,6 +18674,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             lastTradeDate: 2000-01-23T04:56:07.000Z
             sellAvailableFlag: true
             currency: currency
@@ -18545,6 +18712,9 @@ components:
               nano: 6
               units: units
             basicAssetPositionUid: basicAssetPositionUid
+            dshortClient:
+              nano: 6
+              units: units
             otcFlag: true
             klong:
               nano: 6
@@ -19184,6 +19354,10 @@ components:
           units: units
         blocked: true
         instrumentUid: instrumentUid
+        dailyYield:
+          nano: 5
+          currency: currency
+          units: units
         currentNkd:
           nano: 5
           currency: currency
@@ -19229,6 +19403,8 @@ components:
           $ref: '#/components/schemas/v1MoneyValue'
         expectedYieldFifo:
           $ref: '#/components/schemas/v1Quotation'
+        dailyYield:
+          $ref: '#/components/schemas/v1MoneyValue'
       type: object
     v1PortfolioRequest:
       description: Запрос получения текущего портфеля по счёту.
@@ -19252,17 +19428,9 @@ components:
           nano: 5
           currency: currency
           units: units
-        accountId: accountId
-        totalAmountCurrencies:
-          nano: 5
-          currency: currency
-          units: units
         totalAmountSp:
           nano: 5
           currency: currency
-          units: units
-        expectedYield:
-          nano: 6
           units: units
         positions:
           - varMargin:
@@ -19301,6 +19469,10 @@ components:
               units: units
             blocked: true
             instrumentUid: instrumentUid
+            dailyYield:
+              nano: 5
+              currency: currency
+              units: units
             currentNkd:
               nano: 5
               currency: currency
@@ -19344,6 +19516,10 @@ components:
               units: units
             blocked: true
             instrumentUid: instrumentUid
+            dailyYield:
+              nano: 5
+              currency: currency
+              units: units
             currentNkd:
               nano: 5
               currency: currency
@@ -19351,11 +19527,23 @@ components:
             expectedYield:
               nano: 6
               units: units
-        totalAmountShares:
+        totalAmountEtf:
           nano: 5
           currency: currency
           units: units
-        totalAmountEtf:
+        accountId: accountId
+        totalAmountCurrencies:
+          nano: 5
+          currency: currency
+          units: units
+        dailyYield:
+          nano: 5
+          currency: currency
+          units: units
+        expectedYield:
+          nano: 6
+          units: units
+        totalAmountShares:
           nano: 5
           currency: currency
           units: units
@@ -19380,6 +19568,10 @@ components:
               currency: currency
               units: units
             instrumentUid: instrumentUid
+            dailyYield:
+              nano: 5
+              currency: currency
+              units: units
             positionUid: positionUid
             currentPrice:
               nano: 5
@@ -19406,6 +19598,10 @@ components:
               currency: currency
               units: units
             instrumentUid: instrumentUid
+            dailyYield:
+              nano: 5
+              currency: currency
+              units: units
             positionUid: positionUid
             currentPrice:
               nano: 5
@@ -19416,6 +19612,9 @@ components:
               nano: 6
               units: units
             expireDate: 2000-01-23T04:56:07.000Z
+        dailyYieldRelative:
+          nano: 6
+          units: units
         totalAmountOptions:
           nano: 5
           currency: currency
@@ -19452,6 +19651,10 @@ components:
           items:
             $ref: '#/components/schemas/v1VirtualPortfolioPosition'
           type: array
+        dailyYield:
+          $ref: '#/components/schemas/v1MoneyValue'
+        dailyYieldRelative:
+          $ref: '#/components/schemas/v1Quotation'
       type: object
     v1PortfolioStreamRequest:
       description: Запрос установки stream-соединения.
@@ -19482,17 +19685,9 @@ components:
             nano: 5
             currency: currency
             units: units
-          accountId: accountId
-          totalAmountCurrencies:
-            nano: 5
-            currency: currency
-            units: units
           totalAmountSp:
             nano: 5
             currency: currency
-            units: units
-          expectedYield:
-            nano: 6
             units: units
           positions:
             - varMargin:
@@ -19531,6 +19726,10 @@ components:
                 units: units
               blocked: true
               instrumentUid: instrumentUid
+              dailyYield:
+                nano: 5
+                currency: currency
+                units: units
               currentNkd:
                 nano: 5
                 currency: currency
@@ -19574,6 +19773,10 @@ components:
                 units: units
               blocked: true
               instrumentUid: instrumentUid
+              dailyYield:
+                nano: 5
+                currency: currency
+                units: units
               currentNkd:
                 nano: 5
                 currency: currency
@@ -19581,11 +19784,23 @@ components:
               expectedYield:
                 nano: 6
                 units: units
-          totalAmountShares:
+          totalAmountEtf:
             nano: 5
             currency: currency
             units: units
-          totalAmountEtf:
+          accountId: accountId
+          totalAmountCurrencies:
+            nano: 5
+            currency: currency
+            units: units
+          dailyYield:
+            nano: 5
+            currency: currency
+            units: units
+          expectedYield:
+            nano: 6
+            units: units
+          totalAmountShares:
             nano: 5
             currency: currency
             units: units
@@ -19610,6 +19825,10 @@ components:
                 currency: currency
                 units: units
               instrumentUid: instrumentUid
+              dailyYield:
+                nano: 5
+                currency: currency
+                units: units
               positionUid: positionUid
               currentPrice:
                 nano: 5
@@ -19636,6 +19855,10 @@ components:
                 currency: currency
                 units: units
               instrumentUid: instrumentUid
+              dailyYield:
+                nano: 5
+                currency: currency
+                units: units
               positionUid: positionUid
               currentPrice:
                 nano: 5
@@ -19646,6 +19869,9 @@ components:
                 nano: 6
                 units: units
               expireDate: 2000-01-23T04:56:07.000Z
+          dailyYieldRelative:
+            nano: 6
+            units: units
           totalAmountOptions:
             nano: 5
             currency: currency
@@ -19881,6 +20107,7 @@ components:
       description: Список позиций по счёту.
       example:
         limitsLoadingInProgress: true
+        accountId: accountId
         money:
           - nano: 5
             currency: currency
@@ -19959,6 +20186,9 @@ components:
           items:
             $ref: '#/components/schemas/v1PositionsOptions'
           type: array
+        accountId:
+          description: Идентификатор счёта пользователя.
+          type: string
       type: object
     v1PositionsSecurities:
       description: Баланс позиции ценной бумаги.
@@ -20003,6 +20233,9 @@ components:
           items:
             type: string
           type: array
+        withInitialPositions:
+          description: Получение состояния позиций на момент подключения.
+          type: boolean
         pingSettings:
           $ref: '#/components/schemas/v1PingDelaySettings'
       type: object
@@ -20015,6 +20248,58 @@ components:
             - accountId: accountId
             - accountId: accountId
           trackingId: trackingId
+        initialPositions:
+          limitsLoadingInProgress: true
+          accountId: accountId
+          money:
+            - nano: 5
+              currency: currency
+              units: units
+            - nano: 5
+              currency: currency
+              units: units
+          blocked:
+            - nano: 5
+              currency: currency
+              units: units
+            - nano: 5
+              currency: currency
+              units: units
+          options:
+            - blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+            - blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+          futures:
+            - blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              figi: figi
+            - blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              figi: figi
+          securities:
+            - instrumentType: instrumentType
+              blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              figi: figi
+              exchangeBlocked: true
+            - instrumentType: instrumentType
+              blocked: blocked
+              balance: balance
+              instrumentUid: instrumentUid
+              positionUid: positionUid
+              figi: figi
+              exchangeBlocked: true
         ping:
           streamId: streamId
           pingRequestTime: 2000-01-23T04:56:07.000Z
@@ -20081,6 +20366,8 @@ components:
           $ref: '#/components/schemas/v1PositionData'
         ping:
           $ref: '#/components/schemas/v1Ping'
+        initialPositions:
+          $ref: '#/components/schemas/v1PositionsResponse'
       type: object
     v1PositionsSubscriptionResult:
       description: Объект результата подписки.
@@ -20605,6 +20892,9 @@ components:
         dlong:
           nano: 6
           units: units
+        dlongClient:
+          nano: 6
+          units: units
         nominal:
           nano: 5
           currency: currency
@@ -20639,6 +20929,9 @@ components:
           nano: 6
           units: units
         otcFlag: true
+        dshortClient:
+          nano: 6
+          units: units
         klong:
           nano: 6
           units: units
@@ -20788,6 +21081,10 @@ components:
           type: string
         brand:
           $ref: '#/components/schemas/v1BrandData'
+        dlongClient:
+          $ref: '#/components/schemas/v1Quotation'
+        dshortClient:
+          $ref: '#/components/schemas/v1Quotation'
       type: object
     v1ShareResponse:
       description: Данные по акции.
@@ -20803,6 +21100,9 @@ components:
           uid: uid
           blockedTcaFlag: true
           dlong:
+            nano: 6
+            units: units
+          dlongClient:
             nano: 6
             units: units
           nominal:
@@ -20839,6 +21139,9 @@ components:
             nano: 6
             units: units
           otcFlag: true
+          dshortClient:
+            nano: 6
+            units: units
           klong:
             nano: 6
             units: units
@@ -20897,6 +21200,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             nominal:
               nano: 5
               currency: currency
@@ -20931,6 +21237,9 @@ components:
               nano: 6
               units: units
             otcFlag: true
+            dshortClient:
+              nano: 6
+              units: units
             klong:
               nano: 6
               units: units
@@ -20956,6 +21265,9 @@ components:
             dlong:
               nano: 6
               units: units
+            dlongClient:
+              nano: 6
+              units: units
             nominal:
               nano: 5
               currency: currency
@@ -20990,6 +21302,9 @@ components:
               nano: 6
               units: units
             otcFlag: true
+            dshortClient:
+              nano: 6
+              units: units
             klong:
               nano: 6
               units: units
@@ -21423,6 +21738,8 @@ components:
         waitingClose:
           description: Флаг ожидания закрытия временного интервала для отправки свечи.
           type: boolean
+        candleSourceType:
+          $ref: '#/components/schemas/v1GetCandlesRequestCandleSource'
       type: object
     v1SubscribeCandlesResponse:
       description: Результат изменения статус подписки на свечи.
@@ -21694,6 +22011,7 @@ components:
          - SUBSCRIPTION_STATUS_INTERNAL_ERROR: Внутренняя ошибка сервиса.
          - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS: Превышен лимит на количество запросов на подписки в течение установленного отрезка времени.
          - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND: Активная подписка не найдена. Ошибка может возникнуть только при отписке от несуществующей подписки.
+         - SUBSCRIPTION_STATUS_SOURCE_IS_INVALID: Указан некорректный источник
       enum:
         - SUBSCRIPTION_STATUS_UNSPECIFIED
         - SUBSCRIPTION_STATUS_SUCCESS
@@ -21705,6 +22023,7 @@ components:
         - SUBSCRIPTION_STATUS_INTERNAL_ERROR
         - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS
         - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND
+        - SUBSCRIPTION_STATUS_SOURCE_IS_INVALID
       type: string
     v1TakeProfitType:
       default: TAKE_PROFIT_TYPE_UNSPECIFIED
@@ -22275,6 +22594,10 @@ components:
           currency: currency
           units: units
         instrumentUid: instrumentUid
+        dailyYield:
+          nano: 5
+          currency: currency
+          units: units
         positionUid: positionUid
         currentPrice:
           nano: 5
@@ -22315,6 +22638,8 @@ components:
         currentPrice:
           $ref: '#/components/schemas/v1MoneyValue'
         averagePositionPriceFifo:
+          $ref: '#/components/schemas/v1MoneyValue'
+        dailyYield:
           $ref: '#/components/schemas/v1MoneyValue'
       type: object
     v1WithdrawLimitsRequest:
@@ -22533,17 +22858,9 @@ components:
               nano: 5
               currency: currency
               units: units
-            accountId: accountId
-            totalAmountCurrencies:
-              nano: 5
-              currency: currency
-              units: units
             totalAmountSp:
               nano: 5
               currency: currency
-              units: units
-            expectedYield:
-              nano: 6
               units: units
             positions:
               - varMargin:
@@ -22582,6 +22899,10 @@ components:
                   units: units
                 blocked: true
                 instrumentUid: instrumentUid
+                dailyYield:
+                  nano: 5
+                  currency: currency
+                  units: units
                 currentNkd:
                   nano: 5
                   currency: currency
@@ -22625,6 +22946,10 @@ components:
                   units: units
                 blocked: true
                 instrumentUid: instrumentUid
+                dailyYield:
+                  nano: 5
+                  currency: currency
+                  units: units
                 currentNkd:
                   nano: 5
                   currency: currency
@@ -22632,11 +22957,23 @@ components:
                 expectedYield:
                   nano: 6
                   units: units
-            totalAmountShares:
+            totalAmountEtf:
               nano: 5
               currency: currency
               units: units
-            totalAmountEtf:
+            accountId: accountId
+            totalAmountCurrencies:
+              nano: 5
+              currency: currency
+              units: units
+            dailyYield:
+              nano: 5
+              currency: currency
+              units: units
+            expectedYield:
+              nano: 6
+              units: units
+            totalAmountShares:
               nano: 5
               currency: currency
               units: units
@@ -22661,6 +22998,10 @@ components:
                   currency: currency
                   units: units
                 instrumentUid: instrumentUid
+                dailyYield:
+                  nano: 5
+                  currency: currency
+                  units: units
                 positionUid: positionUid
                 currentPrice:
                   nano: 5
@@ -22687,6 +23028,10 @@ components:
                   currency: currency
                   units: units
                 instrumentUid: instrumentUid
+                dailyYield:
+                  nano: 5
+                  currency: currency
+                  units: units
                 positionUid: positionUid
                 currentPrice:
                   nano: 5
@@ -22697,6 +23042,9 @@ components:
                   nano: 6
                   units: units
                 expireDate: 2000-01-23T04:56:07.000Z
+            dailyYieldRelative:
+              nano: 6
+              units: units
             totalAmountOptions:
               nano: 5
               currency: currency
@@ -22727,6 +23075,58 @@ components:
               - accountId: accountId
               - accountId: accountId
             trackingId: trackingId
+          initialPositions:
+            limitsLoadingInProgress: true
+            accountId: accountId
+            money:
+              - nano: 5
+                currency: currency
+                units: units
+              - nano: 5
+                currency: currency
+                units: units
+            blocked:
+              - nano: 5
+                currency: currency
+                units: units
+              - nano: 5
+                currency: currency
+                units: units
+            options:
+              - blocked: blocked
+                balance: balance
+                instrumentUid: instrumentUid
+                positionUid: positionUid
+              - blocked: blocked
+                balance: balance
+                instrumentUid: instrumentUid
+                positionUid: positionUid
+            futures:
+              - blocked: blocked
+                balance: balance
+                instrumentUid: instrumentUid
+                positionUid: positionUid
+                figi: figi
+              - blocked: blocked
+                balance: balance
+                instrumentUid: instrumentUid
+                positionUid: positionUid
+                figi: figi
+            securities:
+              - instrumentType: instrumentType
+                blocked: blocked
+                balance: balance
+                instrumentUid: instrumentUid
+                positionUid: positionUid
+                figi: figi
+                exchangeBlocked: true
+              - instrumentType: instrumentType
+                blocked: blocked
+                balance: balance
+                instrumentUid: instrumentUid
+                positionUid: positionUid
+                figi: figi
+                exchangeBlocked: true
           ping:
             streamId: streamId
             pingRequestTime: 2000-01-23T04:56:07.000Z
