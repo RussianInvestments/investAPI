@@ -1906,13 +1906,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#instrumentstatus" class="md-nav__link">
-    InstrumentStatus
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#sharetype" class="md-nav__link">
     ShareType
   </a>
@@ -3581,13 +3574,6 @@
           <li class="md-nav__item">
   <a href="#instrumentidtype" class="md-nav__link">
     InstrumentIdType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instrumentstatus" class="md-nav__link">
-    InstrumentStatus
   </a>
   
 </li>
@@ -7103,6 +7089,11 @@
 <td></td>
 </tr>
 <tr>
+<td>instrument_status</td>
+<td><a href="#instrumentstatus">InstrumentStatus</a></td>
+<td>Статус запрашиваемых инструментов. <a href="#instrumentstatus">Возможные значения</a>.</td>
+</tr>
+<tr>
 <td><!-- end Fields --></td>
 <td></td>
 <td></td>
@@ -9682,34 +9673,6 @@
 <td>INSTRUMENT_ID_TYPE_POSITION_UID</td>
 <td>4</td>
 <td>Идентификатор позиции.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="instrumentstatus">InstrumentStatus</h4>
-<p>Статус запрашиваемых инструментов.</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Number</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>INSTRUMENT_STATUS_UNSPECIFIED</td>
-<td>0</td>
-<td>Значение не определено.</td>
-</tr>
-<tr>
-<td>INSTRUMENT_STATUS_BASE</td>
-<td>1</td>
-<td>Базовый список инструментов (по умолчанию). Инструменты, доступные для торговли через T-Invest API. Cейчас списки бумаг, которые доступны из API и других интерфейсах совпадают — кроме внебиржевых бумаг. Но в будущем возможны ситуации, когда списки инструментов будут отличаться.</td>
-</tr>
-<tr>
-<td>INSTRUMENT_STATUS_ALL</td>
-<td>2</td>
-<td>Список всех инструментов.</td>
 </tr>
 </tbody>
 </table>

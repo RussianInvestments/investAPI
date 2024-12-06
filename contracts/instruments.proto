@@ -739,12 +739,6 @@ enum InstrumentIdType {
   INSTRUMENT_ID_TYPE_POSITION_UID = 4; //Идентификатор позиции.
 }
 
-//Статус запрашиваемых инструментов.
-enum InstrumentStatus {
-  INSTRUMENT_STATUS_UNSPECIFIED = 0; //Значение не определено.
-  INSTRUMENT_STATUS_BASE = 1; //Базовый список инструментов (по умолчанию). Инструменты, доступные для торговли через T-Invest API. Cейчас списки бумаг, которые доступны из API и других интерфейсах совпадают — кроме внебиржевых бумаг. Но в будущем возможны ситуации, когда списки инструментов будут отличаться.
-  INSTRUMENT_STATUS_ALL = 2; //Список всех инструментов.
-}
 
 //Данные по инструменту.
 message InstrumentResponse {
@@ -854,6 +848,8 @@ message AssetResponse {
 //Запрос списка активов.
 message AssetsRequest {
   optional InstrumentType instrument_type = 1;
+  optional InstrumentStatus instrument_status = 2; //Статус запрашиваемых инструментов. [Возможные значения](#instrumentstatus).
+
 }
 
 //Список активов.

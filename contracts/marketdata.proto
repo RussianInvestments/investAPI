@@ -409,6 +409,7 @@ message GetLastPricesRequest {
   repeated string figi = 1 [deprecated = true]; //Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`.
   repeated string instrument_id = 2; //Массив идентификаторов инструмента. Принимает значения `figi` или `instrument_uid`.
   LastPriceType last_price_type = 3; //Тип запрашиваемой последней цены.
+  optional InstrumentStatus instrument_status = 9; //Статус запрашиваемых инструментов. [Возможные значения](#instrumentstatus).
 }
 
 //Список цен последних сделок.
@@ -497,6 +498,7 @@ message GetMySubscriptions {}
 //Запрос цен закрытия торговой сессии по инструментам.
 message GetClosePricesRequest {
   repeated InstrumentClosePriceRequest instruments = 1 [(google.api.field_behavior) = REQUIRED]; //Массив по инструментам.
+  optional InstrumentStatus instrument_status = 9; //Статус запрашиваемых инструментов. [Возможные значения](#instrumentstatus).
 }
 
 //Запрос цен закрытия торговой сессии по инструменту.
