@@ -4,7 +4,7 @@ info:
   termsOfService: https://www.tbank.ru/invest/disclaimers/basic-information/
   contact:
     email: al.a.volkov@tbank.ru
-  version: '1.26'
+  version: '1.27'
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
@@ -11412,6 +11412,8 @@ components:
       properties:
         instrumentType:
           $ref: '#/components/schemas/v1InstrumentType'
+        instrumentStatus:
+          $ref: '#/components/schemas/v1InstrumentStatus'
       type: object
     v1AssetsResponse:
       description: Список активов.
@@ -12438,6 +12440,7 @@ components:
             Deprecated FIGI-идентификатор инструмента. Используйте
             `instrument_id`.
           type: string
+          deprecated: true
         interval:
           $ref: '#/components/schemas/v1SubscriptionInterval'
         instrumentId:
@@ -13162,9 +13165,6 @@ components:
     v1EditFavoritesRequestInstrument:
       description: Массив инструментов для редактирования списка избранных инструментов.
       properties:
-        figi:
-          description: FIGI-идентификатор инструмента.
-          type: string
         instrumentId:
           description: Идентификатор инструмента — `figi` или `instrument_uid`.
           type: string
@@ -14327,9 +14327,6 @@ components:
     v1GetAccruedInterestsRequest:
       description: Запрос НКД по облигации.
       properties:
-        figi:
-          description: FIGI-идентификатор инструмента.
-          type: string
         from:
           description: Начало запрашиваемого периода по UTC.
           format: date-time
@@ -14551,9 +14548,6 @@ components:
     v1GetBondCouponsRequest:
       description: Запрос купонов по облигации.
       properties:
-        figi:
-          description: FIGI-идентификатор инструмента.
-          type: string
         from:
           description: >-
             Начало запрашиваемого периода по UTC. Фильтрация по `coupon_date` —
@@ -14882,11 +14876,6 @@ components:
     v1GetCandlesRequest:
       description: Запрос исторических свечей.
       properties:
-        figi:
-          description: >-
-            Deprecated FIGI-идентификатор инструмента. Используйте
-            `instrument_id`.
-          type: string
         from:
           description: Начало запрашиваемого периода по UTC.
           format: date-time
@@ -14973,6 +14962,8 @@ components:
           items:
             $ref: '#/components/schemas/v1InstrumentClosePriceRequest'
           type: array
+        instrumentStatus:
+          $ref: '#/components/schemas/v1InstrumentStatus'
       required:
         - instruments
       type: object
@@ -15237,9 +15228,6 @@ components:
     v1GetDividendsRequest:
       description: Запрос дивидендов.
       properties:
-        figi:
-          description: FIGI-идентификатор инструмента.
-          type: string
         from:
           description: >-
             Начало запрашиваемого периода по UTC. Фильтрация происходит по
@@ -15416,9 +15404,6 @@ components:
       type: object
     v1GetFuturesMarginRequest:
       properties:
-        figi:
-          description: Идентификатор инструмента.
-          type: string
         instrumentId:
           description: Идентификатор инструмента — `figi` или `instrument_uid`.
           type: string
@@ -15487,13 +15472,6 @@ components:
     v1GetLastPricesRequest:
       description: Запрос получения цен последних сделок.
       properties:
-        figi:
-          description: >-
-            Deprecated FIGI-идентификатор инструмента. Используйте
-            `instrument_id`.
-          items:
-            type: string
-          type: array
         instrumentId:
           description: >-
             Массив идентификаторов инструмента. Принимает значения `figi` или
@@ -15503,6 +15481,8 @@ components:
           type: array
         lastPriceType:
           $ref: '#/components/schemas/v1LastPriceType'
+        instrumentStatus:
+          $ref: '#/components/schemas/v1InstrumentStatus'
       type: object
     v1GetLastPricesResponse:
       description: Список цен последних сделок.
@@ -15530,11 +15510,6 @@ components:
     v1GetLastTradesRequest:
       description: Запрос обезличенных сделок за последний час.
       properties:
-        figi:
-          description: >-
-            Deprecated FIGI-идентификатор инструмента. Используйте
-            `instrument_id`.
-          type: string
         from:
           description: Начало запрашиваемого периода по UTC.
           format: date-time
@@ -15920,11 +15895,6 @@ components:
     v1GetOrderBookRequest:
       description: Запрос стакана.
       properties:
-        figi:
-          description: >-
-            Deprecated FIGI-идентификатор инструмента. Используйте
-            `instrument_id`.
-          type: string
         depth:
           description: Глубина стакана.
           format: int32
@@ -16563,11 +16533,6 @@ components:
     v1GetTradingStatusRequest:
       description: Запрос получения торгового статуса.
       properties:
-        figi:
-          description: >-
-            Deprecated FIGI-идентификатор инструмента. Используйте
-            `instrument_id`.
-          type: string
         instrumentId:
           description: >-
             Идентификатор инструмента. Принимает значение `figi` или
@@ -16809,6 +16774,7 @@ components:
             Deprecated FIGI-идентификатор инструмента. Используйте
             instrument_id`.
           type: string
+          deprecated: true
         instrumentId:
           description: >-
             Идентификатор инструмента. Принимает значение `figi` или
@@ -17332,6 +17298,7 @@ components:
             Deprecated FIGI-идентификатор инструмента. Используйте
             instrument_id`.
           type: string
+          deprecated: true
         instrumentId:
           description: >-
             Идентификатор инструмента. Принимает значение `figi` или
@@ -18830,6 +18797,7 @@ components:
             Deprecated FIGI-идентификатор инструмента. Используйте
             `instrument_id`.
           type: string
+          deprecated: true
         depth:
           description: Глубина стакана.
           format: int32
@@ -20464,11 +20432,6 @@ components:
     v1PostOrderRequest:
       description: Запрос выставления торгового поручения.
       properties:
-        figi:
-          description: >-
-            Deprecated Figi-идентификатор инструмента. Необходимо использовать
-            instrument_id.
-          type: string
         quantity:
           description: Количество лотов.
           format: int64
@@ -20601,11 +20564,6 @@ components:
     v1PostStopOrderRequest:
       description: Запрос выставления стоп-заявки.
       properties:
-        figi:
-          description: >-
-            Deprecated FIGI-идентификатор инструмента. Используйте
-            `instrument_id`.
-          type: string
         quantity:
           description: Количество лотов.
           format: int64
@@ -22106,6 +22064,7 @@ components:
             Deprecated FIGI-идентификатор инструмента. Используйте
             instrument_id`.
           type: string
+          deprecated: true
         instrumentId:
           description: >-
             Идентификатор инструмента. Принимает значение `figi` или
