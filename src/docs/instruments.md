@@ -1146,6 +1146,7 @@ Deprecated Получить списка опционов.
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | instrument_type |  [InstrumentType](#instrumenttype) |  |
+| instrument_status |  [InstrumentStatus](#instrumentstatus) | Статус запрашиваемых инструментов. [Возможные значения](#instrumentstatus). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1980,18 +1981,6 @@ Deprecated Получить списка опционов.
 
 
 
-#### InstrumentStatus
-Статус запрашиваемых инструментов.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| INSTRUMENT_STATUS_UNSPECIFIED | 0 | Значение не определено. |
-| INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). Инструменты, доступные для торговли через T-Invest API. Cейчас списки бумаг, которые доступны из API и других интерфейсах совпадают — кроме внебиржевых бумаг. Но в будущем возможны ситуации, когда списки инструментов будут отличаться. |
-| INSTRUMENT_STATUS_ALL | 2 | Список всех инструментов. |
-
-
-
-
 #### ShareType
 Тип акций.
 
@@ -2153,6 +2142,15 @@ Deprecated Получить списка опционов.
 | INSTRUMENT_TYPE_CLEARING_CERTIFICATE | 8 | Clearing certificate |
 | INSTRUMENT_TYPE_INDEX | 9 | Индекс |
 | INSTRUMENT_TYPE_COMMODITY | 10 | Товар |
+
+
+#### InstrumentStatus
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| INSTRUMENT_TYPE_UNSPECIFIED | 0 | Значение не определено |
+| INSTRUMENT_STATUS_BASE | 1 | Базовый список инструментов (по умолчанию). Инструменты, доступные для торговли через T-Invest API. Cейчас списки бумаг, которые доступны из API и других интерфейсах совпадают — кроме внебиржевых бумаг. Но в будущем возможны ситуации, когда списки инструментов будут отличаться. |
+| INSTRUMENT_STATUS_ALL | 2 | Список всех инструментов |
+
 
 
 #### Execution
