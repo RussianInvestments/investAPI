@@ -11,4 +11,4 @@
 
 ## Расписание торгов
 
-Торговая сессия проходит по [расписанию](/investAPI/instruments#tradingschedules) moex_extended.
+Торговая сессия проходит по [расписанию](/investAPI/instruments#tradingschedules) moex_extended и MOEX_DEALER_WEEKEND.
