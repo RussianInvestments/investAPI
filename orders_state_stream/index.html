@@ -1075,13 +1075,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#timeinforcetype" class="md-nav__link">
-    TimeInForceType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#uid" class="md-nav__link">
     Ключ идемпотентности в формате UID
   </a>
@@ -1630,13 +1623,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#timeinforcetype" class="md-nav__link">
-    TimeInForceType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#uid" class="md-nav__link">
     Ключ идемпотентности в формате UID
   </a>
@@ -1710,36 +1696,7 @@
 <h2 id="_2">Особенности работы</h2>
 <p>В методе передаются все заявки по счёту из подписки, но связать заявку в стриме с поручением, которое отправлено через метод <a href="/investAPI/orders/#postorder">PostOrder</a>, можно не всегда.</p>
 <p>Заявки, которые транслируются в стриме, можно идентифицировать по <code>order_request_id</code> — <a href="/investAPI/head-orders/#_6">ключу идемпотентности</a>. Он передаётся при <a href="/investAPI/orders/#postorder">выставлении заявки</a>.</p>
-<p>Чтобы поддержать клиентский идентификатор в стриме:</p>
-<ul>
-<li>заявка должна содержать явно заданный <a href="/investAPI/orders/#timeinforcetype">алгоритм исполнения</a>;</li>
-<li><a href="/investAPI/faq_orders/#order_id-postorder_1">ключ идемпотентности</a> должен быть передан в формате UID.</li>
-</ul>
-<h3 id="timeinforcetype">TimeInForceType</h3>
-<p>Чтобы идентифицировать заявку в стриме по ключу идемпотентности, нужно явно указать алгоритм исполнения поручения в <a href="/investAPI/orders/#postorderrequest">PostOrderRequest</a>.</p>
-<p>Подходящие под условия варианты исполнения в зависимости от <a href="/investAPI/orders/#ordertype">типа заявки</a>:</p>
-<table>
-<thead>
-<tr>
-<th>OrderType</th>
-<th>TimeInForceType</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ORDER_TYPE_LIMIT</code></td>
-<td>Один из алгоритмов: </br> <code>TIME_IN_FORCE_DAY</code> </br> <code>TIME_IN_FORCE_FILL_AND_KILL</code> </br> <code>TIME_IN_FORCE_FILL_OR_KILL</code> </br></td>
-</tr>
-<tr>
-<td><code>ORDER_TYPE_MARKET</code></td>
-<td><code>TIME_IN_FORCE_DAY</code></td>
-</tr>
-<tr>
-<td><code>ORDER_TYPE_BESTPRICE</code></td>
-<td>Указывать алгоритм исполнения не нужно, все bestprice-заявки маршрутизируются в стрим с ключом идемпотентности.</td>
-</tr>
-</tbody>
-</table>
+<p>Чтобы поддержать клиентский идентификатор в стриме <a href="/investAPI/faq_orders/#order_id-postorder_1">ключ идемпотентности</a> должен быть передан в формате UID.</p>
 <blockquote>
 <p><strong>Важно</strong><br>
 Если не передавать подходящий <code>TimeInForceType</code>, <code>order_request_id</code> не вернётся в сообщениях стрима. Однозначно связать выставленное поручение не получится.</p>
@@ -1751,24 +1708,16 @@
 <thead>
 <tr>
 <th>Ключ идемпотентности</th>
-<th>Тип исполнения</th>
 <th>Ответы стрима</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Не передан</br> Передан не в UID</br> Передан в UID</td>
-<td>Не передан или не соответствует типу заявки</td>
-<td><code>order_request_id</code> нет в сообщениях</td>
-</tr>
-<tr>
 <td>Не передан</br> Передан не в UID</td>
-<td>Передан и соответствует типу заявки</td>
 <td>В сообщениях <code>order_request_id</code>, сгенерированный API</td>
 </tr>
 <tr>
 <td>Передан в UID</td>
-<td>Передан и соответствует типу заявки</td>
 <td>В сообщениях <code>order_request_id</code> из <a href="/investAPI/orders/#postorder">PostOrder</a></td>
 </tr>
 </tbody>
