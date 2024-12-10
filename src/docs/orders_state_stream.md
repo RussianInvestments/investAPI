@@ -15,22 +15,8 @@
 
 Заявки, которые транслируются в стриме, можно идентифицировать по `order_request_id` — [ключу идемпотентности](/investAPI/head-orders/#_6). Он передаётся при [выставлении заявки](/investAPI/orders/#postorder).
 
-Чтобы поддержать клиентский идентификатор в стриме:
+Чтобы поддержать клиентский идентификатор в стриме [ключ идемпотентности](/investAPI/faq_orders/#order_id-postorder_1) должен быть передан в формате UID.
 
-- заявка должна содержать явно заданный [алгоритм исполнения](/investAPI/orders/#timeinforcetype);
-- [ключ идемпотентности](/investAPI/faq_orders/#order_id-postorder_1) должен быть передан в формате UID.
-
-### TimeInForceType
-
-Чтобы идентифицировать заявку в стриме по ключу идемпотентности, нужно явно указать алгоритм исполнения поручения в [PostOrderRequest](/investAPI/orders/#postorderrequest).
-
-Подходящие под условия варианты исполнения в зависимости от [типа заявки](/investAPI/orders/#ordertype):
-
-| OrderType | TimeInForceType |
-| ----- | ---- |
-| `ORDER_TYPE_LIMIT`     |  Один из алгоритмов: </br> `TIME_IN_FORCE_DAY` </br> `TIME_IN_FORCE_FILL_AND_KILL` </br> `TIME_IN_FORCE_FILL_OR_KILL` </br>|
-| `ORDER_TYPE_MARKET`    |  `TIME_IN_FORCE_DAY` |
-| `ORDER_TYPE_BESTPRICE` | Указывать алгоритм исполнения не нужно, все bestprice-заявки маршрутизируются в стрим с ключом идемпотентности. |
 
 
 >**Важно**<br>
@@ -42,11 +28,10 @@
 
 Возможные ответы стрима в зависимости от параметов, переданных в [PostOrderRequest](/investAPI/orders/#postorderrequest):
 
-|Ключ идемпотентности| Тип исполнения|Ответы стрима|
-|-|-|-|
-|Не передан</br> Передан не в UID</br> Передан в UID|Не передан или не соответствует типу заявки|`order_request_id` нет в сообщениях|
-|Не передан</br> Передан не в UID|Передан и соответствует типу заявки|В сообщениях `order_request_id`, сгенерированный API|
-|Передан в UID|Передан и соответствует типу заявки|В сообщениях `order_request_id` из [PostOrder](/investAPI/orders/#postorder)|
+|Ключ идемпотентности| Ответы стрима|
+|-|-|
+|Не передан</br> Передан не в UID| В сообщениях `order_request_id`, сгенерированный API|
+|Передан в UID| В сообщениях `order_request_id` из [PostOrder](/investAPI/orders/#postorder)|
 
 ## ReplaceOrder
 
