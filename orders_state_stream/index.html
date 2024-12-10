@@ -1697,10 +1697,6 @@
 <p>В методе передаются все заявки по счёту из подписки, но связать заявку в стриме с поручением, которое отправлено через метод <a href="/investAPI/orders/#postorder">PostOrder</a>, можно не всегда.</p>
 <p>Заявки, которые транслируются в стриме, можно идентифицировать по <code>order_request_id</code> — <a href="/investAPI/head-orders/#_6">ключу идемпотентности</a>. Он передаётся при <a href="/investAPI/orders/#postorder">выставлении заявки</a>.</p>
 <p>Чтобы поддержать клиентский идентификатор в стриме <a href="/investAPI/faq_orders/#order_id-postorder_1">ключ идемпотентности</a> должен быть передан в формате UID.</p>
-<blockquote>
-<p><strong>Важно</strong><br>
-Если не передавать подходящий <code>TimeInForceType</code>, <code>order_request_id</code> не вернётся в сообщениях стрима. Однозначно связать выставленное поручение не получится.</p>
-</blockquote>
 <h3 id="uid">Ключ идемпотентности в формате UID</h3>
 <p><code>order_request_id</code> в сообщениях стрима передаётся только формате UID. Если в <a href="/investAPI/orders/#postorderrequest">PostOrderRequest</a> передать значение в другом формате, оно будет подменено в сообщениях стрима на сгенерированный API UID. Однозначно связать выставленное поручение не получится.</p>
 <p>Возможные ответы стрима в зависимости от параметов, переданных в <a href="/investAPI/orders/#postorderrequest">PostOrderRequest</a>:</p>
