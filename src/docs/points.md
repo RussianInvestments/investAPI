@@ -35,7 +35,7 @@
 >Также при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
 можно через метод [getFuturesMargin](/investAPI/instruments#getfuturesmargin). 
 
-[Подробнее про срочный рынок](https://help.tbank.ru/forts/)
+[Подробнее про срочный рынок](https://www.tbank.ru/invest/help/brokerage/account/forts/)
 
 ## Параметры методов, в которых используются пункты цены
 

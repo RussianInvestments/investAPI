@@ -68,7 +68,7 @@ isValidPrice(10.16, 0.1) // false
 Также при работе с фьючерсами важно учитывать размер гарантийного обеспечения. Узнать эти параметры фьючерсов
 можно чрез метод [getFuturesMargin](/investAPI/instruments#getfuturesmargin). 
 
-[Подробнее про срочный рынок](https://help.tbank.ru/forts/)
+[Подробнее про срочный рынок](https://www.tbank.ru/invest/help/brokerage/account/forts/)
 
 ### Какие интервалы доступны при запросе исторических свечей? 
 

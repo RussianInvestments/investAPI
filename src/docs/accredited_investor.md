@@ -15,8 +15,8 @@
 
 ## Смотрите также
 
-* [Подробнее про статус квалифицированного инвестора](https://help.tbank.ru/invest-premium/invest-premium-qualification/)
+* [Подробнее про статус квалифицированного инвестора](https://www.tbank.ru/invest/help/educate/qualification/)
 
-* [Как получить статус квалифицированного инвестора](https://help.tbank.ru/invest-premium/invest-premium-qualification/how-to-get-qualification/)
+* [Как получить статус квалифицированного инвестора](https://www.tbank.ru/invest/help/educate/qualification/about/how-get/)
 
-* [Как получить статус квалифицированного инвестора по опыту работы](https://help.tbank.ru/invest-premium/invest-premium-qualification/invest-premium-requirement/)
+* [Как получить статус квалифицированного инвестора по опыту работы](https://www.tbank.ru/invest/help/educate/qualification/about/terms/)
