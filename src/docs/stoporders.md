@@ -19,7 +19,7 @@
 
 
 #### GetStopOrders
-Получить список активных стоп-заявок по счёту.
+Получить список активных стоп-заявок по счету.
 
 - Тело запроса — [GetStopOrdersRequest](#getstopordersrequest)
 
@@ -51,12 +51,12 @@
 | price |  [Quotation](#quotation) | Цена за 1 инструмент биржевой заявки, которая будет выставлена при срабатывании по достижению `stop_price`. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. |
 | stop_price |  [Quotation](#quotation) | Стоп-цена заявки за 1 инструмент. При достижении стоп-цены происходит активация стоп-заявки, в результате чего выставляется биржевая заявка. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. |
 | direction |  [StopOrderDirection](#stoporderdirection) | Направление операции. |
-| account_id |  [string](#string) | Номер счёта. |
+| account_id |  [string](#string) | Номер счета. |
 | expiration_type |  [StopOrderExpirationType](#stoporderexpirationtype) | Тип экспирации заявки. |
 | stop_order_type |  [StopOrderType](#stopordertype) | Тип заявки. |
 | expire_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время окончания действия стоп-заявки по UTC. Для `ExpirationType = GoodTillDate` заполнение обязательно, для `GoodTillCancel` игнорируется. |
 | instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
-| exchange_order_type |  [ExchangeOrderType](#exchangeordertype) | Тип дочерней биржевой заявки для тейкпрофита. |
+| exchange_order_type |  [ExchangeOrderType](#exchangeordertype) | Тип дочерней биржевой заявки. |
 | take_profit_type |  [TakeProfitType](#takeprofittype) | Подтип стоп-заявки — `TakeProfit`. |
 | trailing_data |  [PostStopOrderRequest.TrailingData](#poststoporderrequesttrailingdata) | Массив с параметрами трейлинг-стопа. |
 | price_type |  [PriceType](#pricetype) | Тип цены. |
@@ -98,7 +98,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента. |
+| account_id |  [string](#string) | Идентификатор счета клиента. |
 | status |  [StopOrderStatusOption](#stoporderstatusoption) | Статус заявок. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Левая граница. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Правая граница. |
@@ -112,7 +112,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| stop_orders | Массив объектов [StopOrder](#stoporder) | Массив стоп-заявок по счёту. |
+| stop_orders | Массив объектов [StopOrder](#stoporder) | Массив стоп-заявок по счету. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -123,7 +123,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Идентификатор счёта клиента. |
+| account_id |  [string](#string) | Идентификатор счета клиента. |
 | stop_order_id |  [string](#string) | Уникальный идентификатор стоп-заявки. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -233,8 +233,8 @@
 | STOP_ORDER_STATUS_ALL | 1 | Все заявки. |
 | STOP_ORDER_STATUS_ACTIVE | 2 | Активные заявки. |
 | STOP_ORDER_STATUS_EXECUTED | 3 | Исполненные заявки. |
-| STOP_ORDER_STATUS_CANCELED | 4 | Отменённые заявки. |
-| STOP_ORDER_STATUS_EXPIRED | 5 | Истёкшие заявки. |
+| STOP_ORDER_STATUS_CANCELED | 4 | Отмененные заявки. |
+| STOP_ORDER_STATUS_EXPIRED | 5 | Истекшие заявки. |
 
 
 

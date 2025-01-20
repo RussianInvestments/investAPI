@@ -11,7 +11,7 @@
 
 
 #### OpenSandboxAccount
-Зарегистрировать счёт.
+Зарегистрировать счет.
 
 - Тело запроса — [OpenSandboxAccountRequest](#opensandboxaccountrequest)
 
@@ -27,7 +27,7 @@
 
 
 #### CloseSandboxAccount
-Закрыть счёт.
+Закрыть счет.
 
 - Тело запроса — [CloseSandboxAccountRequest](#closesandboxaccountrequest)
 
@@ -51,7 +51,7 @@
 
 
 #### GetSandboxOrders
-Получить список активных заявок по счёту.
+Получить список активных заявок по счету.
 
 - Тело запроса — [GetOrdersRequest](#getordersrequest)
 
@@ -67,7 +67,7 @@
 
 
 #### GetSandboxOrderState
-Поулчить статус заявки в песочнице. Заявки хранятся в таблице 7 дней.
+Получить статус заявки в песочнице. Заявки хранятся в таблице 7 дней.
 
 - Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
 
@@ -75,7 +75,7 @@
 
 
 #### GetSandboxPositions
-Получить позиции по виртуальному счёту.
+Получить позиции по виртуальному счету.
 
 - Тело запроса — [PositionsRequest](#positionsrequest)
 
@@ -83,7 +83,7 @@
 
 
 #### GetSandboxOperations
-Получить операции по номеру счёта.
+Получить операции по номеру счета.
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
 
@@ -91,7 +91,7 @@
 
 
 #### GetSandboxOperationsByCursor
-Получить операции по номеру счёта с пагинацией.
+Получить операции по номеру счета с пагинацией.
 
 - Тело запроса — [GetOperationsByCursorRequest](#getoperationsbycursorrequest)
 
@@ -107,7 +107,7 @@
 
 
 #### SandboxPayIn
-Пополнить счёт.
+Пополнить счет.
 
 - Тело запроса — [SandboxPayInRequest](#sandboxpayinrequest)
 
@@ -123,7 +123,7 @@
 
 
 #### GetSandboxMaxLots
-Расчёт количества доступных для покупки/продажи лотов в песочнице.
+Расчет количества доступных для покупки/продажи лотов в песочнице.
 
 - Тело запроса — [GetMaxLotsRequest](#getmaxlotsrequest)
 
@@ -137,40 +137,40 @@
 
 
 #### OpenSandboxAccountRequest
-Запрос открытия счёта в песочнице.
+Запрос открытия счета в песочнице.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| name | Массив объектов [string](#string) | Название счёта |
+| name | Массив объектов [string](#string) | Название счета |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### OpenSandboxAccountResponse
-Номер открытого счёта в песочнице.
+Номер открытого счета в песочнице.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Номер счёта |
+| account_id |  [string](#string) | Номер счета |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### CloseSandboxAccountRequest
-Запрос закрытия счёта в песочнице.
+Запрос закрытия счета в песочнице.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Номер счёта |
+| account_id |  [string](#string) | Номер счета |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### CloseSandboxAccountResponse
-Результат закрытия счёта в песочнице.
+Результат закрытия счета в песочнице.
 
 пустой ответ
 
@@ -178,24 +178,24 @@
 
 
 #### SandboxPayInRequest
-Запрос пополнения счёта в песочнице.
+Запрос пополнения счета в песочнице.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| account_id |  [string](#string) | Номер счёта |
-| amount |  [MoneyValue](#moneyvalue) | Сумма пополнения счёта в рублях |
+| account_id |  [string](#string) | Номер счета |
+| amount |  [MoneyValue](#moneyvalue) | Сумма пополнения счета в рублях |
  <!-- end Fields -->
  <!-- end HasFields -->
 
 
 #### SandboxPayInResponse
-Результат пополнения счёта, текущий баланс.
+Результат пополнения счета, текущий баланс.
 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| balance |  [MoneyValue](#moneyvalue) | Текущий баланс счёта |
+| balance |  [MoneyValue](#moneyvalue) | Текущий баланс счета |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

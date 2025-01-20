@@ -5,7 +5,7 @@
 
 
 ## SignalService
-Сервис для получения технических сигналов и мнений аналитиков по инструментам
+Сервис для получения технических сигналов и мнений аналитиков по инструментам.
 
 ###Методы сервиса
 
@@ -38,7 +38,7 @@
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| strategy_id |  [string](#string) | Идентификатор стратегии |
+| strategy_id |  [string](#string) | Идентификатор стратегии. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -85,9 +85,9 @@
 | signal_id |  [string](#string) | Идентификатор сигнала. |
 | strategy_id |  [string](#string) | Идентификатор стратегии. |
 | strategy_type |  [StrategyType](#strategytype) | Тип стратегии. |
-| instrument_uid |  [string](#string) | Идентификатор бумаги |
-| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата начала запрашиваемого интервала в часовом поясе UTC. |
-| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата конца запрашиваемого интервала  в часовом поясе UTC. |
+| instrument_uid |  [string](#string) | Идентификатор бумаги. |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата начала запрашиваемого интервала по UTC. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата конца запрашиваемого интервала по UTC. |
 | direction |  [SignalDirection](#signaldirection) | Направление сигнала. |
 | active |  [SignalState](#signalstate) | Состояние сигнала. |
 | paging |  [Page](#page) | Настройки пагинации. |
@@ -117,17 +117,17 @@
 | strategy_id |  [string](#string) | Идентификатор стратегии. |
 | strategy_name |  [string](#string) | Название стратегии. |
 | instrument_uid |  [string](#string) | Идентификатор бумаги. |
-| create_dt |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сигнала  в часовом поясе UTC. |
-| direction |  [SignalDirection](#signaldirection) | Направление сигнала |
-| initial_price |  [Quotation](#quotation) | Цена бумаги на момент формирования сигнала |
+| create_dt |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время создания сигнала по UTC. |
+| direction |  [SignalDirection](#signaldirection) | Направление сигнала. |
+| initial_price |  [Quotation](#quotation) | Цена бумаги на момент формирования сигнала. |
 | info |  [string](#string) | Дополнительная информация о сигнале. |
 | name |  [string](#string) | Название сигнала. |
 | target_price |  [Quotation](#quotation) | Целевая цена. |
-| end_dt |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время дедлайна сигнала в часовом поясе UTC. |
+| end_dt |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время дедлайна сигнала по UTC. |
 | probability |  [int32](#int32) | Вероятность сигнала. |
 | stoploss |  [Quotation](#quotation) | Порог закрытия сигнала по стоплосс. |
 | close_price |  [Quotation](#quotation) | Цена закрытия сигнала. |
-| close_dt |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время закрытия сигнала в часовом поясе UTC. |
+| close_dt |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время закрытия сигнала по UTC. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->
