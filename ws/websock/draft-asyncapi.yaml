@@ -1,7 +1,7 @@
 asyncapi: 2.6.0
 info:
   title: T-Invest API
-  version: '1.27'
+  version: '1.28'
   description: Websocket API for streaming data
   license:
     name: Apache 2.0
@@ -395,18 +395,18 @@ components:
       description: |-
         Интервал свечи.
 
-         - SUBSCRIPTION_INTERVAL_UNSPECIFIED: Интервал свечи не определён.
+         - SUBSCRIPTION_INTERVAL_UNSPECIFIED: Интервал свечи не определен.
          - SUBSCRIPTION_INTERVAL_ONE_MINUTE: Минутные свечи.
          - SUBSCRIPTION_INTERVAL_FIVE_MINUTES: Пятиминутные свечи.
          - SUBSCRIPTION_INTERVAL_FIFTEEN_MINUTES: Пятнадцатиминутные свечи.
          - SUBSCRIPTION_INTERVAL_ONE_HOUR: Часовые свечи.
          - SUBSCRIPTION_INTERVAL_ONE_DAY: Дневные свечи.
          - SUBSCRIPTION_INTERVAL_2_MIN: Двухминутные свечи.
-         - SUBSCRIPTION_INTERVAL_3_MIN: Трёхминутные свечи.
+         - SUBSCRIPTION_INTERVAL_3_MIN: Трехминутные свечи.
          - SUBSCRIPTION_INTERVAL_10_MIN: Десятиминутные свечи.
          - SUBSCRIPTION_INTERVAL_30_MIN: Тридцатиминутные свечи.
          - SUBSCRIPTION_INTERVAL_2_HOUR: Двухчасовые свечи.
-         - SUBSCRIPTION_INTERVAL_4_HOUR: Четырёхчасовые свечи.
+         - SUBSCRIPTION_INTERVAL_4_HOUR: Четырехчасовые свечи.
          - SUBSCRIPTION_INTERVAL_WEEK: Недельные свечи.
          - SUBSCRIPTION_INTERVAL_MONTH: Месячные свечи.
       enum:
@@ -430,7 +430,7 @@ components:
       description: |-
         Результат подписки.
 
-         - SUBSCRIPTION_STATUS_UNSPECIFIED: Статус подписки не определён.
+         - SUBSCRIPTION_STATUS_UNSPECIFIED: Статус подписки не определен.
          - SUBSCRIPTION_STATUS_SUCCESS: Успешно.
          - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND: Инструмент не найден.
          - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID: Некорректный статус подписки. [Список возможных значений](https://russianinvestments.github.io/investAPI/marketdata#subscriptionaction).
@@ -440,7 +440,7 @@ components:
          - SUBSCRIPTION_STATUS_INTERNAL_ERROR: Внутренняя ошибка сервиса.
          - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS: Превышен лимит на количество запросов на подписки в течение установленного отрезка времени.
          - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND: Активная подписка не найдена. Ошибка может возникнуть только при отписке от несуществующей подписки.
-         - SUBSCRIPTION_STATUS_SOURCE_IS_INVALID: Указан некорректный источник
+         - SUBSCRIPTION_STATUS_SOURCE_IS_INVALID: Указан некорректный источник.
       enum:
         - SUBSCRIPTION_STATUS_UNSPECIFIED
         - SUBSCRIPTION_STATUS_SUCCESS
@@ -525,7 +525,7 @@ components:
     v1OrderBookType:
       default: ORDERBOOK_TYPE_UNSPECIFIED
       description: |2-
-         - ORDERBOOK_TYPE_UNSPECIFIED: Не определён.
+         - ORDERBOOK_TYPE_UNSPECIFIED: Не определен.
          - ORDERBOOK_TYPE_EXCHANGE: Биржевой стакан.
          - ORDERBOOK_TYPE_DEALER: Стакан дилера.
          - ORDERBOOK_TYPE_ALL: Стакан биржевой и дилера.
@@ -683,7 +683,7 @@ components:
         close:
           $ref: '#/components/schemas/v1Quotation'
         volume:
-          description: Объём сделок в лотах.
+          description: Объем сделок в лотах.
           format: int64
           type: string
         time:
@@ -718,7 +718,7 @@ components:
     contractv1CandleSource:
       default: CANDLE_SOURCE_UNSPECIFIED
       description: |2-
-         - CANDLE_SOURCE_UNSPECIFIED: Источник свечей не определён.
+         - CANDLE_SOURCE_UNSPECIFIED: Источник свечей не определен.
          - CANDLE_SOURCE_EXCHANGE: Биржевые свечи.
          - CANDLE_SOURCE_DEALER_WEEKEND: Свечи  дилера в результате торговли по выходным.
       enum:
@@ -886,7 +886,7 @@ components:
     v1SecurityTradingStatus:
       default: SECURITY_TRADING_STATUS_UNSPECIFIED
       description: |-
-        - SECURITY_TRADING_STATUS_UNSPECIFIED: Торговый статус не определён.
+        - SECURITY_TRADING_STATUS_UNSPECIFIED: Торговый статус не определен.
          - SECURITY_TRADING_STATUS_NOT_AVAILABLE_FOR_TRADING: Недоступен для торгов.
          - SECURITY_TRADING_STATUS_OPENING_PERIOD: Период открытия торгов.
          - SECURITY_TRADING_STATUS_CLOSING_PERIOD: Период закрытия торгов.
@@ -938,8 +938,8 @@ components:
           description: Идентификатор соединения.
           type: string
         pingRequestTime:
+          description: Время формирования запроса.
           format: date-time
-          title: Время формирования запроса
           type: string
       type: object
     v1SubscribeLastPriceResponse:
@@ -1090,7 +1090,7 @@ components:
       description: |-
         Тип операции со списком подписок.
 
-         - SUBSCRIPTION_ACTION_UNSPECIFIED: Статус подписки не определён.
+         - SUBSCRIPTION_ACTION_UNSPECIFIED: Статус подписки не определен.
          - SUBSCRIPTION_ACTION_SUBSCRIBE: Подписаться.
          - SUBSCRIPTION_ACTION_UNSUBSCRIBE: Отписаться.
       enum:
@@ -1225,12 +1225,14 @@ components:
     v1PingDelaySettings:
       properties:
         pingDelayMs:
+          description: >-
+            Задержка (пинг) сообщений:  5000–180 000 миллисекунд. Значение по
+            умолчанию — 120 000.
           format: int32
-          title: Задержка пинг сообщений milliseconds 5000-180000, default 120000
           type: integer
       type: object
     v1MarketDataRequest:
-      description: Запрос подписки или отписки на определённые биржевые данные.
+      description: Запрос подписки или отписки на определенные биржевые данные.
       properties:
         subscribeCandlesRequest:
           $ref: '#/components/schemas/v1SubscribeCandlesRequest'
@@ -1252,8 +1254,8 @@ components:
     v1PingRequest:
       properties:
         time:
+          description: Время формирования запроса.
           format: date-time
-          title: Время формирования запроса
           type: string
       type: object
     v1PortfolioStreamResponse:
@@ -1501,12 +1503,12 @@ components:
           type: string
       type: object
     v1AccountSubscriptionStatus:
-      description: Счёт клиента.
+      description: Счет клиента.
       example:
         accountId: accountId
       properties:
         accountId:
-          description: Идентификатор счёта.
+          description: Идентификатор счета.
           type: string
         subscriptionStatus:
           $ref: '#/components/schemas/v1PortfolioSubscriptionStatus'
@@ -1516,9 +1518,9 @@ components:
       description: |-
         Результат подписки.
 
-         - PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED: Тип не определён.
+         - PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED: Тип не определен.
          - PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS: Успешно.
-         - PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND: Счёт не найден или недостаточно прав.
+         - PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND: Счет не найден или недостаточно прав.
          - PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR: Произошла ошибка.
       enum:
         - PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED
@@ -1527,7 +1529,7 @@ components:
         - PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR
       type: string
     v1PortfolioResponse:
-      description: Текущий портфель по счёту.
+      description: Текущий портфель по счету.
       example:
         totalAmountBonds:
           nano: 5
@@ -1747,7 +1749,7 @@ components:
             $ref: '#/components/schemas/v1PortfolioPosition'
           type: array
         accountId:
-          description: Идентификатор счёта пользователя.
+          description: Идентификатор счета пользователя.
           type: string
         totalAmountOptions:
           $ref: '#/components/schemas/v1MoneyValue'
@@ -1766,7 +1768,7 @@ components:
           $ref: '#/components/schemas/v1Quotation'
       type: object
     v1MoneyValue:
-      description: Денежная сумма в определённой валюте.
+      description: Денежная сумма в определенной валюте.
       example:
         nano: 5
         currency: currency
@@ -1945,7 +1947,7 @@ components:
       description: Запрос установки stream-соединения.
       properties:
         accounts:
-          description: Массив идентификаторов счётов пользователя.
+          description: Массив идентификаторов счетов пользователя.
           items:
             type: string
           type: array
@@ -2106,12 +2108,12 @@ components:
           type: string
       type: object
     v1PositionsSubscriptionStatus:
-      description: Счёт клиента.
+      description: Счет клиента.
       example:
         accountId: accountId
       properties:
         accountId:
-          description: Идентификатор счёта.
+          description: Идентификатор счета.
           type: string
         subscriptionStatus:
           $ref: '#/components/schemas/v1PositionsAccountSubscriptionStatus'
@@ -2121,9 +2123,9 @@ components:
       description: |-
         Результат подписки.
 
-         - POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED: Тип не определён.
+         - POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED: Тип не определен.
          - POSITIONS_SUBSCRIPTION_STATUS_SUCCESS: Успешно.
-         - POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND: Счёт не найден или недостаточно прав.
+         - POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND: Счет не найден или недостаточно прав.
          - POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR: Произошла ошибка.
       enum:
         - POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED
@@ -2190,7 +2192,7 @@ components:
             exchangeBlocked: true
       properties:
         accountId:
-          description: Идентификатор счёта.
+          description: Идентификатор счета.
           type: string
         money:
           description: Массив валютных позиций портфеля.
@@ -2320,7 +2322,7 @@ components:
           type: string
       type: object
     v1PositionsResponse:
-      description: Список позиций по счёту.
+      description: Список позиций по счету.
       example:
         limitsLoadingInProgress: true
         accountId: accountId
@@ -2410,7 +2412,7 @@ components:
       description: Запрос установки stream-соединения позиций.
       properties:
         accounts:
-          description: Массив идентификаторов счётов пользователя.
+          description: Массив идентификаторов счетов пользователя.
           items:
             type: string
           type: array
@@ -2539,7 +2541,7 @@ components:
         exchange: exchange
       properties:
         orderId:
-          title: Биржевой идентификатор заявки
+          description: Биржевой идентификатор заявки.
           type: string
         orderRequestId:
           description: >-
@@ -2547,25 +2549,25 @@ components:
             UID. Максимальная длина 36 символов.
           type: string
         clientCode:
-          title: Код клиента на бирже
+          description: Код клиента на бирже.
           type: string
         createdAt:
+          description: Дата создания заявки.
           format: date-time
-          title: Дата создания заявки
           type: string
         executionReportStatus:
           $ref: '#/components/schemas/v1OrderExecutionReportStatus'
         statusInfo:
           $ref: '#/components/schemas/OrderStateStreamResponseStatusCauseInfo'
         ticker:
-          title: Тикер инструмента
+          description: Тикер инструмента.
           type: string
         classCode:
-          title: Класс-код (секция торгов)
+          description: Класс-код (секция торгов).
           type: string
         lotSize:
+          description: Лотность инструмента заявки.
           format: int32
-          title: Лотность инструмента заявки
           type: integer
         direction:
           $ref: '#/components/schemas/v1OrderDirection'
@@ -2574,7 +2576,7 @@ components:
         orderType:
           $ref: '#/components/schemas/v1OrderType'
         accountId:
-          title: Номер счета
+          description: Номер счета.
           type: string
         initialOrderPrice:
           $ref: '#/components/schemas/v1MoneyValue'
@@ -2585,40 +2587,40 @@ components:
         executedOrderPrice:
           $ref: '#/components/schemas/v1MoneyValue'
         currency:
-          title: Валюта исполнения
+          description: Валюта исполнения.
           type: string
         lotsRequested:
+          description: Запрошено лотов.
           format: int64
-          title: Запрошено лотов
           type: string
         lotsExecuted:
+          description: Исполнено лотов.
           format: int64
-          title: Исполнено лотов
           type: string
         lotsLeft:
+          description: Число неисполненных лотов по заявке.
           format: int64
-          title: Число неисполненных лотов по заявке
           type: string
         lotsCancelled:
+          description: Отмененные лоты.
           format: int64
-          title: Отмененные лоты
           type: string
         marker:
           $ref: '#/components/schemas/OrderStateStreamResponseMarkerType'
         trades:
+          description: Список сделок.
           items:
             $ref: '#/components/schemas/v1OrderTrade'
-          title: Список сделок
           type: array
         completionTime:
+          description: Время исполнения заявки.
           format: date-time
-          title: Время исполнения заявки
           type: string
         exchange:
-          title: Код биржи
+          description: Код биржи.
           type: string
         instrumentUid:
-          title: UID идентификатор инструмента
+          description: UID идентификатор инструмента.
           type: string
       title: Заявка
       type: object
@@ -2811,9 +2813,11 @@ components:
           items:
             type: string
           type: array
-        pingDelayMs:
+        pingDelayMillis:
+          description: >-
+            Задержка (пинг) сообщений:  1000-120 000 миллисекунд. Значение по
+            умолчанию — 120 000.
           format: int32
-          title: Задержка пинг сообщений milliseconds 5000-180000, default 120000
           type: integer
       title: Запрос установки стрим-соединения торговых поручений
       type: object
@@ -2900,7 +2904,7 @@ components:
             $ref: '#/components/schemas/v1OrderTrade'
           type: array
         accountId:
-          description: Идентификатор счёта.
+          description: Идентификатор счета.
           type: string
         instrumentUid:
           description: UID идентификатор инструмента.
@@ -2915,8 +2919,10 @@ components:
             type: string
           type: array
         pingDelayMs:
+          description: >-
+            Задержка (пинг) сообщений: 5000–180 000 миллисекунд. Значение по
+            умолчанию — 120 000.
           format: int32
-          title: Задержка пинг сообщений milliseconds 5000-180000, default 120000
           type: integer
       type: object
     EmptyObj:
@@ -2931,7 +2937,7 @@ components:
           - $ref: '#/components/schemas/v1MarketDataResponse'
           - $ref: '#/components/schemas/rpcStatus'
     v1MarketDataRequest:
-      description: Запрос подписки или отписки на определённые биржевые данные.
+      description: Запрос подписки или отписки на определенные биржевые данные.
       payload:
         $ref: '#/components/schemas/v1MarketDataRequest'
     v1PortfolioStreamRequest:
