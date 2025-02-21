@@ -604,6 +604,31 @@
     "type": "INVALID_ARGUMENT",
     "description": "Сейчас конвертация цены фьючерса недоступна. Возможно, фьючерс истек или нет данных для расчета."
   },
+  "30230": {
+    "message": "Missing parameter: 'group_id'",
+    "description": "Входной параметр 'group_id' является обязательным. Укажите корректный параметр 'group_id'.",
+    "type": "INVALID_ARGUMENT"
+  },
+  "30231": {
+    "message": "'group_name' is missing or invalid",
+    "description": "Входной параметр 'group_name' отсутствует или имеет некорректное значение. Укажите корректный параметр 'group_name'.",
+    "type": "INVALID_ARGUMENT"
+  },
+  "30232": {
+    "message": "'group_color' is missing or invalid",
+    "description": "Входной параметр 'group_color' отсутствует или имеет некорректное значение. Укажите корректный параметр 'group_color'.",
+    "type": "INVALID_ARGUMENT"
+  },
+  "30233": {
+    "message": "Group can't be deleted",
+    "description": "Эту группу нельзя удалить.",
+    "type": "INVALID_ARGUMENT"
+  },
+  "30234": {
+    "message": "Instrument not supported",
+    "description": "Инструмент не поддерживается методом.",
+    "type": "INVALID_ARGUMENT"
+  },
   "35001": {
     "message": "Sandbox accounts limit reached",
     "type": "INVALID_ARGUMENT",
@@ -679,6 +704,11 @@
     "message": "Signal not found",
     "type": "NOT_FOUND",
     "description": "Сигнал не найден. Укажите корректный идентификатор сигнала."
+  },
+  "50013": {
+    "message": "Group not found",
+    "description": "Группа не найдена. Укажите корректный идентификатор группы.",
+    "type": "NOT_FOUND"
   },
   "70001": {
     "message": "Internal error",

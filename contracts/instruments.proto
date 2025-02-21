@@ -94,6 +94,15 @@ service InstrumentsService {/*Методы сервиса предназначе
   //Отредактировать список избранных инструментов
   rpc EditFavorites (EditFavoritesRequest) returns (EditFavoritesResponse);
 
+  //Создать новую группу избранных инструментов
+  rpc CreateFavoriteGroup (CreateFavoriteGroupRequest) returns (CreateFavoriteGroupResponse);
+
+  //Удалить группу избранных инструментов
+  rpc DeleteFavoriteGroup (DeleteFavoriteGroupRequest) returns (DeleteFavoriteGroupResponse);
+
+  //Получить список групп избранных инструментов
+  rpc GetFavoriteGroups (GetFavoriteGroupsRequest) returns (GetFavoriteGroupsResponse);
+
   //Получить список стран
   rpc GetCountries (GetCountriesRequest) returns (GetCountriesResponse);
 
@@ -117,6 +126,8 @@ service InstrumentsService {/*Методы сервиса предназначе
 
   //Получить прогнозов инвестдомов по инструменту
   rpc GetForecastBy(GetForecastRequest) returns (GetForecastResponse);
+
+  rpc GetRiskRates(RiskRatesRequest) returns (RiskRatesResponse);
 }
 
 //Запрос расписания торгов.
@@ -338,8 +349,8 @@ message Option {
 
   int32 lot = 201; //Количество бумаг в лоте.
   Quotation basic_asset_size = 211; //Размер основного актива.
-  Quotation klong = 221; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation kshort = 222; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation klong = 221 [deprecated = true]; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation kshort = 222 [deprecated = true]; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation dlong = 223; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dshort = 224; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dlong_min = 225; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
@@ -414,8 +425,8 @@ message Bond {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](./glossary#lot).
   string currency = 6; //Валюта расчетов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation klong = 7 [deprecated = true]; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation kshort = 8 [deprecated = true]; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dlong_min = 11; // Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
@@ -483,8 +494,8 @@ message Currency {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](./glossary#lot).
   string currency = 6; //Валюта расчетов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation klong = 7 [deprecated = true]; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation kshort = 8 [deprecated = true]; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
@@ -532,8 +543,8 @@ message Etf {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](./glossary#lot).
   string currency = 6; //Валюта расчетов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation klong = 7 [deprecated = true]; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation kshort = 8 [deprecated = true]; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
@@ -587,8 +598,8 @@ message Future {
   int32 lot = 4; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](./glossary#lot).
   string currency = 5; //Валюта расчетов.
 
-  Quotation klong = 6; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation kshort = 7; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation klong = 6 [deprecated = true]; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation kshort = 7 [deprecated = true]; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation dlong = 8; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dshort = 9; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dlong_min = 10; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
@@ -646,8 +657,8 @@ message Share {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](./glossary#lot)
   string currency = 6; //Валюта расчетов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation klong = 7 [deprecated = true]; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation kshort = 8 [deprecated = true]; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
@@ -751,8 +762,8 @@ message Instrument {
   int32 lot = 5; //Лотность инструмента. Возможно совершение операций только на количества ценной бумаги, кратные параметру `lot`. [Подробнее](./glossary#lot).
   string currency = 6; //Валюта расчетов.
 
-  Quotation klong = 7; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
-  Quotation kshort = 8; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation klong = 7 [deprecated = true]; //Коэффициент ставки риска длинной позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
+  Quotation kshort = 8 [deprecated = true]; //Коэффициент ставки риска короткой позиции по клиенту. 2 – клиент со стандартным уровнем риска (КСУР); 1 – клиент с повышенным уровнем риска (КПУР).
   Quotation dlong = 9; //Ставка риска начальной маржи для КСУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dshort = 10; //Ставка риска начальной маржи для КСУР шорт. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dlong_min = 11; //Ставка риска начальной маржи для КПУР лонг. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
@@ -1053,11 +1064,13 @@ message InstrumentLink {
 
 //Запрос списка избранных инструментов, входные параметры не требуются.
 message GetFavoritesRequest {
+  optional string group_id = 1; //Уникальный идентификатор группы.
 }
 
 //В ответ передается список избранных инструментов в качестве массива.
 message GetFavoritesResponse {
   repeated FavoriteInstrument favorite_instruments = 1; //Массив инструментов.
+  optional string group_id = 2; //Уникальный идентификатор группы.
 }
 
 //Массив избранных инструментов.
@@ -1078,6 +1091,7 @@ message FavoriteInstrument {
 message EditFavoritesRequest {
   repeated EditFavoritesRequestInstrument instruments = 1 [(google.api.field_behavior) = REQUIRED]; //Массив инструментов.
   EditFavoritesActionType action_type = 6 [(google.api.field_behavior) = REQUIRED]; //Тип действия со списком.
+  optional string group_id = 7; //Уникальный идентификатор группы.
 }
 
 //Массив инструментов для редактирования списка избранных инструментов.
@@ -1096,6 +1110,43 @@ enum EditFavoritesActionType {
 //Результат редактирования списка избранных инструментов.
 message EditFavoritesResponse {
   repeated FavoriteInstrument favorite_instruments = 1; //Массив инструментов.
+  optional string group_id = 2; //Уникальный идентификатор группы.
+}
+
+//Запрос создания новой группы избранных инструментов.
+message CreateFavoriteGroupRequest {
+  string group_name = 1 [(google.api.field_behavior) = REQUIRED]; //Название группы, не более 255 символов.
+  string group_color = 2 [(google.api.field_behavior) = REQUIRED]; //Цвет группы. Принимает значения в HEX-формате, от "000000" до "FFFFFF"
+  optional string note = 3; //Описание
+}
+
+message CreateFavoriteGroupResponse {
+  string group_id = 1; //Уникальный идентификатор группы.
+  string group_name = 2; //Название группы.
+}
+
+message DeleteFavoriteGroupRequest {
+  string group_id = 1 [(google.api.field_behavior) = REQUIRED]; //Уникальный идентификатор группы.
+}
+
+message DeleteFavoriteGroupResponse {
+}
+
+message GetFavoriteGroupsRequest {
+  repeated string instrument_id = 1; //Массив идентификаторов инструментов. Принимает значение `figi` или `instrument_uid`. Если в группе будет хотя бы один из инструментов массива, то в ответе у группы вернется признак `containsInstrument = true`.
+  repeated string excluded_group_id = 2; //Массив идентификаторов групп, которые необходимо исключить из ответа.
+}
+
+message GetFavoriteGroupsResponse {
+  repeated FavoriteGroup groups = 1; //Массив групп избранных списков инструментов.
+
+  message FavoriteGroup {
+    string group_id = 1 [(google.api.field_behavior) = REQUIRED]; //Уникальный идентификатор группы.
+    string group_name = 2 [(google.api.field_behavior) = REQUIRED]; //Название группы.
+    string color = 3 [(google.api.field_behavior) = REQUIRED]; //Цвет группы в HEX-формате.
+    int32 size = 4 [(google.api.field_behavior) = REQUIRED]; //Количество инструментов в группе.
+    optional bool contains_instrument = 5; //Признак наличия в группе хотя бы одного инструмента из запроса.
+  }
 }
 
 //Реальная площадка исполнения расчетов.
@@ -1287,10 +1338,10 @@ message GetAssetReportsResponse {
   }
 
   enum AssetReportPeriodType {
-     PERIOD_TYPE_UNSPECIFIED = 0; // Не указан.
-     PERIOD_TYPE_QUARTER = 1; // Квартальный.
-     PERIOD_TYPE_SEMIANNUAL = 2; // Полугодовой.
-     PERIOD_TYPE_ANNUAL = 3; // Годовой.
+    PERIOD_TYPE_UNSPECIFIED = 0; // Не указан.
+    PERIOD_TYPE_QUARTER = 1; // Квартальный.
+    PERIOD_TYPE_SEMIANNUAL = 2; // Полугодовой.
+    PERIOD_TYPE_ANNUAL = 3; // Годовой.
   }
 }
 
@@ -1308,12 +1359,12 @@ message GetConsensusForecastsResponse {
   message ConsensusForecastsItem {
     string uid = 1; // UID-идентификатор.
     string asset_uid = 2; // UID-идентификатор актива.
-    google.protobuf.Timestamp	created_at = 3; // Дата и время создания записи.
+    google.protobuf.Timestamp  created_at = 3; // Дата и время создания записи.
     Quotation best_target_price = 4; // Целевая цена на 12 месяцев.
     Quotation best_target_low = 5; // Минимальная прогнозная цена.
     Quotation best_target_high = 6; // Максимальная прогнозная цена.
-    int32 total_buy_recommend	= 7; // Количество аналитиков рекомендующих покупать.
-    int32 total_hold_recommend = 8;	// Количество аналитиков рекомендующих держать.
+    int32 total_buy_recommend = 7; // Количество аналитиков рекомендующих покупать.
+    int32 total_hold_recommend = 8;  // Количество аналитиков рекомендующих держать.
     int32 total_sell_recommend = 9; // Количество аналитиков рекомендующих продавать.
     string currency = 10; // Валюта прогнозов инструмента.
     Recommendation consensus = 11; // Консенсус-прогноз.
@@ -1366,6 +1417,27 @@ message GetForecastResponse {
     Quotation max_target = 8; // Максимальная цена прогноза.
     Quotation price_change = 9; // Изменение цены.
     Quotation price_change_rel = 10; // Относительное изменение цены.
+  }
+}
+
+message RiskRatesRequest {
+  repeated string instrument_id = 1;  // Идентификаторы инструментов.
+}
+
+message RiskRatesResponse {
+  repeated RiskRateResult instrument_risk_rates = 1;
+
+  message RiskRateResult {
+    string instrument_uid = 1;
+    optional RiskRate short_risk_rate = 2; // Ставка риска пользователя  в шорт
+    optional RiskRate long_risk_rate = 3; // Ставка риска пользователя в лонг
+    repeated RiskRate short_risk_rates = 5; //Доступные ставки риска в шорт
+    repeated RiskRate long_risk_rates = 6; //Доступные ставки риска в лонг
+    optional string error = 9; // Ошибка.
+  }
+  message RiskRate {
+    string risk_level_code = 2; // Категория риска.
+    Quotation value = 5; // Значение ставки риска.
   }
 }
 

@@ -14,9 +14,10 @@ import "google/protobuf/timestamp.proto";
 import "google/api/field_behavior.proto";
 
 service OrdersStreamService {
-  //Stream сделок пользователя
+  //Stream сделок пользователя.
   rpc TradesStream(TradesStreamRequest) returns (stream TradesStreamResponse);
-  //Stream поручений пользователя. Перед работой прочитайте [статью](./orders_state_stream/).
+  //Stream поручений пользователя.
+  //Перед работой прочитайте [статью](/invest/services/orders/orders_state_stream).
   rpc OrderStateStream(OrderStateStreamRequest) returns (stream OrderStateStreamResponse);
 }
 
@@ -41,10 +42,10 @@ service OrdersService {/* Сервис предназначен для рабо�
   //Метод изменения выставленной заявки.
   rpc ReplaceOrder(ReplaceOrderRequest) returns (PostOrderResponse);
 
-  //расчет количества доступных для покупки/продажи лотов
+  //Расчет количества доступных для покупки/продажи лотов.
   rpc GetMaxLots(GetMaxLotsRequest) returns (GetMaxLotsResponse);
 
-  //Метод получения предварительной стоимости для лимитной заявки
+  //Метод получения предварительной стоимости для лимитной заявки.
   rpc GetOrderPrice(GetOrderPriceRequest) returns (GetOrderPriceResponse);
 }
 

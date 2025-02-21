@@ -1,7 +1,7 @@
 asyncapi: 2.6.0
 info:
   title: T-Invest API
-  version: '1.28'
+  version: '1.30'
   description: Websocket API for streaming data
   license:
     name: Apache 2.0
@@ -13,7 +13,7 @@ tags:
   - name: OrdersStreamService
 servers:
   production-wstream:
-    url: invest-public-api.tinkoff.ru/ws/
+    url: invest-public-api.tinkoff.ru/ws
     description: Websocket service for streaming data
     protocol: wss
 channels:
@@ -121,8 +121,10 @@ channels:
     publish:
       operationId: OrdersStreamService_OrderStateStream
       summary: >-
-        Stream поручений пользователя. Перед работой прочитайте
-        [статью](https://russianinvestments.github.io/investAPI/orders_state_stream/).
+        Stream поручений пользователя.
+
+        Перед работой прочитайте
+        [статью](/invest/services/orders/orders_state_stream).
       tags:
         - name: OrdersStreamService
       bindings:
@@ -134,8 +136,10 @@ channels:
     subscribe:
       operationId: onOrdersStreamService_OrderStateStream
       summary: >-
-        Stream поручений пользователя. Перед работой прочитайте
-        [статью](https://russianinvestments.github.io/investAPI/orders_state_stream/).
+        Stream поручений пользователя.
+
+        Перед работой прочитайте
+        [статью](/invest/services/orders/orders_state_stream).
       tags:
         - name: OrdersStreamService
       bindings:
@@ -149,7 +153,7 @@ channels:
   /tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream:
     publish:
       operationId: OrdersStreamService_TradesStream
-      summary: Stream сделок пользователя
+      summary: Stream сделок пользователя.
       tags:
         - name: OrdersStreamService
       bindings:
@@ -160,7 +164,7 @@ channels:
         $ref: '#/components/messages/v1TradesStreamRequest'
     subscribe:
       operationId: onOrdersStreamService_TradesStream
-      summary: Stream сделок пользователя
+      summary: Stream сделок пользователя.
       tags:
         - name: OrdersStreamService
       bindings:
@@ -349,9 +353,7 @@ components:
         trackingId: trackingId
       properties:
         trackingId:
-          description: >-
-            Уникальный идентификатор запроса.
-            [Подробнее](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+          description: Уникальный идентификатор запроса. [Подробнее](./grpc#tracking-id).
           type: string
         candlesSubscriptions:
           description: Массив статусов подписки на свечи.
@@ -433,10 +435,10 @@ components:
          - SUBSCRIPTION_STATUS_UNSPECIFIED: Статус подписки не определен.
          - SUBSCRIPTION_STATUS_SUCCESS: Успешно.
          - SUBSCRIPTION_STATUS_INSTRUMENT_NOT_FOUND: Инструмент не найден.
-         - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID: Некорректный статус подписки. [Список возможных значений](https://russianinvestments.github.io/investAPI/marketdata#subscriptionaction).
+         - SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID: Некорректный статус подписки. [Список возможных значений](./marketdata#subscriptionaction).
          - SUBSCRIPTION_STATUS_DEPTH_IS_INVALID: Некорректная глубина стакана. Доступные значения — 1, 10, 20, 30, 40, 50.
-         - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID: Некорректный интервал свечей. [Список возможных значений](https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval).
-         - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED: Превышен лимит на общее количество подписок в рамках стрима. [Лимитная политика](https://russianinvestments.github.io/investAPI/limits/).
+         - SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID: Некорректный интервал свечей. [Список возможных значений](./marketdata#subscriptioninterval).
+         - SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED: Превышен лимит на общее количество подписок в рамках стрима. [Лимитная политика](./limits/).
          - SUBSCRIPTION_STATUS_INTERNAL_ERROR: Внутренняя ошибка сервиса.
          - SUBSCRIPTION_STATUS_TOO_MANY_REQUESTS: Превышен лимит на количество запросов на подписки в течение установленного отрезка времени.
          - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND: Активная подписка не найдена. Ошибка может возникнуть только при отписке от несуществующей подписки.
@@ -482,9 +484,7 @@ components:
         trackingId: trackingId
       properties:
         trackingId:
-          description: >-
-            Уникальный идентификатор запроса.
-            [Подробнее](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+          description: Уникальный идентификатор запроса. [Подробнее](./grpc#tracking-id).
           type: string
         orderBookSubscriptions:
           description: Массив статусов подписки на стаканы.
@@ -550,9 +550,7 @@ components:
         trackingId: trackingId
       properties:
         trackingId:
-          description: >-
-            Уникальный идентификатор запроса.
-            [Подробнее](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+          description: Уникальный идентификатор запроса. [Подробнее](./grpc#tracking-id).
           type: string
         tradeSubscriptions:
           description: Массив статусов подписки на поток сделок.
@@ -615,9 +613,7 @@ components:
         trackingId: trackingId
       properties:
         trackingId:
-          description: >-
-            Уникальный идентификатор запроса.
-            [Подробнее](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+          description: Уникальный идентификатор запроса. [Подробнее](./grpc#tracking-id).
           type: string
         infoSubscriptions:
           description: Массив статусов подписки на торговый статус.
@@ -957,9 +953,7 @@ components:
         trackingId: trackingId
       properties:
         trackingId:
-          description: >-
-            Уникальный идентификатор запроса.
-            [Подробнее](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+          description: Уникальный идентификатор запроса. [Подробнее](./grpc#tracking-id).
           type: string
         lastPriceSubscriptions:
           description: Массив статусов подписки на цену последней сделки.
@@ -1496,7 +1490,7 @@ components:
         trackingId:
           description: >-
             Уникальный идентификатор запроса, подробнее:
-            [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+            [tracking_id](/invest/intro/developer/protocols/grpc#tracking-id).
           type: string
         streamId:
           title: Идентификатор открытого соединения
@@ -2101,7 +2095,7 @@ components:
         trackingId:
           description: >-
             Уникальный идентификатор запроса, подробнее:
-            [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+            [tracking_id](/invest/intro/developer/protocols/grpc#tracking-id).
           type: string
         streamId:
           title: Идентификатор открытого соединения
@@ -2767,7 +2761,7 @@ components:
         trackingId:
           description: >-
             Уникальный идентификатор запроса, подробнее:
-            [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+            [tracking_id](./grpc#tracking-id).
           type: string
         status:
           $ref: '#/components/schemas/v1ResultSubscriptionStatus'
