@@ -212,6 +212,30 @@ Deprecated Получить список опционов
 - Тело ответа — [EditFavoritesResponse](#editfavoritesresponse)
 
 
+#### CreateFavoriteGroup
+Создать новую группу избранных инструментов
+
+- Тело запроса — [CreateFavoriteGroupRequest](#createfavoritegrouprequest)
+
+- Тело ответа — [CreateFavoriteGroupResponse](#createfavoritegroupresponse)
+
+
+#### DeleteFavoriteGroup
+Удалить группу избранных инструментов
+
+- Тело запроса — [DeleteFavoriteGroupRequest](#deletefavoritegrouprequest)
+
+- Тело ответа — [DeleteFavoriteGroupResponse](#deletefavoritegroupresponse)
+
+
+#### GetFavoriteGroups
+Получить список групп избранных инструментов
+
+- Тело запроса — [GetFavoriteGroupsRequest](#getfavoritegroupsrequest)
+
+- Тело ответа — [GetFavoriteGroupsResponse](#getfavoritegroupsresponse)
+
+
 #### GetCountries
 Получить список стран
 
@@ -274,6 +298,14 @@ Deprecated Получить список опционов
 - Тело запроса — [GetForecastRequest](#getforecastrequest)
 
 - Тело ответа — [GetForecastResponse](#getforecastresponse)
+
+
+#### GetRiskRates
+
+
+- Тело запроса — [RiskRatesRequest](#riskratesrequest)
+
+- Тело ответа — [RiskRatesResponse](#riskratesresponse)
 
  <!-- range .Methods -->
  <!-- range .Services -->
@@ -1416,6 +1448,11 @@ Deprecated Получить список опционов
 #### GetFavoritesRequest
 Запрос списка избранных инструментов, входные параметры не требуются.
 
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| group_id |  [string](#string) | Уникальный идентификатор группы. |
+ <!-- end Fields -->
  <!-- end HasFields -->
 
 
@@ -1426,6 +1463,7 @@ Deprecated Получить список опционов
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | favorite_instruments | Массив объектов [FavoriteInstrument](#favoriteinstrument) | Массив инструментов. |
+| group_id |  [string](#string) | Уникальный идентификатор группы. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1458,6 +1496,7 @@ Deprecated Получить список опционов
 | ----- | ---- | ----------- |
 | instruments | Массив объектов [EditFavoritesRequestInstrument](#editfavoritesrequestinstrument) | Массив инструментов. |
 | action_type |  [EditFavoritesActionType](#editfavoritesactiontype) | Тип действия со списком. |
+| group_id |  [string](#string) | Уникальный идентификатор группы. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1481,6 +1520,87 @@ Deprecated Получить список опционов
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | favorite_instruments | Массив объектов [FavoriteInstrument](#favoriteinstrument) | Массив инструментов. |
+| group_id |  [string](#string) | Уникальный идентификатор группы. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### CreateFavoriteGroupRequest
+Запрос создания новой группы избранных инструментов.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| group_name |  [string](#string) | Название группы, не более 255 символов. |
+| group_color |  [string](#string) | Цвет группы. Принимает значения в HEX-формате, от "000000" до "FFFFFF" |
+| note |  [string](#string) | Описание |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### CreateFavoriteGroupResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| group_id |  [string](#string) | Уникальный идентификатор группы. |
+| group_name |  [string](#string) | Название группы. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### DeleteFavoriteGroupRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| group_id |  [string](#string) | Уникальный идентификатор группы. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### DeleteFavoriteGroupResponse
+
+
+ <!-- end HasFields -->
+
+
+#### GetFavoriteGroupsRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id | Массив объектов [string](#string) | Массив идентификаторов инструментов. Принимает значение `figi` или `instrument_uid`. Если в группе будет хотя бы один из инструментов массива, то в ответе у группы вернется признак `containsInstrument = true`. |
+| excluded_group_id | Массив объектов [string](#string) | Массив идентификаторов групп, которые необходимо исключить из ответа. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetFavoriteGroupsResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| groups | Массив объектов [GetFavoriteGroupsResponse.FavoriteGroup](#getfavoritegroupsresponsefavoritegroup) | Массив групп избранных списков инструментов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetFavoriteGroupsResponse.FavoriteGroup
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| group_id |  [string](#string) | Уникальный идентификатор группы. |
+| group_name |  [string](#string) | Название группы. |
+| color |  [string](#string) | Цвет группы в HEX-формате. |
+| size |  [int32](#int32) | Количество инструментов в группе. |
+| contains_instrument |  [bool](#bool) | Признак наличия в группе хотя бы одного инструмента из запроса. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1871,6 +1991,56 @@ Deprecated Получить список опционов
 | max_target |  [Quotation](#quotation) | Максимальная цена прогноза. |
 | price_change |  [Quotation](#quotation) | Изменение цены. |
 | price_change_rel |  [Quotation](#quotation) | Относительное изменение цены. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### RiskRatesRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id | Массив объектов [string](#string) | Идентификаторы инструментов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### RiskRatesResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_risk_rates | Массив объектов [RiskRatesResponse.RiskRateResult](#riskratesresponseriskrateresult) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### RiskRatesResponse.RiskRateResult
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_uid |  [string](#string) |  |
+| short_risk_rate |  [RiskRatesResponse.RiskRate](#riskratesresponseriskrate) | Ставка риска пользователя  в шорт |
+| long_risk_rate |  [RiskRatesResponse.RiskRate](#riskratesresponseriskrate) | Ставка риска пользователя в лонг |
+| short_risk_rates | Массив объектов [RiskRatesResponse.RiskRate](#riskratesresponseriskrate) | Доступные ставки риска в шорт |
+| long_risk_rates | Массив объектов [RiskRatesResponse.RiskRate](#riskratesresponseriskrate) | Доступные ставки риска в лонг |
+| error |  [string](#string) | Ошибка. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### RiskRatesResponse.RiskRate
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| risk_level_code |  [string](#string) | Категория риска. |
+| value |  [Quotation](#quotation) | Значение ставки риска. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

@@ -172,9 +172,10 @@
 | ----- | ---- | ----------- |
 | prem_status |  [bool](#bool) | Признак премиум клиента. |
 | qual_status |  [bool](#bool) | Признак квалифицированного инвестора. |
-| qualified_for_work_with | Массив объектов [string](#string) | Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. [Подробнее](https://russianinvestments.github.io/investAPI/faq_users/). |
+| qualified_for_work_with | Массив объектов [string](#string) | Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. [Подробнее](/invest/services/accounts/faq_users). |
 | tariff |  [string](#string) | Наименование тарифа пользователя. |
 | user_id |  [string](#string) | Идентификатор пользователя. |
+| risk_level_code |  [string](#string) | Категория риска. |
  <!-- end Fields -->
  <!-- end HasFields -->
  <!-- end messages -->

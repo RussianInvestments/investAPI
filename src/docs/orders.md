@@ -11,7 +11,7 @@
 
 
 #### TradesStream
-Stream сделок пользователя
+Stream сделок пользователя.
 
 - Тело запроса — [TradesStreamRequest](#tradesstreamrequest)
 
@@ -19,7 +19,8 @@ Stream сделок пользователя
 
 
 #### OrderStateStream
-Stream поручений пользователя. Перед работой прочитайте [статью](./orders_state_stream/).
+Stream поручений пользователя.
+Перед работой прочитайте [статью](/invest/services/orders/orders_state_stream).
 
 - Тело запроса — [OrderStateStreamRequest](#orderstatestreamrequest)
 
@@ -85,7 +86,7 @@ Stream поручений пользователя. Перед работой п
 
 
 #### GetMaxLots
-расчет количества доступных для покупки/продажи лотов
+Расчет количества доступных для покупки/продажи лотов.
 
 - Тело запроса — [GetMaxLotsRequest](#getmaxlotsrequest)
 
@@ -93,7 +94,7 @@ Stream поручений пользователя. Перед работой п
 
 
 #### GetOrderPrice
-Метод получения предварительной стоимости для лимитной заявки
+Метод получения предварительной стоимости для лимитной заявки.
 
 - Тело запроса — [GetOrderPriceRequest](#getorderpricerequest)
 

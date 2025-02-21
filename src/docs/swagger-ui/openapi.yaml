@@ -1,10 +1,10 @@
 openapi: "3.0.1"
 info:
   title: "T-Invest API"
-  termsOfService: "https://www.tinkoff.ru/invest/disclaimers/basic-information/"
+  termsOfService: "https://www.tbank.ru/invest/disclaimers/basic-information/"
   contact:
     email: "al.a.volkov@tbank.ru"
-  version: "1.28"
+  version: "1.30"
   license:
     name: "Apache 2.0"
     url: "https://www.apache.org/licenses/LICENSE-2.0"
@@ -197,6 +197,91 @@ paths:
       tags:
         - "InstrumentsService"
       x-codegen-request-body-name: "body"
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/CreateFavoriteGroup:
+    post:
+      operationId: "InstrumentsService_CreateFavoriteGroup"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1CreateFavoriteGroupRequest"
+        description: "Запрос создания новой группы избранных инструментов."
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1CreateFavoriteGroupResponse"
+          description: "A successful response."
+        "400":
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Токен доступа не найден или не активен."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Недостаточно прав для выполнения запроса, проверьте соответствие токена и передаваемого в запросе счета."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Неверный URL запроса или переданный параметр не определен."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Время передачи запроса клиентом истекло. Проверьте работу приложения."
+        "415":
+          description: "Неверный тип данных, проверьте формат передаваемого сообщения."
+        "429":
+          description: "Превышен лимит запросов в минуту."
+        "500":
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже"
+        "501":
+          description: "Метод не реализован, проверьте путь вызова в запросе."
+        "503":
+          description: "Сервис временно недоступен, попробуйте повторить запрос позже."
+        "504":
+          description: "Превышен интервал ожидания ответа от сервера, попробуйте повторить запрос позже."
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "Создать новую группу избранных инструментов"
+      tags:
+        - "InstrumentsService"
+      x-codegen-request-body-name: "body"
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/Currencies:
     post:
       operationId: "InstrumentsService_Currencies"
@@ -364,6 +449,90 @@ paths:
                 $ref: "#/components/schemas/rpcStatus"
           description: "An unexpected error response."
       summary: "Получить валюту по ее идентификатору"
+      tags:
+        - "InstrumentsService"
+      x-codegen-request-body-name: "body"
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/DeleteFavoriteGroup:
+    post:
+      operationId: "InstrumentsService_DeleteFavoriteGroup"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1DeleteFavoriteGroupRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1DeleteFavoriteGroupResponse"
+          description: "A successful response."
+        "400":
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Токен доступа не найден или не активен."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Недостаточно прав для выполнения запроса, проверьте соответствие токена и передаваемого в запросе счета."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Неверный URL запроса или переданный параметр не определен."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Время передачи запроса клиентом истекло. Проверьте работу приложения."
+        "415":
+          description: "Неверный тип данных, проверьте формат передаваемого сообщения."
+        "429":
+          description: "Превышен лимит запросов в минуту."
+        "500":
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже"
+        "501":
+          description: "Метод не реализован, проверьте путь вызова в запросе."
+        "503":
+          description: "Сервис временно недоступен, попробуйте повторить запрос позже."
+        "504":
+          description: "Превышен интервал ожидания ответа от сервера, попробуйте повторить запрос позже."
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "Удалить группу избранных инструментов"
       tags:
         - "InstrumentsService"
       x-codegen-request-body-name: "body"
@@ -1894,6 +2063,90 @@ paths:
       tags:
         - "InstrumentsService"
       x-codegen-request-body-name: "body"
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetFavoriteGroups:
+    post:
+      operationId: "InstrumentsService_GetFavoriteGroups"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1GetFavoriteGroupsRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1GetFavoriteGroupsResponse"
+          description: "A successful response."
+        "400":
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Токен доступа не найден или не активен."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Недостаточно прав для выполнения запроса, проверьте соответствие токена и передаваемого в запросе счета."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Неверный URL запроса или переданный параметр не определен."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Время передачи запроса клиентом истекло. Проверьте работу приложения."
+        "415":
+          description: "Неверный тип данных, проверьте формат передаваемого сообщения."
+        "429":
+          description: "Превышен лимит запросов в минуту."
+        "500":
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже"
+        "501":
+          description: "Метод не реализован, проверьте путь вызова в запросе."
+        "503":
+          description: "Сервис временно недоступен, попробуйте повторить запрос позже."
+        "504":
+          description: "Превышен интервал ожидания ответа от сервера, попробуйте повторить запрос позже."
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "Получить список групп избранных инструментов"
+      tags:
+        - "InstrumentsService"
+      x-codegen-request-body-name: "body"
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetFavorites:
     post:
       operationId: "InstrumentsService_GetFavorites"
@@ -2230,6 +2483,91 @@ paths:
                 $ref: "#/components/schemas/rpcStatus"
           description: "An unexpected error response."
       summary: "Получить основную информацию об инструменте"
+      tags:
+        - "InstrumentsService"
+      x-codegen-request-body-name: "body"
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/GetRiskRates:
+    post:
+      operationId: "InstrumentsService_GetRiskRates"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1RiskRatesRequest"
+        description: "Запрос ставок риска"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1RiskRatesResponse"
+          description: "A successful response."
+        "400":
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Токен доступа не найден или не активен."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Недостаточно прав для выполнения запроса, проверьте соответствие токена и передаваемого в запросе счета."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Неверный URL запроса или переданный параметр не определен."
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Время передачи запроса клиентом истекло. Проверьте работу приложения."
+        "415":
+          description: "Неверный тип данных, проверьте формат передаваемого сообщения."
+        "429":
+          description: "Превышен лимит запросов в минуту."
+        "500":
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже"
+        "501":
+          description: "Метод не реализован, проверьте путь вызова в запросе."
+        "503":
+          description: "Сервис временно недоступен, попробуйте повторить запрос позже."
+        "504":
+          description: "Превышен интервал ожидания ответа от сервера, попробуйте повторить запрос позже."
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "Получить ставки риска по инструменту"
       tags:
         - "InstrumentsService"
       x-codegen-request-body-name: "body"
@@ -3924,10 +4262,11 @@ paths:
               schema:
                 $ref: "#/components/schemas/rpcStatus"
           description: "An unexpected error response."
-      summary: "Получить список операций по счету. При работе с методом учитывайте\n[особенности взаимодействия](/investAPI/operations_problems)."
+      summary: "Получить список операций по счету."
       tags:
         - "OperationsService"
       x-codegen-request-body-name: "body"
+      description: "При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems)."
   /tinkoff.public.invest.api.contract.v1.OperationsService/GetOperationsByCursor:
     post:
       operationId: "OperationsService_GetOperationsByCursor"
@@ -4009,10 +4348,11 @@ paths:
               schema:
                 $ref: "#/components/schemas/rpcStatus"
           description: "An unexpected error response."
-      summary: "Получить список операций по счету с пагинацией. При работе с методом учитывайте\n[особенности взаимодействия](/investAPI/operations_problems)."
+      summary: "Получить список операций по счету с пагинацией."
       tags:
         - "OperationsService"
       x-codegen-request-body-name: "body"
+      description: "При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems)."
   /tinkoff.public.invest.api.contract.v1.OperationsService/GetPortfolio:
     post:
       operationId: "OperationsService_GetPortfolio"
@@ -4604,7 +4944,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/rpcStatus"
           description: "An unexpected error response."
-      summary: "расчет количества доступных для покупки/продажи лотов"
+      summary: "Расчет количества доступных для покупки/продажи лотов."
       tags:
         - "OrdersService"
       x-codegen-request-body-name: "body"
@@ -4688,7 +5028,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/rpcStatus"
           description: "An unexpected error response."
-      summary: "Метод получения предварительной стоимости для лимитной заявки"
+      summary: "Метод получения предварительной стоимости для лимитной заявки."
       tags:
         - "OrdersService"
       x-codegen-request-body-name: "body"
@@ -5197,10 +5537,11 @@ paths:
               schema:
                 $ref: "#/components/schemas/rpcStatus"
           description: "An unexpected error response."
-      summary: "Stream поручений пользователя. Перед работой прочитайте [статью](./orders_state_stream/)."
+      summary: "Stream поручений пользователя."
       tags:
         - "OrdersStreamService"
       x-codegen-request-body-name: "body"
+      description: "Перед работой прочитайте [статью](/invest/services/orders/orders_state_stream)."
   /tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream:
     post:
       operationId: "OrdersStreamService_TradesStream"
@@ -5282,7 +5623,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/rpcStatus"
           description: "An unexpected error response."
-      summary: "Stream сделок пользователя"
+      summary: "Stream сделок пользователя."
       tags:
         - "OrdersStreamService"
       x-codegen-request-body-name: "body"
@@ -7820,6 +8161,36 @@ components:
           type: "string"
       title: "Прогноз"
       type: "object"
+    GetFavoriteGroupsResponseFavoriteGroup:
+      example:
+        groupName: "groupName"
+        color: "color"
+        size: 0
+        containsInstrument: true
+        groupId: "groupId"
+      properties:
+        groupId:
+          description: "Уникальный идентификатор группы."
+          type: "string"
+        groupName:
+          description: "Название группы."
+          type: "string"
+        color:
+          description: "Цвет группы в HEX-формате."
+          type: "string"
+        size:
+          description: "Количество инструментов в группе."
+          format: "int32"
+          type: "integer"
+        containsInstrument:
+          description: "Признак наличия в группе хотя бы одного инструмента из запроса."
+          type: "boolean"
+      required:
+        - "color"
+        - "groupId"
+        - "groupName"
+        - "size"
+      type: "object"
     GetForecastResponseConsensusItem:
       description: "Консенсус-прогноз."
       example:
@@ -8106,6 +8477,72 @@ components:
         - "EUR"
       title: "- RUB: Рубли\n - USD: Доллары\n - EUR: Евро"
       type: "string"
+    RiskRatesResponseRiskRate:
+      example:
+        riskLevelCode: "riskLevelCode"
+        value:
+          nano: 6
+          units: "units"
+      properties:
+        riskLevelCode:
+          description: "Категория риска."
+          type: "string"
+        value:
+          $ref: "#/components/schemas/v1Quotation"
+      type: "object"
+    RiskRatesResponseRiskRateResult:
+      example:
+        longRiskRate:
+          riskLevelCode: "riskLevelCode"
+          value:
+            nano: 6
+            units: "units"
+        longRiskRates:
+          - riskLevelCode: "riskLevelCode"
+            value:
+              nano: 6
+              units: "units"
+          - riskLevelCode: "riskLevelCode"
+            value:
+              nano: 6
+              units: "units"
+        shortRiskRates:
+          - riskLevelCode: "riskLevelCode"
+            value:
+              nano: 6
+              units: "units"
+          - riskLevelCode: "riskLevelCode"
+            value:
+              nano: 6
+              units: "units"
+        shortRiskRate:
+          riskLevelCode: "riskLevelCode"
+          value:
+            nano: 6
+            units: "units"
+        instrumentUid: "instrumentUid"
+        error: "error"
+      properties:
+        instrumentUid:
+          type: "string"
+        shortRiskRate:
+          $ref: "#/components/schemas/RiskRatesResponseRiskRate"
+        longRiskRate:
+          $ref: "#/components/schemas/RiskRatesResponseRiskRate"
+        shortRiskRates:
+          items:
+            $ref: "#/components/schemas/RiskRatesResponseRiskRate"
+          title: "Доступные ставки риска в шорт"
+          type: "array"
+        longRiskRates:
+          items:
+            $ref: "#/components/schemas/RiskRatesResponseRiskRate"
+          title: "Доступные ставки риска в лонг"
+          type: "array"
+        error:
+          description: "Ошибка."
+          type: "string"
+      type: "object"
     TradingIntervalTimeInterval:
       example:
         endTs: 2000-01-23T04:56:07.000Z
@@ -10652,6 +11089,34 @@ components:
         - "COUPON_TYPE_VARIABLE"
         - "COUPON_TYPE_OTHER"
       type: "string"
+    v1CreateFavoriteGroupRequest:
+      description: "Запрос создания новой группы избранных инструментов."
+      properties:
+        groupName:
+          description: "Название группы, не более 255 символов."
+          type: "string"
+        groupColor:
+          title: "Цвет группы. Принимает значения в HEX-формате, от \"000000\" до \"FFFFFF\""
+          type: "string"
+        note:
+          title: "Описание"
+          type: "string"
+      required:
+        - "groupColor"
+        - "groupName"
+      type: "object"
+    v1CreateFavoriteGroupResponse:
+      example:
+        groupName: "groupName"
+        groupId: "groupId"
+      properties:
+        groupId:
+          description: "Уникальный идентификатор группы."
+          type: "string"
+        groupName:
+          description: "Название группы."
+          type: "string"
+      type: "object"
     v1CurrenciesResponse:
       description: "Данные по валютам."
       example:
@@ -11013,6 +11478,16 @@ components:
         instrument:
           $ref: "#/components/schemas/v1Currency"
       type: "object"
+    v1DeleteFavoriteGroupRequest:
+      properties:
+        groupId:
+          description: "Уникальный идентификатор группы."
+          type: "string"
+      required:
+        - "groupId"
+      type: "object"
+    v1DeleteFavoriteGroupResponse:
+      type: "object"
     v1Dividend:
       description: "Информация о выплате."
       example:
@@ -11147,6 +11622,9 @@ components:
           type: "array"
         actionType:
           $ref: "#/components/schemas/v1EditFavoritesActionType"
+        groupId:
+          description: "Уникальный идентификатор группы."
+          type: "string"
       required:
         - "actionType"
         - "instruments"
@@ -11182,12 +11660,16 @@ components:
             figi: "figi"
             apiTradeAvailableFlag: true
             isin: "isin"
+        groupId: "groupId"
       properties:
         favoriteInstruments:
           description: "Массив инструментов."
           items:
             $ref: "#/components/schemas/v1FavoriteInstrument"
           type: "array"
+        groupId:
+          description: "Уникальный идентификатор группы."
+          type: "string"
       type: "object"
     v1ErrorDetail:
       example:
@@ -13211,8 +13693,45 @@ components:
             $ref: "#/components/schemas/v1Dividend"
           type: "array"
       type: "object"
+    v1GetFavoriteGroupsRequest:
+      properties:
+        instrumentId:
+          description: "Массив идентификаторов инструментов. Принимает значение `figi` или `instrument_uid`. Если в группе будет хотя бы один из инструментов массива, то в ответе у группы вернется признак `containsInstrument = true`."
+          items:
+            type: "string"
+          type: "array"
+        excludedGroupId:
+          description: "Массив идентификаторов групп, которые необходимо исключить из ответа."
+          items:
+            type: "string"
+          type: "array"
+      type: "object"
+    v1GetFavoriteGroupsResponse:
+      example:
+        groups:
+          - groupName: "groupName"
+            color: "color"
+            size: 0
+            containsInstrument: true
+            groupId: "groupId"
+          - groupName: "groupName"
+            color: "color"
+            size: 0
+            containsInstrument: true
+            groupId: "groupId"
+      properties:
+        groups:
+          description: "Массив групп избранных списков инструментов."
+          items:
+            $ref: "#/components/schemas/GetFavoriteGroupsResponseFavoriteGroup"
+          type: "array"
+      type: "object"
     v1GetFavoritesRequest:
       description: "Запрос списка избранных инструментов, входные параметры не требуются."
+      properties:
+        groupId:
+          description: "Уникальный идентификатор группы."
+          type: "string"
       type: "object"
     v1GetFavoritesResponse:
       description: "В ответ передается список избранных инструментов в качестве массива."
@@ -13236,12 +13755,16 @@ components:
             figi: "figi"
             apiTradeAvailableFlag: true
             isin: "isin"
+        groupId: "groupId"
       properties:
         favoriteInstruments:
           description: "Массив инструментов."
           items:
             $ref: "#/components/schemas/v1FavoriteInstrument"
           type: "array"
+        groupId:
+          description: "Уникальный идентификатор группы."
+          type: "string"
       type: "object"
     v1GetForecastRequest:
       description: "Запрос прогнозов инвестдомов."
@@ -13366,6 +13889,7 @@ components:
         qualifiedForWorkWith:
           - "qualifiedForWorkWith"
           - "qualifiedForWorkWith"
+        riskLevelCode: "riskLevelCode"
         qualStatus: true
         premStatus: true
         tariff: "tariff"
@@ -13378,7 +13902,7 @@ components:
           description: "Признак квалифицированного инвестора."
           type: "boolean"
         qualifiedForWorkWith:
-          description: "Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. [Подробнее](https://russianinvestments.github.io/investAPI/faq_users/)."
+          description: "Набор требующих тестирования инструментов и возможностей, с которыми может работать пользователь. [Подробнее](/invest/services/accounts/faq_users)."
           items:
             type: "string"
           type: "array"
@@ -13387,6 +13911,9 @@ components:
           type: "string"
         userId:
           description: "Идентификатор пользователя."
+          type: "string"
+        riskLevelCode:
+          description: "Категория риска."
           type: "string"
       type: "object"
     v1GetLastPricesRequest:
@@ -17569,7 +18096,7 @@ components:
             $ref: "#/components/schemas/v1AccountSubscriptionStatus"
           type: "array"
         trackingId:
-          description: "Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id)."
+          description: "Уникальный идентификатор запроса, подробнее: [tracking_id](/invest/intro/developer/protocols/grpc#tracking-id)."
           type: "string"
         streamId:
           title: "Идентификатор открытого соединения"
@@ -18036,7 +18563,7 @@ components:
             $ref: "#/components/schemas/v1PositionsSubscriptionStatus"
           type: "array"
         trackingId:
-          description: "Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id)."
+          description: "Уникальный идентификатор запроса, подробнее: [tracking_id](/invest/intro/developer/protocols/grpc#tracking-id)."
           type: "string"
         streamId:
           title: "Идентификатор открытого соединения"
@@ -18405,6 +18932,83 @@ components:
         - "RISK_LEVEL_MODERATE"
         - "RISK_LEVEL_HIGH"
       type: "string"
+    v1RiskRatesRequest:
+      properties:
+        instrumentId:
+          description: "Идентификаторы инструментов."
+          items:
+            type: "string"
+          type: "array"
+      type: "object"
+    v1RiskRatesResponse:
+      example:
+        instrumentRiskRates:
+          - longRiskRate:
+              riskLevelCode: "riskLevelCode"
+              value:
+                nano: 6
+                units: "units"
+            longRiskRates:
+              - riskLevelCode: "riskLevelCode"
+                value:
+                  nano: 6
+                  units: "units"
+              - riskLevelCode: "riskLevelCode"
+                value:
+                  nano: 6
+                  units: "units"
+            shortRiskRates:
+              - riskLevelCode: "riskLevelCode"
+                value:
+                  nano: 6
+                  units: "units"
+              - riskLevelCode: "riskLevelCode"
+                value:
+                  nano: 6
+                  units: "units"
+            shortRiskRate:
+              riskLevelCode: "riskLevelCode"
+              value:
+                nano: 6
+                units: "units"
+            instrumentUid: "instrumentUid"
+            error: "error"
+          - longRiskRate:
+              riskLevelCode: "riskLevelCode"
+              value:
+                nano: 6
+                units: "units"
+            longRiskRates:
+              - riskLevelCode: "riskLevelCode"
+                value:
+                  nano: 6
+                  units: "units"
+              - riskLevelCode: "riskLevelCode"
+                value:
+                  nano: 6
+                  units: "units"
+            shortRiskRates:
+              - riskLevelCode: "riskLevelCode"
+                value:
+                  nano: 6
+                  units: "units"
+              - riskLevelCode: "riskLevelCode"
+                value:
+                  nano: 6
+                  units: "units"
+            shortRiskRate:
+              riskLevelCode: "riskLevelCode"
+              value:
+                nano: 6
+                units: "units"
+            instrumentUid: "instrumentUid"
+            error: "error"
+      properties:
+        instrumentRiskRates:
+          items:
+            $ref: "#/components/schemas/RiskRatesResponseRiskRateResult"
+          type: "array"
+      type: "object"
     v1SandboxPayInRequest:
       description: "Запрос пополнения счета в песочнице."
       properties:

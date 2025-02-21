@@ -16,8 +16,8 @@ import "google/api/field_behavior.proto";
 service OperationsService {/*С помощью методов сервиса можно получить:<br/><br/> **1**. Список операций по счету.<br/> **2**.
                               Портфель по счету.<br/> **3**. Позиции ценных бумаг на счете.<br/> **4**.
                               Доступный остаток для вывода средств.<br/> **5**. Различные отчеты.*/
-  //Получить список операций по счету. При работе с методом учитывайте
-  // [особенности взаимодействия](/investAPI/operations_problems).
+  //Получить список операций по счету.
+  //При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems).
   rpc GetOperations(OperationsRequest) returns (OperationsResponse);
 
   //Получить портфель по счету.
@@ -35,8 +35,8 @@ service OperationsService {/*С помощью методов сервиса м�
   //Получить отчет «Справка о доходах за пределами РФ».
   rpc GetDividendsForeignIssuer(GetDividendsForeignIssuerRequest) returns (GetDividendsForeignIssuerResponse);
 
-  //Получить список операций по счету с пагинацией. При работе с методом учитывайте
-  // [особенности взаимодействия](/investAPI/operations_problems).
+  //Получить список операций по счету с пагинацией.
+  //При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems).
   rpc GetOperationsByCursor(GetOperationsByCursorRequest) returns (GetOperationsByCursorResponse);
 }
 
@@ -428,7 +428,7 @@ message PortfolioStreamResponse {
 //Объект результата подписки.
 message PortfolioSubscriptionResult {
   repeated AccountSubscriptionStatus accounts = 1; //Массив счетов клиента.
-  string tracking_id = 7; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+  string tracking_id = 7; //Уникальный идентификатор запроса, подробнее: [tracking_id](/invest/intro/developer/protocols/grpc#tracking-id).
   string stream_id = 8; //Идентификатор открытого соединения
 }
 
@@ -535,7 +535,7 @@ message PositionsStreamResponse {
 //Объект результата подписки.
 message PositionsSubscriptionResult {
   repeated PositionsSubscriptionStatus accounts = 1; //Массив счетов клиента.
-  string tracking_id = 7; //Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id).
+  string tracking_id = 7; //Уникальный идентификатор запроса, подробнее: [tracking_id](/invest/intro/developer/protocols/grpc#tracking-id).
   string stream_id = 8; //Идентификатор открытого соединения
 }
 

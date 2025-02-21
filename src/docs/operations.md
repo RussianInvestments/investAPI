@@ -13,8 +13,8 @@
 
 
 #### GetOperations
-Получить список операций по счету. При работе с методом учитывайте
-[особенности взаимодействия](/investAPI/operations_problems).
+Получить список операций по счету.
+При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems).
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
 
@@ -62,8 +62,8 @@
 
 
 #### GetOperationsByCursor
-Получить список операций по счету с пагинацией. При работе с методом учитывайте
-[особенности взаимодействия](/investAPI/operations_problems).
+Получить список операций по счету с пагинацией.
+При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems).
 
 - Тело запроса — [GetOperationsByCursorRequest](#getoperationsbycursorrequest)
 
@@ -590,7 +590,7 @@ Server-side stream обновлений информации по изменен
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | accounts | Массив объектов [AccountSubscriptionStatus](#accountsubscriptionstatus) | Массив счетов клиента. |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id). |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/invest/intro/developer/protocols/grpc#tracking-id). |
 | stream_id |  [string](#string) | Идентификатор открытого соединения |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -741,7 +741,7 @@ Server-side stream обновлений информации по изменен
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | accounts | Массив объектов [PositionsSubscriptionStatus](#positionssubscriptionstatus) | Массив счетов клиента. |
-| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](https://russianinvestments.github.io/investAPI/grpc#tracking-id). |
+| tracking_id |  [string](#string) | Уникальный идентификатор запроса, подробнее: [tracking_id](/invest/intro/developer/protocols/grpc#tracking-id). |
 | stream_id |  [string](#string) | Идентификатор открытого соединения |
  <!-- end Fields -->
  <!-- end HasFields -->
