@@ -15,9 +15,9 @@
     "description": "Входной параметр `from` является обязательным.<br/>Укажите корректный параметр `from`."
   },
   "30002": {
-    "message": "The required period should not exceed 7 days",
+    "message": "The required period should not exceed 14 days",
     "type": "INVALID_ARGUMENT",
-    "description": "Запрошенный период не может превышать 7 дней.<br/>Укажите корректный период."
+    "description": "Запрошенный период не может превышать 14 дней.<br/>Укажите корректный период."
   },
   "30003": {
     "message": "`from` can't be less than the current date",
@@ -600,23 +600,23 @@
     "description": "Необходимо указать один из параметров — `from` или `limit`."
   },
   "30229": {
-    "message": "Price in points not available",
+    "message": "Price in points is not available",
     "type": "INVALID_ARGUMENT",
     "description": "Сейчас конвертация цены фьючерса недоступна. Возможно, фьючерс истек или нет данных для расчета."
   },
   "30230": {
-    "message": "Missing parameter: 'group_id'",
-    "description": "Входной параметр 'group_id' является обязательным. Укажите корректный параметр 'group_id'.",
+    "message": "Missing parameter: `group_id`",
+    "description": "Входной параметр `group_id` является обязательным. Укажите корректный параметр `group_id`.",
     "type": "INVALID_ARGUMENT"
   },
   "30231": {
-    "message": "'group_name' is missing or invalid",
-    "description": "Входной параметр 'group_name' отсутствует или имеет некорректное значение. Укажите корректный параметр 'group_name'.",
+    "message": "`group_name` is missing or invalid",
+    "description": "Входной параметр 'group_name' отсутствует или имеет некорректное значение. Укажите корректный параметр `group_name`.",
     "type": "INVALID_ARGUMENT"
   },
   "30232": {
-    "message": "'group_color' is missing or invalid",
-    "description": "Входной параметр 'group_color' отсутствует или имеет некорректное значение. Укажите корректный параметр 'group_color'.",
+    "message": "`group_color` is missing or invalid",
+    "description": "Входной параметр `group_color` отсутствует или имеет некорректное значение. Укажите корректный параметр `group_color`.",
     "type": "INVALID_ARGUMENT"
   },
   "30233": {
@@ -628,6 +628,16 @@
     "message": "Instrument not supported",
     "description": "Инструмент не поддерживается методом.",
     "type": "INVALID_ARGUMENT"
+  },
+  "30235": {
+    "message": "The maximum request period for the given interval is 30 days",
+    "description": "Для данного интервала свечи данные доступны за последние 30 дней.",
+    "type": "INVALID_ARGUMENT"
+  },
+  "30236": {
+    "message": "Price in currency is not available",
+    "type": "INVALID_ARGUMENT",
+    "description": "Сейчас конвертация цены фьючерса недоступна. Возможно, фьючерс истек или нет данных для расчета."
   },
   "35001": {
     "message": "Sandbox accounts limit reached",

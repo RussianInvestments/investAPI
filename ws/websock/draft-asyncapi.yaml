@@ -1,7 +1,7 @@
 asyncapi: 2.6.0
 info:
   title: T-Invest API
-  version: '1.30'
+  version: '1.33'
   description: Websocket API for streaming data
   license:
     name: Apache 2.0
@@ -20,7 +20,9 @@ channels:
   /tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataServerSideStream:
     publish:
       operationId: MarketDataStreamService_MarketDataServerSideStream
-      summary: Server-side стрим предоставления биржевой информации.
+      summary: >-
+        MarketDataServerSideStream — server-side стрим предоставления биржевой
+        информации
       tags:
         - name: MarketDataStreamService
       bindings:
@@ -31,7 +33,9 @@ channels:
         $ref: '#/components/messages/v1MarketDataServerSideStreamRequest'
     subscribe:
       operationId: onMarketDataStreamService_MarketDataServerSideStream
-      summary: Server-side стрим предоставления биржевой информации.
+      summary: >-
+        MarketDataServerSideStream — server-side стрим предоставления биржевой
+        информации
       tags:
         - name: MarketDataStreamService
       bindings:
@@ -45,7 +49,9 @@ channels:
   /tinkoff.public.invest.api.contract.v1.MarketDataStreamService/MarketDataStream:
     publish:
       operationId: MarketDataStreamService_MarketDataStream
-      summary: Bidirectional-стрим предоставления биржевой информации.
+      summary: >-
+        MarketDataStream — bidirectional стрим предоставления биржевой
+        информации
       tags:
         - name: MarketDataStreamService
       bindings:
@@ -56,7 +62,9 @@ channels:
         $ref: '#/components/messages/v1MarketDataRequest'
     subscribe:
       operationId: onMarketDataStreamService_MarketDataStream
-      summary: Bidirectional-стрим предоставления биржевой информации.
+      summary: >-
+        MarketDataStream — bidirectional стрим предоставления биржевой
+        информации
       tags:
         - name: MarketDataStreamService
       bindings:
@@ -70,7 +78,7 @@ channels:
   /tinkoff.public.invest.api.contract.v1.OperationsStreamService/PortfolioStream:
     publish:
       operationId: OperationsStreamService_PortfolioStream
-      summary: Server-side stream обновлений портфеля.
+      summary: PortfolioStream — стрим обновлений портфеля
       tags:
         - name: OperationsStreamService
       bindings:
@@ -81,7 +89,7 @@ channels:
         $ref: '#/components/messages/v1PortfolioStreamRequest'
     subscribe:
       operationId: onOperationsStreamService_PortfolioStream
-      summary: Server-side stream обновлений портфеля.
+      summary: PortfolioStream — стрим обновлений портфеля
       tags:
         - name: OperationsStreamService
       bindings:
@@ -95,7 +103,9 @@ channels:
   /tinkoff.public.invest.api.contract.v1.OperationsStreamService/PositionsStream:
     publish:
       operationId: OperationsStreamService_PositionsStream
-      summary: Server-side stream обновлений информации по изменению позиций портфеля.
+      summary: >-
+        PositionsStream — стрим обновлений информации по изменению позиций
+        портфеля
       tags:
         - name: OperationsStreamService
       bindings:
@@ -106,7 +116,9 @@ channels:
         $ref: '#/components/messages/v1PositionsStreamRequest'
     subscribe:
       operationId: onOperationsStreamService_PositionsStream
-      summary: Server-side stream обновлений информации по изменению позиций портфеля.
+      summary: >-
+        PositionsStream — стрим обновлений информации по изменению позиций
+        портфеля
       tags:
         - name: OperationsStreamService
       bindings:
@@ -121,7 +133,7 @@ channels:
     publish:
       operationId: OrdersStreamService_OrderStateStream
       summary: >-
-        Stream поручений пользователя.
+        OrderStateStream — стрим поручений пользователя
 
         Перед работой прочитайте
         [статью](/invest/services/orders/orders_state_stream).
@@ -136,7 +148,7 @@ channels:
     subscribe:
       operationId: onOrdersStreamService_OrderStateStream
       summary: >-
-        Stream поручений пользователя.
+        OrderStateStream — стрим поручений пользователя
 
         Перед работой прочитайте
         [статью](/invest/services/orders/orders_state_stream).
@@ -153,7 +165,7 @@ channels:
   /tinkoff.public.invest.api.contract.v1.OrdersStreamService/TradesStream:
     publish:
       operationId: OrdersStreamService_TradesStream
-      summary: Stream сделок пользователя.
+      summary: TradesStream — стрим сделок пользователя
       tags:
         - name: OrdersStreamService
       bindings:
@@ -164,7 +176,7 @@ channels:
         $ref: '#/components/messages/v1TradesStreamRequest'
     subscribe:
       operationId: onOrdersStreamService_TradesStream
-      summary: Stream сделок пользователя.
+      summary: TradesStream — стрим сделок пользователя
       tags:
         - name: OrdersStreamService
       bindings:
@@ -1280,6 +1292,7 @@ components:
                 currency: currency
                 units: units
               instrumentType: instrumentType
+              ticker: ticker
               quantity:
                 nano: 6
                 units: units
@@ -1327,6 +1340,7 @@ components:
                 currency: currency
                 units: units
               instrumentType: instrumentType
+              ticker: ticker
               quantity:
                 nano: 6
                 units: units
@@ -1394,11 +1408,8 @@ components:
             currency: currency
             units: units
           virtualPositions:
-            - averagePositionPrice:
-                nano: 5
-                currency: currency
-                units: units
-              instrumentType: instrumentType
+            - instrumentType: instrumentType
+              ticker: ticker
               quantity:
                 nano: 6
                 units: units
@@ -1409,26 +1420,27 @@ components:
                 nano: 5
                 currency: currency
                 units: units
-              instrumentUid: instrumentUid
-              dailyYield:
-                nano: 5
-                currency: currency
-                units: units
               positionUid: positionUid
               currentPrice:
                 nano: 5
                 currency: currency
                 units: units
               figi: figi
+              averagePositionPrice:
+                nano: 5
+                currency: currency
+                units: units
+              instrumentUid: instrumentUid
+              dailyYield:
+                nano: 5
+                currency: currency
+                units: units
               expectedYield:
                 nano: 6
                 units: units
               expireDate: '2000-01-23T04:56:07.000+00:00'
-            - averagePositionPrice:
-                nano: 5
-                currency: currency
-                units: units
-              instrumentType: instrumentType
+            - instrumentType: instrumentType
+              ticker: ticker
               quantity:
                 nano: 6
                 units: units
@@ -1439,17 +1451,21 @@ components:
                 nano: 5
                 currency: currency
                 units: units
-              instrumentUid: instrumentUid
-              dailyYield:
-                nano: 5
-                currency: currency
-                units: units
               positionUid: positionUid
               currentPrice:
                 nano: 5
                 currency: currency
                 units: units
               figi: figi
+              averagePositionPrice:
+                nano: 5
+                currency: currency
+                units: units
+              instrumentUid: instrumentUid
+              dailyYield:
+                nano: 5
+                currency: currency
+                units: units
               expectedYield:
                 nano: 6
                 units: units
@@ -1543,6 +1559,7 @@ components:
               currency: currency
               units: units
             instrumentType: instrumentType
+            ticker: ticker
             quantity:
               nano: 6
               units: units
@@ -1590,6 +1607,7 @@ components:
               currency: currency
               units: units
             instrumentType: instrumentType
+            ticker: ticker
             quantity:
               nano: 6
               units: units
@@ -1657,11 +1675,8 @@ components:
           currency: currency
           units: units
         virtualPositions:
-          - averagePositionPrice:
-              nano: 5
-              currency: currency
-              units: units
-            instrumentType: instrumentType
+          - instrumentType: instrumentType
+            ticker: ticker
             quantity:
               nano: 6
               units: units
@@ -1672,26 +1687,27 @@ components:
               nano: 5
               currency: currency
               units: units
-            instrumentUid: instrumentUid
-            dailyYield:
-              nano: 5
-              currency: currency
-              units: units
             positionUid: positionUid
             currentPrice:
               nano: 5
               currency: currency
               units: units
             figi: figi
+            averagePositionPrice:
+              nano: 5
+              currency: currency
+              units: units
+            instrumentUid: instrumentUid
+            dailyYield:
+              nano: 5
+              currency: currency
+              units: units
             expectedYield:
               nano: 6
               units: units
             expireDate: '2000-01-23T04:56:07.000+00:00'
-          - averagePositionPrice:
-              nano: 5
-              currency: currency
-              units: units
-            instrumentType: instrumentType
+          - instrumentType: instrumentType
+            ticker: ticker
             quantity:
               nano: 6
               units: units
@@ -1702,17 +1718,21 @@ components:
               nano: 5
               currency: currency
               units: units
-            instrumentUid: instrumentUid
-            dailyYield:
-              nano: 5
-              currency: currency
-              units: units
             positionUid: positionUid
             currentPrice:
               nano: 5
               currency: currency
               units: units
             figi: figi
+            averagePositionPrice:
+              nano: 5
+              currency: currency
+              units: units
+            instrumentUid: instrumentUid
+            dailyYield:
+              nano: 5
+              currency: currency
+              units: units
             expectedYield:
               nano: 6
               units: units
@@ -1788,6 +1808,7 @@ components:
           currency: currency
           units: units
         instrumentType: instrumentType
+        ticker: ticker
         quantity:
           nano: 6
           units: units
@@ -1870,14 +1891,14 @@ components:
           $ref: '#/components/schemas/v1Quotation'
         dailyYield:
           $ref: '#/components/schemas/v1MoneyValue'
+        ticker:
+          description: Тикер инструмента.
+          type: string
       type: object
     v1VirtualPortfolioPosition:
       example:
-        averagePositionPrice:
-          nano: 5
-          currency: currency
-          units: units
         instrumentType: instrumentType
+        ticker: ticker
         quantity:
           nano: 6
           units: units
@@ -1888,17 +1909,21 @@ components:
           nano: 5
           currency: currency
           units: units
-        instrumentUid: instrumentUid
-        dailyYield:
-          nano: 5
-          currency: currency
-          units: units
         positionUid: positionUid
         currentPrice:
           nano: 5
           currency: currency
           units: units
         figi: figi
+        averagePositionPrice:
+          nano: 5
+          currency: currency
+          units: units
+        instrumentUid: instrumentUid
+        dailyYield:
+          nano: 5
+          currency: currency
+          units: units
         expectedYield:
           nano: 6
           units: units
@@ -1936,6 +1961,9 @@ components:
           $ref: '#/components/schemas/v1MoneyValue'
         dailyYield:
           $ref: '#/components/schemas/v1MoneyValue'
+        ticker:
+          description: Тикер инструмента.
+          type: string
       type: object
     v1PortfolioStreamRequest:
       description: Запрос установки stream-соединения.
@@ -1975,34 +2003,40 @@ components:
               currency: currency
               units: units
           options:
-            - blocked: blocked
+            - ticker: ticker
+              blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
-            - blocked: blocked
+            - ticker: ticker
+              blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
           futures:
-            - blocked: blocked
+            - ticker: ticker
+              blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
-            - blocked: blocked
+            - ticker: ticker
+              blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
           securities:
-            - instrumentType: instrumentType
+            - ticker: ticker
+              instrumentType: instrumentType
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
               exchangeBlocked: true
-            - instrumentType: instrumentType
+            - ticker: ticker
+              instrumentType: instrumentType
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
@@ -2034,34 +2068,40 @@ components:
                 currency: currency
                 units: units
           options:
-            - blocked: blocked
+            - ticker: ticker
+              blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
-            - blocked: blocked
+            - ticker: ticker
+              blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
           futures:
-            - blocked: blocked
+            - ticker: ticker
+              blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
-            - blocked: blocked
+            - ticker: ticker
+              blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
           securities:
-            - instrumentType: instrumentType
+            - ticker: ticker
+              instrumentType: instrumentType
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
               exchangeBlocked: true
-            - instrumentType: instrumentType
+            - ticker: ticker
+              instrumentType: instrumentType
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
@@ -2150,34 +2190,40 @@ components:
               currency: currency
               units: units
         options:
-          - blocked: blocked
+          - ticker: ticker
+            blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
-          - blocked: blocked
+          - ticker: ticker
+            blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
         futures:
-          - blocked: blocked
+          - ticker: ticker
+            blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
-          - blocked: blocked
+          - ticker: ticker
+            blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
         securities:
-          - instrumentType: instrumentType
+          - ticker: ticker
+            instrumentType: instrumentType
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
             exchangeBlocked: true
-          - instrumentType: instrumentType
+          - ticker: ticker
+            instrumentType: instrumentType
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
@@ -2233,6 +2279,7 @@ components:
     v1PositionsSecurities:
       description: Баланс позиции ценной бумаги.
       example:
+        ticker: ticker
         instrumentType: instrumentType
         blocked: blocked
         balance: balance
@@ -2258,6 +2305,9 @@ components:
         instrumentUid:
           description: Уникальный идентификатор инструмента.
           type: string
+        ticker:
+          description: Тикер инструмента.
+          type: string
         exchangeBlocked:
           description: Заблокировано на бирже.
           type: boolean
@@ -2268,6 +2318,7 @@ components:
     v1PositionsFutures:
       description: Баланс фьючерса.
       example:
+        ticker: ticker
         blocked: blocked
         balance: balance
         instrumentUid: instrumentUid
@@ -2291,10 +2342,14 @@ components:
         instrumentUid:
           description: Уникальный идентификатор  инструмента.
           type: string
+        ticker:
+          description: Тикер инструмента.
+          type: string
       type: object
     v1PositionsOptions:
       description: Баланс опциона.
       example:
+        ticker: ticker
         blocked: blocked
         balance: balance
         instrumentUid: instrumentUid
@@ -2305,6 +2360,9 @@ components:
           type: string
         instrumentUid:
           description: Уникальный идентификатор  инструмента.
+          type: string
+        ticker:
+          description: Тикер инструмента.
           type: string
         blocked:
           description: Количество бумаг, заблокированных выставленными заявками.
@@ -2335,34 +2393,40 @@ components:
             currency: currency
             units: units
         options:
-          - blocked: blocked
+          - ticker: ticker
+            blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
-          - blocked: blocked
+          - ticker: ticker
+            blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
         futures:
-          - blocked: blocked
+          - ticker: ticker
+            blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
-          - blocked: blocked
+          - ticker: ticker
+            blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
         securities:
-          - instrumentType: instrumentType
+          - ticker: ticker
+            instrumentType: instrumentType
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
             exchangeBlocked: true
-          - instrumentType: instrumentType
+          - ticker: ticker
+            instrumentType: instrumentType
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid

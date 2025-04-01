@@ -2854,7 +2854,7 @@
                   <h1>Методы</h1>
                 
                 <h2 id="marketdataservice">MarketDataService</h2>
-<p>Сервис для получения биржевой информации:</br> 1. Свечи.</br> 2. Стаканы.</br> 3. Торговые статусы.</br> 4. Лента сделок.</p>
+<p>Сервис для получения биржевой информации:<br/> 1. Свечи.<br/> 2. Стаканы.<br/> 3. Торговые статусы.<br/> 4. Лента сделок.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getcandles">GetCandles</h4>
 <p>Запросить исторические свечи по инструменту.</p>
@@ -2965,7 +2965,7 @@
 
 <h3 id="_3">Сообщения методов</h3>
 <h4 id="marketdatarequest">MarketDataRequest</h4>
-<p>Запрос подписки или отписки на определённые биржевые данные.</p>
+<p>Запрос подписки или отписки на определенные биржевые данные.</p>
 <table>
 <thead>
 <tr>
@@ -3207,7 +3207,7 @@
 <tr>
 <td>interval</td>
 <td><a href="#subscriptioninterval">SubscriptionInterval</a></td>
-<td>Интервал свечей. Двухчасовые и четырёхчасовые свечи в стриме отсчитываются с 0:00 по UTC.</td>
+<td>Интервал свечей. Двухчасовые и четырехчасовые свечи в стриме отсчитываются с 0:00 по UTC.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
@@ -3237,7 +3237,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="./grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>candles_subscriptions</td>
@@ -3372,7 +3372,7 @@
 <tr>
 <td>order_book_type</td>
 <td><a href="#orderbooktype">OrderBookType</a></td>
-<td>Тип стакана. По умолчанию ORDERBOOK_TYPE_ALL - стакан биржевой и дилера.</td>
+<td>Тип стакана. Значение по умолчанию — <code>ORDERBOOK_TYPE_ALL</code>, стакан биржевой и дилера.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3397,7 +3397,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="./grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>order_book_subscriptions</td>
@@ -3492,7 +3492,7 @@
 <tr>
 <td>trade_source</td>
 <td><a href="#tradesourcetype">TradeSourceType</a></td>
-<td>Тип источника сделок. По умолчанию TRADE_SOURCE_ALL - все сделки.</td>
+<td>Тип источника сделок. Значение по умолчанию — <code>TRADE_SOURCE_ALL</code>, все сделки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3547,7 +3547,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="./grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>trade_subscriptions</td>
@@ -3687,7 +3687,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="./grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>info_subscriptions</td>
@@ -3822,7 +3822,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса. <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">Подробнее</a>.</td>
+<td>Уникальный идентификатор запроса. <a href="./grpc#tracking-id">Подробнее</a>.</td>
 </tr>
 <tr>
 <td>last_price_subscriptions</td>
@@ -3907,27 +3907,27 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Цена открытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Максимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Минимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>volume</td>
 <td><a href="#int64">int64</a></td>
-<td>Объём сделок в лотах.</td>
+<td>Объем сделок в лотах.</td>
 </tr>
 <tr>
 <td>time</td>
@@ -3947,7 +3947,7 @@
 <tr>
 <td>candle_source_type</td>
 <td><a href="#candlesource">CandleSource</a></td>
-<td>Источник свечей</td>
+<td>Источник свечей.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4002,12 +4002,12 @@
 <tr>
 <td>limit_up</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Верхний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Верхний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>limit_down</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Нижний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Нижний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
@@ -4042,7 +4042,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -4082,7 +4082,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -4257,27 +4257,27 @@
 <tr>
 <td>open</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена открытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Цена открытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>high</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Максимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Максимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>low</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Минимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Минимальная цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>close</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>volume</td>
 <td><a href="#int64">int64</a></td>
-<td>Объём торгов в лотах.</td>
+<td>Объем торгов в лотах.</td>
 </tr>
 <tr>
 <td>time</td>
@@ -4287,10 +4287,10 @@
 <tr>
 <td>is_complete</td>
 <td><a href="#bool">bool</a></td>
-<td>Признак завершённости свечи. <strong>false</strong> — свеча за текущие интервал ещё сформирована не полностью.</td>
+<td>Признак завершенности свечи. <strong>false</strong> — свеча за текущие интервал еще сформирована не полностью.</td>
 </tr>
 <tr>
-<td>candle_source_type</td>
+<td>candle_source</td>
 <td><a href="#candlesource">CandleSource</a></td>
 <td>Тип источника свечи</td>
 </tr>
@@ -4387,7 +4387,7 @@
 <tr>
 <td>price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена последней сделки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Цена последней сделки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>time</td>
@@ -4482,22 +4482,22 @@
 <tr>
 <td>last_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена последней сделки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Цена последней сделки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>close_price</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>limit_up</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Верхний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Верхний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>limit_down</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Нижний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="https://russianinvestments.github.io/investAPI/faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
+<td>Нижний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. <a href="./faq_marketdata/#_15">Подробнее про перевод цен в валюту</a>.</td>
 </tr>
 <tr>
 <td>last_price_ts</td>
@@ -4702,7 +4702,7 @@
 <tr>
 <td>trade_source</td>
 <td><a href="#tradesourcetype">TradeSourceType</a></td>
-<td>Тип источника сделок. По умолчанию TRADE_SOURCE_ALL - все сделки.</td>
+<td>Тип источника сделок. Значение по умолчанию — <code>TRADE_SOURCE_ALL</code>, все сделки.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4905,7 +4905,7 @@
 <tr>
 <td>type_of_price</td>
 <td><a href="#gettechanalysisrequesttypeofprice">GetTechAnalysisRequest.TypeOfPrice</a></td>
-<td>Тип цены, который используется при расчёте индикатора.</td>
+<td>Тип цены, который используется при расчете индикатора.</td>
 </tr>
 <tr>
 <td>length</td>
@@ -5078,7 +5078,7 @@
 <tr>
 <td>SUBSCRIPTION_ACTION_UNSPECIFIED</td>
 <td>0</td>
-<td>Статус подписки не определён.</td>
+<td>Статус подписки не определен.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_ACTION_SUBSCRIBE</td>
@@ -5106,7 +5106,7 @@
 <tr>
 <td>SUBSCRIPTION_INTERVAL_UNSPECIFIED</td>
 <td>0</td>
-<td>Интервал свечи не определён.</td>
+<td>Интервал свечи не определен.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_ONE_MINUTE</td>
@@ -5141,7 +5141,7 @@
 <tr>
 <td>SUBSCRIPTION_INTERVAL_3_MIN</td>
 <td>7</td>
-<td>Трёхминутные свечи.</td>
+<td>Трехминутные свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_10_MIN</td>
@@ -5161,7 +5161,7 @@
 <tr>
 <td>SUBSCRIPTION_INTERVAL_4_HOUR</td>
 <td>11</td>
-<td>Четырёхчасовые свечи.</td>
+<td>Четырехчасовые свечи.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_INTERVAL_WEEK</td>
@@ -5189,7 +5189,7 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_UNSPECIFIED</td>
 <td>0</td>
-<td>Статус подписки не определён.</td>
+<td>Статус подписки не определен.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_SUCCESS</td>
@@ -5204,7 +5204,7 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_SUBSCRIPTION_ACTION_IS_INVALID</td>
 <td>3</td>
-<td>Некорректный статус подписки. <a href="https://russianinvestments.github.io/investAPI/marketdata#subscriptionaction">Список возможных значений</a>.</td>
+<td>Некорректный статус подписки. <a href="./marketdata#subscriptionaction">Список возможных значений</a>.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_DEPTH_IS_INVALID</td>
@@ -5214,12 +5214,12 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERVAL_IS_INVALID</td>
 <td>5</td>
-<td>Некорректный интервал свечей. <a href="https://russianinvestments.github.io/investAPI/marketdata#subscriptioninterval">Список возможных значений</a>.</td>
+<td>Некорректный интервал свечей. <a href="./marketdata#subscriptioninterval">Список возможных значений</a>.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_LIMIT_IS_EXCEEDED</td>
 <td>6</td>
-<td>Превышен лимит на общее количество подписок в рамках стрима. <a href="https://russianinvestments.github.io/investAPI/limits/">Лимитная политика</a>.</td>
+<td>Превышен лимит на общее количество подписок в рамках стрима. <a href="./limits/">Лимитная политика</a>.</td>
 </tr>
 <tr>
 <td>SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>
@@ -5239,7 +5239,7 @@
 <tr>
 <td>SUBSCRIPTION_STATUS_SOURCE_IS_INVALID</td>
 <td>10</td>
-<td>Указан некорректный источник</td>
+<td>Указан некорректный источник.</td>
 </tr>
 </tbody>
 </table>
@@ -5318,72 +5318,72 @@
 <tr>
 <td>CANDLE_INTERVAL_UNSPECIFIED</td>
 <td>0</td>
-<td>Интервал не определён.</td>
+<td>Интервал не определен.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_1_MIN</td>
 <td>1</td>
-<td>От 1 минуты до 1 дня (лимит 2400).</td>
+<td>От 1 минуты до 1 дня. Максимальное значение <code>limit</code> — 2400.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_5_MIN</td>
 <td>2</td>
-<td>От 5 минут до недели (лимит 2400).</td>
+<td>От 5 минут до недели. Максимальное значение <code>limit</code> — 2400.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_15_MIN</td>
 <td>3</td>
-<td>От 15 минут до 3 недель (лимит 2400).</td>
+<td>От 15 минут до 3 недель. Максимальное значение <code>limit</code> — 2400.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_HOUR</td>
 <td>4</td>
-<td>От 1 часа до 3 месяцев (лимит 2400).</td>
+<td>От 1 часа до 3 месяцев. Максимальное значение <code>limit</code> — 2400.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_DAY</td>
 <td>5</td>
-<td>От 1 дня до 6 лет (лимит 2400).</td>
+<td>От 1 дня до 6 лет. Максимальное значение <code>limit</code> — 2400.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_2_MIN</td>
 <td>6</td>
-<td>От 2 минут до 1 дня (лимит 1200).</td>
+<td>От 2 минут до 1 дня. Максимальное значение <code>limit</code> — 1200.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_3_MIN</td>
 <td>7</td>
-<td>От 3 минут до 1 дня (лимит 750).</td>
+<td>От 3 минут до 1 дня. Максимальное значение <code>limit</code> — 750.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_10_MIN</td>
 <td>8</td>
-<td>От 10 минут до недели (лимит 1200).</td>
+<td>От 10 минут до недели. Максимальное значение <code>limit</code> — 1200.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_30_MIN</td>
 <td>9</td>
-<td>От 30 минут до 3 недель (лимит 1200).</td>
+<td>От 30 минут до 3 недель. Максимальное значение <code>limit</code> — 1200.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_2_HOUR</td>
 <td>10</td>
-<td>От 2 часов до 3 месяцев (лимит 2400).</td>
+<td>От 2 часов до 3 месяцев. Максимальное значение <code>limit</code> — 2400.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_4_HOUR</td>
 <td>11</td>
-<td>От 4 часов до 3 месяцев (лимит 700).</td>
+<td>От 4 часов до 3 месяцев. Максимальное значение <code>limit</code> — 700.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_WEEK</td>
 <td>12</td>
-<td>От 1 недели до 5 лет (лимит 300).</td>
+<td>От 1 недели до 5 лет. Максимальное значение <code>limit</code> — 300.</td>
 </tr>
 <tr>
 <td>CANDLE_INTERVAL_MONTH</td>
 <td>13</td>
-<td>От 1 месяца до 10 лет (лимит 120).</td>
+<td>От 1 месяца до 10 лет. Максимальное значение <code>limit</code> — 120.</td>
 </tr>
 </tbody>
 </table>
@@ -5400,7 +5400,7 @@
 <tr>
 <td>CANDLE_SOURCE_UNSPECIFIED</td>
 <td>0</td>
-<td>Источник свечей не определён.</td>
+<td>Источник свечей не определен.</td>
 </tr>
 <tr>
 <td>CANDLE_SOURCE_EXCHANGE</td>
@@ -5427,7 +5427,7 @@
 <tr>
 <td>ORDERBOOK_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Не определён.</td>
+<td>Не определен.</td>
 </tr>
 <tr>
 <td>ORDERBOOK_TYPE_EXCHANGE</td>
@@ -5515,7 +5515,7 @@
 <tr>
 <td>INDICATOR_INTERVAL_UNSPECIFIED</td>
 <td>0</td>
-<td>Интервал не определён.</td>
+<td>Интервал не определен.</td>
 </tr>
 <tr>
 <td>INDICATOR_INTERVAL_ONE_MINUTE</td>
@@ -5639,7 +5639,7 @@
 <tr>
 <td>INDICATOR_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Не определён.</td>
+<td>Не определен.</td>
 </tr>
 <tr>
 <td>INDICATOR_TYPE_BB</td>

@@ -2518,7 +2518,7 @@
                 <h2 id="ordersstreamservice">OrdersStreamService</h2>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="tradesstream">TradesStream</h4>
-<p>Stream сделок пользователя</p>
+<p>Stream сделок пользователя.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#tradesstreamrequest">TradesStreamRequest</a></p>
@@ -2528,7 +2528,8 @@
 </li>
 </ul>
 <h4 id="orderstatestream">OrderStateStream</h4>
-<p>Stream поручений пользователя. Перед работой прочитайте <a href="https://russianinvestments.github.io/investAPI/orders_state_stream/">статью</a>.</p>
+<p>Stream поручений пользователя.
+Перед работой прочитайте <a href="/invest/services/orders/orders_state_stream">статью</a>.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#orderstatestreamrequest">OrderStateStreamRequest</a></p>
@@ -2540,9 +2541,9 @@
 <!-- range .Methods -->
 
 <h2 id="ordersservice">OrdersService</h2>
-<p>Сервис предназначен для работы с торговыми поручениями:</br> <strong>1</strong>.
-выставление;</br> <strong>2</strong>. отмена;</br> <strong>3</strong>. получение статуса;</br> <strong>4</strong>.
-расчёт полной стоимости;</br> <strong>5</strong>. получение списка заявок.</p>
+<p>Сервис предназначен для работы с торговыми поручениями:<br/> <strong>1</strong>.
+выставление;<br/> <strong>2</strong>. отмена;<br/> <strong>3</strong>. получение статуса;<br/> <strong>4</strong>.
+расчет полной стоимости;<br/> <strong>5</strong>. получение списка заявок.</p>
 <h3 id="_2">Методы сервиса</h3>
 <h4 id="postorder">PostOrder</h4>
 <p>Метод выставления заявки.</p>
@@ -2585,7 +2586,7 @@
 </li>
 </ul>
 <h4 id="getorders">GetOrders</h4>
-<p>Метод получения списка активных заявок по счёту.</p>
+<p>Метод получения списка активных заявок по счету.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getordersrequest">GetOrdersRequest</a></p>
@@ -2605,7 +2606,7 @@
 </li>
 </ul>
 <h4 id="getmaxlots">GetMaxLots</h4>
-<p>расчет количества доступных для покупки/продажи лотов</p>
+<p>Расчет количества доступных для покупки/продажи лотов.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getmaxlotsrequest">GetMaxLotsRequest</a></p>
@@ -2615,7 +2616,7 @@
 </li>
 </ul>
 <h4 id="getorderprice">GetOrderPrice</h4>
-<p>Метод получения предварительной стоимости для лимитной заявки</p>
+<p>Метод получения предварительной стоимости для лимитной заявки.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getorderpricerequest">GetOrderPriceRequest</a></p>
@@ -2647,7 +2648,7 @@
 <tr>
 <td>ping_delay_ms</td>
 <td><a href="#int32">int32</a></td>
-<td>Задержка пинг сообщений milliseconds 5000-180000, default 120000</td>
+<td>Задержка (пинг) сообщений: 5000–180 000 миллисекунд. Значение по умолчанию — 120 000.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -2732,7 +2733,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта.</td>
+<td>Идентификатор счета.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
@@ -2822,7 +2823,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
+<td>Номер счета.</td>
 </tr>
 <tr>
 <td>order_type</td>
@@ -2917,7 +2918,7 @@
 <tr>
 <td>aci_value</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Значение НКД (накопленного купонного дохода) на дату. Подробнее: <a href="https://russianinvestments.github.io/investAPI/head-orders#coupon">НКД при выставлении торговых поручений</a></td>
+<td>Значение НКД (накопленного купонного дохода) на дату. Подробнее: <a href="./head-orders#coupon">НКД при выставлении торговых поручений</a></td>
 </tr>
 <tr>
 <td>figi</td>
@@ -3007,7 +3008,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
+<td>Номер счета.</td>
 </tr>
 <tr>
 <td>order_type</td>
@@ -3087,7 +3088,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
+<td>Номер счета.</td>
 </tr>
 <tr>
 <td>order_id</td>
@@ -3152,7 +3153,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
+<td>Номер счета.</td>
 </tr>
 <tr>
 <td>order_id</td>
@@ -3192,7 +3193,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счёта.</td>
+<td>Номер счета.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3756,9 +3757,9 @@
 <td>Идентификаторы счетов.</td>
 </tr>
 <tr>
-<td>ping_delay_ms</td>
+<td>ping_delay_millis</td>
 <td><a href="#int32">int32</a></td>
-<td>Задержка пинг сообщений milliseconds 5000-180000, default 120000</td>
+<td>Задержка (пинг) сообщений:  1000-120 000 миллисекунд. Значение по умолчанию — 120 000.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3783,7 +3784,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="./grpc#tracking-id">tracking_id</a>.</td>
 </tr>
 <tr>
 <td>status</td>
@@ -3863,7 +3864,7 @@
 <tr>
 <td>order_id</td>
 <td><a href="#string">string</a></td>
-<td>Биржевой идентификатор заявки</td>
+<td>Биржевой идентификатор заявки.</td>
 </tr>
 <tr>
 <td>order_request_id</td>
@@ -3873,127 +3874,127 @@
 <tr>
 <td>client_code</td>
 <td><a href="#string">string</a></td>
-<td>Код клиента на бирже</td>
+<td>Код клиента на бирже.</td>
 </tr>
 <tr>
 <td>created_at</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата создания заявки</td>
+<td>Дата создания заявки.</td>
 </tr>
 <tr>
 <td>execution_report_status</td>
 <td><a href="#orderexecutionreportstatus">OrderExecutionReportStatus</a></td>
-<td>Статус заявки</td>
+<td>Статус заявки.</td>
 </tr>
 <tr>
 <td>status_info</td>
 <td><a href="#orderstatestreamresponsestatuscauseinfo">OrderStateStreamResponse.StatusCauseInfo</a></td>
-<td>Дополнительная информация по статусу</td>
+<td>Дополнительная информация по статусу.</td>
 </tr>
 <tr>
 <td>ticker</td>
 <td><a href="#string">string</a></td>
-<td>Тикер инструмента</td>
+<td>Тикер инструмента.</td>
 </tr>
 <tr>
 <td>class_code</td>
 <td><a href="#string">string</a></td>
-<td>Класс-код (секция торгов)</td>
+<td>Класс-код (секция торгов).</td>
 </tr>
 <tr>
 <td>lot_size</td>
 <td><a href="#int32">int32</a></td>
-<td>Лотность инструмента заявки</td>
+<td>Лотность инструмента заявки.</td>
 </tr>
 <tr>
 <td>direction</td>
 <td><a href="#orderdirection">OrderDirection</a></td>
-<td>Направление заявки</td>
+<td>Направление заявки.</td>
 </tr>
 <tr>
 <td>time_in_force</td>
 <td><a href="#timeinforcetype">TimeInForceType</a></td>
-<td>Алгоритм исполнения поручения</td>
+<td>Алгоритм исполнения поручения.</td>
 </tr>
 <tr>
 <td>order_type</td>
 <td><a href="#ordertype">OrderType</a></td>
-<td>Тип заявки</td>
+<td>Тип заявки.</td>
 </tr>
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счета</td>
+<td>Номер счета.</td>
 </tr>
 <tr>
 <td>initial_order_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Начальная цена заявки</td>
+<td>Начальная цена заявки.</td>
 </tr>
 <tr>
 <td>order_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Цена выставления заявки</td>
+<td>Цена выставления заявки.</td>
 </tr>
 <tr>
 <td>amount</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Предрассчитанная стоимость полной заявки</td>
+<td>Предрассчитанная стоимость полной заявки.</td>
 </tr>
 <tr>
 <td>executed_order_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Исполненная средняя цена одного инструмента в заявке</td>
+<td>Исполненная цена заявки.</td>
 </tr>
 <tr>
 <td>currency</td>
 <td><a href="#string">string</a></td>
-<td>Валюта исполнения</td>
+<td>Валюта исполнения.</td>
 </tr>
 <tr>
 <td>lots_requested</td>
 <td><a href="#int64">int64</a></td>
-<td>Запрошено лотов</td>
+<td>Запрошено лотов.</td>
 </tr>
 <tr>
 <td>lots_executed</td>
 <td><a href="#int64">int64</a></td>
-<td>Исполнено лотов</td>
+<td>Исполнено лотов.</td>
 </tr>
 <tr>
 <td>lots_left</td>
 <td><a href="#int64">int64</a></td>
-<td>Число неисполненных лотов по заявке</td>
+<td>Число неисполненных лотов по заявке.</td>
 </tr>
 <tr>
 <td>lots_cancelled</td>
 <td><a href="#int64">int64</a></td>
-<td>Отмененные лоты</td>
+<td>Отмененные лоты.</td>
 </tr>
 <tr>
 <td>marker</td>
 <td><a href="#orderstatestreamresponsemarkertype">OrderStateStreamResponse.MarkerType</a></td>
-<td>Спецсимвол</td>
+<td>Спецсимвол.</td>
 </tr>
 <tr>
 <td>trades</td>
 <td>Массив объектов <a href="#ordertrade">OrderTrade</a></td>
-<td>Список сделок</td>
+<td>Список сделок.</td>
 </tr>
 <tr>
 <td>completion_time</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Время исполнения заявки</td>
+<td>Время исполнения заявки.</td>
 </tr>
 <tr>
 <td>exchange</td>
 <td><a href="#string">string</a></td>
-<td>Код биржи</td>
+<td>Код биржи.</td>
 </tr>
 <tr>
 <td>instrument_uid</td>
 <td><a href="#string">string</a></td>
-<td>UID идентификатор инструмента</td>
+<td>UID идентификатор инструмента.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>

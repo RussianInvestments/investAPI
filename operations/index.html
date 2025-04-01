@@ -2602,13 +2602,13 @@
                   <h1>Методы</h1>
                 
                 <h2 id="operationsservice">OperationsService</h2>
-<p>С помощью методов сервиса можно получить:</br></br> <strong>1</strong>. Список операций по счёту.</br> <strong>2</strong>.
-Портфель по счёту.</br> <strong>3</strong>. Позиции ценных бумаг на счёте.</br> <strong>4</strong>.
-Доступный остаток для вывода средств.</br> <strong>5</strong>. Различные отчёты.</p>
+<p>С помощью методов сервиса можно получить:<br/><br/> <strong>1</strong>. Список операций по счету.<br/> <strong>2</strong>.
+Портфель по счету.<br/> <strong>3</strong>. Позиции ценных бумаг на счете.<br/> <strong>4</strong>.
+Доступный остаток для вывода средств.<br/> <strong>5</strong>. Различные отчеты.</p>
 <h3 id="_1">Методы сервиса</h3>
 <h4 id="getoperations">GetOperations</h4>
-<p>Получить список операций по счёту. При работе с методом учитывайте
-<a href="/investAPI/operations_problems">особенности взаимодействия</a>.</p>
+<p>Получить список операций по счету.
+При работе с методом учитывайте <a href="/invest/services/operations/operations_problems">особенности взаимодействия</a>.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#operationsrequest">OperationsRequest</a></p>
@@ -2618,7 +2618,7 @@
 </li>
 </ul>
 <h4 id="getportfolio">GetPortfolio</h4>
-<p>Получить портфель по счёту.</p>
+<p>Получить портфель по счету.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#portfoliorequest">PortfolioRequest</a></p>
@@ -2628,7 +2628,7 @@
 </li>
 </ul>
 <h4 id="getpositions">GetPositions</h4>
-<p>Получить список позиций по счёту.</p>
+<p>Получить список позиций по счету.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#positionsrequest">PositionsRequest</a></p>
@@ -2648,7 +2648,7 @@
 </li>
 </ul>
 <h4 id="getbrokerreport">GetBrokerReport</h4>
-<p>Получить брокерский отчёт.</p>
+<p>Получить брокерский отчет.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#brokerreportrequest">BrokerReportRequest</a></p>
@@ -2658,7 +2658,7 @@
 </li>
 </ul>
 <h4 id="getdividendsforeignissuer">GetDividendsForeignIssuer</h4>
-<p>Получить отчёт «Справка о доходах за пределами РФ».</p>
+<p>Получить отчет «Справка о доходах за пределами РФ».</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getdividendsforeignissuerrequest">GetDividendsForeignIssuerRequest</a></p>
@@ -2668,8 +2668,8 @@
 </li>
 </ul>
 <h4 id="getoperationsbycursor">GetOperationsByCursor</h4>
-<p>Получить список операций по счёту с пагинацией. При работе с методом учитывайте
-<a href="/investAPI/operations_problems">особенности взаимодействия</a>.</p>
+<p>Получить список операций по счету с пагинацией.
+При работе с методом учитывайте <a href="/invest/services/operations/operations_problems">особенности взаимодействия</a>.</p>
 <ul>
 <li>
 <p>Тело запроса — <a href="#getoperationsbycursorrequest">GetOperationsByCursorRequest</a></p>
@@ -2707,7 +2707,7 @@
 
 <h3 id="_3">Сообщения методов</h3>
 <h4 id="operationsrequest">OperationsRequest</h4>
-<p>Запрос получения списка операций по счёту.</p>
+<p>Запрос получения списка операций по счету.</p>
 <table>
 <thead>
 <tr>
@@ -2720,7 +2720,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента.</td>
+<td>Идентификатор счета клиента.</td>
 </tr>
 <tr>
 <td>from</td>
@@ -2835,7 +2835,7 @@
 <tr>
 <td>instrument_type</td>
 <td><a href="#string">string</a></td>
-<td>Тип инструмента. Возможные значения: </br></br><code>bond</code> — облигация; </br><code>share</code> — акция; </br><code>currency</code> — валюта; </br><code>etf</code> — фонд; </br><code>futures</code> — фьючерс.</td>
+<td>Тип инструмента. Возможные значения: <br/><br/><code>bond</code> — облигация; <br/><code>share</code> — акция; <br/><code>currency</code> — валюта; <br/><code>etf</code> — фонд; <br/><code>futures</code> — фьючерс.</td>
 </tr>
 <tr>
 <td>date</td>
@@ -2927,7 +2927,7 @@
 <!-- end HasFields -->
 
 <h4 id="portfoliorequest">PortfolioRequest</h4>
-<p>Запрос получения текущего портфеля по счёту.</p>
+<p>Запрос получения текущего портфеля по счету.</p>
 <table>
 <thead>
 <tr>
@@ -2940,7 +2940,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта пользователя.</td>
+<td>Идентификатор счета пользователя.</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -2957,7 +2957,7 @@
 <!-- end HasFields -->
 
 <h4 id="portfolioresponse">PortfolioResponse</h4>
-<p>Текущий портфель по счёту.</p>
+<p>Текущий портфель по счету.</p>
 <table>
 <thead>
 <tr>
@@ -3005,7 +3005,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта пользователя.</td>
+<td>Идентификатор счета пользователя.</td>
 </tr>
 <tr>
 <td>total_amount_options</td>
@@ -3030,12 +3030,12 @@
 <tr>
 <td>daily_yield</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Рассчитанная доходность портфеля за день в рублях</td>
+<td>Рассчитанная доходность портфеля за день в рублях.</td>
 </tr>
 <tr>
 <td>daily_yield_relative</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Относительная доходность в день в %</td>
+<td>Относительная доходность в день в %.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3047,7 +3047,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionsrequest">PositionsRequest</h4>
-<p>Запрос позиций портфеля по счёту.</p>
+<p>Запрос позиций портфеля по счету.</p>
 <table>
 <thead>
 <tr>
@@ -3060,7 +3060,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта пользователя.</td>
+<td>Идентификатор счета пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3072,7 +3072,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionsresponse">PositionsResponse</h4>
-<p>Список позиций по счёту.</p>
+<p>Список позиций по счету.</p>
 <table>
 <thead>
 <tr>
@@ -3140,7 +3140,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта пользователя.</td>
+<td>Идентификатор счета пользователя.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3215,7 +3215,7 @@
 <tr>
 <td>average_position_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средневзвешенная цена позиции. Для пересчёта возможна задержка до одной секунды.</td>
+<td>Средневзвешенная цена позиции. Для пересчета возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td>expected_yield</td>
@@ -3230,7 +3230,7 @@
 <tr>
 <td>average_position_price_pt</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Deprecated Средняя цена позиции в пунктах (для фьючерсов). Для пересчёта возможна задержка до одной секунды.</td>
+<td>Deprecated Средняя цена позиции в пунктах (для фьючерсов). Для пересчета возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td>current_price</td>
@@ -3240,7 +3240,7 @@
 <tr>
 <td>average_position_price_fifo</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средняя цена позиции по методу FIFO. Для пересчёта возможна задержка до одной секунды.</td>
+<td>Средняя цена позиции по методу FIFO. Для пересчета возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td>quantity_lots</td>
@@ -3280,7 +3280,7 @@
 <tr>
 <td>daily_yield</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Рассчитанная доходность портфеля за день</td>
+<td>Рассчитанная доходность портфеля за день.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3329,7 +3329,7 @@
 <tr>
 <td>average_position_price</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средневзвешенная цена позиции. Для пересчёта возможна задержка до одной секунды.</td>
+<td>Средневзвешенная цена позиции. Для пересчета возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td>expected_yield</td>
@@ -3354,12 +3354,12 @@
 <tr>
 <td>average_position_price_fifo</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Средняя цена позиции по методу FIFO. Для пересчёта возможна задержка до одной секунды.</td>
+<td>Средняя цена позиции по методу FIFO. Для пересчета возможна задержка до одной секунды.</td>
 </tr>
 <tr>
 <td>daily_yield</td>
 <td><a href="#moneyvalue">MoneyValue</a></td>
-<td>Рассчитанная доходность портфеля за день</td>
+<td>Рассчитанная доходность портфеля за день.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3581,7 +3581,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента.</td>
+<td>Идентификатор счета клиента.</td>
 </tr>
 <tr>
 <td>from</td>
@@ -3615,7 +3615,7 @@
 <tr>
 <td>task_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор задачи формирования брокерского отчёта.</td>
+<td>Идентификатор задачи формирования брокерского отчета.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3639,12 +3639,12 @@
 <tr>
 <td>task_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор задачи формирования брокерского отчёта.</td>
+<td>Идентификатор задачи формирования брокерского отчета.</td>
 </tr>
 <tr>
 <td>page</td>
 <td><a href="#int32">int32</a></td>
-<td>Номер страницы отчёта, начинается с 1. Значение по умолчанию — 0.</td>
+<td>Номер страницы отчета, начинается с 1. Значение по умолчанию — 0.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3673,12 +3673,12 @@
 <tr>
 <td>itemsCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество записей в отчёте.</td>
+<td>Количество записей в отчете.</td>
 </tr>
 <tr>
 <td>pagesCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество страниц с данными отчёта, начинается с 0.</td>
+<td>Количество страниц с данными отчета, начинается с 0.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -3747,7 +3747,7 @@
 <tr>
 <td>name</td>
 <td><a href="#string">string</a></td>
-<td>Сокращённое наименование актива.</td>
+<td>Сокращенное наименование актива.</td>
 </tr>
 <tr>
 <td>ticker</td>
@@ -3807,7 +3807,7 @@
 <tr>
 <td>clear_value_date</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Дата расчётов по UTC.</td>
+<td>Дата расчетов по UTC.</td>
 </tr>
 <tr>
 <td>sec_value_date</td>
@@ -3837,7 +3837,7 @@
 <tr>
 <td>delivery_type</td>
 <td><a href="#string">string</a></td>
-<td>Тип расчёта по сделке.</td>
+<td>Тип расчета по сделке.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3861,12 +3861,12 @@
 <tr>
 <td>generate_div_foreign_issuer_report</td>
 <td><a href="#generatedividendsforeignissuerreportrequest">GenerateDividendsForeignIssuerReportRequest</a></td>
-<td>Объект запроса формирования отчёта.</td>
+<td>Объект запроса формирования отчета.</td>
 </tr>
 <tr>
 <td>get_div_foreign_issuer_report</td>
 <td><a href="#getdividendsforeignissuerreportrequest">GetDividendsForeignIssuerReportRequest</a></td>
-<td>Объект запроса сформированного отчёта.</td>
+<td>Объект запроса сформированного отчета.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3890,12 +3890,12 @@
 <tr>
 <td>generate_div_foreign_issuer_report_response</td>
 <td><a href="#generatedividendsforeignissuerreportresponse">GenerateDividendsForeignIssuerReportResponse</a></td>
-<td>Объект результата задачи запуска формирования отчёта.</td>
+<td>Объект результата задачи запуска формирования отчета.</td>
 </tr>
 <tr>
 <td>div_foreign_issuer_report</td>
 <td><a href="#getdividendsforeignissuerreportresponse">GetDividendsForeignIssuerReportResponse</a></td>
-<td>Отчёт «Справка о доходах за пределами РФ».</td>
+<td>Отчет «Справка о доходах за пределами РФ».</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3907,7 +3907,7 @@
 <!-- end HasFields -->
 
 <h4 id="generatedividendsforeignissuerreportrequest">GenerateDividendsForeignIssuerReportRequest</h4>
-<p>Объект запроса формирования отчёта «Справка о доходах за пределами РФ».</p>
+<p>Объект запроса формирования отчета «Справка о доходах за пределами РФ».</p>
 <table>
 <thead>
 <tr>
@@ -3920,7 +3920,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента.</td>
+<td>Идентификатор счета клиента.</td>
 </tr>
 <tr>
 <td>from</td>
@@ -3930,7 +3930,7 @@
 <tr>
 <td>to</td>
 <td><a href="#googleprotobuftimestamp">google.protobuf.Timestamp</a></td>
-<td>Окончание периода по UTC. Как правило, можно сформировать отчёт по дату на несколько дней меньше текущей. Начало и окончание периода должны быть в рамках одного календарного года.</td>
+<td>Окончание периода по UTC. Как правило, можно сформировать отчет по дату на несколько дней меньше текущей. Начало и окончание периода должны быть в рамках одного календарного года.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -3942,7 +3942,7 @@
 <!-- end HasFields -->
 
 <h4 id="getdividendsforeignissuerreportrequest">GetDividendsForeignIssuerReportRequest</h4>
-<p>Объект запроса сформированного отчёта «Справка о доходах за пределами РФ».</p>
+<p>Объект запроса сформированного отчета «Справка о доходах за пределами РФ».</p>
 <table>
 <thead>
 <tr>
@@ -3955,7 +3955,7 @@
 <tr>
 <td>task_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор задачи формирования отчёта.</td>
+<td>Идентификатор задачи формирования отчета.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -3972,7 +3972,7 @@
 <!-- end HasFields -->
 
 <h4 id="generatedividendsforeignissuerreportresponse">GenerateDividendsForeignIssuerReportResponse</h4>
-<p>Объект результата задачи запуска формирования отчёта «Справка о доходах за пределами РФ».</p>
+<p>Объект результата задачи запуска формирования отчета «Справка о доходах за пределами РФ».</p>
 <table>
 <thead>
 <tr>
@@ -3985,7 +3985,7 @@
 <tr>
 <td>task_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор задачи формирования отчёта.</td>
+<td>Идентификатор задачи формирования отчета.</td>
 </tr>
 <tr>
 <td><!-- end Fields --></td>
@@ -4014,12 +4014,12 @@
 <tr>
 <td>itemsCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество записей в отчёте.</td>
+<td>Количество записей в отчете.</td>
 </tr>
 <tr>
 <td>pagesCount</td>
 <td><a href="#int32">int32</a></td>
-<td>Количество страниц с данными отчёта, начинается с 0.</td>
+<td>Количество страниц с данными отчета, начинается с 0.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -4036,7 +4036,7 @@
 <!-- end HasFields -->
 
 <h4 id="dividendsforeignissuerreport">DividendsForeignIssuerReport</h4>
-<p>Отчёт «Справка о доходах за пределами РФ».</p>
+<p>Отчет «Справка о доходах за пределами РФ».</p>
 <table>
 <thead>
 <tr>
@@ -4084,7 +4084,7 @@
 <tr>
 <td>external_commission</td>
 <td><a href="#quotation">Quotation</a></td>
-<td>Комиссия внешних платёжных агентов.</td>
+<td>Комиссия внешних платежных агентов.</td>
 </tr>
 <tr>
 <td>dividend_gross</td>
@@ -4129,7 +4129,7 @@
 <tr>
 <td>accounts</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Массив идентификаторов счётов пользователя.</td>
+<td>Массив идентификаторов счетов пользователя.</td>
 </tr>
 <tr>
 <td>ping_settings</td>
@@ -4199,7 +4199,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="/invest/intro/developer/protocols/grpc#tracking-id">tracking_id</a>.</td>
 </tr>
 <tr>
 <td>stream_id</td>
@@ -4216,7 +4216,7 @@
 <!-- end HasFields -->
 
 <h4 id="accountsubscriptionstatus">AccountSubscriptionStatus</h4>
-<p>Счёт клиента.</p>
+<p>Счет клиента.</p>
 <table>
 <thead>
 <tr>
@@ -4229,7 +4229,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта.</td>
+<td>Идентификатор счета.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
@@ -4246,7 +4246,7 @@
 <!-- end HasFields -->
 
 <h4 id="getoperationsbycursorrequest">GetOperationsByCursorRequest</h4>
-<p>Запрос списка операций по счёту с пагинацией.</p>
+<p>Запрос списка операций по счету с пагинацией.</p>
 <table>
 <thead>
 <tr>
@@ -4259,7 +4259,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта клиента, обязательный параметр. Остальные параметры опциональны.</td>
+<td>Идентификатор счета клиента, обязательный параметр. Остальные параметры опциональны.</td>
 </tr>
 <tr>
 <td>instrument_id</td>
@@ -4321,7 +4321,7 @@
 <!-- end HasFields -->
 
 <h4 id="getoperationsbycursorresponse">GetOperationsByCursorResponse</h4>
-<p>Список операций по счёту с пагинацией.</p>
+<p>Список операций по счету с пагинацией.</p>
 <table>
 <thead>
 <tr>
@@ -4374,7 +4374,7 @@
 <tr>
 <td>broker_account_id</td>
 <td><a href="#string">string</a></td>
-<td>Номер счёта клиента.</td>
+<td>Номер счета клиента.</td>
 </tr>
 <tr>
 <td>id</td>
@@ -4604,7 +4604,7 @@
 <tr>
 <td>accounts</td>
 <td>Массив объектов <a href="#string">string</a></td>
-<td>Массив идентификаторов счётов пользователя.</td>
+<td>Массив идентификаторов счетов пользователя.</td>
 </tr>
 <tr>
 <td>with_initial_positions</td>
@@ -4684,7 +4684,7 @@
 <tr>
 <td>tracking_id</td>
 <td><a href="#string">string</a></td>
-<td>Уникальный идентификатор запроса, подробнее: <a href="https://russianinvestments.github.io/investAPI/grpc#tracking-id">tracking_id</a>.</td>
+<td>Уникальный идентификатор запроса, подробнее: <a href="/invest/intro/developer/protocols/grpc#tracking-id">tracking_id</a>.</td>
 </tr>
 <tr>
 <td>stream_id</td>
@@ -4701,7 +4701,7 @@
 <!-- end HasFields -->
 
 <h4 id="positionssubscriptionstatus">PositionsSubscriptionStatus</h4>
-<p>Счёт клиента.</p>
+<p>Счет клиента.</p>
 <table>
 <thead>
 <tr>
@@ -4714,7 +4714,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта.</td>
+<td>Идентификатор счета.</td>
 </tr>
 <tr>
 <td>subscription_status</td>
@@ -4744,7 +4744,7 @@
 <tr>
 <td>account_id</td>
 <td><a href="#string">string</a></td>
-<td>Идентификатор счёта.</td>
+<td>Идентификатор счета.</td>
 </tr>
 <tr>
 <td>money</td>
@@ -4855,7 +4855,7 @@
 <tr>
 <td>OPERATION_STATE_UNSPECIFIED</td>
 <td>0</td>
-<td>Статус операции не определён.</td>
+<td>Статус операции не определен.</td>
 </tr>
 <tr>
 <td>OPERATION_STATE_EXECUTED</td>
@@ -4888,12 +4888,12 @@
 <tr>
 <td>OPERATION_TYPE_UNSPECIFIED</td>
 <td>0</td>
-<td>Тип операции не определён.</td>
+<td>Тип операции не определен.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_INPUT</td>
 <td>1</td>
-<td>Пополнение брокерского счёта.</td>
+<td>Пополнение брокерского счета.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BOND_TAX</td>
@@ -4948,7 +4948,7 @@
 <tr>
 <td>OPERATION_TYPE_SERVICE_FEE</td>
 <td>12</td>
-<td>Удержание комиссии за обслуживание брокерского счёта.</td>
+<td>Удержание комиссии за обслуживание брокерского счета.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_BENEFIT_TAX</td>
@@ -5038,12 +5038,12 @@
 <tr>
 <td>OPERATION_TYPE_TRACK_MFEE</td>
 <td>30</td>
-<td>Комиссия за управление по счёту автоследования.</td>
+<td>Комиссия за управление по счету автоследования.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TRACK_PFEE</td>
 <td>31</td>
-<td>Комиссия за результат по счёту автоследования.</td>
+<td>Комиссия за результат по счету автоследования.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TAX_PROGRESSIVE</td>
@@ -5118,7 +5118,7 @@
 <tr>
 <td>OPERATION_TYPE_OUT_FEE</td>
 <td>46</td>
-<td>Комиссия за вывод валюты с брокерского счёта.</td>
+<td>Комиссия за вывод валюты с брокерского счета.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OUT_STAMP_DUTY</td>
@@ -5158,22 +5158,22 @@
 <tr>
 <td>OPERATION_TYPE_TRANS_IIS_BS</td>
 <td>57</td>
-<td>Перевод ценных бумаг с ИИС на брокерский счёт.</td>
+<td>Перевод ценных бумаг с ИИС на брокерский счет.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_TRANS_BS_BS</td>
 <td>58</td>
-<td>Перевод ценных бумаг с одного брокерского счёта на другой.</td>
+<td>Перевод ценных бумаг с одного брокерского счета на другой.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OUT_MULTI</td>
 <td>59</td>
-<td>Вывод денежных средств со счёта.</td>
+<td>Вывод денежных средств со счета.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_INP_MULTI</td>
 <td>60</td>
-<td>Пополнение денежных средств со счёта.</td>
+<td>Пополнение денежных средств со счета.</td>
 </tr>
 <tr>
 <td>OPERATION_TYPE_OVER_PLACEMENT</td>
@@ -5216,7 +5216,7 @@
 <tr>
 <td>PORTFOLIO_SUBSCRIPTION_STATUS_UNSPECIFIED</td>
 <td>0</td>
-<td>Тип не определён.</td>
+<td>Тип не определен.</td>
 </tr>
 <tr>
 <td>PORTFOLIO_SUBSCRIPTION_STATUS_SUCCESS</td>
@@ -5226,7 +5226,7 @@
 <tr>
 <td>PORTFOLIO_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND</td>
 <td>2</td>
-<td>Счёт не найден или недостаточно прав.</td>
+<td>Счет не найден или недостаточно прав.</td>
 </tr>
 <tr>
 <td>PORTFOLIO_SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>
@@ -5249,7 +5249,7 @@
 <tr>
 <td>POSITIONS_SUBSCRIPTION_STATUS_UNSPECIFIED</td>
 <td>0</td>
-<td>Тип не определён.</td>
+<td>Тип не определен.</td>
 </tr>
 <tr>
 <td>POSITIONS_SUBSCRIPTION_STATUS_SUCCESS</td>
@@ -5259,7 +5259,7 @@
 <tr>
 <td>POSITIONS_SUBSCRIPTION_STATUS_ACCOUNT_NOT_FOUND</td>
 <td>2</td>
-<td>Счёт не найден или недостаточно прав.</td>
+<td>Счет не найден или недостаточно прав.</td>
 </tr>
 <tr>
 <td>POSITIONS_SUBSCRIPTION_STATUS_INTERNAL_ERROR</td>

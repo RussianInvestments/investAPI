@@ -14,9 +14,9 @@ import "google/protobuf/timestamp.proto";
 import "google/api/field_behavior.proto";
 
 service OrdersStreamService {
-  //Stream сделок пользователя.
+  //TradesStream — стрим сделок пользователя
   rpc TradesStream(TradesStreamRequest) returns (stream TradesStreamResponse);
-  //Stream поручений пользователя.
+  //OrderStateStream — стрим поручений пользователя
   //Перед работой прочитайте [статью](/invest/services/orders/orders_state_stream).
   rpc OrderStateStream(OrderStateStreamRequest) returns (stream OrderStateStreamResponse);
 }
@@ -24,28 +24,29 @@ service OrdersStreamService {
 service OrdersService {/* Сервис предназначен для работы с торговыми поручениями:<br/> **1**.
                         выставление;<br/> **2**. отмена;<br/> **3**. получение статуса;<br/> **4**.
                         расчет полной стоимости;<br/> **5**. получение списка заявок.*/
-  //Метод выставления заявки.
+  //PostOrder — выставить заявку
   rpc PostOrder(PostOrderRequest) returns (PostOrderResponse);
 
-  //Асинхронный метод выставления заявки.
+  //PostOrderAsync — выставить заявку асинхронным методом
+  //Особенности работы приведены в [статье](/invest/services/orders/async).
   rpc PostOrderAsync(PostOrderAsyncRequest) returns (PostOrderAsyncResponse);
 
-  //Метод отмены биржевой заявки.
+  //CancelOrder — отменить заявку
   rpc CancelOrder(CancelOrderRequest) returns (CancelOrderResponse);
 
-  //Метод получения статуса торгового поручения.
+  //GetOrderState — получить статус торгового поручения
   rpc GetOrderState(GetOrderStateRequest) returns (OrderState);
 
-  //Метод получения списка активных заявок по счету.
+  //GetOrders — получить список активных заявок по счету
   rpc GetOrders(GetOrdersRequest) returns (GetOrdersResponse);
 
-  //Метод изменения выставленной заявки.
+  //ReplaceOrder — изменить выставленную заявку
   rpc ReplaceOrder(ReplaceOrderRequest) returns (PostOrderResponse);
 
-  //Расчет количества доступных для покупки/продажи лотов.
+  //GetMaxLots — расчет количества доступных для покупки/продажи лотов
   rpc GetMaxLots(GetMaxLotsRequest) returns (GetMaxLotsResponse);
 
-  //Метод получения предварительной стоимости для лимитной заявки.
+  //GetOrderPrice — получить предварительную стоимость для лимитной заявки
   rpc GetOrderPrice(GetOrderPriceRequest) returns (GetOrderPriceResponse);
 }
 
