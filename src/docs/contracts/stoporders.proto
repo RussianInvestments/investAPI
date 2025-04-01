@@ -15,13 +15,13 @@ import "common.proto";
 
 service StopOrdersService { /* Сервис для работы со стоп-заявками: выставление, отмена, получение списка стоп-заявок.*/
 
-  //Выставить стоп-заявку.
+  //PostStopOrder — выставить стоп-заявку
   rpc PostStopOrder(PostStopOrderRequest) returns (PostStopOrderResponse);
 
-  //Получить список активных стоп-заявок по счету.
+  //GetStopOrders — получить список активных стоп-заявок по счету
   rpc GetStopOrders(GetStopOrdersRequest) returns (GetStopOrdersResponse);
 
-  //Отменить стоп-заявку.
+  //CancelStopOrder — отменить стоп-заявку
   rpc CancelStopOrder(CancelStopOrderRequest) returns (CancelStopOrderResponse);
 }
 

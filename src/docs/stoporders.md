@@ -11,7 +11,7 @@
 
 
 #### PostStopOrder
-Выставить стоп-заявку.
+PostStopOrder — выставить стоп-заявку
 
 - Тело запроса — [PostStopOrderRequest](#poststoporderrequest)
 
@@ -19,7 +19,7 @@
 
 
 #### GetStopOrders
-Получить список активных стоп-заявок по счету.
+GetStopOrders — получить список активных стоп-заявок по счету
 
 - Тело запроса — [GetStopOrdersRequest](#getstopordersrequest)
 
@@ -27,7 +27,7 @@
 
 
 #### CancelStopOrder
-Отменить стоп-заявку.
+CancelStopOrder — отменить стоп-заявку
 
 - Тело запроса — [CancelStopOrderRequest](#cancelstoporderrequest)
 

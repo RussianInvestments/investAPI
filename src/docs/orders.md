@@ -11,7 +11,7 @@
 
 
 #### TradesStream
-Stream сделок пользователя.
+TradesStream — стрим сделок пользователя
 
 - Тело запроса — [TradesStreamRequest](#tradesstreamrequest)
 
@@ -19,7 +19,7 @@ Stream сделок пользователя.
 
 
 #### OrderStateStream
-Stream поручений пользователя.
+OrderStateStream — стрим поручений пользователя
 Перед работой прочитайте [статью](/invest/services/orders/orders_state_stream).
 
 - Тело запроса — [OrderStateStreamRequest](#orderstatestreamrequest)
@@ -38,7 +38,7 @@ Stream поручений пользователя.
 
 
 #### PostOrder
-Метод выставления заявки.
+PostOrder — выставить заявку
 
 - Тело запроса — [PostOrderRequest](#postorderrequest)
 
@@ -46,7 +46,8 @@ Stream поручений пользователя.
 
 
 #### PostOrderAsync
-Асинхронный метод выставления заявки.
+PostOrderAsync — выставить заявку асинхронным методом
+Особенности работы приведены в [статье](/invest/services/orders/async).
 
 - Тело запроса — [PostOrderAsyncRequest](#postorderasyncrequest)
 
@@ -54,7 +55,7 @@ Stream поручений пользователя.
 
 
 #### CancelOrder
-Метод отмены биржевой заявки.
+CancelOrder — отменить заявку
 
 - Тело запроса — [CancelOrderRequest](#cancelorderrequest)
 
@@ -62,7 +63,7 @@ Stream поручений пользователя.
 
 
 #### GetOrderState
-Метод получения статуса торгового поручения.
+GetOrderState — получить статус торгового поручения
 
 - Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
 
@@ -70,7 +71,7 @@ Stream поручений пользователя.
 
 
 #### GetOrders
-Метод получения списка активных заявок по счету.
+GetOrders — получить список активных заявок по счету
 
 - Тело запроса — [GetOrdersRequest](#getordersrequest)
 
@@ -78,7 +79,7 @@ Stream поручений пользователя.
 
 
 #### ReplaceOrder
-Метод изменения выставленной заявки.
+ReplaceOrder — изменить выставленную заявку
 
 - Тело запроса — [ReplaceOrderRequest](#replaceorderrequest)
 
@@ -86,7 +87,7 @@ Stream поручений пользователя.
 
 
 #### GetMaxLots
-Расчет количества доступных для покупки/продажи лотов.
+GetMaxLots — расчет количества доступных для покупки/продажи лотов
 
 - Тело запроса — [GetMaxLotsRequest](#getmaxlotsrequest)
 
@@ -94,7 +95,7 @@ Stream поручений пользователя.
 
 
 #### GetOrderPrice
-Метод получения предварительной стоимости для лимитной заявки.
+GetOrderPrice — получить предварительную стоимость для лимитной заявки
 
 - Тело запроса — [GetOrderPriceRequest](#getorderpricerequest)
 

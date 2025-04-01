@@ -11,7 +11,7 @@
 
 
 #### OpenSandboxAccount
-Зарегистрировать счет.
+OpenSandboxAccount — зарегистрировать счет
 
 - Тело запроса — [OpenSandboxAccountRequest](#opensandboxaccountrequest)
 
@@ -19,7 +19,7 @@
 
 
 #### GetSandboxAccounts
-Получить счета.
+GetSandboxAccounts — счета пользователя
 
 - Тело запроса — [GetAccountsRequest](#getaccountsrequest)
 
@@ -27,7 +27,7 @@
 
 
 #### CloseSandboxAccount
-Закрыть счет.
+CloseSandboxAccount — закрыть счет
 
 - Тело запроса — [CloseSandboxAccountRequest](#closesandboxaccountrequest)
 
@@ -35,15 +35,24 @@
 
 
 #### PostSandboxOrder
-Выставить торговое поручение.
+PostSandboxOrder — выставить заявку
 
 - Тело запроса — [PostOrderRequest](#postorderrequest)
 
 - Тело ответа — [PostOrderResponse](#postorderresponse)
 
 
+#### PostSandboxOrderAsync
+PostSandboxOrderAsync — выставить заявку асинхронным методом
+Особенности работы приведены в [статье](/invest/services/orders/async).
+
+- Тело запроса — [PostOrderAsyncRequest](#postorderasyncrequest)
+
+- Тело ответа — [PostOrderAsyncResponse](#postorderasyncresponse)
+
+
 #### ReplaceSandboxOrder
-Изменить выставленную заявку.
+ReplaceSandboxOrder — изменить выставленную заявку
 
 - Тело запроса — [ReplaceOrderRequest](#replaceorderrequest)
 
@@ -51,7 +60,7 @@
 
 
 #### GetSandboxOrders
-Получить список активных заявок по счету.
+GetSandboxOrders — получить список активных заявок по счету
 
 - Тело запроса — [GetOrdersRequest](#getordersrequest)
 
@@ -59,7 +68,7 @@
 
 
 #### CancelSandboxOrder
-Отменить торговое поручение.
+CancelSandboxOrder — отменить заявку
 
 - Тело запроса — [CancelOrderRequest](#cancelorderrequest)
 
@@ -67,7 +76,7 @@
 
 
 #### GetSandboxOrderState
-Получить статус заявки в песочнице. Заявки хранятся в таблице 7 дней.
+GetSandboxOrderState — получить статус торгового поручения
 
 - Тело запроса — [GetOrderStateRequest](#getorderstaterequest)
 
@@ -75,7 +84,7 @@
 
 
 #### GetSandboxPositions
-Получить позиции по виртуальному счету.
+GetSandboxPositions — список позиций по счету
 
 - Тело запроса — [PositionsRequest](#positionsrequest)
 
@@ -83,7 +92,8 @@
 
 
 #### GetSandboxOperations
-Получить операции по номеру счета.
+GetSandboxOperations — список операций по счету
+При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems).
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
 
@@ -91,7 +101,8 @@
 
 
 #### GetSandboxOperationsByCursor
-Получить операции по номеру счета с пагинацией.
+GetSandboxOperationsByCursor — список операций по счету с пагинацией
+При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems).
 
 - Тело запроса — [GetOperationsByCursorRequest](#getoperationsbycursorrequest)
 
@@ -99,7 +110,7 @@
 
 
 #### GetSandboxPortfolio
-Получить портфель.
+GetSandboxPortfolio — портфель по счету
 
 - Тело запроса — [PortfolioRequest](#portfoliorequest)
 
@@ -107,7 +118,7 @@
 
 
 #### SandboxPayIn
-Пополнить счет.
+SandboxPayIn — пополнить счет.
 
 - Тело запроса — [SandboxPayInRequest](#sandboxpayinrequest)
 
@@ -115,7 +126,7 @@
 
 
 #### GetSandboxWithdrawLimits
-Получить доступный остаток для вывода средств.
+GetSandboxWithdrawLimits — доступный остаток для вывода средств
 
 - Тело запроса — [WithdrawLimitsRequest](#withdrawlimitsrequest)
 
@@ -123,7 +134,7 @@
 
 
 #### GetSandboxMaxLots
-Расчет количества доступных для покупки/продажи лотов в песочнице.
+GetSandboxMaxLots — расчет количества доступных для покупки/продажи лотов
 
 - Тело запроса — [GetMaxLotsRequest](#getmaxlotsrequest)
 

@@ -17,116 +17,118 @@ service InstrumentsService {/*Методы сервиса предназначе
                             Расписания торговых сессий.<br/>3. Календаря выплат купонов по облигациям.<br/>4.
                             Размера гарантийного обеспечения по фьючерсам.<br/>5. Дивидендов по ценной бумаге.*/
 
-  //Получить расписания торгов торговых площадок
+  //TradingSchedules — расписания торговых площадок
   rpc TradingSchedules (TradingSchedulesRequest) returns (TradingSchedulesResponse);
 
-  //Получить облигации по ее идентификатору
+  //BondBy — получить облигацию по ее идентификатору
   rpc BondBy (InstrumentRequest) returns (BondResponse);
 
-  //Получить список облигаций
+  //Bonds — список облигаций
   rpc Bonds (InstrumentsRequest) returns (BondsResponse);
 
-  //Получить график выплат купонов по облигации
+  //GetBondCoupons — график выплат купонов по облигации
   rpc GetBondCoupons (GetBondCouponsRequest) returns (GetBondCouponsResponse);
 
-  //Получить события по облигации
+  //GetBondEvents — события по облигации
   rpc GetBondEvents (GetBondEventsRequest) returns (GetBondEventsResponse);
 
-  //Получить валюту по ее идентификатору
+  //CurrencyBy — получить валюту по ее идентификатору
   rpc CurrencyBy (InstrumentRequest) returns (CurrencyResponse);
 
-  //Получить список валют
+  //Currencies — список валют
   rpc Currencies (InstrumentsRequest) returns (CurrenciesResponse);
 
-  //Получить инвестиционный фонд по его идентификатору
+  //EtfBy — получить инвестиционный фонд по его идентификатору
   rpc EtfBy (InstrumentRequest) returns (EtfResponse);
 
-  //Получить список инвестиционных фондов
+  //Etfs — список инвестиционных фондов
   rpc Etfs (InstrumentsRequest) returns (EtfsResponse);
 
-  //Получить фьючерс по его идентификатору
+  //FutureBy — получить фьючерс по его идентификатору
   rpc FutureBy (InstrumentRequest) returns (FutureResponse);
 
-  //Получить список фьючерсов
+  //Futures — список фьючерсов
   rpc Futures (InstrumentsRequest) returns (FuturesResponse);
 
-  //Получить опцион по его идентификатору
+  //OptionBy — получить опцион по его идентификатору
   rpc OptionBy (InstrumentRequest) returns (OptionResponse);
 
-  //Deprecated Получить список опционов
+  //Deprecated Options — список опционов
   rpc Options (InstrumentsRequest) returns (OptionsResponse) {
     option deprecated = true;
   };
 
-  //Получить список опционов
+  //OptionsBy — список опционов
   rpc OptionsBy (FilterOptionsRequest) returns (OptionsResponse);
 
-  //Получить акцию по ее идентификатору
+  //ShareBy — получить акцию по ее идентификатору
   rpc ShareBy (InstrumentRequest) returns (ShareResponse);
 
-  //Получить список акций
+  //Shares — список акций
   rpc Shares (InstrumentsRequest) returns (SharesResponse);
 
-  //Получить индикативные инструменты — индексы, товары и другие
+  //Indicatives — индикативные инструменты — индексы, товары и другие
   rpc Indicatives(IndicativesRequest) returns (IndicativesResponse);
 
-  //Получить накопленный купонный доход по облигации
+  //GetAccruedInterests — накопленный купонный доход по облигации
   rpc GetAccruedInterests (GetAccruedInterestsRequest) returns (GetAccruedInterestsResponse);
 
-  //Получить размера гарантийного обеспечения по фьючерсам
+  //GetFuturesMargin — размера гарантийного обеспечения по фьючерсам
   rpc GetFuturesMargin (GetFuturesMarginRequest) returns (GetFuturesMarginResponse);
 
-  //Получить основную информацию об инструменте
+  //GetInstrumentBy — основная информация об инструменте
   rpc GetInstrumentBy (InstrumentRequest) returns (InstrumentResponse);
 
-  //Получить события выплаты дивидендов по инструменту
+  //GetDividends — события выплаты дивидендов по инструменту
   rpc GetDividends (GetDividendsRequest) returns (GetDividendsResponse);
 
-  //Получить актив по его идентификатору
+  //GetAssetBy — получить актив по его идентификатору
   rpc GetAssetBy (AssetRequest) returns (AssetResponse);
 
-  //Получить список активов. Метод работает для всех инструментов, кроме срочных — фьючерсов и опционов
+  //GetAssets — список активов
+  //Метод работает для всех инструментов, кроме срочных — фьючерсов и опционов
   rpc GetAssets (AssetsRequest) returns (AssetsResponse);
 
-  //Получить список избранных инструментов
+  //GetFavorites — получить список избранных инструментов
   rpc GetFavorites (GetFavoritesRequest) returns (GetFavoritesResponse);
 
-  //Отредактировать список избранных инструментов
+  //EditFavorites — отредактировать список избранных инструментов
   rpc EditFavorites (EditFavoritesRequest) returns (EditFavoritesResponse);
 
-  //Создать новую группу избранных инструментов
+  //CreateFavoriteGroup — создать новую группу избранных инструментов
   rpc CreateFavoriteGroup (CreateFavoriteGroupRequest) returns (CreateFavoriteGroupResponse);
 
-  //Удалить группу избранных инструментов
+  //DeleteFavoriteGroup — удалить группу избранных инструментов
   rpc DeleteFavoriteGroup (DeleteFavoriteGroupRequest) returns (DeleteFavoriteGroupResponse);
 
-  //Получить список групп избранных инструментов
+  //GetFavoriteGroups — список групп избранных инструментов
   rpc GetFavoriteGroups (GetFavoriteGroupsRequest) returns (GetFavoriteGroupsResponse);
 
-  //Получить список стран
+  //GetCountries — список стран
   rpc GetCountries (GetCountriesRequest) returns (GetCountriesResponse);
 
-  //Найти инструмент
+  //FindInstrument — найти инструмент
   rpc FindInstrument (FindInstrumentRequest) returns (FindInstrumentResponse);
 
-  //Получить список брендов
+  //GetBrands — список брендов
   rpc GetBrands(GetBrandsRequest) returns (GetBrandsResponse);
 
-  //Получить бренд по его идентификатору
+  //GetBrandBy — получить бренд по его идентификатору
   rpc GetBrandBy(GetBrandRequest) returns (Brand);
 
-  //Получить фундаментальные показатели по активу
+  //GetAssetFundamentals — фундаментальные показатели по активу
   rpc GetAssetFundamentals(GetAssetFundamentalsRequest) returns (GetAssetFundamentalsResponse);
 
-  //Получить расписания выхода отчетностей эмитентов
+  //GetAssetReports — расписания выхода отчетностей эмитентов
   rpc GetAssetReports(GetAssetReportsRequest) returns (GetAssetReportsResponse);
 
-  //Получить мнения аналитиков по инструменту
+  //GetConsensusForecasts — мнения аналитиков по инструменту
   rpc GetConsensusForecasts(GetConsensusForecastsRequest) returns (GetConsensusForecastsResponse);
 
-  //Получить прогнозов инвестдомов по инструменту
+  //GetForecastBy — прогнозы инвестдомов по инструменту
   rpc GetForecastBy(GetForecastRequest) returns (GetForecastResponse);
 
+  //GetRiskRates — ставки риска по инструменту
   rpc GetRiskRates(RiskRatesRequest) returns (RiskRatesResponse);
 }
 
@@ -1125,6 +1127,7 @@ message CreateFavoriteGroupResponse {
   string group_name = 2; //Название группы.
 }
 
+//Запрос удаления избранной группы
 message DeleteFavoriteGroupRequest {
   string group_id = 1 [(google.api.field_behavior) = REQUIRED]; //Уникальный идентификатор группы.
 }
@@ -1132,14 +1135,17 @@ message DeleteFavoriteGroupRequest {
 message DeleteFavoriteGroupResponse {
 }
 
+//Запрос получения списка избранных групп
 message GetFavoriteGroupsRequest {
   repeated string instrument_id = 1; //Массив идентификаторов инструментов. Принимает значение `figi` или `instrument_uid`. Если в группе будет хотя бы один из инструментов массива, то в ответе у группы вернется признак `containsInstrument = true`.
   repeated string excluded_group_id = 2; //Массив идентификаторов групп, которые необходимо исключить из ответа.
 }
 
+//Избранные группы
 message GetFavoriteGroupsResponse {
   repeated FavoriteGroup groups = 1; //Массив групп избранных списков инструментов.
 
+  //Избранная группа
   message FavoriteGroup {
     string group_id = 1 [(google.api.field_behavior) = REQUIRED]; //Уникальный идентификатор группы.
     string group_name = 2 [(google.api.field_behavior) = REQUIRED]; //Название группы.
@@ -1420,10 +1426,14 @@ message GetForecastResponse {
   }
 }
 
+
+//Запрос ставок риска
 message RiskRatesRequest {
   repeated string instrument_id = 1;  // Идентификаторы инструментов.
 }
 
+
+//Ставки риска
 message RiskRatesResponse {
   repeated RiskRateResult instrument_risk_rates = 1;
 

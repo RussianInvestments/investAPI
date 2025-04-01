@@ -11,7 +11,7 @@
 
 
 #### GetStrategies
-Запросить стратегии.
+GetStrategies — стратегии
 
 - Тело запроса — [GetStrategiesRequest](#getstrategiesrequest)
 
@@ -19,7 +19,7 @@
 
 
 #### GetSignals
-Запросить сигналы.
+GetSignals — сигналы
 
 - Тело запроса — [GetSignalsRequest](#getsignalsrequest)
 

@@ -13,7 +13,7 @@
 
 
 #### GetOperations
-Получить список операций по счету.
+GetOperations — список операций по счету
 При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems).
 
 - Тело запроса — [OperationsRequest](#operationsrequest)
@@ -22,7 +22,7 @@
 
 
 #### GetPortfolio
-Получить портфель по счету.
+GetPortfolio — портфель по счету
 
 - Тело запроса — [PortfolioRequest](#portfoliorequest)
 
@@ -30,7 +30,7 @@
 
 
 #### GetPositions
-Получить список позиций по счету.
+GetPositions — список позиций по счету
 
 - Тело запроса — [PositionsRequest](#positionsrequest)
 
@@ -38,7 +38,7 @@
 
 
 #### GetWithdrawLimits
-Получить доступный остаток для вывода средств.
+GetWithdrawLimits — доступный остаток для вывода средств
 
 - Тело запроса — [WithdrawLimitsRequest](#withdrawlimitsrequest)
 
@@ -46,7 +46,7 @@
 
 
 #### GetBrokerReport
-Получить брокерский отчет.
+GetBrokerReport — брокерский отчет.
 
 - Тело запроса — [BrokerReportRequest](#brokerreportrequest)
 
@@ -54,7 +54,7 @@
 
 
 #### GetDividendsForeignIssuer
-Получить отчет «Справка о доходах за пределами РФ».
+GetDividendsForeignIssuer — отчет «Справка о доходах за пределами РФ»
 
 - Тело запроса — [GetDividendsForeignIssuerRequest](#getdividendsforeignissuerrequest)
 
@@ -62,7 +62,7 @@
 
 
 #### GetOperationsByCursor
-Получить список операций по счету с пагинацией.
+GetOperationsByCursor — список операций по счету с пагинацией
 При работе с методом учитывайте [особенности взаимодействия](/invest/services/operations/operations_problems).
 
 - Тело запроса — [GetOperationsByCursorRequest](#getoperationsbycursorrequest)
@@ -79,7 +79,7 @@
 
 
 #### PortfolioStream
-Server-side stream обновлений портфеля.
+PortfolioStream — стрим обновлений портфеля
 
 - Тело запроса — [PortfolioStreamRequest](#portfoliostreamrequest)
 
@@ -87,7 +87,7 @@ Server-side stream обновлений портфеля.
 
 
 #### PositionsStream
-Server-side stream обновлений информации по изменению позиций портфеля.
+PositionsStream — стрим обновлений информации по изменению позиций портфеля
 
 - Тело запроса — [PositionsStreamRequest](#positionsstreamrequest)
 
@@ -279,6 +279,7 @@ Server-side stream обновлений информации по изменен
 | var_margin |  [MoneyValue](#moneyvalue) | Вариационная маржа. |
 | expected_yield_fifo |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
 | daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день. |
+| ticker |  [string](#string) | Тикер инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -301,6 +302,7 @@ Server-side stream обновлений информации по изменен
 | current_price |  [MoneyValue](#moneyvalue) | Текущая цена за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. |
 | average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена позиции по методу FIFO. Для пересчета возможна задержка до одной секунды. |
 | daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день. |
+| ticker |  [string](#string) | Тикер инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -316,6 +318,7 @@ Server-side stream обновлений информации по изменен
 | balance |  [int64](#int64) | Текущий незаблокированный баланс. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
 | exchange_blocked |  [bool](#bool) | Заблокировано на бирже. |
 | instrument_type |  [string](#string) | Тип инструмента. |
  <!-- end Fields -->
@@ -333,6 +336,7 @@ Server-side stream обновлений информации по изменен
 | balance |  [int64](#int64) | Текущий незаблокированный баланс. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -345,6 +349,7 @@ Server-side stream обновлений информации по изменен
 | ----- | ---- | ----------- |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции опциона. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
 | blocked |  [int64](#int64) | Количество бумаг, заблокированных выставленными заявками. |
 | balance |  [int64](#int64) | Текущий незаблокированный баланс. |
  <!-- end Fields -->

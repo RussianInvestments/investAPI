@@ -13,7 +13,7 @@
 
 
 #### TradingSchedules
-Получить расписания торгов торговых площадок
+TradingSchedules — расписания торговых площадок
 
 - Тело запроса — [TradingSchedulesRequest](#tradingschedulesrequest)
 
@@ -21,7 +21,7 @@
 
 
 #### BondBy
-Получить облигации по ее идентификатору
+BondBy — получить облигацию по ее идентификатору
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -29,7 +29,7 @@
 
 
 #### Bonds
-Получить список облигаций
+Bonds — список облигаций
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -37,7 +37,7 @@
 
 
 #### GetBondCoupons
-Получить график выплат купонов по облигации
+GetBondCoupons — график выплат купонов по облигации
 
 - Тело запроса — [GetBondCouponsRequest](#getbondcouponsrequest)
 
@@ -45,7 +45,7 @@
 
 
 #### GetBondEvents
-Получить события по облигации
+GetBondEvents — события по облигации
 
 - Тело запроса — [GetBondEventsRequest](#getbondeventsrequest)
 
@@ -53,7 +53,7 @@
 
 
 #### CurrencyBy
-Получить валюту по ее идентификатору
+CurrencyBy — получить валюту по ее идентификатору
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -61,7 +61,7 @@
 
 
 #### Currencies
-Получить список валют
+Currencies — список валют
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -69,7 +69,7 @@
 
 
 #### EtfBy
-Получить инвестиционный фонд по его идентификатору
+EtfBy — получить инвестиционный фонд по его идентификатору
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -77,7 +77,7 @@
 
 
 #### Etfs
-Получить список инвестиционных фондов
+Etfs — список инвестиционных фондов
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -85,7 +85,7 @@
 
 
 #### FutureBy
-Получить фьючерс по его идентификатору
+FutureBy — получить фьючерс по его идентификатору
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -93,7 +93,7 @@
 
 
 #### Futures
-Получить список фьючерсов
+Futures — список фьючерсов
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -101,7 +101,7 @@
 
 
 #### OptionBy
-Получить опцион по его идентификатору
+OptionBy — получить опцион по его идентификатору
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -109,7 +109,7 @@
 
 
 #### Options
-Deprecated Получить список опционов
+Deprecated Options — список опционов
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -117,7 +117,7 @@ Deprecated Получить список опционов
 
 
 #### OptionsBy
-Получить список опционов
+OptionsBy — список опционов
 
 - Тело запроса — [FilterOptionsRequest](#filteroptionsrequest)
 
@@ -125,7 +125,7 @@ Deprecated Получить список опционов
 
 
 #### ShareBy
-Получить акцию по ее идентификатору
+ShareBy — получить акцию по ее идентификатору
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -133,7 +133,7 @@ Deprecated Получить список опционов
 
 
 #### Shares
-Получить список акций
+Shares — список акций
 
 - Тело запроса — [InstrumentsRequest](#instrumentsrequest)
 
@@ -141,7 +141,7 @@ Deprecated Получить список опционов
 
 
 #### Indicatives
-Получить индикативные инструменты — индексы, товары и другие
+Indicatives — индикативные инструменты — индексы, товары и другие
 
 - Тело запроса — [IndicativesRequest](#indicativesrequest)
 
@@ -149,7 +149,7 @@ Deprecated Получить список опционов
 
 
 #### GetAccruedInterests
-Получить накопленный купонный доход по облигации
+GetAccruedInterests — накопленный купонный доход по облигации
 
 - Тело запроса — [GetAccruedInterestsRequest](#getaccruedinterestsrequest)
 
@@ -157,7 +157,7 @@ Deprecated Получить список опционов
 
 
 #### GetFuturesMargin
-Получить размера гарантийного обеспечения по фьючерсам
+GetFuturesMargin — размера гарантийного обеспечения по фьючерсам
 
 - Тело запроса — [GetFuturesMarginRequest](#getfuturesmarginrequest)
 
@@ -165,7 +165,7 @@ Deprecated Получить список опционов
 
 
 #### GetInstrumentBy
-Получить основную информацию об инструменте
+GetInstrumentBy — основная информация об инструменте
 
 - Тело запроса — [InstrumentRequest](#instrumentrequest)
 
@@ -173,7 +173,7 @@ Deprecated Получить список опционов
 
 
 #### GetDividends
-Получить события выплаты дивидендов по инструменту
+GetDividends — события выплаты дивидендов по инструменту
 
 - Тело запроса — [GetDividendsRequest](#getdividendsrequest)
 
@@ -181,7 +181,7 @@ Deprecated Получить список опционов
 
 
 #### GetAssetBy
-Получить актив по его идентификатору
+GetAssetBy — получить актив по его идентификатору
 
 - Тело запроса — [AssetRequest](#assetrequest)
 
@@ -189,7 +189,8 @@ Deprecated Получить список опционов
 
 
 #### GetAssets
-Получить список активов. Метод работает для всех инструментов, кроме срочных — фьючерсов и опционов
+GetAssets — список активов
+Метод работает для всех инструментов, кроме срочных — фьючерсов и опционов
 
 - Тело запроса — [AssetsRequest](#assetsrequest)
 
@@ -197,7 +198,7 @@ Deprecated Получить список опционов
 
 
 #### GetFavorites
-Получить список избранных инструментов
+GetFavorites — получить список избранных инструментов
 
 - Тело запроса — [GetFavoritesRequest](#getfavoritesrequest)
 
@@ -205,7 +206,7 @@ Deprecated Получить список опционов
 
 
 #### EditFavorites
-Отредактировать список избранных инструментов
+EditFavorites — отредактировать список избранных инструментов
 
 - Тело запроса — [EditFavoritesRequest](#editfavoritesrequest)
 
@@ -213,7 +214,7 @@ Deprecated Получить список опционов
 
 
 #### CreateFavoriteGroup
-Создать новую группу избранных инструментов
+CreateFavoriteGroup — создать новую группу избранных инструментов
 
 - Тело запроса — [CreateFavoriteGroupRequest](#createfavoritegrouprequest)
 
@@ -221,7 +222,7 @@ Deprecated Получить список опционов
 
 
 #### DeleteFavoriteGroup
-Удалить группу избранных инструментов
+DeleteFavoriteGroup — удалить группу избранных инструментов
 
 - Тело запроса — [DeleteFavoriteGroupRequest](#deletefavoritegrouprequest)
 
@@ -229,7 +230,7 @@ Deprecated Получить список опционов
 
 
 #### GetFavoriteGroups
-Получить список групп избранных инструментов
+GetFavoriteGroups — список групп избранных инструментов
 
 - Тело запроса — [GetFavoriteGroupsRequest](#getfavoritegroupsrequest)
 
@@ -237,7 +238,7 @@ Deprecated Получить список опционов
 
 
 #### GetCountries
-Получить список стран
+GetCountries — список стран
 
 - Тело запроса — [GetCountriesRequest](#getcountriesrequest)
 
@@ -245,7 +246,7 @@ Deprecated Получить список опционов
 
 
 #### FindInstrument
-Найти инструмент
+FindInstrument — найти инструмент
 
 - Тело запроса — [FindInstrumentRequest](#findinstrumentrequest)
 
@@ -253,7 +254,7 @@ Deprecated Получить список опционов
 
 
 #### GetBrands
-Получить список брендов
+GetBrands — список брендов
 
 - Тело запроса — [GetBrandsRequest](#getbrandsrequest)
 
@@ -261,7 +262,7 @@ Deprecated Получить список опционов
 
 
 #### GetBrandBy
-Получить бренд по его идентификатору
+GetBrandBy — получить бренд по его идентификатору
 
 - Тело запроса — [GetBrandRequest](#getbrandrequest)
 
@@ -269,7 +270,7 @@ Deprecated Получить список опционов
 
 
 #### GetAssetFundamentals
-Получить фундаментальные показатели по активу
+GetAssetFundamentals — фундаментальные показатели по активу
 
 - Тело запроса — [GetAssetFundamentalsRequest](#getassetfundamentalsrequest)
 
@@ -277,7 +278,7 @@ Deprecated Получить список опционов
 
 
 #### GetAssetReports
-Получить расписания выхода отчетностей эмитентов
+GetAssetReports — расписания выхода отчетностей эмитентов
 
 - Тело запроса — [GetAssetReportsRequest](#getassetreportsrequest)
 
@@ -285,7 +286,7 @@ Deprecated Получить список опционов
 
 
 #### GetConsensusForecasts
-Получить мнения аналитиков по инструменту
+GetConsensusForecasts — мнения аналитиков по инструменту
 
 - Тело запроса — [GetConsensusForecastsRequest](#getconsensusforecastsrequest)
 
@@ -293,7 +294,7 @@ Deprecated Получить список опционов
 
 
 #### GetForecastBy
-Получить прогнозов инвестдомов по инструменту
+GetForecastBy — прогнозы инвестдомов по инструменту
 
 - Тело запроса — [GetForecastRequest](#getforecastrequest)
 
@@ -301,7 +302,7 @@ Deprecated Получить список опционов
 
 
 #### GetRiskRates
-
+GetRiskRates — ставки риска по инструменту
 
 - Тело запроса — [RiskRatesRequest](#riskratesrequest)
 
@@ -1551,7 +1552,7 @@ Deprecated Получить список опционов
 
 
 #### DeleteFavoriteGroupRequest
-
+Запрос удаления избранной группы
 
 
 | Field | Type | Description |
@@ -1568,7 +1569,7 @@ Deprecated Получить список опционов
 
 
 #### GetFavoriteGroupsRequest
-
+Запрос получения списка избранных групп
 
 
 | Field | Type | Description |
@@ -1580,7 +1581,7 @@ Deprecated Получить список опционов
 
 
 #### GetFavoriteGroupsResponse
-
+Избранные группы
 
 
 | Field | Type | Description |
@@ -1591,7 +1592,7 @@ Deprecated Получить список опционов
 
 
 #### GetFavoriteGroupsResponse.FavoriteGroup
-
+Избранная группа
 
 
 | Field | Type | Description |
@@ -1996,7 +1997,7 @@ Deprecated Получить список опционов
 
 
 #### RiskRatesRequest
-
+Запрос ставок риска
 
 
 | Field | Type | Description |
@@ -2007,7 +2008,7 @@ Deprecated Получить список опционов
 
 
 #### RiskRatesResponse
-
+Ставки риска
 
 
 | Field | Type | Description |

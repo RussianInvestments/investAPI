@@ -1,6 +1,6 @@
-# Ошибки T-INVEST API
+#Ошибки TINKOFF INVEST API
 
-|Код ошибки|Тип ошибки|Текст ошибки|Причины возникновения и <br/> рекомендации по устранению|
+|Код ошибки|Тип ошибки|Текст ошибки|Причины возникновения и </br> рекомендации по устранению|
 |---|---|---|---|
 12001|UNIMPLEMENTED|Method is unimplemented|Метод не реализован.|
 12002|UNAVAILABLE|Deprecated method is unavailable|Метод устарел и недоступен.|
@@ -123,10 +123,13 @@
 30227|INVALID_ARGUMENT|Order cancelled|Заявка с заданными параметрами не может быть исполнена и отменена биржей или брокером.|
 30228|INVALID_ARGUMENT|`from` or `limit` have to be specified|Необходимо указать один из параметров — `from` или `limit`.|
 30229|INVALID_ARGUMENT|Price in points not available|Сейчас конвертация цены фьючерса недоступна. Возможно, фьючерс истек или нет данных для расчета.|
-30230|INVALID_ARGUMENT|Missing parameter: 'group_id'|Входной параметр 'group_id' является обязательным. Укажите корректный параметр 'group_id'.|
-30231|INVALID_ARGUMENT|'group_name' is missing or invalid|Входной параметр 'group_name' отсутствует или имеет некорректное значение. Укажите корректный параметр 'group_name'.|
-30232|INVALID_ARGUMENT|'group_color' is missing or invalid|Входной параметр 'group_color' отсутствует или имеет некорректное значение. Укажите корректный параметр 'group_color'.|
+30230|INVALID_ARGUMENT|Missing parameter: `group_id`|Входной параметр `group_id` является обязательным. Укажите корректный параметр `group_id`.|
+30231|INVALID_ARGUMENT|`group_name` is missing or invalid|Входной параметр `group_name` отсутствует или имеет некорректное значение. Укажите корректный параметр `group_nam`.|
+30232|INVALID_ARGUMENT|`group_color` is missing or invalid|Входной параметр `group_color` отсутствует или имеет некорректное значение. Укажите корректный параметр `group_color`.|
 30233|INVALID_ARGUMENT|Group can't be deleted|Эту группу нельзя удалить.|
+30234|INVALID_ARGUMENT|Instrument not supported|Инструмент не поддерживается методом.|
+30235|INVALID_ARGUMENT|The maximum request period for the given interval is 30 days|Для данного интервала свечи данные доступны за последние 30 дней.|
+30236|INVALID_ARGUMENT|Price in currency is not available|Сейчас конвертация цены фьючерса недоступна. Возможно, фьючерс истек или нет данных для расчета.|
 35001|INVALID_ARGUMENT|Sandbox accounts limit reached|Достигнут лимит на открытие торговых счетов в песочнице. Чтобы открыть новый счет необходимо закрыть один из существующих.|
 40002|PERMISSION_DENIED|Insufficient privileges|Недостаточно прав для совершения операции.<br/>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.<br/>[Подробнее про виды токенов](./index#_2).|
 40003|UNAUTHENTICATED|Authentication token is missing or invalid|Токен доступа не найден или не активен.<br/>Новый токен можно выпустить в [личном кабинете](https://www.tbank.ru/invest/settings/).|
