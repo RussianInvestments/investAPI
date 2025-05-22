@@ -4,7 +4,7 @@ info:
   termsOfService: "https://www.tbank.ru/invest/disclaimers/basic-information/"
   contact:
     email: "al.a.volkov@tbank.ru"
-  version: "1.33"
+  version: "1.35"
   license:
     name: "Apache 2.0"
     url: "https://www.apache.org/licenses/LICENSE-2.0"
@@ -10117,6 +10117,9 @@ components:
           units: "units"
         lot: 0
         uid: "uid"
+        requiredTests:
+          - "requiredTests"
+          - "requiredTests"
         dlong:
           nano: 6
           units: "units"
@@ -10284,6 +10287,11 @@ components:
         assetUid:
           description: "Уникальный идентификатор актива."
           type: "string"
+        requiredTests:
+          description: "Тесты, которые необходимо пройти клиенту, чтобы совершать сделки по инструменту."
+          items:
+            type: "string"
+          type: "array"
         forIisFlag:
           description: "Признак доступности для ИИС."
           type: "boolean"
@@ -10368,6 +10376,9 @@ components:
             units: "units"
           lot: 0
           uid: "uid"
+          requiredTests:
+            - "requiredTests"
+            - "requiredTests"
           dlong:
             nano: 6
             units: "units"
@@ -10468,6 +10479,9 @@ components:
               units: "units"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             dlong:
               nano: 6
               units: "units"
@@ -10553,6 +10567,9 @@ components:
               units: "units"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             dlong:
               nano: 6
               units: "units"
@@ -11077,6 +11094,8 @@ components:
         subscriptionId:
           description: "Идентификатор подписки в формате `UUID`."
           type: "string"
+        subscriptionAction:
+          $ref: "#/components/schemas/v1SubscriptionAction"
         candleSourceType:
           $ref: "#/components/schemas/v1GetCandlesRequestCandleSource"
       type: "object"
@@ -11227,6 +11246,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             blockedTcaFlag: true
             dlong:
               nano: 6
@@ -11286,6 +11308,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             blockedTcaFlag: true
             dlong:
               nano: 6
@@ -11355,6 +11380,9 @@ components:
         countryOfRisk: "countryOfRisk"
         lot: 0
         uid: "uid"
+        requiredTests:
+          - "requiredTests"
+          - "requiredTests"
         blockedTcaFlag: true
         dlong:
           nano: 6
@@ -11482,6 +11510,11 @@ components:
         positionUid:
           description: "Уникальный идентификатор позиции инструмента."
           type: "string"
+        requiredTests:
+          description: "Тесты, которые необходимо пройти клиенту, чтобы совершать сделки по инструменту."
+          items:
+            type: "string"
+          type: "array"
         forIisFlag:
           description: "Признак доступности для ИИС."
           type: "boolean"
@@ -11521,6 +11554,9 @@ components:
           countryOfRisk: "countryOfRisk"
           lot: 0
           uid: "uid"
+          requiredTests:
+            - "requiredTests"
+            - "requiredTests"
           blockedTcaFlag: true
           dlong:
             nano: 6
@@ -11797,6 +11833,9 @@ components:
         countryOfRisk: "countryOfRisk"
         lot: 0
         uid: "uid"
+        requiredTests:
+          - "requiredTests"
+          - "requiredTests"
         blockedTcaFlag: true
         dlong:
           nano: 6
@@ -11944,6 +11983,11 @@ components:
           type: "string"
         instrumentExchange:
           $ref: "#/components/schemas/v1InstrumentExchangeType"
+        requiredTests:
+          description: "Тесты, которые необходимо пройти клиенту, чтобы совершать сделки по инструменту."
+          items:
+            type: "string"
+          type: "array"
         forIisFlag:
           description: "Признак доступности для ИИС."
           type: "boolean"
@@ -11990,6 +12034,9 @@ components:
           countryOfRisk: "countryOfRisk"
           lot: 0
           uid: "uid"
+          requiredTests:
+            - "requiredTests"
+            - "requiredTests"
           blockedTcaFlag: true
           dlong:
             nano: 6
@@ -12064,6 +12111,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             blockedTcaFlag: true
             dlong:
               nano: 6
@@ -12130,6 +12180,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             blockedTcaFlag: true
             dlong:
               nano: 6
@@ -12323,6 +12376,9 @@ components:
         countryOfRisk: "countryOfRisk"
         lot: 0
         uid: "uid"
+        requiredTests:
+          - "requiredTests"
+          - "requiredTests"
         futuresType: "futuresType"
         blockedTcaFlag: true
         dlong:
@@ -12484,6 +12540,11 @@ components:
         basicAssetPositionUid:
           description: "Уникальный идентификатор позиции основного инструмента."
           type: "string"
+        requiredTests:
+          description: "Тесты, которые необходимо пройти клиенту, чтобы совершать сделки по инструменту."
+          items:
+            type: "string"
+          type: "array"
         forIisFlag:
           description: "Признак доступности для ИИС."
           type: "boolean"
@@ -12532,6 +12593,9 @@ components:
           countryOfRisk: "countryOfRisk"
           lot: 0
           uid: "uid"
+          requiredTests:
+            - "requiredTests"
+            - "requiredTests"
           futuresType: "futuresType"
           blockedTcaFlag: true
           dlong:
@@ -12615,6 +12679,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             futuresType: "futuresType"
             blockedTcaFlag: true
             dlong:
@@ -12690,6 +12757,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             futuresType: "futuresType"
             blockedTcaFlag: true
             dlong:
@@ -13484,6 +13554,7 @@ components:
             price:
               nano: 6
               units: "units"
+            eveningSessionPriceTime: 2000-01-23T04:56:07.000Z
             instrumentUid: "instrumentUid"
             figi: "figi"
             time: 2000-01-23T04:56:07.000Z
@@ -13493,6 +13564,7 @@ components:
             price:
               nano: 6
               units: "units"
+            eveningSessionPriceTime: 2000-01-23T04:56:07.000Z
             instrumentUid: "instrumentUid"
             figi: "figi"
             time: 2000-01-23T04:56:07.000Z
@@ -15319,6 +15391,8 @@ components:
         subscriptionId:
           description: "Идентификатор подписки в формате UUID."
           type: "string"
+        subscriptionAction:
+          $ref: "#/components/schemas/v1SubscriptionAction"
       type: "object"
     v1Instrument:
       description: "Объект передачи основной информации об инструменте."
@@ -15331,6 +15405,9 @@ components:
         countryOfRisk: "countryOfRisk"
         lot: 0
         uid: "uid"
+        requiredTests:
+          - "requiredTests"
+          - "requiredTests"
         blockedTcaFlag: true
         dlong:
           nano: 6
@@ -15456,6 +15533,11 @@ components:
         assetUid:
           description: "Уникальный идентификатор актива."
           type: "string"
+        requiredTests:
+          description: "Тесты, которые необходимо пройти клиенту, чтобы совершать сделки по инструменту."
+          items:
+            type: "string"
+          type: "array"
         forIisFlag:
           description: "Признак доступности для ИИС."
           type: "boolean"
@@ -15501,6 +15583,7 @@ components:
         price:
           nano: 6
           units: "units"
+        eveningSessionPriceTime: 2000-01-23T04:56:07.000Z
         instrumentUid: "instrumentUid"
         figi: "figi"
         time: 2000-01-23T04:56:07.000Z
@@ -15517,6 +15600,10 @@ components:
           $ref: "#/components/schemas/v1Quotation"
         time:
           description: "Дата совершения торгов."
+          format: "date-time"
+          type: "string"
+        eveningSessionPriceTime:
+          description: "Дата цены закрытия вечерней сессии."
           format: "date-time"
           type: "string"
       type: "object"
@@ -15577,6 +15664,9 @@ components:
           countryOfRisk: "countryOfRisk"
           lot: 0
           uid: "uid"
+          requiredTests:
+            - "requiredTests"
+            - "requiredTests"
           blockedTcaFlag: true
           dlong:
             nano: 6
@@ -15793,6 +15883,8 @@ components:
         subscriptionId:
           description: "Идентификатор подписки в формате `UUID`."
           type: "string"
+        subscriptionAction:
+          $ref: "#/components/schemas/v1SubscriptionAction"
       type: "object"
     v1LastPriceType:
       default: "LAST_PRICE_UNSPECIFIED"
@@ -15859,6 +15951,10 @@ components:
               figi: "figi"
               subscriptionId: "subscriptionId"
           trackingId: "trackingId"
+        openInterest:
+          openInterest: "openInterest"
+          instrumentUid: "instrumentUid"
+          time: 2000-01-23T04:56:07.000Z
         ping:
           streamId: "streamId"
           pingRequestTime: 2000-01-23T04:56:07.000Z
@@ -15915,10 +16011,12 @@ components:
           tradeSubscriptions:
             - streamId: "streamId"
               instrumentUid: "instrumentUid"
+              withOpenInterest: true
               figi: "figi"
               subscriptionId: "subscriptionId"
             - streamId: "streamId"
               instrumentUid: "instrumentUid"
+              withOpenInterest: true
               figi: "figi"
               subscriptionId: "subscriptionId"
           trackingId: "trackingId"
@@ -15982,6 +16080,8 @@ components:
           $ref: "#/components/schemas/v1SubscribeLastPriceResponse"
         lastPrice:
           $ref: "#/components/schemas/v1LastPrice"
+        openInterest:
+          $ref: "#/components/schemas/v1OpenInterest"
       type: "object"
     v1MarketDataServerSideStreamRequest:
       properties:
@@ -16016,6 +16116,24 @@ components:
           description: "Дробная часть суммы, может быть отрицательным числом."
           format: "int32"
           type: "integer"
+      type: "object"
+    v1OpenInterest:
+      example:
+        openInterest: "openInterest"
+        instrumentUid: "instrumentUid"
+        time: 2000-01-23T04:56:07.000Z
+      properties:
+        instrumentUid:
+          description: "UID инструмента."
+          type: "string"
+        time:
+          description: "Время получения открытого интереса в часовом поясе UTC по времени биржи."
+          format: "date-time"
+          type: "string"
+        openInterest:
+          description: "Открытый интерес."
+          format: "int64"
+          type: "string"
       type: "object"
     v1OpenSandboxAccountRequest:
       description: "Запрос открытия счета в песочнице."
@@ -16618,6 +16736,9 @@ components:
         countryOfRisk: "countryOfRisk"
         lot: 0
         uid: "uid"
+        requiredTests:
+          - "requiredTests"
+          - "requiredTests"
         blockedTcaFlag: true
         dlong:
           nano: 6
@@ -16809,6 +16930,11 @@ components:
         apiTradeAvailableFlag:
           description: "Возможность торговать инструментом через API."
           type: "boolean"
+        requiredTests:
+          description: "Тесты, которые необходимо пройти клиенту, чтобы совершать сделки по инструменту."
+          items:
+            type: "string"
+          type: "array"
       type: "object"
     v1OptionDirection:
       default: "OPTION_DIRECTION_UNSPECIFIED"
@@ -16836,6 +16962,9 @@ components:
           countryOfRisk: "countryOfRisk"
           lot: 0
           uid: "uid"
+          requiredTests:
+            - "requiredTests"
+            - "requiredTests"
           blockedTcaFlag: true
           dlong:
             nano: 6
@@ -16927,6 +17056,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             blockedTcaFlag: true
             dlong:
               nano: 6
@@ -16994,6 +17126,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             blockedTcaFlag: true
             dlong:
               nano: 6
@@ -17190,6 +17325,8 @@ components:
           type: "string"
         orderBookType:
           $ref: "#/components/schemas/v1OrderBookType"
+        subscriptionAction:
+          $ref: "#/components/schemas/v1SubscriptionAction"
       type: "object"
     v1OrderBookType:
       default: "ORDERBOOK_TYPE_UNSPECIFIED"
@@ -18755,6 +18892,9 @@ components:
           $ref: "#/components/schemas/v1TimeInForceType"
         priceType:
           $ref: "#/components/schemas/v1PriceType"
+        confirmMarginTrade:
+          description: "Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false."
+          type: "boolean"
       required:
         - "accountId"
         - "direction"
@@ -18807,6 +18947,9 @@ components:
           $ref: "#/components/schemas/v1TimeInForceType"
         priceType:
           $ref: "#/components/schemas/v1PriceType"
+        confirmMarginTrade:
+          description: "Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false."
+          type: "boolean"
       required:
         - "accountId"
         - "direction"
@@ -18945,6 +19088,9 @@ components:
         orderId:
           description: "Идентификатор запроса выставления поручения для целей идемпотентности в формате `UID`. Максимальная длина — 36 символов."
           type: "string"
+        confirmMarginTrade:
+          description: "Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false."
+          type: "boolean"
       required:
         - "accountId"
         - "direction"
@@ -19045,6 +19191,9 @@ components:
           $ref: "#/components/schemas/v1Quotation"
         priceType:
           $ref: "#/components/schemas/v1PriceType"
+        confirmMarginTrade:
+          description: "Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false."
+          type: "boolean"
       required:
         - "accountId"
         - "idempotencyKey"
@@ -19217,6 +19366,9 @@ components:
         countryOfRisk: "countryOfRisk"
         lot: 0
         uid: "uid"
+        requiredTests:
+          - "requiredTests"
+          - "requiredTests"
         blockedTcaFlag: true
         dlong:
           nano: 6
@@ -19372,6 +19524,11 @@ components:
           type: "string"
         instrumentExchange:
           $ref: "#/components/schemas/v1InstrumentExchangeType"
+        requiredTests:
+          description: "Тесты, которые необходимо пройти клиенту, чтобы совершать сделки по инструменту."
+          items:
+            type: "string"
+          type: "array"
         forIisFlag:
           description: "Признак доступности для ИИС."
           type: "boolean"
@@ -19414,6 +19571,9 @@ components:
           countryOfRisk: "countryOfRisk"
           lot: 0
           uid: "uid"
+          requiredTests:
+            - "requiredTests"
+            - "requiredTests"
           blockedTcaFlag: true
           dlong:
             nano: 6
@@ -19501,6 +19661,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             blockedTcaFlag: true
             dlong:
               nano: 6
@@ -19566,6 +19729,9 @@ components:
             countryOfRisk: "countryOfRisk"
             lot: 0
             uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
             blockedTcaFlag: true
             dlong:
               nano: 6
@@ -20142,6 +20308,9 @@ components:
           type: "array"
         tradeSource:
           $ref: "#/components/schemas/v1TradeSourceType"
+        withOpenInterest:
+          title: "Флаг открытого интереса. **true** - в стриме дополнительно передается информация об открытом интересе для фьючерсов"
+          type: "boolean"
       type: "object"
     v1SubscribeTradesResponse:
       description: "Результат изменения статуса подписки на поток обезличенных сделок."
@@ -20149,10 +20318,12 @@ components:
         tradeSubscriptions:
           - streamId: "streamId"
             instrumentUid: "instrumentUid"
+            withOpenInterest: true
             figi: "figi"
             subscriptionId: "subscriptionId"
           - streamId: "streamId"
             instrumentUid: "instrumentUid"
+            withOpenInterest: true
             figi: "figi"
             subscriptionId: "subscriptionId"
         trackingId: "trackingId"
@@ -20322,6 +20493,7 @@ components:
       example:
         streamId: "streamId"
         instrumentUid: "instrumentUid"
+        withOpenInterest: true
         figi: "figi"
         subscriptionId: "subscriptionId"
       properties:
@@ -20339,6 +20511,11 @@ components:
         subscriptionId:
           description: "Идентификатор подписки в формате UUID."
           type: "string"
+        withOpenInterest:
+          title: "Флаг открытого интереса. **true** - в стриме дополнительно передается информация об открытом интересе для фьючерсов"
+          type: "boolean"
+        subscriptionAction:
+          $ref: "#/components/schemas/v1SubscriptionAction"
       type: "object"
     v1TradesStreamRequest:
       description: "Запрос установки соединения."
@@ -20906,6 +21083,10 @@ components:
                 figi: "figi"
                 subscriptionId: "subscriptionId"
             trackingId: "trackingId"
+          openInterest:
+            openInterest: "openInterest"
+            instrumentUid: "instrumentUid"
+            time: 2000-01-23T04:56:07.000Z
           ping:
             streamId: "streamId"
             pingRequestTime: 2000-01-23T04:56:07.000Z
@@ -20962,10 +21143,12 @@ components:
             tradeSubscriptions:
               - streamId: "streamId"
                 instrumentUid: "instrumentUid"
+                withOpenInterest: true
                 figi: "figi"
                 subscriptionId: "subscriptionId"
               - streamId: "streamId"
                 instrumentUid: "instrumentUid"
+                withOpenInterest: true
                 figi: "figi"
                 subscriptionId: "subscriptionId"
             trackingId: "trackingId"

@@ -96,6 +96,7 @@ message PostOrderRequest {
   string instrument_id = 8; //Идентификатор инструмента, принимает значения Figi или Instrument_uid.
   TimeInForceType time_in_force = 9; //Алгоритм исполнения поручения, применяется только к лимитной заявке.
   PriceType price_type = 10; //Тип цены.
+  bool confirm_margin_trade = 11; // Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false.
 }
 
 //Прочитайте  про ключ идемпотентности [здесь](./head-orders/)
@@ -136,6 +137,7 @@ message PostOrderAsyncRequest {
   string order_id = 7 [(google.api.field_behavior) = REQUIRED]; //Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов.
   optional TimeInForceType time_in_force = 8; //Алгоритм исполнения поручения, применяется только к лимитной заявке.
   optional PriceType price_type = 9; //Тип цены.
+  bool confirm_margin_trade = 10; // Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false.
 }
 
 //Результат выставления асинхронного торгового поручения.
@@ -216,6 +218,7 @@ message ReplaceOrderRequest {
   int64 quantity = 11 [(google.api.field_behavior) = REQUIRED]; //Количество лотов.
   optional Quotation price = 12; //Цена за 1 инструмент.
   optional PriceType price_type = 13; //Тип цены.
+  bool confirm_margin_trade = 14; // Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false.
 }
 
 //Запрос на расчет количества доступных для покупки/продажи лотов. Если не указывать цену инструмента, то расчет произведется по текущум ценам в стакане: по лучшему предложению для покупки и по лучшему спросу для продажи.

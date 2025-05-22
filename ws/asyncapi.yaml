@@ -1,7 +1,7 @@
 asyncapi: 2.6.0
 info:
-  title: T-Invest API
-  version: '1.33'
+  title: T-API
+  version: '1.35'
   description: Websocket API for streaming data
   license:
     name: Apache 2.0
@@ -224,6 +224,10 @@ components:
               figi: figi
               subscriptionId: subscriptionId
           trackingId: trackingId
+        openInterest:
+          openInterest: openInterest
+          instrumentUid: instrumentUid
+          time: '2000-01-23T04:56:07.000+00:00'
         ping:
           streamId: streamId
           pingRequestTime: '2000-01-23T04:56:07.000+00:00'
@@ -280,10 +284,12 @@ components:
           tradeSubscriptions:
             - streamId: streamId
               instrumentUid: instrumentUid
+              withOpenInterest: true
               figi: figi
               subscriptionId: subscriptionId
             - streamId: streamId
               instrumentUid: instrumentUid
+              withOpenInterest: true
               figi: figi
               subscriptionId: subscriptionId
           trackingId: trackingId
@@ -347,6 +353,8 @@ components:
           $ref: '#/components/schemas/v1SubscribeLastPriceResponse'
         lastPrice:
           $ref: '#/components/schemas/v1LastPrice'
+        openInterest:
+          $ref: '#/components/schemas/v1OpenInterest'
       type: object
     v1SubscribeCandlesResponse:
       description: Результат изменения статус подписки на свечи.
@@ -401,6 +409,8 @@ components:
         subscriptionId:
           description: Идентификатор подписки в формате `UUID`.
           type: string
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
         candleSourceType:
           $ref: '#/components/schemas/v1GetCandlesRequestCandleSource'
       type: object
@@ -468,6 +478,19 @@ components:
         - SUBSCRIPTION_STATUS_SUBSCRIPTION_NOT_FOUND
         - SUBSCRIPTION_STATUS_SOURCE_IS_INVALID
       type: string
+    v1SubscriptionAction:
+      default: SUBSCRIPTION_ACTION_UNSPECIFIED
+      description: |-
+        Тип операции со списком подписок.
+
+         - SUBSCRIPTION_ACTION_UNSPECIFIED: Статус подписки не определен.
+         - SUBSCRIPTION_ACTION_SUBSCRIBE: Подписаться.
+         - SUBSCRIPTION_ACTION_UNSUBSCRIBE: Отписаться.
+      enum:
+        - SUBSCRIPTION_ACTION_UNSPECIFIED
+        - SUBSCRIPTION_ACTION_SUBSCRIBE
+        - SUBSCRIPTION_ACTION_UNSUBSCRIBE
+      type: string
     v1GetCandlesRequestCandleSource:
       default: CANDLE_SOURCE_UNSPECIFIED
       description: |2-
@@ -533,6 +556,8 @@ components:
           type: string
         orderBookType:
           $ref: '#/components/schemas/v1OrderBookType'
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
       type: object
     v1OrderBookType:
       default: ORDERBOOK_TYPE_UNSPECIFIED
@@ -553,10 +578,12 @@ components:
         tradeSubscriptions:
           - streamId: streamId
             instrumentUid: instrumentUid
+            withOpenInterest: true
             figi: figi
             subscriptionId: subscriptionId
           - streamId: streamId
             instrumentUid: instrumentUid
+            withOpenInterest: true
             figi: figi
             subscriptionId: subscriptionId
         trackingId: trackingId
@@ -577,6 +604,7 @@ components:
       example:
         streamId: streamId
         instrumentUid: instrumentUid
+        withOpenInterest: true
         figi: figi
         subscriptionId: subscriptionId
       properties:
@@ -594,6 +622,13 @@ components:
         subscriptionId:
           description: Идентификатор подписки в формате UUID.
           type: string
+        withOpenInterest:
+          title: >-
+            Флаг открытого интереса. **true** - в стриме дополнительно
+            передается информация об открытом интересе для фьючерсов
+          type: boolean
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
       type: object
     v1TradeSourceType:
       default: TRADE_SOURCE_UNSPECIFIED
@@ -655,6 +690,8 @@ components:
         subscriptionId:
           description: Идентификатор подписки в формате UUID.
           type: string
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
       type: object
     v1Candle:
       description: Пакет свечей в рамках стрима.
@@ -995,6 +1032,8 @@ components:
         subscriptionId:
           description: Идентификатор подписки в формате `UUID`.
           type: string
+        subscriptionAction:
+          $ref: '#/components/schemas/v1SubscriptionAction'
       type: object
     v1LastPrice:
       description: Информация о цене последней сделки.
@@ -1033,6 +1072,26 @@ components:
         - LAST_PRICE_DEALER
       title: Тип последней цены
       type: string
+    v1OpenInterest:
+      example:
+        openInterest: openInterest
+        instrumentUid: instrumentUid
+        time: '2000-01-23T04:56:07.000+00:00'
+      properties:
+        instrumentUid:
+          description: UID инструмента.
+          type: string
+        time:
+          description: >-
+            Время получения открытого интереса в часовом поясе UTC по времени
+            биржи.
+          format: date-time
+          type: string
+        openInterest:
+          description: Открытый интерес.
+          format: int64
+          type: string
+      type: object
     rpcStatus:
       example:
         code: 1
@@ -1091,19 +1150,6 @@ components:
         candleSourceType:
           $ref: '#/components/schemas/v1GetCandlesRequestCandleSource'
       type: object
-    v1SubscriptionAction:
-      default: SUBSCRIPTION_ACTION_UNSPECIFIED
-      description: |-
-        Тип операции со списком подписок.
-
-         - SUBSCRIPTION_ACTION_UNSPECIFIED: Статус подписки не определен.
-         - SUBSCRIPTION_ACTION_SUBSCRIBE: Подписаться.
-         - SUBSCRIPTION_ACTION_UNSUBSCRIBE: Отписаться.
-      enum:
-        - SUBSCRIPTION_ACTION_UNSPECIFIED
-        - SUBSCRIPTION_ACTION_SUBSCRIBE
-        - SUBSCRIPTION_ACTION_UNSUBSCRIBE
-      type: string
     v1CandleInstrument:
       description: Запрос изменения статус подписки на свечи.
       properties:
@@ -1163,6 +1209,11 @@ components:
           type: array
         tradeSource:
           $ref: '#/components/schemas/v1TradeSourceType'
+        withOpenInterest:
+          title: >-
+            Флаг открытого интереса. **true** - в стриме дополнительно
+            передается информация об открытом интересе для фьючерсов
+          type: boolean
       type: object
     v1TradeInstrument:
       description: Запрос подписки на поток обезличенных сделок.
