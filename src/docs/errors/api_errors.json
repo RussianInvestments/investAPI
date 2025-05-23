@@ -559,6 +559,11 @@
     "type": "INVALID_ARGUMENT",
     "description": "Проверьте параметры запроса. Некорректный параметр `candle_source_type`."
   },
+  "30220": {
+    "message": "`candle_type` not supported when `limit` specified",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `candle_type` не может быть задан, если передан `limit`"
+  },
   "30221": {
     "message": "`order_request_id` not in UUID format",
     "type": "INVALID_ARGUMENT",
@@ -638,6 +643,21 @@
     "message": "Price in currency is not available",
     "type": "INVALID_ARGUMENT",
     "description": "Сейчас конвертация цены фьючерса недоступна. Возможно, фьючерс истек или нет данных для расчета."
+  },
+  "30237": {
+    "message": "Missing parameter: `instrument_id`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `instrument_id` является обязательным."
+  },
+  "30238": {
+    "message": "No data for the specified period",
+    "type": "INVALID_ARGUMENT",
+    "description": "За указанный интервал операции по счету не найдены."
+  },
+  "30240": {
+    "message": "Confirmation required for specified instrument",
+    "type": "INVALID_ARGUMENT",
+    "description": "Торговля указанным инструментом может привести к непокрытой позиции. Необходимо использовать флаг `confirm_margin_trade` для подтверждения заявки."
   },
   "35001": {
     "message": "Sandbox accounts limit reached",

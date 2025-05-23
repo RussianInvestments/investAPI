@@ -156,6 +156,7 @@ MarketDataServerSideStream — server-side стрим предоставлени
 | ping |  [Ping](#ping) | Проверка активности стрима. |
 | subscribe_last_price_response |  [SubscribeLastPriceResponse](#subscribelastpriceresponse) | Результат подписки на цены последние сделок по инструментам. |
 | last_price |  [LastPrice](#lastprice) | Цена последней сделки. |
+| open_interest |  [OpenInterest](#openinterest) | Открытый интерес. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -212,6 +213,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | waiting_close |  [bool](#bool) | Флаг ожидания закрытия временного интервала для отправки свечи. |
 | stream_id |  [string](#string) | Идентификатор открытого соединения. |
 | subscription_id |  [string](#string) | Идентификатор подписки в формате `UUID`. |
+| subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
 | candle_source_type |  [GetCandlesRequest.CandleSource](#getcandlesrequestcandlesource) | Источник свечей. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -268,6 +270,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | stream_id |  [string](#string) | Идентификатор открытого соединения. |
 | subscription_id |  [string](#string) | Идентификатор подписки в формате `UUID`. |
 | order_book_type |  [OrderBookType](#orderbooktype) | Тип стакана. |
+| subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -281,6 +284,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Изменение статуса подписки. |
 | instruments | Массив объектов [TradeInstrument](#tradeinstrument) | Массив инструментов для подписки на поток обезличенных сделок. |
 | trade_source |  [TradeSourceType](#tradesourcetype) | Тип источника сделок. Значение по умолчанию — `TRADE_SOURCE_ALL`, все сделки. |
+| with_open_interest |  [bool](#bool) | Флаг открытого интереса. **true** - в стриме дополнительно передается информация об открытом интересе для фьючерсов |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -321,6 +325,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | instrument_uid |  [string](#string) | UID инструмента. |
 | stream_id |  [string](#string) | Идентификатор открытого соединения. |
 | subscription_id |  [string](#string) | Идентификатор подписки в формате UUID. |
+| with_open_interest |  [bool](#bool) | Флаг открытого интереса. **true** - в стриме дополнительно передается информация об открытом интересе для фьючерсов |
+| subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -372,6 +378,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | instrument_uid |  [string](#string) | UID инструмента. |
 | stream_id |  [string](#string) | Идентификатор открытого соединения. |
 | subscription_id |  [string](#string) | Идентификатор подписки в формате UUID. |
+| subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -423,6 +430,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | instrument_uid |  [string](#string) | UID инструмента. |
 | stream_id |  [string](#string) | Идентификатор открытого соединения. |
 | subscription_id |  [string](#string) | Идентификатор подписки в формате `UUID`. |
+| subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -599,6 +607,19 @@ subscribeCandles | Изменения статуса подписки на св�
  <!-- end HasFields -->
 
 
+#### OpenInterest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_uid |  [string](#string) | UID инструмента. |
+| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения открытого интереса в часовом поясе UTC по времени биржи. |
+| open_interest |  [int64](#int64) | Открытый интерес. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### GetOrderBookRequest
 Запрос стакана.
 
@@ -763,6 +784,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | price |  [Quotation](#quotation) | Цена закрытия торговой сессии. |
 | evening_session_price |  [Quotation](#quotation) | Цена последней сделки с вечерней сессии. Цена публикуется биржей по торговым дням и в нерабочие дни не обновляется. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата совершения торгов. |
+| evening_session_price_time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата цены закрытия вечерней сессии. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

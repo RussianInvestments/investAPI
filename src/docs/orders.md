@@ -180,6 +180,7 @@ GetOrderPrice — получить предварительную стоимос
 | instrument_id |  [string](#string) | Идентификатор инструмента, принимает значения Figi или Instrument_uid. |
 | time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения, применяется только к лимитной заявке. |
 | price_type |  [PriceType](#pricetype) | Тип цены. |
+| confirm_margin_trade |  [bool](#bool) | Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -228,6 +229,7 @@ GetOrderPrice — получить предварительную стоимос
 | order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате UID. Максимальная длина 36 символов. |
 | time_in_force |  [TimeInForceType](#timeinforcetype) | Алгоритм исполнения поручения, применяется только к лимитной заявке. |
 | price_type |  [PriceType](#pricetype) | Тип цены. |
+| confirm_margin_trade |  [bool](#bool) | Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -362,6 +364,7 @@ GetOrderPrice — получить предварительную стоимос
 | quantity |  [int64](#int64) | Количество лотов. |
 | price |  [Quotation](#quotation) | Цена за 1 инструмент. |
 | price_type |  [PriceType](#pricetype) | Тип цены. |
+| confirm_margin_trade |  [bool](#bool) | Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

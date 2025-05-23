@@ -86,6 +86,7 @@ message MarketDataResponse {
     Ping ping = 9; //Проверка активности стрима.
     SubscribeLastPriceResponse subscribe_last_price_response = 10; //Результат подписки на цены последние сделок по инструментам.
     LastPrice last_price = 11; //Цена последней сделки.
+    OpenInterest open_interest = 12; //Открытый интерес.
   }
 }
 
@@ -144,6 +145,7 @@ message CandleSubscription {
   bool waiting_close = 5; //Флаг ожидания закрытия временного интервала для отправки свечи.
   string stream_id = 6; //Идентификатор открытого соединения.
   string subscription_id = 7; //Идентификатор подписки в формате `UUID`.
+  SubscriptionAction subscription_action = 8; //Действие подписки.
   optional GetCandlesRequest.CandleSource candle_source_type = 9; //Источник свечей.
 }
 
@@ -191,6 +193,7 @@ message OrderBookSubscription {
   string stream_id = 5; //Идентификатор открытого соединения.
   string subscription_id = 6; //Идентификатор подписки в формате `UUID`.
   OrderBookType order_book_type = 7; //Тип стакана.
+  SubscriptionAction subscription_action = 8; //Действие подписки.
 }
 
 //Типы источников сделок.
@@ -206,6 +209,7 @@ message SubscribeTradesRequest {
   SubscriptionAction subscription_action = 1; //Изменение статуса подписки.
   repeated TradeInstrument instruments = 2; //Массив инструментов для подписки на поток обезличенных сделок.
   TradeSourceType trade_source = 3; //Тип источника сделок. Значение по умолчанию — `TRADE_SOURCE_ALL`, все сделки.
+  bool with_open_interest = 4; //Флаг открытого интереса. **true** - в стриме дополнительно передается информация об открытом интересе для фьючерсов
 }
 
 //Запрос подписки на поток обезличенных сделок.
@@ -228,6 +232,8 @@ message TradeSubscription {
   string instrument_uid = 3; //UID инструмента.
   string stream_id = 4; //Идентификатор открытого соединения.
   string subscription_id = 5; //Идентификатор подписки в формате UUID.
+  bool with_open_interest = 6; //Флаг открытого интереса. **true** - в стриме дополнительно передается информация об открытом интересе для фьючерсов
+  SubscriptionAction subscription_action = 7; //Действие подписки.
 }
 
 //Изменение статуса подписки на торговый статус инструмента.
@@ -255,6 +261,7 @@ message InfoSubscription {
   string instrument_uid = 3; //UID инструмента.
   string stream_id = 4; //Идентификатор открытого соединения.
   string subscription_id = 5; //Идентификатор подписки в формате UUID.
+  SubscriptionAction subscription_action = 6; //Действие подписки.
 }
 
 //Изменение статуса подписки на цену последней сделки по инструменту.
@@ -282,6 +289,7 @@ message LastPriceSubscription {
   string instrument_uid = 3; //UID инструмента.
   string stream_id = 4; //Идентификатор открытого соединения.
   string subscription_id = 5; //Идентификатор подписки в формате `UUID`.
+  SubscriptionAction subscription_action = 6; //Действие подписки.
 }
 
 //Пакет свечей в рамках стрима.
@@ -430,6 +438,12 @@ message LastPrice {
   LastPriceType last_price_type = 12; //Тип последней цены.
 }
 
+message OpenInterest {
+  string instrument_uid = 1; //UID инструмента.
+  google.protobuf.Timestamp time = 2; //Время получения открытого интереса в часовом поясе UTC по времени биржи.
+  int64 open_interest = 3; //Открытый интерес.
+}
+
 //Запрос стакана.
 message GetOrderBookRequest {
   optional string figi = 1 [deprecated = true]; //Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`.
@@ -522,6 +536,7 @@ message InstrumentClosePriceResponse {
   Quotation price = 11; //Цена закрытия торговой сессии.
   Quotation evening_session_price = 12; //Цена последней сделки с вечерней сессии. Цена публикуется биржей по торговым дням и в нерабочие дни не обновляется.
   google.protobuf.Timestamp time = 21; //Дата совершения торгов.
+  google.protobuf.Timestamp evening_session_price_time = 23; //Дата цены закрытия вечерней сессии.
 }
 
 message GetTechAnalysisRequest {
