@@ -42,6 +42,7 @@ message PostStopOrderRequest {
   TrailingData trailing_data = 13; //Массив с параметрами трейлинг-стопа.
   PriceType price_type = 14; //Тип цены.
   string order_id = 15 [(google.api.field_behavior) = REQUIRED]; //Идентификатор запроса выставления поручения для целей идемпотентности в формате `UID`. Максимальная длина — 36 символов.
+  bool confirm_margin_trade = 16; //Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false.
   message TrailingData {
       Quotation indent = 1; //Отступ.
       TrailingValueType indent_type = 2; //Тип величины отступа.

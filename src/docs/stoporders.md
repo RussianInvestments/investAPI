@@ -61,6 +61,7 @@ CancelStopOrder — отменить стоп-заявку
 | trailing_data |  [PostStopOrderRequest.TrailingData](#poststoporderrequesttrailingdata) | Массив с параметрами трейлинг-стопа. |
 | price_type |  [PriceType](#pricetype) | Тип цены. |
 | order_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате `UID`. Максимальная длина — 36 символов. |
+| confirm_margin_trade |  [bool](#bool) | Согласие на выставление заявки, которая может привести к непокрытой позиции, по умолчанию false. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
