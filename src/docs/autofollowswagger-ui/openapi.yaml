@@ -1,0 +1,1102 @@
+openapi: 3.0.3
+
+info:
+  title: "TInvest Autofollow API"
+  termsOfService: https://www.tbank.ru/invest/disclaimers/basic-information/
+  version: '1.0.0'
+servers:
+  - url: "https://invest-public-api.tbank.ru"
+    description: "Работа с биржей"
+tags:
+  - name: AutofollowStrategy
+  - name: AutofollowInstrument
+security:
+  - Bearer: []
+
+paths:
+  /autofollow/strategy:
+    get:
+      operationId: getAutofollowStrategies
+      tags:
+        - AutofollowStrategy
+      summary: |
+        Получение списка стратегий ведущего
+      responses:
+        200:
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetAutofollowStrategiesResponse"
+          description: "Список стратегий ведущего"
+        401:
+          description: "Токен доступа не найден или не активен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "401"
+                errorMessage: "Unauthenticated Request"
+        500:
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+  /autofollow/strategy/{strategyId}/signal:
+    post:
+      operationId: createAutofollowSignal
+      tags:
+        - AutofollowStrategy
+      summary: |
+        Создание сигнала для стратегии автоследования
+      parameters:
+        - $ref: '#/components/parameters/StrategyId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PostAutofollowSignalRequest"
+        description: "Запрос выставления сигнала для стратегии автоследования."
+        required: true
+      responses:
+        200:
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostAutofollowSignalResponse"
+          description: "Результат выставления сигнала"
+        400:
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        401:
+          description: "Токен доступа не найден или не активен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "401"
+                errorMessage: "Unauthenticated Request"
+        403:
+          description: "Недостаточно прав для выполнения запроса, проверьте соответствие токена и передаваемого в запросе счета."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "403"
+                errorMessage: "Insufficient Permission"
+        404:
+          description: "Переданный параметр не определен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "404"
+                errorMessage: "Account not found"
+        422:
+          description: "Ошибка выставления запроса, подробнее в сообщении"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "NOT_ENOUGH_ASSET_IN_THE_PORTFOLIO"
+                errorMessage: "Недостаточно актива в портфеле для уменьшения позиции"
+        429:
+          description: "Too many requests"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "TO_MANY_REQUESTS"
+                errorMessage: "Превышен объем сигналов за промежуток времени"
+        500:
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+  /autofollow/strategy/{strategyId}/stop-signal:
+    post:
+      operationId: createAutofollowStopSignal
+      tags:
+        - AutofollowStrategy
+      summary: |
+        Создание отложенного сигнала для стратегии автоследования
+      parameters:
+        - $ref: '#/components/parameters/StrategyId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PostAutofollowStopSignalRequest"
+        description: "Запрос выставления отложенного сигнала для стратегии автоследования."
+        required: true
+      responses:
+        200:
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostAutofollowStopSignalResponse"
+          description: "Результат выставления отложенного сигнала"
+        400:
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        401:
+          description: "Токен доступа не найден или не активен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "401"
+                errorMessage: "Unauthenticated Request"
+        403:
+          description: "Недостаточно прав для выполнения запроса, проверьте соответствие токена и передаваемого в запросе счета."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "403"
+                errorMessage: "Insufficient Permission"
+        404:
+          description: "Переданный параметр не определен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "404"
+                errorMessage: "Account not found"
+        422:
+          description: "Ошибка выставления запроса, подробнее в сообщении"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "NOT_ENOUGH_ASSET_IN_THE_PORTFOLIO"
+                errorMessage: "Недостаточно актива в портфеле для уменьшения позиции"
+        500:
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+  /autofollow/strategy/{strategyId}/portfolio/position:
+    get:
+      operationId: getAutofollowPortfolioPosition
+      tags:
+        - AutofollowStrategy
+      summary: |
+        Получение позиции портфеля для заданной стратегии
+      parameters:
+        - $ref: '#/components/parameters/StrategyId'
+      responses:
+        200:
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetPortfolioPositionResponse"
+          description: "Позиция портфеля по стратегии"
+        400:
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        401:
+          description: "Токен доступа не найден или не активен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "401"
+                errorMessage: "Unauthenticated Request"
+        404:
+          description: "Переданный параметр не определен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "404"
+                errorMessage: "strategy not found"
+        422:
+          description: "Ошибка выставления запроса, подробнее в сообщении"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "NOT_ENOUGH_ASSET_IN_THE_PORTFOLIO"
+                errorMessage: "Недостаточно актива в портфеле для уменьшения позиции"
+        500:
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+  /autofollow/strategy/{strategyId}/signal/{signalId}:
+    delete:
+      operationId: deleteAutofollowSignal
+      tags:
+        - AutofollowStrategy
+      summary: |
+        Удаление сигнала для заданной стратегии автоследования
+      parameters:
+        - $ref: '#/components/parameters/SignalId'
+        - $ref: '#/components/parameters/StrategyId'
+      responses:
+        200:
+          description: "Сигнал по стратегии удален"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        400:
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        401:
+          description: "Токен доступа не найден или не активен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "401"
+                errorMessage: "Unauthenticated Request"
+        404:
+          description: "Переданный параметр не определен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "404"
+                errorMessage: "Strategy not found"
+        422:
+          description: "Ошибка отправки запроса, подробнее в сообщении"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "NOT_ENOUGH_ASSET_IN_THE_PORTFOLIO"
+                errorMessage: "Недостаточно актива в портфеле для уменьшения позиции"
+        500:
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+  /autofollow/strategy/{strategyId}/stop-signal/{stopSignalId}:
+    delete:
+      operationId: deleteAutofollowStopSignal
+      tags:
+        - AutofollowStrategy
+      summary: |
+        Удаление отложенного сигнала для заданной стратегии автоследования
+      parameters:
+        - $ref: '#/components/parameters/StopSignalId'
+        - $ref: '#/components/parameters/StrategyId'
+      responses:
+        200:
+          description: "Отложенный сигнал по стратегии удален"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        400:
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        401:
+          description: "Токен доступа не найден или не активен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "401"
+                errorMessage: "Unauthenticated Request"
+        404:
+          description: "Переданный параметр не определен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "404"
+                errorMessage: "Strategy not found"
+        422:
+          description: "Ошибка отправки запроса, подробнее в сообщении"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "NOT_ENOUGH_ASSET_IN_THE_PORTFOLIO"
+                errorMessage: "Недостаточно актива в портфеле для уменьшения позиции"
+        500:
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+  /autofollow/strategy/{strategyId}/signals:
+    get:
+      operationId: getAutofollowSignals
+      tags:
+        - AutofollowStrategy
+      summary: |
+        Получение активных сигналов по стратегии
+      parameters:
+        - $ref: '#/components/parameters/StrategyId'
+      responses:
+        200:
+          description: "Сигналы по стратегии"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetStrategySignalsResponse"
+        400:
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        401:
+          description: "Токен доступа не найден или не активен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "401"
+                errorMessage: "Unauthenticated Request"
+        404:
+          description: "Переданный параметр не определен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "404"
+                errorMessage: "Strategy not found"
+        500:
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+  /autofollow/strategy/{strategyId}/stop-signals:
+    get:
+      operationId: getAutofollowStopSignals
+      tags:
+        - AutofollowStrategy
+      summary: |
+        Получение отложенных сигналов по стратегии
+      parameters:
+        - $ref: '#/components/parameters/StrategyId'
+      responses:
+        200:
+          description: "Отложенные сигналы по стратегии"
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetStrategyStopSignalsResponse"
+        400:
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        401:
+          description: "Токен доступа не найден или не активен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "401"
+                errorMessage: "Unauthenticated Request"
+        404:
+          description: "Переданный параметр не определен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "404"
+                errorMessage: "Strategy not found"
+        500:
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+  /autofollow/instruments:
+    get:
+      operationId: getAutofollowInstruments
+      tags:
+        - AutofollowInstrument
+      summary: |
+        Получение списка инструментов, доступных для автоследования
+      parameters:
+        - $ref: '#/components/parameters/InstrumentType'
+      responses:
+        200:
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetAutofollowInstrumentsResponse"
+          description: "Инструменты, доступные для автоследования"
+        400:
+          description: "Запрос составлен неверно, проверьте параметры вызова и синтаксические ошибки."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+        401:
+          description: "Токен доступа не найден или не активен."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                errorId: "ef137e0835a250861800bfc4bd5d0319"
+                errorCode: "401"
+                errorMessage: "Unauthenticated Request"
+        500:
+          description: "Внутренняя ошибка сервера, попробуйте повторить запрос позже."
+          headers:
+            treaceparent:
+              $ref: '#/components/parameters/TraceParent'
+
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+  
+  parameters:
+    TraceParent:
+      in: header
+      name: traceparent
+      description: Идентификатор ответа
+      schema:
+        type: string
+        minLength: 1
+      required: false
+
+    StrategyId:
+      in: path
+      name: strategyId
+      description: Идентификатор стратегии
+      schema:
+        $ref: '#/components/schemas/StrategyId'
+      required: true
+
+    SignalId:
+      in: path
+      name: signalId
+      description: Идентификатор сигнала
+      schema:
+        $ref: '#/components/schemas/SignalId'
+      required: true
+
+    StopSignalId:
+      in: path
+      name: stopSignalId
+      description: Идентификатор отложенного сигнала
+      schema:
+        $ref: '#/components/schemas/SignalId'
+      required: true
+
+    InstrumentType:
+      in: query
+      name: instrumentType
+      description: Тип инструмента
+      schema:
+        $ref: '#/components/schemas/InstrumentType'
+      required: false
+
+  schemas:
+    GetAutofollowStrategiesResponse:
+      description: Список стратегий ведущего
+      required:
+        - strategies
+      properties:
+        strategies:
+          type: array
+          items:
+            $ref: '#/components/schemas/AutofollowStrategy'
+
+    PostAutofollowSignalRequest:
+      type: object
+      required:
+        - instrumentId
+        - direction
+        - lots
+      properties:
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+        direction:
+          $ref: '#/components/schemas/Direction'
+        lots:
+          $ref: '#/components/schemas/Lots'
+
+    PostAutofollowStopSignalRequest:
+      type: object
+      required:
+        - instrumentId
+        - stopOrderType
+        - direction
+        - lots
+        - stopPrice
+      properties:
+        instrumentId:
+          $ref: '#/components/schemas/InstrumentId'
+        stopOrderType:
+          $ref: '#/components/schemas/StopOrderType'
+        direction:
+          $ref: '#/components/schemas/Direction'
+        lots:
+          $ref: '#/components/schemas/Lots'
+        stopPrice:
+          $ref: '#/components/schemas/Price'
+        expireDate:
+          $ref: '#/components/schemas/DateTime'
+    StrategyId:
+      description: Идентификатор торговой стратегии
+      type: string
+      format: uuid
+
+    SignalId:
+      description: Идентификатор торгового сигнала
+      type: string
+      format: uuid
+
+    InstrumentId:
+      description: Идентификатор инструмента
+      type: string
+      format: uuid
+
+    PositionUid:
+      description: Идентификатор позиции
+      type: string
+      format: uuid
+
+    Direction:
+      description: Направление
+      type: string
+      enum: [ buy, sell ]
+
+    StopOrderType:
+      description: Тип отложенной заявки
+      type: string
+      enum: [ take_profit, stop_loss ]
+
+    RequestAcceptanceType:
+      description: Уровень принятия запроса
+      type: string
+      enum: [ full, fractional ]
+    
+    Quantity:
+      description: Количество единиц актива
+      type: number
+      format: decimal
+      example: 13.22
+      
+    Lots:
+      description: Количество лотов
+      type: number
+      format: decimal
+      example: 13.22
+
+    Price:
+      description: Цена
+      type: number
+      format: decimal
+      example: 9.79
+
+    Ticker:
+      description: Тикер инструмента
+      type: string
+      example:
+        "T"
+
+    DateTime:
+      description: Дата и время
+      type: string
+      format: date-time
+
+    InstrumentType:
+      description: Тип инструмента
+      type: string
+      enum: [ bond, share, etf, currency, futures, option, sp ]
+
+    Currency:
+      description: Валюта
+      type: string
+      example:
+        "rub"
+
+    LogoName:
+      description: Логотип позиции сигнала
+      type: string
+      example:
+        "RU000A100Q4.png"
+
+    ClassCode:
+      description: Режим торгов
+      type: string
+      example:
+        "TQBR"
+
+    Lot:
+      description: Лотность инструмента
+      type: integer
+      example:
+        10
+
+    Name:
+      description: Название
+      type: string
+      example:
+        "Акции обыкновенные"
+
+    Exchange:
+      description: Биржа
+      type: string
+      example:
+        "MOEX_PLUS"
+
+    Flag:
+      description: Флаг
+      type: boolean
+    
+    ErrorResponse:
+      description: Ответ с ошибкой
+      type: object
+      required:
+        - errorId
+        - errorCode
+        - errorMessage
+      properties:
+        errorId:
+          description: Уникальный идентификатор для отслеживания ошибки
+          type: string
+          example: 02d55cabb05b44f0
+        errorCode:
+          description: Код ошибки
+          type: string
+          example: InsufficientPrivileges
+        errorMessage:
+          description: Описание ошибки
+          type: string
+          example: Сервис временно недоступен
+
+    PostAutofollowSignalResponse:
+      description: Информация о выставленном сигнале автоследования
+      required:
+        - signalId
+        - requestAcceptanceType
+      properties:
+        signalId:
+          $ref: '#/components/schemas/SignalId'
+        requestAcceptanceType:
+          $ref: '#/components/schemas/RequestAcceptanceType'
+
+    PostAutofollowStopSignalResponse:
+      description: Информация о выставленном отложенном сигнале автоследования
+      required:
+        - stopSignalId
+      properties:
+        stopSignalId:
+          $ref: '#/components/schemas/SignalId'
+
+    GetPortfolioPositionResponse:
+      description: Информация позиции портфеля
+      required:
+        - positions
+        - money
+      properties:
+        positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PortfolioPosition'
+        money:
+          type: array
+          items:
+            $ref: '#/components/schemas/Money'
+
+    GetStrategySignalsResponse:
+      description: Активные торговые сигналы по стратегии
+      required:
+        - signals
+      properties:
+        signals:
+          type: array
+          items:
+            $ref: '#/components/schemas/Signal'
+
+    GetStrategyStopSignalsResponse:
+      description: Активные отложенные сигналы по стратегии
+      required:
+        - stopSignals
+      properties:
+        stopSignals:
+          type: array
+          items:
+            $ref: '#/components/schemas/StopSignal'
+
+    GetAutofollowInstrumentsResponse:
+      description: Инструменты, доступные в автоследовании
+      required:
+        - instruments
+      properties:
+        instruments:
+          type: array
+          items:
+            $ref: '#/components/schemas/AutofollowInstrument'
+
+    Signal:
+      type: object
+      description: Сигнал автоследования
+      required:
+        - signalId
+        - instrumentUid
+        - positionUid
+        - ticker
+        - direction
+        - instrumentType
+        - lotsRequested
+        - lotsExecuted
+        - currency
+        - totalAmount
+        - signalName
+      properties:
+        signalId:
+          $ref: '#/components/schemas/SignalId'
+        instrumentUid:
+          $ref: '#/components/schemas/InstrumentId'
+        positionUid:
+          $ref: '#/components/schemas/PositionUid'
+        ticker:
+          $ref: '#/components/schemas/Ticker'
+        direction:
+          $ref: '#/components/schemas/Direction'
+        instrumentType:
+          $ref: '#/components/schemas/InstrumentType'
+        lotsRequested:
+          $ref: '#/components/schemas/Lots'
+        lotsExecuted:
+          $ref: '#/components/schemas/Lots'
+        currency:
+          $ref: '#/components/schemas/Currency'
+        totalAmount:
+          $ref: '#/components/schemas/Quantity'
+        logoName:
+          $ref: '#/components/schemas/LogoName'
+
+    StopSignal:
+      type: object
+      description: Отложенный сигнал автоследования
+      required:
+        - stopSignalId
+        - instrumentUid
+        - positionUid
+        - ticker
+        - stopOrderType
+        - direction
+        - lots
+        - instrumentType
+        - stopPrice
+        - currency
+        - totalAmount
+        - signalName
+        - createDate
+        - expireDate
+      properties:
+        stopSignalId:
+          $ref: '#/components/schemas/SignalId'
+        instrumentUid:
+          $ref: '#/components/schemas/InstrumentId'
+        positionUid:
+          $ref: '#/components/schemas/PositionUid'
+        ticker:
+          $ref: '#/components/schemas/Ticker'
+        stopOrderType:
+          $ref: '#/components/schemas/StopOrderType'
+        direction:
+          $ref: '#/components/schemas/Direction'
+        lots:
+          $ref: '#/components/schemas/Lots'
+        instrumentType:
+          $ref: '#/components/schemas/InstrumentType'
+        stopPrice:
+          $ref: '#/components/schemas/Price'
+        currency:
+          $ref: '#/components/schemas/Currency'
+        totalAmount:
+          $ref: '#/components/schemas/Quantity'
+        logoName:
+          $ref: '#/components/schemas/LogoName'
+        createDate:
+          $ref: '#/components/schemas/DateTime'
+        expireDate:
+          $ref: '#/components/schemas/DateTime'
+    
+    PortfolioPosition:
+      type: object
+      description: Позиция портфеля
+      required:
+        - instrumentUid
+        - positionUid
+        - ticker
+        - instrumentType
+        - lots
+        - changedAt
+      properties:
+        instrumentUid:
+          $ref: '#/components/schemas/InstrumentId'
+        positionUid:
+          $ref: '#/components/schemas/PositionUid'
+        ticker:
+          $ref: '#/components/schemas/Ticker'
+        instrumentType:
+          $ref: '#/components/schemas/InstrumentType'
+        lots:
+          $ref: '#/components/schemas/Lots'
+        changedAt:
+          $ref: '#/components/schemas/DateTime'
+
+    Money:
+      type: object
+      description: Денежные средства
+      required:
+        - currency
+        - quantity
+      properties:
+        currency:
+          $ref: '#/components/schemas/Currency'
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+
+    StrategyTitle:
+      type: string
+      description: Название стратегии
+      example:
+        "Стратегия автоследования"
+
+    StrategyStatus:
+      type: string
+      description: Статус стратегии
+      example:
+        "active"
+      enum:
+        - draft
+        - active
+        - frozen
+        - closed
+
+    AutofollowStrategy:
+      type: object
+      description: Стратегия автоследования
+      required:
+        - strategyId
+        - title
+        - status
+      properties:
+        strategyId:
+          $ref: '#/components/schemas/StrategyId'
+        title:
+          $ref: '#/components/schemas/StrategyTitle'
+        status:
+          $ref: '#/components/schemas/StrategyStatus'
+
+    AutofollowInstrument:
+      type: object
+      description: Инструмент автоследования
+      required:
+        - uid
+        - positionUid
+        - ticker
+        - classCode
+        - currency
+        - instrumentType
+        - lot
+        - minPriceIncrement
+        - exchange
+      properties:
+        uid:
+          $ref: '#/components/schemas/InstrumentId'
+        positionUid:
+          $ref: '#/components/schemas/PositionUid'
+        ticker:
+          $ref: '#/components/schemas/Ticker'
+        classCode:
+          $ref: '#/components/schemas/ClassCode'
+        currency:
+          $ref: '#/components/schemas/Currency'
+        instrumentType:
+          $ref: '#/components/schemas/InstrumentType'
+        lot:
+          $ref: '#/components/schemas/Lot'
+        minPriceIncrement:
+          $ref: '#/components/schemas/Quantity'
+        nominal:
+          $ref: '#/components/schemas/Quantity'
+        initialNominal:
+          $ref: '#/components/schemas/Quantity'
+        name:
+          $ref: '#/components/schemas/Name'
+        nominalCurrency:
+          $ref: '#/components/schemas/Currency'
+        exchange:
+          $ref: '#/components/schemas/Exchange'
+        logoName:
+          $ref: '#/components/schemas/LogoName'
+        expirationDate:
+          $ref: '#/components/schemas/DateTime'
