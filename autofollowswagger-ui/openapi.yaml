@@ -5,7 +5,7 @@ info:
   termsOfService: https://www.tbank.ru/invest/disclaimers/basic-information/
   version: '1.0.0'
 servers:
-  - url: "https://invest-public-api.tbank.ru/autofollow"
+  - url: "https://invest-public-api.tbank.ru"
     description: "Работа с биржей"
 tags:
   - name: AutofollowStrategy
