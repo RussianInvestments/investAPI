@@ -39,6 +39,9 @@ service MarketDataService {//Сервис для получения биржев
 
   //GetTechAnalysis — технические индикаторы по инструменту
   rpc GetTechAnalysis(GetTechAnalysisRequest) returns (GetTechAnalysisResponse);
+
+  //GetMarketValues — рыночные данные по инструментам
+  rpc GetMarketValues(GetMarketValuesRequest) returns (GetMarketValuesResponse);
 }
 
 service MarketDataStreamService {
@@ -608,6 +611,35 @@ message GetTechAnalysisResponse {
     optional Quotation signal = 5; //Значение сигнальной линии.
     optional Quotation macd = 6; //Значение линии MACD.
   }
+}
+
+message GetMarketValuesRequest {
+  repeated string instrument_id = 1; //Массив идентификаторов инструментов.
+  repeated MarketValueType values = 2; //Массив запрашиваемых параметров.
+}
+
+message GetMarketValuesResponse {
+  repeated MarketValueInstrument instruments = 1; //Массив значений параметров.
+}
+
+message MarketValueInstrument {
+  string instrument_uid = 1; //Идентификатор инструмента.
+  repeated MarketValue values = 2; //Массив параметров инструмента.
+}
+
+message MarketValue {
+  optional MarketValueType type = 1; //Тип параметра.
+  optional Quotation value = 2; //Значение.
+  optional google.protobuf.Timestamp time = 3; //Дата и время.
+}
+
+enum MarketValueType {
+  INSTRUMENT_VALUE_UNSPECIFIED = 0; //Не определен.
+  INSTRUMENT_VALUE_LAST_PRICE = 1; //Последняя биржевая цена.
+  INSTRUMENT_VALUE_LAST_PRICE_DEALER = 2; //Последняя цена дилера.
+  INSTRUMENT_VALUE_CLOSE_PRICE = 3; //Цена закрытия.
+  INSTRUMENT_VALUE_EVENING_SESSION_PRICE = 4; //Цена последней сделки с вечерней сессии.
+  INSTRUMENT_VALUE_OPEN_INTEREST = 5; // Открытый интерес, возвращается только для фьючерсов
 }
 
 enum OrderBookType {
