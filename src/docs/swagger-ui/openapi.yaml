@@ -3,8 +3,8 @@ info:
   title: "T-Invest API"
   termsOfService: "https://www.tbank.ru/invest/disclaimers/basic-information/"
   contact:
-    email: "al.a.volkov@tbank.ru"
-  version: "1.35"
+    email: "invest-public-api@tbank.ru"
+  version: "1.36"
   license:
     name: "Apache 2.0"
     url: "https://www.apache.org/licenses/LICENSE-2.0"
@@ -17,7 +17,7 @@ security:
   - Bearer: []
 externalDocs:
   description: "Документация T-Invest API"
-  url: "https://russianinvestments.github.io/investAPI/"
+  url: "https://developer.tbank.ru/invest/intro/intro/"
 tags:
   - name: "InstrumentsService"
   - name: "MarketDataService"
@@ -3506,6 +3506,90 @@ paths:
         - "MarketDataService"
       x-codegen-request-body-name: "body"
       description: "Обезличенные сделки по инструменту. Метод гарантирует получение информации за последний час."
+  /tinkoff.public.invest.api.contract.v1.MarketDataService/GetMarketValues:
+    post:
+      operationId: "MarketDataService_GetMarketValues"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1GetMarketValuesRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1GetMarketValuesResponse"
+          description: "A successful response"
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Not Found"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Request Timeout"
+        "415":
+          description: "Unsupported Media Type"
+        "429":
+          description: "Too Many Requests"
+        "500":
+          description: "Internal Server Error"
+        "501":
+          description: "Not Implemented"
+        "503":
+          description: "Service Unavailable"
+        "504":
+          description: "Gateway Timeout"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response"
+      summary: "GetMarketValues — рыночные данные по инструментам"
+      tags:
+        - "MarketDataService"
+      x-codegen-request-body-name: "body"
   /tinkoff.public.invest.api.contract.v1.MarketDataService/GetOrderBook:
     post:
       operationId: "MarketDataService_GetOrderBook"
@@ -14219,6 +14303,49 @@ components:
         correctedMargin:
           $ref: "#/components/schemas/v1MoneyValue"
       type: "object"
+    v1GetMarketValuesRequest:
+      properties:
+        instrumentId:
+          description: "Массив идентификаторов инструментов."
+          items:
+            type: "string"
+          type: "array"
+        values:
+          description: "Массив запрашиваемых параметров."
+          items:
+            $ref: "#/components/schemas/v1MarketValueType"
+          type: "array"
+      type: "object"
+    v1GetMarketValuesResponse:
+      example:
+        instruments:
+          - instrumentUid: "instrumentUid"
+            values:
+              - time: 2000-01-23T04:56:07.000Z
+                value:
+                  nano: 6
+                  units: "units"
+              - time: 2000-01-23T04:56:07.000Z
+                value:
+                  nano: 6
+                  units: "units"
+          - instrumentUid: "instrumentUid"
+            values:
+              - time: 2000-01-23T04:56:07.000Z
+                value:
+                  nano: 6
+                  units: "units"
+              - time: 2000-01-23T04:56:07.000Z
+                value:
+                  nano: 6
+                  units: "units"
+      properties:
+        instruments:
+          description: "Массив значений параметров."
+          items:
+            $ref: "#/components/schemas/v1MarketValueInstrument"
+          type: "array"
+      type: "object"
     v1GetMaxLotsRequest:
       description: "Запрос на расчет количества доступных для покупки/продажи лотов. Если не указывать цену инструмента, то расчет произведется по текущум ценам в стакане: по лучшему предложению для покупки и по лучшему спросу для продажи."
       properties:
@@ -16098,6 +16225,55 @@ components:
         pingSettings:
           $ref: "#/components/schemas/v1PingDelaySettings"
       type: "object"
+    v1MarketValue:
+      example:
+        time: 2000-01-23T04:56:07.000Z
+        value:
+          nano: 6
+          units: "units"
+      properties:
+        type:
+          $ref: "#/components/schemas/v1MarketValueType"
+        value:
+          $ref: "#/components/schemas/v1Quotation"
+        time:
+          description: "Дата и время."
+          format: "date-time"
+          type: "string"
+      type: "object"
+    v1MarketValueInstrument:
+      example:
+        instrumentUid: "instrumentUid"
+        values:
+          - time: 2000-01-23T04:56:07.000Z
+            value:
+              nano: 6
+              units: "units"
+          - time: 2000-01-23T04:56:07.000Z
+            value:
+              nano: 6
+              units: "units"
+      properties:
+        instrumentUid:
+          description: "Идентификатор инструмента."
+          type: "string"
+        values:
+          description: "Массив параметров инструмента."
+          items:
+            $ref: "#/components/schemas/v1MarketValue"
+          type: "array"
+      type: "object"
+    v1MarketValueType:
+      default: "INSTRUMENT_VALUE_UNSPECIFIED"
+      enum:
+        - "INSTRUMENT_VALUE_UNSPECIFIED"
+        - "INSTRUMENT_VALUE_LAST_PRICE"
+        - "INSTRUMENT_VALUE_LAST_PRICE_DEALER"
+        - "INSTRUMENT_VALUE_CLOSE_PRICE"
+        - "INSTRUMENT_VALUE_EVENING_SESSION_PRICE"
+        - "INSTRUMENT_VALUE_OPEN_INTEREST"
+      title: "- INSTRUMENT_VALUE_UNSPECIFIED: Не определен.\n - INSTRUMENT_VALUE_LAST_PRICE: Последняя биржевая цена.\n - INSTRUMENT_VALUE_LAST_PRICE_DEALER: Последняя цена дилера.\n - INSTRUMENT_VALUE_CLOSE_PRICE: Цена закрытия.\n - INSTRUMENT_VALUE_EVENING_SESSION_PRICE: Цена последней сделки с вечерней сессии.\n - INSTRUMENT_VALUE_OPEN_INTEREST: Открытый интерес, возвращается только для фьючерсов"
+      type: "string"
     v1MoneyValue:
       description: "Денежная сумма в определенной валюте."
       example:

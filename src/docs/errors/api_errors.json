@@ -659,6 +659,11 @@
     "type": "INVALID_ARGUMENT",
     "description": "Торговля указанным инструментом может привести к непокрытой позиции. Необходимо использовать флаг `confirm_margin_trade` для подтверждения заявки."
   },
+  "30241": {
+    "message": "`take_profit_type` not available for specified `stop_order_type`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Тип `take-profit` заявки не применим к другим стоп-заявкам."
+  },
   "35001": {
     "message": "Sandbox accounts limit reached",
     "type": "INVALID_ARGUMENT",
@@ -774,6 +779,11 @@
     "message": "No active subscriptions",
     "type": "RESOURCE_EXHAUSTED",
     "description": "В стриме отсутствуют активные подписки."
+  },
+  "80005": {
+    "message": "Stream lifetime too long",
+    "type": "RESOURCE_EXHAUSTED",
+    "description": "Стрим был завершен из-за превышения времени жизни. Подключитесь повторно."
   },
   "90001": {
     "message": "Need confirmation: %s",

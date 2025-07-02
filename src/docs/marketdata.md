@@ -74,6 +74,14 @@ GetTechAnalysis — технические индикаторы по инстр�
 
 - Тело ответа — [GetTechAnalysisResponse](#gettechanalysisresponse)
 
+
+#### GetMarketValues
+GetMarketValues — рыночные данные по инструментам
+
+- Тело запроса — [GetMarketValuesRequest](#getmarketvaluesrequest)
+
+- Тело ответа — [GetMarketValuesResponse](#getmarketvaluesresponse)
+
  <!-- range .Methods -->
 
 
@@ -857,6 +865,54 @@ subscribeCandles | Изменения статуса подписки на св�
 | macd |  [Quotation](#quotation) | Значение линии MACD. |
  <!-- end Fields -->
  <!-- end HasFields -->
+
+
+#### GetMarketValuesRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id | Массив объектов [string](#string) | Массив идентификаторов инструментов. |
+| values | Массив объектов [MarketValueType](#marketvaluetype) | Массив запрашиваемых параметров. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetMarketValuesResponse
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instruments | Массив объектов [MarketValueInstrument](#marketvalueinstrument) | Массив значений параметров. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### MarketValueInstrument
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_uid |  [string](#string) | Идентификатор инструмента. |
+| values | Массив объектов [MarketValue](#marketvalue) | Массив параметров инструмента. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### MarketValue
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| type |  [MarketValueType](#marketvaluetype) | Тип параметра. |
+| value |  [Quotation](#quotation) | Значение. |
+| time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ### Enums
@@ -976,6 +1032,21 @@ subscribeCandles | Изменения статуса подписки на св�
 | CANDLE_SOURCE_UNSPECIFIED | 0 | Источник свечей не определен. |
 | CANDLE_SOURCE_EXCHANGE | 1 | Биржевые свечи. |
 | CANDLE_SOURCE_DEALER_WEEKEND | 2 | Свечи дилера в результате торговли по выходным. |
+
+
+
+
+#### MarketValueType
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| INSTRUMENT_VALUE_UNSPECIFIED | 0 | Не определен. |
+| INSTRUMENT_VALUE_LAST_PRICE | 1 | Последняя биржевая цена. |
+| INSTRUMENT_VALUE_LAST_PRICE_DEALER | 2 | Последняя цена дилера. |
+| INSTRUMENT_VALUE_CLOSE_PRICE | 3 | Цена закрытия. |
+| INSTRUMENT_VALUE_EVENING_SESSION_PRICE | 4 | Цена последней сделки с вечерней сессии. |
+| INSTRUMENT_VALUE_OPEN_INTEREST | 5 | Открытый интерес, возвращается только для фьючерсов |
 
 
 
