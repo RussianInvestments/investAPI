@@ -130,6 +130,9 @@ service InstrumentsService {/*Методы сервиса предназначе
 
   //GetRiskRates — ставки риска по инструменту
   rpc GetRiskRates(RiskRatesRequest) returns (RiskRatesResponse);
+
+  //GetInsiderDeals —  сделки инсайдеров по инструментам
+  rpc GetInsiderDeals(GetInsiderDealsRequest) returns (GetInsiderDealsResponse);
 }
 
 //Запрос расписания торгов.
@@ -1168,15 +1171,6 @@ message GetFavoriteGroupsResponse {
   }
 }
 
-//Реальная площадка исполнения расчетов.
-enum RealExchange {
-  REAL_EXCHANGE_UNSPECIFIED = 0; //Тип не определен.
-  REAL_EXCHANGE_MOEX = 1; //Московская биржа.
-  REAL_EXCHANGE_RTS = 2; //Санкт-Петербургская биржа.
-  REAL_EXCHANGE_OTC = 3; //Внебиржевой инструмент.
-  REAL_EXCHANGE_DEALER = 4; //Инструмент, торгуемый на площадке брокера.
-}
-
 //Запрос справочника стран.
 message GetCountriesRequest {}
 
@@ -1471,6 +1465,43 @@ message TradingInterval {
   message TimeInterval {
     google.protobuf.Timestamp start_ts = 1; // Время начала интервала.
     google.protobuf.Timestamp end_ts = 2; // Время окончания интервала.
+  }
+}
+
+
+//Запрос сделок по инсайдерам
+message GetInsiderDealsRequest {
+  string instrument_id = 1;
+  int32 limit = 2;
+  optional string next_cursor = 3;
+}
+
+//сделки инсайдеров
+message GetInsiderDealsResponse {
+
+  repeated InsiderDeal insider_deals = 1; // Массив сделок.
+  optional string next_cursor = 2; // Курсор для получения следующей страницы.
+
+  message InsiderDeal {
+    int64 trade_id = 1; // Уникальный идентификатор сделки.
+    TradeDirection direction = 2; // Направление сделки.
+    string currency = 3; // Валюта сделки.
+    google.protobuf.Timestamp date = 4; // Дата сделки.
+    int64 quantity = 5; // Количество.
+    Quotation price = 6; // Цена.
+    string instrument_uid = 7; // Уникальный идентификатор инструмента.
+    string ticker = 8; // Тикер инструмента.
+    string investor_name = 9; // Имя инвестора.
+    string investor_position = 10; // Какое отношение покупатель/продавец имеет к эмитенту
+    float percentage = 11; // Купленный/проданный объём от общего количества ценных бумаг на рынке
+    bool is_option_execution = 12; //Признак является ли сделка реализацией опциона
+    google.protobuf.Timestamp  disclosure_date = 13; // Дата раскрытия сделки.
+  }
+
+  enum TradeDirection {
+    TRADE_DIRECTION_UNSPECIFIED = 0; // Не определено.
+    TRADE_DIRECTION_BUY = 1; // Покупка.
+    TRADE_DIRECTION_SELL = 2; // Продажа.
   }
 }
 

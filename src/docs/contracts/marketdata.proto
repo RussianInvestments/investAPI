@@ -639,7 +639,8 @@ enum MarketValueType {
   INSTRUMENT_VALUE_LAST_PRICE_DEALER = 2; //Последняя цена дилера.
   INSTRUMENT_VALUE_CLOSE_PRICE = 3; //Цена закрытия.
   INSTRUMENT_VALUE_EVENING_SESSION_PRICE = 4; //Цена последней сделки с вечерней сессии.
-  INSTRUMENT_VALUE_OPEN_INTEREST = 5; // Открытый интерес, возвращается только для фьючерсов
+  INSTRUMENT_VALUE_OPEN_INTEREST = 5; // Открытый интерес, возвращается только для фьючерсов.
+  INSTRUMENT_VALUE_THEOR_PRICE = 6; //Теоретическая цена, возвращается только для опционов.
 }
 
 enum OrderBookType {

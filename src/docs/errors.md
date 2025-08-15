@@ -114,6 +114,7 @@
 30217|INVALID_ARGUMENT|`smoothing_data` is invalid|Проверьте параметры запроса. Некорректный параметр `smoothing_data`.|
 30218|INVALID_ARGUMENT|Quantity of instruments can't be more than 3000|Количество инструментов в списке не может быть больше 3000.|
 30219|INVALID_ARGUMENT|`candle_source_type` is invalid|Проверьте параметры запроса. Некорректный параметр `candle_source_type`.|
+30220|INVALID_ARGUMENT|`candle_type` not supported when `limit` specified|Входной параметр `candle_type` не может быть задан, если передан `limit`|
 30221|INVALID_ARGUMENT|`order_request_id` not in UUID format|Входной параметр `order_request_id` имеет некорректное значение. Укажите параметр `order_request_id` в UUID формате. Максимальная длина — 36 символов.|
 30222|INVALID_ARGUMENT|`signal_id` not in UUID format|Входной параметр `signal_id` имеет некорректное значение. Укажите параметр `signal_id` в UUID формате. Максимальная длина — 36 символов.|
 30223|INVALID_ARGUMENT|`strategy_id` not in UUID format|Входной параметр `strategy_id` имеет некорректное значение. Укажите параметр `strategy_id` в UUID формате. Максимальная длина — 36 символов.|
@@ -130,8 +131,13 @@
 30234|INVALID_ARGUMENT|Instrument not supported|Инструмент не поддерживается методом.|
 30235|INVALID_ARGUMENT|The maximum request period for the given interval is 30 days|Для данного интервала свечи данные доступны за последние 30 дней.|
 30236|INVALID_ARGUMENT|Price in currency is not available|Сейчас конвертация цены фьючерса недоступна. Возможно, фьючерс истек или нет данных для расчета.|
-30237|INVALID_ARGUMENT|Quantity of instruments can't be more than 3000|Количество инструментов в списке не может быть больше 3000.|
-30238|INVALID_ARGUMENT|`value` is invalid|Входной параметр `value` имеет некорректное значение.|
+30237|INVALID_ARGUMENT|Missing parameter: `instrument_id`|Входной параметр `instrument_id` является обязательным.|
+30238|INVALID_ARGUMENT|No data for the specified period|За указанный интервал операции по счету не найдены.|
+30240|INVALID_ARGUMENT|Confirmation required for specified instrument|Торговля указанным инструментом может привести к непокрытой позиции. Необходимо использовать флаг `confirm_margin_trade` для подтверждения заявки.|
+30241|INVALID_ARGUMENT|`take_profit_type` not available for specified `stop_order_type`|Тип `take-profit` заявки не применим к другим стоп-заявкам.|
+30242|INVALID_ARGUMENT|specify correct `limit`|Значение `limit` должно быть от 1 до 100|
+30244|INVALID_ARGUMENT|The maximum request period exceeded|Превышен максимальный интервал для запроса.|
+30245|INVALID_ARGUMENT|`execution_status` is invalid|Входной параметр `execution_status` имеет некорректное значение.|
 35001|INVALID_ARGUMENT|Sandbox accounts limit reached|Достигнут лимит на открытие торговых счетов в песочнице. Чтобы открыть новый счет необходимо закрыть один из существующих.|
 40002|PERMISSION_DENIED|Insufficient privileges|Недостаточно прав для совершения операции.<br/>Токен доступа имеет уровень прав read-only, либо у токена нет доступа к указанному счету.<br/>[Подробнее про виды токенов](./index#_2).|
 40003|UNAUTHENTICATED|Authentication token is missing or invalid|Токен доступа не найден или не активен.<br/>Новый токен можно выпустить в [личном кабинете](https://www.tbank.ru/invest/settings/).|
@@ -155,6 +161,7 @@
 80002|RESOURCE_EXHAUSTED|Request limit exceeded|Превышен лимит запросов в минуту. [Подробнее про лимитную политику](./limits/)|
 80003|RESOURCE_EXHAUSTED|The limit on SMS sending has been exceeded, try again in a minute|Превышен лимит на отправку СМС, попробуйте через минуту. Если вы не хотите получать СМС при выставлении заявки, отключите отправку СМС в личном кабинете.|
 80004|RESOURCE_EXHAUSTED|No active subscriptions|В стриме отсутствуют активные подписки.|
+80005|RESOURCE_EXHAUSTED|Stream lifetime too long|Стрим был завершен из-за превышения времени жизни. Подключитесь повторно.|
 90001|FAILED_PRECONDITION|Need confirmation: %s|Требуется подтверждение операции.<br/>Смотрите подробнее в тексте ошибки.|
 90002|FAILED_PRECONDITION|Only for qualified investors|Торговля этим инструментом доступна только квалифицированным инвесторам.|
 90003|FAILED_PRECONDITION|The price is too high|Цена заявки слишком высокая. Разбейте заявку на заявки меньшего размера. [Подробнее про ограничения на стоимость заявки](./faq_orders/).|

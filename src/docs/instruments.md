@@ -308,6 +308,14 @@ GetRiskRates — ставки риска по инструменту
 
 - Тело ответа — [RiskRatesResponse](#riskratesresponse)
 
+
+#### GetInsiderDeals
+GetInsiderDeals —  сделки инсайдеров по инструментам
+
+- Тело запроса — [GetInsiderDealsRequest](#getinsiderdealsrequest)
+
+- Тело ответа — [GetInsiderDealsResponse](#getinsiderdealsresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -2075,6 +2083,54 @@ GetRiskRates — ставки риска по инструменту
 | end_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время окончания интервала. |
  <!-- end Fields -->
  <!-- end HasFields -->
+
+
+#### GetInsiderDealsRequest
+Запрос сделок по инсайдерам
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument_id |  [string](#string) |  |
+| limit |  [int32](#int32) |  |
+| next_cursor |  [string](#string) |  |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetInsiderDealsResponse
+сделки инсайдеров
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| insider_deals | Массив объектов [GetInsiderDealsResponse.InsiderDeal](#getinsiderdealsresponseinsiderdeal) | Массив сделок. |
+| next_cursor |  [string](#string) | Курсор для получения следующей страницы. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### GetInsiderDealsResponse.InsiderDeal
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| trade_id |  [int64](#int64) | Уникальный идентификатор сделки. |
+| direction |  [GetInsiderDealsResponse.TradeDirection](#getinsiderdealsresponsetradedirection) | Направление сделки. |
+| currency |  [string](#string) | Валюта сделки. |
+| date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата сделки. |
+| quantity |  [int64](#int64) | Количество. |
+| price |  [Quotation](#quotation) | Цена. |
+| instrument_uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| investor_name |  [string](#string) | Имя инвестора. |
+| investor_position |  [string](#string) | Какое отношение покупатель/продавец имеет к эмитенту |
+| percentage |  [float](#float) | Купленный/проданный объём от общего количества ценных бумаг на рынке |
+| is_option_execution |  [bool](#bool) | Признак является ли сделка реализацией опциона |
+| disclosure_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата раскрытия сделки. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ### Enums
@@ -2215,20 +2271,6 @@ GetRiskRates — ставки риска по инструменту
 
 
 
-#### RealExchange
-Реальная площадка исполнения расчетов.
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| REAL_EXCHANGE_UNSPECIFIED | 0 | Тип не определен. |
-| REAL_EXCHANGE_MOEX | 1 | Московская биржа. |
-| REAL_EXCHANGE_RTS | 2 | Санкт-Петербургская биржа. |
-| REAL_EXCHANGE_OTC | 3 | Внебиржевой инструмент. |
-| REAL_EXCHANGE_DEALER | 4 | Инструмент, торгуемый на площадке брокера. |
-
-
-
-
 #### Recommendation
 
 
@@ -2300,6 +2342,18 @@ GetRiskRates — ставки риска по инструменту
 | PERIOD_TYPE_QUARTER | 1 | Квартальный. |
 | PERIOD_TYPE_SEMIANNUAL | 2 | Полугодовой. |
 | PERIOD_TYPE_ANNUAL | 3 | Годовой. |
+
+
+
+
+#### GetInsiderDealsResponse.TradeDirection
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TRADE_DIRECTION_UNSPECIFIED | 0 | Не определено. |
+| TRADE_DIRECTION_BUY | 1 | Покупка. |
+| TRADE_DIRECTION_SELL | 2 | Продажа. |
 
 
  <!-- range .Enums -->

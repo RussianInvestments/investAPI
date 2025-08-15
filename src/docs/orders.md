@@ -293,6 +293,20 @@ GetOrderPrice — получить предварительную стоимос
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | account_id |  [string](#string) | Номер счета. |
+| advanced_filters |  [GetOrdersRequest.GetOrdersRequestFilters](#getordersrequestgetordersrequestfilters) | Дополнительные фильтры. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+ 
+#### GetOrdersRequest.GetOrdersRequestFilters
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время, начиная с которой нужно получить информацию в часовом поясе UTC. Параметр применим только к ордерам, созданным сегодня. |
+| to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время, до которой нужно получить информацию в часовом поясе UTC. Параметр применим только к ордерам, созданным сегодня. |
+| execution_status | Массив объектов [OrderExecutionReportStatus](#orderexecutionreportstatus) | Статусы заявок. |
  <!-- end Fields -->
  <!-- end HasFields -->
 

@@ -1,7 +1,7 @@
 asyncapi: 2.6.0
 info:
   title: T-Invest API
-  version: '1.36'
+  version: '1.40'
   description: Websocket API for streaming data
   license:
     name: Apache 2.0
@@ -13,7 +13,7 @@ tags:
   - name: OrdersStreamService
 servers:
   production-wstream:
-    url: invest-public-api.tinkoff.ru/ws
+    url: invest-public-api.tbank.ru/ws
     description: Websocket service for streaming data
     protocol: wss
 channels:
@@ -786,7 +786,7 @@ components:
           description: FIGI-идентификатор инструмента.
           type: string
         direction:
-          $ref: '#/components/schemas/v1TradeDirection'
+          $ref: '#/components/schemas/contractv1TradeDirection'
         price:
           $ref: '#/components/schemas/v1Quotation'
         quantity:
@@ -803,7 +803,7 @@ components:
         tradeSource:
           $ref: '#/components/schemas/v1TradeSourceType'
       type: object
-    v1TradeDirection:
+    contractv1TradeDirection:
       default: TRADE_DIRECTION_UNSPECIFIED
       description: |-
         Направление сделки.
