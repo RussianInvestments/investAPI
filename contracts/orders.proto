@@ -171,6 +171,13 @@ message GetOrderStateRequest {
 //Запрос получения списка активных торговых поручений.
 message GetOrdersRequest {
   string account_id = 1 [(google.api.field_behavior) = REQUIRED]; //Номер счета.
+  optional GetOrdersRequestFilters advanced_filters = 2; //Дополнительные фильтры.
+
+  message GetOrdersRequestFilters {
+    optional google.protobuf.Timestamp from = 1; //Дата и время, начиная с которой нужно получить информацию в часовом поясе UTC. Параметр применим только к ордерам, созданным сегодня.
+    optional google.protobuf.Timestamp to = 2; //Дата и время, до которой нужно получить информацию в часовом поясе UTC. Параметр применим только к ордерам, созданным сегодня.
+    repeated OrderExecutionReportStatus execution_status = 3; //Статусы заявок.
+  }
 }
 
 //Список активных торговых поручений.

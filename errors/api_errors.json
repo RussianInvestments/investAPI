@@ -664,6 +664,26 @@
     "type": "INVALID_ARGUMENT",
     "description": "Тип `take-profit` заявки не применим к другим стоп-заявкам."
   },
+  "30242": {
+    "message": "specify correct `limit`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Значение `limit` должно быть от 1 до 100"
+  },
+  "30244": {
+    "message": "The maximum request period exceeded",
+    "type": "INVALID_ARGUMENT",
+    "description": "Превышен максимальный интервал для запроса."
+  },
+  "30245": {
+    "message": "`execution_status` is invalid",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `execution_status` имеет некорректное значение."
+  },
+  "30254": {
+    "message": "Invalid parameter: `time_in_force`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `time_in_force` имеет некорректное значение."
+  },
   "35001": {
     "message": "Sandbox accounts limit reached",
     "type": "INVALID_ARGUMENT",
