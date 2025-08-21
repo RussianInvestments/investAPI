@@ -79,7 +79,9 @@ API реализован на быстром, удобном и функцион
   - [JohnReeze/TinkoffInvestSwiftSDK](https://github.com/JohnReeze/TinkoffInvestSwiftSDK)
   - [egorbos/invest-api-swift-sdk](https://github.com/egorbos/invest-api-swift-sdk)
 * [ruby](https://github.com/blackchestnut/invest_tinkoff)
-* [rust](https://github.com/ovr/tinkoff-invest-rust)
+* rust
+  - [ovr/tinkoff-invest-rust](https://github.com/ovr/tinkoff-invest-rust)
+  - [artemevsevev/t-invest-sdk](https://github.com/artemevsevev/t-invest-sdk)
 * [c++](https://github.com/samoilovv/TinkoffInvestSDK)
 
 SDK на других языках в процессе разработки.
