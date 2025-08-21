@@ -16497,6 +16497,7 @@ components:
       type: "object"
     v1MarketValueType:
       default: "INSTRUMENT_VALUE_UNSPECIFIED"
+      description: " - INSTRUMENT_VALUE_UNSPECIFIED: Не определен.\n - INSTRUMENT_VALUE_LAST_PRICE: Последняя биржевая цена.\n - INSTRUMENT_VALUE_LAST_PRICE_DEALER: Последняя цена дилера.\n - INSTRUMENT_VALUE_CLOSE_PRICE: Цена закрытия.\n - INSTRUMENT_VALUE_EVENING_SESSION_PRICE: Цена последней сделки с вечерней сессии.\n - INSTRUMENT_VALUE_OPEN_INTEREST: Открытый интерес, возвращается только для фьючерсов.\n - INSTRUMENT_VALUE_THEOR_PRICE: Теоретическая цена, возвращается только для опционов."
       enum:
         - "INSTRUMENT_VALUE_UNSPECIFIED"
         - "INSTRUMENT_VALUE_LAST_PRICE"
@@ -16504,7 +16505,7 @@ components:
         - "INSTRUMENT_VALUE_CLOSE_PRICE"
         - "INSTRUMENT_VALUE_EVENING_SESSION_PRICE"
         - "INSTRUMENT_VALUE_OPEN_INTEREST"
-      title: "- INSTRUMENT_VALUE_UNSPECIFIED: Не определен.\n - INSTRUMENT_VALUE_LAST_PRICE: Последняя биржевая цена.\n - INSTRUMENT_VALUE_LAST_PRICE_DEALER: Последняя цена дилера.\n - INSTRUMENT_VALUE_CLOSE_PRICE: Цена закрытия.\n - INSTRUMENT_VALUE_EVENING_SESSION_PRICE: Цена последней сделки с вечерней сессии.\n - INSTRUMENT_VALUE_OPEN_INTEREST: Открытый интерес, возвращается только для фьючерсов"
+        - "INSTRUMENT_VALUE_THEOR_PRICE"
       type: "string"
     v1MoneyValue:
       description: "Денежная сумма в определенной валюте."
