@@ -679,10 +679,65 @@
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр `execution_status` имеет некорректное значение."
   },
+  "30246": {
+    "message": "Invalid parameter: `amount`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `amount` имеет некорректное значение. Значение должно быть неотрицательным и кратным 0.01."
+  },
+  "30247": {
+    "message": "Missing parameter: `amount`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `amount` является обязательным."
+  },
+  "30248": {
+    "message": "Missing parameter: `to_account_id`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `to_account_id` является обязательным."
+  },
+  "30249": {
+    "message": "Missing parameter: `from_account_id`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `from_account_id` является обязательным."
+  },
+  "30250": {
+    "message": "Invalid parameter: `to_account_id`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Зачисление денежных средств возможно только на действующие брокерские счета."
+  },
+  "30251": {
+    "message": "Transaction error: %s",
+    "type": "INVALID_ARGUMENT",
+    "description": "Ошибка выполнения транзакции.<br/>Смотрите подробнее в тексте ошибки."
+  },
+  "30252": {
+    "message": "Invalid parameter: `from_account_id`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Списание денежных средств возможно только с действующих брокерских счетов. Недоступно для ИИС."
+  },
   "30254": {
     "message": "Invalid parameter: `time_in_force`",
     "type": "INVALID_ARGUMENT",
     "description": "Входной параметр `time_in_force` имеет некорректное значение."
+  },
+  "30255": {
+    "message": "Account forbidden for trading",
+    "type": "INVALID_ARGUMENT",
+    "description": "Торговля по этому счету запрещена."
+  },
+  "30256": {
+    "message": "Missing parameter: `transaction_id`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `transaction_id` является обязательным."
+  },
+  "30257": {
+    "message": "Invalid parameter: `transaction_id`",
+    "type": "INVALID_ARGUMENT",
+    "description": "Входной параметр `transaction_id` имеет некорректное значение. Укажите корректное значение параметра 'transaction_id' в формате uuid."
+  },
+  "30258": {
+    "message": "Specified currency not available for the operation",
+    "type": "INVALID_ARGUMENT",
+    "description": "Переданная валюта недоступна для данной операции."
   },
   "35001": {
     "message": "Sandbox accounts limit reached",

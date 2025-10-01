@@ -140,6 +140,30 @@ GetSandboxMaxLots — расчет количества доступных дл�
 
 - Тело ответа — [GetMaxLotsResponse](#getmaxlotsresponse)
 
+
+#### PostSandboxStopOrder
+PostSandboxStopOrder — выставить стоп-заявку
+
+- Тело запроса — [PostStopOrderRequest](#poststoporderrequest)
+
+- Тело ответа — [PostStopOrderResponse](#poststoporderresponse)
+
+
+#### GetSandboxStopOrders
+GetSandboxStopOrders — получить список активных стоп-заявок по счету
+
+- Тело запроса — [GetStopOrdersRequest](#getstopordersrequest)
+
+- Тело ответа — [GetStopOrdersResponse](#getstopordersresponse)
+
+
+#### CancelSandboxStopOrder
+CancelSandboxStopOrder — отменить стоп-заявку
+
+- Тело запроса — [CancelStopOrderRequest](#cancelstoporderrequest)
+
+- Тело ответа — [CancelStopOrderResponse](#cancelstoporderresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 

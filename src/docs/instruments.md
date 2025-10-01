@@ -316,6 +316,22 @@ GetInsiderDeals —  сделки инсайдеров по инструмент
 
 - Тело ответа — [GetInsiderDealsResponse](#getinsiderdealsresponse)
 
+
+#### StructuredNoteBy
+StructuredNoteBy — получить структурную ноту по ее идентификатору
+
+- Тело запроса — [InstrumentRequest](#instrumentrequest)
+
+- Тело ответа — [StructuredNoteResponse](#structurednoteresponse)
+
+
+#### StructuredNotes
+StructuredNotes — список структурных нот
+
+- Тело запроса — [InstrumentsRequest](#instrumentsrequest)
+
+- Тело ответа — [StructuredNotesResponse](#structurednotesresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -712,6 +728,28 @@ GetInsiderDeals —  сделки инсайдеров по инструмент
  <!-- end HasFields -->
 
 
+#### StructuredNoteResponse
+Данные по структурной ноте.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instrument |  [StructuredNote](#structurednote) | Информация о структурной ноте. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### StructuredNotesResponse
+Данные по структурным нотам.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| instruments | Массив объектов [StructuredNote](#structurednote) | Массив структурных нот. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
 #### Bond
 Объект передачи информации об облигации.
 
@@ -991,6 +1029,94 @@ GetInsiderDeals —  сделки инсайдеров по инструмент
 | brand |  [BrandData](#branddata) | Информация о бренде. |
 | dlong_client |  [Quotation](#quotation) | Ставка риска в лонг с учетом текущего уровня риска портфеля клиента. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5). |
 | dshort_client |  [Quotation](#quotation) | Ставка риска в шорт с учетом текущего уровня риска портфеля клиента. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5). |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### StructuredNote
+Объект передачи информации о структурной ноте.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | Уникальный идентификатор инструмента. |
+| figi |  [string](#string) | FIGI-идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
+| isin |  [string](#string) | ISIN-идентификатор инструмента. |
+| name |  [string](#string) | Название инструмента. |
+| asset_uid |  [string](#string) | Уникальный идентификатор актива. |
+| position_uid |  [string](#string) | Уникальный идентификатор позиции. |
+| min_price_increment |  [Quotation](#quotation) | Шаг цены. |
+| lot |  [int32](#int32) | Лотность инструмента. |
+| nominal |  [MoneyValue](#moneyvalue) | Номинал. |
+| currency |  [string](#string) | Валюта расчетов. |
+| maturity_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата погашения облигации в формате UTC. |
+| placement_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата размещения в формате UTC. |
+| issue_kind |  [string](#string) | Форма выпуска. |
+| issue_size |  [int32](#int32) | Размер выпуска. |
+| issue_size_plan |  [int32](#int32) | Плановый размер выпуска. |
+| dlong_client |  [Quotation](#quotation) | Ставка риска клиента по инструменту лонг. |
+| dshort_client |  [Quotation](#quotation) | Ставка риска клиента по инструменту шорт. |
+| short_enabled_flag |  [bool](#bool) | Признак доступности для операций в шорт. |
+| exchange |  [string](#string) | Торговая площадка (секция биржи). |
+| trading_status |  [SecurityTradingStatus](#securitytradingstatus) | Текущий режим торгов инструмента. |
+| api_trade_available_flag |  [bool](#bool) | Признак доступности торгов по бумаге через API. |
+| buy_available_flag |  [bool](#bool) | Признак доступности для покупки. |
+| sell_available_flag |  [bool](#bool) | Признак доступности для продажи. |
+| limit_order_available_flag |  [bool](#bool) | Признак доступности выставления лимитной заявки по инструменту. |
+| market_order_available_flag |  [bool](#bool) | Признак доступности выставления рыночной заявки по инструменту. |
+| bestprice_order_available_flag |  [bool](#bool) | Признак доступности выставления bestprice заявки по инструменту. |
+| weekend_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом по выходным. |
+| liquidity_flag |  [bool](#bool) | Флаг достаточной ликвидности. |
+| for_iis_flag |  [bool](#bool) | Возможность покупки/продажи на ИИС. |
+| for_qual_investor_flag |  [bool](#bool) | Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов. |
+| pawnshop_list_flag |  [bool](#bool) | Признак ФИ, включенного в ломбардный список. |
+| real_exchange |  [RealExchange](#realexchange) | Реальная площадка исполнения расчётов. |
+| first_1min_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой минутной свечи. |
+| first_1day_candle_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата первой дневной свечи. |
+| borrow_name |  [string](#string) | Название заемщика. |
+| type |  [string](#string) | Тип структурной ноты. |
+| logic_portfolio |  [StructuredNote.LogicPortfolio](#structurednotelogicportfolio) | Стратегия портфеля. |
+| asset_type |  [AssetType](#assettype) | Тип базового актива. |
+| basic_assets | Массив объектов [StructuredNote.BasicAsset](#structurednotebasicasset) | Базовые активы, входящие в ноту. |
+| safety_barrier |  [Quotation](#quotation) | Барьер сохранности (в процентах). |
+| coupon_period_base |  [string](#string) | Базис расчета НКД. |
+| observation_principle |  [StructuredNote.ObservationPrinciple](#structurednoteobservationprinciple) | Принцип наблюдений. |
+| observation_frequency |  [string](#string) | Частота наблюдений. |
+| initial_price_fixing_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата фиксации цен базовых активов. |
+| yield | Массив объектов [StructuredNote.Yield](#structurednoteyield) | Доходность по ноте в годовом выражении. |
+| coupon_saving_flag |  [bool](#bool) | Признак сохранения купонов. |
+| sector |  [string](#string) | Сектор экономики. |
+| country_of_risk |  [string](#string) | Код страны рисков. |
+| country_of_risk_name |  [string](#string) | Наименование страны рисков. |
+| logo_name |  [string](#string) | Имя файла логотипа эмитента. |
+| required_tests | Массив объектов [string](#string) | Тесты, которые необходимо пройти клиенту, чтобы совершать покупки по бумаге. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### StructuredNote.BasicAsset
+Базовый актив.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| uid |  [string](#string) | Уникальный идентификатор базового актива. |
+| type |  [AssetType](#assettype) | Тип базового актива. |
+| initial_price |  [Quotation](#quotation) | Начальная цена базового актива. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### StructuredNote.Yield
+Доходность.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| type |  [StructuredNote.YieldType](#structurednoteyieldtype) | Тип доходности. |
+| value |  [Quotation](#quotation) | Значение доходности. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -2333,6 +2459,45 @@ GetInsiderDeals —  сделки инсайдеров по инструмент
 
 
 
+#### StructuredNote.LogicPortfolio
+Стратегия портфеля.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| LOGIC_PORTFOLIO_UNSPECIFIED | 0 | Стратегия портфеля не определена. |
+| LOGIC_PORTFOLIO_VOLATILITY | 1 | Волатильность. |
+| LOGIC_PORTFOLIO_CORRELATION | 2 | Корреляция. |
+
+
+
+
+#### StructuredNote.ObservationPrinciple
+Принцип наблюдений.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OBSERVATION_PRINCIPLE_UNSPECIFIED | 0 | Принцип наблюдений не определен. |
+| OBSERVATION_PRINCIPLE_WORST_BASIC_ASSET | 1 | По худшему базовому активу. |
+| OBSERVATION_PRINCIPLE_BEST_BASIC_ASSET | 2 | По лучшему базовому активу. |
+| OBSERVATION_PRINCIPLE_AVERAGE_OF_BASIC_ASSETS | 3 | Среднее значение по базовым активам. |
+| OBSERVATION_PRINCIPLE_SINGLE_BASIC_ASSET_PERFORMANCE | 4 | Динамика актива (только если у ноты один базовый актив). |
+
+
+
+
+#### StructuredNote.YieldType
+Тип доходности.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| YIELD_TYPE_UNSPECIFIED | 0 | Тип доходности не определен. |
+| YIELD_TYPE_GUARANTED_COUPON | 1 | Гарантированный купон. |
+| YIELD_TYPE_CONDITIONAL_COUPON | 2 | Условный купон. |
+| YIELD_TYPE_PARTICIPATION | 3 | Участие в росте. |
+
+
+
+
 #### GetAssetReportsResponse.AssetReportPeriodType
 
 
@@ -2354,6 +2519,8 @@ GetInsiderDeals —  сделки инсайдеров по инструмент
 | TRADE_DIRECTION_UNSPECIFIED | 0 | Не определено. |
 | TRADE_DIRECTION_BUY | 1 | Покупка. |
 | TRADE_DIRECTION_SELL | 2 | Продажа. |
+| TRADE_DIRECTION_INCREASE | 3 | Увеличение доли. |
+| TRADE_DIRECTION_DECREASE | 4 | Уменьшение доли. |
 
 
  <!-- range .Enums -->

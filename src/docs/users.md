@@ -46,6 +46,24 @@ GetInfo — информация о пользователе
 
 - Тело ответа — [GetInfoResponse](#getinforesponse)
 
+
+#### GetBankAccounts
+GetBankAccounts — банковские счета пользователя
+Получить список счетов пользователя, в том числе и банковских.
+
+- Тело запроса — [GetBankAccountsRequest](#getbankaccountsrequest)
+
+- Тело ответа — [GetBankAccountsResponse](#getbankaccountsresponse)
+
+
+#### CurrencyTransfer
+CurrencyTransfer — перевод денежных средств между счетами
+Перевести денежные средства между брокерскими счетами
+
+- Тело запроса — [CurrencyTransferRequest](#currencytransferrequest)
+
+- Тело ответа — [CurrencyTransferResponse](#currencytransferresponse)
+
  <!-- range .Methods -->
  <!-- range .Services -->
 
@@ -145,6 +163,7 @@ GetInfo — информация о пользователе
 | ----- | ---- | ----------- |
 | limit_per_minute |  [int32](#int32) | Количество unary-запросов в минуту. |
 | methods | Массив объектов [string](#string) | Названия методов. |
+| limit_per_second |  [int32](#int32) | Количество unary-запросов в секунду. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -182,6 +201,58 @@ GetInfo — информация о пользователе
 | risk_level_code |  [string](#string) | Категория риска. |
  <!-- end Fields -->
  <!-- end HasFields -->
+
+
+#### GetBankAccountsRequest
+Запрос списка банковских счетов пользователя.
+
+ <!-- end HasFields -->
+
+
+#### GetBankAccountsResponse
+Список банковских счетов пользователя.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| bank_accounts | Массив объектов [BankAccount](#bankaccount) | Массив банковских счетов. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### BankAccount
+Банковский счeт.
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| id |  [string](#string) | Идентификатор счeта. |
+| name |  [string](#string) | Название счeта. |
+| money | Массив объектов [MoneyValue](#moneyvalue) | Список валютных позиций на счeте. |
+| opened_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата открытия счeта в часовом поясе UTC. |
+| type |  [AccountType](#accounttype) | Тип счeта. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### CurrencyTransferRequest
+
+
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| from_account_id |  [string](#string) | Номер счета списания. |
+| to_account_id |  [string](#string) | Номер счета зачисления. |
+| amount |  [MoneyValue](#moneyvalue) | Сумма перевода с указанием валюты. |
+| transaction_id |  [string](#string) | Идентификатор запроса выставления поручения для целей идемпотентности в формате UUID. |
+ <!-- end Fields -->
+ <!-- end HasFields -->
+
+
+#### CurrencyTransferResponse
+
+
+ <!-- end HasFields -->
  <!-- end messages -->
 
 ### Enums
@@ -197,6 +268,8 @@ GetInfo — информация о пользователе
 | ACCOUNT_TYPE_TINKOFF_IIS | 2 | ИИС. |
 | ACCOUNT_TYPE_INVEST_BOX | 3 | Инвесткопилка. |
 | ACCOUNT_TYPE_INVEST_FUND | 4 | Фонд денежного рынка. |
+| ACCOUNT_TYPE_DEBIT | 5 | Дебетовый карточный счeт. |
+| ACCOUNT_TYPE_SAVING | 6 | Накопительный счeт. |
 
 
 

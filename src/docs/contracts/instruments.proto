@@ -133,6 +133,12 @@ service InstrumentsService {/*Методы сервиса предназначе
 
   //GetInsiderDeals —  сделки инсайдеров по инструментам
   rpc GetInsiderDeals(GetInsiderDealsRequest) returns (GetInsiderDealsResponse);
+
+  //StructuredNoteBy — получить структурную ноту по ее идентификатору
+  rpc StructuredNoteBy (InstrumentRequest) returns (StructuredNoteResponse);
+
+  //StructuredNotes — список структурных нот
+  rpc StructuredNotes(InstrumentsRequest) returns (StructuredNotesResponse);
 }
 
 //Запрос расписания торгов.
@@ -420,6 +426,16 @@ message ShareResponse {
 //Данные по акциям.
 message SharesResponse {
   repeated Share instruments = 1; //Массив акций.
+}
+
+//Данные по структурной ноте.
+message StructuredNoteResponse {
+  StructuredNote instrument = 1; // Информация о структурной ноте.
+}
+
+//Данные по структурным нотам.
+message StructuredNotesResponse {
+  repeated StructuredNote instruments = 1; //Массив структурных нот.
 }
 
 //Объект передачи информации об облигации.
@@ -718,6 +734,100 @@ message Share {
 
   Quotation dlong_client = 90; //Ставка риска в лонг с учетом текущего уровня риска портфеля клиента. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
   Quotation dshort_client = 91; //Ставка риска в шорт с учетом текущего уровня риска портфеля клиента. [Подробнее про ставки риска](https://www.tbank.ru/invest/help/brokerage/account/margin/about/#q5).
+}
+
+//Объект передачи информации о структурной ноте.
+message StructuredNote {
+  string uid = 1; //Уникальный идентификатор инструмента.
+  string figi = 2; //FIGI-идентификатор инструмента.
+  string ticker = 3; //Тикер инструмента.
+  string class_code = 4; //Класс-код (секция торгов).
+  string isin = 5; //ISIN-идентификатор инструмента.
+  string name = 6; //Название инструмента.
+  string asset_uid = 7; //Уникальный идентификатор актива.
+  string position_uid = 8; //Уникальный идентификатор позиции.
+  Quotation min_price_increment = 9; //Шаг цены.
+  int32 lot = 10; //Лотность инструмента.
+  MoneyValue nominal = 11; //Номинал.
+  string currency = 12; //Валюта расчетов.
+  google.protobuf.Timestamp maturity_date = 13; //Дата погашения облигации в формате UTC.
+  google.protobuf.Timestamp placement_date = 14; //Дата размещения в формате UTC.
+  string issue_kind = 15; //Форма выпуска.
+  int32 issue_size = 16; //Размер выпуска.
+  int32 issue_size_plan = 17; //Плановый размер выпуска.
+  Quotation dlong_client = 18; //Ставка риска клиента по инструменту лонг.
+  Quotation dshort_client = 19; //Ставка риска клиента по инструменту шорт.
+  bool short_enabled_flag = 20; //Признак доступности для операций в шорт.
+  string exchange = 21; //Торговая площадка (секция биржи).
+  SecurityTradingStatus trading_status = 22; //Текущий режим торгов инструмента.
+  bool api_trade_available_flag = 23; //Признак доступности торгов по бумаге через API.
+  bool buy_available_flag = 24; //Признак доступности для покупки.
+  bool sell_available_flag = 25; //Признак доступности для продажи.
+  bool limit_order_available_flag = 26; //Признак доступности выставления лимитной заявки по инструменту.
+  bool market_order_available_flag = 27; //Признак доступности выставления рыночной заявки по инструменту.
+  bool bestprice_order_available_flag = 28; //Признак доступности выставления bestprice заявки по инструменту.
+  bool weekend_flag = 29; //Флаг отображающий доступность торговли инструментом по выходным.
+  bool liquidity_flag = 30; //Флаг достаточной ликвидности.
+  bool for_iis_flag = 31; //Возможность покупки/продажи на ИИС.
+  bool for_qual_investor_flag = 32; //Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов.
+  bool pawnshop_list_flag = 33; //Признак ФИ, включенного в ломбардный список.
+  RealExchange real_exchange = 34; //Реальная площадка исполнения расчётов.
+  google.protobuf.Timestamp first_1min_candle_date = 35; //Дата первой минутной свечи.
+  google.protobuf.Timestamp first_1day_candle_date = 36; //Дата первой дневной свечи.
+  string borrow_name = 37; //Название заемщика.
+  string type = 38; //Тип структурной ноты.
+  LogicPortfolio logic_portfolio = 39; //Стратегия портфеля.
+  AssetType asset_type = 40; //Тип базового актива.
+  repeated BasicAsset basic_assets = 41; //Базовые активы, входящие в ноту.
+  Quotation safety_barrier = 42; //Барьер сохранности (в процентах).
+  string coupon_period_base = 43; //Базис расчета НКД.
+  ObservationPrinciple observation_principle = 44; //Принцип наблюдений.
+  string observation_frequency = 45; //Частота наблюдений.
+  google.protobuf.Timestamp initial_price_fixing_date = 46; //Дата фиксации цен базовых активов.
+  repeated Yield yield = 47; //Доходность по ноте в годовом выражении.
+  bool coupon_saving_flag = 48; //Признак сохранения купонов.
+  string sector = 49; //Сектор экономики.
+  string country_of_risk = 50; //Код страны рисков.
+  string country_of_risk_name = 51; //Наименование страны рисков.
+  string logo_name = 52; //Имя файла логотипа эмитента.
+  repeated string required_tests = 53; //Тесты, которые необходимо пройти клиенту, чтобы совершать покупки по бумаге.
+
+  //Базовый актив.
+  message BasicAsset {
+    string uid = 1; //Уникальный идентификатор базового актива.
+    AssetType type = 2; //Тип базового актива.
+    Quotation initial_price = 3; //Начальная цена базового актива.
+  }
+
+  //Доходность.
+  message Yield {
+    YieldType type = 1; //Тип доходности.
+    Quotation value = 2; //Значение доходности.
+  }
+
+  //Стратегия портфеля.
+  enum LogicPortfolio {
+    LOGIC_PORTFOLIO_UNSPECIFIED = 0; //Стратегия портфеля не определена.
+    LOGIC_PORTFOLIO_VOLATILITY = 1; //Волатильность.
+    LOGIC_PORTFOLIO_CORRELATION = 2; //Корреляция.
+  }
+
+  //Принцип наблюдений.
+  enum ObservationPrinciple {
+    OBSERVATION_PRINCIPLE_UNSPECIFIED = 0; //Принцип наблюдений не определен.
+    OBSERVATION_PRINCIPLE_WORST_BASIC_ASSET = 1; //По худшему базовому активу.
+    OBSERVATION_PRINCIPLE_BEST_BASIC_ASSET = 2; //По лучшему базовому активу.
+    OBSERVATION_PRINCIPLE_AVERAGE_OF_BASIC_ASSETS = 3; //Среднее значение по базовым активам.
+    OBSERVATION_PRINCIPLE_SINGLE_BASIC_ASSET_PERFORMANCE = 4; //Динамика актива (только если у ноты один базовый актив).
+  }
+
+  //Тип доходности.
+  enum YieldType {
+    YIELD_TYPE_UNSPECIFIED = 0; //Тип доходности не определен.
+    YIELD_TYPE_GUARANTED_COUPON = 1; //Гарантированный купон.
+    YIELD_TYPE_CONDITIONAL_COUPON = 2; //Условный купон.
+    YIELD_TYPE_PARTICIPATION = 3; //Участие в росте.
+  }
 }
 
 //Запрос НКД по облигации.
@@ -1502,6 +1612,8 @@ message GetInsiderDealsResponse {
     TRADE_DIRECTION_UNSPECIFIED = 0; // Не определено.
     TRADE_DIRECTION_BUY = 1; // Покупка.
     TRADE_DIRECTION_SELL = 2; // Продажа.
+    TRADE_DIRECTION_INCREASE = 3; // Увеличение доли.
+    TRADE_DIRECTION_DECREASE = 4; // Уменьшение доли.
   }
 }
 
