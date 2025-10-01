@@ -1,7 +1,7 @@
 asyncapi: 2.6.0
 info:
   title: T-Invest API
-  version: '1.40'
+  version: '1.42'
   description: Websocket API for streaming data
   license:
     name: Apache 2.0

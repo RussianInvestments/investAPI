@@ -4,7 +4,7 @@ info:
   termsOfService: "https://www.tbank.ru/invest/disclaimers/basic-information/"
   contact:
     email: "invest-public-api@tbank.ru"
-  version: "1.40"
+  version: "1.42"
   license:
     name: "Apache 2.0"
     url: "https://www.apache.org/licenses/LICENSE-2.0"
@@ -3164,6 +3164,176 @@ paths:
       tags:
         - "InstrumentsService"
       x-codegen-request-body-name: "body"
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/StructuredNoteBy:
+    post:
+      operationId: "InstrumentsService_StructuredNoteBy"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1InstrumentRequest"
+        description: "Запрос получения инструмента по идентификатору."
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1StructuredNoteResponse"
+          description: "A successful response."
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Not Found"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Request Timeout"
+        "415":
+          description: "Unsupported Media Type"
+        "429":
+          description: "Too Many Requests"
+        "500":
+          description: "Internal Server Error"
+        "501":
+          description: "Not Implemented"
+        "503":
+          description: "Service Unavailable"
+        "504":
+          description: "Gateway Timeout"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "StructuredNoteBy — получить структурную ноту по ее идентификатору"
+      tags:
+        - "InstrumentsService"
+      x-codegen-request-body-name: "body"
+  /tinkoff.public.invest.api.contract.v1.InstrumentsService/StructuredNotes:
+    post:
+      operationId: "InstrumentsService_StructuredNotes"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1InstrumentsRequest"
+        description: "Запрос получения инструментов."
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1StructuredNotesResponse"
+          description: "A successful response."
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Not Found"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Request Timeout"
+        "415":
+          description: "Unsupported Media Type"
+        "429":
+          description: "Too Many Requests"
+        "500":
+          description: "Internal Server Error"
+        "501":
+          description: "Not Implemented"
+        "503":
+          description: "Service Unavailable"
+        "504":
+          description: "Gateway Timeout"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "StructuredNotes — список структурных нот"
+      tags:
+        - "InstrumentsService"
+      x-codegen-request-body-name: "body"
   /tinkoff.public.invest.api.contract.v1.InstrumentsService/TradingSchedules:
     post:
       operationId: "InstrumentsService_TradingSchedules"
@@ -5882,6 +6052,91 @@ paths:
       tags:
         - "SandboxService"
       x-codegen-request-body-name: "body"
+  /tinkoff.public.invest.api.contract.v1.SandboxService/CancelSandboxStopOrder:
+    post:
+      operationId: "SandboxService_CancelSandboxStopOrder"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1CancelStopOrderRequest"
+        description: "Запрос отмены выставленной стоп-заявки."
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1CancelStopOrderResponse"
+          description: "A successful response."
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Not Found"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Request Timeout"
+        "415":
+          description: "Unsupported Media Type"
+        "429":
+          description: "Too Many Requests"
+        "500":
+          description: "Internal Server Error"
+        "501":
+          description: "Not Implemented"
+        "503":
+          description: "Service Unavailable"
+        "504":
+          description: "Gateway Timeout"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "CancelSandboxStopOrder — отменить стоп-заявку"
+      tags:
+        - "SandboxService"
+      x-codegen-request-body-name: "body"
   /tinkoff.public.invest.api.contract.v1.SandboxService/CloseSandboxAccount:
     post:
       operationId: "SandboxService_CloseSandboxAccount"
@@ -6649,6 +6904,91 @@ paths:
       tags:
         - "SandboxService"
       x-codegen-request-body-name: "body"
+  /tinkoff.public.invest.api.contract.v1.SandboxService/GetSandboxStopOrders:
+    post:
+      operationId: "SandboxService_GetSandboxStopOrders"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1GetStopOrdersRequest"
+        description: "Запрос получения списка активных стоп-заявок."
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1GetStopOrdersResponse"
+          description: "A successful response."
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Not Found"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Request Timeout"
+        "415":
+          description: "Unsupported Media Type"
+        "429":
+          description: "Too Many Requests"
+        "500":
+          description: "Internal Server Error"
+        "501":
+          description: "Not Implemented"
+        "503":
+          description: "Service Unavailable"
+        "504":
+          description: "Gateway Timeout"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "GetSandboxStopOrders — получить список активных стоп-заявок по счету"
+      tags:
+        - "SandboxService"
+      x-codegen-request-body-name: "body"
   /tinkoff.public.invest.api.contract.v1.SandboxService/GetSandboxWithdrawLimits:
     post:
       operationId: "SandboxService_GetSandboxWithdrawLimits"
@@ -6990,6 +7330,91 @@ paths:
         - "SandboxService"
       x-codegen-request-body-name: "body"
       description: "Особенности работы приведены в [статье](/invest/services/orders/async)."
+  /tinkoff.public.invest.api.contract.v1.SandboxService/PostSandboxStopOrder:
+    post:
+      operationId: "SandboxService_PostSandboxStopOrder"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1PostStopOrderRequest"
+        description: "Запрос выставления стоп-заявки."
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1PostStopOrderResponse"
+          description: "A successful response."
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Not Found"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Request Timeout"
+        "415":
+          description: "Unsupported Media Type"
+        "429":
+          description: "Too Many Requests"
+        "500":
+          description: "Internal Server Error"
+        "501":
+          description: "Not Implemented"
+        "503":
+          description: "Service Unavailable"
+        "504":
+          description: "Gateway Timeout"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "PostSandboxStopOrder — выставить стоп-заявку"
+      tags:
+        - "SandboxService"
+      x-codegen-request-body-name: "body"
   /tinkoff.public.invest.api.contract.v1.SandboxService/ReplaceSandboxOrder:
     post:
       operationId: "SandboxService_ReplaceSandboxOrder"
@@ -7585,6 +8010,91 @@ paths:
       tags:
         - "StopOrdersService"
       x-codegen-request-body-name: "body"
+  /tinkoff.public.invest.api.contract.v1.UsersService/CurrencyTransfer:
+    post:
+      operationId: "UsersService_CurrencyTransfer"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1CurrencyTransferRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1CurrencyTransferResponse"
+          description: "A successful response."
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Not Found"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Request Timeout"
+        "415":
+          description: "Unsupported Media Type"
+        "429":
+          description: "Too Many Requests"
+        "500":
+          description: "Internal Server Error"
+        "501":
+          description: "Not Implemented"
+        "503":
+          description: "Service Unavailable"
+        "504":
+          description: "Gateway Timeout"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "CurrencyTransfer — перевод денежных средств между счетами"
+      tags:
+        - "UsersService"
+      x-codegen-request-body-name: "body"
+      description: "Перевести денежные средства между брокерскими счетами"
   /tinkoff.public.invest.api.contract.v1.UsersService/GetAccounts:
     post:
       operationId: "UsersService_GetAccounts"
@@ -7671,6 +8181,92 @@ paths:
         - "UsersService"
       x-codegen-request-body-name: "body"
       description: "Получить список счетов."
+  /tinkoff.public.invest.api.contract.v1.UsersService/GetBankAccounts:
+    post:
+      operationId: "UsersService_GetBankAccounts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/v1GetBankAccountsRequest"
+        description: "Запрос списка банковских счетов пользователя."
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/v1GetBankAccountsResponse"
+          description: "A successful response."
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 3
+                message: "interval is invalid"
+                description: 30011
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 16
+                message: "authentication token is missing or invalid"
+                description: 40003
+        "403":
+          description: "Forbidden"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 7
+                message: "insufficient privileges"
+                description: 40002
+        "404":
+          description: "Not Found"
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/ErrorResponse"
+              example:
+                code: 5
+                message: "account not found"
+                description: 50004
+        "408":
+          description: "Request Timeout"
+        "415":
+          description: "Unsupported Media Type"
+        "429":
+          description: "Too Many Requests"
+        "500":
+          description: "Internal Server Error"
+        "501":
+          description: "Not Implemented"
+        "503":
+          description: "Service Unavailable"
+        "504":
+          description: "Gateway Timeout"
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/rpcStatus"
+          description: "An unexpected error response."
+      summary: "GetBankAccounts — банковские счета пользователя"
+      tags:
+        - "UsersService"
+      x-codegen-request-body-name: "body"
+      description: "Получить список счетов пользователя, в том числе и банковских."
   /tinkoff.public.invest.api.contract.v1.UsersService/GetInfo:
     post:
       operationId: "UsersService_GetInfo"
@@ -8882,6 +9478,61 @@ components:
           description: "Ошибка."
           type: "string"
       type: "object"
+    StructuredNoteBasicAsset:
+      description: "Базовый актив."
+      example:
+        uid: "uid"
+        initialPrice:
+          nano: 6
+          units: "units"
+      properties:
+        uid:
+          description: "Уникальный идентификатор базового актива."
+          type: "string"
+        type:
+          $ref: "#/components/schemas/v1AssetType"
+        initialPrice:
+          $ref: "#/components/schemas/v1Quotation"
+      type: "object"
+    StructuredNoteLogicPortfolio:
+      default: "LOGIC_PORTFOLIO_UNSPECIFIED"
+      description: "Стратегия портфеля.\n\n - LOGIC_PORTFOLIO_UNSPECIFIED: Стратегия портфеля не определена.\n - LOGIC_PORTFOLIO_VOLATILITY: Волатильность.\n - LOGIC_PORTFOLIO_CORRELATION: Корреляция."
+      enum:
+        - "LOGIC_PORTFOLIO_UNSPECIFIED"
+        - "LOGIC_PORTFOLIO_VOLATILITY"
+        - "LOGIC_PORTFOLIO_CORRELATION"
+      type: "string"
+    StructuredNoteObservationPrinciple:
+      default: "OBSERVATION_PRINCIPLE_UNSPECIFIED"
+      description: "Принцип наблюдений.\n\n - OBSERVATION_PRINCIPLE_UNSPECIFIED: Принцип наблюдений не определен.\n - OBSERVATION_PRINCIPLE_WORST_BASIC_ASSET: По худшему базовому активу.\n - OBSERVATION_PRINCIPLE_BEST_BASIC_ASSET: По лучшему базовому активу.\n - OBSERVATION_PRINCIPLE_AVERAGE_OF_BASIC_ASSETS: Среднее значение по базовым активам.\n - OBSERVATION_PRINCIPLE_SINGLE_BASIC_ASSET_PERFORMANCE: Динамика актива (только если у ноты один базовый актив)."
+      enum:
+        - "OBSERVATION_PRINCIPLE_UNSPECIFIED"
+        - "OBSERVATION_PRINCIPLE_WORST_BASIC_ASSET"
+        - "OBSERVATION_PRINCIPLE_BEST_BASIC_ASSET"
+        - "OBSERVATION_PRINCIPLE_AVERAGE_OF_BASIC_ASSETS"
+        - "OBSERVATION_PRINCIPLE_SINGLE_BASIC_ASSET_PERFORMANCE"
+      type: "string"
+    StructuredNoteYield:
+      description: "Доходность."
+      example:
+        value:
+          nano: 6
+          units: "units"
+      properties:
+        type:
+          $ref: "#/components/schemas/StructuredNoteYieldType"
+        value:
+          $ref: "#/components/schemas/v1Quotation"
+      type: "object"
+    StructuredNoteYieldType:
+      default: "YIELD_TYPE_UNSPECIFIED"
+      description: "Тип доходности.\n\n - YIELD_TYPE_UNSPECIFIED: Тип доходности не определен.\n - YIELD_TYPE_GUARANTED_COUPON: Гарантированный купон.\n - YIELD_TYPE_CONDITIONAL_COUPON: Условный купон.\n - YIELD_TYPE_PARTICIPATION: Участие в росте."
+      enum:
+        - "YIELD_TYPE_UNSPECIFIED"
+        - "YIELD_TYPE_GUARANTED_COUPON"
+        - "YIELD_TYPE_CONDITIONAL_COUPON"
+        - "YIELD_TYPE_PARTICIPATION"
+      type: "string"
     TradingIntervalTimeInterval:
       example:
         endTs: 2000-01-23T04:56:07.000Z
@@ -9114,13 +9765,15 @@ components:
       type: "object"
     v1AccountType:
       default: "ACCOUNT_TYPE_UNSPECIFIED"
-      description: "Тип счeта.\n\n - ACCOUNT_TYPE_UNSPECIFIED: Тип аккаунта не определeн.\n - ACCOUNT_TYPE_TINKOFF: Брокерский счeт Т-Инвестиций.\n - ACCOUNT_TYPE_TINKOFF_IIS: ИИС.\n - ACCOUNT_TYPE_INVEST_BOX: Инвесткопилка.\n - ACCOUNT_TYPE_INVEST_FUND: Фонд денежного рынка."
+      description: "Тип счeта.\n\n - ACCOUNT_TYPE_UNSPECIFIED: Тип аккаунта не определeн.\n - ACCOUNT_TYPE_TINKOFF: Брокерский счeт Т-Инвестиций.\n - ACCOUNT_TYPE_TINKOFF_IIS: ИИС.\n - ACCOUNT_TYPE_INVEST_BOX: Инвесткопилка.\n - ACCOUNT_TYPE_INVEST_FUND: Фонд денежного рынка.\n - ACCOUNT_TYPE_DEBIT: Дебетовый карточный счeт.\n - ACCOUNT_TYPE_SAVING: Накопительный счeт."
       enum:
         - "ACCOUNT_TYPE_UNSPECIFIED"
         - "ACCOUNT_TYPE_TINKOFF"
         - "ACCOUNT_TYPE_TINKOFF_IIS"
         - "ACCOUNT_TYPE_INVEST_BOX"
         - "ACCOUNT_TYPE_INVEST_FUND"
+        - "ACCOUNT_TYPE_DEBIT"
+        - "ACCOUNT_TYPE_SAVING"
       type: "string"
     v1AccruedInterest:
       description: "Операция начисления купонов."
@@ -10326,6 +10979,38 @@ components:
           items:
             $ref: "#/components/schemas/v1Asset"
           type: "array"
+      type: "object"
+    v1BankAccount:
+      description: "Банковский счeт."
+      example:
+        openedDate: 2000-01-23T04:56:07.000Z
+        money:
+          - nano: 5
+            currency: "currency"
+            units: "units"
+          - nano: 5
+            currency: "currency"
+            units: "units"
+        name: "name"
+        id: "id"
+      properties:
+        id:
+          description: "Идентификатор счeта."
+          type: "string"
+        name:
+          description: "Название счeта."
+          type: "string"
+        money:
+          description: "Список валютных позиций на счeте."
+          items:
+            $ref: "#/components/schemas/v1MoneyValue"
+          type: "array"
+        openedDate:
+          description: "Дата открытия счeта в часовом поясе UTC."
+          format: "date-time"
+          type: "string"
+        type:
+          $ref: "#/components/schemas/v1AccountType"
       type: "object"
     v1Bond:
       description: "Объект передачи информации об облигации."
@@ -11864,6 +12549,26 @@ components:
         instrument:
           $ref: "#/components/schemas/v1Currency"
       type: "object"
+    v1CurrencyTransferRequest:
+      properties:
+        fromAccountId:
+          description: "Номер счета списания."
+          type: "string"
+        toAccountId:
+          description: "Номер счета зачисления."
+          type: "string"
+        amount:
+          $ref: "#/components/schemas/v1MoneyValue"
+        transactionId:
+          description: "Идентификатор запроса выставления поручения для целей идемпотентности в формате UUID."
+          type: "string"
+      required:
+        - "amount"
+        - "fromAccountId"
+        - "toAccountId"
+      type: "object"
+    v1CurrencyTransferResponse:
+      type: "object"
     v1DeleteFavoriteGroupRequest:
       properties:
         groupId:
@@ -13383,6 +14088,40 @@ components:
           type: "array"
       title: "Отчеты эмитентов"
       type: "object"
+    v1GetBankAccountsRequest:
+      description: "Запрос списка банковских счетов пользователя."
+      type: "object"
+    v1GetBankAccountsResponse:
+      description: "Список банковских счетов пользователя."
+      example:
+        bankAccounts:
+          - openedDate: 2000-01-23T04:56:07.000Z
+            money:
+              - nano: 5
+                currency: "currency"
+                units: "units"
+              - nano: 5
+                currency: "currency"
+                units: "units"
+            name: "name"
+            id: "id"
+          - openedDate: 2000-01-23T04:56:07.000Z
+            money:
+              - nano: 5
+                currency: "currency"
+                units: "units"
+              - nano: 5
+                currency: "currency"
+                units: "units"
+            name: "name"
+            id: "id"
+      properties:
+        bankAccounts:
+          description: "Массив банковских счетов."
+          items:
+            $ref: "#/components/schemas/v1BankAccount"
+          type: "array"
+      type: "object"
     v1GetBondCouponsRequest:
       description: "Запрос купонов по облигации."
       properties:
@@ -14397,11 +15136,13 @@ components:
       type: "object"
     v1GetInsiderDealsResponseTradeDirection:
       default: "TRADE_DIRECTION_UNSPECIFIED"
-      description: " - TRADE_DIRECTION_UNSPECIFIED: Не определено.\n - TRADE_DIRECTION_BUY: Покупка.\n - TRADE_DIRECTION_SELL: Продажа."
+      description: " - TRADE_DIRECTION_UNSPECIFIED: Не определено.\n - TRADE_DIRECTION_BUY: Покупка.\n - TRADE_DIRECTION_SELL: Продажа.\n - TRADE_DIRECTION_INCREASE: Увеличение доли.\n - TRADE_DIRECTION_DECREASE: Уменьшение доли."
       enum:
         - "TRADE_DIRECTION_UNSPECIFIED"
         - "TRADE_DIRECTION_BUY"
         - "TRADE_DIRECTION_SELL"
+        - "TRADE_DIRECTION_INCREASE"
+        - "TRADE_DIRECTION_DECREASE"
       type: "string"
     v1GetLastPricesRequest:
       description: "Запрос получения цен последних сделок."
@@ -15570,11 +16311,13 @@ components:
       description: "Текущие лимиты пользователя."
       example:
         unaryLimits:
-          - limitPerMinute: 0
+          - limitPerSecond: 6
+            limitPerMinute: 0
             methods:
               - "methods"
               - "methods"
-          - limitPerMinute: 0
+          - limitPerSecond: 6
+            limitPerMinute: 0
             methods:
               - "methods"
               - "methods"
@@ -15582,13 +16325,13 @@ components:
           - streams:
               - "streams"
               - "streams"
-            limit: 6
-            open: 1
+            limit: 1
+            open: 5
           - streams:
               - "streams"
               - "streams"
-            limit: 6
-            open: 1
+            limit: 1
+            open: 5
       properties:
         unaryLimits:
           description: "Массив лимитов пользователя по unary-запросам."
@@ -20535,8 +21278,8 @@ components:
         streams:
           - "streams"
           - "streams"
-        limit: 6
-        open: 1
+        limit: 1
+        open: 5
       properties:
         limit:
           description: "Максимальное количество stream-соединений."
@@ -20551,6 +21294,493 @@ components:
           description: "Текущее количество открытых stream-соединений."
           format: "int32"
           type: "integer"
+      type: "object"
+    v1StructuredNote:
+      description: "Объект передачи информации о структурной ноте."
+      example:
+        logoName: "logoName"
+        assetUid: "assetUid"
+        type: "type"
+        countryOfRisk: "countryOfRisk"
+        borrowName: "borrowName"
+        dlongClient:
+          nano: 6
+          units: "units"
+        maturityDate: 2000-01-23T04:56:07.000Z
+        safetyBarrier:
+          nano: 6
+          units: "units"
+        sellAvailableFlag: true
+        first1dayCandleDate: 2000-01-23T04:56:07.000Z
+        sector: "sector"
+        basicAssets:
+          - uid: "uid"
+            initialPrice:
+              nano: 6
+              units: "units"
+          - uid: "uid"
+            initialPrice:
+              nano: 6
+              units: "units"
+        liquidityFlag: true
+        forIisFlag: true
+        positionUid: "positionUid"
+        pawnshopListFlag: true
+        shortEnabledFlag: true
+        dshortClient:
+          nano: 6
+          units: "units"
+        marketOrderAvailableFlag: true
+        name: "name"
+        exchange: "exchange"
+        couponPeriodBase: "couponPeriodBase"
+        bestpriceOrderAvailableFlag: true
+        initialPriceFixingDate: 2000-01-23T04:56:07.000Z
+        figi: "figi"
+        couponSavingFlag: true
+        lot: 0
+        uid: "uid"
+        requiredTests:
+          - "requiredTests"
+          - "requiredTests"
+        nominal:
+          nano: 5
+          currency: "currency"
+          units: "units"
+        yield:
+          - value:
+              nano: 6
+              units: "units"
+          - value:
+              nano: 6
+              units: "units"
+        currency: "currency"
+        observationFrequency: "observationFrequency"
+        buyAvailableFlag: true
+        weekendFlag: true
+        classCode: "classCode"
+        ticker: "ticker"
+        forQualInvestorFlag: true
+        apiTradeAvailableFlag: true
+        first1minCandleDate: 2000-01-23T04:56:07.000Z
+        minPriceIncrement:
+          nano: 6
+          units: "units"
+        issueSizePlan: 1
+        limitOrderAvailableFlag: true
+        issueKind: "issueKind"
+        placementDate: 2000-01-23T04:56:07.000Z
+        issueSize: 6
+        countryOfRiskName: "countryOfRiskName"
+        isin: "isin"
+      properties:
+        uid:
+          description: "Уникальный идентификатор инструмента."
+          type: "string"
+        figi:
+          description: "FIGI-идентификатор инструмента."
+          type: "string"
+        ticker:
+          description: "Тикер инструмента."
+          type: "string"
+        classCode:
+          description: "Класс-код (секция торгов)."
+          type: "string"
+        isin:
+          description: "ISIN-идентификатор инструмента."
+          type: "string"
+        name:
+          description: "Название инструмента."
+          type: "string"
+        assetUid:
+          description: "Уникальный идентификатор актива."
+          type: "string"
+        positionUid:
+          description: "Уникальный идентификатор позиции."
+          type: "string"
+        minPriceIncrement:
+          $ref: "#/components/schemas/v1Quotation"
+        lot:
+          description: "Лотность инструмента."
+          format: "int32"
+          type: "integer"
+        nominal:
+          $ref: "#/components/schemas/v1MoneyValue"
+        currency:
+          description: "Валюта расчетов."
+          type: "string"
+        maturityDate:
+          description: "Дата погашения облигации в формате UTC."
+          format: "date-time"
+          type: "string"
+        placementDate:
+          description: "Дата размещения в формате UTC."
+          format: "date-time"
+          type: "string"
+        issueKind:
+          description: "Форма выпуска."
+          type: "string"
+        issueSize:
+          description: "Размер выпуска."
+          format: "int32"
+          type: "integer"
+        issueSizePlan:
+          description: "Плановый размер выпуска."
+          format: "int32"
+          type: "integer"
+        dlongClient:
+          $ref: "#/components/schemas/v1Quotation"
+        dshortClient:
+          $ref: "#/components/schemas/v1Quotation"
+        shortEnabledFlag:
+          description: "Признак доступности для операций в шорт."
+          type: "boolean"
+        exchange:
+          description: "Торговая площадка (секция биржи)."
+          type: "string"
+        tradingStatus:
+          $ref: "#/components/schemas/v1SecurityTradingStatus"
+        apiTradeAvailableFlag:
+          description: "Признак доступности торгов по бумаге через API."
+          type: "boolean"
+        buyAvailableFlag:
+          description: "Признак доступности для покупки."
+          type: "boolean"
+        sellAvailableFlag:
+          description: "Признак доступности для продажи."
+          type: "boolean"
+        limitOrderAvailableFlag:
+          description: "Признак доступности выставления лимитной заявки по инструменту."
+          type: "boolean"
+        marketOrderAvailableFlag:
+          description: "Признак доступности выставления рыночной заявки по инструменту."
+          type: "boolean"
+        bestpriceOrderAvailableFlag:
+          description: "Признак доступности выставления bestprice заявки по инструменту."
+          type: "boolean"
+        weekendFlag:
+          description: "Флаг отображающий доступность торговли инструментом по выходным."
+          type: "boolean"
+        liquidityFlag:
+          description: "Флаг достаточной ликвидности."
+          type: "boolean"
+        forIisFlag:
+          description: "Возможность покупки/продажи на ИИС."
+          type: "boolean"
+        forQualInvestorFlag:
+          description: "Флаг отображающий доступность торговли инструментом только для квалифицированных инвесторов."
+          type: "boolean"
+        pawnshopListFlag:
+          description: "Признак ФИ, включенного в ломбардный список."
+          type: "boolean"
+        realExchange:
+          $ref: "#/components/schemas/v1RealExchange"
+        first1minCandleDate:
+          description: "Дата первой минутной свечи."
+          format: "date-time"
+          type: "string"
+        first1dayCandleDate:
+          description: "Дата первой дневной свечи."
+          format: "date-time"
+          type: "string"
+        borrowName:
+          description: "Название заемщика."
+          type: "string"
+        type:
+          description: "Тип структурной ноты."
+          type: "string"
+        logicPortfolio:
+          $ref: "#/components/schemas/StructuredNoteLogicPortfolio"
+        assetType:
+          $ref: "#/components/schemas/v1AssetType"
+        basicAssets:
+          description: "Базовые активы, входящие в ноту."
+          items:
+            $ref: "#/components/schemas/StructuredNoteBasicAsset"
+          type: "array"
+        safetyBarrier:
+          $ref: "#/components/schemas/v1Quotation"
+        couponPeriodBase:
+          description: "Базис расчета НКД."
+          type: "string"
+        observationPrinciple:
+          $ref: "#/components/schemas/StructuredNoteObservationPrinciple"
+        observationFrequency:
+          description: "Частота наблюдений."
+          type: "string"
+        initialPriceFixingDate:
+          description: "Дата фиксации цен базовых активов."
+          format: "date-time"
+          type: "string"
+        yield:
+          description: "Доходность по ноте в годовом выражении."
+          items:
+            $ref: "#/components/schemas/StructuredNoteYield"
+          type: "array"
+        couponSavingFlag:
+          description: "Признак сохранения купонов."
+          type: "boolean"
+        sector:
+          description: "Сектор экономики."
+          type: "string"
+        countryOfRisk:
+          description: "Код страны рисков."
+          type: "string"
+        countryOfRiskName:
+          description: "Наименование страны рисков."
+          type: "string"
+        logoName:
+          description: "Имя файла логотипа эмитента."
+          type: "string"
+        requiredTests:
+          description: "Тесты, которые необходимо пройти клиенту, чтобы совершать покупки по бумаге."
+          items:
+            type: "string"
+          type: "array"
+      type: "object"
+    v1StructuredNoteResponse:
+      description: "Данные по структурной ноте."
+      example:
+        instrument:
+          logoName: "logoName"
+          assetUid: "assetUid"
+          type: "type"
+          countryOfRisk: "countryOfRisk"
+          borrowName: "borrowName"
+          dlongClient:
+            nano: 6
+            units: "units"
+          maturityDate: 2000-01-23T04:56:07.000Z
+          safetyBarrier:
+            nano: 6
+            units: "units"
+          sellAvailableFlag: true
+          first1dayCandleDate: 2000-01-23T04:56:07.000Z
+          sector: "sector"
+          basicAssets:
+            - uid: "uid"
+              initialPrice:
+                nano: 6
+                units: "units"
+            - uid: "uid"
+              initialPrice:
+                nano: 6
+                units: "units"
+          liquidityFlag: true
+          forIisFlag: true
+          positionUid: "positionUid"
+          pawnshopListFlag: true
+          shortEnabledFlag: true
+          dshortClient:
+            nano: 6
+            units: "units"
+          marketOrderAvailableFlag: true
+          name: "name"
+          exchange: "exchange"
+          couponPeriodBase: "couponPeriodBase"
+          bestpriceOrderAvailableFlag: true
+          initialPriceFixingDate: 2000-01-23T04:56:07.000Z
+          figi: "figi"
+          couponSavingFlag: true
+          lot: 0
+          uid: "uid"
+          requiredTests:
+            - "requiredTests"
+            - "requiredTests"
+          nominal:
+            nano: 5
+            currency: "currency"
+            units: "units"
+          yield:
+            - value:
+                nano: 6
+                units: "units"
+            - value:
+                nano: 6
+                units: "units"
+          currency: "currency"
+          observationFrequency: "observationFrequency"
+          buyAvailableFlag: true
+          weekendFlag: true
+          classCode: "classCode"
+          ticker: "ticker"
+          forQualInvestorFlag: true
+          apiTradeAvailableFlag: true
+          first1minCandleDate: 2000-01-23T04:56:07.000Z
+          minPriceIncrement:
+            nano: 6
+            units: "units"
+          issueSizePlan: 1
+          limitOrderAvailableFlag: true
+          issueKind: "issueKind"
+          placementDate: 2000-01-23T04:56:07.000Z
+          issueSize: 6
+          countryOfRiskName: "countryOfRiskName"
+          isin: "isin"
+      properties:
+        instrument:
+          $ref: "#/components/schemas/v1StructuredNote"
+      type: "object"
+    v1StructuredNotesResponse:
+      description: "Данные по структурным нотам."
+      example:
+        instruments:
+          - logoName: "logoName"
+            assetUid: "assetUid"
+            type: "type"
+            countryOfRisk: "countryOfRisk"
+            borrowName: "borrowName"
+            dlongClient:
+              nano: 6
+              units: "units"
+            maturityDate: 2000-01-23T04:56:07.000Z
+            safetyBarrier:
+              nano: 6
+              units: "units"
+            sellAvailableFlag: true
+            first1dayCandleDate: 2000-01-23T04:56:07.000Z
+            sector: "sector"
+            basicAssets:
+              - uid: "uid"
+                initialPrice:
+                  nano: 6
+                  units: "units"
+              - uid: "uid"
+                initialPrice:
+                  nano: 6
+                  units: "units"
+            liquidityFlag: true
+            forIisFlag: true
+            positionUid: "positionUid"
+            pawnshopListFlag: true
+            shortEnabledFlag: true
+            dshortClient:
+              nano: 6
+              units: "units"
+            marketOrderAvailableFlag: true
+            name: "name"
+            exchange: "exchange"
+            couponPeriodBase: "couponPeriodBase"
+            bestpriceOrderAvailableFlag: true
+            initialPriceFixingDate: 2000-01-23T04:56:07.000Z
+            figi: "figi"
+            couponSavingFlag: true
+            lot: 0
+            uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
+            nominal:
+              nano: 5
+              currency: "currency"
+              units: "units"
+            yield:
+              - value:
+                  nano: 6
+                  units: "units"
+              - value:
+                  nano: 6
+                  units: "units"
+            currency: "currency"
+            observationFrequency: "observationFrequency"
+            buyAvailableFlag: true
+            weekendFlag: true
+            classCode: "classCode"
+            ticker: "ticker"
+            forQualInvestorFlag: true
+            apiTradeAvailableFlag: true
+            first1minCandleDate: 2000-01-23T04:56:07.000Z
+            minPriceIncrement:
+              nano: 6
+              units: "units"
+            issueSizePlan: 1
+            limitOrderAvailableFlag: true
+            issueKind: "issueKind"
+            placementDate: 2000-01-23T04:56:07.000Z
+            issueSize: 6
+            countryOfRiskName: "countryOfRiskName"
+            isin: "isin"
+          - logoName: "logoName"
+            assetUid: "assetUid"
+            type: "type"
+            countryOfRisk: "countryOfRisk"
+            borrowName: "borrowName"
+            dlongClient:
+              nano: 6
+              units: "units"
+            maturityDate: 2000-01-23T04:56:07.000Z
+            safetyBarrier:
+              nano: 6
+              units: "units"
+            sellAvailableFlag: true
+            first1dayCandleDate: 2000-01-23T04:56:07.000Z
+            sector: "sector"
+            basicAssets:
+              - uid: "uid"
+                initialPrice:
+                  nano: 6
+                  units: "units"
+              - uid: "uid"
+                initialPrice:
+                  nano: 6
+                  units: "units"
+            liquidityFlag: true
+            forIisFlag: true
+            positionUid: "positionUid"
+            pawnshopListFlag: true
+            shortEnabledFlag: true
+            dshortClient:
+              nano: 6
+              units: "units"
+            marketOrderAvailableFlag: true
+            name: "name"
+            exchange: "exchange"
+            couponPeriodBase: "couponPeriodBase"
+            bestpriceOrderAvailableFlag: true
+            initialPriceFixingDate: 2000-01-23T04:56:07.000Z
+            figi: "figi"
+            couponSavingFlag: true
+            lot: 0
+            uid: "uid"
+            requiredTests:
+              - "requiredTests"
+              - "requiredTests"
+            nominal:
+              nano: 5
+              currency: "currency"
+              units: "units"
+            yield:
+              - value:
+                  nano: 6
+                  units: "units"
+              - value:
+                  nano: 6
+                  units: "units"
+            currency: "currency"
+            observationFrequency: "observationFrequency"
+            buyAvailableFlag: true
+            weekendFlag: true
+            classCode: "classCode"
+            ticker: "ticker"
+            forQualInvestorFlag: true
+            apiTradeAvailableFlag: true
+            first1minCandleDate: 2000-01-23T04:56:07.000Z
+            minPriceIncrement:
+              nano: 6
+              units: "units"
+            issueSizePlan: 1
+            limitOrderAvailableFlag: true
+            issueKind: "issueKind"
+            placementDate: 2000-01-23T04:56:07.000Z
+            issueSize: 6
+            countryOfRiskName: "countryOfRiskName"
+            isin: "isin"
+      properties:
+        instruments:
+          description: "Массив структурных нот."
+          items:
+            $ref: "#/components/schemas/v1StructuredNote"
+          type: "array"
       type: "object"
     v1StructuredProductType:
       default: "SP_TYPE_UNSPECIFIED"
@@ -21316,6 +22546,7 @@ components:
     v1UnaryLimit:
       description: "Лимит unary-методов."
       example:
+        limitPerSecond: 6
         limitPerMinute: 0
         methods:
           - "methods"
@@ -21330,6 +22561,10 @@ components:
           items:
             type: "string"
           type: "array"
+        limitPerSecond:
+          description: "Количество unary-запросов в секунду."
+          format: "int32"
+          type: "integer"
       type: "object"
     v1VirtualPortfolioPosition:
       example:

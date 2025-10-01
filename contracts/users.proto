@@ -31,6 +31,14 @@ service UsersService { /*С помощью сервиса можно получ�
   //GetInfo — информация о пользователе
   //Получить информацию о пользователе: тариф, признак квалификации, пройденные тесты и др.
   rpc GetInfo (GetInfoRequest) returns (GetInfoResponse);
+
+  //GetBankAccounts — банковские счета пользователя
+  //Получить список счетов пользователя, в том числе и банковских.
+  rpc GetBankAccounts(GetBankAccountsRequest) returns (GetBankAccountsResponse);
+
+  //CurrencyTransfer — перевод денежных средств между счетами
+  //Перевести денежные средства между брокерскими счетами
+  rpc CurrencyTransfer(CurrencyTransferRequest) returns (CurrencyTransferResponse);
 }
 
 //Запрос получения счетов пользователя.
@@ -76,6 +84,8 @@ enum AccountType {
   ACCOUNT_TYPE_TINKOFF_IIS = 2; //ИИС.
   ACCOUNT_TYPE_INVEST_BOX = 3; //Инвесткопилка.
   ACCOUNT_TYPE_INVEST_FUND = 4; //Фонд денежного рынка.
+  ACCOUNT_TYPE_DEBIT = 5; //Дебетовый карточный счeт.
+  ACCOUNT_TYPE_SAVING = 6; //Накопительный счeт.
 }
 
 //Статус счeта.
@@ -130,6 +140,7 @@ message GetUserTariffResponse {
 message UnaryLimit {
   int32 limit_per_minute = 1; //Количество unary-запросов в минуту.
   repeated string methods = 2; //Названия методов.
+  optional int32 limit_per_second = 3; //Количество unary-запросов в секунду.
 }
 
 //Лимит stream-соединений.
@@ -159,4 +170,33 @@ enum AccessLevel {
   ACCOUNT_ACCESS_LEVEL_FULL_ACCESS = 1; //Полный доступ к счeту.
   ACCOUNT_ACCESS_LEVEL_READ_ONLY = 2; //Доступ с уровнем прав «только чтение».
   ACCOUNT_ACCESS_LEVEL_NO_ACCESS = 3; //Доступа нет.
+}
+
+//Запрос списка банковских счетов пользователя.
+message GetBankAccountsRequest {
+}
+
+//Список банковских счетов пользователя.
+message GetBankAccountsResponse {
+  repeated BankAccount bank_accounts = 1; //Массив банковских счетов.
+}
+
+//Банковский счeт.
+message BankAccount {
+  string id = 1; //Идентификатор счeта.
+  string name = 2; //Название счeта.
+  repeated MoneyValue money = 3; //Список валютных позиций на счeте.
+  google.protobuf.Timestamp opened_date = 4; //Дата открытия счeта в часовом поясе UTC.
+  AccountType type = 5; //Тип счeта.
+}
+
+message CurrencyTransferRequest {
+  string from_account_id = 1 [(google.api.field_behavior) = REQUIRED]; // Номер счета списания.
+  string to_account_id = 2 [(google.api.field_behavior) = REQUIRED]; // Номер счета зачисления.
+  MoneyValue amount = 3 [(google.api.field_behavior) = REQUIRED]; // Сумма перевода с указанием валюты.
+  string transaction_id = 4; // Идентификатор запроса выставления поручения для целей идемпотентности в формате UUID.
+}
+
+message CurrencyTransferResponse {
+
 }
