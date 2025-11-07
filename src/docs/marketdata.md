@@ -191,7 +191,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`. |
 | interval |  [SubscriptionInterval](#subscriptioninterval) | Интервал свечей. Двухчасовые и четырехчасовые свечи в стриме отсчитываются с 0:00 по UTC. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -223,6 +223,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | subscription_id |  [string](#string) | Идентификатор подписки в формате `UUID`. |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
 | candle_source_type |  [GetCandlesRequest.CandleSource](#getcandlesrequestcandlesource) | Источник свечей. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -247,7 +249,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`. |
 | depth |  [int32](#int32) | Глубина стакана. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | order_book_type |  [OrderBookType](#orderbooktype) | Тип стакана. Значение по умолчанию — `ORDERBOOK_TYPE_ALL`, стакан биржевой и дилера. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -279,6 +281,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | subscription_id |  [string](#string) | Идентификатор подписки в формате `UUID`. |
 | order_book_type |  [OrderBookType](#orderbooktype) | Тип стакана. |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -304,7 +308,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте instrument_id`. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -335,6 +339,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | subscription_id |  [string](#string) | Идентификатор подписки в формате UUID. |
 | with_open_interest |  [bool](#bool) | Флаг открытого интереса. **true** - в стриме дополнительно передается информация об открытом интересе для фьючерсов |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -358,7 +364,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте instrument_id`. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -387,6 +393,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | stream_id |  [string](#string) | Идентификатор открытого соединения. |
 | subscription_id |  [string](#string) | Идентификатор подписки в формате UUID. |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -410,7 +418,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте instrument_id`. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -439,6 +447,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | stream_id |  [string](#string) | Идентификатор открытого соединения. |
 | subscription_id |  [string](#string) | Идентификатор подписки в формате `UUID`. |
 | subscription_action |  [SubscriptionAction](#subscriptionaction) | Действие подписки. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -459,6 +469,10 @@ subscribeCandles | Изменения статуса подписки на св�
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время начала интервала свечи по UTC. |
 | last_trade_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время последней сделки, вошедшей в свечу по UTC. |
 | instrument_uid |  [string](#string) | UID инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
+| volume_buy |  [int64](#int64) | Объем торгов на покупку. |
+| volume_sell |  [int64](#int64) | Объём торгов на продажу. |
 | candle_source_type |  [CandleSource](#candlesource) | Источник свечей. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -480,6 +494,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | limit_down |  [Quotation](#quotation) | Нижний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. [Подробнее про перевод цен в валюту](./faq_marketdata/#_15). |
 | instrument_uid |  [string](#string) | UID инструмента. |
 | order_book_type |  [OrderBookType](#orderbooktype) | Тип стакана. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -509,6 +525,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время сделки в часовом поясе UTC по времени биржи. |
 | instrument_uid |  [string](#string) | UID инструмента. |
 | trade_source |  [TradeSourceType](#tradesourcetype) | Тип источника сделки. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -525,6 +543,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | limit_order_available_flag |  [bool](#bool) | Признак доступности выставления лимитной заявки по инструменту. |
 | market_order_available_flag |  [bool](#bool) | Признак доступности выставления рыночной заявки по инструменту. |
 | instrument_uid |  [string](#string) | UID инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -539,7 +559,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. |
 | interval |  [CandleInterval](#candleinterval) | Интервал запрошенных свечей. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | candle_source_type |  [GetCandlesRequest.CandleSource](#getcandlesrequestcandlesource) | Тип источника свечи. |
 | limit |  [int32](#int32) | Максимальное количество свечей в ответе. |
  <!-- end Fields -->
@@ -571,6 +591,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время свечи в часовом поясе UTC. |
 | is_complete |  [bool](#bool) | Признак завершенности свечи. **false** — свеча за текущие интервал еще сформирована не полностью. |
 | candle_source |  [CandleSource](#candlesource) | Тип источника свечи |
+| volume_buy |  [int64](#int64) | Объем торгов на покупку. |
+| volume_sell |  [int64](#int64) | Объём торгов на продажу. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -582,7 +604,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi | Массив объектов [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`. |
-| instrument_id | Массив объектов [string](#string) | Массив идентификаторов инструмента. Принимает значения `figi` или `instrument_uid`. |
+| instrument_id | Массив объектов [string](#string) | Массив идентификаторов инструмента. Принимает значения `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | last_price_type |  [LastPriceType](#lastpricetype) | Тип запрашиваемой последней цены. |
 | instrument_status |  [InstrumentStatus](#instrumentstatus) | Статус запрашиваемых инструментов. [Возможные значения](#instrumentstatus). |
  <!-- end Fields -->
@@ -609,6 +631,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | figi |  [string](#string) | FIGI инструмента. |
 | price |  [Quotation](#quotation) | Цена последней сделки за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. [Подробнее про перевод цен в валюту](./faq_marketdata/#_15). |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения последней цены в часовом поясе UTC по времени биржи. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
 | instrument_uid |  [string](#string) | UID инструмента. |
 | last_price_type |  [LastPriceType](#lastpricetype) | Тип последней цены. |
  <!-- end Fields -->
@@ -624,6 +648,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | instrument_uid |  [string](#string) | UID инструмента. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения открытого интереса в часовом поясе UTC по времени биржи. |
 | open_interest |  [int64](#int64) | Открытый интерес. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -636,7 +662,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`. |
 | depth |  [int32](#int32) | Глубина стакана. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -655,10 +681,12 @@ subscribeCandles | Изменения статуса подписки на св�
 | close_price |  [Quotation](#quotation) | Цена закрытия за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. [Подробнее про перевод цен в валюту](./faq_marketdata/#_15). |
 | limit_up |  [Quotation](#quotation) | Верхний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. [Подробнее про перевод цен в валюту](./faq_marketdata/#_15). |
 | limit_down |  [Quotation](#quotation) | Нижний лимит цены за 1 инструмент. Чтобы получить стоимость лота, нужно умножить на лотность инструмента. [Подробнее про перевод цен в валюту](./faq_marketdata/#_15). |
+| instrument_uid |  [string](#string) | UID инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
 | last_price_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения цены последней сделки. |
 | close_price_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время получения цены закрытия. |
 | orderbook_ts |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Время формирования стакана на бирже. |
-| instrument_uid |  [string](#string) | UID инструмента. |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -670,7 +698,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | Field | Type | Description |
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code` |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -681,7 +709,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id | Массив объектов [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id | Массив объектов [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code` |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -711,6 +739,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | instrument_uid |  [string](#string) | UID инструмента. |
 | bestprice_order_available_flag |  [bool](#bool) | Признак доступности завяки по лучшей цене. |
 | only_best_price |  [bool](#bool) | Признак доступности только заявки по лучшей цене. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -724,7 +754,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | figi |  [string](#string) | Deprecated FIGI-идентификатор инструмента. Используйте `instrument_id`. |
 | from |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Начало запрашиваемого периода по UTC. |
 | to |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Окончание запрашиваемого периода по UTC. |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code` |
 | trade_source |  [TradeSourceType](#tradesourcetype) | Тип источника сделок. Значение по умолчанию — `TRADE_SOURCE_ALL`, все сделки. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -765,7 +795,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi` или `instrument_uid`. |
+| instrument_id |  [string](#string) | Идентификатор инструмента. Принимает значение `figi`, `instrument_uid` или `ticker + '_' + class_code` |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -789,6 +819,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | figi |  [string](#string) | FIGI инструмента. |
 | instrument_uid |  [string](#string) | UID инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
 | price |  [Quotation](#quotation) | Цена закрытия торговой сессии. |
 | evening_session_price |  [Quotation](#quotation) | Цена последней сделки с вечерней сессии. Цена публикуется биржей по торговым дням и в нерабочие дни не обновляется. |
 | time |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата совершения торгов. |
@@ -873,7 +905,7 @@ subscribeCandles | Изменения статуса подписки на св�
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| instrument_id | Массив объектов [string](#string) | Массив идентификаторов инструментов. |
+| instrument_id | Массив объектов [string](#string) | Массив идентификаторов инструментов. Принимает значения `figi`, `instrument_uid` или `ticker + '_' + class_code`. |
 | values | Массив объектов [MarketValueType](#marketvaluetype) | Массив запрашиваемых параметров. |
  <!-- end Fields -->
  <!-- end HasFields -->
@@ -898,6 +930,8 @@ subscribeCandles | Изменения статуса подписки на св�
 | ----- | ---- | ----------- |
 | instrument_uid |  [string](#string) | Идентификатор инструмента. |
 | values | Массив объектов [MarketValue](#marketvalue) | Массив параметров инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -1048,6 +1082,7 @@ subscribeCandles | Изменения статуса подписки на св�
 | INSTRUMENT_VALUE_EVENING_SESSION_PRICE | 4 | Цена последней сделки с вечерней сессии. |
 | INSTRUMENT_VALUE_OPEN_INTEREST | 5 | Открытый интерес, возвращается только для фьючерсов. |
 | INSTRUMENT_VALUE_THEOR_PRICE | 6 | Теоретическая цена, возвращается только для опционов. |
+| INSTRUMENT_VALUE_YIELD | 7 | Доходность |
 
 
 

@@ -170,6 +170,7 @@ message PortfolioPosition {
   Quotation expected_yield_fifo = 27; //Текущая рассчитанная доходность позиции.
   MoneyValue daily_yield = 31;  // Рассчитанная доходность портфеля за день.
   string ticker = 32; //Тикер инструмента.
+  string class_code = 33; //Класс-код (секция торгов).
 }
 
 message VirtualPortfolioPosition {
@@ -186,6 +187,7 @@ message VirtualPortfolioPosition {
   MoneyValue average_position_price_fifo = 11; //Средняя цена позиции по методу FIFO. Для пересчета возможна задержка до одной секунды.
   MoneyValue daily_yield = 31;  // Рассчитанная доходность портфеля за день.
   string ticker = 32; //Тикер инструмента.
+  string class_code = 33; //Класс-код (секция торгов).
 }
 
 //Баланс позиции ценной бумаги.
@@ -196,6 +198,7 @@ message PositionsSecurities {
   string position_uid = 4; //Уникальный идентификатор позиции.
   string instrument_uid = 5; //Уникальный идентификатор инструмента.
   string ticker = 6; //Тикер инструмента.
+  string class_code = 7; //Класс-код (секция торгов).
   bool exchange_blocked = 11; //Заблокировано на бирже.
   string instrument_type = 16; //Тип инструмента.
 }
@@ -208,6 +211,7 @@ message PositionsFutures {
   string position_uid = 4; //Уникальный идентификатор позиции.
   string instrument_uid = 5; //Уникальный идентификатор  инструмента.
   string ticker = 6; //Тикер инструмента.
+  string class_code = 7; //Класс-код (секция торгов).
 }
 
 //Баланс опциона.
@@ -215,6 +219,7 @@ message PositionsOptions {
   string position_uid = 1; //Уникальный идентификатор позиции опциона.
   string instrument_uid = 2; //Уникальный идентификатор  инструмента.
   string ticker = 3; //Тикер инструмента.
+  string class_code = 4; //Класс-код (секция торгов).
   int64 blocked = 11; //Количество бумаг, заблокированных выставленными заявками.
   int64 balance = 21;  //Текущий незаблокированный баланс.
 }
@@ -489,6 +494,8 @@ message OperationItem {
   string instrument_type = 33; //Тип инструмента.
   InstrumentType instrument_kind	= 34; //Тип инструмента.
   string position_uid	= 35; //Уникальный идентификатор позиции.
+  string ticker = 36; //Тикер инструмента.
+  string class_code = 37; //Класс-код (секция торгов).
   MoneyValue payment = 41; //Сумма операции.
   MoneyValue price = 42; //Цена операции за 1 инструмент.
   MoneyValue commission = 43; //Комиссия.

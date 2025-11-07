@@ -83,6 +83,14 @@ GetSandboxOrderState — получить статус торгового пор
 - Тело ответа — [OrderState](#orderstate)
 
 
+#### GetSandboxOrderPrice
+GetSandboxOrderPrice — получить предварительную стоимость для лимитной заявки
+
+- Тело запроса — [GetOrderPriceRequest](#getorderpricerequest)
+
+- Тело ответа — [GetOrderPriceResponse](#getorderpriceresponse)
+
+
 #### GetSandboxPositions
 GetSandboxPositions — список позиций по счету
 

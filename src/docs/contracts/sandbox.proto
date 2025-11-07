@@ -46,6 +46,9 @@ service SandboxService { // Методы для работы с песочниц
   //GetSandboxOrderState — получить статус торгового поручения
   rpc GetSandboxOrderState(GetOrderStateRequest) returns (OrderState);
 
+  //GetSandboxOrderPrice — получить предварительную стоимость для лимитной заявки
+  rpc GetSandboxOrderPrice(GetOrderPriceRequest) returns (GetOrderPriceResponse);
+
   //GetSandboxPositions — список позиций по счету
   rpc GetSandboxPositions(PositionsRequest) returns (PositionsResponse);
 

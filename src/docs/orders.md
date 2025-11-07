@@ -208,6 +208,8 @@ GetOrderPrice — получить предварительную стоимос
 | message |  [string](#string) | Дополнительные данные об исполнении заявки. |
 | initial_order_price_pt |  [Quotation](#quotation) | Начальная цена заявки в пунктах (для фьючерсов). |
 | instrument_uid |  [string](#string) | UID идентификатор инструмента. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
 | order_request_id |  [string](#string) | Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов. |
 | response_metadata |  [ResponseMetadata](#responsemetadata) | Метадата |
  <!-- end Fields -->
@@ -348,6 +350,8 @@ GetOrderPrice — получить предварительную стоимос
 | order_date |  [google.protobuf.Timestamp](#googleprotobuftimestamp) | Дата и время выставления заявки в часовом поясе UTC. |
 | instrument_uid |  [string](#string) | UID идентификатор инструмента. |
 | order_request_id |  [string](#string) | Идентификатор ключа идемпотентности, переданный клиентом, в формате UID. Максимальная длина 36 символов. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 

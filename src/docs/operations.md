@@ -280,6 +280,7 @@ PositionsStream — стрим обновлений информации по и
 | expected_yield_fifo |  [Quotation](#quotation) | Текущая рассчитанная доходность позиции. |
 | daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день. |
 | ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -303,6 +304,7 @@ PositionsStream — стрим обновлений информации по и
 | average_position_price_fifo |  [MoneyValue](#moneyvalue) | Средняя цена позиции по методу FIFO. Для пересчета возможна задержка до одной секунды. |
 | daily_yield |  [MoneyValue](#moneyvalue) | Рассчитанная доходность портфеля за день. |
 | ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -319,6 +321,7 @@ PositionsStream — стрим обновлений информации по и
 | position_uid |  [string](#string) | Уникальный идентификатор позиции. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
 | exchange_blocked |  [bool](#bool) | Заблокировано на бирже. |
 | instrument_type |  [string](#string) | Тип инструмента. |
  <!-- end Fields -->
@@ -337,6 +340,7 @@ PositionsStream — стрим обновлений информации по и
 | position_uid |  [string](#string) | Уникальный идентификатор позиции. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -350,6 +354,7 @@ PositionsStream — стрим обновлений информации по и
 | position_uid |  [string](#string) | Уникальный идентификатор позиции опциона. |
 | instrument_uid |  [string](#string) | Уникальный идентификатор  инструмента. |
 | ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
 | blocked |  [int64](#int64) | Количество бумаг, заблокированных выставленными заявками. |
 | balance |  [int64](#int64) | Текущий незаблокированный баланс. |
  <!-- end Fields -->
@@ -667,6 +672,8 @@ PositionsStream — стрим обновлений информации по и
 | instrument_type |  [string](#string) | Тип инструмента. |
 | instrument_kind |  [InstrumentType](#instrumenttype) | Тип инструмента. |
 | position_uid |  [string](#string) | Уникальный идентификатор позиции. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
 | payment |  [MoneyValue](#moneyvalue) | Сумма операции. |
 | price |  [MoneyValue](#moneyvalue) | Цена операции за 1 инструмент. |
 | commission |  [MoneyValue](#moneyvalue) | Комиссия. |

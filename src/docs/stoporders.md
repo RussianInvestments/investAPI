@@ -164,6 +164,8 @@ CancelStopOrder — отменить стоп-заявку
 | status |  [StopOrderStatusOption](#stoporderstatusoption) | Статус заявки. |
 | exchange_order_type |  [ExchangeOrderType](#exchangeordertype) | Тип дочерней биржевой заявки для тейкпрофита. |
 | exchange_order_id |  [string](#string) | Идентификатор биржевой заявки. |
+| ticker |  [string](#string) | Тикер инструмента. |
+| class_code |  [string](#string) | Класс-код (секция торгов). |
  <!-- end Fields -->
  <!-- end HasFields -->
 
