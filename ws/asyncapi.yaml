@@ -194,16 +194,22 @@ components:
       example:
         subscribeInfoResponse:
           infoSubscriptions:
-            - streamId: streamId
+            - classCode: classCode
+              ticker: ticker
+              streamId: streamId
               instrumentUid: instrumentUid
               figi: figi
               subscriptionId: subscriptionId
-            - streamId: streamId
+            - classCode: classCode
+              ticker: ticker
+              streamId: streamId
               instrumentUid: instrumentUid
               figi: figi
               subscriptionId: subscriptionId
           trackingId: trackingId
         trade:
+          classCode: classCode
+          ticker: ticker
           quantity: quantity
           price:
             nano: 6
@@ -213,18 +219,24 @@ components:
           time: '2000-01-23T04:56:07.000+00:00'
         subscribeOrderBookResponse:
           orderBookSubscriptions:
-            - depth: 0
+            - classCode: classCode
+              ticker: ticker
+              depth: 0
               streamId: streamId
               instrumentUid: instrumentUid
               figi: figi
               subscriptionId: subscriptionId
-            - depth: 0
+            - classCode: classCode
+              ticker: ticker
+              depth: 0
               streamId: streamId
               instrumentUid: instrumentUid
               figi: figi
               subscriptionId: subscriptionId
           trackingId: trackingId
         openInterest:
+          classCode: classCode
+          ticker: ticker
           openInterest: openInterest
           instrumentUid: instrumentUid
           time: '2000-01-23T04:56:07.000+00:00'
@@ -233,16 +245,20 @@ components:
           pingRequestTime: '2000-01-23T04:56:07.000+00:00'
           time: '2000-01-23T04:56:07.000+00:00'
         candle:
+          classCode: classCode
+          lastTradeTs: '2000-01-23T04:56:07.000+00:00'
+          ticker: ticker
+          volumeBuy: volumeBuy
+          figi: figi
           volume: volume
           high:
             nano: 6
             units: units
-          lastTradeTs: '2000-01-23T04:56:07.000+00:00'
           low:
             nano: 6
             units: units
           instrumentUid: instrumentUid
-          figi: figi
+          volumeSell: volumeSell
           time: '2000-01-23T04:56:07.000+00:00'
           close:
             nano: 6
@@ -251,6 +267,8 @@ components:
             nano: 6
             units: units
         orderbook:
+          classCode: classCode
+          ticker: ticker
           depth: 6
           asks:
             - quantity: quantity
@@ -282,12 +300,16 @@ components:
           isConsistent: true
         subscribeTradesResponse:
           tradeSubscriptions:
-            - streamId: streamId
+            - classCode: classCode
+              ticker: ticker
+              streamId: streamId
               instrumentUid: instrumentUid
               withOpenInterest: true
               figi: figi
               subscriptionId: subscriptionId
-            - streamId: streamId
+            - classCode: classCode
+              ticker: ticker
+              streamId: streamId
               instrumentUid: instrumentUid
               withOpenInterest: true
               figi: figi
@@ -295,18 +317,24 @@ components:
           trackingId: trackingId
         tradingStatus:
           limitOrderAvailableFlag: true
+          classCode: classCode
+          ticker: ticker
           marketOrderAvailableFlag: true
           instrumentUid: instrumentUid
           figi: figi
           time: '2000-01-23T04:56:07.000+00:00'
         subscribeCandlesResponse:
           candlesSubscriptions:
-            - streamId: streamId
+            - classCode: classCode
+              ticker: ticker
+              streamId: streamId
               instrumentUid: instrumentUid
               waitingClose: true
               figi: figi
               subscriptionId: subscriptionId
-            - streamId: streamId
+            - classCode: classCode
+              ticker: ticker
+              streamId: streamId
               instrumentUid: instrumentUid
               waitingClose: true
               figi: figi
@@ -314,16 +342,22 @@ components:
           trackingId: trackingId
         subscribeLastPriceResponse:
           lastPriceSubscriptions:
-            - streamId: streamId
+            - classCode: classCode
+              ticker: ticker
+              streamId: streamId
               instrumentUid: instrumentUid
               figi: figi
               subscriptionId: subscriptionId
-            - streamId: streamId
+            - classCode: classCode
+              ticker: ticker
+              streamId: streamId
               instrumentUid: instrumentUid
               figi: figi
               subscriptionId: subscriptionId
           trackingId: trackingId
         lastPrice:
+          classCode: classCode
+          ticker: ticker
           price:
             nano: 6
             units: units
@@ -360,12 +394,16 @@ components:
       description: Результат изменения статус подписки на свечи.
       example:
         candlesSubscriptions:
-          - streamId: streamId
+          - classCode: classCode
+            ticker: ticker
+            streamId: streamId
             instrumentUid: instrumentUid
             waitingClose: true
             figi: figi
             subscriptionId: subscriptionId
-          - streamId: streamId
+          - classCode: classCode
+            ticker: ticker
+            streamId: streamId
             instrumentUid: instrumentUid
             waitingClose: true
             figi: figi
@@ -384,6 +422,8 @@ components:
     v1CandleSubscription:
       description: Статус подписки на свечи.
       example:
+        classCode: classCode
+        ticker: ticker
         streamId: streamId
         instrumentUid: instrumentUid
         waitingClose: true
@@ -413,6 +453,12 @@ components:
           $ref: '#/components/schemas/v1SubscriptionAction'
         candleSourceType:
           $ref: '#/components/schemas/v1GetCandlesRequestCandleSource'
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     v1SubscriptionInterval:
       default: SUBSCRIPTION_INTERVAL_UNSPECIFIED
@@ -506,12 +552,16 @@ components:
       description: Результат изменения статуса подписки на стаканы.
       example:
         orderBookSubscriptions:
-          - depth: 0
+          - classCode: classCode
+            ticker: ticker
+            depth: 0
             streamId: streamId
             instrumentUid: instrumentUid
             figi: figi
             subscriptionId: subscriptionId
-          - depth: 0
+          - classCode: classCode
+            ticker: ticker
+            depth: 0
             streamId: streamId
             instrumentUid: instrumentUid
             figi: figi
@@ -530,6 +580,8 @@ components:
     v1OrderBookSubscription:
       description: Статус подписки.
       example:
+        classCode: classCode
+        ticker: ticker
         depth: 0
         streamId: streamId
         instrumentUid: instrumentUid
@@ -558,6 +610,12 @@ components:
           $ref: '#/components/schemas/v1OrderBookType'
         subscriptionAction:
           $ref: '#/components/schemas/v1SubscriptionAction'
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     v1OrderBookType:
       default: ORDERBOOK_TYPE_UNSPECIFIED
@@ -576,12 +634,16 @@ components:
       description: Результат изменения статуса подписки на поток обезличенных сделок.
       example:
         tradeSubscriptions:
-          - streamId: streamId
+          - classCode: classCode
+            ticker: ticker
+            streamId: streamId
             instrumentUid: instrumentUid
             withOpenInterest: true
             figi: figi
             subscriptionId: subscriptionId
-          - streamId: streamId
+          - classCode: classCode
+            ticker: ticker
+            streamId: streamId
             instrumentUid: instrumentUid
             withOpenInterest: true
             figi: figi
@@ -602,6 +664,8 @@ components:
     v1TradeSubscription:
       description: Статус подписки.
       example:
+        classCode: classCode
+        ticker: ticker
         streamId: streamId
         instrumentUid: instrumentUid
         withOpenInterest: true
@@ -629,6 +693,12 @@ components:
           type: boolean
         subscriptionAction:
           $ref: '#/components/schemas/v1SubscriptionAction'
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     v1TradeSourceType:
       default: TRADE_SOURCE_UNSPECIFIED
@@ -649,11 +719,15 @@ components:
       description: Результат изменения статуса подписки на торговый статус.
       example:
         infoSubscriptions:
-          - streamId: streamId
+          - classCode: classCode
+            ticker: ticker
+            streamId: streamId
             instrumentUid: instrumentUid
             figi: figi
             subscriptionId: subscriptionId
-          - streamId: streamId
+          - classCode: classCode
+            ticker: ticker
+            streamId: streamId
             instrumentUid: instrumentUid
             figi: figi
             subscriptionId: subscriptionId
@@ -671,6 +745,8 @@ components:
     v1InfoSubscription:
       description: Статус подписки.
       example:
+        classCode: classCode
+        ticker: ticker
         streamId: streamId
         instrumentUid: instrumentUid
         figi: figi
@@ -692,20 +768,30 @@ components:
           type: string
         subscriptionAction:
           $ref: '#/components/schemas/v1SubscriptionAction'
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     v1Candle:
       description: Пакет свечей в рамках стрима.
       example:
+        classCode: classCode
+        lastTradeTs: '2000-01-23T04:56:07.000+00:00'
+        ticker: ticker
+        volumeBuy: volumeBuy
+        figi: figi
         volume: volume
         high:
           nano: 6
           units: units
-        lastTradeTs: '2000-01-23T04:56:07.000+00:00'
         low:
           nano: 6
           units: units
         instrumentUid: instrumentUid
-        figi: figi
+        volumeSell: volumeSell
         time: '2000-01-23T04:56:07.000+00:00'
         close:
           nano: 6
@@ -742,6 +828,20 @@ components:
         instrumentUid:
           description: UID инструмента.
           type: string
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
+        volumeBuy:
+          description: Объем торгов на покупку.
+          format: int64
+          type: string
+        volumeSell:
+          description: Объём торгов на продажу.
+          format: int64
+          type: string
         candleSourceType:
           $ref: '#/components/schemas/contractv1CandleSource'
       type: object
@@ -774,6 +874,8 @@ components:
     v1Trade:
       description: Информация о сделке.
       example:
+        classCode: classCode
+        ticker: ticker
         quantity: quantity
         price:
           nano: 6
@@ -802,6 +904,12 @@ components:
           type: string
         tradeSource:
           $ref: '#/components/schemas/v1TradeSourceType'
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     contractv1TradeDirection:
       default: TRADE_DIRECTION_UNSPECIFIED
@@ -819,6 +927,8 @@ components:
     v1OrderBook:
       description: Пакет стаканов в рамках стрима.
       example:
+        classCode: classCode
+        ticker: ticker
         depth: 6
         asks:
           - quantity: quantity
@@ -884,6 +994,12 @@ components:
           type: string
         orderBookType:
           $ref: '#/components/schemas/v1OrderBookType'
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     v1Order:
       description: Массив предложений/спроса.
@@ -904,6 +1020,8 @@ components:
       description: Пакет изменения торгового статуса.
       example:
         limitOrderAvailableFlag: true
+        classCode: classCode
+        ticker: ticker
         marketOrderAvailableFlag: true
         instrumentUid: instrumentUid
         figi: figi
@@ -926,6 +1044,12 @@ components:
           type: boolean
         instrumentUid:
           description: UID инструмента.
+          type: string
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
           type: string
       type: object
     v1SecurityTradingStatus:
@@ -991,11 +1115,15 @@ components:
       description: Результат изменения статуса подписки на цену последней сделки.
       example:
         lastPriceSubscriptions:
-          - streamId: streamId
+          - classCode: classCode
+            ticker: ticker
+            streamId: streamId
             instrumentUid: instrumentUid
             figi: figi
             subscriptionId: subscriptionId
-          - streamId: streamId
+          - classCode: classCode
+            ticker: ticker
+            streamId: streamId
             instrumentUid: instrumentUid
             figi: figi
             subscriptionId: subscriptionId
@@ -1013,6 +1141,8 @@ components:
     v1LastPriceSubscription:
       description: Статус подписки на цену последней сделки.
       example:
+        classCode: classCode
+        ticker: ticker
         streamId: streamId
         instrumentUid: instrumentUid
         figi: figi
@@ -1034,10 +1164,18 @@ components:
           type: string
         subscriptionAction:
           $ref: '#/components/schemas/v1SubscriptionAction'
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     v1LastPrice:
       description: Информация о цене последней сделки.
       example:
+        classCode: classCode
+        ticker: ticker
         price:
           nano: 6
           units: units
@@ -1053,6 +1191,12 @@ components:
         time:
           description: Время получения последней цены в часовом поясе UTC по времени биржи.
           format: date-time
+          type: string
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
           type: string
         instrumentUid:
           description: UID инструмента.
@@ -1074,6 +1218,8 @@ components:
       type: string
     v1OpenInterest:
       example:
+        classCode: classCode
+        ticker: ticker
         openInterest: openInterest
         instrumentUid: instrumentUid
         time: '2000-01-23T04:56:07.000+00:00'
@@ -1090,6 +1236,12 @@ components:
         openInterest:
           description: Открытый интерес.
           format: int64
+          type: string
+        ticker:
+          description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
           type: string
       type: object
     rpcStatus:
@@ -1162,8 +1314,8 @@ components:
           $ref: '#/components/schemas/v1SubscriptionInterval'
         instrumentId:
           description: >-
-            Идентификатор инструмента. Принимает значение `figi` или
-            `instrument_uid`.
+            Идентификатор инструмента. Принимает значение `figi`,
+            `instrument_uid` или `ticker + '_' + class_code`.
           type: string
       type: object
     v1SubscribeOrderBookRequest:
@@ -1191,8 +1343,8 @@ components:
           type: integer
         instrumentId:
           description: >-
-            Идентификатор инструмента. Принимает значение `figi` или
-            `instrument_uid`.
+            Идентификатор инструмента. Принимает значение `figi`,
+            `instrument_uid` или `ticker + '_' + class_code`.
           type: string
         orderBookType:
           $ref: '#/components/schemas/v1OrderBookType'
@@ -1225,8 +1377,8 @@ components:
           type: string
         instrumentId:
           description: >-
-            Идентификатор инструмента. Принимает значение `figi` или
-            `instrument_uid`.
+            Идентификатор инструмента. Принимает значение `figi`,
+            `instrument_uid` или `ticker + '_' + class_code`.
           type: string
       type: object
     v1SubscribeInfoRequest:
@@ -1250,8 +1402,8 @@ components:
           type: string
         instrumentId:
           description: >-
-            Идентификатор инструмента. Принимает значение `figi` или
-            `instrument_uid`.
+            Идентификатор инструмента. Принимает значение `figi`,
+            `instrument_uid` или `ticker + '_' + class_code`.
           type: string
       type: object
     v1SubscribeLastPriceRequest:
@@ -1275,8 +1427,8 @@ components:
           type: string
         instrumentId:
           description: >-
-            Идентификатор инструмента. Принимает значение `figi` или
-            `instrument_uid`.
+            Идентификатор инструмента. Принимает значение `figi`,
+            `instrument_uid` или `ticker + '_' + class_code`.
           type: string
       type: object
     v1PingDelaySettings:
@@ -1342,6 +1494,7 @@ components:
                 nano: 5
                 currency: currency
                 units: units
+              classCode: classCode
               instrumentType: instrumentType
               ticker: ticker
               quantity:
@@ -1390,6 +1543,7 @@ components:
                 nano: 5
                 currency: currency
                 units: units
+              classCode: classCode
               instrumentType: instrumentType
               ticker: ticker
               quantity:
@@ -1459,7 +1613,8 @@ components:
             currency: currency
             units: units
           virtualPositions:
-            - instrumentType: instrumentType
+            - classCode: classCode
+              instrumentType: instrumentType
               ticker: ticker
               quantity:
                 nano: 6
@@ -1490,7 +1645,8 @@ components:
                 nano: 6
                 units: units
               expireDate: '2000-01-23T04:56:07.000+00:00'
-            - instrumentType: instrumentType
+            - classCode: classCode
+              instrumentType: instrumentType
               ticker: ticker
               quantity:
                 nano: 6
@@ -1609,6 +1765,7 @@ components:
               nano: 5
               currency: currency
               units: units
+            classCode: classCode
             instrumentType: instrumentType
             ticker: ticker
             quantity:
@@ -1657,6 +1814,7 @@ components:
               nano: 5
               currency: currency
               units: units
+            classCode: classCode
             instrumentType: instrumentType
             ticker: ticker
             quantity:
@@ -1726,7 +1884,8 @@ components:
           currency: currency
           units: units
         virtualPositions:
-          - instrumentType: instrumentType
+          - classCode: classCode
+            instrumentType: instrumentType
             ticker: ticker
             quantity:
               nano: 6
@@ -1757,7 +1916,8 @@ components:
               nano: 6
               units: units
             expireDate: '2000-01-23T04:56:07.000+00:00'
-          - instrumentType: instrumentType
+          - classCode: classCode
+            instrumentType: instrumentType
             ticker: ticker
             quantity:
               nano: 6
@@ -1858,6 +2018,7 @@ components:
           nano: 5
           currency: currency
           units: units
+        classCode: classCode
         instrumentType: instrumentType
         ticker: ticker
         quantity:
@@ -1945,9 +2106,13 @@ components:
         ticker:
           description: Тикер инструмента.
           type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     v1VirtualPortfolioPosition:
       example:
+        classCode: classCode
         instrumentType: instrumentType
         ticker: ticker
         quantity:
@@ -2015,6 +2180,9 @@ components:
         ticker:
           description: Тикер инструмента.
           type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     v1PortfolioStreamRequest:
       description: Запрос установки stream-соединения.
@@ -2054,31 +2222,36 @@ components:
               currency: currency
               units: units
           options:
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
           futures:
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
           securities:
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               instrumentType: instrumentType
               blocked: blocked
               balance: balance
@@ -2086,7 +2259,8 @@ components:
               positionUid: positionUid
               figi: figi
               exchangeBlocked: true
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               instrumentType: instrumentType
               blocked: blocked
               balance: balance
@@ -2119,31 +2293,36 @@ components:
                 currency: currency
                 units: units
           options:
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
           futures:
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               blocked: blocked
               balance: balance
               instrumentUid: instrumentUid
               positionUid: positionUid
               figi: figi
           securities:
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               instrumentType: instrumentType
               blocked: blocked
               balance: balance
@@ -2151,7 +2330,8 @@ components:
               positionUid: positionUid
               figi: figi
               exchangeBlocked: true
-            - ticker: ticker
+            - classCode: classCode
+              ticker: ticker
               instrumentType: instrumentType
               blocked: blocked
               balance: balance
@@ -2241,31 +2421,36 @@ components:
               currency: currency
               units: units
         options:
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
         futures:
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
         securities:
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             instrumentType: instrumentType
             blocked: blocked
             balance: balance
@@ -2273,7 +2458,8 @@ components:
             positionUid: positionUid
             figi: figi
             exchangeBlocked: true
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             instrumentType: instrumentType
             blocked: blocked
             balance: balance
@@ -2330,6 +2516,7 @@ components:
     v1PositionsSecurities:
       description: Баланс позиции ценной бумаги.
       example:
+        classCode: classCode
         ticker: ticker
         instrumentType: instrumentType
         blocked: blocked
@@ -2359,6 +2546,9 @@ components:
         ticker:
           description: Тикер инструмента.
           type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
         exchangeBlocked:
           description: Заблокировано на бирже.
           type: boolean
@@ -2369,6 +2559,7 @@ components:
     v1PositionsFutures:
       description: Баланс фьючерса.
       example:
+        classCode: classCode
         ticker: ticker
         blocked: blocked
         balance: balance
@@ -2396,10 +2587,14 @@ components:
         ticker:
           description: Тикер инструмента.
           type: string
+        classCode:
+          description: Класс-код (секция торгов).
+          type: string
       type: object
     v1PositionsOptions:
       description: Баланс опциона.
       example:
+        classCode: classCode
         ticker: ticker
         blocked: blocked
         balance: balance
@@ -2414,6 +2609,9 @@ components:
           type: string
         ticker:
           description: Тикер инструмента.
+          type: string
+        classCode:
+          description: Класс-код (секция торгов).
           type: string
         blocked:
           description: Количество бумаг, заблокированных выставленными заявками.
@@ -2444,31 +2642,36 @@ components:
             currency: currency
             units: units
         options:
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
         futures:
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             blocked: blocked
             balance: balance
             instrumentUid: instrumentUid
             positionUid: positionUid
             figi: figi
         securities:
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             instrumentType: instrumentType
             blocked: blocked
             balance: balance
@@ -2476,7 +2679,8 @@ components:
             positionUid: positionUid
             figi: figi
             exchangeBlocked: true
-          - ticker: ticker
+          - classCode: classCode
+            ticker: ticker
             instrumentType: instrumentType
             blocked: blocked
             balance: balance
