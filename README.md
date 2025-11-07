@@ -78,7 +78,9 @@ API реализован на быстром, удобном и функцион
 * swift
   - [JohnReeze/TinkoffInvestSwiftSDK](https://github.com/JohnReeze/TinkoffInvestSwiftSDK)
   - [egorbos/invest-api-swift-sdk](https://github.com/egorbos/invest-api-swift-sdk)
-* [ruby](https://github.com/blackchestnut/invest_tinkoff)
+* ruby
+  - [gem invest_tinkoff](https://github.com/blackchestnut/invest_tinkoff)
+  - [консольный клиент для вывода портфолио](https://github.com/foxweb/tinkyclient)
 * [rust](https://github.com/ovr/tinkoff-invest-rust)
 * [c++](https://github.com/samoilovv/TinkoffInvestSDK)
 
